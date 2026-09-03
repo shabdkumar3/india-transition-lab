@@ -1,0 +1,123 @@
+technology_id: "Coal-DRI-IF"
+technology_name: "Coal-based Direct Reduced Iron - Induction Furnace"
+route: "Secondary DRI-IF"
+commercialization_year: 2024
+availability_start_year: 2024
+construction_lead_time_years: 2
+
+availability_factor:
+  value: 0.85
+  unit: "fraction"
+  provenance: "PROJECT_PROPOSAL"
+  source: "Project proposal for physical availability bound; pending external literature verification"
+  notes: "Temporary sensitivity value; not a Vol. 4 source fact"
+
+plf_cost_scaling:
+  value: 0.80
+  unit: "fraction"
+  provenance: "V4"
+  source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+  page_or_section: "Page 108"
+
+lifetime_years:
+  value: 20
+  unit: "years"
+  provenance: "PROJECT_PROPOSAL"
+  source: "Domestic induction furnace plant lifetime"
+
+energy_sec:
+  value: 26.00
+  unit: "GJ/t steel"
+  provenance: "DERIVED"
+  source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+  page_or_section: "Page 16, Figure 2.8"
+  derivation_formula: "Weighted sum of kiln coal SEC (22.5 GJ/t) and IF electricity SEC (3.5 GJ/t)"
+
+process_emissions:
+  value: 0.85
+  unit: "tCO2/t steel"
+  provenance: "V4"
+  source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+  page_or_section: "Page 15, Figure 2.8"
+
+combustion_emissions:
+  value: 1.45
+  unit: "tCO2/t steel"
+  provenance: "V4"
+  source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+  page_or_section: "Page 15, Figure 2.8"
+
+resource_intensities:
+  iron_ore:
+    value: 1.40
+    unit: "t/t steel"
+    provenance: "EXTERNAL_PENDING"
+    source: "IEA Iron and Steel Technology Roadmap 2020 / MoS process benchmarks (Pending File)"
+  scrap:
+    value: 0.15
+    unit: "t/t steel"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    page_or_section: "Page 15"
+  hydrogen:
+    value: 0.0
+    unit: "t/t steel"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    page_or_section: "Page 15"
+  electricity:
+    value: 0.70
+    unit: "MWh/t steel"
+    provenance: "DERIVED"
+    source: "Derived from IF electrical power requirement in Figure 2.8"
+    derivation_formula: "2.52 GJ electricity / 3.6 GJ/MWh = 0.70 MWh/t"
+  coal:
+    value: null
+    unit: "t/t steel"
+    provenance: "EXTERNAL_PENDING"
+    source: "Ministry of Steel / MoEFCC / IEA India DRI coal benchmark (Pending File)"
+  natural_gas:
+    value: 0.0
+    unit: "GJ/t steel"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    page_or_section: "Page 15"
+
+economic_parameters:
+  capex_usd_per_t:
+    value: 61.5
+    unit: "USD/t capacity (annualised)"
+    provenance: "EXTERNAL_CROSSREF"
+    source: "CEEW 2024 India Steel Cluster Survey + IEA Iron & Steel Roadmap 2020"
+    notes: "IF melting step is lower CAPEX than EAF; annualised at 8% over 20-year plant lifetime. Range $55-70/t."
+  fom_usd_per_t_year:
+    value: 26.0
+    unit: "USD/t capacity/year"
+    provenance: "EXTERNAL_CROSSREF"
+    source: "CEEW 2024 India IF cost estimate"
+    notes: "Fixed O&M excluding fuel/electricity. ~42% of annualised CAPEX."
+  vom_usd_per_t:
+    value: 6.0
+    unit: "USD/t steel"
+    provenance: "EXTERNAL_CROSSREF"
+    source: "IEA Iron & Steel Roadmap 2020 / WorldSteel IF electrode cost cross-reference"
+    notes: "IF has much lower electrode cost than EAF (~1.5 kg/t vs 3.5 kg/t)."
+
+learning_parameters:
+  base_capex:
+    value: null
+    unit: "USD/t capacity"
+    provenance: "EXTERNAL_PENDING"
+    source: "Pending acquisition"
+  learning_rate:
+    value: null
+    unit: "fraction"
+    provenance: "UNKNOWN"
+    source: "Deferred until external data audit"
+
+deployment_parameters:
+  annual_ramp_limit_pct:
+    value: null
+    unit: "fraction"
+    provenance: "UNKNOWN"
+    source: "Deferred until deployment dynamics module"

@@ -1,0 +1,9 @@
+# Reproducible Run Configuration: Mode B Endogenous Learning
+base_config: ../optimization/baseline.yaml
+overrides:
+  mode: MODE_B
+  use_endogenous_learning: true
+  use_dynamic_scrap: false
+  use_deployment_dynamics: false
+  use_m1_electrolyser_learning: false
+  use_exogenous_electrolyser_cost_curve: false

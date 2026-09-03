@@ -1,0 +1,403 @@
+# ============================================================
+# Baseline Multi-Period MILP — Control Configuration (Step 8)
+# NITI Aayog India Steel Transition Model
+# ============================================================
+#
+# This file holds ALL numeric constants consumed by the baseline
+# optimization engine. No mathematical constants live inside
+# Python functions (Step 8 §20). Values are frozen parameters from
+# PARAMETER_SOURCE_OF_TRUTH.md (Step 6) unless marked PROPOSAL.
+#
+# MODE A BASELINE GATES (enforced):
+#   - M1 electrolyser learning  : DISABLED (spec-only; Step 7B)
+#   - dynamic scrap             : DISABLED (Mode-B module)
+#   - endogenous learning       : DISABLED
+#   - exogenous electrolyser curve: DISABLED
+#
+# ------------------------------------------------------------------
+# HORIZON
+# ------------------------------------------------------------------
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+# ------------------------------------------------------------------
+# DISCOUNTING
+# ------------------------------------------------------------------
+# The exact NITI/TIMES social discount rate is UNRESOLVED (registry
+# §12). The rate is a configurable scenario parameter; the default
+# 0.08 is a PROJECT_PROPOSAL baseline value (matching the IEA 2020
+# annualisation rate used to derive the frozen CAPEX cross-section).
+discount_rate:
+  value: 0.08            # [PROJECT_PROPOSAL] — easy to vary for sensitivity
+  provenance: "PROJECT_PROPOSAL"   # Step 8 §7 — never claimed as NITI/TIMES fact
+
+# ------------------------------------------------------------------
+# TECHNOLOGY ROUTES IN THE COSTED BASELINE
+# ------------------------------------------------------------------
+# All 6 routes enabled with best-available economics:
+#   BF-BOF, NG-DRI-EAF, Scrap-EAF  -> IEA 2020 CAPEX/OPEX FROZEN
+#   Coal-DRI-EAF, Coal-DRI-IF      -> CAPEX/OPEX from cross-reference
+#                                     synthesis (external_parameters.yaml),
+#                                     marked PROJECT_PROPOSAL pending
+#                                     authoritative frozen source.
+#   H2-DRI-EAF                     -> CAPEX/OPEX PROJECT_PROPOSAL from
+#                                     IEA 2020 / IRENA 2023 cross-section.
+# All 6 routes needed to represent India's real fleet (Vol. 4, p.43).
+enabled_routes:
+  - "BF-BOF"
+  - "Coal-DRI-EAF"
+  - "Coal-DRI-IF"
+  - "NG-DRI-EAF"
+  - "H2-DRI-EAF"
+  - "Scrap-EAF"
+
+# ------------------------------------------------------------------
+# EXISTING CAPACITY (Vol. 4 production / assumed utilization)
+# ------------------------------------------------------------------
+# IndiaCapacity (all routes) FY2024-25 = 200.333 Mt is FROZEN
+# [EXTERNAL, MOS AR 2025-26 Table 3.2.2].
+#
+# Per-route existing capacity DERIVED from Vol. 4 p.43 production data
+# (Fig 2.7) divided by assumed utilization rates (PROJECT_PROPOSAL).
+# Utilization rates: BF-BOF 0.77, Coal-DRI-IF 0.65 (many small inefficient
+# plants), Coal-DRI-EAF 0.65, NG-DRI-EAF 0.74, Scrap-EAF 0.84.
+# These are the best-available estimates pending JPC capacity-by-route.
+#
+# Production basis (Vol. 4 p.43, FY2023-24):
+#   BF-BOF: 61.61 Mt  → capacity 80 Mt  (/ 0.77)
+#   Coal-DRI-IF: 51.1 Mt → capacity 78 Mt  (/ 0.65)
+#   Coal-DRI-EAF: ~9 Mt  → capacity 14 Mt  (/ 0.65)
+#   NG-DRI-EAF: ~8.9 Mt  → capacity 12 Mt  (/ 0.74)
+#   Scrap-EAF: ~13.5 Mt  → capacity 16 Mt  (/ 0.84)
+#   Sum: 200 Mt (matches 200.333 Mt aggregate within rounding)
+existing_capacity_mt_aggregate: 200.333   # [EXTERNAL] MoS AR 2025-26
+existing_capacity_per_route_mt:
+  "BF-BOF":       80.0   # [V4_DERIVED] 61.61 Mt prod / 0.77 util
+  "Coal-DRI-EAF": 14.0   # [V4_DERIVED] ~9 Mt prod / 0.65 util
+  "Coal-DRI-IF":  78.0   # [V4_DERIVED] 51.1 Mt prod / 0.65 util
+  "NG-DRI-EAF":   12.0   # [V4_DERIVED] ~8.9 Mt prod / 0.74 util
+  "H2-DRI-EAF":    0.0   # Not yet commercial (Vol. 4 start 2030 NZS/2035 CPS)
+  "Scrap-EAF":    16.0   # [V4_DERIVED] ~13.5 Mt prod / 0.84 util
+
+# ------------------------------------------------------------------
+# LIFETIME (investment-cycle lifetime for retirement logic)
+# ------------------------------------------------------------------
+# IEA InvestmentCycleLifetime = 25 years is FROZEN (registry §7,
+# IEA Roadmap 2020 p.30/p.41). Used as the uniform technology
+# economic lifetime in the baseline (no per-route values invented).
+# Typical technical lifetime (40 yr) is a Mode-B distinction.
+lifetime_years: 25       # [EXTERNAL] IEA investment-cycle lifetime
+
+# ------------------------------------------------------------------
+# TECHNOLOGY START YEARS (commercialization / availability start)
+# ------------------------------------------------------------------
+# Earliest year each route may commission new capacity. Values taken
+# from the technology cards' availability_start_year (commercialization
+# year). H2-DRI-EAF is listed for completeness but is DISABLED in this
+# baseline (EXTERNAL_PENDING full-plant economics), so its start year
+# is inert here.
+start_years:
+  "BF-BOF":       2024
+  "Coal-DRI-EAF": 2024
+  "Coal-DRI-IF":  2024
+  "NG-DRI-EAF":   2024
+  "H2-DRI-EAF":   2030   # NZS commercialisation year (Vol.4 Table 3.1)
+  "Scrap-EAF":    2024
+
+# ------------------------------------------------------------------
+# AVAILABILITY (physical operating bound on capacity utilisation)
+# ------------------------------------------------------------------
+# The 0.85-0.90 values on the technology cards are PROJECT_PROPOSAL /
+# temporary sensitivity values, NOT Vol. 4 facts (registry audit). They
+# are used in this control run ONLY because the Step 8 project
+# definition explicitly permits proposal-level parameters in the
+# baseline control configuration (identical to the 0.08 discount rate).
+# The run is therefore labelled PROPOSAL-PARAMETERIZED.
+#
+# DO NOT confuse these with the 80% PLF investment-sizing parameter
+# (Vol. 4 p.108): PLF is a COST-scaling assumption, availability is a
+# physical production bound (ACT <= avail * CAP). The baseline uses
+# availability ONLY as the physical bound; PLF is not applied.
+availability:
+  "BF-BOF":       {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "Coal-DRI-EAF": {value: 0.85, provenance: "PROJECT_PROPOSAL"}
+  "Coal-DRI-IF":  {value: 0.85, provenance: "PROJECT_PROPOSAL"}
+  "NG-DRI-EAF":   {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "H2-DRI-EAF":   {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "Scrap-EAF":    {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+
+# ------------------------------------------------------------------
+# ECONOMICS — IEA Iron & Steel Technology Roadmap 2020, p.30 Fig 1.10
+# (2019 USD; annualised CAPEX; O&M excl. energy and labour; combined
+# FOM+VOM — NO re-annualisation, NO double count; registry §6)
+# ------------------------------------------------------------------
+economics:
+  # BF-BOF/NG-DRI-EAF/Scrap-EAF: IEA 2020 Roadmap p.30 [EXTERNAL FROZEN]
+  # Coal-DRI-EAF/Coal-DRI-IF/H2-DRI-EAF: external_parameters.yaml
+  # cross-reference synthesis [PROJECT_PROPOSAL]; pending authoritative frozen.
+  capex_annualised_usd_per_t:
+    "BF-BOF":       73.0    # [EXTERNAL FROZEN] IEA 2020
+    "Coal-DRI-EAF": 82.0    # [PROJECT_PROPOSAL] IEA/CEEW cross-section
+    "Coal-DRI-IF":  61.5    # [PROJECT_PROPOSAL] IEA/IEAGHG cross-section
+    "NG-DRI-EAF":   95.0    # [EXTERNAL FROZEN] IEA 2020
+    "H2-DRI-EAF":   64.2    # [PROJECT_PROPOSAL] IEA/IRENA 2023
+    "Scrap-EAF":    46.0    # [EXTERNAL FROZEN] IEA 2020
+  opex_fixed_usd_per_t:
+    "BF-BOF":       68.0    # [EXTERNAL FROZEN] IEA 2020
+    "Coal-DRI-EAF": 35.0    # [PROJECT_PROPOSAL] IEA/CEEW cross-section
+    "Coal-DRI-IF":  26.0    # [PROJECT_PROPOSAL] IEA/IEAGHG cross-section
+    "NG-DRI-EAF":   87.0    # [EXTERNAL FROZEN] IEA 2020
+    "H2-DRI-EAF":   27.4    # [PROJECT_PROPOSAL] IEA/IRENA 2023
+    "Scrap-EAF":    43.0    # [EXTERNAL FROZEN] IEA 2020
+  vom_usd_per_t:
+    "BF-BOF":       0.0
+    "Coal-DRI-EAF": 0.0
+    "Coal-DRI-IF":  0.0
+    "NG-DRI-EAF":   0.0
+    "H2-DRI-EAF":   0.0
+    "Scrap-EAF":    0.0
+
+# ------------------------------------------------------------------
+# RESOURCE PRICES — IEA Roadmap 2020 (registry §9; central values)
+# ------------------------------------------------------------------
+# Prices are stored in their SOURCE units (registry §9, NEVER silently
+# reinterpreted). Each price entry carries EXPLICIT conversion metadata:
+#   source_unit        - unit as published in the registry/source
+#   target_unit        - unit the objective multiplies against the
+#                        registry intensity coefficient
+#   conversion_factor  - NUMERIC factor applied by the loader
+#   conversion_operation - "multiply" (converted = value * factor) or
+#                        "divide" (converted = value / factor)
+#   conversion_formula - human-readable formula (metadata only)
+#   provenance         - source attribution
+# The loader converts value -> cost-per-model-unit using ONLY the
+# configured conversion_factor / conversion_operation. Unit strings are
+# descriptive metadata; conversion is NEVER inferred from them (Step 8
+# final-polish review item 1).
+resource_prices:
+  iron_ore:
+    value: 80.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 60-100 central 80
+  scrap:
+    value: 250.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 200-300 central 250
+  natural_gas:
+    value: 6.0
+    source_unit: "USD/MBtu"
+    target_unit: "USD/GJ"
+    conversion_factor: 1.055    # 1 MBtu = 1.055 GJ (registry §9 gas basis)
+    conversion_operation: "divide"
+    conversion_formula: "USD/GJ = USD/MBtu / 1.055  (1 MBtu = 1.055 GJ, registry §9)"
+    provenance: "EXTERNAL"    # 2-10 central 6 (p.30/109); intensity in GJ/t steel
+  electricity:
+    value: 45.0
+    source_unit: "USD/MWh"
+    target_unit: "USD/MWh"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/MWh (no conversion: intensity in MWh/t steel)"
+    provenance: "EXTERNAL"    # 30-90 central 45
+  hydrogen:
+    value: 1.9
+    source_unit: "USD/kg"
+    target_unit: "USD/kg"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/kg (no conversion: intensity in kg H2/t steel)"
+    provenance: "EXTERNAL"    # PriceHydrogenIndia 2035 SDS central
+  # Coal prices FROZEN; coal INTENSITIES EXTERNAL_PENDING (null) so the
+  # coal cost terms are structurally present but contribute 0 until
+  # intensities are acquired (unresolved inputs; see spec).
+  coking_coal:
+    value: 140.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 75-155 central 140
+  non_coking_coal:
+    value: 70.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 35-80 central 70
+
+# ------------------------------------------------------------------
+# SCENARIO DEFINITIONS
+# ------------------------------------------------------------------
+# CPS and NZS share the SAME published crude steel demand anchors
+# (2024=144.29, 2050=624, 2070=821 Mt — Vol.4 Table 3.1). No
+# source-supported scenario-specific emission constraint exists in the
+# frozen registry, so the baseline demand path is scenario-invariant.
+scenarios:
+  - name: "CPS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+  - name: "NZS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+
+# ------------------------------------------------------------------
+# DYNAMIC SCRAP — MODE A GATE (Step 9)
+# ------------------------------------------------------------------
+# Step 9 adds a MODE B dynamic scrap circularity module (cohort-based
+# EOL scrap stock-flow accounting). MODE A is the frozen CONTROL
+# configuration: dynamic scrap is DISABLED here by explicit gate.
+#
+# Mode A must never silently consume Mode-B scrap assumptions: the
+# loader keeps the scrap engine OFF whenever dynamic_scrap.enabled is
+# false, and the Step-9 regression suite asserts the baseline objective
+# is byte-for-byte invariant to this gate.
+#
+# The full Mode-B configuration (historical cohorts, lifetime kernel,
+# collection/processing chain, import allowance) lives in
+# configs/optimization/mode_b_dynamic_scrap.yaml.
+dynamic_scrap:
+  enabled: false          # MODE A — dynamic scrap DISABLED (Step 8 hard stop)
+
+# ------------------------------------------------------------------
+# PROVENANCE GATING (Step 13 remediation, Task 1)
+# ------------------------------------------------------------------
+# Every registry intensity that becomes an optimization coefficient is
+# resolved through the provenance gate (steel_model.schema.provenance_policy).
+# EXTERNAL_PENDING / UNKNOWN values are NEVER silently converted to zero:
+# they require an EXPLICIT allowance below, otherwise the load FAILS.
+#
+# Allowances granted for THIS baseline (each one is a conscious,
+# provenance-visible acceptance of a pending working value — the value is
+# retained as-is, including None -> 0 for coking_coal and scrap):
+#   - BF-BOF/iron_ore      : pending registry value 1.45 (kept as working value)
+#   - BF-BOF/coking_coal   : pending registry value None (null; coal cost term absent)
+#   - NG-DRI-EAF/iron_ore  : pending registry value 1.4  (kept as working value)
+#   - Scrap-EAF/scrap      : pending registry value None (null; scrap cost term absent)
+# These allowances are recorded in BaselineInputs.provenance_gating and
+# surfaced in data_limitations; they are NOT silent.
+#
+# allow_proposal_parameters permits PROJECT_PROPOSAL values to enter.
+# intensity_overrides is reserved for DIAGNOSTIC / sensitivity runs and is
+# intentionally EMPTY here (baseline invariance is preserved).
+provenance_gating:
+  policy: "strict"                     # only 'strict' is implemented
+  allow_proposal_parameters: true      # discount rate / availability / new-route economics are PROJECT_PROPOSAL
+  pending_intensity_allowances:
+    # Iron ore intensities: EXTERNAL_PENDING in registry but working value 1.40-1.45 retained
+    - "BF-BOF/iron_ore"
+    - "Coal-DRI-EAF/iron_ore"
+    - "Coal-DRI-IF/iron_ore"
+    - "NG-DRI-EAF/iron_ore"
+    - "H2-DRI-EAF/iron_ore"
+    # Non-coking coal overridden below; not listed here
+    # Scrap-EAF/scrap overridden below; not listed here
+    # BF-BOF/coking_coal overridden below; not listed here
+  intensity_overrides:
+    # ----------------------------------------------------------------
+    # Scrap-EAF / scrap input intensity
+    # IEA Roadmap 2020 / IMC-2021: ~1.08 t scrap per t liquid steel.
+    # Without this, registry null -> coefficient=0 -> Scrap-EAF free.
+    # ----------------------------------------------------------------
+    - route: "Scrap-EAF"
+      resource: "scrap"
+      value: 1.08
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        IEA Roadmap 2020 / IMC-2021 EAF mass balance: ~1.08 t scrap per t
+        liquid steel (project-level working value; frozen registry update
+        EXTERNAL_PENDING). Activating this coefficient prevents the optimizer
+        from treating scrap as a free input (null -> 0 artefact).
+    # ----------------------------------------------------------------
+    # BF-BOF / coking coal input intensity
+    # IMC-2021 Table 1: 161 Mt coking coal / 181 Mt BF-route steel FY2030
+    # = 0.89 t/t. Without this, BF-BOF carries no coal cost.
+    # ----------------------------------------------------------------
+    - route: "BF-BOF"
+      resource: "coking_coal"
+      value: 0.89
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        IEA Roadmap 2020 / WorldSteel BF coal balance: ~0.89 t coking coal
+        per t crude steel (IMC-2021 validated). Activates BF-BOF coal cost.
+    # ----------------------------------------------------------------
+    # Coal-DRI-EAF / non-coking coal intensity
+    # Derived from Vol.4 Fig 2.8 thermal SEC: 22.5 GJ/t coal-thermal
+    # component / 18.84 GJ/t (Indian non-coking coal GCV 4500 kcal/kg)
+    # = 1.195 t/t ≈ 1.2 t/t steel.
+    # Registry value is null (EXTERNAL_PENDING due to charge-ratio
+    # conflict in CEEW data). This V4-derived value is the best
+    # available estimate for the Indian Coal-DRI-EAF route.
+    # ----------------------------------------------------------------
+    - route: "Coal-DRI-EAF"
+      resource: "non_coking_coal"
+      value: 1.2
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        Derived from Vol.4 Fig 2.8 coal-thermal SEC (22.5 GJ/t) divided
+        by Indian non-coking coal GCV (18.84 GJ/t at 4500 kcal/kg).
+        Result: 1.195 t/t steel ≈ 1.2 t/t (PROJECT_PROPOSAL; CEEW
+        charge-ratio conflict prevents frozen promotion). Activates the
+        dominant fuel cost term for this route.
+    # ----------------------------------------------------------------
+    # Coal-DRI-IF / non-coking coal intensity
+    # Same derivation as Coal-DRI-EAF: Vol.4 Fig 2.8 IF route thermal
+    # SEC = 22.5 GJ/t / 18.84 GJ/t = 1.195 ≈ 1.2 t/t steel.
+    # ----------------------------------------------------------------
+    - route: "Coal-DRI-IF"
+      resource: "non_coking_coal"
+      value: 1.2
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        Derived from Vol.4 Fig 2.8 kiln coal SEC (22.5 GJ/t) divided
+        by Indian non-coking coal GCV (18.84 GJ/t at 4500 kcal/kg).
+        Result: 1.195 t/t steel ≈ 1.2 t/t (PROJECT_PROPOSAL). The IF
+        route uses the same rotary kiln DRI process as Coal-DRI-EAF.
+        Activates the dominant fuel cost term for this route.
+
+# ------------------------------------------------------------------
+# STATIC SCRAP AVAILABILITY CAP (Mode A only — Step 8 fix)
+# ------------------------------------------------------------------
+# Mode A has no dynamic scrap stock-flow engine (that is Mode B).
+# Without a cap, and with the scrap intensity now correctly set to
+# 1.08 t/t, Scrap-EAF costs ~$377/t vs BF-BOF $384/t — optimizer still
+# picks >95% Scrap-EAF, which is physically impossible given India's
+# domestic scrap supply of ~25-30 Mt (vs 144+ Mt steel demand in 2024).
+#
+# This block enforces a piecewise-linear scrap supply ceiling derived
+# from India's steel-stock EOL projections (JPC/WorldSteel trajectory).
+# Provenance: PROJECT_PROPOSAL (scenario-level estimate; sensitivity
+# variable for future runs).
+#
+# Values (Mt/year of scrap available for steelmaking):
+#   2024: ~25 Mt domestic EOL + ~5 Mt home/process scrap
+#   2030: growing stock cohorts reach EOL; rising collection rates
+#   2040: 1990s infrastructure stock starts returning as scrap
+#   2050: peak industrial scrap wave; ~17% of demand cap
+#   2060: mature recycling; ~24% of demand cap
+#   2070: full maturity; ~23% of demand cap (keeps Scrap-EAF realistic)
+static_scrap_cap:
+  enabled: true
+  provenance: "PROJECT_PROPOSAL"
+  rationale: >
+    Total India scrap consumption trajectory (all routes combined).
+    Anchored to Vol.4 actual: 33.36 Mt in FY2023-24 (p.43, Fig 2.7).
+    Cap covers BF-BOF secondary (~9 Mt), IF secondary (~8 Mt),
+    EAF primary (~14 Mt), plus growth trajectory per WorldSteel/JPC.
+    Mode B uses the stock-flow dynamic scrap engine (constraint 7)
+    and does not apply this cap.
+  anchor_years_mt:
+    2024: 36.0    # Vol.4 actual 33.36 Mt + small buffer; all-route total
+    2030: 52.0    # demand growth + EOL ramp; ~1.4× 2024
+    2040: 85.0    # 1990s-2000s infrastructure stock EOL wave
+    2050: 130.0   # peak industrial scrap wave; NZS 30% scrap share × 624 Mt
+    2060: 175.0   # maturing recycling; NZS 35% scrap share × ~720 Mt
+    2070: 220.0   # NZS 40% scrap share × 821 Mt demand ≈ 328 Mt; cap is floor

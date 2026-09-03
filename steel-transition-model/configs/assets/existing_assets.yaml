@@ -1,0 +1,267 @@
+# Existing Steel Assets & Production Records Configuration
+# Sourced from NITI Aayog Vol. 4 Baseline Data & Ministry of Steel
+
+# Section 1: Raw Reported Production Records [V4] (Vol. 4 p. 43 Fig 2.7)
+production_records:
+  - technology: "BF_BOF"
+    year: 2024
+    production_mt: 61.61
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_reference: "Chapter 2 p. 43 Fig 2.7"
+    provenance: "V4"
+    notes: "Reported BOF crude steel production in 2023-24 (plus hot metal totals 62.68 Mt)"
+
+  - technology: "COAL_DRI_IF"
+    year: 2024
+    production_mt: 51.10
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_reference: "Chapter 2 p. 43 Fig 2.7"
+    provenance: "V4"
+    notes: "Reported Coal-DRI Induction Furnace crude steel production in 2023-24"
+
+  - technology: "COAL_DRI_EAF"
+    year: 2024
+    production_mt: 31.60
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_reference: "Chapter 2 p. 43 Fig 2.7"
+    provenance: "V4"
+    notes: "Reported DRI Electric Arc Furnace crude steel production in 2023-24"
+
+  - technology: "SCRAP_EAF"
+    year: 2024
+    production_mt: 33.36
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_reference: "Chapter 2 p. 43 Fig 2.7"
+    provenance: "V4"
+    notes: "Reported Scrap utilization / scrap steel production in 2023-24"
+
+# Section 2: Representative Vintage Capacity Cohorts for Mode B Sensitivity [PROJECT_PROPOSAL]
+assets:
+  # BF-BOF Route (Integrated Plants) - Representative Cohorts, 30y Lifetime
+  - asset_id: "BF_BOF_COHORT_2005"
+    asset_name: "BF-BOF Vintage Cohort 2000-2009"
+    technology: "BF_BOF"
+    technology_subtype: "Blast Furnace - Basic Oxygen Furnace"
+    capacity_mt_per_year: 19.5
+    commissioning_year: 2005
+    lifetime_years: 30.0
+    availability_factor: 0.90
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative legacy vintage cohort 2000-2009"
+
+  - asset_id: "BF_BOF_COHORT_2012"
+    asset_name: "BF-BOF Vintage Cohort 2010-2014"
+    technology: "BF_BOF"
+    technology_subtype: "Blast Furnace - Basic Oxygen Furnace"
+    capacity_mt_per_year: 19.5
+    commissioning_year: 2012
+    lifetime_years: 30.0
+    availability_factor: 0.90
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative expansion vintage cohort 2010-2014"
+
+  - asset_id: "BF_BOF_COHORT_2017"
+    asset_name: "BF-BOF Vintage Cohort 2015-2019"
+    technology: "BF_BOF"
+    technology_subtype: "Blast Furnace - Basic Oxygen Furnace"
+    capacity_mt_per_year: 19.5
+    commissioning_year: 2017
+    lifetime_years: 30.0
+    availability_factor: 0.90
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative modernization vintage cohort 2015-2019"
+
+  - asset_id: "BF_BOF_COHORT_2022"
+    asset_name: "BF-BOF Vintage Cohort 2020-2024"
+    technology: "BF_BOF"
+    technology_subtype: "Blast Furnace - Basic Oxygen Furnace"
+    capacity_mt_per_year: 19.5
+    commissioning_year: 2022
+    lifetime_years: 30.0
+    availability_factor: 0.90
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative recent vintage cohort 2020-2024"
+
+  # Coal-DRI-IF Route (Secondary Sector) - Representative Cohorts, 20y Lifetime
+  - asset_id: "COAL_DRI_IF_COHORT_2005"
+    asset_name: "Coal-DRI-IF Vintage Cohort 2000-2009"
+    technology: "COAL_DRI_IF"
+    technology_subtype: "Coal-based DRI with Induction Furnace"
+    capacity_mt_per_year: 16.0
+    commissioning_year: 2005
+    lifetime_years: 20.0
+    availability_factor: 0.85
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative legacy vintage cohort 2000-2009"
+
+  - asset_id: "COAL_DRI_IF_COHORT_2012"
+    asset_name: "Coal-DRI-IF Vintage Cohort 2010-2014"
+    technology: "COAL_DRI_IF"
+    technology_subtype: "Coal-based DRI with Induction Furnace"
+    capacity_mt_per_year: 16.0
+    commissioning_year: 2012
+    lifetime_years: 20.0
+    availability_factor: 0.85
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative expansion vintage cohort 2010-2014"
+
+  - asset_id: "COAL_DRI_IF_COHORT_2017"
+    asset_name: "Coal-DRI-IF Vintage Cohort 2015-2019"
+    technology: "COAL_DRI_IF"
+    technology_subtype: "Coal-based DRI with Induction Furnace"
+    capacity_mt_per_year: 16.0
+    commissioning_year: 2017
+    lifetime_years: 20.0
+    availability_factor: 0.85
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative modernization vintage cohort 2015-2019"
+
+  - asset_id: "COAL_DRI_IF_COHORT_2022"
+    asset_name: "Coal-DRI-IF Vintage Cohort 2020-2024"
+    technology: "COAL_DRI_IF"
+    technology_subtype: "Coal-based DRI with Induction Furnace"
+    capacity_mt_per_year: 16.0
+    commissioning_year: 2022
+    lifetime_years: 20.0
+    availability_factor: 0.85
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative recent vintage cohort 2020-2024"
+
+  # Coal-DRI-EAF Route - Representative Cohorts, 25y Lifetime
+  - asset_id: "COAL_DRI_EAF_COHORT_2005"
+    asset_name: "Coal-DRI-EAF Vintage Cohort 2000-2009"
+    technology: "COAL_DRI_EAF"
+    technology_subtype: "Coal-based DRI with Electric Arc Furnace"
+    capacity_mt_per_year: 6.25
+    commissioning_year: 2005
+    lifetime_years: 25.0
+    availability_factor: 0.88
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative legacy vintage cohort 2000-2009"
+
+  - asset_id: "COAL_DRI_EAF_COHORT_2012"
+    asset_name: "Coal-DRI-EAF Vintage Cohort 2010-2014"
+    technology: "COAL_DRI_EAF"
+    technology_subtype: "Coal-based DRI with Electric Arc Furnace"
+    capacity_mt_per_year: 6.25
+    commissioning_year: 2012
+    lifetime_years: 25.0
+    availability_factor: 0.88
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative expansion vintage cohort 2010-2014"
+
+  - asset_id: "COAL_DRI_EAF_COHORT_2017"
+    asset_name: "Coal-DRI-EAF Vintage Cohort 2015-2019"
+    technology: "COAL_DRI_EAF"
+    technology_subtype: "Coal-based DRI with Electric Arc Furnace"
+    capacity_mt_per_year: 6.25
+    commissioning_year: 2017
+    lifetime_years: 25.0
+    availability_factor: 0.88
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative modernization vintage cohort 2015-2019"
+
+  - asset_id: "COAL_DRI_EAF_COHORT_2022"
+    asset_name: "Coal-DRI-EAF Vintage Cohort 2020-2024"
+    technology: "COAL_DRI_EAF"
+    technology_subtype: "Coal-based DRI with Electric Arc Furnace"
+    capacity_mt_per_year: 6.25
+    commissioning_year: 2022
+    lifetime_years: 25.0
+    availability_factor: 0.88
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative recent vintage cohort 2020-2024"
+
+  # NG-DRI-EAF Route - Representative Cohorts, 25y Lifetime
+  - asset_id: "NG_DRI_EAF_COHORT_2012"
+    asset_name: "NG-DRI-EAF Vintage Cohort 2010-2014"
+    technology: "NG_DRI_EAF"
+    technology_subtype: "Gas-based DRI with Electric Arc Furnace"
+    capacity_mt_per_year: 3.25
+    commissioning_year: 2012
+    lifetime_years: 25.0
+    availability_factor: 0.88
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative gas-DRI vintage cohort 2010-2014"
+
+  - asset_id: "NG_DRI_EAF_COHORT_2017"
+    asset_name: "NG-DRI-EAF Vintage Cohort 2015-2019"
+    technology: "NG_DRI_EAF"
+    technology_subtype: "Gas-based DRI with Electric Arc Furnace"
+    capacity_mt_per_year: 3.25
+    commissioning_year: 2017
+    lifetime_years: 25.0
+    availability_factor: 0.88
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative gas-DRI vintage cohort 2015-2019"
+
+  # Scrap-EAF Route - Representative Cohorts, 25y Lifetime
+  - asset_id: "SCRAP_EAF_COHORT_2017"
+    asset_name: "Scrap-EAF Vintage Cohort 2015-2019"
+    technology: "SCRAP_EAF"
+    technology_subtype: "Scrap-based Electric Arc Furnace"
+    capacity_mt_per_year: 3.0
+    commissioning_year: 2017
+    lifetime_years: 25.0
+    availability_factor: 0.90
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative scrap-EAF vintage cohort 2015-2019"
+
+  - asset_id: "SCRAP_EAF_COHORT_2022"
+    asset_name: "Scrap-EAF Vintage Cohort 2020-2024"
+    technology: "SCRAP_EAF"
+    technology_subtype: "Scrap-based Electric Arc Furnace"
+    capacity_mt_per_year: 3.0
+    commissioning_year: 2022
+    lifetime_years: 25.0
+    availability_factor: 0.90
+    source: "Ministry of Steel / NITI Vol. 4 Baseline Representative Cohorts"
+    source_reference: "Chapter 2 p. 43"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "PROPOSAL"
+    notes: "Mode B representative scrap-EAF vintage cohort 2020-2024"

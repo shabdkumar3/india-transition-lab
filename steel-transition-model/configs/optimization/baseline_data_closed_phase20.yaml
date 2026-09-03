@@ -1,0 +1,225 @@
+# ============================================================
+# PHASE 20 DATA-CLOSED CANDIDATE CONFIG (FINAL SCIENTIFIC DATA RESOLUTION)
+# NITI Aayog India Steel Transition Model
+# ============================================================
+#
+# IDENTICAL to configs/optimization/baseline.yaml (official control)
+# EXCEPT the provenance_gating.intensity_overrides block, which now carries
+# TWO RULE-ZERO promoted parameters:
+#
+#   BF-BOF/coking_coal  = 0.89 t/t   provenance EXTERNAL        (IMC-2021, Table 1 pp.10-11)
+#   Scrap-EAF/scrap     = 1.05 t/t   provenance FROZEN_EXTERNAL (Xylia et al. 2018,
+#                                     Energy Efficiency 11(5):1055-1075, Table 2 p.1063;
+#                                     corroborated IEA Roadmap 2020 metallic input 1.05-1.2)
+#
+# PURPOSE: exercise BOTH RULE-ZERO promoted parameters from the Phase-20 final
+# scientific data resolution WITHOUT touching the shared registry
+# (configs/resources/steel_intensities.yaml stays byte-for-byte null so the
+# official baseline objective 1,726,583 M USD is invariant).
+#
+# PHASE 20 CLOSURE RECORD (data/external/external_parameter_freeze.yaml):
+#   - Scrap-EAF/scrap  : PROMOTED to 1.05 t/t (pure-scrap EAF charge, per tonne
+#                        crude steel; 100% scrap metallic charge, melt yield
+#                        ~95.2%). Peer-reviewed exact-table source (Xylia 2018
+#                        Table 2 p.1063) + IEA corroboration (metallic input
+#                        1.05-1.2 t/t, extract line 1086). worldsteel 0.88/0.71
+#                        are the BLENDED recycled-EAF route (boundary mismatch,
+#                        NOT used). Uncertainty bounds 1.00-1.15 retained.
+#   - BF-BOF/coking_coal: unchanged from round 3 (0.89, IMC-2021).
+#   - Coal-DRI routes     : DISABLED in this candidate (same as baseline).
+#                        Non-coking coal & iron ore DRI intensities stay
+#                        EXTERNAL_PENDING; charge-ratio conflict (IBM IMYB 2022
+#                        vs CEEW 2024 vs Fastmarkets 2023) is documented in
+#                        SOURCE_CONTRADICTIONS_FINAL.md. Coal-DRI-EAF = DEFERRED
+#                        (no defensible EAF-specific charge ratio).
+#   - H2-DRI-EAF         : DISABLED (full-plant economics EXTERNAL_PENDING; the
+#                        prior $685/t decomposition is NOT verifiable in the
+#                        stored IEA extract). Electrolyser component FROZEN
+#                        separately (452/7 USD/kWe, IEA p.108). M1 remains
+#                        DEFERRED (no real electrolyser dataset).
+#   - existing capacity   : existing_capacity_mt_aggregate 200.333 kept as
+#                        context; existing_capacity_per_route_mt stays 0.0 for
+#                        all routes (route-level crude split GAP -> no fabrication;
+#                        loader flag existing_capacity_data_available = False).
+#                        Fleet closure documented in india_steel_fleet_register.yaml
+#                        (fleet_aggregation block: known/unknown/coverage +
+#                        reconciliation gap).
+#
+# SCIENTIFIC STATUS: CANDIDATE (not the official control). Same gates as
+# baseline (MODE A, dynamic scrap disabled, M1 disabled, strict provenance).
+
+# ------------------------------------------------------------------
+# HORIZON
+# ------------------------------------------------------------------
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+# ------------------------------------------------------------------
+# DISCOUNTING
+# ------------------------------------------------------------------
+discount_rate:
+  value: 0.08            # [PROJECT_PROPOSAL] — easy to vary for sensitivity
+  provenance: "PROJECT_PROPOSAL"
+
+# ------------------------------------------------------------------
+# TECHNOLOGY ROUTES IN THE COSTED BASELINE
+# ------------------------------------------------------------------
+enabled_routes:
+  - "BF-BOF"
+  - "NG-DRI-EAF"
+  - "Scrap-EAF"
+
+# ------------------------------------------------------------------
+# EXISTING CAPACITY (aggregate; tech-wise split UNKNOWN)
+# ------------------------------------------------------------------
+existing_capacity_mt_aggregate: 200.333   # [EXTERNAL] context only
+existing_capacity_per_route_mt:
+  "BF-BOF": 0.0       # EXTERNAL_PENDING -> 0 (documented constraint)
+  "NG-DRI-EAF": 0.0
+  "Scrap-EAF": 0.0
+
+# ------------------------------------------------------------------
+# LIFETIME (investment-cycle lifetime for retirement logic)
+# ------------------------------------------------------------------
+lifetime_years: 25       # [EXTERNAL] IEA investment-cycle lifetime
+
+# ------------------------------------------------------------------
+# TECHNOLOGY START YEARS
+# ------------------------------------------------------------------
+start_years:
+  "BF-BOF": 2024
+  "NG-DRI-EAF": 2024
+  "Scrap-EAF": 2024
+
+# ------------------------------------------------------------------
+# AVAILABILITY (physical operating bound)
+# ------------------------------------------------------------------
+availability:
+  "BF-BOF": {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "NG-DRI-EAF": {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "Scrap-EAF": {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+
+# ------------------------------------------------------------------
+# ECONOMICS — IEA Iron & Steel Technology Roadmap 2020, p.30 Fig 1.10
+# ------------------------------------------------------------------
+economics:
+  capex_annualised_usd_per_t:
+    "BF-BOF": 73.0
+    "NG-DRI-EAF": 95.0
+    "Scrap-EAF": 46.0
+  opex_fixed_usd_per_t:
+    "BF-BOF": 68.0
+    "NG-DRI-EAF": 87.0
+    "Scrap-EAF": 43.0
+  vom_usd_per_t:
+    "BF-BOF": 0.0
+    "NG-DRI-EAF": 0.0
+    "Scrap-EAF": 0.0
+
+# ------------------------------------------------------------------
+# RESOURCE PRICES — IEA Roadmap 2020 (registry §9; central values)
+# ------------------------------------------------------------------
+resource_prices:
+  iron_ore:
+    value: 80.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"
+  scrap:
+    value: 250.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"
+  natural_gas:
+    value: 6.0
+    source_unit: "USD/MBtu"
+    target_unit: "USD/GJ"
+    conversion_factor: 1.055
+    conversion_operation: "divide"
+    conversion_formula: "USD/GJ = USD/MBtu / 1.055  (1 MBtu = 1.055 GJ, registry §9)"
+    provenance: "EXTERNAL"
+  electricity:
+    value: 45.0
+    source_unit: "USD/MWh"
+    target_unit: "USD/MWh"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/MWh (no conversion: intensity in MWh/t steel)"
+    provenance: "EXTERNAL"
+  hydrogen:
+    value: 1.9
+    source_unit: "USD/kg"
+    target_unit: "USD/kg"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/kg (no conversion: intensity in kg H2/t steel)"
+    provenance: "EXTERNAL"
+  coking_coal:
+    value: 140.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"
+  non_coking_coal:
+    value: 70.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"
+
+# ------------------------------------------------------------------
+# SCENARIO DEFINITIONS
+# ------------------------------------------------------------------
+scenarios:
+  - name: "CPS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+  - name: "NZS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+
+# ------------------------------------------------------------------
+# DYNAMIC SCRAP — MODE A GATE (Step 9)
+# ------------------------------------------------------------------
+dynamic_scrap:
+  enabled: false          # MODE A — dynamic scrap DISABLED
+
+# ------------------------------------------------------------------
+# PROVENANCE GATING (strict; never silent)
+# ------------------------------------------------------------------
+# Allowances granted for THIS candidate (same as round-3 except Scrap-EAF/scrap
+# which now carries a FROZEN override and no longer needs an allowance):
+#   - BF-BOF/iron_ore      : pending registry value 1.45 (kept as working value)
+#   - BF-BOF/coking_coal   : pending registry value None (null; injected via override)
+#   - NG-DRI-EAF/iron_ore  : pending registry value 1.4  (kept as working value)
+#
+# intensity_overrides carries the two promoted values (coking coal 0.89 +
+# scrap 1.05). The shared registry values stay null, preserving official
+# baseline invariance.
+provenance_gating:
+  policy: "strict"
+  allow_proposal_parameters: true
+  pending_intensity_allowances:
+    - "BF-BOF/iron_ore"
+    - "BF-BOF/coking_coal"
+    - "NG-DRI-EAF/iron_ore"
+  intensity_overrides:
+    - route: "BF-BOF"
+      resource: "coking_coal"
+      value: 0.89
+      provenance: "EXTERNAL"
+      rationale: "DATA CLOSURE ROUND 3 promotion: IMC-2021 (Ministry of Coal) 161 Mt coking coal / 181 Mt BF-route steel by FY2030 = 0.889 t/t, Table 1 pp.10-11. Caveat: FY2030 planning-demand basis, ex-PCI."
+    - route: "Scrap-EAF"
+      resource: "scrap"
+      value: 1.05
+      provenance: "FROZEN_EXTERNAL"
+      rationale: "PHASE 20 promotion (RULE ZERO COMPLETE): Xylia et al. 2018, Energy Efficiency 11(5):1055-1075, Table 2 p.1063 — EAF route scrap input 1.05 t/t crude steel (100% scrap metallic charge; melt yield ~95.2%); corroborated by IEA Iron & Steel Technology Roadmap 2020 Ch.1 notes (metallic input 1.05-1.2 t/t, extract line 1086). worldsteel 0.88/0.71 are the BLENDED recycled-EAF route (boundary mismatch, NOT used). Uncertainty bounds 1.00-1.15 retained. Shared registry stays null for baseline invariance."

@@ -1,0 +1,10 @@
+# Batch configuration file listing reproducible steel model runs
+runs:
+  - configs/runs/mode_a_baseline.yaml
+  - configs/runs/mode_b.yaml
+  - configs/runs/mode_b_scrap.yaml
+  - configs/runs/mode_b_deployment.yaml
+  - configs/runs/mode_b_learning.yaml
+  - configs/runs/mode_b_uncertainty.yaml
+  - configs/runs/v4_benchmark.yaml
+  - configs/runs/full_integrated.yaml

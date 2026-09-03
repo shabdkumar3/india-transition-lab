@@ -1,0 +1,27 @@
+# Reproducible Run Configuration: Mode A Data-Closed Candidate — PHASE 20
+# FINAL SCIENTIFIC DATA RESOLUTION
+#
+# Uses the Phase-20 data-closed candidate optimization config
+# (baseline_data_closed_phase20.yaml): identical to the official baseline
+# EXCEPT two RULE-ZERO promoted parameters injected via
+# provenance_gating.intensity_overrides:
+#   - BF-BOF/coking_coal = 0.89 t/t (IMC-2021, round-3 promotion)
+#   - Scrap-EAF/scrap    = 1.05 t/t (Xylia et al. 2018 Table 2 p.1063 +
+#                                    IEA corroboration; PHASE 20 promotion)
+#
+# No intensities_path override: the loader defaults to the shared registry
+# (configs/resources/steel_intensities.yaml), whose values are byte-for-byte
+# unchanged so the official baseline stays invariant. The stale round-1
+# configs/resources/steel_intensities_data_closed.yaml is NOT referenced.
+#
+# The candidate enables the SAME three FROZEN-economics routes as the
+# baseline (BF-BOF, NG-DRI-EAF, Scrap-EAF). Coal-DRI-IF/EAF and H2-DRI-EAF
+# remain EXTERNAL_PENDING/DEFERRED and stay disabled — documented finding.
+base_config: ../optimization/baseline_data_closed_phase20.yaml
+overrides:
+  mode: MODE_A
+  use_endogenous_learning: false
+  use_dynamic_scrap: false
+  use_deployment_dynamics: false
+  use_m1_electrolyser_learning: false
+  use_exogenous_electrolyser_cost_curve: false

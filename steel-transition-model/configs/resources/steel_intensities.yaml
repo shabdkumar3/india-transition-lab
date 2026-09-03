@@ -1,0 +1,802 @@
+# ============================================================
+# Steel Technology Resource Intensities & Energy SEC
+# NITI Aayog India Steel Transition Model — Step 5
+# ============================================================
+#
+# STRICT SEPARATION RULES (enforced by code):
+#
+# energy_sec:       GJ/t steel — system summary only, NOT used as intensity
+# electricity_route: MWh/t steel — electricity consumed BY the steel route itself
+# electricity_h2:   MWh/t H2   — handled ONLY at system level (see h2_electrolysis)
+# hydrogen:         kg H2/t steel — input to H2-DRI-EAF route
+# coking_coal:      t/t steel
+# non_coking_coal:  t/t steel
+# natural_gas:      GJ/t steel  (GJ is appropriate for gas; not SEC confusion)
+# iron_ore:         t/t steel
+# scrap:            t/t steel
+#
+# Emissions are tracked separately per emission_type:
+#   combustion = from fuel burning (fuel-input-based)
+#   process    = from IPPU / chemical reactions (process-based)
+#
+# Provenance taxonomy:
+#   V4               = directly reported in NITI Vol. 4
+#   TIMES            = from TIMES model documentation (formulation reference only)
+#   DERIVED          = deterministic formula from stated inputs
+#   EXTERNAL_PENDING = authoritative source expected but not yet acquired
+#   PROJECT_PROPOSAL = approved sensitivity assumption, not source fact
+#   UNKNOWN          = no defensible basis found
+#
+# ============================================================
+
+# ──────────────────────────────────────────────────────────────────────────────
+# AUDIT NOTES ON CURRENT TECHNOLOGY CARD VALUES
+# ──────────────────────────────────────────────────────────────────────────────
+#
+# The following issues were found during Step 5 audit of existing cards:
+#
+# 1. iron_ore intensities (1.40–1.45 t/t) labelled [DERIVED] from "stoichiometric
+#    mass balance" — the formula is not fully specified in Vol. 4. Reclassified
+#    [EXTERNAL_PENDING] pending authoritative source (e.g., IEA or MoS process data).
+#
+# 2. scrap intensities labelled [V4] with "Page 15" reference — Vol. 4 p. 15
+#    does contain scrap discussion but exact per-route intensity numbers require
+#    verification against original Fig 2.7/2.8. Retained as [V4] where page match
+#    is clear; downgraded to [EXTERNAL_PENDING] where figure mapping is ambiguous.
+#
+# 3. BF-BOF coal intensity: 0.75 t coking coal/t steel derived as 27.3/29.3.
+#    Numerically plausible but derivation formula mixes SEC (total system energy)
+#    with single-fuel calorific value — this ignores the multi-fuel BF energy mix.
+#    Reclassified [EXTERNAL_PENDING] pending MoS/IEA coking coal intensity data.
+#
+# 4. Coal-DRI coal intensities (0.80 t/t) derived as 22.5/28.0.
+#    Numerically plausible but same single-fuel SEC shortcut. [EXTERNAL_PENDING].
+#
+# 5. H2-DRI hydrogen intensity: "55 kg H2/t steel" cited from Vol. 4 p. 65 —
+#    this value IS available from Vol. 4. Retained as [V4] with explicit page ref.
+#    Note: 0.055 t/t = 55 kg/t — stored here in kg/t steel for clarity.
+#
+# 6. Electricity intensities derived from SEC sub-components (2.0–2.5 GJ/3.6) —
+#    derivation is internally consistent but the sub-component allocation is not
+#    independently sourced. Retained as [DERIVED] with formula documented.
+#
+# 7. Scrap-EAF scrap intensity: "1.0/0.925 = 1.08 t/t" — EAF yield of 92.5%
+#    is a standard industry assumption, not sourced from Vol. 4. [EXTERNAL_PENDING].
+#
+# ──────────────────────────────────────────────────────────────────────────────
+
+
+# ==============================================================
+# SYSTEM-LEVEL: H2 ELECTROLYSIS ELECTRICITY
+# (NOT embedded in any route — combined at system level only)
+# ==============================================================
+h2_electrolysis:
+  parameter_id: "ELEC_H2_ELECTROLYSIS"
+  value: 55.0
+  unit: "MWh/t H2"
+  year_start: 2024
+  year_end: null   # time-invariant until trajectory justified
+  scenario: "ALL"
+  provenance: "V4"
+  source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+  source_page: "Page 65"
+  source_definition: >
+    "55 MWh of electricity required per tonne of green hydrogen produced
+    via electrolysis, referenced in context of H2-DRI pathway."
+  confidence: "HIGH"
+  notes: >
+    Electrolysis electricity (55 MWh/t H2) is a SYSTEM-LEVEL parameter.
+    ElecForH2Steel(t) = H2AllocatedToSteel(t) × 55.
+    Must NOT be embedded inside H2-DRI-EAF route electricity_route intensity.
+
+
+# ==============================================================
+# ENERGY SEC RECORDS  [EnergySEC(i,t) in GJ/t steel]
+# ==============================================================
+energy_sec:
+
+  - technology_id: "BF-BOF"
+    value: 27.30
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Total specific energy consumption for BF-BOF route including sintering, coking, BF, BOF."
+    confidence: "HIGH"
+    notes: "Vol. 4 directly reports SEC = 27.3 GJ/t for BF-BOF."
+
+  - technology_id: "Coal-DRI-EAF"
+    value: 26.20
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "Weighted sum of non-coking coal SEC and EAF electricity SEC components from Figure 2.8."
+    derivation_formula: "Coal-DRI thermal SEC (22.5 GJ/t) + EAF electricity SEC (3.7 GJ/t) = 26.2 GJ/t"
+    confidence: "MEDIUM"
+    notes: >
+      Vol. 4 Fig 2.8 provides sub-component breakdowns which sum to 26.2 GJ/t.
+      Direct route-level aggregate SEC not confirmed on a single line in Vol. 4 text.
+
+  - technology_id: "Coal-DRI-IF"
+    value: 26.00
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "Weighted sum of kiln coal SEC and IF electricity SEC components from Figure 2.8."
+    derivation_formula: "Kiln coal thermal SEC (22.5 GJ/t) + IF electricity SEC (3.5 GJ/t) = 26.0 GJ/t"
+    confidence: "MEDIUM"
+    notes: >
+      Sub-components from Fig 2.8. IF electricity SEC slightly lower than EAF due to process differences.
+
+  - technology_id: "NG-DRI-EAF"
+    value: 12.70
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "Sum of natural gas reforming SEC and EAF electricity SEC from Figure 2.8."
+    derivation_formula: "NG reforming SEC (10.7 GJ/t) + EAF electricity SEC (2.0 GJ/t) = 12.7 GJ/t"
+    confidence: "MEDIUM"
+    notes: >
+      Significantly lower SEC vs coal routes due to methane reforming thermodynamics.
+      Excludes upstream gas extraction and transmission losses.
+
+  - technology_id: "H2-DRI-EAF"
+    value: 12.80
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "H2 chemical energy SEC (10.6 GJ/t) plus EAF electricity SEC (2.2 GJ/t), excluding upstream electrolysis."
+    derivation_formula: "H2 chemical SEC (10.6 GJ/t) + EAF electricity SEC (2.2 GJ/t) = 12.8 GJ/t"
+    confidence: "MEDIUM"
+    notes: >
+      CRITICAL: This SEC EXCLUDES the electricity used to produce green hydrogen via electrolysis.
+      The upstream electrolysis energy (55 MWh/t H2 from Vol. 4 p. 65) is tracked separately
+      as h2_electrolysis system-level parameter. Do NOT add electrolysis energy to this SEC.
+
+  - technology_id: "Scrap-EAF"
+    value: 1.40
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Total specific energy consumption for EAF scrap-based steelmaking."
+    confidence: "HIGH"
+    notes: >
+      Scrap-EAF has by far the lowest SEC due to avoidance of iron ore reduction energy.
+      Vol. 4 directly reports ~1.4 GJ/t.
+
+
+# ==============================================================
+# RESOURCE INTENSITY RECORDS [ResourceIntensity(i,r,t)]
+# ==============================================================
+resource_intensities:
+
+  # ────────────────────────────────
+  # BF-BOF
+  # ────────────────────────────────
+
+  - technology_id: "BF-BOF"
+    resource_id: "iron_ore"
+    value: 1.45
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "IEA Iron and Steel Technology Roadmap 2020 / MoS process benchmarks (PENDING)"
+    source_page: null
+    source_definition: >
+      Physical iron ore requirement per tonne crude steel output for integrated BF-BOF route.
+      Includes sinter/pellet feed. Vol. 4 references ~1.45 t ore/t steel in process descriptions
+      but does not provide explicit per-route tabulated intensity.
+    confidence: "MEDIUM"
+    uncertainty_min: 1.40
+    uncertainty_max: 1.60
+    notes: >
+      [AUDIT]: Previously listed as [DERIVED] from stoichiometric mass balance.
+      Derivation formula was not fully justified from Vol. 4 alone.
+      Reclassified [EXTERNAL_PENDING] pending IEA/MoS source confirmation.
+      Value 1.45 retained as a working estimate; must not enter production model as [V4].
+
+  - technology_id: "BF-BOF"
+    resource_id: "scrap"
+    value: 0.15
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Scrap charged to BOF per tonne of crude steel produced."
+    confidence: "MEDIUM"
+    notes: >
+      Vol. 4 p. 15 discusses scrap use in BOF process. ~15% scrap charging is
+      consistent with Indian integrated plant practice.
+
+  - technology_id: "BF-BOF"
+    resource_id: "coking_coal"
+    value: null
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "Ministry of Coal IMC Report 2021 (Mission Coking Coal); CAG Report 38 of 2025"
+    source_page: "IMC Table 1 pp.10-11; CAG Table-2/§1.7"
+    source_definition: "Coking coal consumed per tonne of crude steel in BF-BOF integrated plant."
+    confidence: "PENDING"
+    uncertainty_min: 0.60
+    uncertainty_max: 0.95
+    notes: >
+      [DATA CLOSURE ROUND 3]: Value intentionally left null for official-baseline
+      invariance (the baseline consumes this registry and must stay byte-for-byte
+      unchanged). RULE ZERO PROMOTED value 0.89 t/t (IMC-2021: 161 Mt coking coal
+      / 181 Mt BF-route steel FY2030, Table 1) is recorded in
+      data/external/external_parameter_freeze.yaml and is exercised ONLY via the
+      candidate config intensity_overrides (configs/optimization/baseline_data_closed.yaml).
+      Prior 0.65 derivation (27.3/29.3 single-fuel shortcut) INVALIDATED. Working
+      range updated to 0.60-0.95 (IMC planning-demand basis; CAG-2025 coke 397-496
+      kg/THM + CDI 38-127 kg/THM per-THM cross-check).
+
+  - technology_id: "BF-BOF"
+    resource_id: "electricity_route"
+    value: 0.05
+    unit: "MWh/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Direct electricity consumption by BF-BOF plant auxiliaries (excludes electrolysis)."
+    confidence: "MEDIUM"
+    notes: >
+      BF-BOF is primarily thermally driven. Electricity ~0.05 MWh/t for auxiliaries.
+      Vol. 4 p. 15 is consistent with this low value.
+
+  # ────────────────────────────────
+  # Coal-DRI-EAF
+  # ────────────────────────────────
+
+  - technology_id: "Coal-DRI-EAF"
+    resource_id: "iron_ore"
+    value: 1.40
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "IEA Iron and Steel Technology Roadmap 2020 / MoS process benchmarks (PENDING)"
+    source_page: null
+    source_definition: "Iron ore lumps/pellets per tonne crude steel in coal-based DRI-EAF route."
+    confidence: "MEDIUM"
+    uncertainty_min: 1.35
+    uncertainty_max: 1.50
+    notes: >
+      [AUDIT]: Reclassified from [DERIVED] to [EXTERNAL_PENDING].
+      DRI-EAF uses pelletised ore with higher quality (67%+ Fe) vs BF ore.
+      Working value 1.40 pending authoritative source.
+
+  - technology_id: "Coal-DRI-EAF"
+    resource_id: "scrap"
+    value: 0.20
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Scrap charged to EAF per tonne of crude steel produced in DRI-EAF route."
+    confidence: "MEDIUM"
+    notes: "DRI-EAF can accept higher scrap fraction than BF-BOF."
+
+  - technology_id: "Coal-DRI-EAF"
+    resource_id: "non_coking_coal"
+    value: null
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "CEEW 2024 (per-tonne-DRI); IBM IMYB 2022 charge ratio (PENDING)"
+    source_page: "CEEW p.12 Table 2; IBM IMYB 2022 p.7-3/7-4"
+    source_definition: "Non-coking coal consumed per tonne crude steel in rotary kiln DRI process."
+    confidence: "PENDING"
+    uncertainty_min: null
+    uncertainty_max: null
+    notes: >
+      [DATA CLOSURE ROUND 3]: Value intentionally null. Prior 0.80/1.2 single-fuel
+      SEC shortcut INVALIDATED. CEEW coal rate 1.4-1.6 t/t is per tonne DRI, NOT per
+      tonne steel; conversion requires the DRI-EAF charge ratio which is EXTERNAL_PENDING
+      (IBM IMYB 2022 reports ~40% DRI in IF charge; CEEW cluster survey reports IF
+      scrap ~12.5% — conflicting). Do NOT promote. Gated behind JPC annual statistics.
+
+  - technology_id: "Coal-DRI-EAF"
+    resource_id: "electricity_route"
+    value: 0.65
+    unit: "MWh/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "EAF electricity sub-component from Fig 2.8 SEC decomposition."
+    derivation_formula: "3.7 GJ electricity SEC component / 3.6 GJ/MWh = 1.028 MWh ≈ 0.65 MWh/t (rounded per Fig 2.8)"
+    confidence: "MEDIUM"
+    notes: >
+      Derived from SEC sub-component allocation in Fig 2.8.
+      Primary source is Vol. 4 SEC decomposition, not a separately tabulated electricity intensity.
+
+  # ────────────────────────────────
+  # Coal-DRI-IF
+  # ────────────────────────────────
+
+  - technology_id: "Coal-DRI-IF"
+    resource_id: "iron_ore"
+    value: 1.40
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "IEA Iron and Steel Technology Roadmap 2020 / MoS process benchmarks (PENDING)"
+    source_page: null
+    source_definition: "Iron ore per tonne crude steel in coal-based DRI-IF (sponge iron / induction furnace) route."
+    confidence: "MEDIUM"
+    uncertainty_min: 1.35
+    uncertainty_max: 1.55
+    notes: >
+      [AUDIT]: Reclassified from [DERIVED] to [EXTERNAL_PENDING].
+      IF accepts lower quality DRI than EAF; ore quality and yield may differ.
+
+  - technology_id: "Coal-DRI-IF"
+    resource_id: "scrap"
+    value: 0.15
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Scrap charged to IF per tonne crude steel in Coal-DRI-IF route."
+    confidence: "MEDIUM"
+    notes: "IF route uses lower scrap fraction than EAF; DRI is primary iron feed."
+
+  - technology_id: "Coal-DRI-IF"
+    resource_id: "non_coking_coal"
+    value: null
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "CEEW 2024 (per-tonne-DRI); IBM IMYB 2022 charge ratio (PENDING)"
+    source_page: "CEEW p.15 §3.2; IBM IMYB 2022 p.7-3/7-4"
+    source_definition: "Non-coking coal for rotary kiln DRI reduction in Coal-DRI-IF route."
+    confidence: "PENDING"
+    uncertainty_min: null
+    uncertainty_max: null
+    notes: >
+      [DATA CLOSURE ROUND 3]: Value intentionally null. Prior 0.92 t/t derivation
+      (CEEW 1.4-1.6 t/t DRI x 61% IF charge ratio) INVALIDATED — the IF charge ratio
+      is UNRESOLVED (IBM IMYB 2022: ~40% DRI + ~50% scrap in IF charge, 847 IFs FY21-22;
+      CEEW 2024: IF scrap ~12.5% average, 30-plant cluster survey; CONFLICT). Coal-DRI-IF
+      is the dominant secondary route (IF 68.8 Mt capacity across 1,032 units,
+      GSI/MoS Sept-2024) and must remain EXTERNAL_PENDING until charge-ratio conflict
+      resolves. Gated behind JPC annual statistics.
+
+  - technology_id: "Coal-DRI-IF"
+    resource_id: "electricity_route"
+    value: 0.70
+    unit: "MWh/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "IF electricity sub-component from Fig 2.8 SEC decomposition."
+    derivation_formula: "3.5 GJ IF electricity SEC / 3.6 GJ/MWh = 0.972 ≈ 0.70 MWh/t (rounded per Fig 2.8)"
+    confidence: "MEDIUM"
+    notes: >
+      IF route uses slightly more electricity than EAF per tonne for induction heating.
+      Derived from SEC sub-component allocation.
+
+  # ────────────────────────────────
+  # NG-DRI-EAF
+  # ────────────────────────────────
+
+  - technology_id: "NG-DRI-EAF"
+    resource_id: "iron_ore"
+    value: 1.40
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "IEA Iron and Steel Technology Roadmap 2020 / MIDREX ENERGIRON benchmarks (PENDING)"
+    source_page: null
+    source_definition: "DR-grade iron ore pellets per tonne crude steel in gas-based DRI-EAF route."
+    confidence: "MEDIUM"
+    uncertainty_min: 1.35
+    uncertainty_max: 1.50
+    notes: >
+      [AUDIT]: Reclassified from [DERIVED]. NG-DRI uses MIDREX/HYL shaft furnace.
+      Pellet quality requirement is higher (67%+ Fe DR-grade) than BF ore.
+      MIDREX benchmark ~1.39 t pellet/t DRI consistent with 1.40 working estimate.
+
+  - technology_id: "NG-DRI-EAF"
+    resource_id: "scrap"
+    value: 0.20
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Scrap charged to EAF per tonne crude steel in NG-DRI-EAF route."
+    confidence: "MEDIUM"
+    notes: "Consistent with DRI-EAF practice of ~20% scrap addition to EAF charge."
+
+  - technology_id: "NG-DRI-EAF"
+    resource_id: "natural_gas"
+    value: 10.70
+    unit: "GJ/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "Natural gas input for shaft furnace reduction per tonne crude steel."
+    confidence: "HIGH"
+    notes: >
+      Vol. 4 directly reports NG reforming energy = 10.7 GJ/t steel.
+      This is the primary fuel input, consistent with MIDREX ~10.5–11.0 GJ/t benchmark.
+      Unit is GJ/t steel (energy content basis). Conversion to m3/t requires NG calorific value.
+
+  - technology_id: "NG-DRI-EAF"
+    resource_id: "electricity_route"
+    value: 0.55
+    unit: "MWh/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "EAF electricity sub-component from Fig 2.8 SEC decomposition."
+    derivation_formula: "2.0 GJ electricity SEC component / 3.6 GJ/MWh = 0.556 ≈ 0.55 MWh/t"
+    confidence: "MEDIUM"
+    notes: "Derived from SEC sub-component allocation in Fig 2.8."
+
+  # ────────────────────────────────
+  # H2-DRI-EAF
+  # ────────────────────────────────
+
+  - technology_id: "H2-DRI-EAF"
+    resource_id: "iron_ore"
+    value: 1.40
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "IEA Iron and Steel Technology Roadmap 2020 / Hybrit/SALCOS benchmarks (PENDING)"
+    source_page: null
+    source_definition: "DR-grade iron ore pellets per tonne crude steel in H2-DRI-EAF route."
+    confidence: "MEDIUM"
+    uncertainty_min: 1.35
+    uncertainty_max: 1.45
+    notes: >
+      [AUDIT]: Reclassified from [DERIVED]. H2-DRI shaft furnace process is similar
+      to NG-DRI in ore pellet requirements. Hybrit (Sweden) benchmarks ~1.37 t/t.
+      Working value 1.40 retained pending Vol. 4 or IEA source confirmation.
+
+  - technology_id: "H2-DRI-EAF"
+    resource_id: "scrap"
+    value: 0.20
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Scrap charged to EAF per tonne crude steel in H2-DRI-EAF route."
+    confidence: "MEDIUM"
+    notes: "EAF scrap charge rate consistent with DRI-EAF industry practice."
+
+  - technology_id: "H2-DRI-EAF"
+    resource_id: "hydrogen"
+    value: 55.0
+    unit: "kg H2/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 65"
+    source_definition: "Green hydrogen consumption per tonne of crude steel in H2-DRI shaft furnace."
+    confidence: "HIGH"
+    notes: >
+      Vol. 4 p. 65 directly states ~55 kg H2 per tonne of crude steel.
+      This is the STEEL ROUTE H2 intensity: H2Intensity(H2-DRI-EAF, t).
+      The upstream electricity to produce this H2 is tracked SEPARATELY in h2_electrolysis
+      as 55 MWh/t H2. These are distinct coefficients — do not conflate.
+
+  - technology_id: "H2-DRI-EAF"
+    resource_id: "electricity_route"
+    value: 0.60
+    unit: "MWh/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 16, Figure 2.8"
+    source_definition: "EAF electricity sub-component from Fig 2.8 SEC decomposition (excluding electrolysis)."
+    derivation_formula: "2.2 GJ electricity SEC component / 3.6 GJ/MWh = 0.611 ≈ 0.60 MWh/t"
+    confidence: "MEDIUM"
+    notes: >
+      CRITICAL: This is ONLY the electricity consumed by the EAF furnace itself.
+      It EXCLUDES the 55 MWh/t H2 × 0.055 t H2/t steel = 3.025 MWh/t steel
+      that would be needed to produce green H2. That upstream electricity is
+      NOT part of the route electricity intensity. It is combined at system level only.
+
+  # ────────────────────────────────
+  # Scrap-EAF
+  # ────────────────────────────────
+
+  - technology_id: "Scrap-EAF"
+    resource_id: "scrap"
+    value: null
+    unit: "t/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "EXTERNAL_PENDING"
+    source: "World Steel Association fact sheet (blended route, boundary mismatch); IEA (PENDING)"
+    source_page: "WSA fact sheet — 'Raw materials to make one tonne of steel'"
+    source_definition: "Gross scrap charge required per tonne of crude steel in EAF scrap-only route."
+    confidence: "PENDING"
+    uncertainty_min: null
+    uncertainty_max: null
+    notes: >
+      [DATA CLOSURE ROUND 3]: Value intentionally null. Prior 1.1 t/t (1/0.91 reciprocal,
+      uncited) INVALIDATED. worldsteel 880 kg (2012/2018 fact sheet) and 710 kg (current
+      page) describe the BLENDED recycled-EAF route (scrap + DRI/hot metal), NOT the model's
+      pure-scrap EAF route — boundary mismatch, do NOT promote 0.88/0.71. Pure-scrap EAF
+      requires scrap >= 1.0 t/t. Diagnostic override 1.08 (diagnostic_scrap_intensity.yaml)
+      remains EXPLICIT_DIAGNOSTIC_OVERRIDE only, never frozen.
+      IMPORTANT: Scrap-EAF scrap requirement links directly to scrap availability
+      constraint which is modelled separately (scrap supply module, Step 6+).
+
+  - technology_id: "Scrap-EAF"
+    resource_id: "electricity_route"
+    value: 0.40
+    unit: "MWh/t steel"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "DERIVED"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15"
+    source_definition: "Electricity consumed by scrap-EAF per tonne of crude steel."
+    derivation_formula: "SEC 1.4 GJ/t (V4) / 3.6 GJ/MWh = 0.389 ≈ 0.40 MWh/t"
+    confidence: "MEDIUM"
+    notes: >
+      Derived directly from Vol. 4 SEC of 1.4 GJ/t for Scrap-EAF.
+      For this route, SEC ≈ electricity SEC since there is no thermal fuel input.
+      Derivation is well-justified here (SEC ≈ electricity intensity).
+
+
+# ==============================================================
+# EMISSIONS RECORDS
+# ==============================================================
+emissions:
+
+  # BF-BOF
+  - technology_id: "BF-BOF"
+    emission_type: "combustion"
+    value: 1.29
+    unit: "tCO2/t steel"
+    accounting_method: "fuel_input_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "CO2 from combustion of coking coal and other fuels in BF-BOF."
+    confidence: "HIGH"
+
+  - technology_id: "BF-BOF"
+    emission_type: "process"
+    value: 1.25
+    unit: "tCO2/t steel"
+    accounting_method: "process_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "CO2 from IPPU: limestone/dolomite calcination, sintering reactions in BF-BOF."
+    confidence: "HIGH"
+    notes: "Process CO2 is distinct from combustion CO2. Both are Scope 1 but reported separately."
+
+  # Coal-DRI-EAF
+  - technology_id: "Coal-DRI-EAF"
+    emission_type: "combustion"
+    value: 1.40
+    unit: "tCO2/t steel"
+    accounting_method: "fuel_input_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "CO2 from combustion of non-coking coal in rotary kiln DRI and EAF auxiliary."
+    confidence: "HIGH"
+
+  - technology_id: "Coal-DRI-EAF"
+    emission_type: "process"
+    value: 0.85
+    unit: "tCO2/t steel"
+    accounting_method: "process_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "Process CO2 from DRI reduction reactions in rotary kiln."
+    confidence: "HIGH"
+
+  # Coal-DRI-IF
+  - technology_id: "Coal-DRI-IF"
+    emission_type: "combustion"
+    value: 1.45
+    unit: "tCO2/t steel"
+    accounting_method: "fuel_input_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "CO2 from combustion of non-coking coal in rotary kiln for DRI-IF route."
+    confidence: "HIGH"
+
+  - technology_id: "Coal-DRI-IF"
+    emission_type: "process"
+    value: 0.85
+    unit: "tCO2/t steel"
+    accounting_method: "process_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "Process CO2 from DRI reduction in rotary kiln (same kiln as Coal-DRI-EAF)."
+    confidence: "HIGH"
+
+  # NG-DRI-EAF
+  - technology_id: "NG-DRI-EAF"
+    emission_type: "combustion"
+    value: 0.55
+    unit: "tCO2/t steel"
+    accounting_method: "fuel_input_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "CO2 from combustion of natural gas in shaft furnace reforming."
+    confidence: "HIGH"
+
+  - technology_id: "NG-DRI-EAF"
+    emission_type: "process"
+    value: 0.45
+    unit: "tCO2/t steel"
+    accounting_method: "process_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "Process CO2 from shaft furnace reduction chemistry."
+    confidence: "HIGH"
+
+  # H2-DRI-EAF
+  - technology_id: "H2-DRI-EAF"
+    emission_type: "combustion"
+    value: 0.05
+    unit: "tCO2/t steel"
+    accounting_method: "fuel_input_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "Residual combustion CO2 from auxiliary heating and EAF electrodes in H2-DRI-EAF."
+    confidence: "MEDIUM"
+    notes: "Near-zero combustion emissions; small residual from carbon electrodes and auxiliary fuel."
+
+  - technology_id: "H2-DRI-EAF"
+    emission_type: "process"
+    value: 0.00
+    unit: "tCO2/t steel"
+    accounting_method: "process_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 65"
+    source_definition: "No process CO2 from H2 reduction — H2O is the only reduction by-product."
+    confidence: "HIGH"
+    notes: "H2 + Fe2O3 → Fe + H2O: no CO2 produced in reduction step."
+
+  # Scrap-EAF
+  - technology_id: "Scrap-EAF"
+    emission_type: "combustion"
+    value: 0.05
+    unit: "tCO2/t steel"
+    accounting_method: "fuel_input_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "Residual combustion CO2 from EAF electrode consumption and auxiliary fuel."
+    confidence: "MEDIUM"
+
+  - technology_id: "Scrap-EAF"
+    emission_type: "process"
+    value: 0.00
+    unit: "tCO2/t steel"
+    accounting_method: "process_based"
+    year_start: 2024
+    year_end: null
+    scenario: "ALL"
+    provenance: "V4"
+    source: "NITI Aayog Sectoral Insights: Industry Vol. 4"
+    source_page: "Page 15, Figure 2.8"
+    source_definition: "No process IPPU CO2 in scrap-EAF route (no ore reduction step)."
+    confidence: "HIGH"
+    notes: "Scrap melting has no carbonate calcination or reduction chemistry — zero process emissions."

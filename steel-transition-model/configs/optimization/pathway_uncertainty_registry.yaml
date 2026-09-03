@@ -1,0 +1,155 @@
+# ============================================================
+# PATHWAY UNCERTAINTY REGISTRY — UNCERTAINTY-BOUNDED PATHWAY STUDY
+# India Steel Transition Model
+# ============================================================
+#
+# PURPOSE
+# -------
+# Registers the THREE unresolved empirical dimensions that the
+# Uncertainty-Bounded Pathway Study exercises as SCENARIO ALTERNATIVES:
+#
+#   1. Scrap-EAF scrap intensity           (pure-scrap EAF charge, t/t steel)
+#   2. Coal-DRI-IF DRI charge ratio        (t DRI per t steel) and the CEEW
+#      per-tonne-DRI coal / ore rates used to derive per-tonne-steel intensities
+#   3. Existing-fleet scenario bounds      (per-route existing capacity, Mt)
+#
+# SCIENTIFIC STATUS (RULE ZERO)
+# -----------------------------
+# NOTHING in this file is frozen. Every entry is either:
+#   - a source-supported SCENARIO BOUND (lower/upper), with NO base value
+#     promoted where the centre is not source-backed, or
+#   - a discrete scenario ALTERNATIVE (documented in uncertainty_basis).
+# The values are exercised by the pathway scenario engine as scenario
+# constructions and are NEVER claimed as factual point estimates.
+#
+# Schema: identical to configs/optimization/uncertainty_registry.yaml
+# (UncertaintyParameter: parameter_id, base_value, lower_bound, upper_bound,
+# unit, provenance, uncertainty_basis, source). Bounds are validated by the
+# registry class (lower <= upper).
+#
+# ============================================================
+
+parameters:
+
+  # ------------------------------------------------------------------
+  # DIMENSION 1 — SCRAP-EAF SCRAP INTENSITY (t/t steel)
+  # ------------------------------------------------------------------
+  # PHASE 20 UPDATE: base_value PROMOTED to 1.05 (FROZEN_EXTERNAL) — Xylia et al.
+  # 2018, Energy Efficiency 11(5):1055-1075, Table 2 p.1063 (EAF route scrap input
+  # per tonne crude steel, 100% scrap metallic charge, melt yield ~95.2%),
+  # corroborated by IEA Roadmap 2020 Ch.1 notes (metallic input 1.05-1.2 t/t).
+  # worldsteel 0.88/0.71 describe the BLENDED recycled-EAF route (boundary
+  # mismatch) — NOT used. Scenario construction still exercises the two
+  # source-supported bounds SCRAP_LOW 1.0 / SCRAP_HIGH 1.15 (SCRAP_LEVELS
+  # module constant unchanged); 1.05 is the frozen centre, not a scenario level.
+  - parameter_id: "scrap_intensity_Scrap-EAF"
+    base_value: 1.05
+    lower_bound: 1.0
+    upper_bound: 1.15
+    unit: "t/t steel"
+    provenance: "FROZEN_EXTERNAL"
+    uncertainty_basis: >
+      PHASE 20: base value 1.05 t/t PROMOTED (Xylia et al. 2018, Energy
+      Efficiency 11(5):1055-1075, Table 2 p.1063 — EAF scrap input per tonne
+      crude steel; corroborated by IEA Roadmap 2020 metallic-input 1.05-1.2
+      t/t, extract line 1086). Scenario bounds SCRAP_LOW 1.0 / SCRAP_HIGH 1.15
+      retained and exercised by the pathway engine. worldsteel 0.88/0.71 are
+      the BLENDED recycled-EAF route (boundary mismatch) — NOT used.
+    source: "Xylia et al. 2018 Table 2 p.1063; IEA Roadmap 2020 Ch.1 notes; steel_intensities.yaml (Scrap-EAF/scrap record)"
+
+  # ------------------------------------------------------------------
+  # DIMENSION 2 — COAL-DRI-IF DRI CHARGE RATIO (t DRI / t steel)
+  # ------------------------------------------------------------------
+  # Discrete scenario ALTERNATIVES (NOT a continuous range, NOT a frozen
+  # parameter):
+  #   DRI_IBM  : IF metallic charge ~40% DRI   (IBM IMYB 2022, national
+  #              average, 847 IFs FY2021-22)
+  #   DRI_CEEW : IF DRI + other ~87.5%         (CEEW 2024, cluster survey;
+  #              IF scrap ~12.5% average)
+  # The two sources CONFLICT; neither 0.61 nor 0.80 is promoted. These are
+  # exercised as scenario constructions, never frozen.
+  - parameter_id: "dri_charge_ratio_IF"
+    base_value: null
+    lower_bound: 0.40
+    upper_bound: 0.875
+    unit: "t DRI / t steel"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: >
+      DISCRETE SCENARIO ALTERNATIVES, not a continuous range:
+      DRI_IBM = 0.40 (IBM IMYB 2022 IF metallic charge ~40% DRI + ~10%
+      cast/pig + ~50% scrap) vs DRI_CEEW = 0.875 (CEEW 2024 IF scrap
+      ~12.5% -> DRI + other ~87.5%). Sources CONFLICT (charge ratio
+      UNRESOLVED). 0.61 / 0.80 NOT promoted. No base value.
+    source: "IBM Indian Minerals Yearbook 2022 p.7-3/7-4; CEEW 2024 cluster survey (Raipur/Raigarh/Bellary)"
+
+  # CEEW per-tonne-DRI coal rate used to derive Coal-DRI-IF per-tonne-steel
+  # intensity: coal_intensity = charge_ratio x dri_coal_per_t_dri.
+  - parameter_id: "dri_coal_intensity_per_t_dri"
+    base_value: null
+    lower_bound: 1.4
+    upper_bound: 1.6
+    unit: "t coal / t DRI"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: "CEEW 2024 rotary-kiln coal rate range (per tonne DRI, NOT per tonne steel). Scenario construction uses range midpoint 1.5, disclosed."
+    source: "CEEW 2024, Table 2 p.12 (per-tonne-DRI basis)"
+
+  # CEEW per-tonne-DRI ore/pellet rate used to derive Coal-DRI-IF
+  # per-tonne-steel intensity: ore_intensity = charge_ratio x dri_ore_per_t_dri.
+  - parameter_id: "dri_ore_intensity_per_t_dri"
+    base_value: null
+    lower_bound: 1.4
+    upper_bound: 1.6
+    unit: "t ore / t DRI"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: "CEEW 2024 pellet/ore input range (per tonne DRI, NOT per tonne steel). Scenario construction uses range midpoint 1.5, disclosed."
+    source: "CEEW 2024, Section 3.2 p.15 (per-tonne-DRI basis)"
+
+  # ------------------------------------------------------------------
+  # DIMENSION 3 — EXISTING FLEET SCENARIO BOUNDS (Mt, per route)
+  # ------------------------------------------------------------------
+  # Bounds span the documented evidence. NO centre promoted: route-level
+  # FY25 crude-capacity split remains a documented GAP (JPC gated), so the
+  # loader flag existing_capacity_data_available stays False and
+  # route_transition_interpretability stays False — fleet scenarios are
+  # exercised through configuration (SurvivingExisting) but never claim
+  # route-level data completeness.
+  - parameter_id: "existing_capacity_BF-BOF_mt"
+    base_value: null
+    lower_bound: 57.9
+    upper_bound: 112.7
+    unit: "Mt"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: >
+      FLEET SCENARIO BOUNDS: lower 57.9 = documented BF-BOF plants
+      (SAIL 19.676 + RINL 7.3 + Tata 20.6 + JSPL 9.6 + NMDC 3.0; JSW excluded
+      as PROJECT_PROPOSAL); central 95.8 = GSI/MoS Sept-2024 BF hot-metal
+      capacity (FY23-24, 55 BF units); upper 112.7 = +15% BOF scrap
+      interpretation of hot-metal basis. Hot-metal-to-crude boundary is a
+      documented GAP.
+    source: "india_steel_fleet_register.yaml; GSI/MoS Sept-2024; RS/LS plant replies; MoS AR 2025-26"
+
+  - parameter_id: "existing_capacity_NG-DRI-EAF_mt"
+    base_value: null
+    lower_bound: 0.0
+    upper_bound: 9.0
+    unit: "Mt"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: >
+      FLEET SCENARIO BOUNDS: 0.0 (no NG-DRI promoted) to 9.0 (AM/NS India
+      Hazira NG-DRI-EAF, company disclosure, PROJECT_PROPOSAL). EAF
+      feedstock split (gas-DRI vs coal-DRI vs scrap) is NOT tabulated.
+    source: "india_steel_fleet_register.yaml (AMNS-HAZ-001); company disclosures 2024"
+
+  - parameter_id: "existing_capacity_Scrap-EAF_mt"
+    base_value: null
+    lower_bound: 27.61
+    upper_bound: 36.61
+    unit: "Mt"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: >
+      FLEET SCENARIO BOUNDS: residual of the 36.61 Mt EAF aggregate
+      (GSI/MoS Sept-2024) minus any allocated NG-DRI-EAF (36.61 - 9.0 =
+      27.61; 36.61 - 0.0 = 36.61). The residual includes the Coal-DRI-EAF
+      share (feedstock split unresolved) — disclosed upper-bound
+      interpretation for pure Scrap-EAF.
+    source: "india_steel_fleet_register.yaml (route_capacity_mtpa); GSI/MoS Sept-2024"

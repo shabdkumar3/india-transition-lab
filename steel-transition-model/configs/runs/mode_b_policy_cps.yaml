@@ -1,0 +1,14 @@
+# Reproducible Run Configuration: Mode B Policy — CPS (Step 20 Enhanced)
+# Approvals: Gate A, C, F (MODE_B_APPROVAL_GATES.md, 2026-08-14)
+# Gate B NOT approved: no Coal-DRI-EAF cutoff is imposed.
+# Step 20 (2026-08-19): Endogenous learning, carbon price, H2 cap, stranded
+#   costs, time-varying H2/electricity prices now ENABLED via mode_b_policy.yaml.
+base_config: ../optimization/mode_b_policy.yaml
+overrides:
+  mode: MODE_B
+  scenario_name: CPS
+  use_endogenous_learning: true
+  use_dynamic_scrap: true
+  use_deployment_dynamics: false
+  use_m1_electrolyser_learning: false
+  use_exogenous_electrolyser_cost_curve: false

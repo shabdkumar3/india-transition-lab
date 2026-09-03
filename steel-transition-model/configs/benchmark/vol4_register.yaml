@@ -1,0 +1,150 @@
+# ============================================================
+# VOL.4 BENCHMARK DATA REGISTER (Step 14)
+# India Steel Transition Model
+# ============================================================
+# Machine-readable register of PUBLISHED Vol.4 quantities used for the
+# benchmark. Source: NITI Aayog "Scenarios Towards Viksit Bharat and Net
+# Zero — Sectoral Insights: Industry" (Vol. 4), text extracted to
+# data/external/extracted/vol4_industry.txt.
+#
+# RULE: only quantities that Vol.4 actually publishes are registered.
+# Nothing is reconstructed beyond documented derivations (marked `derived`)
+# that use only published values (e.g. emission total = published intensity
+# x published production).
+# ============================================================
+
+# ------------------------------------------------------------------
+# CRUDE STEEL PRODUCTION (demand anchors) — identical in CPS and NZS
+# Source: Vol.4 prose p.64 (2024, 144.29), Table E1 / Figure 3.3 (2050,
+# 2070). 2024 value also equals MoS FY2023-24 production.
+# ------------------------------------------------------------------
+demand:
+  - {year: 2024, scenario: "BOTH", value: 144.29, unit: "Mt", source: "Vol.4 prose p.64 / steel_demand.csv", provenance: "V4"}
+  - {year: 2050, scenario: "BOTH", value: 624.00, unit: "Mt", source: "Vol.4 Table E1 / Figure 3.3 / prose p.64", provenance: "V4"}
+  - {year: 2070, scenario: "BOTH", value: 821.00, unit: "Mt", source: "Vol.4 Table E1 / Figure 3.3 / prose p.64", provenance: "V4"}
+
+# ------------------------------------------------------------------
+# TECHNOLOGY MIX, 2070 (share of crude steel production)
+# Source: Vol.4 prose p.66 (Section 3.2.1 Results). NZS BF-BOF is
+# explicitly "equipped with CCS"; the model has no CCUS representation.
+# Coal routes (Coal-DRI-EAF/IF) are not separately quantified in the prose.
+# ------------------------------------------------------------------
+technology_mix_2070:
+  CPS:
+    BF-BOF: 0.50
+    H2-DRI-EAF: 0.25
+    NG-DRI-EAF: 0.07
+    Scrap-EAF: 0.18
+    note: "published percentages; coal routes not separately quantified"
+  NZS:
+    BF-BOF: 0.10
+    H2-DRI-EAF: 0.50
+    Scrap-EAF: 0.40
+    note: "BF-BOF share is CCS-equipped; coal routes not separately quantified"
+
+# ------------------------------------------------------------------
+# SCRAP UTILISATION (share of steel from scrap-based EAF)
+# Source: Vol.4 Table 3.1 (CPS stays 20%), Figure 3.36 (NZS 2020=22%,
+# 2050=30%, 2070=40%), prose p.66.
+# ------------------------------------------------------------------
+scrap_share:
+  - {year: 2025, CPS: 0.20, NZS: 0.20, source: "Vol.4 Table 3.1 / prose p.66", provenance: "V4"}
+  - {year: 2050, CPS: 0.20, NZS: 0.30, source: "Vol.4 Table 3.1 / Figure 3.36", provenance: "V4"}
+  - {year: 2070, CPS: 0.20, NZS: 0.40, source: "Vol.4 Table 3.1 / Figure 3.36", provenance: "V4"}
+
+# ------------------------------------------------------------------
+# EMISSION INTENSITY (tCO2 per tonne crude steel, sector average)
+# Source: base 2.54 tCO2/tCS (2025, prose p.68); reduction percentages
+# p.68 ("CPS 44% by 2050, 62% by 2070; NZS 74% by 2050, 95% by 2070").
+# The per-year intensity below is DERIVED = 2.54 x (1 - reduction).
+# Caveat: prose also cites ~2.1 tCO2/tCS (2025, estimated) and a BF-BOF
+# route average 2.36 tCO2/tCS (Elango et al. 2023); the 2.54 base is the
+# sector average used by the Vol.4 scenario analysis.
+# ------------------------------------------------------------------
+emission_intensity:
+  base_2025: 2.54
+  unit: "tCO2/t crude steel"
+  reduction:
+    CPS: {2050: 0.44, 2070: 0.62}
+    NZS: {2050: 0.74, 2070: 0.95}
+  note: "derived values documented in BENCHMARK_DATA_REGISTER.md"
+
+# ------------------------------------------------------------------
+# FINAL ENERGY CONSUMPTION, steel sector (Mtoe)
+# Source: prose p.66 (69 Mtoe 2025 -> 251 CPS / 155 NZS by 2070).
+# ------------------------------------------------------------------
+final_energy_mtoe:
+  - {year: 2025, CPS: 69.0, NZS: 69.0, source: "Vol.4 prose p.66", provenance: "V4"}
+  - {year: 2070, CPS: 251.0, NZS: 155.0, source: "Vol.4 prose p.66", provenance: "V4"}
+
+# ------------------------------------------------------------------
+# GREEN HYDROGEN IN STEEL (Mt H2, steel-specific demand)
+# Source: prose p.132 (Figure 3.35 discussion).
+# ------------------------------------------------------------------
+green_h2_steel_mt:
+  - {year: 2050, CPS: 2.0, NZS: 13.0, source: "Vol.4 prose p.132", provenance: "V4"}
+  - {year: 2070, CPS: 13.3, NZS: 28.2, source: "Vol.4 prose p.132", provenance: "V4"}
+
+# ------------------------------------------------------------------
+# COAL USE, steel sector (Mtoe) — approximate published figures
+# Source: prose p.67 ("combined coking+non-coking coal excluding non-coking
+# coal for electricity generation: 55 Mtoe in 2025 to ~160 Mtoe by 2070
+# (CPS); NZS falls to 26 Mtoe by 2070, confined mainly to residual BF-BOF
+# with CCS").
+# ------------------------------------------------------------------
+coal_use_mtoe:
+  - {year: 2025, CPS: 55.0, NZS: null, source: "Vol.4 prose p.67", provenance: "V4"}
+  - {year: 2070, CPS: 160.0, NZS: 26.0, source: "Vol.4 prose p.67", provenance: "V4"}
+
+# ------------------------------------------------------------------
+# ELECTRICITY USE, steel sector (Mtoe) — includes captive generation
+# Source: prose p.67 (CPS: 9 Mtoe 2025 -> ~41 Mtoe 2070; NZS captive clean
+# electricity ~17 Mtoe 2070). Boundary includes CAPTIVE power, which the
+# current model does not represent.
+# ------------------------------------------------------------------
+electricity_mtoe:
+  # Vol.4 boundary includes captive electricity generation, which the model
+  # does not represent (comparison status: NOT_COMPARABLE).
+  - {year: 2025, CPS: 9.0, NZS: null, source: "Vol.4 prose p.67", provenance: "V4"}
+  - {year: 2070, CPS: 41.0, NZS: 17.0, source: "Vol.4 prose p.67", provenance: "V4"}
+
+# ------------------------------------------------------------------
+# ROUTE-SPECIFIC ENERGY SEC (GJ/t crude steel) — Vol.4 p.15, Figure 2.8
+# These are the values the model's technology cards reproduce.
+# ------------------------------------------------------------------
+route_sec_gj_t:
+  BF-BOF: 27.3
+  Scrap-EAF: 1.4
+  source: "Vol.4 p.15 Figure 2.8"
+  provenance: "V4"
+
+# ------------------------------------------------------------------
+# INVESTMENT (industry sector, USD trillion, 2025-2070)
+# Source: Table E1 (p.25) vs prose p.106 (Section 3.3.2). NOTE internal
+# contradiction: Table E1 lists CPS = 4.5 T; prose p.106 says CPS = 3.4 T
+# by 2070. NZS = 6.1 T total (2.2 T before 2050, 3.9 T after). Industry-
+# wide boundary; steel-specific investment is not published as a clean
+# number (prose gives steel = 12% of industry expansion CAPEX, ambiguous
+# base).
+# ------------------------------------------------------------------
+investment_usd_trillion:
+  NZS_total_2025_2070: 6.1
+  NZS_pre2050: 2.2
+  NZS_post2050: 3.9
+  CPS_by_2070_prose: 3.4
+  CPS_table_E1: 4.5
+  boundary: "industry sector, not steel-only"
+  contradiction_note: "Table E1 (CPS 4.5T) vs prose p.106 (CPS 3.4T) disagree"
+
+# ------------------------------------------------------------------
+# HISTORICAL / FLEET CONTEXT (published qualitative + quantitative)
+# ------------------------------------------------------------------
+fleet_context:
+  india_output_2024_25_mt: 152.18
+  scrap_share_2024: 0.21
+  bf_bof_share_2021_22: 0.44
+  emission_intensity_2025_estimated: 2.1
+  bf_bof_route_intensity_tco2_tcs: 2.36
+  sources:
+    - "Vol.4 prose p.41 (output FY2024-25, MoS/WSA 2025)"
+    - "Vol.4 prose p.43 (scrap 21% in 2024; BF-BOF 44% 2021-22 IEA 2020; intensity estimates p.68)"

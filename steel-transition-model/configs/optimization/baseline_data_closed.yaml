@@ -1,0 +1,301 @@
+# ============================================================
+# DATA-CLOSED CANDIDATE CONFIG (FINAL TARGETED DATA CLOSURE)
+# NITI Aayog India Steel Transition Model
+# ============================================================
+#
+# IDENTICAL to configs/optimization/baseline.yaml (official control)
+# EXCEPT one provenance_gating.intensity_overrides entry:
+#
+#   BF-BOF/coking_coal = 0.89 t/t  provenance EXTERNAL (IMC-2021, Table 1 pp.10-11)
+#
+# PURPOSE: exercise the RULE-ZERO promoted coking coal intensity from the
+# final targeted data closure WITHOUT touching the shared registry
+# (configs/resources/steel_intensities.yaml stays byte-for-byte null so the
+# official baseline objective 1,726,583 M USD is invariant).
+#
+# DATA CLOSURE ROUND 3 (recorded in data/external/external_parameter_freeze.yaml):
+#   - BF-BOF/coking_coal  : PROMOTED to 0.89 t/t via intensity_overrides.
+#                           IMC-2021: 161 Mt coking coal / 181 Mt BF-route steel
+#                           by FY2030 (Ministry of Coal, Table 1). Caveat:
+#                           FY2030 planning-demand basis, ex-PCI.
+#   - Scrap-EAF/scrap     : KEPT EXTERNAL_PENDING (worldsteel 0.88/0.71 are the
+#                           BLENDED recycled-EAF route; pure-scrap boundary needs
+#                           >= 1.0). No override injected here.
+#   - Coal-DRI routes     : DISABLED in this candidate (same as baseline — no
+#                           frozen full-plant economics). Non-coking coal & iron
+#                           ore DRI intensities stay EXTERNAL_PENDING; charge
+#                           ratio conflict (IBM IMYB 2022 vs CEEW 2024) is a
+#                           documented GAP.
+#   - existing capacity   : existing_capacity_mt_aggregate 200.333 kept as
+#                           context; existing_capacity_per_route_mt stays 0.0 for
+#                           all routes (route-level split GAP -> no fabrication;
+#                           loader flag existing_capacity_data_available = False).
+#
+# SCIENTIFIC STATUS: CANDIDATE (not the official control). Same gates as
+# baseline (MODE A, dynamic scrap disabled, M1 disabled, strict provenance).
+# The only effective difference vs baseline is the injected coking coal cost term.
+
+# ------------------------------------------------------------------
+# HORIZON
+# ------------------------------------------------------------------
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+# ------------------------------------------------------------------
+# DISCOUNTING
+# ------------------------------------------------------------------
+# The exact NITI/TIMES social discount rate is UNRESOLVED (registry
+# §12). The rate is a configurable scenario parameter; the default
+# 0.08 is a PROJECT_PROPOSAL baseline value (matching the IEA 2020
+# annualisation rate used to derive the frozen CAPEX cross-section).
+discount_rate:
+  value: 0.08            # [PROJECT_PROPOSAL] — easy to vary for sensitivity
+  provenance: "PROJECT_PROPOSAL"   # Step 8 §7 — never claimed as NITI/TIMES fact
+
+# ------------------------------------------------------------------
+# TECHNOLOGY ROUTES IN THE COSTED BASELINE
+# ------------------------------------------------------------------
+# ONLY routes with FROZEN full-plant economics enter the baseline.
+#   BF-BOF, NG-DRI-EAF, Scrap-EAF  -> IEA 2020 CAPEX/OPEX FROZEN
+#   Coal-DRI-EAF, Coal-DRI-IF      -> CAPEX/OPEX EXTERNAL_PENDING
+#                                     (IEA "DRI-EAF" is gas-based; MUST NOT
+#                                      be silently mapped to coal routes)
+#   H2-DRI-EAF                     -> full-plant CAPEX/OPEX EXTERNAL_PENDING
+#                                     (only electrolyser component frozen)
+# The pending routes are excluded from the costed baseline and are
+# reported as unresolved inputs (BASELINE_MILP_SPEC.md §Unresolved).
+enabled_routes:
+  - "BF-BOF"
+  - "NG-DRI-EAF"
+  - "Scrap-EAF"
+
+# ------------------------------------------------------------------
+# EXISTING CAPACITY (aggregate; tech-wise split UNKNOWN)
+# ------------------------------------------------------------------
+# IndiaCapacity (all routes) FY2024-25 = 200.333 Mt is FROZEN
+# [EXTERNAL, MOS AR 2025-26 Table 3.2.2]. Technology-wise existing
+# capacity is EXTERNAL_PENDING (JPC capacity-by-route not acquired) and
+# capacity is NEVER derived from production/PLF. Baseline treatment:
+# the aggregate is reported as context; per-route existing capacity is
+# ZERO so the model sizes new capacity to meet demand. Documented as
+# the resulting constraint (BASELINE_MILP_SPEC.md §5 treatment).
+#
+# DATA CLOSURE ROUND 3: route-level aggregates (BF hot-metal 95.8 /
+# EAF 36.61 / IF 68.8 Mt, GSI/MoS Sept-2024) are FROZEN CONTEXT only.
+# They are NOT mapped into existing_capacity_per_route_mt because (a) the
+# loader flag existing_capacity_data_available is hardcoded False
+# (model.py:312), and (b) mapping requires EAF feedstock split + BF
+# hot-metal-to-crude conversion that are unavailable (documented GAP —
+# see DATA_CLOSURE_GAPS.md and india_steel_fleet_register.yaml).
+existing_capacity_mt_aggregate: 200.333   # [EXTERNAL] context only
+existing_capacity_per_route_mt:
+  "BF-BOF": 0.0       # EXTERNAL_PENDING -> 0 (documented constraint)
+  "NG-DRI-EAF": 0.0
+  "Scrap-EAF": 0.0
+
+# ------------------------------------------------------------------
+# LIFETIME (investment-cycle lifetime for retirement logic)
+# ------------------------------------------------------------------
+# IEA InvestmentCycleLifetime = 25 years is FROZEN (registry §7,
+# IEA Roadmap 2020 p.30/p.41). Used as the uniform technology
+# economic lifetime in the baseline (no per-route values invented).
+# Typical technical lifetime (40 yr) is a Mode-B distinction.
+lifetime_years: 25       # [EXTERNAL] IEA investment-cycle lifetime
+
+# ------------------------------------------------------------------
+# TECHNOLOGY START YEARS (commercialization / availability start)
+# ------------------------------------------------------------------
+# Earliest year each route may commission new capacity. Values taken
+# from the technology cards' availability_start_year (commercialization
+# year). H2-DRI-EAF is listed for completeness but is DISABLED in this
+# baseline (EXTERNAL_PENDING full-plant economics), so its start year
+# is inert here.
+start_years:
+  "BF-BOF": 2024
+  "NG-DRI-EAF": 2024
+  "Scrap-EAF": 2024
+
+# ------------------------------------------------------------------
+# AVAILABILITY (physical operating bound on capacity utilisation)
+# ------------------------------------------------------------------
+# The 0.85-0.90 values on the technology cards are PROJECT_PROPOSAL /
+# temporary sensitivity values, NOT Vol. 4 facts (registry audit). They
+# are used in this control run ONLY because the Step 8 project
+# definition explicitly permits proposal-level parameters in the
+# baseline control configuration (identical to the 0.08 discount rate).
+# The run is therefore labelled PROPOSAL-PARAMETERIZED.
+#
+# DO NOT confuse these with the 80% PLF investment-sizing parameter
+# (Vol. 4 p.108): PLF is a COST-scaling assumption, availability is a
+# physical production bound (ACT <= avail * CAP). The baseline uses
+# availability ONLY as the physical bound; PLF is not applied.
+availability:
+  "BF-BOF": {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "NG-DRI-EAF": {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "Scrap-EAF": {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+
+# ------------------------------------------------------------------
+# ECONOMICS — IEA Iron & Steel Technology Roadmap 2020, p.30 Fig 1.10
+# (2019 USD; annualised CAPEX; O&M excl. energy and labour; combined
+# FOM+VOM — NO re-annualisation, NO double count; registry §6)
+# ------------------------------------------------------------------
+economics:
+  capex_annualised_usd_per_t:     # central values [EXTERNAL] FROZEN
+    "BF-BOF": 73.0
+    "NG-DRI-EAF": 95.0
+    "Scrap-EAF": 46.0
+  opex_fixed_usd_per_t:           # central values [EXTERNAL] FROZEN
+    "BF-BOF": 68.0
+    "NG-DRI-EAF": 87.0
+    "Scrap-EAF": 43.0
+  # VOM: EXTERNAL_PENDING for all routes (registry §6) -> 0 in baseline
+  vom_usd_per_t:
+    "BF-BOF": 0.0
+    "NG-DRI-EAF": 0.0
+    "Scrap-EAF": 0.0
+
+# ------------------------------------------------------------------
+# RESOURCE PRICES — IEA Roadmap 2020 (registry §9; central values)
+# ------------------------------------------------------------------
+# Prices are stored in their SOURCE units (registry §9, NEVER silently
+# reinterpreted). Each price entry carries EXPLICIT conversion metadata:
+#   source_unit        - unit as published in the registry/source
+#   target_unit        - unit the objective multiplies against the
+#                        registry intensity coefficient
+#   conversion_factor  - NUMERIC factor applied by the loader
+#   conversion_operation - "multiply" (converted = value * factor) or
+#                        "divide" (converted = value / factor)
+#   conversion_formula - human-readable formula (metadata only)
+#   provenance         - source attribution
+# The loader converts value -> cost-per-model-unit using ONLY the
+# configured conversion_factor / conversion_operation. Unit strings are
+# descriptive metadata; conversion is NEVER inferred from them (Step 8
+# final-polish review item 1).
+resource_prices:
+  iron_ore:
+    value: 80.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 60-100 central 80
+  scrap:
+    value: 250.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 200-300 central 250
+  natural_gas:
+    value: 6.0
+    source_unit: "USD/MBtu"
+    target_unit: "USD/GJ"
+    conversion_factor: 1.055    # 1 MBtu = 1.055 GJ (registry §9 gas basis)
+    conversion_operation: "divide"
+    conversion_formula: "USD/GJ = USD/MBtu / 1.055  (1 MBtu = 1.055 GJ, registry §9)"
+    provenance: "EXTERNAL"    # 2-10 central 6 (p.30/109); intensity in GJ/t steel
+  electricity:
+    value: 45.0
+    source_unit: "USD/MWh"
+    target_unit: "USD/MWh"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/MWh (no conversion: intensity in MWh/t steel)"
+    provenance: "EXTERNAL"    # 30-90 central 45
+  hydrogen:
+    value: 1.9
+    source_unit: "USD/kg"
+    target_unit: "USD/kg"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/kg (no conversion: intensity in kg H2/t steel)"
+    provenance: "EXTERNAL"    # PriceHydrogenIndia 2035 SDS central
+  # Coal prices FROZEN; coal INTENSITIES EXTERNAL_PENDING (null) so the
+  # coal cost terms are structurally present but contribute 0 until
+  # intensities are acquired (unresolved inputs; see spec). In THIS
+  # candidate, BF-BOF/coking_coal is injected via intensity_overrides below.
+  coking_coal:
+    value: 140.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 75-155 central 140
+  non_coking_coal:
+    value: 70.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"    # 35-80 central 70
+
+# ------------------------------------------------------------------
+# SCENARIO DEFINITIONS
+# ------------------------------------------------------------------
+# CPS and NZS share the SAME published crude steel demand anchors
+# (2024=144.29, 2050=624, 2070=821 Mt — Vol.4 Table 3.1). No
+# source-supported scenario-specific emission constraint exists in the
+# frozen registry, so the baseline demand path is scenario-invariant.
+scenarios:
+  - name: "CPS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+  - name: "NZS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+
+# ------------------------------------------------------------------
+# DYNAMIC SCRAP — MODE A GATE (Step 9)
+# ------------------------------------------------------------------
+# Step 9 adds a MODE B dynamic scrap circularity module (cohort-based
+# EOL scrap stock-flow accounting). MODE A is the frozen CONTROL
+# configuration: dynamic scrap is DISABLED here by explicit gate.
+#
+# Mode A must never silently consume Mode-B scrap assumptions: the
+# loader keeps the scrap engine OFF whenever dynamic_scrap.enabled is
+# false, and the Step-9 regression suite asserts the baseline objective
+# is byte-for-byte invariant to this gate.
+#
+# The full Mode-B configuration (historical cohorts, lifetime kernel,
+# collection/processing chain, import allowance) lives in
+# configs/optimization/mode_b_dynamic_scrap.yaml.
+dynamic_scrap:
+  enabled: false          # MODE A — dynamic scrap DISABLED (Step 8 hard stop)
+
+# ------------------------------------------------------------------
+# PROVENANCE GATING (Step 13 remediation, Task 1)
+# ------------------------------------------------------------------
+# Every registry intensity that becomes an optimization coefficient is
+# resolved through the provenance gate (steel_model.schema.provenance_policy).
+# EXTERNAL_PENDING / UNKNOWN values are NEVER silently converted to zero:
+# they require an EXPLICIT allowance below, otherwise the load FAILS.
+#
+# Allowances granted for THIS candidate (same four as baseline — the
+# value is retained as-is, including None -> 0 for coking_coal and scrap):
+#   - BF-BOF/iron_ore      : pending registry value 1.45 (kept as working value)
+#   - BF-BOF/coking_coal   : pending registry value None (null; coal cost term absent
+#                            IN THE REGISTRY — injected below via override)
+#   - NG-DRI-EAF/iron_ore  : pending registry value 1.4  (kept as working value)
+#   - Scrap-EAF/scrap      : pending registry value None (null; scrap cost term absent)
+#
+# intensity_overrides carries the promoted BF-BOF/coking_coal = 0.89 value.
+# provenance "EXTERNAL" (IMC-2021) — the override BYPASSES the pending gate
+# (established diagnostic pattern; see provenance_policy.resolve_intensity).
+# The shared registry value stays null, preserving official baseline invariance.
+provenance_gating:
+  policy: "strict"                     # only 'strict' is implemented
+  allow_proposal_parameters: true      # discount rate / availability are PROJECT_PROPOSAL
+  pending_intensity_allowances:
+    - "BF-BOF/iron_ore"
+    - "BF-BOF/coking_coal"
+    - "NG-DRI-EAF/iron_ore"
+    - "Scrap-EAF/scrap"
+  intensity_overrides:
+    - route: "BF-BOF"
+      resource: "coking_coal"
+      value: 0.89
+      provenance: "EXTERNAL"
+      rationale: "DATA CLOSURE ROUND 3 promotion: IMC-2021 (Ministry of Coal) 161 Mt coking coal / 181 Mt BF-route steel by FY2030 = 0.889 t/t, Table 1 pp.10-11. Recorded in external_parameter_freeze.yaml. Caveat: FY2030 planning-demand basis, ex-PCI. Scrap-EAF/scrap deliberately NOT overridden (stays EXTERNAL_PENDING)."

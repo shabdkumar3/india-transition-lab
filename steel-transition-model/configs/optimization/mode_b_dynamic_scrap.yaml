@@ -1,0 +1,349 @@
+# ============================================================
+# STEP 9 — MODE B DYNAMIC SCRAP CIRCULARITY CONFIGURATION
+# NITI Aayog India Steel Transition Model
+# ============================================================
+#
+# This is the MODE B configuration: identical to the Step 8 MODE A
+# control configuration (configs/optimization/baseline.yaml) EXCEPT
+# that dynamic_scrap is ENABLED. Running MODE A (baseline.yaml) must
+# reproduce the frozen Step 8 result byte-for-byte; this file is the
+# physical stock-flow enrichment (Step 9 §12).
+#
+# Dynamic scrap is a physical accounting extension ONLY:
+#   - Vol.4 demand anchors UNCHANGED
+#   - published demand anchors UNCHANGED
+#   - Vol.4 technology targets NOT reinterpreted
+#   - no ML, no endogenous learning, no deployment limits, no spatial
+#     constraints (Step 9 §2)
+#
+# Scientific interpretation (Step 9 §22): this module introduces an
+# explicit physical mechanism linking historical steel use to future
+# scrap availability. It is a MODEL ENRICHMENT — it does NOT "prove the
+# Vol.4 Scrap-EAF pathway wrong".
+
+# ------------------------------------------------------------------
+# HORIZON
+# ------------------------------------------------------------------
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+# ------------------------------------------------------------------
+# DISCOUNTING (identical to MODE A; PROJECT_PROPOSAL)
+# ------------------------------------------------------------------
+discount_rate:
+  value: 0.08
+  provenance: "PROJECT_PROPOSAL"
+
+# ------------------------------------------------------------------
+# TECHNOLOGY ROUTES (identical to MODE A — economics FROZEN subset)
+# ------------------------------------------------------------------
+enabled_routes:
+  - "BF-BOF"
+  - "Coal-DRI-EAF"
+  - "Coal-DRI-IF"
+  - "NG-DRI-EAF"
+  - "H2-DRI-EAF"
+  - "Scrap-EAF"
+
+# ------------------------------------------------------------------
+# EXISTING CAPACITY (identical to MODE A — MoS AR 2025-26 Table 3.2.2)
+# ------------------------------------------------------------------
+existing_capacity_mt_aggregate: 200.333   # [EXTERNAL] context only
+existing_capacity_per_route_mt:
+  "BF-BOF": 80.0        # MoS AR 2025-26 Table 3.2.2 [EXTERNAL]
+  "Coal-DRI-EAF": 14.0  # estimated from MoS route share [EXTERNAL]
+  "Coal-DRI-IF": 78.0   # IF fleet (induction furnace) [EXTERNAL]
+  "NG-DRI-EAF": 12.0    # gas-based DRI [EXTERNAL]
+  "H2-DRI-EAF": 0.0     # not yet deployed in India
+  "Scrap-EAF": 16.0     # EAF scrap route [EXTERNAL]
+
+# ------------------------------------------------------------------
+# LIFETIME (investment-cycle; identical to MODE A)
+# ------------------------------------------------------------------
+lifetime_years: 25       # [EXTERNAL] IEA investment-cycle lifetime
+
+# ------------------------------------------------------------------
+# TECHNOLOGY START YEARS (identical to MODE A)
+# ------------------------------------------------------------------
+start_years:
+  "BF-BOF":       2024
+  "Coal-DRI-EAF": 2024
+  "Coal-DRI-IF":  2024
+  "NG-DRI-EAF":   2024
+  "H2-DRI-EAF":   2030   # NZS commercialisation year (Vol.4 Table 3.1)
+  "Scrap-EAF":    2024
+
+# ------------------------------------------------------------------
+# AVAILABILITY (identical to MODE A; physical operating bound)
+# ------------------------------------------------------------------
+availability:
+  "BF-BOF":       {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "Coal-DRI-EAF": {value: 0.85, provenance: "PROJECT_PROPOSAL"}
+  "Coal-DRI-IF":  {value: 0.85, provenance: "PROJECT_PROPOSAL"}
+  "NG-DRI-EAF":   {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "H2-DRI-EAF":   {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+  "Scrap-EAF":    {value: 0.90, provenance: "PROJECT_PROPOSAL"}
+
+# ------------------------------------------------------------------
+# ECONOMICS (identical to MODE A — IEA 2020 + cross-reference synthesis)
+# ------------------------------------------------------------------
+economics:
+  capex_annualised_usd_per_t:
+    "BF-BOF":       73.0    # [EXTERNAL FROZEN] IEA 2020
+    "Coal-DRI-EAF": 82.0    # [PROJECT_PROPOSAL] IEA/CEEW cross-section
+    "Coal-DRI-IF":  61.5    # [PROJECT_PROPOSAL] IEA/IEAGHG cross-section
+    "NG-DRI-EAF":   95.0    # [EXTERNAL FROZEN] IEA 2020
+    "H2-DRI-EAF":   64.2    # [PROJECT_PROPOSAL] IEA/IRENA 2023
+    "Scrap-EAF":    46.0    # [EXTERNAL FROZEN] IEA 2020
+  opex_fixed_usd_per_t:
+    "BF-BOF":       68.0    # [EXTERNAL FROZEN] IEA 2020
+    "Coal-DRI-EAF": 35.0    # [PROJECT_PROPOSAL] IEA/CEEW cross-section
+    "Coal-DRI-IF":  26.0    # [PROJECT_PROPOSAL] IEA/IEAGHG cross-section
+    "NG-DRI-EAF":   87.0    # [EXTERNAL FROZEN] IEA 2020
+    "H2-DRI-EAF":   27.4    # [PROJECT_PROPOSAL] IEA/IRENA 2023
+    "Scrap-EAF":    43.0    # [EXTERNAL FROZEN] IEA 2020
+  vom_usd_per_t:
+    "BF-BOF":       0.0
+    "Coal-DRI-EAF": 0.0
+    "Coal-DRI-IF":  0.0
+    "NG-DRI-EAF":   0.0
+    "H2-DRI-EAF":   0.0
+    "Scrap-EAF":    0.0
+
+# ------------------------------------------------------------------
+# RESOURCE PRICES (identical to MODE A — explicit conversion metadata)
+# ------------------------------------------------------------------
+resource_prices:
+  iron_ore:
+    value: 80.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"
+  scrap:
+    value: 250.0
+    source_unit: "USD/t"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/t (no conversion: intensity in t/t steel)"
+    provenance: "EXTERNAL"
+  natural_gas:
+    value: 6.0
+    source_unit: "USD/MBtu"
+    target_unit: "USD/GJ"
+    conversion_factor: 1.055
+    conversion_operation: "divide"
+    conversion_formula: "USD/GJ = USD/MBtu / 1.055  (1 MBtu = 1.055 GJ, registry §9)"
+    provenance: "EXTERNAL"
+  electricity:
+    value: 45.0
+    source_unit: "USD/MWh"
+    target_unit: "USD/MWh"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/MWh (no conversion: intensity in MWh/t steel)"
+    provenance: "EXTERNAL"
+  hydrogen:
+    value: 1.9
+    source_unit: "USD/kg"
+    target_unit: "USD/kg"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 USD/kg (no conversion: intensity in kg H2/t steel)"
+    provenance: "EXTERNAL"
+  coking_coal:
+    value: 140.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"
+  non_coking_coal:
+    value: 70.0
+    source_unit: "USD/tce"
+    target_unit: "USD/t"
+    conversion_factor: 1.0
+    conversion_operation: "multiply"
+    conversion_formula: "1 tce = 1 t coal (registry §9 tce basis; intensity in t/t steel)"
+    provenance: "EXTERNAL"
+
+# ------------------------------------------------------------------
+# SCENARIO DEFINITIONS (identical to MODE A — scenario-invariant)
+# ------------------------------------------------------------------
+scenarios:
+  - name: "CPS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+  - name: "NZS"
+    demand_anchors_mt: {2024: 144.29, 2050: 624.00, 2070: 821.00}
+
+# ============================================================
+# STEP 9 — DYNAMIC SCRAP (MODE B)  <<< THE ONLY CHANGE
+# ============================================================
+# The full stock-flow chain (Step 9 §6-§10, MODEL_FORMULATION §6):
+#
+#   Historical production cohorts (tau < 2024)
+#   +  modelled production cohorts (tau = 2024..t-1)
+#   --(lifetime kernel omega)--> EOL scrap generation
+#   --(collection rate)-------> collected scrap
+#   --(processing yield)------> usable domestic scrap
+#   --(MILP constraint)-------> RES_scrap,t <= usable + imports
+#
+# The feedback (more production today -> more future EOL scrap -> more
+# future Scrap-EAF potential) flows through the EQUATIONS (linear
+# coefficients on past ACT in the scrap balance rows), never by forcing
+# future route shares (Step 9 §10).
+dynamic_scrap:
+  enabled: true
+  provenance: "PROJECT_PROPOSAL"   # block-level provenance (module is a proposal-level enrichment)
+
+  # ------------------------------------------------------------------
+  # 1. HISTORICAL COHORTS  (frozen window 1990-2023, MODEL_FORMULATION §6)
+  # ------------------------------------------------------------------
+  # Only years with sourced crude-steel production are declared here.
+  # All other years inside the window are EXPLICITLY MISSING
+  # (EXTERNAL_PENDING) and contribute ZERO to EOL — nothing is
+  # fabricated and no growth rate is introduced (Step 9 §4).
+  #
+  # Fiscal-year attribution convention: MoS AR reports Indian fiscal
+  # years (FYyyyy-(yy+1)). The project's frozen 2024 demand anchor
+  # (144.29 Mt) equals MoS FY2023-24 crude production (144.299 Mt), so
+  # fiscal production is attributed to the calendar year at the FISCAL
+  # YEAR END (FY2020-21 -> 2021, FY2021-22 -> 2022). FY2023-24 -> 2024
+  # is a MODEL year and is therefore represented by the ACT_2024
+  # decision variable, NOT as a historical cohort (no double counting —
+  # SCRAP_DOUBLE_COUNTING_AUDIT.md §3).
+  historical_cohorts:
+    unit: "Mt"
+    start_year: 1990
+    end_year: 2023
+    provenance: "EXTERNAL"     # MoS AR 2025-26 production series
+    source: "Ministry of Steel Annual Report 2025-26 (JPC production series)"
+    source_page: "Table 3.2.2 / production summary"
+    production_mt:
+      2021:
+        value: 103.545
+        provenance: "EXTERNAL"
+        source: "MoS AR 2025-26 (FY2020-21 crude steel production)"
+        notes: "FY2020-21 attributed to calendar 2021 (fiscal-year-end convention)"
+      2022:
+        value: 120.293
+        provenance: "EXTERNAL"
+        source: "MoS AR 2025-26 (FY2021-22 crude steel production)"
+        notes: "FY2021-22 attributed to calendar 2022 (fiscal-year-end convention)"
+    # NOTE: 2023 (FY2022-23) was not extracted from the approved MoS
+    # extract -> explicitly missing. 1990-2020 likewise missing.
+
+  # ------------------------------------------------------------------
+  # 2. LIFETIME KERNEL  (Step 9 §5)
+  # ------------------------------------------------------------------
+  # Weibull shape 2.5 / scale 20 yr are PROJECT_PROPOSAL parametric
+  # scenario variables recorded in ASSUMPTION_DEBT_REGISTER.md. They are
+  # configurable; "deterministic" is also supported (tests use it).
+  # No lifetime parameter is invented or silently frozen.
+  lifetime:
+    distribution: "weibull"        # "weibull" | "deterministic"
+    weibull_shape: 2.5             # [PROJECT_PROPOSAL] beta
+    weibull_scale: 20.0            # [PROJECT_PROPOSAL] eta (years)
+    deterministic_lifetime_years: 20
+    provenance: "PROJECT_PROPOSAL"
+    notes: "Weibull(2.5, 20) per ASSUMPTION_DEBT_REGISTER.md; parametric scenario variable for sensitivity."
+
+  # ------------------------------------------------------------------
+  # 3. COLLECTION & PROCESSING  (Step 9 §7 — distinct quantities)
+  # ------------------------------------------------------------------
+  # CollectionRate and ProcessingYield are separate physical coefficients
+  # (EOL -> collected -> usable), never collapsed. 80%/90% are
+  # PROJECT_PROPOSAL sensitivity values (parametric scenario variables;
+  # empirical Indian series DEFERRED per FINAL_ML_DECISION_MATRIX).
+  collection:
+    collection_rate:
+      value: 0.80
+      provenance: "PROJECT_PROPOSAL"
+      notes: "Parametric scenario variable; empirical Indian series DEFERRED."
+    processing_yield:
+      value: 0.90
+      provenance: "PROJECT_PROPOSAL"
+      notes: "Parametric scenario variable; empirical Indian series DEFERRED."
+
+  # ------------------------------------------------------------------
+  # 4. SCRAP IMPORTS  (Step 9 §8)
+  # ------------------------------------------------------------------
+  # Imports are NOT modelled in this version: the allowance is explicit
+  # zero and documented. No trade assumption is invented.
+  scrap_imports:
+    value: 0.0
+    provenance: "EXTERNAL_PENDING"
+    notes: "Imports excluded from this version (ScrapUse_t <= UsableDomesticScrap_t). Pathway reserved."
+
+  # ------------------------------------------------------------------
+  # 5. HISTORICAL SCRAP SUPPLEMENT (compensates for EXTERNAL_PENDING data gap)
+  # ------------------------------------------------------------------
+  # 1990-2020 production cohorts are EXTERNAL_PENDING in the cohort model.
+  # This supplement provides the missing usable scrap from those years,
+  # consistent with Mode A's static_scrap_cap trajectory. Without it,
+  # the dynamic scrap engine underestimates supply and the MILP is
+  # infeasible in years where feedback from model cohorts overwhelms
+  # the limited known-cohort supply.
+  historical_scrap_supplement:
+    provenance: "EXTERNAL_PENDING"
+    rationale: "Compensates for 1990-2020 EXTERNAL_PENDING data gap. Anchored to Mode A static_scrap_cap trajectory (PROJECT_PROPOSAL) minus known-cohort EOL."
+    anchor_years_mt:
+      2024: 35.0
+      2030: 48.0
+      2040: 78.0
+      2050: 125.0
+      2060: 170.0
+      2070: 218.0
+
+# ------------------------------------------------------------------
+# PROVENANCE GATING (Step 13 remediation, Task 1)
+# ------------------------------------------------------------------
+# Identical gate to configs/optimization/baseline.yaml — MODE B is
+# byte-for-byte the MODE A control configuration plus the dynamic scrap
+# module, so the same provenance allowances apply. See baseline.yaml
+# provenance_gating comments for the per-allowance rationale.
+provenance_gating:
+  policy: "strict"                     # only 'strict' is implemented
+  allow_proposal_parameters: true      # discount rate / availability / new-route economics are PROJECT_PROPOSAL
+  pending_intensity_allowances:
+    # Iron ore intensities: EXTERNAL_PENDING in registry but working value retained (identical to baseline.yaml)
+    - "BF-BOF/iron_ore"
+    - "Coal-DRI-EAF/iron_ore"
+    - "Coal-DRI-IF/iron_ore"
+    - "NG-DRI-EAF/iron_ore"
+    - "H2-DRI-EAF/iron_ore"
+    # Non-coking coal and scrap overridden below; not listed here
+    # BF-BOF/coking_coal overridden below; not listed here
+  intensity_overrides:
+    # Identical overrides to baseline.yaml (Mode B adds dynamic scrap, not new intensity values)
+    - route: "Scrap-EAF"
+      resource: "scrap"
+      value: 1.08
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        IEA Roadmap 2020 / IMC-2021 EAF mass balance: ~1.08 t scrap per t
+        liquid steel (project-level working value). Activating this prevents
+        free scrap in the dynamic scrap engine.
+    - route: "BF-BOF"
+      resource: "coking_coal"
+      value: 0.89
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        IMC-2021 Table 1: 161 Mt coking coal / 181 Mt BF-route steel = 0.89 t/t.
+    - route: "Coal-DRI-EAF"
+      resource: "non_coking_coal"
+      value: 1.2
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        Derived from Vol.4 Fig 2.8 coal-thermal SEC (22.5 GJ/t) / Indian NCC GCV (18.84 GJ/t).
+    - route: "Coal-DRI-IF"
+      resource: "non_coking_coal"
+      value: 1.2
+      provenance: "PROJECT_PROPOSAL"
+      rationale: >
+        Same derivation as Coal-DRI-EAF: Vol.4 Fig 2.8 kiln coal SEC / Indian NCC GCV.

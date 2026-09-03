@@ -1,0 +1,21 @@
+# Reproducible Run Configuration: Mode B Policy — NZS (Step 20 Enhanced)
+# Approvals: Gate A, C, F (MODE_B_APPROVAL_GATES.md, 2026-08-14)
+# Gate B NOT approved: no Coal-DRI-EAF cutoff is imposed.
+# Gate C: NZS scrap waypoints reported as MATCH/BELOW/ABOVE diagnostics only.
+# Step 20 (2026-08-19): Endogenous learning, carbon price, H2 cap, stranded
+#   costs, time-varying H2/electricity prices now ENABLED via mode_b_policy.yaml.
+base_config: ../optimization/mode_b_policy.yaml
+overrides:
+  mode: MODE_B
+  scenario_name: NZS
+  use_endogenous_learning: true
+  use_dynamic_scrap: true
+  use_deployment_dynamics: false
+  use_m1_electrolyser_learning: false
+  use_exogenous_electrolyser_cost_curve: false
+  # Step 24: CCUS enabled for NZS — Vol.4 Table 3.1 explicitly retains
+  # BF-BOF+CCS as a ~10% residual fleet in 2070 NZS. Without CCUS, BF-BOF
+  # cannot survive NZS carbon prices and is phased to 0%, diverging from NITI.
+  ccus:
+    enabled: true
+    provenance: "V4_NZS_TABLE_3_1"

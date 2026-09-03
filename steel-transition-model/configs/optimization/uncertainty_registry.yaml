@@ -1,0 +1,161 @@
+# ============================================================
+# Uncertainty Parameter Registry (Step 13)
+# India Steel Transition Model
+# ============================================================
+
+parameters:
+  # ----------------------------------------------------------
+  # A. Economic Parameters
+  # ----------------------------------------------------------
+  - parameter_id: "discount_rate"
+    base_value: 0.08
+    lower_bound: 0.05
+    upper_bound: 0.12
+    unit: "fraction"
+    provenance: "PROJECT_PROPOSAL"
+    uncertainty_basis: "IEA Roadmap 2020 sensitivity bounds (5-12%)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_iron_ore"
+    base_value: 80.0
+    lower_bound: 60.0
+    upper_bound: 100.0
+    unit: "USD/t"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes price range (60-100)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_scrap"
+    base_value: 250.0
+    lower_bound: 200.0
+    upper_bound: 300.0
+    unit: "USD/t"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes price range (200-300)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_natural_gas"
+    base_value: 6.0
+    lower_bound: 2.0
+    upper_bound: 10.0
+    unit: "USD/MBtu"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes price range (2-10)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_electricity"
+    base_value: 45.0
+    lower_bound: 30.0
+    upper_bound: 90.0
+    unit: "USD/MWh"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes price range (30-90)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_hydrogen"
+    base_value: 1.9
+    lower_bound: 1.2
+    upper_bound: 3.5
+    unit: "USD/kg"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "PriceHydrogenIndia 2035 SDS to STEPS range"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_coking_coal"
+    base_value: 140.0
+    lower_bound: 75.0
+    upper_bound: 155.0
+    unit: "USD/tce"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes price range (75-155)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "price_non_coking_coal"
+    base_value: 70.0
+    lower_bound: 35.0
+    upper_bound: 80.0
+    unit: "USD/tce"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes price range (35-80)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "capex_BF-BOF"
+    base_value: 73.0
+    lower_bound: 52.0
+    upper_bound: 94.0
+    unit: "USD/t crude steel"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes CAPEX range (52-94)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "capex_NG-DRI-EAF"
+    base_value: 95.0
+    lower_bound: 53.0
+    upper_bound: 136.0
+    unit: "USD/t crude steel"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes CAPEX range (53-136)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "capex_Scrap-EAF"
+    base_value: 46.0
+    lower_bound: 34.0
+    upper_bound: 58.0
+    unit: "USD/t crude steel"
+    provenance: "EXTERNAL"
+    uncertainty_basis: "IEA Roadmap 2020 notes CAPEX range (34-58)"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "fom_BF-BOF"
+    base_value: 68.0
+    lower_bound: null
+    upper_bound: null
+    unit: "USD/t capacity/year"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: "No range published in authoritative sources"
+    source: "IEA-ISTR-2020"
+
+  # ----------------------------------------------------------
+  # B. Physical Parameters
+  # ----------------------------------------------------------
+  - parameter_id: "sec_BF-BOF"
+    base_value: 20.0
+    lower_bound: null
+    upper_bound: null
+    unit: "GJ/t steel"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: "No range published in authoritative sources"
+    source: "IEA-ISTR-2020"
+
+  - parameter_id: "sec_H2-DRI-EAF"
+    base_value: 12.8
+    lower_bound: null
+    upper_bound: null
+    unit: "GJ/t steel"
+    provenance: "EXTERNAL_PENDING"
+    uncertainty_basis: "No range published in authoritative sources"
+    source: "IEA-ISTR-2020"
+
+  # ----------------------------------------------------------
+  # C. Circularity Parameters
+  # ----------------------------------------------------------
+  - parameter_id: "scrap_collection_rate"
+    base_value: 0.80
+    lower_bound: null
+    upper_bound: null
+    unit: "fraction"
+    provenance: "DEFERRED"
+    uncertainty_basis: "Scrap circularity parameters are proposal-level only"
+    source: "IEA-ISTR-2020"
+
+  # ----------------------------------------------------------
+  # D. Learning Parameters
+  # ----------------------------------------------------------
+  - parameter_id: "b_elec"
+    base_value: null
+    lower_bound: null
+    upper_bound: null
+    unit: "dimensionless"
+    provenance: "DEFERRED"
+    uncertainty_basis: "M1 b_elec remains deferred due to lack of historical dataset"
+    source: "M1_DATA_GAP.md"

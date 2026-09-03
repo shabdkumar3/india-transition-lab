@@ -1,0 +1,24 @@
+# Reproducible Run Configuration: Mode A Data-Closed Candidate
+# FINAL TARGETED DATA CLOSURE — ROUND 3
+#
+# Uses the DATA-CLOSED candidate optimization config (baseline_data_closed.yaml):
+# identical to the official baseline EXCEPT BF-BOF/coking_coal = 0.89 injected
+# via provenance_gating.intensity_overrides (IMC-2021 promotion, RULE ZERO).
+#
+# No intensities_path override: the loader defaults to the shared registry
+# (configs/resources/steel_intensities.yaml), whose values are byte-for-byte
+# unchanged so the official baseline stays invariant. The stale round-1
+# configs/resources/steel_intensities_data_closed.yaml is NOT referenced.
+#
+# No allow_external_pending / diagnostic_overrides: the candidate enables the
+# SAME three FROZEN-economics routes as the baseline (BF-BOF, NG-DRI-EAF,
+# Scrap-EAF). Coal-DRI-IF/EAF and H2-DRI-EAF remain EXTERNAL_PENDING and stay
+# disabled — documented finding (coal-DRI route remains outside the costed space).
+base_config: ../optimization/baseline_data_closed.yaml
+overrides:
+  mode: MODE_A
+  use_endogenous_learning: false
+  use_dynamic_scrap: false
+  use_deployment_dynamics: false
+  use_m1_electrolyser_learning: false
+  use_exogenous_electrolyser_cost_curve: false

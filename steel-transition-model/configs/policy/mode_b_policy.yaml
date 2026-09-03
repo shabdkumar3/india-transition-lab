@@ -1,0 +1,315 @@
+# =============================================================================
+# MODE B POLICY CONFIGURATION
+# India Steel Transition Model
+# =============================================================================
+#
+# THIS FILE IS A SPECIFICATION DOCUMENT.
+#
+# Status:   ACTIVATED — 2026-08-14 (MODE_B_APPROVAL_GATES.md)
+# Approval: Gate A APPROVED, Gate B NOT APPROVED, Gate C APPROVED (Interpretation A),
+#           Gate F APPROVED (staged) — see MODE_B_APPROVAL_GATES.md
+#
+# This file defines the complete set of Mode B policy parameters for
+# both the Current Policy Scenario (CPS) and Net Zero Scenario (NZS).
+#
+# SOURCE: NITI Aayog Vol. 4 — Scenarios towards Viksit Bharat and Net Zero:
+#         Sectoral Insights: Industry, February 2026.
+#         Extracted text: data/external/extracted/vol4_industry.txt
+#
+# The ACTIVE optimization configuration is
+#   configs/optimization/mode_b_policy.yaml
+# (byte-for-byte the Step 9 dynamic-scrap config plus a `mode_b_policy` block).
+# =============================================================================
+
+metadata:
+  schema_version: "1.0"
+  created: "2026-08-14"
+  status: "ACTIVATED"
+  approval_gates_cleared: 3  # Gates A, C, F (Gate B NOT APPROVED)
+  approval_gates_required: 4  # Gates A, B, C, F
+  official_baseline_objective_musd: 1726583.3837816007  # Updated: 6-route model (2026-08-18)
+  source_document: "NITI Aayog Vol. 4 — Industry Sectoral Insights (Feb 2026)"
+  source_text_file: "data/external/extracted/vol4_industry.txt"
+  active_config: "configs/optimization/mode_b_policy.yaml"
+
+
+# =============================================================================
+# SECTION 1 — TECHNOLOGY AVAILABILITY WINDOWS
+# Applied via build_bounds() — upper bound = 0 on NCAP variables
+# =============================================================================
+
+technology_availability:
+
+  # -----------------------------------------------------------------------
+  # Coal-DRI-IF: No new capacity addition after 2030
+  # Source: Vol. 4 Table 3.1, p. 65, line 4009 (CPS) and 4024 (NZS)
+  # Verbatim: "DRI(Coal-IF): No addition after 2030"
+  # -----------------------------------------------------------------------
+  Coal-DRI-IF:
+    ncap_cutoff_year: 2030          # NCAP = 0 for t > 2030
+    ncap_cutoff_direction: "after"  # zero new capacity AFTER this year
+    applies_to_scenarios: ["CPS", "NZS"]
+    affects: "new_capacity_only"    # existing capacity survives to retirement
+    provenance: "V4"
+    vol4_source: "Table 3.1, p. 65"
+    vol4_line_cps: 4009
+    vol4_line_nzs: 4024
+    vol4_verbatim: "DRI(Coal-IF): No addition after 2030"
+    confidence: "HIGH"
+    approval_gate: "A"
+    label: "DIRECT_SOURCE"
+
+  # -----------------------------------------------------------------------
+  # Coal-DRI-EAF: NO new-capacity cutoff — GATE B NOT APPROVED
+  # Source: Vol. 4 explicitly identifies Coal-DRI-IF but does NOT impose the
+  # same cutoff on Coal-DRI-EAF.
+  # -----------------------------------------------------------------------
+  Coal-DRI-EAF:
+    ncap_cutoff_year: null          # NO cutoff imposed (Gate B NOT APPROVED)
+    ncap_cutoff_direction: "after"
+    applies_to_scenarios: []
+    affects: "new_capacity_only"
+    provenance: "VOL4_SILENT"
+    vol4_source: "Figure 3.5 (route label only, line 4121) — no Table 3.1 entry"
+    confidence: "HIGH"
+    approval_gate: "B"
+    label: "NOT_APPROVED"
+    decision: >
+      Gate B NOT APPROVED 2026-08-14: do NOT apply the Coal-DRI-IF 2030
+      cutoff to Coal-DRI-EAF. Vol.4 explicitly identifies Coal-DRI-IF, but
+      does not explicitly impose the same cutoff on Coal-DRI-EAF.
+      Coal-DRI-EAF remains unconstrained by this specific policy rule unless
+      new source evidence is found.
+    enforced_by: "load_baseline_inputs raises if mode_b_policy.ncap_cutoff_years contains Coal-DRI-EAF"
+
+  # -----------------------------------------------------------------------
+  # H2-DRI-EAF: Entry year differs by scenario
+  # Source: Vol. 4 Table 3.1, p. 65
+  # -----------------------------------------------------------------------
+  H2-DRI-EAF:
+    ncap_start_year:
+      CPS: 2035   # Vol. 4 line 4006: "starts from 2035"
+      NZS: 2030   # Vol. 4 line 4021: "starts from 2030"
+    ncap_cutoff_year: null          # No upper cutoff stated
+    applies_to_scenarios: ["CPS", "NZS"]
+    affects: "new_capacity_only"
+    provenance: "V4"
+    vol4_source: "Table 3.1, p. 65"
+    vol4_line_cps: 4006
+    vol4_line_nzs: 4021
+    vol4_verbatim_cps: "DRI (Hydrogen)-EAF Commercialisation starts from 2035"
+    vol4_verbatim_nzs: "DRI (Hydrogen)-EAF commercialisation starts from 2030"
+    confidence: "HIGH"
+    approval_gate: "A"
+    label: "DIRECT_SOURCE"
+    implementation_note: >
+      Tech card has availability_start_year: 2030 (NZS default).
+      Mode B CPS must override start_years["H2-DRI-EAF"] = 2035 in CPS config.
+      Mode B NZS uses the tech card value (2030) unchanged.
+
+  # -----------------------------------------------------------------------
+  # NG-DRI-EAF: No new capacity after 2040 (NZS only)
+  # Source: Vol. 4 Table 3.1, p. 65, line 4017-4018
+  # -----------------------------------------------------------------------
+  NG-DRI-EAF:
+    ncap_cutoff_year: 2040
+    ncap_cutoff_direction: "after"
+    applies_to_scenarios: ["NZS"]    # CPS: no capacity restriction
+    affects: "new_capacity_only"
+    provenance: "V4"
+    vol4_source: "Table 3.1, p. 65"
+    vol4_line: 4018
+    vol4_verbatim: "DRI (Gas)-EAF to be transition technology; No capacity addition after 2040"
+    confidence: "HIGH"
+    approval_gate: "A"
+    label: "DIRECT_SOURCE"
+
+  # -----------------------------------------------------------------------
+  # BF-BOF: No new capacity after 2060 (NZS only)
+  # Source: Vol. 4 Table 3.1, p. 65, line 4013-4015
+  # -----------------------------------------------------------------------
+  BF-BOF:
+    ncap_cutoff_year: 2060
+    ncap_cutoff_direction: "after"
+    applies_to_scenarios: ["NZS"]    # CPS: no capacity restriction
+    affects: "new_capacity_only"
+    provenance: "V4"
+    vol4_source: "Table 3.1, p. 65"
+    vol4_line: 4013
+    vol4_verbatim: "no new addition after 2060; BF-BOF capacity that remains in 2070 is coupled with CCS/CCUS"
+    confidence: "HIGH"
+    approval_gate: "A"
+    label: "DIRECT_SOURCE"
+    ccs_gap:
+      present_in_vol4: true
+      modelled: false
+      gap_note: >
+        Vol. 4 states residual BF-BOF must be coupled with CCS/CCUS.
+        No CCS technology card or economics exist in the current model.
+        Residual BF-BOF operates WITHOUT CCS in Mode B first iteration.
+        Must be flagged explicitly in results: BF-BOF-CCS: OMITTED.
+
+
+# =============================================================================
+# SECTION 2 — SCRAP SHARE MECHANISM
+# TWO CANDIDATE INTERPRETATIONS — scientific team must choose
+# =============================================================================
+
+scrap_floor:
+
+  vol4_source: "Table 3.1, p. 65, lines 4069-4074; Figure 3.36, p.134, line 5940"
+  vol4_verbatim: "Improves from 20% in 2025 to 30% by 2050 and 40% by 2070"
+  provenance: "V4"
+  confidence_values: "HIGH"
+  applies_to_scenarios: ["NZS"]  # CPS: no floor (scrap share stays at 20%)
+  denominator: "total annual crude steel production (sum of all ACT[i,t])"
+
+  cps_reference:
+    value: 0.20
+    note: "CPS: scrap share held at 20% through 2070 — scenario observation, not a constraint"
+    vol4_verbatim: "Remains the same at the current level of 20% in 2025"
+    vol4_line: 4066
+
+  nzs_waypoints:
+    - {year: 2025, value: 0.20, provenance: "V4", vol4_line: 4069}
+    - {year: 2050, value: 0.30, provenance: "V4", vol4_line: 4069}
+    - {year: 2070, value: 0.40, provenance: "V4", vol4_line: 4070}
+
+  nzs_interpolation_method: "linear_piecewise"
+  nzs_interpolation_formula:
+    segment_1: "FLOOR[t] = 0.20 + (t - 2025) * (0.10 / 25)  for t in [2025, 2050]"
+    segment_2: "FLOOR[t] = 0.30 + (t - 2050) * (0.10 / 20)  for t in [2050, 2070]"
+  interpolation_provenance: "V4_DERIVED"
+
+  # Active interpretation — DECIDED: Interpretation A (approved 2026-08-14)
+  active_interpretation: "A"    # Set to "A" or "B" after Gate C is cleared
+
+  interpretation_A:
+    label: "PROJECTION_DIAGNOSTIC"
+    description: >
+      Post-solve diagnostic only. No MILP constraint.
+      Scrap share computed from ACT["Scrap-EAF", t] / D[t] and compared
+      to Vol. 4 NZS waypoints. Deviation reported in results output.
+    milp_constraint: false
+    recommended: true
+    approval_gate: "C"
+
+  interpretation_B:
+    label: "HARD_POLICY_FLOOR"
+    description: >
+      Hard MILP lower-bound constraint:
+      ACT["Scrap-EAF", t] >= SCRAP_FLOOR[t] * D[t]  for all t in NZS.
+      Scrap supply assumed unconstrained (consistent with Vol. 4 §6.3).
+    milp_constraint: true
+    recommended: false
+    approval_gate: "D"
+    provenance_form: "INTERPRETATION"
+
+  supply_constraint_note: >
+    Vol. 4 explicitly states: "this analysis assumes full availability of
+    required scrap inputs without supply-side constraints" (line 6078).
+    Both interpretations must assume unconstrained scrap supply.
+
+
+# =============================================================================
+# SECTION 3 — CARBON PRICE
+# =============================================================================
+
+carbon_price:
+  value: 0.0
+  unit: "USD/tCO2"
+  applies_to_scenarios: ["CPS", "NZS"]
+  source: "CONFIRMED ABSENT FROM VOL. 4"
+  vol4_note: "Vol. 4 Table 3.1 provides no numeric carbon price for the steel sector"
+  do_not_implement: true
+  provenance: "CONFIRMED_ABSENT"
+
+
+# =============================================================================
+# SECTION 4 — ELECTRICITY / GRID SCENARIO (EXOGENOUS PARAMETERS)
+# =============================================================================
+
+electricity_scenario:
+
+  grid_emission_factor:
+    status: "EXTERNAL_PENDING"
+    unit: "tCO2/MWh"
+    vol4_qualitative:
+      CPS: "Coal-heavy grid, conservative transition"
+      NZS: "Grid assumed to be low-carbon and reliable (Table 3.1, line 4050)"
+    numeric_values:
+      CPS: null   # EXTERNAL_PENDING — requires CEA/MoP data
+      NZS: null   # EXTERNAL_PENDING — requires CEA/MoP data
+    required_source: "CEA National Electricity Plan or Optimal Generation Capacity Mix Report"
+    blocks_mode_b: false  # Grid EF is optional for first Mode B run
+
+  captive_electricity_shares:
+    provenance: "V4"
+    vol4_source: "Table 3.1, p. 65, lines 4042-4051"
+    CPS:
+      - {year: 2025, captive_share: 0.64}
+      - {year: 2050, captive_share: 0.56}
+      - {year: 2070, captive_share: 0.50}
+    NZS:
+      - {year: 2025, captive_share: 0.64}
+      - {year: 2050, captive_share: 0.48}
+      - {year: 2070, captive_share: 0.35}
+    implementation: "EXOGENOUS_PARAMETER — affects electricity cost coefficient, not production constraint"
+
+  captive_coal_shares:
+    provenance: "V4"
+    vol4_source: "Table 3.1, p. 65, lines 4055-4065"
+    CPS:
+      - {year: 2025, coal_fraction: 0.93}
+      - {year: 2050, coal_fraction: 0.53}
+      - {year: 2070, coal_fraction: 0.40}
+    NZS:
+      - {year: 2025, coal_fraction: 0.93}   # Inferred: same as CPS start
+      - {year: 2050, coal_fraction: 0.20}   # V4 direct: line 4059
+      - {year: 2070, coal_fraction: 0.00}   # V4 direct: "phased out by 2070"
+    NZS_2025_note: "V4 only states NZS 2050 and 2070 values. 2025 inferred as same as CPS (provenance: V4_DERIVED)"
+    implementation: "EXOGENOUS_PARAMETER — affects emission factor calculation only"
+
+
+# =============================================================================
+# SECTION 5 — H2-DRI SHARE VALIDATION TARGETS (DIAGNOSTIC ONLY)
+# =============================================================================
+
+h2_dri_validation:
+
+  note: >
+    These values are IESS model outputs (endogenous results), not imposed
+    MILP constraints. Used for post-solve validation only.
+    Do NOT implement as hard constraints.
+
+  NZS_2070_narrative:
+    value: 0.50
+    unit: "fraction of total crude steel production"
+    provenance: "V4"
+    vol4_source: "p. 67, line 4094"
+    vol4_verbatim: "around 50% from GH₂ DRI–EAF"
+    label: "IESS_OUTPUT_NARRATIVE"
+    use: "post_solve_validation_only"
+
+  NZS_2070_h2_demand_implied:
+    value: 0.624
+    unit: "fraction of total crude steel production"
+    provenance: "V4_DERIVED"
+    derivation: "28.2 Mt H2 / 0.055 t H2 per t steel = 512.7 Mt H2-DRI; 512.7 / 821 Mt demand = 62.4%"
+    vol4_h2_demand_source: "p. 134, line 5880"
+    vol4_h2_demand_verbatim: "Steel would be the anchor load (28.2 Mt in 2070)"
+    label: "V4_DERIVED_ARITHMETIC"
+    use: "post_solve_validation_only"
+    reconciliation_note: >
+      Narrative value (50%) and H2-demand-derived value (62%) are inconsistent.
+      Do NOT reconcile to a single number. Preserve both with separate provenance.
+      Inconsistency reflects rounding in narrative text vs. precise demand figure.
+
+  CPS_2070_narrative:
+    value: 0.25
+    unit: "fraction of total crude steel production"
+    provenance: "V4"
+    vol4_source: "p. 67, line 4097"
+    vol4_verbatim: "hydrogen DRI–EAF (25%)"
+    label: "IESS_OUTPUT_NARRATIVE"
+    use: "post_solve_validation_only"

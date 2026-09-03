@@ -1,0 +1,9 @@
+# Reproducible Run Configuration: Full Integrated Mode B
+base_config: ../optimization/ablation_deployment.yaml
+overrides:
+  mode: MODE_B
+  use_endogenous_learning: false
+  use_dynamic_scrap: true
+  use_deployment_dynamics: true
+  use_m1_electrolyser_learning: false
+  use_exogenous_electrolyser_cost_curve: false
