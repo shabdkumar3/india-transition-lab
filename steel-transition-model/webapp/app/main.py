@@ -73,6 +73,36 @@ from steel_model.uncertainty.pathway import classify_conclusion
 
 from .scenarios import ScenarioValidationError, get_scenario, list_scenarios
 
+from contextlib import asynccontextmanager
+import asyncio as _asyncio
+
+
+@asynccontextmanager
+async def _lifespan(application: "FastAPI"):  # noqa: F821
+    """Pre-warm canonical CPS + NZS + control runs in background threads.
+
+    Triggered once at server startup.  By the time a real user hits /api/run
+    the results are already cached, so they get an instant response instead
+    of waiting 60-120 s for the solver.
+    """
+    import threading as _t
+
+    def _warm(scenario: str) -> None:
+        import logging as _lg
+        _lg.getLogger("steel_lab.api").info("Pre-warming scenario: %s", scenario)
+        try:
+            _sync_run(scenario, {})
+            _lg.getLogger("steel_lab.api").info("Pre-warm complete: %s", scenario)
+        except Exception as exc:  # noqa: BLE001
+            _lg.getLogger("steel_lab.api").warning("Pre-warm failed (%s): %s", scenario, exc)
+
+    # Fire off all three in parallel daemon threads so startup doesn't block.
+    for sc in ("cps", "nzs", "control"):
+        _t.Thread(target=_warm, args=(sc,), daemon=True, name=f"prewarm-{sc}").start()
+
+    yield  # server is live
+
+
 app = FastAPI(
     title="India Steel Transition Lab API",
     version=MODEL_VERSION,
@@ -81,6 +111,7 @@ app = FastAPI(
         "The API wraps the existing `steel_model` engine; it contains no scientific "
         "logic of its own."
     ),
+    lifespan=_lifespan,
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -555,28 +586,100 @@ def demand_trajectories() -> Dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 import threading as _threading
-_sync_run_lock = _threading.Lock()  # serialize concurrent Lab runs (job manager is single-threaded)
+import json as _json
+import hashlib as _hashlib
+import time as _time
+
+# ---------------------------------------------------------------------------
+# Result cache — keyed by (scenario_id, sorted-overrides-hash).
+# Canonical runs (no overrides) are permanent; Lab runs are LRU-capped at 32.
+# ---------------------------------------------------------------------------
+_cache_lock = _threading.Lock()
+_results_cache: Dict[str, Any] = {}          # key → result dict
+_cache_order: list = []                      # LRU tracking for Lab entries
+_CACHE_MAX_LAB = 32
+
+# In-flight deduplication: if a solve for key K is running, other callers
+# wait on the same Event instead of spawning a second solve.
+_inflight: Dict[str, _threading.Event] = {}
+
+
+def _cache_key(scenario_id: str, overrides: dict) -> str:
+    canonical = _json.dumps(overrides, sort_keys=True, separators=(",", ":"))
+    h = _hashlib.md5(canonical.encode(), usedforsecurity=False).hexdigest()[:8]
+    return f"{scenario_id}:{h}"
+
+
+def _cache_get(key: str) -> Optional[Dict[str, Any]]:
+    with _cache_lock:
+        return _results_cache.get(key)
+
+
+def _cache_put(key: str, result: Dict[str, Any], is_canonical: bool) -> None:
+    with _cache_lock:
+        if not is_canonical:
+            # Evict oldest Lab entry if at cap
+            lab_keys = [k for k in _cache_order if k not in _canonical_keys]
+            while len(lab_keys) >= _CACHE_MAX_LAB:
+                evict = lab_keys.pop(0)
+                _results_cache.pop(evict, None)
+            if key in _cache_order:
+                _cache_order.remove(key)
+            _cache_order.append(key)
+        _results_cache[key] = result
+
+
+# Canonical scenario keys (never evicted)
+_canonical_keys: set = set()
 
 
 def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
-    """Create a job, block until complete (≤60 s), return transformed results.
+    """Create a job, block until complete, return transformed results.
 
-    Non-blocking lock: if another run is in progress, return a fast 'busy' signal
-    so the frontend can retry rather than waiting and hitting the proxy timeout.
+    Optimisations applied:
+    1. In-memory cache — canonical (no overrides) runs are permanent; Lab
+       runs are LRU-capped at 32 entries. Cache hit returns in <1 ms.
+    2. In-flight deduplication — if two callers request the same key while
+       a solve is in progress, only one thread runs the solver; the second
+       waits on a threading.Event and gets the cached result.
+    3. No more "solver busy" rejections — concurrent requests for *different*
+       scenarios are still serialized by the job manager, but via the event
+       mechanism the second caller waits up to 240 s rather than being dropped.
     """
     import time
 
-    acquired = _sync_run_lock.acquire(blocking=False)
-    if not acquired:
-        return {"status": "error", "message": "Solver busy — please retry in a moment."}
+    is_canonical = not overrides and scenario_id in ("cps", "nzs", "control")
+    key = _cache_key(scenario_id, overrides)
+    if is_canonical:
+        _canonical_keys.add(key)
 
+    # ── Cache hit ──────────────────────────────────────────────────────────
+    cached = _cache_get(key)
+    if cached is not None:
+        return cached
+
+    # ── In-flight deduplication ────────────────────────────────────────────
+    with _cache_lock:
+        if key in _inflight:
+            event = _inflight[key]
+        else:
+            event = _threading.Event()
+            _inflight[key] = event
+            event = None  # this thread is the runner
+
+    if event is not None:
+        # Another thread is solving — wait for it (up to 240 s)
+        event.wait(timeout=240.0)
+        return _cache_get(key) or {"status": "error", "message": "Solver timed out waiting for in-flight run."}
+
+    # ── This thread runs the solver ────────────────────────────────────────
     try:
         try:
             run_id = manager.create_job(scenario_id, overrides, {})
         except Exception as exc:
             return {"status": "error", "message": str(exc)}
 
-        deadline = time.monotonic() + 180.0  # 3 min — Render free CPU is slow
+        deadline = time.monotonic() + 240.0  # 4 min ceiling
         job = None
         while time.monotonic() < deadline:
             job = manager.get_job(run_id)
@@ -587,7 +690,7 @@ def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
                 break
             time.sleep(0.4)
 
-        # Resolve results dir from job or recorded store
+        # Resolve results dir from job record (absolute path, always set on success)
         d = None
         if job and job.get("results_dir"):
             from pathlib import Path as _P
@@ -631,15 +734,23 @@ def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
                 "total_investment": total_inv,
             }
 
-        return {
+        result = {
             "status": "optimal",
             "sector": "steel",
             "scenario": scenario_id.upper(),
             "yearly_results": yearly,
         }
 
+        # ── Store in cache + wake waiters ──────────────────────────────────
+        _cache_put(key, result, is_canonical)
+        return result
+
     finally:
-        _sync_run_lock.release()
+        # Always signal and remove the in-flight entry so waiters unblock
+        with _cache_lock:
+            ev = _inflight.pop(key, None)
+        if ev is not None:
+            ev.set()
 
 
 @app.post("/api/run")

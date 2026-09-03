@@ -52,10 +52,33 @@ fertiliser_app, fertiliser_err = _import_app("fertiliser_backend_v3")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def _combined_lifespan(application):
+    """Startup: log which sectors mounted OK.
+    The individual sector apps handle their own pre-warm via their own lifespans
+    (those are sub-applications and run their own lifespan when mounted).
+    """
+    pairs = [
+        ("steel",      steel_app,      steel_err),
+        ("cement",     cement_app,     cement_err),
+        ("aluminium",  aluminium_app,  aluminium_err),
+        ("textile",    textile_app,    textile_err),
+        ("fertiliser", fertiliser_app, fertiliser_err),
+    ]
+    for name, a, e in pairs:
+        if a:
+            logger.info("  /%-12s mounted OK", name)
+        else:
+            logger.error("  /%-12s FAILED: %s", name, (e or "").splitlines()[-1])
+    yield
+
 app = FastAPI(
     title="India Transition Lab — Combined Backend",
     description="All 5 sector backends in one ASGI service (production deployment).",
     version="1.0.0",
+    lifespan=_combined_lifespan,
 )
 
 # Single CORS gate — sector sub-apps each have their own but the parent's fires first
@@ -106,22 +129,7 @@ if textile_app:
 if fertiliser_app:
     app.mount("/fertiliser", fertiliser_app)
 
-# ── Startup log ───────────────────────────────────────────────────────────────
-
-@app.on_event("startup")
-async def log_startup():
-    pairs = [
-        ("steel",      steel_app,      steel_err),
-        ("cement",     cement_app,     cement_err),
-        ("aluminium",  aluminium_app,  aluminium_err),
-        ("textile",    textile_app,    textile_err),
-        ("fertiliser", fertiliser_app, fertiliser_err),
-    ]
-    for name, a, e in pairs:
-        if a:
-            logger.info("  /%-12s mounted OK", name)
-        else:
-            logger.error("  /%-12s FAILED: %s", name, (e or "").splitlines()[-1])
+# (startup logging moved to _combined_lifespan above)
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 

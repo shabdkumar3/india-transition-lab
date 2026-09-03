@@ -176,6 +176,50 @@ function normalizeResult(result: RunResult): RunResult {
   return { ...result, yearly_results: normalized };
 }
 
+// ── Retry helper ─────────────────────────────────────────────────────────────
+// Retries POST requests that return "solver busy" or transient network errors.
+// Canonical scenario results are cached server-side, so retries are cheap.
+
+async function apiFetchWithRetry<T>(
+  base: string,
+  path: string,
+  init: RequestInit,
+  maxAttempts = 5,
+  baseDelayMs = 2000
+): Promise<T> {
+  let lastErr: unknown;
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    if (attempt > 0) {
+      // Exponential backoff: 2s, 4s, 8s, 16s
+      await new Promise((r) => setTimeout(r, baseDelayMs * Math.pow(2, attempt - 1)));
+    }
+    try {
+      const resolvedBase = resolveBase(base);
+      const res = await fetch(`${resolvedBase}${path}`, {
+        headers: { "Content-Type": "application/json" },
+        ...init,
+      });
+      if (!res.ok) {
+        const err = await res.text().catch(() => res.statusText);
+        throw new Error(`API ${path} — ${res.status}: ${err}`);
+      }
+      const data = (await res.json()) as T;
+      // Retry on "solver busy" signal from backend
+      const d = data as Record<string, unknown>;
+      if (d?.status === "error" && typeof d?.message === "string" && d.message.includes("busy")) {
+        lastErr = new Error(d.message as string);
+        continue;
+      }
+      return data;
+    } catch (err) {
+      lastErr = err;
+      // Don't retry on validation errors
+      if (err instanceof Error && err.message.includes("422")) throw err;
+    }
+  }
+  throw lastErr;
+}
+
 // ── Run optimization ──────────────────────────────────────────────────────────
 
 export async function runScenario(
@@ -186,7 +230,7 @@ export async function runScenario(
   try {
     // v3 backends expect { scenario, overrides: {} } — steel backend accepts flat spread too
     const body = { scenario, overrides };
-    const result = await apiFetch<RunResult>(sector.apiBase, "/api/run", {
+    const result = await apiFetchWithRetry<RunResult>(sector.apiBase, "/api/run", {
       method: "POST",
       body: JSON.stringify(body),
     });
@@ -196,6 +240,16 @@ export async function runScenario(
       status: "not_available",
       message: err instanceof Error ? err.message : "Backend unavailable",
     };
+  }
+}
+
+// ── Prefetch canonical scenarios ──────────────────────────────────────────────
+// Call on page mount to warm the server cache. Results are discarded here —
+// the server caches them so the next real request returns instantly.
+
+export function prefetchScenarios(sector: SectorConfig): void {
+  for (const scenario of ["CPS", "NZS"]) {
+    runScenario(sector, scenario).catch(() => {/* background — ignore errors */});
   }
 }
 
@@ -215,13 +269,12 @@ export async function runLab(
       labPath = "/api/lab/run";
     } else {
       // v3 sector backends: /api/lab with { scenario, overrides: { ...rest } }
-      // RunRequest model: { scenario: str, overrides: Dict[str, Any] }
       const { scenario, ...overrides } = payload;
       body = { scenario: scenario ?? "CPS", overrides };
       labPath = "/api/lab";
     }
 
-    const result = await apiFetch<RunResult>(sector.apiBase, labPath, {
+    const result = await apiFetchWithRetry<RunResult>(sector.apiBase, labPath, {
       method: "POST",
       body: JSON.stringify(body),
     });

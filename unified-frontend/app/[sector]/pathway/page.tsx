@@ -50,8 +50,16 @@ export default function PathwayPage() {
   const [scenario,    setScenario]    = useState("CPS");
   const [demandModel, setDemandModel] = useState<DemandKey>("niti");
   const [running,     setRunning]     = useState(false);
+  const [elapsed,     setElapsed]     = useState(0);   // seconds while solver runs
   const [run,         setRun]         = useState<Record<number, YearlyResult> | null>(null);
   const [runError,    setRunError]    = useState<string | null>(null);
+
+  // Tick elapsed timer while a solve is in progress
+  useEffect(() => {
+    if (!running) { setElapsed(0); return; }
+    const t = setInterval(() => setElapsed((e) => e + 1), 1000);
+    return () => clearInterval(t);
+  }, [running]);
 
   const doRun = useCallback(async (sc: string, dm: DemandKey) => {
     // Non-steel v3 backends: pass demand_model name — backend uses its own YAML trajectory
@@ -176,7 +184,15 @@ export default function PathwayPage() {
                 <span style={{ fontSize:11, color:T.dim, fontWeight:400, display:"block" }}>{sc.desc}</span>
               </button>
             ))}
-            {running && <span style={{ marginLeft:"auto", fontSize:11, color:accent, alignSelf:"center" }} className="animate-pulse">Computing…</span>}
+            {running && (
+              <span style={{ marginLeft:"auto", fontSize:11, color:accent, alignSelf:"center", display:"flex", alignItems:"center", gap:5 }} className="animate-pulse">
+                <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="20" strokeDashoffset="0"><animateTransform attributeName="transform" type="rotate" from="0 5 5" to="360 5 5" dur="0.8s" repeatCount="indefinite"/></circle></svg>
+                {elapsed > 0 ? `Solving… ${elapsed}s` : "Solving…"}
+                {elapsed >= 5 && elapsed < 15 && <span style={{ opacity:0.7 }}>· HiGHS running</span>}
+                {elapsed >= 15 && elapsed < 60 && <span style={{ opacity:0.7 }}>· optimising 47 years</span>}
+                {elapsed >= 60 && <span style={{ opacity:0.7 }}>· almost done</span>}
+              </span>
+            )}
           </div>
           {/* Demand model pills */}
           <div style={{ display:"flex", flexWrap:"wrap", gap:6, alignItems:"center" }}>

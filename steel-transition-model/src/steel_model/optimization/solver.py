@@ -69,7 +69,17 @@ def solve_milp(
 
     integrality = np.zeros(n_vars, dtype=int)  # continuous LP in this baseline
 
-    options = {"disp": False}
+    # HiGHS LP tuning: dual simplex is fastest for LP; presolve reduces problem
+    # size before solving; tight tolerances avoid wasted iterations.
+    options: dict = {
+        "disp": False,
+        "presolve": "on",          # default: on — reduces problem before solve
+        "solver": "simplex",       # simplex beats IPM for LP of this size
+        "simplex_strategy": 1,     # 1 = dual simplex (best for LP warm-start)
+        "simplex_scale_strategy": 2,  # 2 = default equilibration scaling
+        "primal_feasibility_tolerance": 1e-7,
+        "dual_feasibility_tolerance": 1e-7,
+    }
     if time_limit_seconds is not None:
         options["time_limit"] = time_limit_seconds
 

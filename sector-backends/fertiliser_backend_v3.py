@@ -347,10 +347,28 @@ def build_lp(sc: str, overrides: Dict[str, Any]):
 
     return c, A, np.array(b_lo), np.array(b_hi), lb, ub
 
+import json as _json, hashlib as _md5_mod, threading as _thr
+_solve_cache: dict = {}
+_solve_lock = _thr.Lock()
+
+_HIGHS_OPTIONS = {
+    "disp": False, "presolve": "on", "solver": "simplex",
+    "simplex_strategy": 1, "simplex_scale_strategy": 2,
+    "primal_feasibility_tolerance": 1e-7, "dual_feasibility_tolerance": 1e-7,
+}
+
+def _cache_key(sc: str, ov: dict) -> str:
+    h = _md5_mod.md5(_json.dumps(ov, sort_keys=True).encode(), usedforsecurity=False).hexdigest()[:8]
+    return f"{sc}:{h}"
+
 def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
+    key = _cache_key(sc, overrides)
+    with _solve_lock:
+        if key in _solve_cache:
+            return _solve_cache[key]
     c, A, b_lo, b_hi, lb, ub = build_lp(sc, overrides)
     lc = LinearConstraint(csc_matrix(A), b_lo, b_hi)
-    result = milp(c, constraints=lc, bounds=Bounds(lb, ub))
+    result = milp(c, constraints=lc, bounds=Bounds(lb, ub), options=_HIGHS_OPTIONS)
     if result.status != 0:
         return {"status": "infeasible", "message": result.message}
 
@@ -404,7 +422,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
         }
 
     all_co2 = sum(yr["total_co2_net_mt"] for yr in yearly.values())
-    return {
+    out = {
         "status": "ok", "scenario": sc,
         "solver_objective": round(result.fun, 2),
         "yearly_results": yearly,
@@ -418,8 +436,28 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
         "vol4_targets": CFG["vol4_reference"]["co2_intensity_tco2_per_t_nh3"],
         "provenance": "configs/fertiliser_config.yaml",
     }
+    with _solve_lock:
+        _solve_cache[key] = out
+    return out
 
-app = FastAPI(title="Fertiliser Transition Model v3", version="3.0.0")
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def _fert_lifespan(application):
+    import threading, logging as _lg
+    _log = _lg.getLogger("fertiliser.backend")
+    def _warm(sc):
+        _log.info("Fertiliser pre-warm: %s", sc)
+        try:
+            _solve(sc, {})
+            _log.info("Fertiliser pre-warm done: %s", sc)
+        except Exception as exc:
+            _log.warning("Fertiliser pre-warm failed (%s): %s", sc, exc)
+    for sc in ("CPS", "NZS"):
+        threading.Thread(target=_warm, args=(sc,), daemon=True, name=f"fert-prewarm-{sc}").start()
+    yield
+
+app = FastAPI(title="Fertiliser Transition Model v3", version="3.0.0", lifespan=_fert_lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 class RunRequest(BaseModel):
