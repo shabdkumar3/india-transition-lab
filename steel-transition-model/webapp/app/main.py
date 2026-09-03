@@ -760,8 +760,24 @@ async def simple_run(payload: dict) -> Dict[str, Any]:
     sc = payload.get("scenario", "CPS").lower()
     if sc not in ("cps", "nzs", "control"):
         sc = "cps"
+
+    # Support demand_anchors override so baseline comparison tracks demand model changes.
+    # The frontend passes { scenario, overrides: { demand_anchors: {...} } }.
+    overrides: dict = {}
+    raw_overrides = payload.get("overrides", {})
+    d_anch = raw_overrides.get("demand_anchors")
+    if d_anch:
+        try:
+            anch_mt = {int(k): float(v) for k, v in d_anch.items()}
+            overrides["scenarios"] = [
+                {"name": "CPS", "demand_anchors_mt": anch_mt},
+                {"name": "NZS", "demand_anchors_mt": anch_mt},
+            ]
+        except Exception:
+            pass  # malformed — use default demand
+
     loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(None, functools.partial(_sync_run, sc, {}))
+    return await loop.run_in_executor(None, functools.partial(_sync_run, sc, overrides))
 
 
 @app.post("/api/lab/run")
