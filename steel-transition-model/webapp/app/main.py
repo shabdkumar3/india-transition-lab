@@ -576,7 +576,7 @@ def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
         except Exception as exc:
             return {"status": "error", "message": str(exc)}
 
-        deadline = time.monotonic() + 60.0
+        deadline = time.monotonic() + 180.0  # 3 min — Render free CPU is slow
         job = None
         while time.monotonic() < deadline:
             job = manager.get_job(run_id)
@@ -645,10 +645,12 @@ def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
 @app.post("/api/run")
 async def simple_run(payload: dict) -> Dict[str, Any]:
     """Unified-frontend compatibility: synchronous run returning v2-format results."""
+    import asyncio, functools
     sc = payload.get("scenario", "CPS").lower()
     if sc not in ("cps", "nzs", "control"):
         sc = "cps"
-    return _sync_run(sc, {})
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, functools.partial(_sync_run, sc, {}))
 
 
 @app.post("/api/lab/run")
@@ -784,4 +786,6 @@ async def lab_run_shim(payload: dict) -> Dict[str, Any]:
         overrides["ccus"] = {"enabled": bool(payload["ccus"]),
                               "provenance": "Lab scenario user override"}
 
-    return _sync_run(sc, overrides)
+    import asyncio, functools
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, functools.partial(_sync_run, sc, overrides))
