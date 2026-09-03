@@ -1,0 +1,8 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\webapp\\runtime\\generated_configs\\web_20260819_144302_uncertainty_study_merged.yaml",
+  "overrides": {},
+  "allow_external_pending": true,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

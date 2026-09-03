@@ -1,0 +1,654 @@
+# =============================================================================
+# INDIA STEEL FLEET REGISTER
+# India Steel Transition Model
+# =============================================================================
+#
+# STATUS: PARTIAL — PHASE 20 FINAL SCIENTIFIC DATA RESOLUTION
+# ROUTE TRANSITION INTERPRETABILITY: FALSE (route-level vintages GAP)
+#
+# Provenance levels:
+#   FROZEN_EXTERNAL   — exact source + page + value confirmed
+#   FROZEN_DERIVED    — derivation from confirmed source documented
+#   PROJECT_PROPOSAL  — working estimate, not confirmed from primary source
+#   EXTERNAL_PENDING  — data gap, value absent or unconfirmed
+#
+# RULE: Do NOT infer capacity from production statistics.
+#       Do NOT promote without exact source + page/table.
+#
+# Primary authoritative sources for plant-level data:
+#   MoS Annual Report 2025-26 (available: data/external/mos_annual_report_2025_26.pdf)
+#   MoS "Greening the Steel Sector in India: Roadmap and Action Plan" (March 2025) —
+#     route-level aggregates FY2023-24 (BF hot-metal 95.8 / EAF 36.61 / IF 68.8 Mt)
+#   Rajya Sabha reply 27.03.2026 AU3982 + Lok Sabha Apr-2023 LU 5356 (SAIL per-plant)
+#   CAG Report No. 38 of 2025 (SAIL BF capacity 23.07 MTPA / 28 BFs)
+#   JSW Steel Integrated Report 2024-25 (JSW total domestic crude capacity 34.2 MTPA)
+#   JPC Annual Statistics 2024-25 (GATED — requires portal registration)
+#   IEA Iron & Steel Technology Roadmap 2020, Ch.3 (India 2018 route capacity split)
+# =============================================================================
+
+metadata:
+  as_of_date: "2026-08-15"
+  version: "phase20_final_resolution"
+  classification: "CANDIDATE_ENRICHED_PARAMETERIZATION"
+  route_transition_interpretability: false
+  note: >
+    PHASE 20: plant-level entries for SAIL/RINL/Tata/JSPL/NMDC retained as
+    FROZEN_EXTERNAL with primary citations; JSW total domestic crude capacity
+    34.2 MTPA (JSW Steel Integrated Report 2024-25) ADDED as FROZEN_EXTERNAL
+    company-level aggregate. Route-level FY23-24 aggregates (BF hot-metal 95.8 /
+    EAF 36.61 / IF 68.8 Mt) are FROZEN_EXTERNAL CONTEXT (publication title
+    RESOLVED: MoS "Greening the Steel Sector in India: Roadmap and Action Plan",
+    March 2025). IEA 2020 India 2018 route CAPACITY split (BOF 44% / IF 27% /
+    EAF 29%) recorded as corroborating historical context. The model's
+    existing_capacity_per_route_mt remains 0 for all enabled routes because the
+    loader flag existing_capacity_data_available is hardcoded False (model.py:312)
+    and the split into ENABLED-route crude-steel capacity is a documented GAP
+    (EAF feedstock split + BF hot-metal vs crude boundary + FY25 JPC split gated).
+    route_transition_interpretability stays FALSE by design. Fleet aggregation
+    (known/unknown/coverage + reconciliation gap) in the fleet_aggregation block.
+
+# =============================================================================
+# AGGREGATE TOTALS (Source-confirmed)
+# =============================================================================
+aggregate:
+  total_crude_steel_capacity_mtpa: 200.33
+  fiscal_year: "FY2024-25"
+  source: "Ministry of Steel Annual Report 2025-26"
+  provenance: "FROZEN_EXTERNAL"
+  note: "Aggregate confirmed. Route-level split NOT confirmed from same source."
+
+  secondary_sector_share_pct: 47
+  secondary_sector_capacity_mtpa: 94.42  # = 200.33 * 0.47
+  secondary_source: "MoS Annual Report 2025-26 / search-corroborated (PIB PRID 2149769: FY25 total 200.33 Mt, secondary 94.42 Mt = 47%)"
+  secondary_provenance: "FROZEN_DERIVED"
+
+  # PHASE 23 CONTEXT: JPC FY2025-26 projection (next fiscal year).
+  jpc_fy2025_26_projected_total_capacity_mtpa: 220.33
+  jpc_projection_source: "Joint Plant Committee (JPC) official portal, FY2025-26 projection (jpcsteel.co.in)"
+  jpc_projection_provenance: "PROJECT_PROPOSAL"
+  jpc_projection_note: >
+    PHASE 23: JPC FY2025-26 projected total crude steel capacity ~220.33 MTPA (vs
+    200.33 MTPA FY2024-25 recorded above). Projected value, not a frozen parameter;
+    recorded as context only. Route-wise capacity split for FY2025-26 is NOT
+    published by JPC in a unified public table (verified during Phase 23 broad
+    search: MoS/JPC report aggregate capacity, not route-level capacity); the
+    route-level split remains a documented GAP pending JPC Annual Statistics access.
+
+  integrated_sector_capacity_mtpa: 105.91  # = 200.33 - 94.42
+  integrated_note: "Derived residually — not directly tabulated"
+
+  sponge_iron_production_fy2024_mt: 51.5
+  sponge_iron_source: "JPC / India Steel Alliance, FY2023-24"
+  sponge_iron_provenance: "PROJECT_PROPOSAL"
+  sponge_iron_note: "Production figure, not capacity. Coal-based = ~80% of total."
+
+# =============================================================================
+# ROUTE-LEVEL CAPACITY SPLIT — PHASE 20 (title RESOLVED)
+# =============================================================================
+# FY23-24 route-level AGGREGATES promoted to FROZEN_EXTERNAL. Publication title
+# RESOLVED in PHASE 20: Ministry of Steel, "Greening the Steel Sector in India:
+# Roadmap and Action Plan" (March 2025) — BF hot-metal 95.8 / EAF 36.61 /
+# IF 68.8 Mt (previously cited as "GSI/MoS Sept-2024").
+# NOTE: these are IRONMAKING/STEELMAKING capacities (BF hot-metal, EAF, IF units),
+# NOT the model's enabled-route crude-steel capacities. The FY25 route-wise crude
+# CAPACITY split remains a GAP (JPC Annual Statistics 2024-25 gated; MoS AR
+# Annexure-V is production-by-company, not capacity-by-route).
+# IEA Roadmap 2020 India 2018 capacity split (BOF 44% / IF 27% / EAF 29% of crude
+# output capacity, Ch.3 p.122 extract line 5868) recorded as corroborating
+# historical context ONLY — NOT a 2024 value, NOT promoted.
+# =============================================================================
+route_capacity_mtpa:
+  BF_BOF:
+    capacity_mtpa: 95.8
+    source: "MoS 'Greening the Steel Sector in India: Roadmap and Action Plan' (March 2025) — BF hot-metal capacity (55 BF units), FY2023-24"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: >
+      IRONMAKING (hot-metal) capacity, NOT crude-steel capacity. BF-BOF crude
+      capacity adds BOF/steelmaking + any DRI/scrap contributions. Cannot be
+      mapped directly to existing_capacity_per_route_mt. Plant-level: SAIL
+      19.676 MTPA (Rajya Sabha 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356),
+      SAIL BF hot-metal 23.07 MTPA across 28 BFs (CAG-2025 Table-2/§1.7), RINL
+      Vizag 7.3 (MoS AR 2024-25 §5.3), Tata Steel Ltd India 20.6 (MoS AR 2024-25
+      §6.2 via JPC), JSPL 9.6 crude (BF 7.3 + DRI 3.12), NMDC Nagarnar 3.0,
+      JSW domestic total 34.2 (JSW IR 2024-25, company aggregate; route split
+      not itemised). IEA 2018 capacity split context: BOF 44% of crude output
+      capacity (p.122).
+    required_source: "JPC Annual Statistics 2024-25 (gated) for FY25 crude split"
+
+  NG_DRI_EAF:
+    capacity_mtpa: null
+    source: "EXTERNAL_PENDING (subset of EAF aggregate 36.61 Mt)"
+    provenance: "EXTERNAL_PENDING"
+    confidence: "NONE"
+    note: >
+      Gas-based DRI plants include AM/NS India Hazira (NG-DRI-EAF), ISPAT, and
+      associates. EAF feedstock split (gas-DRI vs coal-DRI vs scrap) is NOT
+      tabulated in GSI/MoS Sept-2024 -> NG_DRI_EAF vs Scrap_EAF vs Coal_DRI_EAF
+      shares cannot be separated. GAP.
+
+  Coal_DRI_IF:
+    capacity_mtpa: 68.8
+    source: "MoS 'Greening the Steel Sector in India: Roadmap and Action Plan' (March 2025) — IF steelmaking capacity (1,032 units), FY2023-24"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: >
+      Dominant secondary-sector route by unit count. DRI charge ratio for IF is
+      UNRESOLVED (IBM IMYB 2022 ~40% DRI vs CEEW 2024 ~12.5% scrap vs Fastmarkets
+      2023 50-70% DRI / 30-40% scrap; conflict in SOURCE_CONTRADICTIONS_FINAL.md)
+      -> Coal-DRI-IF non_coking_coal intensity stays EXTERNAL_PENDING.
+
+  Coal_DRI_EAF:
+    capacity_mtpa: null
+    source: "EXTERNAL_PENDING (subset of EAF aggregate 36.61 Mt)"
+    provenance: "EXTERNAL_PENDING"
+    confidence: "NONE"
+    note: >
+      EAF feedstock split not tabulated; cannot separate coal-DRI-fed EAF units.
+      GAP.
+
+  Scrap_EAF:
+    capacity_mtpa: null
+    source: "EXTERNAL_PENDING (subset of EAF aggregate 36.61 Mt)"
+    provenance: "EXTERNAL_PENDING"
+    confidence: "NONE"
+    note: >
+      EAF feedstock split not tabulated; pure-scrap EAF capacity cannot be
+      separated from DRI-fed EAF. GAP. Scrap-EAF/scrap intensity also remains
+      EXTERNAL_PENDING (worldsteel blended-route boundary mismatch).
+
+  H2_DRI_EAF:
+    capacity_mtpa: 0.0
+    source: "Assessment — no commercial H2-DRI plant operating in India as of 2024"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+    note: >
+      No commercial-scale H2-DRI-EAF plant exists in India as of 2024.
+      JSW, Tata, SAIL, RINL have announced pilot/demonstration projects
+      but none are at commercial capacity. POSCO-India greenfield H2 steel
+      project is announced but not commissioned.
+
+# =============================================================================
+# MAJOR PLANT REGISTER — INTEGRATED (BF-BOF)
+# =============================================================================
+# DATA CLOSURE ROUND 3: per-plant figures for SAIL/RINL promoted to FROZEN_EXTERNAL
+# with primary citations (Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023
+# LU 5356 for SAIL operating capacity; MoS AR 2024-25 §5.3/§6.2). SAIL BF hot-metal
+# capacity 23.07 MTPA across 28 BFs (CAG Report No. 38 of 2025, Table-2/§1.7).
+# Tata Steel (India) total 20.6 MTPA (MoS AR 2024-25 §6.2 via JPC); Kalinganagar
+# ramp 3->8 MTPA = PROJECT_PROPOSAL (announced, largest BF 5,870 m3 commissioned
+# 20-Sep-2024). JSPL 9.6 MTPA crude (BF 7.3 + DRI 3.12). NMDC Nagarnar 3.0 MTPA.
+# =============================================================================
+integrated_plants_bf_bof:
+
+  - plant_id: "SAIL-BSP-001"
+    company: "Steel Authority of India Limited (SAIL)"
+    plant_name: "Bhilai Steel Plant"
+    location: "Bhilai, Chhattisgarh"
+    technology: "BF-BOF"
+    capacity_mtpa: 6.16
+    commissioning_year: 1959
+    status: "OPERATING"
+    source: "Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356"
+    page_table: "RS reply AU3982 / LS LU 5356 (SAIL operating capacity per plant)"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+    note: "Promoted from PROJECT_PROPOSAL 7.0 to primary 6.16 MTPA (SAIL per-plant operating capacity). Expansion to 10.2 MTPA planned (PROJECT_PROPOSAL)."
+
+  - plant_id: "SAIL-RSP-001"
+    company: "SAIL"
+    plant_name: "Rourkela Steel Plant"
+    location: "Rourkela, Odisha"
+    technology: "BF-BOF"
+    capacity_mtpa: 3.8
+    commissioning_year: 1959
+    status: "OPERATING"
+    source: "Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356"
+    page_table: "RS reply AU3982 / LS LU 5356"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+    note: "Promoted from PROJECT_PROPOSAL 4.4 to primary 3.8 MTPA."
+
+  - plant_id: "SAIL-DSP-001"
+    company: "SAIL"
+    plant_name: "Durgapur Steel Plant"
+    location: "Durgapur, West Bengal"
+    technology: "BF-BOF"
+    capacity_mtpa: 2.2
+    commissioning_year: 1962
+    status: "OPERATING"
+    source: "Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356"
+    page_table: "RS reply AU3982 / LS LU 5356"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+
+  - plant_id: "SAIL-BSL-001"
+    company: "SAIL"
+    plant_name: "Bokaro Steel Plant"
+    location: "Bokaro, Jharkhand"
+    technology: "BF-BOF"
+    capacity_mtpa: 4.6
+    commissioning_year: 1972
+    status: "OPERATING"
+    source: "Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356"
+    page_table: "RS reply AU3982 / LS LU 5356"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+    note: "Promoted from PROJECT_PROPOSAL 5.25 to primary 4.6 MTPA."
+
+  - plant_id: "SAIL-ISP-001"
+    company: "SAIL"
+    plant_name: "IISCO Steel Plant"
+    location: "Burnpur, West Bengal"
+    technology: "BF-BOF"
+    capacity_mtpa: 2.5
+    commissioning_year: 1919
+    status: "OPERATING"
+    source: "Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356"
+    page_table: "RS reply AU3982 / LS LU 5356"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+
+  - plant_id: "SAIL-AGG-001"
+    company: "SAIL"
+    plant_name: "SAIL Total (all plants)"
+    location: "Multiple"
+    technology: "BF-BOF"
+    capacity_mtpa: 19.676
+    commissioning_year: null
+    status: "OPERATING"
+    source: "Rajya Sabha reply 27.03.2026 AU3982 / Lok Sabha Apr-2023 LU 5356"
+    page_table: "RS reply AU3982 / LS LU 5356"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+    note: "SAIL total operating crude-steel capacity 19.676 MTPA. SAIL BF hot-metal capacity 23.07 MTPA across 28 BFs (CAG Report No. 38 of 2025, Table-2/§1.7)."
+
+  - plant_id: "RINL-VSP-001"
+    company: "Rashtriya Ispat Nigam Ltd (RINL)"
+    plant_name: "Visakhapatnam Steel Plant"
+    location: "Visakhapatnam, Andhra Pradesh"
+    technology: "BF-BOF"
+    capacity_mtpa: 7.3
+    commissioning_year: 1992
+    status: "OPERATING"
+    source: "Ministry of Steel Annual Report 2024-25, Section 5.3"
+    page_table: "MoS AR 2024-25 §5.3"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "HIGH"
+    note: "Promoted from PROJECT_PROPOSAL/PIB to MoS AR 2024-25 §5.3."
+
+  - plant_id: "TATA-AGG-001"
+    company: "Tata Steel Ltd (India)"
+    plant_name: "Tata Steel India total"
+    location: "Multiple (Jamshedpur, Kalinganagar, etc.)"
+    technology: "BF-BOF"
+    capacity_mtpa: 20.6
+    commissioning_year: null
+    status: "OPERATING"
+    source: "Ministry of Steel Annual Report 2024-25, Section 6.2 (via JPC)"
+    page_table: "MoS AR 2024-25 §6.2"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: "Tata Steel Ltd (India) 20.6 MTPA crude steel capacity, source JPC via MoS AR 2024-25 §6.2."
+
+  - plant_id: "TATA-KAL-001"
+    company: "Tata Steel"
+    plant_name: "Kalinganagar"
+    location: "Kalinganagar, Odisha"
+    technology: "BF-BOF"
+    capacity_mtpa: 3.0
+    commissioning_year: 2015
+    status: "OPERATING"
+    source: "Tata Steel press release, 20-Sep-2024 (largest BF 5,870 m3 commissioned)"
+    page_table: "Tata Steel press release 20-Sep-2024"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: "Operating 3 MTPA; ramp to 8 MTPA = PROJECT_PROPOSAL (announced). Largest Indian BF 5,870 m3 commissioned 20-Sep-2024."
+
+  - plant_id: "JSPL-AGG-001"
+    company: "Jindal Steel & Power (JSPL)"
+    plant_name: "JSPL total crude steel"
+    location: "Angul / Raigarh"
+    technology: "BF-BOF / Coal-DRI"
+    capacity_mtpa: 9.6
+    commissioning_year: null
+    status: "OPERATING"
+    source: "JSPL disclosures (crude 9.6 = BF 7.3 + DRI 3.12)"
+    page_table: "JSPL capacity disclosures"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: "JSPL 9.6 MTPA crude steel capacity (ironmaking: BF 7.3 + DRI 3.12). Site-level BOF/EAF split is a GAP."
+
+  - plant_id: "NMDC-NAG-001"
+    company: "NMDC"
+    plant_name: "Nagarnar Steel Plant"
+    location: "Nagarnar, Chhattisgarh"
+    technology: "BF-BOF"
+    capacity_mtpa: 3.0
+    commissioning_year: 2023
+    status: "OPERATING"
+    source: "NMDC disclosures (production from Sep-2023)"
+    page_table: "NMDC capacity disclosures"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: "3.0 MTPA BF-BOF greenfield; production started Sep-2023."
+
+  - plant_id: "JSW-AGG-001"
+    company: "JSW Steel"
+    plant_name: "JSW Steel domestic total (all sites)"
+    location: "Multiple (Vijayanagar, Dolvi, Salem, etc.)"
+    technology: "MIXED (predominantly BF-BOF; EAF at Salem)"
+    capacity_mtpa: 34.2
+    commissioning_year: null
+    status: "OPERATING"
+    source: "JSW Steel Integrated Report 2024-25 (Management Discussion & Analysis / Operational Highlights)"
+    page_table: "JSW Steel IR 2024-25, capacity section"
+    provenance: "FROZEN_EXTERNAL"
+    confidence: "MEDIUM"
+    note: "PHASE 20: JSW total domestic crude steel capacity 34.2 MTPA (incl. ~1.7 MTPA under commissioning) from the company Integrated Report 2024-25. Site-level route split (Vijayanagar BF-BOF vs Salem EAF) not itemised in the acquired extract — company aggregate only; NOT allocated to BF-BOF route total."
+
+  - plant_id: "JSW-VJN-001"
+    company: "JSW Steel"
+    plant_name: "Vijayanagar Works"
+    location: "Vijayanagar, Karnataka"
+    technology: "BF-BOF"
+    capacity_mtpa: 17.5
+    commissioning_year: 1994
+    status: "OPERATING"
+    source: "JSW Steel investor presentation 2024 (within JSW domestic total 34.2 MTPA, IR 2024-25)"
+    page_table: "JSW investor deck, plant capacities"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "MEDIUM"
+    note: "Largest single-site steel plant in India. Site-level figure NOT itemised in the JSW IR 2024-25 extract; stays PROJECT_PROPOSAL. Company-level total 34.2 MTPA is FROZEN_EXTERNAL (JSW-AGG-001)."
+
+  - plant_id: "TATA-JMP-001"
+    company: "Tata Steel"
+    plant_name: "Jamshedpur Works"
+    location: "Jamshedpur, Jharkhand"
+    technology: "BF-BOF"
+    capacity_mtpa: 11.0
+    commissioning_year: 1907
+    status: "OPERATING"
+    source: "Tata Steel Annual Report 2024-25 (within Tata India 20.6 total)"
+    page_table: "Tata Steel AR 2024-25, plant profile"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "MEDIUM"
+    note: "Subset of Tata India total 20.6 MTPA (MoS AR §6.2)."
+
+  - plant_id: "JSP-RAI-001"
+    company: "Jindal Steel & Power (JSPL)"
+    plant_name: "Raigarh"
+    location: "Raigarh, Chhattisgarh"
+    technology: "BF-BOF"
+    capacity_mtpa: 3.6
+    commissioning_year: 2000
+    status: "OPERATING"
+    source: "JSPL investor presentation 2024 (subset of JSPL total 9.6)"
+    page_table: "JSPL investor deck, capacity table"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "LOW"
+    note: "Subset of JSPL total 9.6 MTPA crude capacity."
+
+  - plant_id: "AMNS-HAZ-001"
+    company: "ArcelorMittal Nippon Steel India (AM/NS India)"
+    plant_name: "Hazira (DRI+EAF)"
+    location: "Hazira, Gujarat"
+    technology: "NG-DRI-EAF"
+    capacity_mtpa: 9.0
+    commissioning_year: 1994
+    status: "OPERATING"
+    source: "AM/NS India press releases 2024"
+    page_table: "Company disclosure, 2024"
+    provenance: "PROJECT_PROPOSAL"
+    confidence: "LOW"
+    note: >
+      Originally Essar Steel. Gas-based DRI + EAF. Technology route is
+      NG-DRI-EAF. Capacity in transition to 15 MTPA; current operating
+      capacity not precisely tabulated from JPC.
+
+# =============================================================================
+# SECONDARY SECTOR (Coal-DRI + IF / EAF)
+# =============================================================================
+# DATA CLOSURE ROUND 3: IF steelmaking CAPACITY aggregate promoted (GSI/MoS
+# Sept-2024: IF 68.8 Mt across 1,032 units, FY2023-24). EAF 36.61 Mt (34 units)
+# holds NG-DRI-EAF + Coal-DRI-EAF + Scrap-EAF; feedstock split is a GAP.
+# DRI charge ratio (DRI share of IF/EAF metallic charge) is UNRESOLVED.
+# =============================================================================
+secondary_sector:
+  note: >
+    India has 400+ coal-based sponge iron plants (rotary kiln) primarily in
+    Chhattisgarh, Odisha, Jharkhand, and Karnataka, mostly feeding induction
+    furnaces. Plant-level register requires JPC MSME database access.
+    Individual plant capacities range from 30 TPD to 500 TPD for rotary kilns.
+    Route-level CAPACITY aggregates are FROZEN_EXTERNAL (GSI/MoS Sept-2024);
+    plant-level unit register remains EXTERNAL_PENDING.
+
+  total_if_capacity_mtpa: 68.8
+  if_capacity_source: "MoS 'Greening the Steel Sector in India: Roadmap and Action Plan' (March 2025), 1,032 units, FY2023-24 (previously cited as GSI/MoS Sept-2024; title RESOLVED in PHASE 20)"
+  if_capacity_provenance: "FROZEN_EXTERNAL"
+  if_capacity_required_from: "JPC Annual Statistics 2024-25 (gated) for FY25 split"
+
+  total_eaf_capacity_mtpa: 36.61
+  eaf_capacity_source: "MoS 'Greening the Steel Sector in India: Roadmap and Action Plan' (March 2025), 34 units, FY2023-24"
+  eaf_capacity_provenance: "FROZEN_EXTERNAL"
+  eaf_capacity_note: "Includes Scrap-EAF + Coal-DRI-EAF + NG-DRI-EAF; feedstock split NOT tabulated (GAP)."
+
+  coal_dri_production_fy2024_mt: 41.2  # 80% of 51.5 MT
+  coal_dri_production_provenance: "FROZEN_DERIVED"
+  coal_dri_production_note: >
+    Derived: 51.5 MT total sponge iron (FY2024) x 80% coal-based.
+    Production, NOT capacity. Capacity factor not confirmed.
+
+# =============================================================================
+# DRI CHARGE RATIO AUDIT RECORD  (PHASE 20 — THIRD DATA POINT ADDED)
+# =============================================================================
+# PRIMARY evidence:
+#   IBM Indian Minerals Yearbook 2022 (p.7-3/7-4): IF metallic charge ~40% sponge
+#   iron + ~10% cast/pig iron + ~50% steel melting scrap (FY2021-22, 847 IFs,
+#   35.21 Mt crude steel). NATIONAL AVERAGE — PRIMARY official source.
+#   CEEW 2024 cluster survey (Raipur/Raigarh/Bellary, 30 plants): IF scrap
+#   utilisation ~12.5% average => DRI+other ~87.5% (NOT a DRI-only mass balance).
+#   Fastmarkets 2023 (market observation): IF DRI share 50-70%, scrap 30-40%,
+#   dynamically shifting with DRI/scrap price spreads (sometimes 70-90% DRI).
+# CONFLICT: IBM (~50% scrap national avg) vs CEEW (~12.5% scrap clusters) vs
+# Fastmarkets (30-40% scrap dynamic). Definitions/samples differ (national
+# average vs cluster survey vs market snapshot) -> charge ratio stays
+# EXTERNAL_PENDING; preserved as scenario alternatives (DRI_IBM 0.40, DRI_CEEW
+# 0.875). Do NOT promote 0.61 or 0.80.
+# =============================================================================
+dri_charge_ratio:
+  IF_route:
+    ratio_used_in_candidate: 0.61
+    status: "EXTERNAL_PENDING"
+    evidence_found: true
+    evidence_note: >
+      Three conflicting sources: IBM IMYB 2022 (IF charge ~40% DRI + 10%
+      pig/cast iron + ~50% scrap, national average), CEEW 2024 (IF scrap ~12.5%
+      average, cluster survey), Fastmarkets 2023 (IF DRI 50-70% / scrap 30-40%,
+      dynamic market). The three disagree; 0.61 (~39% scrap + 61% DRI+other) is
+      NOT confirmed by any source. KEEP: EXTERNAL_PENDING. DO NOT PROMOTE 0.61.
+
+  EAF_route:
+    ratio_used_in_candidate: 0.80
+    status: "EXTERNAL_PENDING"
+    evidence_found: false
+    evidence_note: >
+      IEA roadmap discusses DRI-EAF charge mix qualitatively but gives no fixed
+      percentage for Indian coal-DRI-EAF plants. EAF DRI fractions reported as
+      25%–100% depending on grade and scrap availability. No defensible
+      EAF-specific charge ratio found in PHASE 20 => Coal-DRI-EAF = DEFERRED
+      (special rule: do not borrow IF charge data). KEEP: EXTERNAL_PENDING.
+      DO NOT PROMOTE 0.80.
+      PHASE 21 NOTE: BigMint FY2025 commercial market data reports IF: 59% DRI /
+      37% scrap / 4% HM, and EAF: 37% DRI / 10% scrap / 53% HM. BigMint is a
+      commercial price-reporting agency — NOT a primary source (government/peer-
+      reviewed). These values are recorded as additional SCENARIO_ALTERNATIVES context
+      but are NOT promotable to FROZEN_EXTERNAL under the 10-criteria rule.
+      Named scenario alternatives (not frozen):
+        DRI_IBM_LOW: 0.40 DRI fraction (IBM IMYB 2022, national average, government primary)
+        DRI_MARKET_HIGH: 0.59-0.70 DRI fraction (recent market evidence, commercial source)
+        DRI_EAF_HOT_METAL_HEAVY: 0.37 DRI / 0.53 HM (BigMint FY2025, commercial, India-specific)
+
+
+# =============================================================================
+# JPC ROUTE-LEVEL CLOSURE — PHASE 24A (Source: JPC via MoS AR 2025-26)
+# =============================================================================
+# PHASE 24A: the JPC-sourced route tables were located inside the Ministry of
+# Steel Annual Report 2025-26 extract (data/external/extracted/mos_ar_2025_26.txt,
+# pp.182-183 of the AR): Annexure-IV (capacity + production by producer AND by
+# route-group: OTHER BOF / OTHER EAF / OTHER IF) and Annexure-V (production by
+# route), each with "Source: JPC". These reconstruct EXACTLY to the official
+# national totals (200,333 kt capacity / 152,180 kt production FY2024-25) and
+# the FY23-24 OTHER IF row (68,797 kt) matches the Phase-20 frozen IF aggregate
+# 68.8 Mt — internal consistency confirmed. The JPC subscription publication
+# (Annual Statistics 2024-25, pp.34/42/73/75) itself remains gated; the MoS AR
+# reproduces the same JPC route tables.
+#
+# FY2024-25 route-level PRODUCTION (Annexure-V + Ch.3 §3.2.3, Source: JPC):
+#   BOF 62.488 Mt (41.1%) / EAF 31.612 Mt (20.8%) / IF 58.080 Mt (38.2%);
+#   total 152.180 Mt.
+#
+# FY2024-25 route-level CAPACITY (Annexure-IV producer rows, Source: JPC):
+#   Identifiable BOF   : SAIL 20.632 + RINL 7.300 + NMDC 3.000 + OTHER BOF 3.177
+#                        = 34.109 Mt
+#   Identifiable EAF   : AM/NS 9.600 + OTHER EAF 9.323 = 18.923 Mt
+#   IF (full route)    : OTHER IF 81.920 Mt (1,032 units FY23-24 context)
+#   Mixed producers    : TSL 21.581 + JSW 34.200 + JSPL 9.600 = 65.381 Mt
+#                        (route split WITHIN these is NOT tabulated by JPC)
+#   Check              : 34.109 + 18.923 + 81.920 + 65.381 = 200.333 Mt EXACT
+#
+# CLOSURE STATUS:
+#   - Route-level production            : CLOSED (FROZEN_EXTERNAL, JPC via MoS AR)
+#   - IF route capacity                 : CLOSED (81.920 Mt, FROZEN_EXTERNAL)
+#   - BOF identifiable capacity         : 34.109 Mt (FROZEN_EXTERNAL producer rows)
+#   - EAF identifiable capacity         : 18.923 Mt (FROZEN_EXTERNAL producer rows)
+#   - Mixed-producer route split        : SUB-GAP 65.381 Mt (JPC does not tabulate
+#                                         TSL/JSW/JSPL internal BOF-vs-EAF split)
+#   - EAF feedstock split (NG/Coal/Scrap): still GAP (Annexure IV does not split)
+#   - Vintages                          : still EXTERNAL_PENDING (JPC capacity
+#                                         tables carry no commissioning years)
+# =============================================================================
+jpc_route_capacity_fy2024_25:
+  year: "FY2024-25"
+  source: "MoS AR 2025-26 Annexure-IV/Annexure-V (Source: JPC); Ch.3 §3.2.2/§3.2.3"
+  pages: "pp.182-183 (Annexure IV/V); §3.2.3 p.15-16"
+  provenance: "FROZEN_EXTERNAL"
+  confidence: "HIGH"
+  producer_capacity_mt:
+    SAIL: 20.632
+    RINL: 7.300
+    NMDC: 3.000
+    TSL_Group: 21.581
+    AMNS: 9.600
+    JSPL: 9.600
+    JSW_Group: 34.200
+    OTHER_BOF: 3.177
+    OTHER_EAF: 9.323
+    OTHER_IF: 81.920
+  total_capacity_mt: 200.333   # reconstructs exactly from producer rows
+  production_by_route_mt:
+    BOF: 62.488    # 41.1% share (Annexure V + §3.2.3)
+    EAF: 31.612    # 20.8% share
+    IF: 58.080     # 38.2% share
+  total_production_mt: 152.180
+  capacity_by_route_mt:
+    BF-BOF:
+      identifiable_mt: 34.109   # SAIL+RINL+NMDC+OTHER BOF
+      note: "Excludes BOF portion of mixed producers (TSL/JSW/JSPL)."
+    NG-DRI-EAF:
+      identifiable_mt: 9.600    # AM/NS row only
+      note: "Gas-DRI EAF; feedstock split of remaining EAF not tabulated."
+    EAF-OTHER:
+      identifiable_mt: 9.323    # OTHER EAF row (JPC Annexure IV)
+      note: >
+        EAF units of 'Other Producers' (9.323 Mt). Feedstock split
+        (coal-DRI vs scrap vs gas-DRI) NOT tabulated by JPC — spans the
+        Coal-DRI-EAF / Scrap-EAF / NG-DRI-EAF subsets; not allocated to
+        any single route (do NOT split by assumption).
+    Coal-DRI-EAF:
+      identifiable_mt: 0.0
+      note: "Subset of EAF-OTHER 9.323 Mt; feedstock split untabulated -> route DEFERRED."
+    Coal-DRI-IF:
+      identifiable_mt: 81.920   # OTHER IF row = full IF route (JPC)
+      note: "IF route capacity CLOSED via JPC Annexure IV OTHER IF row."
+    Scrap-EAF:
+      identifiable_mt: 0.0
+      note: "Subset of EAF-OTHER 9.323 Mt; feedstock split untabulated."
+    H2-DRI-EAF:
+      identifiable_mt: 0.0
+      note: "No commercial H2-DRI plant in India FY2024-25."
+  mixed_producers_mt: 65.381   # TSL 21.581 + JSW 34.200 + JSPL 9.600
+  mixed_producer_note: >
+    JPC Annexure IV lists TSL Group, JSW Group and JSPL as single producer
+    rows WITHOUT an internal BOF/EAF route split. This 65.381 Mt is fully
+    accounted at producer level but its route allocation is a documented
+    SUB-GAP (do not allocate by assumption).
+  reconciliation:
+    producer_level_gap_mt: 0.0      # 200.333 = sum of Annexure IV producer rows
+    route_level_sub_gap_mt: 65.381  # mixed-producer route split not tabulated
+    note: >
+      The 105.954 Mt reconciliation gap reported in Phase 20 is RESOLVED at
+      producer level: the JPC Annexure IV producer rows account for the full
+      200.333 Mt. The remaining route-level sub-gap is the TSL/JSW/JSPL
+      internal route split (65.381 Mt) plus the EAF feedstock split.
+
+# =============================================================================
+# FLEET AGGREGATION — PHASE 20 (known/unknown/coverage + reconciliation gap)
+# =============================================================================
+# Route-level CRUDE-STEEL capacity aggregation as at 2024. The national context
+# (200.33 Mt FY2024-25) is NOT force-allocated to routes: the EAF feedstock
+# split and the BF hot-metal-to-crude boundary are documented gaps, so route
+# totals below are reported as KNOWN plant-level sums + UNKNOWN residuals,
+# never as a fabricated full split.
+# PHASE 24A UPDATE: producer-level reconciliation now CLOSED via JPC Annexure IV
+# (see jpc_route_capacity_fy2024_25 above); this block retains the Phase-20
+# plant-level aggregation for backward compatibility.
+# =============================================================================
+fleet_aggregation:
+  national_context_capacity_mt: 200.33
+  national_context_source: "MoS AR 2025-26 Table 3.2.2 (FY2024-25, JPC)"
+  national_context_provenance: "FROZEN_EXTERNAL"
+
+  capacity_by_route_2024_mt:
+    BF-BOF:
+      known_capacity_mt: 60.176   # SAIL 19.676 + RINL 7.3 + Tata India 20.6 + JSPL crude 9.6 + NMDC 3.0 (FROZEN_EXTERNAL plant-level crude sums; JSPL includes DRI component 3.12, JSW NOT allocated - company aggregate 34.2 not route-split)
+      unknown_capacity_mt: null   # not derivable: BF aggregate is hot-metal (95.8) not crude; FY25 JPC crude split gated
+      route_context_mt: 95.8      # hot-metal basis (MoS Greening the Steel Sector, Mar-2025) - NOT directly comparable to crude sums
+      coverage_note: "Known plant-level crude 60.176 vs hot-metal aggregate 95.8: boundary mismatch (hot-metal vs crude) prevents a defensible coverage fraction."
+    NG-DRI-EAF:
+      known_capacity_mt: 0.0      # no FROZEN_EXTERNAL plant (AM/NS Hazira 9.0 stays PROJECT_PROPOSAL)
+      unknown_capacity_mt: null   # subset of EAF aggregate 36.61; feedstock split untabulated
+      route_context_mt: null
+      coverage_note: "EAF feedstock split (NG-DRI vs Coal-DRI vs Scrap) NOT tabulated -> GAP."
+    Coal-DRI-EAF:
+      known_capacity_mt: 0.0
+      unknown_capacity_mt: null
+      route_context_mt: null
+      coverage_note: "EAF feedstock split untabulated; route DEFERRED (no EAF-specific charge ratio)."
+    Coal-DRI-IF:
+      known_capacity_mt: 0.0      # 1,032 units; plant-level register EXTERNAL_PENDING (JPC gated)
+      unknown_capacity_mt: 68.8   # IF steelmaking aggregate (MoS Greening the Steel Sector, Mar-2025)
+      route_context_mt: 68.8
+      coverage_note: "IF aggregate 68.8 Mt is FROZEN_EXTERNAL context; plant-level register remains EXTERNAL_PENDING (JPC MSME database gated)."
+    Scrap-EAF:
+      known_capacity_mt: 0.0
+      unknown_capacity_mt: null
+      route_context_mt: null
+      coverage_note: "Subset of EAF aggregate 36.61 Mt; feedstock split untabulated -> GAP."
+    H2-DRI-EAF:
+      known_capacity_mt: 0.0
+      unknown_capacity_mt: 0.0
+      route_context_mt: 0.0
+      coverage_note: "No commercial H2-DRI-EAF plant operating in India as of 2024 (FROZEN_EXTERNAL)."
+
+  total_known_plant_capacity_mt: 60.176   # FROZEN_EXTERNAL plant-level crude sums (BF-BOF routes above)
+  total_known_company_capacity_mt: 94.376 # + JSW company aggregate 34.2 (route split not itemised)
+  total_unknown_capacity_mt: null         # route residuals not derivable (gaps above)
+  reconciliation_gap_mt: 105.954          # = 200.33 - 94.376 (national context minus known company capacity)
+  reconciliation_gap_note: >
+    The residual 105.95 Mt of the 200.33 Mt national aggregate is NOT allocated
+    to routes: it comprises the IF sector (68.8 Mt aggregate, plant register
+    pending), the EAF feedstock-unallocated portion (36.61 Mt aggregate), the
+    BF hot-metal-to-crude boundary difference, JSW route split (34.2 company
+    aggregate), and other producers. Do NOT force route totals to equal the
+    national aggregate; the reconciliation gap is reported as-is.

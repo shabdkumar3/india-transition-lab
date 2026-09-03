@@ -1,0 +1,123 @@
+/* ── Google Fonts: Inter ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+/* ── Design tokens — warm off-white light theme ── */
+:root {
+  --bg:           #f7f6f2;
+  --surface:      #ffffff;
+  --surface2:     #f3f2ee;
+  --card:         #ffffff;
+  --border:       #e8e5de;
+  --border-dim:   rgba(0,0,0,0.06);
+  --muted:        #7a7e74;
+  --dim:          #a8ada5;
+  --text:         #23261f;
+  --text-sub:     #474c44;
+
+  color-scheme: light;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+/* Card utility */
+.card {
+  background: #ffffff;
+  border: 1px solid #e8e5de;
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(20,26,34,0.04), 0 4px 16px rgba(20,26,34,0.05);
+}
+
+/* Monospace for data values */
+.mono, .tabular,
+[class*="font-mono"] {
+  font-family: 'Menlo', 'Consolas', 'Monaco', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+/* ── Scrollbars ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d0c8 transparent;
+}
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-thumb { background: #d4d0c8; border-radius: 3px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Recharts light polish ── */
+.recharts-cartesian-axis-tick text {
+  font-size: 11px;
+  fill: #a8ada5;
+  font-family: 'Inter', sans-serif;
+}
+.recharts-legend-item-text {
+  font-size: 11px;
+  color: #7a7e74 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.recharts-tooltip-wrapper { outline: none; }
+
+/* ── Button / Input resets ── */
+button { font-family: inherit; }
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #e8e5de;
+  border-radius: 2px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px currentColor;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+}
+
+/* ── Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

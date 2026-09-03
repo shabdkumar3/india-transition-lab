@@ -1,0 +1,42 @@
+[
+  {
+    "layer": "CONTROL",
+    "implemented": true,
+    "functional": true,
+    "status_text": "Baseline MILP \u2014 economics-available route subset (BF-BOF, NG-DRI-EAF, Scrap-EAF)",
+    "evidence": "Objective = 506,663.09 M USD; Mix = 100% Scrap-EAF",
+    "limiting_factors": "SCRAP_INTENSITY_EXTERNAL_PENDING; EXISTING_ROUTE_CAPACITY_UNAVAILABLE; H2_DRI_FULL_PLANT_ECONOMICS_EXTERNAL_PENDING"
+  },
+  {
+    "layer": "SCRAP",
+    "implemented": true,
+    "functional": false,
+    "status_text": "VACUOUS \u2014 Scrap-EAF scrap intensity is EXTERNAL_PENDING (null), so scrap availability constraint never binds; mix and objective identical to control",
+    "evidence": "Control objective: 506663.09 M USD; Mode B objective: 506663.09 M USD; Difference < 1 M USD; 2070 mix identical (100% Scrap-EAF)",
+    "limiting_factors": "SCRAP_INTENSITY_EXTERNAL_PENDING"
+  },
+  {
+    "layer": "DEPLOYMENT",
+    "implemented": true,
+    "functional": false,
+    "status_text": "INFEASIBLE \u2014 Construction lead times with zero route-level existing capacity cannot serve 2024 demand",
+    "evidence": "Solver status: INFEASIBLE; No existing per-route capacity (all 0.0 Mt); Lead times: BF-BOF=4yr, NG-DRI-EAF=3yr, Scrap-EAF=2yr",
+    "limiting_factors": "EXISTING_ROUTE_CAPACITY_UNAVAILABLE"
+  },
+  {
+    "layer": "LEARNING",
+    "implemented": true,
+    "functional": false,
+    "status_text": "DEFERRED \u2014 Framework implemented but steel-route learning rates are EXTERNAL_PENDING; no rates fabricated",
+    "evidence": "learning_rates dict empty in BaselineInputs; learning_exponents dict empty; M1 b_elec DEFERRED (no real electrolyser cost data)",
+    "limiting_factors": "STEEL_LEARNING_RATES_EXTERNAL_PENDING; M1_B_ELEC_DEFERRED"
+  },
+  {
+    "layer": "M1",
+    "implemented": true,
+    "functional": false,
+    "status_text": "REAL DATA ABSENT \u2014 M1 estimator implemented and synthetic-tested; real historical electrolyser cost/deployment dataset = 0 observations",
+    "evidence": "M1_INTERFACE_SPEC.md defines interface; M1_VALIDATION.md documents synthetic test; M1_DATA_GAP.md: 0 real observations found; b_elec remains DEFERRED",
+    "limiting_factors": "ELECTROLYSER_COST_DEPLOYMENT_DATA_ABSENT"
+  }
+]

@@ -1,0 +1,6770 @@
+[
+  {
+    "year": 2024,
+    "constraint_type": "demand",
+    "available": 144.29,
+    "used": 144.29,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 144.29,
+    "used": 144.29,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 57.716,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2024,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 7.2145,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "demand",
+    "available": 162.7403846153846,
+    "used": 162.7403846153846,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 162.7403846153846,
+    "used": 162.7403846153846,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 65.09615384615385,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2025,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 8.137019230769232,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "demand",
+    "available": 181.19076923076923,
+    "used": 181.19076923076923,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 181.19076923076923,
+    "used": 181.19076923076923,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 72.4763076923077,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2026,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 9.059538461538462,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "demand",
+    "available": 199.64115384615386,
+    "used": 199.64115384615386,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 199.64115384615386,
+    "used": 199.64115384615386,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 79.85646153846155,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2027,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 9.982057692307693,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "demand",
+    "available": 218.09153846153845,
+    "used": 218.09153846153845,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 218.09153846153845,
+    "used": 218.09153846153845,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 87.23661538461539,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2028,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 10.904576923076924,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "demand",
+    "available": 236.54192307692307,
+    "used": 236.54192307692307,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 236.54192307692307,
+    "used": 236.54192307692307,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 94.61676923076924,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2029,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 11.827096153846155,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "demand",
+    "available": 254.9923076923077,
+    "used": 254.9923076923077,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 254.9923076923077,
+    "used": 254.9923076923077,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 101.99692307692308,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2030,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 12.749615384615385,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "demand",
+    "available": 273.4426923076923,
+    "used": 273.4426923076923,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 273.4426923076923,
+    "used": 273.4426923076923,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 109.37707692307693,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2031,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 13.672134615384616,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "demand",
+    "available": 291.89307692307693,
+    "used": 291.89307692307693,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 291.89307692307693,
+    "used": 291.89307692307693,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 116.75723076923077,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2032,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 14.594653846153847,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "demand",
+    "available": 310.3434615384615,
+    "used": 310.3434615384615,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 310.3434615384615,
+    "used": 310.3434615384615,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 124.1373846153846,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2033,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 15.517173076923076,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "demand",
+    "available": 328.7938461538462,
+    "used": 328.7938461538462,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 328.7938461538462,
+    "used": 328.7938461538462,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 131.51753846153846,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2034,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 16.439692307692308,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "demand",
+    "available": 347.24423076923074,
+    "used": 347.24423076923074,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 347.24423076923074,
+    "used": 347.24423076923074,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 138.8976923076923,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2035,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 17.362211538461537,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "demand",
+    "available": 365.6946153846154,
+    "used": 365.6946153846154,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 365.6946153846154,
+    "used": 365.6946153846154,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 146.27784615384618,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2036,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 18.284730769230773,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "demand",
+    "available": 384.145,
+    "used": 384.145,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 384.145,
+    "used": 384.145,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 153.65800000000002,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2037,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 19.207250000000002,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "demand",
+    "available": 402.59538461538466,
+    "used": 402.59538461538466,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 402.59538461538466,
+    "used": 402.59538461538466,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 161.03815384615388,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2038,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 20.129769230769234,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "demand",
+    "available": 421.0457692307692,
+    "used": 421.0457692307692,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 421.0457692307692,
+    "used": 421.0457692307692,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 168.4183076923077,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2039,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 21.052288461538463,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "demand",
+    "available": 439.4961538461539,
+    "used": 439.4961538461539,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 439.4961538461539,
+    "used": 439.4961538461539,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 175.79846153846157,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2040,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 21.974807692307696,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "demand",
+    "available": 457.94653846153847,
+    "used": 457.94653846153847,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 457.94653846153847,
+    "used": 457.94653846153847,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 183.1786153846154,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2041,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 22.897326923076925,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "demand",
+    "available": 476.39692307692303,
+    "used": 476.39692307692303,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 476.3969230769231,
+    "used": 476.39692307692303,
+    "slack": 5.684341886080802e-14,
+    "pressure": 0.9999999999999999,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 190.55876923076923,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2042,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 23.819846153846154,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "demand",
+    "available": 494.8473076923077,
+    "used": 494.8473076923077,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 494.84730769230765,
+    "used": 494.8473076923077,
+    "slack": -5.684341886080802e-14,
+    "pressure": 1.0000000000000002,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 197.9389230769231,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2043,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 24.742365384615386,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "demand",
+    "available": 513.2976923076924,
+    "used": 513.2976923076924,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 513.2976923076924,
+    "used": 513.2976923076924,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 205.31907692307698,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2044,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 25.664884615384622,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "demand",
+    "available": 531.748076923077,
+    "used": 531.748076923077,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 531.748076923077,
+    "used": 531.748076923077,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 212.69923076923078,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2045,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 26.587403846153848,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "demand",
+    "available": 550.1984615384615,
+    "used": 550.1984615384615,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 550.1984615384615,
+    "used": 550.1984615384615,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 220.0793846153846,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2046,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 27.509923076923076,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "demand",
+    "available": 568.6488461538462,
+    "used": 568.6488461538462,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 568.6488461538462,
+    "used": 568.6488461538462,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 227.4595384615385,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2047,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 28.432442307692313,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "demand",
+    "available": 587.0992307692309,
+    "used": 587.0992307692309,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 587.0992307692309,
+    "used": 587.0992307692309,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 234.83969230769236,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2048,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 29.354961538461545,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "demand",
+    "available": 605.5496153846154,
+    "used": 605.5496153846154,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 605.5496153846154,
+    "used": 605.5496153846154,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 242.2198461538462,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2049,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 30.277480769230774,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "demand",
+    "available": 624.0,
+    "used": 624.0,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 624.0,
+    "used": 624.0,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 249.60000000000002,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2050,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 31.200000000000003,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "demand",
+    "available": 633.85,
+    "used": 633.85,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 633.85,
+    "used": 633.85,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 253.54000000000002,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2051,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 31.692500000000003,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "demand",
+    "available": 643.7,
+    "used": 643.7,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 643.7,
+    "used": 643.7,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 257.48,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2052,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 32.185,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "demand",
+    "available": 653.55,
+    "used": 653.55,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 653.55,
+    "used": 653.55,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 261.42,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2053,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 32.6775,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "demand",
+    "available": 663.4,
+    "used": 663.4,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 663.4,
+    "used": 663.4,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 265.36,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2054,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 33.17,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "demand",
+    "available": 673.25,
+    "used": 673.25,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 673.25,
+    "used": 673.25,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 269.3,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2055,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 33.6625,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "demand",
+    "available": 683.1,
+    "used": 683.1,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 683.1,
+    "used": 683.1,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 273.24,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2056,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 34.155,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "demand",
+    "available": 692.95,
+    "used": 692.95,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 692.95,
+    "used": 692.95,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 277.18,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2057,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 34.6475,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "demand",
+    "available": 702.8,
+    "used": 702.8,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 702.8,
+    "used": 702.8,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 281.12,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2058,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 35.14,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "demand",
+    "available": 712.65,
+    "used": 712.65,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 712.65,
+    "used": 712.65,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 285.06,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2059,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 35.6325,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "demand",
+    "available": 722.5,
+    "used": 722.5,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 722.5,
+    "used": 722.5,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 289.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2060,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 36.125,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "demand",
+    "available": 732.35,
+    "used": 732.35,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 732.35,
+    "used": 732.35,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 292.94,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2061,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 36.6175,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "demand",
+    "available": 742.2,
+    "used": 742.2,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 742.2,
+    "used": 742.2,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 296.88000000000005,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2062,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 37.11000000000001,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "demand",
+    "available": 752.05,
+    "used": 752.05,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 752.05,
+    "used": 752.05,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 300.82,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2063,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 37.6025,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "demand",
+    "available": 761.9,
+    "used": 761.9,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 761.9,
+    "used": 761.9,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 304.76,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2064,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 38.095,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "demand",
+    "available": 771.75,
+    "used": 771.75,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 771.75,
+    "used": 771.75,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 308.70000000000005,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2065,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 38.587500000000006,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "demand",
+    "available": 781.6,
+    "used": 781.6,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 781.6,
+    "used": 781.6,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 312.64000000000004,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2066,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 39.080000000000005,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "demand",
+    "available": 791.45,
+    "used": 791.45,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 791.45,
+    "used": 791.45,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 316.58000000000004,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2067,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 39.572500000000005,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "demand",
+    "available": 801.3,
+    "used": 801.3,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 801.3,
+    "used": 801.3,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 320.52,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2068,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 40.065,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "demand",
+    "available": 811.15,
+    "used": 811.15,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 811.15,
+    "used": 811.15,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 324.46000000000004,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2069,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 40.557500000000005,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "demand",
+    "available": 821.0,
+    "used": 821.0,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "capacity_BF-BOF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "capacity_NG-DRI-EAF",
+    "available": 0.0,
+    "used": 0.0,
+    "slack": 0.0,
+    "pressure": null,
+    "binding_status": "NON_BINDING"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "capacity_Scrap-EAF",
+    "available": 821.0,
+    "used": 821.0,
+    "slack": 0.0,
+    "pressure": 1.0,
+    "binding_status": "BINDING"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "deployment_BF-BOF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "deployment_NG-DRI-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "deployment_Scrap-EAF",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_iron_ore",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_scrap",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_non_coking_coal",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_natural_gas",
+    "available": null,
+    "used": -0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_hydrogen",
+    "available": null,
+    "used": 0.0,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "resource_electricity_route",
+    "available": null,
+    "used": 328.40000000000003,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  },
+  {
+    "year": 2070,
+    "constraint_type": "emissions",
+    "available": null,
+    "used": 41.050000000000004,
+    "slack": null,
+    "pressure": null,
+    "binding_status": "UNCONSTRAINED"
+  }
+]

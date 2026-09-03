@@ -1,0 +1,77 @@
+[
+  {
+    "layer": "vol4_benchmark",
+    "status": "published_target",
+    "objective": null,
+    "mix_2050": "not published numerically (Figure 3.5 chart)",
+    "mix_2070": {
+      "BF-BOF": 0.1,
+      "H2-DRI-EAF": 0.5,
+      "Scrap-EAF": 0.4
+    },
+    "co2_2050": null,
+    "co2_2070": null,
+    "scrap_share_2050": 0.3,
+    "note": "Vol.4 NZS reference (prose p.66): 10% BF-BOF+CCS / 50% H2-DRI / 40% scrap"
+  },
+  {
+    "layer": "control",
+    "status": "solved",
+    "objective": 506663.09,
+    "mix_2050": {
+      "BF-BOF": 0.0,
+      "NG-DRI-EAF": 0.0,
+      "Scrap-EAF": 1.0
+    },
+    "mix_2070": {
+      "BF-BOF": 0.0,
+      "NG-DRI-EAF": 0.0,
+      "Scrap-EAF": 1.0
+    },
+    "co2_2050": 31.2,
+    "co2_2070": 41.05,
+    "scrap_share_2050": 1.0,
+    "note": "Step 8/12 control baseline (Mode A)"
+  },
+  {
+    "layer": "scrap",
+    "status": "solved",
+    "objective": 506663.09,
+    "mix_2050": {
+      "BF-BOF": 0.0,
+      "NG-DRI-EAF": 0.0,
+      "Scrap-EAF": 1.0
+    },
+    "mix_2070": {
+      "BF-BOF": 0.0,
+      "NG-DRI-EAF": 0.0,
+      "Scrap-EAF": 1.0
+    },
+    "co2_2050": 31.2,
+    "co2_2070": 41.05,
+    "scrap_share_2050": 1.0,
+    "note": "Mode B dynamic scrap: VACUOUS \u2014 Scrap-EAF scrap intensity is null, so the scrap availability constraint is not binding (mix unchanged)"
+  },
+  {
+    "layer": "deployment",
+    "status": "infeasible",
+    "objective": null,
+    "mix_2050": null,
+    "mix_2070": null,
+    "co2_2050": null,
+    "co2_2070": null,
+    "scrap_share_2050": null,
+    "note": "INFEASIBLE: construction lead times with zero route-level existing capacity cannot serve 2024 demand (Step 14 \u00a713 finding; needs existing-fleet data, not a fabrication)"
+  },
+  {
+    "layer": "learning",
+    "status": "deferred",
+    "objective": null,
+    "mix_2050": null,
+    "mix_2070": null,
+    "co2_2050": null,
+    "co2_2070": null,
+    "scrap_share_2050": null,
+    "note": "DEFERRED: steel-route learning rates are EXTERNAL_PENDING; no rates are fabricated (Step 14 \u00a713)"
+  }
+]

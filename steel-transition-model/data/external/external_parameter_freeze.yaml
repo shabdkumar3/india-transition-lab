@@ -1,0 +1,485 @@
+parameters:
+- parameter_id: INTENSITY_COKING_COAL_BF_BOF
+  technology: BF-BOF
+  parameter: coking coal intensity
+  value: 0.89
+  unit: t/t steel
+  year: 2030
+  currency: N/A
+  base_year: N/A
+  scope: BF-BOF production coking coal input
+  provenance: EXTERNAL
+  source_title: Report of the Inter-Ministerial Committee for augmentation and consumption of domestic coking coal (Mission Coking Coal)
+  source_organization: Ministry of Coal, Government of India
+  source_url: http://coal.gov.in/sites/default/files/2021-01/IMC-Report.pdf
+  document_filename: imc_report_2021.pdf
+  page: 10-11
+  table_or_figure: Table 1
+  extraction_method: 161 Mt coking coal (10-11% ash) required for 181 Mt steel through blast furnace route by FY2030 (NSP-2017 basis); ratio 161/181 = 0.889 t/t.
+  normalization_formula: 161 Mt coking coal / 181 Mt BF-route crude steel = 0.889 t/t
+  confidence: MEDIUM
+  notes: 'DATA CLOSURE ROUND 3: SUPERSEDES prior web-derived record (coke rate 450-550 kg/THM x 1.4 x 0.9 = 0.65) which was INVALIDATED (SEC single-fuel shortcut). Promoted from primary government source (Ministry of Coal, 2021). Planning-demand basis (FY2030); CAG-2025 SAIL audit cross-check recorded. Value enters model via candidate config intensity_overrides; official baseline registry value stays null. PHASE 20: unchanged (retained).'
+- parameter_id: INTENSITY_SCRAP_SCRAP_EAF
+  technology: Scrap-EAF
+  parameter: scrap intensity (pure-scrap EAF charge)
+  value: 1.05
+  unit: t/t steel
+  year: 2018
+  currency: N/A
+  base_year: N/A
+  scope: Scrap-EAF production scrap input (100% scrap metallic charge, per tonne crude steel)
+  provenance: FROZEN_EXTERNAL
+  source_title: Weighing regional scrap availability in global pathways for steel production processes
+  source_organization: Xylia, M., Silveira, S., Duerinck, J., Meinke-Hubeny, F. - Energy Efficiency (Springer), vol. 11, iss. 5, pp. 1055-1075
+  source_url: https://doi.org/10.1007/s12053-017-9596-7
+  document_filename: xylia_2018_energy_efficiency.pdf
+  page: '1063'
+  table_or_figure: Table 2 (Assumptions for the steel production processes, per tonne crude steel)
+  extraction_method: EAF route scrap input listed directly as 1.05 ton per tonne crude steel (100% scrap metallic charge; melt yield ~95.2%).
+  normalization_formula: Direct table value (no conversion; route boundary = scrap charged / tonne crude steel out)
+  confidence: MEDIUM
+  notes: 'PHASE 20 PROMOTION (RULE ZERO COMPLETE): peer-reviewed exact-table value for the EAF (scrap-based) route. Corroborated by IEA Iron & Steel Technology Roadmap 2020, Ch.1 notes (extract line 1086): ''Metallic input of 1.05-1.2 tonnes is required per tonne of steel'' (process-yield basis). worldsteel 0.88/0.71 remain BLENDED recycled-EAF route (scrap + DRI/hot metal) - boundary mismatch, NOT used. Scope note: global process-yield parameter (melting loss is route physics, not country-specific); consistent with the model''s pure-scrap Scrap-EAF route. SUPERSEDES round-3 EXTERNAL_PENDING status and the diagnostic-only 1.08 / 1.10 values (both INVALIDATED as working values; 1.08 remains override-only). Uncertainty bounds retained: SCRAP_LOW 1.0, SCRAP_HIGH 1.15. Enters model via candidate config intensity_overrides (Scrap-EAF/scrap = 1.05); shared registry stays null for baseline invariance.'
+- parameter_id: INTENSITY_NON_COKING_COAL_COAL_DRI_EAF
+  technology: Coal-DRI-EAF
+  parameter: non-coking coal intensity
+  value: null
+  unit: t/t steel
+  year: 2024
+  currency: N/A
+  base_year: N/A
+  scope: Coal-DRI-EAF production non-coking coal input
+  provenance: EXTERNAL_PENDING
+  source_title: Decarbonising Coal-based Direct Reduced Iron Production
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_decarbonising_dri_2024.pdf
+  page: '12'
+  table_or_figure: Table 2
+  extraction_method: INVALIDATED - prior freeze scaled CEEW coal rate (1.4-1.6 t/t DRI) by an assumed 80% DRI-EAF charge ratio which is UNRESOLVED (IBM IMYB 2022 vs CEEW conflict).
+  normalization_formula: EXTERNAL_PENDING - DRI charge ratio unresolved
+  confidence: LOW
+  notes: 'DATA CLOSURE ROUND 3: value 1.2 INVALIDATED. PHASE 20: Coal-DRI-EAF charge ratio remains UNRESOLVED (no defensible EAF-specific DRI charge ratio found) => route treatment DEFERRED per special rule. CEEW value is per tonne DRI (not per tonne steel); DRI-to-steel charge ratio EXTERNAL_PENDING. Do not promote.'
+- parameter_id: INTENSITY_NON_COKING_COAL_COAL_DRI_IF
+  technology: Coal-DRI-IF
+  parameter: non-coking coal intensity
+  value: null
+  unit: t/t steel
+  year: 2024
+  currency: N/A
+  base_year: N/A
+  scope: Coal-DRI-IF production non-coking coal input
+  provenance: EXTERNAL_PENDING
+  source_title: Decarbonising Coal-based Direct Reduced Iron Production
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_decarbonising_dri_2024.pdf
+  page: '15'
+  table_or_figure: Section 3.2
+  extraction_method: INVALIDATED - prior freeze scaled CEEW coal rate (1.4-1.6 t/t DRI) by an assumed 61% DRI-IF charge ratio which is UNRESOLVED (IBM IMYB 2022 ~40% DRI charge vs CEEW 2024 ~12.5% scrap use; conflict).
+  normalization_formula: EXTERNAL_PENDING - DRI charge ratio unresolved
+  confidence: LOW
+  notes: 'DATA CLOSURE ROUND 3: value 0.92 INVALIDATED. PHASE 20: charge-ratio conflict re-confirmed (IBM IMYB 2022 ~40% DRI + ~50% scrap national average vs CEEW 2024 ~12.5% scrap cluster survey vs Fastmarkets 2023 50-70% DRI / 30-40% scrap dynamic market observation). Definitions/samples differ; UNRESOLVED. Retained as scenario alternatives (DRI_IBM 0.40, DRI_CEEW 0.875), never frozen. Do not promote.'
+- parameter_id: INTENSITY_IRON_ORE_BF_BOF
+  technology: BF-BOF
+  parameter: iron ore intensity
+  value: 1.45
+  unit: t/t steel
+  year: 2024
+  currency: N/A
+  base_year: N/A
+  scope: BF-BOF production iron ore input
+  provenance: EXTERNAL
+  source_title: Iron and Steel Technology Roadmap
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '30'
+  table_or_figure: Fig 1.10 Notes
+  extraction_method: Standard global BF-BOF iron ore specific input
+  normalization_formula: Direct extraction
+  confidence: HIGH
+  notes: 'Corresponds to 1.6 t ore per t hot metal at 90% hot metal ratio. PHASE 20: unchanged (retained).'
+- parameter_id: INTENSITY_IRON_ORE_COAL_DRI_EAF
+  technology: Coal-DRI-EAF
+  parameter: iron ore intensity
+  value: null
+  unit: t/t steel
+  year: 2024
+  currency: N/A
+  base_year: N/A
+  scope: Coal-DRI-EAF production iron ore input
+  provenance: EXTERNAL_PENDING
+  source_title: Decarbonising Coal-based Direct Reduced Iron Production
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_decarbonising_dri_2024.pdf
+  page: '12'
+  table_or_figure: Table 2
+  extraction_method: INVALIDATED - prior freeze scaled pellet input (1.4-1.6 t/t DRI) by an assumed 80% DRI charge ratio which is UNRESOLVED.
+  normalization_formula: EXTERNAL_PENDING - DRI charge ratio unresolved
+  confidence: LOW
+  notes: 'DATA CLOSURE ROUND 3: value 1.2 INVALIDATED. PHASE 20: Coal-DRI-EAF route DEFERRED (no EAF-specific charge ratio); per-tonne-DRI basis; charge ratio EXTERNAL_PENDING. Do not promote.'
+- parameter_id: INTENSITY_IRON_ORE_COAL_DRI_IF
+  technology: Coal-DRI-IF
+  parameter: iron ore intensity
+  value: null
+  unit: t/t steel
+  year: 2024
+  currency: N/A
+  base_year: N/A
+  scope: Coal-DRI-IF production iron ore input
+  provenance: EXTERNAL_PENDING
+  source_title: Decarbonising Coal-based Direct Reduced Iron Production
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_decarbonising_dri_2024.pdf
+  page: '15'
+  table_or_figure: Section 3.2
+  extraction_method: INVALIDATED - prior freeze scaled pellet input (1.4-1.6 t/t DRI) by an assumed 61% DRI charge ratio which is UNRESOLVED.
+  normalization_formula: EXTERNAL_PENDING - DRI charge ratio unresolved
+  confidence: LOW
+  notes: 'DATA CLOSURE ROUND 3: value 0.92 INVALIDATED. PHASE 20: charge-ratio conflict UNRESOLVED (IBM vs CEEW vs Fastmarkets). Per-tonne-DRI basis; DRI-to-steel charge ratio EXTERNAL_PENDING. Do not promote.'
+- parameter_id: CAPEX_ELECTROLYSER_H2DRI
+  technology: H2-DRI-EAF
+  parameter: CAPEX (electrolyser component, overnight)
+  value: 452.0
+  unit: USD/kWe
+  year: 2020
+  currency: USD
+  base_year: 2019
+  scope: Electrolyser process-equipment CAPEX (overnight; stacks, power electronics, water treatment, gas purification, EPC), excludes upstream electricity generation and downstream storage
+  provenance: FROZEN_EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 - Ch.2 levelised cost notes
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '108'
+  table_or_figure: Notes to Fig 2.12 (extract line 5144)
+  extraction_method: 'Direct: "Electrolyser CAPEX = USD 452/kWe and OPEX = USD 7/kWe. 8% discount rate, 25-year lifetime and a 90% capacity factor are used for all equipment."'
+  normalization_formula: Direct extraction (overnight, USD/kWe electrical input capacity)
+  confidence: HIGH
+  notes: 'PHASE 20: electrolyser component FROZEN (IEA 2020 p.108). M1-interface rule: the M1 learning parameter may affect ONLY this electrolyser component (USD/kWe); it must NOT scale DRI shaft, EAF, BOP or full-plant CAPEX. M1 remains DEFERRED (no real historical electrolyser cost/deployment dataset).'
+- parameter_id: OPEX_ELECTROLYSER_H2DRI
+  technology: H2-DRI-EAF
+  parameter: OPEX (electrolyser component, fixed)
+  value: 7.0
+  unit: USD/kWe
+  year: 2020
+  currency: USD
+  base_year: 2019
+  scope: Electrolyser fixed O&M (per kWe, same boundary as CAPEX component)
+  provenance: FROZEN_EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 - Ch.2 levelised cost notes
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '108'
+  table_or_figure: Notes to Fig 2.12 (extract line 5144)
+  extraction_method: 'Direct: "Electrolyser CAPEX = USD 452/kWe and OPEX = USD 7/kWe."'
+  normalization_formula: Direct extraction
+  confidence: HIGH
+  notes: 'PHASE 20: electrolyser fixed OPEX FROZEN (IEA 2020 p.108). Same boundary as CAPEX component. Do not double-count with route-level FOM/VOM.'
+- parameter_id: CAPEX_ELECTROLYSER_INDIA_VRE_2035
+  technology: H2-DRI-EAF
+  parameter: CAPEX (electrolyser, India VRE case 2035)
+  value: 500.0
+  unit: USD/kW
+  year: 2035
+  currency: USD
+  base_year: 2019
+  scope: India VRE-based H2-DRI electrolyser CAPEX (70% LHV efficiency incl. compression to 60 bar), India-specific case
+  provenance: EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 - India chapter, VRE H2-DRI case
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '137'
+  table_or_figure: Notes to India VRE H2-DRI figure (extract line 6621)
+  extraction_method: 'Direct: "Electrolyser: CAPEX = USD 500/kW, 70% efficiency on a lower heating value basis including compression to 60 bars for storage. Grid electricity = USD 68/MWh and 184 gCO2/kWh."'
+  normalization_formula: Direct extraction (India 2035 VRE case)
+  confidence: MEDIUM
+  notes: 'PHASE 20: India-specific electrolyser CAPEX scenario value (2035 VRE case). Used as scenario alternative alongside global 452 USD/kWe. LCOH in same study: USD 1.7-2.1/kg H2. Recorded as EXTERNAL scenario value, not the model''s frozen component (the model component remains 452 USD/kWe global).'
+- parameter_id: CAPEX_H2_STORAGE_BOUNDS
+  technology: H2-DRI-EAF
+  parameter: Hydrogen storage CAPEX (scenario bounds)
+  value: null
+  unit: USD/kWh
+  year: 2035
+  currency: USD
+  base_year: 2019
+  scope: Hydrogen storage (low-cost cavern vs high-cost steel tanks), scenario bounds only
+  provenance: EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 - India chapter, VRE H2-DRI case
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '137'
+  table_or_figure: Notes to India VRE H2-DRI figure (extract lines 6576-6578)
+  extraction_method: 'Direct: "Cavern storage, CAPEX = USD 0.4/kWh" / "High-cost hydrogen storage: Steel tanks, CAPEX = USD 15/kWh".'
+  normalization_formula: Direct extraction (bounds only; no central value promoted)
+  confidence: MEDIUM
+  notes: 'PHASE 20: H2 storage component recorded as scenario bounds (0.4-15 USD/kWh). No central value promoted. Conditioning/storage included in boundary only when configured; base component decomposition excludes storage (IEA p.108 global electrolyser boundary excludes downstream storage).'
+- parameter_id: CAPEX_ANNUALISED_COAL_DRI_EAF
+  technology: Coal-DRI-EAF
+  parameter: CAPEX (annualised)
+  value: 82.0
+  unit: USD/t crude steel
+  year: 2024
+  currency: USD
+  base_year: 2019
+  scope: Annualised plant-level overnight CAPEX
+  provenance: EXTERNAL
+  source_title: Sustainable Energy Transition for India's SME Steel Sector
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_sme_steel_2026.pdf
+  page: '34'
+  table_or_figure: Table 5.2
+  extraction_method: Overnight CAPEX of INR 7,000 crore/Mtpa converted at 80 INR/USD and annualised at 8% over 25 years.
+  normalization_formula: Overnight CAPEX ($875/t) * Capital Recovery Factor (0.0937) = $82/t
+  confidence: MEDIUM
+  notes: 'Includes rotary kiln and electric arc furnace units. PHASE 20: unchanged (retained as recorded full-plant economics for the DEFERRED Coal-DRI-EAF route).'
+- parameter_id: CAPEX_ANNUALISED_COAL_DRI_IF
+  technology: Coal-DRI-IF
+  parameter: CAPEX (annualised)
+  value: 61.5
+  unit: USD/t crude steel
+  year: 2024
+  currency: USD
+  base_year: 2019
+  scope: Annualised plant-level overnight CAPEX
+  provenance: EXTERNAL
+  source_title: Sustainable Energy Transition for India's SME Steel Sector
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_sme_steel_2026.pdf
+  page: '36'
+  table_or_figure: Table 5.3
+  extraction_method: Overnight CAPEX of INR 5,250 crore/Mtpa converted at 80 INR/USD and annualised at 8% over 25 years.
+  normalization_formula: Overnight CAPEX ($656/t) * Capital Recovery Factor (0.0937) = $61.5/t
+  confidence: MEDIUM
+  notes: 'Induction furnace is significantly cheaper to construct than EAF. PHASE 20: unchanged (retained).'
+- parameter_id: CAPEX_ANNUALISED_H2_DRI_EAF_PLANT
+  technology: H2-DRI-EAF
+  parameter: CAPEX (annualised, full plant)
+  value: null
+  unit: USD/t crude steel
+  year: 2030
+  currency: USD
+  base_year: 2019
+  scope: Annualised plant-level overnight CAPEX (full H2-DRI-EAF plant)
+  provenance: CANDIDATE_EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 (stored primary extract)
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: null
+  table_or_figure: null
+  extraction_method: 'PHASE 20 CORRECTION: prior record claimed overnight CAPEX $685/t = electrolyser $158/t + DRI-EAF plant $527/t (source: ITK Research / IEA, Fig 3.4 p.108). Grep of the stored IEA extract (9020 lines) finds NO 685/527/158 capital values - only the annualised DRI-EAF range USD 53-136/t (p.30) and electrolyser 452 USD/kWe (p.108). The $685 decomposition is UNVERIFIABLE from the stored primary -> value set to null, provenance demoted to EXTERNAL_PENDING.'
+  normalization_formula: EXTERNAL_PENDING - full-plant overnight CAPEX unverifiable from stored primary
+  confidence: MEDIUM
+  notes: 'PHASE 25D UPDATE: overnight CAPEX candidate verified at 69,750 INR million/Mt (NITI Aayog 2026 Vol 9 p.75, 2025 prices). Cross-checked with TERI (implied total ~USD 1.48bn scenario) and Berkeley (baseline CAPEX ~USD 670/tpy). Boundary remains undefined in NITI Vol 9, so it is kept as CANDIDATE_EXTERNAL and the baseline value remains null to preserve baseline invariance.'
+- parameter_id: OPEX_FIXED_COAL_DRI_EAF
+  technology: Coal-DRI-EAF
+  parameter: OPEX fixed
+  value: 35.0
+  unit: USD/t crude steel/year
+  year: 2024
+  currency: USD
+  base_year: 2019
+  scope: Fixed O&M excluding energy and labour
+  provenance: EXTERNAL
+  source_title: Sustainable Energy Transition for India's SME Steel Sector
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_sme_steel_2026.pdf
+  page: '34'
+  table_or_figure: Table 5.2
+  extraction_method: Assumed 4% of overnight CAPEX per year
+  normalization_formula: Overnight CAPEX ($875/t) * 4% = $35/t/year
+  confidence: MEDIUM
+  notes: 'Standard engineering assumption. PHASE 20: unchanged (retained).'
+- parameter_id: OPEX_FIXED_COAL_DRI_IF
+  technology: Coal-DRI-IF
+  parameter: OPEX fixed
+  value: 26.0
+  unit: USD/t crude steel/year
+  year: 2024
+  currency: USD
+  base_year: 2019
+  scope: Fixed O&M excluding energy and labour
+  provenance: EXTERNAL
+  source_title: Sustainable Energy Transition for India's SME Steel Sector
+  source_organization: CEEW
+  source_url: https://www.ceew.in
+  document_filename: ceew_sme_steel_2026.pdf
+  page: '36'
+  table_or_figure: Table 5.3
+  extraction_method: Assumed 4% of overnight CAPEX per year
+  normalization_formula: Overnight CAPEX ($656/t) * 4% = $26/t/year
+  confidence: MEDIUM
+  notes: 'Standard engineering assumption. PHASE 20: unchanged (retained).'
+- parameter_id: OPEX_FIXED_H2_DRI_EAF_PLANT
+  technology: H2-DRI-EAF
+  parameter: OPEX fixed (full plant)
+  value: null
+  unit: USD/t crude steel/year
+  year: 2030
+  currency: USD
+  base_year: 2019
+  scope: Fixed O&M excluding energy and labour (full plant)
+  provenance: EXTERNAL_PENDING
+  source_title: Iron and Steel Technology Roadmap 2020 (stored primary extract)
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: null
+  table_or_figure: null
+  extraction_method: 'PHASE 20 CORRECTION: derived from the same unverifiable $685/t overnight basis -> demoted alongside CAPEX_ANNUALISED_H2_DRI_EAF_PLANT. Electrolyser fixed OPEX component IS frozen separately (7 USD/kWe, p.108).'
+  normalization_formula: EXTERNAL_PENDING - full-plant basis unverifiable from stored primary
+  confidence: LOW
+  notes: 'PHASE 20: full-plant H2-DRI-EAF fixed OPEX stays EXTERNAL_PENDING. The electrolyser component OPEX (7 USD/kWe) is FROZEN separately and must not be double-counted with any future full-plant FOM.'
+- parameter_id: CAPEX_ELECTROLYSER_H2DRI_BOUNDS
+  technology: H2-DRI-EAF
+  parameter: CAPEX (electrolyser, low/high scenario bounds)
+  value: null
+  unit: USD/kWe
+  year: 2020
+  currency: USD
+  base_year: 2019
+  scope: Electrolyser CAPEX scenario bounds for the 100% H2-DRI-EAF route (low/high sensitivity cases in the IEA levelised-cost figure); process-equipment + EPC boundary per IEA
+  provenance: FROZEN_EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 - Ch.2 levelised cost notes (Fig 2.12)
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '108'
+  table_or_figure: Notes to Fig 2.12 (extract lines 5222-5224)
+  extraction_method: 'Direct: "H2 DRI-EAF low corresponds to an electrolyser cost of USD 285/kWe and LHV efficiency of 74%. H2 DRI-EAF high corresponds to an electrolyser cost of USD 1 067/kWe and LHV efficiency of 64%."'
+  normalization_formula: Direct extraction (bounds only; no central value promoted)
+  confidence: HIGH
+  notes: 'PHASE 23 PROMOTION: bounds verified directly in the stored IEA primary extract (lines 5222-5224, Fig 2.12 notes p.108). Corroborate the frozen central component CAPEX_ELECTROLYSER_H2DRI (452 USD/kWe): 285/1067 USD/kWe are the low/high cases used for the H2-DRI-EAF levelised-cost sensitivity. Bounds only; the model component remains 452 USD/kWe. Same boundary (process equipment incl. electrolysers + EPC, 8% discount, 25-yr lifetime, 95% capacity factor in Fig 2.12).'
+- parameter_id: LEVELISED_COST_H2_DRI_INDIA
+  technology: H2-DRI-EAF
+  parameter: Levelised cost of steel production via hydrogen-based DRI route in India
+  value: null
+  unit: USD/t crude steel
+  year: 2020
+  currency: USD
+  base_year: 2019
+  scope: 'Levelised cost of steel (full route: electrolyser + DRI + EAF + energy), India, 95% capacity factor, grid electricity USD 30-90/MWh'
+  provenance: FROZEN_EXTERNAL
+  source_title: Iron and Steel Technology Roadmap 2020 - India chapter, Box 3.2
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '135'
+  table_or_figure: Box 3.2 (extract lines 6488-6494)
+  extraction_method: 'Direct: "Levelised costs of USD 500-860 per tonne of crude steel are achievable [for hydrogen-based DRI in India], assuming a grid electricity price range of USD 30-90 per megawatt hour (MWh)."'
+  normalization_formula: Direct extraction (levelised cost, NOT annualised CAPEX; do NOT use as a CAPEX term)
+  confidence: HIGH
+  notes: 'PHASE 23 PROMOTION: India-specific H2-DRI levelised cost bounds verified directly in the stored IEA primary extract (Box 3.2, p.135, lines 6488-6494). Makes the H2-DRI route economically INTERPRETABLE at route level for India (levelised USD 500-860/t vs ~USD 360-650/t for CCUS routes in the same box). Levelised cost is NOT annualised CAPEX: full-plant CAPEX decomposition (CAPEX_ANNUALISED_H2_DRI_EAF_PLANT) remains EXTERNAL_PENDING until a page-verified overnight-CAPEX source is acquired.'
+- parameter_id: ELECTRICITY_H2_DRI_VOGL
+  technology: H2-DRI-EAF
+  parameter: Electricity consumption (hydrogen direct reduction steelmaking)
+  value: 3.48
+  unit: MWh/t liquid steel
+  year: 2018
+  currency: EUR
+  base_year: 2015
+  scope: Total electricity requirement for H2-DRI steelmaking (mainly electrolyser hydrogen production), 1 Mt/yr reference plant
+  provenance: FROZEN_EXTERNAL
+  source_title: Assessment of hydrogen direct reduction for fossil-free steelmaking
+  source_organization: Vogl, V., Ahman, M., Nilsson, L.J. - Journal of Cleaner Production, vol. 203, pp. 736-745
+  source_url: https://doi.org/10.1016/j.jclepro.2018.08.279
+  document_filename: null
+  page: '736'
+  table_or_figure: Abstract (verified via Lund University research portal)
+  extraction_method: 'Direct from abstract: "hydrogen direct reduction steelmaking needs 3.48 MWh of electricity per tonne of liquid steel, mainly for the electrolyser hydrogen production."'
+  normalization_formula: Direct extraction (MWh per tonne liquid steel)
+  confidence: HIGH
+  notes: 'PHASE 23: abstract-verified fact (Lund University portal, DOI 10.1016/j.jclepro.2018.08.279). Corroborates the IEA H2-DRI electricity intensity. Component CAPEX decomposition from the same paper (electrolyser 600-800 EUR/kW, DRI shaft ~170-200 EUR/t, EAF ~100-120 EUR/t annual capacity, total ~1000-1400 EUR/t, Table 1/2) is recorded as EXTERNAL scenario context only - full-text tables were not independently page-verified in this session (ScienceDirect gated).'
+- parameter_id: PRODUCTION_COST_H2_DRI_VOGL
+  technology: H2-DRI-EAF
+  parameter: Total production cost (H2-DRI steelmaking)
+  value: null
+  unit: EUR/t steel
+  year: 2018
+  currency: EUR
+  base_year: 2015
+  scope: Total production cost (CAPEX + OPEX + energy, levelised) for a 1 Mt/yr H2-DRI-EAF plant, EUR 2015
+  provenance: FROZEN_EXTERNAL
+  source_title: Assessment of hydrogen direct reduction for fossil-free steelmaking
+  source_organization: Vogl, V., Ahman, M., Nilsson, L.J. - Journal of Cleaner Production, vol. 203, pp. 736-745
+  source_url: https://doi.org/10.1016/j.jclepro.2018.08.279
+  document_filename: null
+  page: '736'
+  table_or_figure: Abstract (verified via Lund University research portal)
+  extraction_method: 'Direct from abstract: "Total production costs are in the range of 361-640 EUR per tonne of steel."'
+  normalization_formula: Direct extraction (bounds; EUR 2015, 1 Mt/yr reference)
+  confidence: HIGH
+  notes: 'PHASE 23: abstract-verified fact. Same paper states H2-DRI becomes cost competitive with an integrated steel plant at a carbon price of 34-68 EUR/t CO2 and electricity costs of 40 EUR/MWh. Recorded as interpretability context, not a model CAPEX input (levelised cost).'
+- parameter_id: CAPEX_COMPONENTS_H2_DRI_VOGL
+  technology: H2-DRI-EAF
+  parameter: CAPEX component decomposition (scenario context, page-not-verified)
+  value: null
+  unit: EUR/kW (electrolyser); EUR/t annual capacity (plant)
+  year: 2018
+  currency: EUR
+  base_year: 2015
+  scope: 'Component CAPEX for 1 Mt/yr H2-DRI-EAF plant: electrolyser 600-800 EUR/kW, DRI shaft ~170-200 EUR/t, EAF ~100-120 EUR/t, total ~1000-1400 EUR/t annual capacity'
+  provenance: EXTERNAL
+  source_title: Assessment of hydrogen direct reduction for fossil-free steelmaking
+  source_organization: Vogl, V., Ahman, M., Nilsson, L.J. - Journal of Cleaner Production, vol. 203, pp. 736-745
+  source_url: https://doi.org/10.1016/j.jclepro.2018.08.279
+  document_filename: null
+  page: null
+  table_or_figure: Table 1/2 (reported via secondary literature summary; page not independently verified in Phase 23 - ScienceDirect gated)
+  extraction_method: Component CAPEX ranges reported from Vogl 2018 Tables 1-2 via secondary summary.
+  normalization_formula: EXTERNAL scenario context only - NOT promotable to FROZEN_EXTERNAL until page-verified
+  confidence: LOW
+  notes: 'PHASE 23: recorded as EXTERNAL scenario context for the M1 interface and future component decomposition. MUST NOT enter the model''s costed space until the exact table values are page-verified from the full text. The abstract-verified facts (3.48 MWh/t; 361-640 EUR/t production cost) are frozen separately (ELECTRICITY_H2_DRI_VOGL, PRODUCTION_COST_H2_DRI_VOGL).'
+- parameter_id: VOM_ALL_ROUTES
+  technology: ALL
+  parameter: Variable O&M (VOM)
+  value: 0.0
+  unit: USD/t steel
+  year: 2024
+  currency: USD
+  base_year: 2019
+  scope: Variable O&M excluding energy and material inputs
+  provenance: EXTERNAL
+  source_title: Iron and Steel Technology Roadmap
+  source_organization: IEA
+  source_url: https://www.iea.org
+  document_filename: iea_iron_steel_technology_roadmap_2020.pdf
+  page: '30'
+  table_or_figure: Fig 1.10 Notes
+  extraction_method: Set to 0 to avoid double counting with resource consumption block.
+  normalization_formula: N/A
+  confidence: HIGH
+  notes: 'Energy, ores, scrap are accounted directly via intensities in RES variables. PHASE 20: unchanged (retained).'
+- parameter_id: GRID_EMISSION_FACTOR_INDIA_2024
+  technology: GRID
+  parameter: grid emission factor (India, FY2023-24)
+  value: 0.727
+  unit: tCO2/MWh
+  year: 2024
+  currency: N/A
+  base_year: N/A
+  scope: 'Weighted average CO2 emission factor for all grid-connected power stations in India. Does NOT include captive/embedded generation separately. Covers grid generation mix (coal, gas, nuclear, hydro, wind, solar). Boundary: electricity generation at the point of dispatch.
+
+    '
+  provenance: FROZEN_EXTERNAL
+  source_title: CO2 Baseline Database for the Indian Power Sector, Version 20.0
+  source_organization: Central Electricity Authority (CEA), Ministry of Power, Government of India
+  source_url: https://www.cea.nic.in
+  document_filename: cea_co2_baseline_database_v20_dec2024.pdf
+  page: database summary
+  table_or_figure: Weighted average emission factor table (FY2023-24)
+  extraction_method: 'Standard weighted average emission factor (Combined Margin = OM + BM average) from CEA''s official CO2 Baseline Database. FY2022-23 value: 0.716 tCO2/MWh. FY2023-24: 0.727 tCO2/MWh. Year-on-year increase reflects reduced hydro share and increased coal dispatch.
+
+    '
+  normalization_formula: "Direct extraction; tCO2/MWh = kgCO2/kWh \xD7 1000 / 1000 (identity)"
+  confidence: HIGH
+  notes: "PHASE 21 PROMOTION: CEA is the authoritative government primary source for India grid emission factors. This value does NOT enter the Mode A MILP objective (no carbon price mechanism in any frozen run). Purpose: anchors the Mode B NZS green electricity pathway and provides basis for comparing captive vs. grid electricity emission intensity. Corroborates Vol.4 qualitative statement (coal-heavy current grid). Prior IEA India VRE scenario value (184 gCO2/kWh = 0.184 tCO2/MWh, IEA 2020 p.137) is a 2035 GREEN ELECTRICITY SCENARIO value \u2014 NOT contradictory, different context (documented SC-05). FY2022-23 alternate value: 0.716 tCO2/MWh (same source, one year earlier).\n"

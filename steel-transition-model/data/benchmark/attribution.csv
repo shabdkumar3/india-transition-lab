@@ -1,0 +1,61 @@
+metric,year,scenario,ours,vol4,difference_description,driver,evidence,confidence
+technology_share,2070,CPS,0.0,0.5,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,CPS,0.0,0.07,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,CPS,1.0,0.18,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,NZS,1.0,0.4,model 100% Scrap-EAF vs Vol.4 ~40% scrap / 50% H2-DRI / 10% BF-BOF+CCS,scrap_accounting,Scrap-EAF/scrap intensity is null (EXTERNAL_PENDING); STEP13 audit counterfactual: injecting 1.08 t/t flips the mix to 100% BF-BOF (STEP13_SCIENTIFIC_SANITY_AUDIT.md §1; diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,NZS,1.0,0.4,model 100% Scrap-EAF vs Vol.4 ~40% scrap / 50% H2-DRI / 10% BF-BOF+CCS,existing_assets,"route-level existing capacity unresolved (existing_route_capacity_available=False); 2024 solution builds a new fleet (free fleet replacement), removing any sunk-cost advantage of incumbent BF-BOF (STEP13_SCIENTIFIC_SANITY_AUDIT.md §3)",MEDIUM
+technology_share,2070,NZS,1.0,0.4,model H2-DRI-EAF = 0 vs Vol.4 50%,technology_economics,H2-DRI-EAF full-plant economics EXTERNAL_PENDING; M1 deferred (no real b_elec); route not represented (technology_space_completeness=INCOMPLETE),HIGH
+technology_share,2070,NZS,1.0,0.4,model BF-BOF = 0 vs Vol.4 10% (CCS-equipped),technology_economics,no CCUS representation in the model; Vol.4 NZS BF-BOF share assumes CCUS (prose p.66),HIGH
+scrap_share_production,2050,CPS,1.0,0.2,,unattributed,no evidence-backed driver on file (attribution deferred),
+scrap_share_production,2070,CPS,1.0,0.2,,unattributed,no evidence-backed driver on file (attribution deferred),
+scrap_share_production,2050,NZS,1.0,0.3,model 100% vs Vol.4 30% scrap share,scrap_accounting,Mode A has no physical scrap availability constraint; RES_scrap = 0 because the Scrap-EAF scrap intensity is null (STEP13_SCIENTIFIC_SANITY_AUDIT.md §2),HIGH
+scrap_share_production,2050,NZS,1.0,0.3,model 100% vs Vol.4 30% scrap share,optimization_formulation,linear cost-minimization without an emissions/availability constraint corners on the cheapest new-build route (STEP13_SCIENTIFIC_SANITY_AUDIT.md §1),MEDIUM
+scrap_share_production,2070,NZS,1.0,0.4,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2050,CPS,0.05,1.4224,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2070,CPS,0.05,0.9652,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2050,NZS,0.05,0.6604,model 0.05 tCO2/t vs Vol.4 0.66 tCO2/t,scrap_accounting,cornered all-Scrap-EAF mix (0.05 tCO2/t) follows from the missing scrap cost term; with physical scrap intensity the mix flips to BF-BOF and CO2 rises to ~2.54 tCO2/t,HIGH
+co2_intensity,2070,NZS,0.05,0.127,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2050,CPS,31.200000000000003,887.5776000000001,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2070,CPS,41.050000000000004,792.4291999999999,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2050,NZS,31.200000000000003,412.0896,model 31.2 Mt vs Vol.4-derived ~412 Mt CO2,scrap_accounting,same mechanism as co2_intensity; arithmetic on a degenerate mix (STEP13_SCIENTIFIC_SANITY_AUDIT.md §8),HIGH
+co2_total,2070,NZS,41.050000000000004,104.267,,unattributed,no evidence-backed driver on file (attribution deferred),
+technology_share,2070,CPS,0.0,0.5,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,CPS,0.0,0.07,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,CPS,1.0,0.18,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,NZS,1.0,0.4,model 100% Scrap-EAF vs Vol.4 ~40% scrap / 50% H2-DRI / 10% BF-BOF+CCS,scrap_accounting,Scrap-EAF/scrap intensity is null (EXTERNAL_PENDING); STEP13 audit counterfactual: injecting 1.08 t/t flips the mix to 100% BF-BOF (STEP13_SCIENTIFIC_SANITY_AUDIT.md §1; diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,NZS,1.0,0.4,model 100% Scrap-EAF vs Vol.4 ~40% scrap / 50% H2-DRI / 10% BF-BOF+CCS,existing_assets,"route-level existing capacity unresolved (existing_route_capacity_available=False); 2024 solution builds a new fleet (free fleet replacement), removing any sunk-cost advantage of incumbent BF-BOF (STEP13_SCIENTIFIC_SANITY_AUDIT.md §3)",MEDIUM
+technology_share,2070,NZS,1.0,0.4,model H2-DRI-EAF = 0 vs Vol.4 50%,technology_economics,H2-DRI-EAF full-plant economics EXTERNAL_PENDING; M1 deferred (no real b_elec); route not represented (technology_space_completeness=INCOMPLETE),HIGH
+technology_share,2070,NZS,1.0,0.4,model BF-BOF = 0 vs Vol.4 10% (CCS-equipped),technology_economics,no CCUS representation in the model; Vol.4 NZS BF-BOF share assumes CCUS (prose p.66),HIGH
+scrap_share_production,2050,CPS,1.0,0.2,,unattributed,no evidence-backed driver on file (attribution deferred),
+scrap_share_production,2070,CPS,1.0,0.2,,unattributed,no evidence-backed driver on file (attribution deferred),
+scrap_share_production,2050,NZS,1.0,0.3,model 100% vs Vol.4 30% scrap share,scrap_accounting,Mode A has no physical scrap availability constraint; RES_scrap = 0 because the Scrap-EAF scrap intensity is null (STEP13_SCIENTIFIC_SANITY_AUDIT.md §2),HIGH
+scrap_share_production,2050,NZS,1.0,0.3,model 100% vs Vol.4 30% scrap share,optimization_formulation,linear cost-minimization without an emissions/availability constraint corners on the cheapest new-build route (STEP13_SCIENTIFIC_SANITY_AUDIT.md §1),MEDIUM
+scrap_share_production,2070,NZS,1.0,0.4,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2050,CPS,0.05,1.4224,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2070,CPS,0.05,0.9652,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2050,NZS,0.05,0.6604,model 0.05 tCO2/t vs Vol.4 0.66 tCO2/t,scrap_accounting,cornered all-Scrap-EAF mix (0.05 tCO2/t) follows from the missing scrap cost term; with physical scrap intensity the mix flips to BF-BOF and CO2 rises to ~2.54 tCO2/t,HIGH
+co2_intensity,2070,NZS,0.05,0.127,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2050,CPS,31.200000000000003,887.5776000000001,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2070,CPS,41.050000000000004,792.4291999999999,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2050,NZS,31.200000000000003,412.0896,model 31.2 Mt vs Vol.4-derived ~412 Mt CO2,scrap_accounting,same mechanism as co2_intensity; arithmetic on a degenerate mix (STEP13_SCIENTIFIC_SANITY_AUDIT.md §8),HIGH
+co2_total,2070,NZS,41.050000000000004,104.267,,unattributed,no evidence-backed driver on file (attribution deferred),
+technology_share,2070,CPS,1.0,0.5,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,CPS,0.0,0.07,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,CPS,0.0,0.18,model 100% Scrap-EAF vs Vol.4 50% BF-BOF / 25% H2 / 7% NG / 18% scrap,scrap_accounting,null Scrap-EAF scrap intensity removes the ~250 USD/t x ~1.08 t/t scrap cost term; counterfactual flip reproduced from config (diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,NZS,0.0,0.4,model 100% Scrap-EAF vs Vol.4 ~40% scrap / 50% H2-DRI / 10% BF-BOF+CCS,scrap_accounting,Scrap-EAF/scrap intensity is null (EXTERNAL_PENDING); STEP13 audit counterfactual: injecting 1.08 t/t flips the mix to 100% BF-BOF (STEP13_SCIENTIFIC_SANITY_AUDIT.md §1; diagnostic_scrap_intensity.yaml),HIGH
+technology_share,2070,NZS,0.0,0.4,model 100% Scrap-EAF vs Vol.4 ~40% scrap / 50% H2-DRI / 10% BF-BOF+CCS,existing_assets,"route-level existing capacity unresolved (existing_route_capacity_available=False); 2024 solution builds a new fleet (free fleet replacement), removing any sunk-cost advantage of incumbent BF-BOF (STEP13_SCIENTIFIC_SANITY_AUDIT.md §3)",MEDIUM
+technology_share,2070,NZS,0.0,0.4,model H2-DRI-EAF = 0 vs Vol.4 50%,technology_economics,H2-DRI-EAF full-plant economics EXTERNAL_PENDING; M1 deferred (no real b_elec); route not represented (technology_space_completeness=INCOMPLETE),HIGH
+technology_share,2070,NZS,0.0,0.4,model BF-BOF = 0 vs Vol.4 10% (CCS-equipped),technology_economics,no CCUS representation in the model; Vol.4 NZS BF-BOF share assumes CCUS (prose p.66),HIGH
+scrap_share_production,2050,CPS,0.0,0.2,,unattributed,no evidence-backed driver on file (attribution deferred),
+scrap_share_production,2070,CPS,0.0,0.2,,unattributed,no evidence-backed driver on file (attribution deferred),
+scrap_share_production,2050,NZS,0.0,0.3,model 100% vs Vol.4 30% scrap share,scrap_accounting,Mode A has no physical scrap availability constraint; RES_scrap = 0 because the Scrap-EAF scrap intensity is null (STEP13_SCIENTIFIC_SANITY_AUDIT.md §2),HIGH
+scrap_share_production,2050,NZS,0.0,0.3,model 100% vs Vol.4 30% scrap share,optimization_formulation,linear cost-minimization without an emissions/availability constraint corners on the cheapest new-build route (STEP13_SCIENTIFIC_SANITY_AUDIT.md §1),MEDIUM
+scrap_share_production,2070,NZS,0.0,0.4,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2050,CPS,2.54,1.4224,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2070,CPS,2.54,0.9652,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_intensity,2050,NZS,2.54,0.6604,model 0.05 tCO2/t vs Vol.4 0.66 tCO2/t,scrap_accounting,cornered all-Scrap-EAF mix (0.05 tCO2/t) follows from the missing scrap cost term; with physical scrap intensity the mix flips to BF-BOF and CO2 rises to ~2.54 tCO2/t,HIGH
+co2_intensity,2070,NZS,2.54,0.127,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2050,CPS,1584.96,887.5776000000001,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2070,CPS,2085.34,792.4291999999999,,unattributed,no evidence-backed driver on file (attribution deferred),
+co2_total,2050,NZS,1584.96,412.0896,model 31.2 Mt vs Vol.4-derived ~412 Mt CO2,scrap_accounting,same mechanism as co2_intensity; arithmetic on a degenerate mix (STEP13_SCIENTIFIC_SANITY_AUDIT.md §8),HIGH
+co2_total,2070,NZS,2085.34,104.267,,unattributed,no evidence-backed driver on file (attribution deferred),

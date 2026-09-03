@@ -1,0 +1,6 @@
+layer,status,objective,mix_2050,mix_2070,co2_2050,co2_2070,scrap_share_2050,note
+vol4_benchmark,published_target,,not published numerically (Figure 3.5 chart),"{""BF-BOF"": 0.1, ""H2-DRI-EAF"": 0.5, ""Scrap-EAF"": 0.4}",,,0.3,Vol.4 NZS reference (prose p.66): 10% BF-BOF+CCS / 50% H2-DRI / 40% scrap
+control,solved,506663.09,"{""BF-BOF"": 0.0, ""NG-DRI-EAF"": 0.0, ""Scrap-EAF"": 1.0}","{""BF-BOF"": 0.0, ""NG-DRI-EAF"": 0.0, ""Scrap-EAF"": 1.0}",31.2,41.05,1.0,Step 8/12 control baseline (Mode A)
+scrap,solved,506663.09,"{""BF-BOF"": 0.0, ""NG-DRI-EAF"": 0.0, ""Scrap-EAF"": 1.0}","{""BF-BOF"": 0.0, ""NG-DRI-EAF"": 0.0, ""Scrap-EAF"": 1.0}",31.2,41.05,1.0,"Mode B dynamic scrap: VACUOUS — Scrap-EAF scrap intensity is null, so the scrap availability constraint is not binding (mix unchanged)"
+deployment,infeasible,,,,,,,"INFEASIBLE: construction lead times with zero route-level existing capacity cannot serve 2024 demand (Step 14 §13 finding; needs existing-fleet data, not a fabrication)"
+learning,deferred,,,,,,,DEFERRED: steel-route learning rates are EXTERNAL_PENDING; no rates are fabricated (Step 14 §13)

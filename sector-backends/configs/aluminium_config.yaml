@@ -1,0 +1,422 @@
+# Aluminium Transition Sector — Parameter Registry
+# India Transition Lab | Provenance-tagged scientific parameters
+# All values carry source classification for transparent model audit.
+#
+# PROVENANCE TAGS:
+#   FROZEN_EXTERNAL    — Immutable physical/chemical constant (stoichiometry, thermodynamics)
+#   EXTERNAL           — Published official statistic; update only on new data release
+#   EXTERNAL_PENDING   — Source identified but data not yet extracted; placeholder used
+#   PROJECT_PROPOSAL   — Internal modelling assumption; requires peer review
+#
+# Key physics:
+#   Primary aluminium via Hall-Héroult electrolysis: ~13,000-14,500 kWh/t Al
+#   Bayer process for alumina from bauxite: ~1.9 GJ steam + 0.16 GJ elec per t alumina
+#   Al2O3 ratio: 1.93 t alumina per t Al (FROZEN_EXTERNAL, stoichiometry)
+#   PFC emissions: CF4 + C2F6 from anode effects (tCO2e/t Al, process-specific)
+#   Secondary (scrap) Al: 95% energy saving vs primary; limited by scrap supply
+#   Anode consumption: ~0.4-0.45 t carbon anode per t Al (Söderberg vs prebake)
+
+horizon:
+  start_year: 2024
+  end_year: 2070
+  model: "scipy.milp annual LP"
+  version: "v3"
+
+port: 8002
+
+discount_rate:
+  value: 0.10
+  provenance: PROJECT_PROPOSAL
+  source: "CEA/MoP India infrastructure WACC typical range 9-12%"
+
+# ── Routes ────────────────────────────────────────────────────────────────────
+# India aluminium: ~4.1 Mt primary + ~0.8 Mt secondary in 2024
+# Primary dominated by captive coal power (historically)
+# Routes:
+#   CoalPP-Primary  — Primary Al with captive coal power plant (baseline)
+#   GridPP-Primary  — Primary Al on grid electricity (coal-heavy today, decarbonising)
+#   RE-Primary      — Primary Al with dedicated RE (wind/solar + storage)
+#   Inert-Anode     — Primary Al with inert (non-carbon) anode (emerging technology)
+#   Secondary-Al    — Secondary aluminium from scrap (EoL + post-consumer)
+
+routes:
+  CoalPP-Primary:
+    label: "Captive Coal Power Primary"
+    description: "Smelting with captive coal power plant — dominant India configuration 2024"
+    existing_mt: 3.2              # Mt/yr (captive power smelters)
+    capex_usd_per_t: 2800         # USD/t Al/yr annualised (greenfield primary smelter)
+    capex_provenance: EXTERNAL
+    source_capex: "IAI 2023 Global Aluminium Sector Pathways; NALCO/Vedanta capex disclosures"
+    fom_usd_per_t_yr: 280         # Fixed O&M (USD/t Al/yr)
+    vom_residual_usd_per_t: 85    # Variable O&M excluding energy and carbon costs
+    availability: 0.90
+    lifetime_yr: 30
+    start_year: 2024
+    lead_years: 4                 # New primary smelter construction
+    wacc_premium: 0.0
+    max_ramp_mt_yr: 0.15          # No new coal-captive; retire existing
+    cutoff_year_cps: 2030         # No new coal smelters in CPS
+    cutoff_year_nzs: 2026         # Phase-out in NZS
+    fossil_decline: true
+
+    # Electricity: kWh per tonne Al (AC)
+    elec_kwh_per_t_al: 14500      # kWh/t Al (captive coal, older technology)
+    elec_kwh_provenance: EXTERNAL
+    source_elec_kwh: "IAI 2022 Global Aluminium: Sector Pathways Appendix A; India HH cells average"
+
+    # Electricity source: CAPTIVE coal power — emission factor is coal-plant specific
+    elec_ei_tco2_per_kwh: 0.00120 # 1.20 kgCO2/kWh (Indian coal power, supercritical)
+    elec_ei_provenance: EXTERNAL
+    source_elec_ei: "CEA 2022 CO2 Baseline Database for the Indian Power Sector v17"
+
+    # PFC emissions (CF4 + C2F6 from anode effects) — tCO2e per t Al
+    pfc_tco2e_per_t_al: 1.8      # Söderberg-type or older prebake with anode effects
+    pfc_provenance: EXTERNAL
+    source_pfc: "IPCC 2006 Guidelines Vol.3 Ch.4 Table 4.1; IPCC Tier 1 default for Hall-Héroult"
+
+    # Anode carbon: tCO2 from anode consumption
+    anode_co2_t_per_t_al: 1.6    # ~0.4 t anode × 4.0 tCO2/t C
+    anode_provenance: FROZEN_EXTERNAL
+    source_anode: "Stoichiometry: C → CO2 during electrolysis; anode ~0.4 t/t Al"
+
+    # Process CO2: sum of PFC + anode (combustion CO2 from coal power tracked via elec_ei)
+    pli_eligible: false
+    green_premium_eligible: false
+
+  GridPP-Primary:
+    label: "Grid Power Primary"
+    description: "Smelting on national grid — grid EI declines as India adds RE"
+    existing_mt: 0.9              # Mt/yr on grid connection
+    capex_usd_per_t: 2600         # USD/t Al/yr
+    capex_provenance: EXTERNAL
+    source_capex: "IAI 2023; grid-connected smelters have lower capex than captive PP"
+    fom_usd_per_t_yr: 260
+    vom_residual_usd_per_t: 85
+    availability: 0.90
+    lifetime_yr: 30
+    start_year: 2024
+    lead_years: 4
+    wacc_premium: 0.0
+    max_ramp_mt_yr: 1.0            # Grid-connected smelter; no captive PP constraint
+    fossil_decline: false
+
+    elec_kwh_per_t_al: 14000      # kWh/t Al (modern prebake cells)
+    elec_kwh_provenance: EXTERNAL
+    source_elec_kwh: "IAI 2022; best practice prebake 13,000-14,500 kWh/t"
+
+    elec_ei_tco2_per_kwh: null    # USE GRID EI TRAJECTORY (not captive plant)
+    pfc_tco2e_per_t_al: 0.8      # Better anode control on newer grid smelters
+    anode_co2_t_per_t_al: 1.5
+    pfc_provenance: EXTERNAL
+    source_pfc: "IPCC 2006 Tier 2 with point-of-emission factors"
+    pli_eligible: false
+    green_premium_eligible: false
+
+  RE-Primary:
+    label: "Renewable-Powered Primary"
+    description: "Dedicated RE (wind+solar+storage) powering electrolysis — zero scope 2 CO2"
+    existing_mt: 0.0
+    capex_usd_per_t: 3400         # USD/t Al/yr (smelter + dedicated RE system)
+    capex_provenance: PROJECT_PROPOSAL
+    source_capex: "IAI 2023 scenario analysis; RE premium estimated 20-30% over grid"
+    fom_usd_per_t_yr: 320
+    vom_residual_usd_per_t: 90
+    availability: 0.85            # Lower utilisation due to RE intermittency
+    lifetime_yr: 25
+    start_year: 2027
+    lead_years: 4
+    wacc_premium: 0.01            # Technology risk premium
+    max_ramp_mt_yr: 0.6            # Dedicated RE smelter (with policy acceleration)
+
+    elec_kwh_per_t_al: 13500      # kWh/t Al (modern technology; RE drives adoption of best cells)
+    elec_kwh_provenance: EXTERNAL
+    source_elec_kwh: "IAI 2022 best practice; RE economics favor high-efficiency cells"
+
+    elec_ei_tco2_per_kwh: 0.0    # Zero scope 2 CO2 (captive RE + storage)
+    pfc_tco2e_per_t_al: 0.5      # Best anode management
+    anode_co2_t_per_t_al: 1.4
+    pfc_provenance: PROJECT_PROPOSAL
+    source_pfc: "IAI 2023 net-zero pathway assumption"
+    pli_eligible: true
+    green_premium_eligible: true
+
+  Inert-Anode:
+    label: "Inert Anode Primary"
+    description: "Eliminates anode CO2; O2 instead of CO2 off-gas — requires RE or low-carbon power"
+    existing_mt: 0.0
+    capex_usd_per_t: 4200         # USD/t Al/yr (prototype technology, significant cost uncertainty)
+    capex_provenance: PROJECT_PROPOSAL
+    source_capex: "Elysis/Rio Tinto 2022 press release; IEA 2023 Aluminium Technology Roadmap"
+    fom_usd_per_t_yr: 380
+    vom_residual_usd_per_t: 95
+    availability: 0.80            # New technology uncertainty
+    lifetime_yr: 25
+    start_year: 2035              # Commercial scale 2035+
+    lead_years: 5
+    wacc_premium: 0.02
+    max_ramp_mt_yr: 0.15
+
+    elec_kwh_per_t_al: 13000      # Lower theoretical minimum (no anode consumption losses)
+    elec_kwh_provenance: PROJECT_PROPOSAL
+    source_elec_kwh: "Elysis 2022; theoretical reduction 15% vs conventional; IEA Roadmap 2023"
+
+    elec_ei_tco2_per_kwh: 0.0    # Must pair with RE (otherwise grid EI applied)
+    pfc_tco2e_per_t_al: 0.0      # Inert anode eliminates anode effects → zero PFC
+    anode_co2_t_per_t_al: 0.0    # No carbon anode consumed
+    pfc_provenance: FROZEN_EXTERNAL
+    source_pfc: "Stoichiometry: inert anode produces O2 not CO2 during electrolysis"
+    pli_eligible: true
+    green_premium_eligible: true
+
+  Secondary-Al:
+    label: "Secondary Aluminium (Scrap)"
+    description: "Remelting EoL + post-consumer scrap; 95% energy saving vs primary"
+    existing_mt: 0.8              # Mt/yr secondary Al (domestic)
+    capex_usd_per_t: 380          # USD/t Al/yr (remelting furnace, much lower than primary)
+    capex_provenance: EXTERNAL
+    source_capex: "European Aluminium 2022; UNEP 2011 Recycling Rates of Metals"
+    fom_usd_per_t_yr: 45
+    vom_residual_usd_per_t: 60
+    availability: 0.92
+    lifetime_yr: 20
+    start_year: 2024
+    lead_years: 1
+    wacc_premium: -0.01           # Lower risk (proven technology)
+    max_ramp_mt_yr: 1.0           # Limited by scrap supply not technology; ramp cap relaxed
+
+    elec_kwh_per_t_al: 700        # kWh/t Al — 95% savings vs primary
+    elec_kwh_provenance: EXTERNAL
+    source_elec_kwh: "IAI 2022; European Aluminium 2022; EAF remelting 500-800 kWh/t"
+
+    elec_ei_tco2_per_kwh: null    # Uses grid EI
+    pfc_tco2e_per_t_al: 0.0      # No electrolysis → no anode effects → no PFC
+    anode_co2_t_per_t_al: 0.0    # No carbon anode
+    pfc_provenance: FROZEN_EXTERNAL
+    source_pfc: "Secondary Al uses EAF remelting not Hall-Héroult; PFC = 0 (physics)"
+    pli_eligible: false
+    green_premium_eligible: true  # Low-carbon premium eligible
+
+    # Scrap supply constraint — this route is supply-limited
+    scrap_constrained: true
+
+# ── Scrap supply model ────────────────────────────────────────────────────────
+# India aluminium scrap = post-consumer (building, vehicles, appliances) + industrial
+# Key insight: aluminium recycling rate in India ~25% (vs 70%+ in developed countries)
+# As India's Al stock-in-use grows, EoL scrap grows with 25-50yr lag (per application)
+# Al use: packaging (~1-2yr), transport (~15yr), construction (~40yr), electronics (~10yr)
+
+scrap_supply:
+  enabled: true
+  description: "EoL scrap + post-industrial scrap available for Secondary-Al (Mt/yr)"
+  source: "IAI 2022; UNEP 2011; IEA projections for India"
+  # Scrap supply grows as India's existing Al stock ages out
+  # 2024: ~0.85 Mt (existing secondary capacity)
+  # Growth driven by vehicle fleet (~12yr avg life) and packaging
+  available_mt:
+    CPS:
+      2024: 0.85
+      2030: 1.40
+      2035: 2.20
+      2040: 3.00
+      2050: 4.80
+      2060: 7.00
+      2070: 9.50
+    NZS:
+      2024: 0.85
+      2030: 1.60
+      2035: 2.80
+      2040: 4.00
+      2050: 7.00
+      2060: 10.0
+      2070: 14.0
+  # NZS higher: accelerated collection programs + import scrap under policy
+
+# ── Alumina supply ────────────────────────────────────────────────────────────
+# India largely self-sufficient in bauxite; some alumina import dependence
+# Alumina ratio: 1.93 t Al2O3 per t Al (FROZEN_EXTERNAL)
+
+alumina:
+  al2o3_per_t_al: 1.93
+  al2o3_provenance: FROZEN_EXTERNAL
+  source: "Hall-Héroult stoichiometry: 2Al2O3 → 4Al + 3O2; Al2O3 MW=102, Al MW=27"
+  india_domestic_capacity_mt_yr: 14.2   # Mt/yr Al2O3 (2024)
+  source_capacity: "Aluminium Association of India 2023 Annual Report"
+  bauxite_domestic_mt_yr: 25.0         # Bauxite production capacity
+  import_dependence_fraction:
+    CPS:
+      2024: 0.05
+      2040: 0.15
+      2070: 0.20
+    NZS:
+      2024: 0.05
+      2040: 0.10
+      2070: 0.10
+  source_import: "IAI 2023 India analysis; IBM India Minerals Yearbook 2022"
+
+# ── Electricity (grid) ────────────────────────────────────────────────────────
+electricity:
+  grid_ei_tco2_per_kwh:
+    description: "Grid emission intensity (tCO2/kWh) — applied to GridPP-Primary and Secondary-Al"
+    provenance: EXTERNAL
+    source: "CEA 2022 CO2 Baseline Database India; IEA India NZS trajectory"
+    CPS:
+      2024: 0.00071   # 0.71 kgCO2/kWh (CEA 2022)
+      2030: 0.00055
+      2040: 0.00032
+      2050: 0.00018
+      2060: 0.00010
+      2070: 0.00007
+    NZS:
+      2024: 0.00071
+      2030: 0.00045
+      2040: 0.00020
+      2050: 0.00008
+      2060: 0.00003
+      2070: 0.00001
+
+  price_usd_per_kwh:
+    description: "Industrial electricity price (USD/kWh) — grid tariff"
+    provenance: EXTERNAL
+    source: "MoP India tariff orders 2023; IEA 2023 India projections"
+    CPS:
+      2024: 0.075
+      2030: 0.078
+      2040: 0.080
+      2050: 0.082
+      2060: 0.085
+      2070: 0.088
+    NZS:
+      2024: 0.075
+      2030: 0.065
+      2040: 0.055
+      2050: 0.048
+      2060: 0.042
+      2070: 0.038
+
+  re_price_usd_per_kwh:
+    description: "Dedicated RE power cost (USD/kWh) — for RE-Primary route"
+    provenance: PROJECT_PROPOSAL
+    source: "MNRE 2023 tariff data; BloombergNEF India RE outlook 2023"
+    CPS:
+      2024: 0.040
+      2030: 0.035
+      2040: 0.028
+      2050: 0.024
+      2060: 0.022
+      2070: 0.020
+    NZS:
+      2024: 0.040
+      2030: 0.030
+      2040: 0.022
+      2050: 0.018
+      2060: 0.015
+      2070: 0.013
+
+# ── Carbon price ──────────────────────────────────────────────────────────────
+carbon_price_usd_per_tco2:
+  provenance: PROJECT_PROPOSAL
+  source: "MoEFCC India carbon market draft 2023; IEA NZS trajectory"
+  CPS:
+    2024: 5
+    2030: 15
+    2040: 35
+    2050: 60
+    2060: 80
+    2070: 100
+  NZS:
+    2024: 5
+    2030: 30
+    2040: 70
+    2050: 110
+    2060: 140
+    2070: 175
+
+# ── Demand trajectories ───────────────────────────────────────────────────────
+# India aluminium demand: structural (construction, infrastructure) + consumer
+# Historical: 2024 ~5.0 Mt; growth driven by EVs, solar panels, packaging
+# Key policy: PLI scheme for Advanced Chemistry Cells → EV Al demand surge
+
+demand:
+  default_scenario: model_fitted
+
+demand_trajectories:
+  niti:
+    label: "NITI Aayog Vol.4 Reference"
+    source: "NITI Aayog 2023 India Energy Transition Outlook Vol.4"
+    method: "Sector-specific forecast"
+    anchors:
+      2024: 5.0
+      2030: 7.5
+      2040: 11.0
+      2050: 16.0
+      2060: 21.0
+      2070: 26.0
+
+  model_fitted:
+    label: "Logistic S-curve (fitted to historical)"
+    source: "World Aluminium / IAI historical production data; logistic fit"
+    method: "Logistic S-curve: GDP per capita elasticity + saturation"
+    assumption: "Saturation at 35 Mt/yr (comparable to China 2024 per-capita × India 2070 pop)"
+    anchors:
+      2024: 5.0
+      2030: 7.0
+      2040: 11.5
+      2050: 17.5
+      2060: 24.0
+      2070: 30.0
+
+  high_ev:
+    label: "High EV + RE Scenario"
+    source: "IEA 2023 India EV Outlook; NITI Aayog EV30@30 scenario"
+    method: "Sectoral demand build-up: EV + solar panels + packaging surge"
+    assumption: "EV fleet 30% by 2030, 80% by 2040 → Al-intensive battery/body demand"
+    anchors:
+      2024: 5.0
+      2030: 8.5
+      2040: 14.5
+      2050: 21.0
+      2060: 27.0
+      2070: 33.0
+
+  efficiency_driven:
+    label: "Efficiency + Material Substitution"
+    source: "Material efficiency literature; UNEP 2011 recycling potential"
+    method: "Lower demand from lightweighting, recycling, substitution"
+    assumption: "Recycling rate doubles to 50% by 2040; design for recycling mandated"
+    anchors:
+      2024: 5.0
+      2030: 6.5
+      2040: 9.5
+      2050: 13.0
+      2060: 17.0
+      2070: 21.0
+
+# ── Policy ────────────────────────────────────────────────────────────────────
+policy:
+  pli_usd_per_t:
+    description: "PLI incentive for green aluminium (low-carbon routes)"
+    RE-Primary:
+      CPS: {2024: 0, 2030: 20, 2040: 15, 2050: 10, 2060: 0, 2070: 0}
+      NZS: {2024: 0, 2030: 30, 2040: 20, 2050: 15, 2060: 5, 2070: 0}
+    Inert-Anode:
+      CPS: {2024: 0, 2030: 40, 2040: 30, 2050: 20, 2060: 10, 2070: 0}
+      NZS: {2024: 0, 2030: 60, 2040: 45, 2050: 30, 2060: 15, 2070: 0}
+    source: PROJECT_PROPOSAL
+
+  green_premium_usd_per_t:
+    description: "Green premium (CBAM-equivalent, EU carbon border adjustment)"
+    routes: ["RE-Primary", "Inert-Anode", "Secondary-Al"]
+    CPS: {2024: 0, 2030: 25, 2040: 50, 2050: 75, 2060: 90, 2070: 100}
+    NZS: {2024: 0, 2030: 40, 2040: 80, 2050: 115, 2060: 140, 2070: 150}
+    source: "EU CBAM Regulation 2023/956; IEA estimate of implicit carbon price"
+
+# ── Vol.4 reference targets ───────────────────────────────────────────────────
+vol4_reference:
+  co2_intensity_tco2_per_t_al:
+    description: "CO2 intensity target (tCO2/t Al) — includes scope 1+2+PFC (NITI 2026 Vol.4 Ch.3.3)"
+    2024: 23.5
+    2030: 10.0
+    2040: 6.0
+    2050: 3.0
+    2070: 0.5
+    source: "NITI Aayog (2026) Sectoral Insights Vol.4 Ch.3.3; IAI 2023 net-zero pathway"

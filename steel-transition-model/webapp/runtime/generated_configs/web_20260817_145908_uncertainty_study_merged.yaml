@@ -1,0 +1,209 @@
+mode_b_policy:
+  enabled: true
+  label: MODE_B_POLICY
+  provenance: EXTERNAL
+  scenario_policies:
+    CPS:
+      ncap_cutoff_years:
+        Coal-DRI-IF: 2030
+      route_start_years:
+        H2-DRI-EAF: 2035
+    NZS:
+      ncap_cutoff_years:
+        Coal-DRI-IF: 2030
+        NG-DRI-EAF: 2040
+        BF-BOF: 2060
+      route_start_years:
+        H2-DRI-EAF: 2030
+  scrap_waypoints:
+    NZS:
+    - year: 2025
+      share: 0.2
+    - year: 2050
+      share: 0.3
+    - year: 2070
+      share: 0.4
+  explicit_non_rules:
+    carbon_price: NOT_IMPOSED (Vol.4 provides no numeric carbon price)
+    emissions_cap: NOT_IMPOSED (no source-supported steel emissions cap)
+    coal_dri_eaf_cutoff: 'NOT_IMPOSED (Gate B: Vol.4 names only Coal-DRI-IF)'
+    hard_scrap_floor: 'NOT_IMPOSED (Gate C: waypoints are diagnostics only)'
+    green_electricity_numeric: EXTERNAL_PENDING (no numeric grid/CAPTIVE data)
+horizon:
+  start_year: 2024
+  end_year: 2070
+discount_rate:
+  value: 0.08
+  provenance: PROJECT_PROPOSAL
+enabled_routes:
+- BF-BOF
+- NG-DRI-EAF
+- Scrap-EAF
+existing_capacity_mt_aggregate: 200.333
+existing_capacity_per_route_mt:
+  BF-BOF: 95.8
+  Coal-DRI-EAF: 0.0
+  Coal-DRI-IF: 0.0
+  NG-DRI-EAF: 9.0
+  H2-DRI-EAF: 0.0
+  Scrap-EAF: 27.61
+lifetime_years: 25
+start_years:
+  BF-BOF: 2024
+  NG-DRI-EAF: 2024
+  Scrap-EAF: 2024
+availability:
+  BF-BOF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+  NG-DRI-EAF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+  Scrap-EAF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+economics:
+  capex_annualised_usd_per_t:
+    BF-BOF: 73.0
+    NG-DRI-EAF: 95.0
+    Scrap-EAF: 46.0
+  opex_fixed_usd_per_t:
+    BF-BOF: 68.0
+    NG-DRI-EAF: 87.0
+    Scrap-EAF: 43.0
+  vom_usd_per_t:
+    BF-BOF: 0.0
+    NG-DRI-EAF: 0.0
+    Scrap-EAF: 0.0
+resource_prices:
+  iron_ore:
+    value: 80.0
+    source_unit: USD/t
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/t (no conversion: intensity in t/t steel)'
+    provenance: EXTERNAL
+  scrap:
+    value: 250.0
+    source_unit: USD/t
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/t (no conversion: intensity in t/t steel)'
+    provenance: EXTERNAL
+  natural_gas:
+    value: 6.0
+    source_unit: USD/MBtu
+    target_unit: USD/GJ
+    conversion_factor: 1.055
+    conversion_operation: divide
+    conversion_formula: "USD/GJ = USD/MBtu / 1.055  (1 MBtu = 1.055 GJ, registry \xA7\
+      9)"
+    provenance: EXTERNAL
+  electricity:
+    value: 45.0
+    source_unit: USD/MWh
+    target_unit: USD/MWh
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/MWh (no conversion: intensity in MWh/t steel)'
+    provenance: EXTERNAL
+  hydrogen:
+    value: 1.9
+    source_unit: USD/kg
+    target_unit: USD/kg
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/kg (no conversion: intensity in kg H2/t steel)'
+    provenance: EXTERNAL
+  coking_coal:
+    value: 140.0
+    source_unit: USD/tce
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: "1 tce = 1 t coal (registry \xA79 tce basis; intensity in\
+      \ t/t steel)"
+    provenance: EXTERNAL
+  non_coking_coal:
+    value: 70.0
+    source_unit: USD/tce
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: "1 tce = 1 t coal (registry \xA79 tce basis; intensity in\
+      \ t/t steel)"
+    provenance: EXTERNAL
+scenarios:
+- name: CPS
+  demand_anchors_mt:
+    2024: 144.29
+    2050: 624.0
+    2070: 821.0
+- name: NZS
+  demand_anchors_mt:
+    2024: 144.29
+    2050: 624.0
+    2070: 821.0
+dynamic_scrap:
+  enabled: false
+  provenance: PROJECT_PROPOSAL
+  historical_cohorts:
+    unit: Mt
+    start_year: 1990
+    end_year: 2023
+    provenance: EXTERNAL
+    source: Ministry of Steel Annual Report 2025-26 (JPC production series)
+    source_page: Table 3.2.2 / production summary
+    production_mt:
+      2021:
+        value: 103.545
+        provenance: EXTERNAL
+        source: MoS AR 2025-26 (FY2020-21 crude steel production)
+        notes: FY2020-21 attributed to calendar 2021 (fiscal-year-end convention)
+      2022:
+        value: 120.293
+        provenance: EXTERNAL
+        source: MoS AR 2025-26 (FY2021-22 crude steel production)
+        notes: FY2021-22 attributed to calendar 2022 (fiscal-year-end convention)
+  lifetime:
+    distribution: weibull
+    weibull_shape: 2.5
+    weibull_scale: 20.0
+    deterministic_lifetime_years: 20
+    provenance: PROJECT_PROPOSAL
+    notes: Weibull(2.5, 20) per ASSUMPTION_DEBT_REGISTER.md; parametric scenario variable
+      for sensitivity.
+  collection:
+    collection_rate:
+      value: 0.8
+      provenance: PROJECT_PROPOSAL
+      notes: Parametric scenario variable; empirical Indian series DEFERRED.
+    processing_yield:
+      value: 0.9
+      provenance: PROJECT_PROPOSAL
+      notes: Parametric scenario variable; empirical Indian series DEFERRED.
+  scrap_imports:
+    value: 0.0
+    provenance: EXTERNAL_PENDING
+    notes: Imports excluded from this version (ScrapUse_t <= UsableDomesticScrap_t).
+      Pathway reserved.
+provenance_gating:
+  policy: strict
+  allow_proposal_parameters: true
+  pending_intensity_allowances:
+  - BF-BOF/iron_ore
+  - BF-BOF/coking_coal
+  - NG-DRI-EAF/iron_ore
+  - Scrap-EAF/scrap
+  intensity_overrides:
+  - route: Scrap-EAF
+    resource: scrap
+    value: 1.15
+    provenance: EXTERNAL_PENDING
+    rationale: UNCERTAINTY-BOUNDED PATHWAY SCENARIO 'SCRAP_HIGH' = 1.15 t/t (source-supported
+      scenario bound; NOT a frozen value. 1.08 is diagnostic-only; 92.5% yield not
+      source-backed; worldsteel 0.88/0.71 are the BLENDED route, boundary mismatch).
+mode: MODE_B
+scenario_name: NZS

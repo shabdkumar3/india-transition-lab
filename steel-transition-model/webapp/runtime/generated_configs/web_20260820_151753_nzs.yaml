@@ -1,0 +1,86 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\configs\\optimization\\mode_b_policy.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "NZS",
+    "use_endogenous_learning": false,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false,
+    "technology_ramp_limits": {
+      "enabled": false
+    },
+    "discount_rate": {
+      "value": 0.08,
+      "provenance": "WEB_USER_OVERRIDE"
+    },
+    "carbon_price": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "anchor_years": {
+        "2024": 4,
+        "2030": 19,
+        "2040": 56,
+        "2050": 140,
+        "2060": 187,
+        "2070": 243
+      }
+    },
+    "h2_supply_cap": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "anchor_years_mt": {
+        "2024": 0.001,
+        "2030": 0.55,
+        "2035": 1.8,
+        "2040": 5,
+        "2050": 14,
+        "2060": 22,
+        "2070": 30
+      }
+    },
+    "stranded_asset_cost": {
+      "enabled": true,
+      "stranded_cost_fraction": 0.3
+    },
+    "policy_incentives": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "incentives_usd_per_t": {
+        "H2-DRI-EAF": {
+          "2030": -20,
+          "2035": -15,
+          "2040": -10,
+          "2045": -5,
+          "2050": 0
+        }
+      }
+    },
+    "green_steel_premium": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "emission_threshold_tco2_per_t": 0.5,
+      "qualifying_routes": [
+        "H2-DRI-EAF",
+        "Scrap-EAF"
+      ],
+      "premium_usd_per_t": {
+        "2024": 0,
+        "2030": 8,
+        "2035": 33,
+        "2040": 59,
+        "2050": 89,
+        "2060": 107,
+        "2070": 120
+      }
+    },
+    "grid_emission_intensity": {
+      "enabled": true
+    }
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

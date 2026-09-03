@@ -1,0 +1,88 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\configs\\optimization\\mode_b_policy.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "NZS",
+    "use_endogenous_learning": false,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false,
+    "discount_rate": {
+      "value": 0.08,
+      "provenance": "WEB_USER_OVERRIDE"
+    },
+    "carbon_price": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "anchor_years": {
+        "2024": 0,
+        "2030": 1,
+        "2040": 4,
+        "2050": 10,
+        "2060": 12,
+        "2070": 15
+      }
+    },
+    "h2_supply_cap": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "anchor_years_mt": {
+        "2024": 0.001,
+        "2030": 0.3,
+        "2035": 1,
+        "2040": 3,
+        "2050": 8,
+        "2060": 15,
+        "2070": 22
+      }
+    },
+    "stranded_asset_cost": {
+      "enabled": true,
+      "stranded_cost_fraction": 0.3
+    },
+    "wacc_premium": {
+      "enabled": true,
+      "premium_by_route": {
+        "H2-DRI-EAF": 1.25
+      }
+    },
+    "policy_incentives": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "incentives_usd_per_t": {
+        "H2-DRI-EAF": {
+          "2030": -20,
+          "2035": -15,
+          "2040": -10,
+          "2045": -5,
+          "2050": 0
+        }
+      }
+    },
+    "green_steel_premium": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "emission_threshold_tco2_per_t": 0.5,
+      "qualifying_routes": [
+        "H2-DRI-EAF",
+        "Scrap-EAF"
+      ],
+      "premium_usd_per_t": {
+        "2024": 0,
+        "2030": 8,
+        "2040": 20,
+        "2050": 36,
+        "2060": 50,
+        "2070": 65
+      }
+    },
+    "grid_emission_intensity": {
+      "enabled": true
+    }
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

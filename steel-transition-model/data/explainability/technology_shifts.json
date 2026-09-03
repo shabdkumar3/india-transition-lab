@@ -1,0 +1,472 @@
+[
+  {
+    "year": 2024,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 160.32222222222222,
+    "absolute_change": 160.32222222222222,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2025,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2026,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427373,
+    "absolute_change": 20.500427350427373,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2027,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2028,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2029,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2030,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2031,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.5004273504274,
+    "absolute_change": 20.5004273504274,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2032,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2033,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427287,
+    "absolute_change": 20.500427350427287,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2034,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.5004273504274,
+    "absolute_change": 20.5004273504274,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2035,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427287,
+    "absolute_change": 20.500427350427287,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2036,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427458,
+    "absolute_change": 20.500427350427458,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2037,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427316,
+    "absolute_change": 20.500427350427316,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2038,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2039,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427373,
+    "absolute_change": 20.500427350427373,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2040,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427458,
+    "absolute_change": 20.500427350427458,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2041,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.50042735042723,
+    "absolute_change": 20.50042735042723,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2042,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2043,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427458,
+    "absolute_change": 20.500427350427458,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2044,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2045,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427344,
+    "absolute_change": 20.500427350427344,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2046,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.50042735042723,
+    "absolute_change": 20.50042735042723,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2047,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427458,
+    "absolute_change": 20.500427350427458,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2048,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427458,
+    "absolute_change": 20.500427350427458,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2049,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.50042735042723,
+    "absolute_change": 20.50042735042723,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2050,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 20.500427350427316,
+    "absolute_change": 20.500427350427316,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2051,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2052,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2053,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444372,
+    "absolute_change": 10.944444444444372,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2054,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2055,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2056,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.94444444444457,
+    "absolute_change": 10.94444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2057,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2058,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444343,
+    "absolute_change": 10.944444444444343,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2059,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2060,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2061,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2062,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2063,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444343,
+    "absolute_change": 10.944444444444343,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2064,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.94444444444457,
+    "absolute_change": 10.94444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2065,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.94444444444423,
+    "absolute_change": 10.94444444444423,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2066,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.94444444444457,
+    "absolute_change": 10.94444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2067,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444684,
+    "absolute_change": 10.944444444444684,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2068,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444343,
+    "absolute_change": 10.944444444444343,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2069,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444343,
+    "absolute_change": 10.944444444444343,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  },
+  {
+    "year": 2070,
+    "technology": "Scrap-EAF",
+    "event_type": "SPIKE_ADDITION",
+    "before_value": null,
+    "after_value": 10.944444444444457,
+    "absolute_change": 10.944444444444457,
+    "threshold": 5.0,
+    "status": "DETECTED"
+  }
+]

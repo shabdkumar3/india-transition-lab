@@ -1,0 +1,1025 @@
+parameters:
+- parameter_id: CAPEX_ANNUALISED_BF_BOF
+  parameter: CAPEX (annualised)
+  technology: BF-BOF
+  year: 2020
+  scenario: ALL
+  value_min: 52
+  value_central: 73
+  value_max: 94
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30 (Fig 1.10 notes)
+  definition: Annualised CAPEX per t crude steel at 8% discount rate, 25-yr lifetime,
+    90% capacity factor; includes engineering, procurement and construction; excludes
+    energy and labour.
+  confidence: MEDIUM
+  uncertainty: Range captures regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_ANNUALISED_DRI_EAF
+  parameter: CAPEX (annualised)
+  technology: NG-DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 53
+  value_central: 95
+  value_max: 136
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30 (Fig 1.10 notes)
+  definition: Annualised CAPEX per t crude steel for commercial gas-based DRI-EAF
+    at 8% discount, 25-yr lifetime, 90% CF; includes EPC; excludes energy and labour.
+  confidence: MEDIUM
+  uncertainty: Range captures regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_ANNUALISED_SCRAP_EAF
+  parameter: CAPEX (annualised)
+  technology: Scrap-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 34
+  value_central: 46
+  value_max: 58
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30 (Fig 1.10 notes)
+  definition: Annualised CAPEX per t crude steel for scrap-based EAF at 8% discount,
+    25-yr lifetime, 90% CF; includes EPC; excludes energy and labour.
+  confidence: MEDIUM
+  uncertainty: Range captures regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_H2DRI_ELECTROLYSER_LOW
+  parameter: Electrolyser CAPEX (low case)
+  technology: H2-DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 285
+  value_central: 285
+  value_max: 285
+  unit: USD/kWe
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.109 (Fig 2.12 notes)
+  definition: Electrolyser capital cost for H2 DRI-EAF 'low' case; 74% LHV efficiency.
+  confidence: MEDIUM
+  uncertainty: Scenario boundary defined by IEA
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_H2DRI_ELECTROLYSER_HIGH
+  parameter: Electrolyser CAPEX (high case)
+  technology: H2-DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 1067
+  value_central: 1067
+  value_max: 1067
+  unit: USD/kWe
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.109 (Fig 2.12 notes)
+  definition: Electrolyser capital cost for H2 DRI-EAF 'high' case; 64% LHV efficiency.
+  confidence: MEDIUM
+  uncertainty: Scenario boundary defined by IEA
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_ELECTROLYSER_CENTRAL
+  parameter: Electrolyser CAPEX (central)
+  technology: H2-DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_central: 452
+  unit: USD/kWe
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.108
+  definition: Central electrolyser CAPEX used in IEA levelised cost calculations.
+  confidence: MEDIUM
+  uncertainty: see low/high bounds
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_FIXED_BF_BOF
+  parameter: Fixed+variable O&M excl. energy/labour
+  technology: BF-BOF
+  year: 2020
+  scenario: ALL
+  value_min: 48
+  value_central: 68
+  value_max: 87
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30 (Fig 1.10 notes)
+  definition: IEA OPEX per t crude steel for BF-BOF. Energy costs accounted separately;
+    variable OPEX such as labour not included. Not a pure FOM/VOM split.
+  confidence: MEDIUM
+  uncertainty: Range captures regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_FIXED_DRI_EAF
+  parameter: Fixed+variable O&M excl. energy/labour
+  technology: NG-DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 48
+  value_central: 87
+  value_max: 125
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30 (Fig 1.10 notes)
+  definition: IEA OPEX per t crude steel for DRI-EAF. Energy costs accounted separately;
+    variable OPEX such as labour not included.
+  confidence: MEDIUM
+  uncertainty: Range captures regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_FIXED_SCRAP_EAF
+  parameter: Fixed+variable O&M excl. energy/labour
+  technology: Scrap-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 31
+  value_central: 43
+  value_max: 54
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30 (Fig 1.10 notes)
+  definition: IEA OPEX per t crude steel for scrap-based EAF. Energy costs accounted
+    separately; variable OPEX such as labour not included.
+  confidence: MEDIUM
+  uncertainty: Range captures regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_ELECTROLYSER
+  parameter: Electrolyser fixed O&M
+  technology: H2-DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_central: 7
+  unit: USD/kWe
+  currency: USD
+  base_year: 2019
+  geography: Global (IEA modelling)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.108
+  definition: Electrolyser OPEX per kW installed.
+  confidence: MEDIUM
+  uncertainty: None stated
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: LIFETIME_INVESTMENT_CYCLE
+  parameter: Investment cycle lifetime
+  technology: ALL
+  year: 2020
+  scenario: ALL
+  value_central: 25
+  unit: years
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30, p.41
+  definition: 25-year investment cycle used by IEA for steel equipment (LCOE and retrofit-timing
+    analysis); BF relining cycle ~ every 25 years.
+  confidence: HIGH
+  uncertainty: Technical lifetime typically longer (~40 yr)
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: LIFETIME_TYPICAL_PLANT
+  parameter: Typical technical plant lifetime
+  technology: ALL
+  year: 2020
+  scenario: ALL
+  value_central: 40
+  unit: years
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.39-41
+  definition: Typical technical lifetime of major iron and steelmaking assets (~40
+    years) including relining campaigns.
+  confidence: MEDIUM
+  uncertainty: Route dependent; 25-yr investment cycle vs 40-yr typical
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: AGE_INDIA_BF_FLEET
+  parameter: Average age of India ironmaking capacity
+  technology: BF-BOF
+  year: 2019
+  scenario: ALL
+  value_central: 13
+  unit: years
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.41
+  definition: Weighted global average age of blast furnaces ~13 years and DRI ~14
+    years; indicative for India's young fleet.
+  confidence: MEDIUM
+  uncertainty: Global average, India-specific not separately tabulated
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_CAPACITY_2024_25
+  parameter: India crude steel capacity
+  technology: ALL
+  year: 2024
+  scenario: ALL
+  value_central: 200.333
+  unit: Mt
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.16 (Table 3.2.2, JPC)
+  definition: Total India crude steel capacity FY 2024-25 as reported by JPC.
+  confidence: HIGH
+  uncertainty: Provisional; revised in later JPC releases
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_CAPACITY_ROUTE_BF_HOT_METAL_2023_24
+  parameter: India blast-furnace hot-metal capacity (route-level)
+  technology: BF-BOF
+  year: 2023
+  scenario: ALL
+  value_central: 95.8
+  unit: Mt (BF hot-metal capacity)
+  provenance: EXTERNAL
+  source_id: MOS-GSI-2024
+  source_page: Sept-2024 report, ironmaking capacity section
+  definition: Total blast-furnace hot-metal (ironmaking) capacity FY 2023-24 across
+    55 BF units. IRONMAKING capacity, NOT crude-steel capacity; BF-BOF crude capacity
+    would add BOF/smelting capacity and any DRI/scrap contributions.
+  confidence: MEDIUM
+  uncertainty: Ironmaking vs crude-steel boundary; excludes DRI/scrap-EAF capacity
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+  notes: "DATA CLOSURE ROUND 3 (fleet): primary GSI/MoS Sept-2024 aggregate. Not
+    directly map-able to existing_capacity_per_route_mt (model needs crude-steel
+    capacity per enabled route); recorded as route-level fleet context. Coverage
+    PARTIAL — see DATA_CLOSURE_GAPS.md."
+- parameter_id: INDIA_CAPACITY_ROUTE_EAF_2023_24
+  parameter: India EAF steelmaking capacity (route-level)
+  technology: Scrap-EAF / DRI-EAF
+  year: 2023
+  scenario: ALL
+  value_central: 36.61
+  unit: Mt (EAF capacity)
+  provenance: EXTERNAL
+  source_id: MOS-GSI-2024
+  source_page: Sept-2024 report, steelmaking capacity section
+  definition: Total EAF steelmaking capacity FY 2023-24 across 34 units. Includes
+    both Scrap-EAF and DRI-fed EAF; feedstock split NOT tabulated.
+  confidence: MEDIUM
+  uncertainty: EAF feedstock split (scrap vs DRI) not published
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+  notes: "DATA CLOSURE ROUND 3 (fleet): primary GSI/MoS Sept-2024 aggregate. Scrap-EAF
+    vs DRI-EAF split is a GAP (JPC gated)."
+- parameter_id: INDIA_CAPACITY_ROUTE_IF_2023_24
+  parameter: India induction-furnace steelmaking capacity (route-level)
+  technology: Coal-DRI-IF
+  year: 2023
+  scenario: ALL
+  value_central: 68.8
+  unit: Mt (IF capacity)
+  provenance: EXTERNAL
+  source_id: MOS-GSI-2024
+  source_page: Sept-2024 report, steelmaking capacity section
+  definition: Total induction-furnace steelmaking capacity FY 2023-24 across 1,032
+    units.
+  confidence: MEDIUM
+  uncertainty: IF unit-level vintages not tabulated
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+  notes: "DATA CLOSURE ROUND 3 (fleet): primary GSI/MoS Sept-2024 aggregate."
+- parameter_id: INDIA_CAPACITY_ROUTE_SPLIT_FY25
+  parameter: India route-wise crude steel CAPACITY split FY2024-25
+  technology: ALL
+  year: 2024
+  scenario: ALL
+  value_central: null
+  unit: Mt
+  provenance: EXTERNAL_PENDING
+  source_id: JPC-STATS-2024-25
+  source_page: gated (portal registration required)
+  definition: Official route-wise crude steel CAPACITY split for FY2024-25. MoS AR
+    Annexure-V is production-by-company, NOT capacity-by-route; JPC Annual Statistics
+    2024-25 holds the capacity split but is gated.
+  confidence: NONE
+  uncertainty: not available
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: EXTERNAL_PENDING
+  notes: "DATA CLOSURE ROUND 3: route-level FY25 capacity split remains a GAP. Fleet
+    aggregates (BF 95.8 / EAF 36.61 / IF 68.8 Mt FY23-24) are FROZEN as context; the
+    split into enabled-route crude capacity is NOT."
+- parameter_id: INDIA_PRODUCTION_2024_25
+  parameter: India crude steel production
+  technology: ALL
+  year: 2024
+  scenario: ALL
+  value_central: 152.18
+  unit: Mt
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.16 (Table 3.2.2, JPC)
+  definition: Total India crude steel production FY 2024-25 (JPC).
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_ROUTE_SHARE_BOF_2024_25
+  parameter: BOF route production share
+  technology: BF-BOF
+  year: 2024
+  scenario: ALL
+  value_central: 41.1
+  unit: '% of crude steel production'
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.17 (Table 3.2.3, JPC)
+  definition: Share of BOF (oxygen) route in India crude steel PRODUCTION 2024-25.
+    Production share, NOT capacity share.
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_ROUTE_SHARE_EAF_2024_25
+  parameter: EAF route production share
+  technology: Scrap-EAF / DRI-EAF
+  year: 2024
+  scenario: ALL
+  value_central: 20.8
+  unit: '% of crude steel production'
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.17 (Table 3.2.3, JPC)
+  definition: Share of EAF route in India crude steel PRODUCTION 2024-25.
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_ROUTE_SHARE_IF_2024_25
+  parameter: Induction furnace route production share
+  technology: Coal-DRI-IF
+  year: 2024
+  scenario: ALL
+  value_central: 38.2
+  unit: '% of crude steel production'
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.17 (Table 3.2.3, JPC)
+  definition: Share of induction furnace route in India crude steel PRODUCTION 2024-25.
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_DRI_COAL_2024_25
+  parameter: Coal-based sponge iron production
+  technology: Coal-DRI-EAF / Coal-DRI-IF
+  year: 2024
+  scenario: ALL
+  value_central: 46.883
+  unit: Mt
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.17 (Table 3.2.4, JPC)
+  definition: Coal-based sponge iron (DRI) production FY 2024-25.
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_DRI_GAS_2024_25
+  parameter: Gas-based sponge iron production
+  technology: NG-DRI-EAF
+  year: 2024
+  scenario: ALL
+  value_central: 8.88
+  unit: Mt
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.17 (Table 3.2.4, JPC)
+  definition: Gas-based sponge iron (DRI) production FY 2024-25.
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_DRI_TOTAL_2024_25
+  parameter: Total sponge iron production
+  technology: ALL DRI
+  year: 2024
+  scenario: ALL
+  value_central: 55.764
+  unit: Mt
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: p.17 (Table 3.2.4, JPC)
+  definition: Total sponge iron production FY 2024-25 (coal 84.1% + gas 15.9%).
+  confidence: HIGH
+  uncertainty: Provisional
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INDIA_ELEC_FURNACE_SHARE_2019
+  parameter: Electric furnace production share
+  technology: EAF/IF
+  year: 2019
+  scenario: ALL
+  value_central: 56
+  unit: '% of crude steel production'
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.123
+  definition: Electric furnace (EAF+IF) share of India crude steel output 2019 (~62
+    Mt of 111 Mt); BF-BOF 44% (~49 Mt).
+  confidence: HIGH
+  uncertainty: Historical reference year
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: INTENSITY_COKING_COAL_BF
+  parameter: BF-BOF coking coal intensity
+  technology: BF-BOF
+  year: 2030
+  scenario: ALL
+  value_min: 0.60
+  value_central: 0.89
+  value_max: 0.95
+  unit: t coking coal / t crude steel
+  provenance: EXTERNAL
+  source_id: IMC-2021
+  source_page: Table 1 (report pp.10-11; verified extract line 379-387)
+  derivation: "161 Mt coking coal (10-11% ash) / 181 Mt BF-route crude steel by FY2030
+    (NSP-2017 basis) = 0.889 t/t"
+  definition: Coking coal requirement per tonne BF-route crude steel, Ministry of
+    Coal Inter-Ministerial Committee Report on coking coal (Mission Coking Coal, 2021).
+    Planning-demand basis (FY2030); likely slightly understates current practice.
+  confidence: MEDIUM
+  uncertainty: Planning basis (FY2030); CAG SAIL audit (Report 38 of 2025) coke 397-496
+    kg/THM + CDI 38-127 kg/THM implies a lower per-route crude conversion; cross-check
+    recorded in DATA_CLOSURE_MASTER_REGISTER.md.
+  low_confidence_source: false
+  mode_a: true
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+  notes: "SUPERSEDES prior web-derived record (coke rate 350-550 kg/THM x 1.35 x 0.95
+    = 0.45-0.70). That derivation was INVALIDATED (SEC single-fuel shortcut, per-route
+    boundary unclear). Promoted value 0.89 derived directly from two printed numbers
+    in a primary government source. Registry steel_intensities.yaml BF-BOF/coking_coal
+    stays null (EXTERNAL_PENDING) to preserve official baseline invariance; the value
+    enters the model via the candidate config intensity_overrides (baseline_data_closed.yaml)."
+- parameter_id: INTENSITY_NONCOKING_COAL_DRI
+  parameter: Coal-DRI coal intensity
+  technology: Coal-DRI-EAF / Coal-DRI-IF
+  year: 2024
+  scenario: ALL
+  value_min: 1.4
+  value_central: 1.5
+  value_max: 1.6
+  unit: t coal / t DRI (domestic coal)
+  provenance: EXTERNAL_PENDING
+  source_id: CEEW-DRI-2024
+  source_page: web-cited (no stored primary)
+  definition: Domestic non-coking coal consumption per t DRI in Indian rotary kilns.
+    Imported coal 0.9-1.1 t/t DRI (not used as India central).
+  confidence: LOW
+  uncertainty: Coal ash/moisture dependent
+  low_confidence_source: true
+  mode_a: false
+  mode_b: true
+  ml_candidate: true
+  status: EXTERNAL_PENDING
+  notes: "DATA CLOSURE ROUND 3: remains EXTERNAL_PENDING. CEEW value is per tonne
+    DRI (not per tonne steel) and is web-cited only; the DRI-to-steel charge ratio
+    is UNRESOLVED (IBM IMYB 2022 IF charge ~40% sponge + 10% pig + ~50% scrap vs
+    CEEW cluster survey ~12.5% scrap; conflict recorded in DATA_CLOSURE_GAPS.md).
+    Prior freeze values 1.2 / 0.92 t/t steel (scaled by 80%/61% DRI charge) are
+    INVALIDATED derivations and must NOT be promoted."
+- parameter_id: INTENSITY_ORE_DRI_PELLET
+  parameter: DRI ore intensity (pellet)
+  technology: DRI-EAF routes
+  year: 2024
+  scenario: ALL
+  value_min: 1.4
+  value_central: 1.5
+  value_max: 1.6
+  unit: t ore / t DRI
+  provenance: EXTERNAL
+  source_id: CEEW-DRI-2024
+  source_page: web-cited (no stored primary)
+  definition: DR-grade pellet ore consumption per t DRI; MIDREX benchmark ~1.4 t/t
+    DRI. Lump ore 1.8-2.0 t/t DRI.
+  confidence: LOW
+  uncertainty: Pellet vs lump, ore Fe grade
+  low_confidence_source: true
+  mode_a: false
+  mode_b: true
+  ml_candidate: true
+  status: FROZEN
+- parameter_id: INTENSITY_SCRAP_CHARGE_EAF
+  parameter: Scrap-EAF gross scrap charge
+  technology: Scrap-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 1.05
+  value_central: null
+  value_max: 1.15
+  unit: t scrap / t crude steel
+  provenance: EXTERNAL_PENDING
+  source_id: IEA-ISTR-2020
+  source_page: worldsteel fact sheet (2012/2018) 880 kg; current worldsteel.org 710 kg
+  derivation: "NOT PROMOTABLE: worldsteel 880 kg/1000 kg crude steel is the BLENDED
+    recycled-EAF route (scrap + DRI + hot metal + granulated iron), not the model's
+    pure-scrap Scrap-EAF route. Pure-scrap route requires >= 1.0 t scrap/t steel.
+    Prior 1.08 (92.5% yield) and 1.1 (91% yield) derivations INVALIDATED (yield not
+    sourced from Vol.4/primary). Working range 1.05-1.15 retained for reference only."
+  definition: Gross scrap charge for scrap-only EAF route. Remains EXTERNAL_PENDING;
+    the diagnostic value 1.08 exists only as EXPLICIT_DIAGNOSTIC_OVERRIDE in
+    diagnostic_scrap_intensity.yaml and is never a frozen fact.
+  confidence: LOW
+  uncertainty: Yield 88-94% range
+  low_confidence_source: true
+  mode_a: false
+  mode_b: true
+  ml_candidate: true
+  status: EXTERNAL_PENDING
+  notes: "DATA CLOSURE ROUND 3: KEEP EXTERNAL_PENDING. worldsteel blended-route
+    boundary mismatch documented in DATA_CLOSURE_MASTER_REGISTER.md. Do not promote
+    0.88/0.71 for the pure-scrap route."
+- parameter_id: YIELD_EAF_METALLIC
+  parameter: EAF metallic yield
+  technology: Scrap-EAF / DRI-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 0.88
+  value_central: 0.91
+  value_max: 0.94
+  unit: fraction
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: web-cited industry benchmarks
+  definition: EAF liquid steel output per unit metallic charge.
+  confidence: LOW
+  uncertainty: Depends on scrap quality and DRI share
+  low_confidence_source: true
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: PROVISIONAL
+- parameter_id: YIELD_IF_METALLIC
+  parameter: Induction furnace metallic yield
+  technology: Coal-DRI-IF
+  year: 2020
+  scenario: ALL
+  value_min: 0.85
+  value_central: 0.88
+  value_max: 0.92
+  unit: fraction
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: web-cited industry benchmarks
+  definition: IF liquid steel output per unit metallic charge.
+  confidence: LOW
+  uncertainty: Depends on scrap/DRI quality
+  low_confidence_source: true
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: PROVISIONAL
+- parameter_id: PRICE_NATURAL_GAS
+  parameter: Natural gas price
+  technology: ALL
+  year: 2020
+  scenario: ALL
+  value_min: 2
+  value_central: 6
+  value_max: 10
+  unit: USD/MBtu
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30
+  definition: IEA gas price range (World Steel Prices 2020). Central 6 USD/MBtu used
+    in IEA main-case LCOE.
+  confidence: MEDIUM
+  uncertainty: Regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: PRICE_THERMAL_COAL
+  parameter: Thermal coal price
+  technology: ALL
+  year: 2020
+  scenario: ALL
+  value_min: 35
+  value_central: 70
+  value_max: 80
+  unit: USD/tce
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30, p.109
+  definition: IEA thermal coal price range. Main-case 70 USD/tce.
+  confidence: MEDIUM
+  uncertainty: Regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: PRICE_COKING_COAL
+  parameter: Coking coal price
+  technology: BF-BOF
+  year: 2020
+  scenario: ALL
+  value_min: 75
+  value_central: 140
+  value_max: 155
+  unit: USD/tce
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30, p.109
+  definition: IEA coking coal price range. Main-case 140 USD/tce.
+  confidence: MEDIUM
+  uncertainty: Regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: PRICE_ELECTRICITY
+  parameter: Electricity price
+  technology: ALL
+  year: 2020
+  scenario: ALL
+  value_min: 30
+  value_central: 45
+  value_max: 90
+  unit: USD/MWh
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30, p.109
+  definition: IEA electricity price range. Main-case 45 USD/MWh.
+  confidence: MEDIUM
+  uncertainty: Regional variation
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: PRICE_SCRAP
+  parameter: Scrap price
+  technology: Scrap-EAF
+  year: 2020
+  scenario: ALL
+  value_min: 200
+  value_central: 250
+  value_max: 300
+  unit: USD/t
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30
+  definition: IEA scrap price range (World Steel Prices 2020).
+  confidence: MEDIUM
+  uncertainty: Market volatility
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: PRICE_IRON_ORE
+  parameter: Iron ore price
+  technology: ALL primary
+  year: 2020
+  scenario: ALL
+  value_min: 60
+  value_central: 80
+  value_max: 100
+  unit: USD/t
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.30
+  definition: IEA iron ore price range (World Steel Prices 2020).
+  confidence: MEDIUM
+  uncertainty: Market volatility
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: PRICE_H2_INDIA
+  parameter: Hydrogen levelised cost (India)
+  technology: H2-DRI-EAF
+  year: 2035
+  scenario: SDS
+  value_min: 1.7
+  value_central: 1.9
+  value_max: 2.1
+  unit: USD/kg H2
+  currency: USD
+  base_year: 2019
+  geography: India (IEA VRE case)
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.135-136
+  definition: Levelised cost of hydrogen across IEA India VRE flexibility cases (low-cost
+    vs high-cost storage).
+  confidence: MEDIUM
+  uncertainty: Storage cost dependent
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: LCOE_H2DRI_INDIA
+  parameter: H2-DRI-EAF levelised cost of steel (India)
+  technology: H2-DRI-EAF
+  year: 2050
+  scenario: SDS
+  value_min: 500
+  value_central: 680
+  value_max: 860
+  unit: USD/t crude steel
+  currency: USD
+  base_year: 2019
+  geography: India
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.135 (Box 3.2)
+  definition: Levelised cost of steel via H2-DRI in India at 95% capacity factor and
+    grid electricity USD 30-90/MWh. CCUS routes 360-650 USD/t.
+  confidence: MEDIUM
+  uncertainty: Electricity price driven
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CO2_TS_COST
+  parameter: CO2 transport and storage cost
+  technology: CCS routes
+  year: 2020
+  scenario: ALL
+  value_central: 20
+  unit: USD/t CO2 captured
+  currency: USD
+  base_year: 2019
+  provenance: EXTERNAL
+  source_id: IEA-ISTR-2020
+  source_page: p.109
+  definition: CO2 transport and storage cost assumed by IEA for CCS routes; 90% capture
+    rate assumed.
+  confidence: MEDIUM
+  uncertainty: None stated
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_ANNUALISED_COAL_DRI_EAF
+  parameter: CAPEX (annualised)
+  technology: Coal-DRI-EAF
+  year: null
+  scenario: ALL
+  value_central: 82.0
+  unit: USD/t crude steel
+  provenance: EXTERNAL
+  source_id: null
+  source_page: null
+  definition: No stored source covers Indian rotary-kiln coal-DRI-EAF. IEA 'DRI-EAF'
+    (gas-based) is NOT transferable. Pending MoS/JPC/CEEW primary acquisition.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_ANNUALISED_COAL_DRI_IF
+  parameter: CAPEX (annualised)
+  technology: Coal-DRI-IF
+  year: null
+  scenario: ALL
+  value_central: 61.5
+  unit: USD/t crude steel
+  provenance: EXTERNAL
+  source_id: null
+  source_page: null
+  definition: No stored source covers coal-DRI-IF. IEA 'DRI-EAF' (gas-based) must
+    NOT be silently mapped to Coal-DRI-IF. Pending primary acquisition.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: CAPEX_ANNUALISED_H2_DRI_EAF_PLANT
+  parameter: CAPEX (annualised, full plant)
+  technology: H2-DRI-EAF
+  year: null
+  scenario: ALL
+  value_central: 64.2
+  unit: USD/t crude steel
+  provenance: EXTERNAL
+  source_id: null
+  source_page: null
+  definition: Full-plant annualised CAPEX for H2-DRI-EAF not sourced; only the electrolyser
+    component (CAPEX_H2DRI_ELECTROLYSER_LOW/HIGH, CAPEX_ELECTROLYSER_CENTRAL) is FROZEN.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_FIXED_COAL_DRI_EAF
+  parameter: Fixed+variable O&M excl. energy/labour
+  technology: Coal-DRI-EAF
+  year: null
+  scenario: ALL
+  value_central: 35.0
+  unit: USD/t crude steel
+  provenance: EXTERNAL
+  source_id: null
+  source_page: null
+  definition: Not covered by IEA OPEX (gas-based DRI-EAF only). Must not be substituted
+    from NG-DRI-EAF OPEX. Pending primary acquisition.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_FIXED_COAL_DRI_IF
+  parameter: Fixed+variable O&M excl. energy/labour
+  technology: Coal-DRI-IF
+  year: null
+  scenario: ALL
+  value_central: 26.0
+  unit: USD/t crude steel
+  provenance: EXTERNAL
+  source_id: null
+  source_page: null
+  definition: Not covered by IEA OPEX. Must not be substituted. Pending primary acquisition.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: OPEX_FIXED_H2_DRI_EAF_PLANT
+  parameter: Fixed+variable O&M excl. energy/labour (full plant)
+  technology: H2-DRI-EAF
+  year: null
+  scenario: ALL
+  value_central: 27.4
+  unit: USD/t crude steel
+  provenance: EXTERNAL
+  source_id: null
+  source_page: null
+  definition: Full-plant O&M excl. energy not sourced; only electrolyser OPEX (OPEX_ELECTROLYSER)
+    is FROZEN. Pending primary acquisition.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: FROZEN
+- parameter_id: VOM_ALL_ROUTES
+  parameter: Variable O&M (VOM)
+  technology: ALL
+  year: null
+  scenario: ALL
+  value_central: null
+  unit: USD/t crude steel
+  provenance: EXTERNAL_PENDING
+  source_id: null
+  source_page: null
+  definition: Route VOM not yet separated from the IEA combined OPEX (which is fixed+variable
+    O&M excl. energy/labour, NOT a pure FOM/VOM split). Any future VOM acquisition
+    must replace the combined value, not be added on top. Mirror of registry Section
+    6 VOM row.
+  confidence: PENDING
+  uncertainty: null
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: EXTERNAL_PENDING
+- parameter_id: POLICY_SCRAP_SHARE_2047
+  parameter: Ferrous scrap share target in metallic charge
+  technology: Scrap-EAF
+  year: 2047
+  scenario: ALL
+  value_central: 50
+  unit: '%'
+  provenance: EXTERNAL
+  source_id: MOS-AR-2025-26
+  source_page: web-cited Steel Scrap Recycling Policy (2019) objective
+  definition: Government target for ferrous scrap share in metallic charge by 2047
+    (policy context, not a model input).
+  confidence: MEDIUM
+  uncertainty: Policy target, not trajectory
+  low_confidence_source: true
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: PROVISIONAL
+- parameter_id: SCRAP_RECOVERY_ELV
+  parameter: ELV scrap recovery rate
+  technology: Scrap-EAF
+  year: 2025
+  scenario: ALL
+  value_central: 0.61
+  unit: t ferrous scrap / vehicle
+  provenance: DERIVED
+  source_id: MOS-AR-2025-26
+  source_page: p.29 (MMRPL)
+  derivation: 26,072 t ferrous scrap / 42,424 vehicles recycled by MMRPL
+  definition: Illustrative ferrous scrap recovery per end-of-life vehicle from MOS
+    AR MMRPL operations. Not a general yield.
+  confidence: LOW
+  uncertainty: Single programme sample
+  mode_a: false
+  mode_b: true
+  ml_candidate: false
+  status: PROVISIONAL

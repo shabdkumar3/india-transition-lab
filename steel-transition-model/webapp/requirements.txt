@@ -1,0 +1,12 @@
+# India Steel Transition Lab — backend dependencies
+# The scientific core is the existing `steel_model` package in this repo
+# (no scientific engine is copied into the web project).
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+PyYAML>=6.0
+pandas>=2.0
+numpy>=1.24
+scipy>=1.9
+httpx>=0.27          # for tests
+pytest>=7.0          # for tests

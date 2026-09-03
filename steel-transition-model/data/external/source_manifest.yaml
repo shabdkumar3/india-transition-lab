@@ -1,0 +1,670 @@
+# ============================================================
+# EXTERNAL SOURCE MANIFEST — India Steel Transition Model
+# Step 6: External Data Acquisition, Normalization & Parameter Freeze
+# ============================================================
+#
+# Every actual source file used MUST be stored under data/external/
+# and registered here. The master parameter registry
+# (PARAMETER_SOURCE_OF_TRUTH.md) and the machine-readable frozen
+# parameter file (data/external/parameters/external_parameters.yaml)
+# reference these source_ids.
+#
+# Metadata fields per section AB of the Step 6 handoff:
+#   source_id, filename, publisher, title, year, url/reference,
+#   scope, parameters extracted
+#
+# Source hierarchy per SOURCE_REGISTER.md:
+#   LEVEL 3 = authoritative external (IEA, JPC / Ministry of Steel)
+#   LEVEL 4 = external technical/economic with explicit citation
+
+sources:
+
+  - source_id: "IEA-ISTR-2020"
+    filename: "data/external/iea_iron_steel_technology_roadmap_2020.pdf"
+    extracted_text: "data/external/extracted/iea_roadmap_2020.txt"
+    publisher: "International Energy Agency (IEA)"
+    title: "Iron and Steel Technology Roadmap: Towards more sustainable steelmaking"
+    year: 2020
+    url: "https://www.iea.org/reports/iron-and-steel-technology-roadmap"
+    source_level: "LEVEL 3"
+    scope: >
+      Global iron and steel technology pathways; route-level CAPEX, fixed OPEX and
+      levelised costs; equipment lifetimes and average asset ages; scrap availability;
+      energy price ranges; dedicated India chapter (Ch. 3) with route splits.
+    parameters_extracted:
+      - "CAPEX (annualised, USD/t crude steel) by route — BF-BOF, DRI-EAF, scrap-EAF"
+      - "Fixed OPEX (USD/t crude steel, energy and labour excluded) by route"
+      - "Energy price ranges: natural gas, thermal coal, coking coal, electricity, scrap, iron ore"
+      - "Equipment lifetime assumptions: 25-yr investment cycle; ~40-yr typical technical lifetime"
+      - "Electrolyser CAPEX/OPEX (USD/kWe) for H2-DRI"
+      - "H2-DRI levelised cost in India (USD/t crude steel)"
+      - "India installed capacity split by route (2018): BOF 44%, EAF 29%, IF 27%"
+      - "India route production split (2019): electric furnace 56%, BF-BOF 44%"
+      - "India scrap consumption (~30 Mt, 2019) and iron ore balance (203 Mt consumption, 2018)"
+      - "CO2 transport and storage cost (USD 20/t CO2 captured)"
+      - "Average age of ironmaking capacity: ~13 yr BF, ~14 yr DRI"
+    notes: >
+      CAPEX/OPEX figures are GLOBAL modelling values (8% discount rate, 25-year
+      lifetime, 90% capacity factor unless stated), not India-specific plant costs.
+      Reported in 2019 USD (World Steel Prices 2020).
+
+  - source_id: "MOS-AR-2025-26"
+    filename: "data/external/mos_annual_report_2025_26.pdf"
+    extracted_text: "data/external/extracted/mos_ar_2025_26.txt"
+    publisher: "Ministry of Steel, Government of India"
+    title: "Ministry of Steel Annual Report 2025-26"
+    year: 2025
+    url: "https://steel.gov.in"
+    source_level: "LEVEL 3"
+    scope: >
+      Indian steel sector official statistics: crude steel capacity, production and
+      capacity utilisation 2021-22 to Apr-Dec 2025-26; route-wise production shares
+      (BOF/EAF/IF); sponge iron production split (coal vs gas based); finished steel
+      consumption; Steel Scrap Recycling Policy 2019; CPSE CAPEX.
+    parameters_extracted:
+      - "Crude steel capacity (MT) by year — 2024-25: 200.333 (JPC)"
+      - "Crude steel production (MT) by year — 2024-25: 152.180 (JPC)"
+      - "Route-wise production shares 2024-25: BOF 41.1%, EAF 20.8%, IF 38.2%"
+      - "Sponge iron production 2024-25: coal 46.883 Mt, gas 8.880 Mt, total 55.764 Mt"
+      - "Coal-based DRI share Apr-Dec 2025-26(P): ~85%"
+      - "Finished steel consumption 2024-25: 152.129 Mt"
+      - "Steel Scrap Recycling Policy 2019 (existence and objectives)"
+      - "ELV scrap recovery: 42,424 vehicles -> 26,072 t ferrous scrap (MMRPL)"
+      - "CPSE CAPEX FY 2024-25: Rs 10,653.31 crore"
+      - "NSP 2017 targets: 300 Mt capacity / 255 Mt production by 2030-31"
+    notes: >
+      Route shares are PRODUCTION shares (JPC), not capacity shares. Production and
+      capacity are kept as separate records; capacity is never inferred from
+      production / PLF.
+
+  - source_id: "GEM-INDIA-BF-2024"
+    filename: null   # report not yet stored in data/external; web-cited only
+    publisher: "Global Energy Monitor"
+    title: "Why India's 'build now, decarbonize later' approach to steel will fail"
+    year: 2024
+    url: "https://globalenergymonitor.org"
+    source_level: "LEVEL 4"
+    scope: "Age profile of India's blast furnace fleet; stranded-asset risk"
+    parameters_extracted:
+      - "India BF fleet youth: >75 Mtpa (~72%) of operating BF capacity built in last two decades"
+      - "Stranded asset risk estimate: USD 124-187 billion"
+    notes: >
+      Secondary-synthesis context only (web citation). Not used as a frozen numeric
+      parameter; provides uncertainty context for the vintage module.
+
+  - source_id: "CEEW-DRI-2024"
+    filename: null   # report not yet stored in data/external; web-cited only
+    publisher: "Council on Energy, Environment and Water (CEEW)"
+    title: "Decarbonising Coal-based Direct Reduced Iron Production: Surveying the Landscape in Steel Clusters of India"
+    year: 2024
+    url: "https://www.ceew.in"
+    source_level: "LEVEL 4"
+    scope: "Indian coal-based DRI plant material consumption surveys"
+    parameters_extracted:
+      - "Domestic coal consumption 1.4-1.6 t/t DRI (rotary kiln)"
+      - "Imported coal consumption 0.9-1.1 t/t DRI"
+      - "Iron ore lump 1.8-2.0 t/t DRI; DR-grade pellets 1.4-1.6 t/t DRI"
+      - "IF scrap utilisation ~12.5% average in DRI clusters (30 plants, ~14% capacity, 2023-24)"
+    notes: >
+      Values obtained via secondary web synthesis, NOT from a stored primary
+      document. Classified EXTERNAL with LOW confidence and Mode B only, pending
+      primary acquisition. Do not elevate to Mode A. DATA CLOSURE ROUND 3: the IF
+      scrap ~12.5% figure CONFLICTS with IBM IMYB 2022 (~50% scrap in IF charge);
+      charge-ratio conflict recorded in DATA_CLOSURE_GAPS.md.
+
+  - source_id: "IMC-2021"
+    filename: null   # report not yet stored in data/external; extract verified at C:\Users\vishe\AppData\Local\Temp\opencode\imc.txt
+    publisher: "Ministry of Coal, Government of India"
+    title: "Report of the Inter-Ministerial Committee for augmentation and consumption of domestic coking coal (Mission Coking Coal)"
+    year: 2021
+    url: "http://coal.gov.in/sites/default/files/2021-01/IMC-Report.pdf"
+    source_level: "LEVEL 3"
+    scope: "India coking coal demand for BF-route steelmaking to FY2030"
+    parameters_extracted:
+      - "161 Mt coking coal (10-11% ash) for 181 Mt steel through blast furnace route by FY2030 (NSP-2017 basis) => 0.889 t coking coal/t BF-route crude steel"
+    notes: >
+      DATA CLOSURE ROUND 3: promoted BF-BOF/coking_coal = 0.89 t/t (derived 161/181
+      from two printed numbers, Table 1 report pp.10-11/12, verified extract line 379-387).
+      Planning-demand basis (FY2030); likely slightly understates current actual.
+
+  - source_id: "CAG-2025"
+    filename: null   # extract verified at C:\Users\vishe\AppData\Local\Temp\opencode\cag38.txt
+    publisher: "Comptroller and Auditor General of India (CAG)"
+    title: "Performance Audit of Blast Furnaces of SAIL, Report No. 38 of 2025"
+    year: 2025
+    url: "https://cag.gov.in/uploads/download_audit_report/2025/Report-No.-38-of-2025_English-06944ecdf2526e1.52430491.pdf"
+    source_level: "LEVEL 3"
+    scope: "SAIL blast-furnace performance: coke rate, CDI rate, capacity"
+    parameters_extracted:
+      - "SAIL coke consumption 397-496 kg/THM (norm 373-483) — per tonne HOT METAL"
+      - "SAIL CDI coal 38-127 kg/THM (norm 59-150)"
+      - "SAIL BF hot-metal capacity 23.07 MTPA across 28 BFs (Table-2 / Section 1.7)"
+    notes: >
+      DATA CLOSURE ROUND 3: cross-check for BF-BOF coking coal intensity (per-THM,
+      requires conversion to per-crude-steel). Also source for SAIL fleet capacity.
+      Verified extract lines ~1081-1102 (Section 3.6).
+
+  - source_id: "WSA-STEEL-RAW-MATERIALS"
+    filename: null   # fact sheet web-cited; page ref verify p.18 vs p.13 before citing
+    publisher: "World Steel Association (worldsteel)"
+    title: "Steel and raw materials fact sheet (2018) / current worldsteel.org raw-materials page"
+    year: 2018
+    url: "https://www.steel.org.au/resources/elibrary/resources/worldsteel-fact-sheet-steel-and-raw-materials/?view=download"
+    source_level: "LEVEL 3"
+    scope: "Global route-level raw material inputs"
+    parameters_extracted:
+      - "Recycled-EAF route: 880 kg recycled steel + DRI/hot metal/granulated iron per 1000 kg crude steel (2012 source, Sustainable Steel p.18 — verify p.13 vs p.18)"
+      - "Current worldsteel.org page: 710 kg recycled steel + 88 kg limestone per 1000 kg crude steel"
+      - "Integrated route: 1400 kg iron ore + 800 kg total coal + 300 kg limestone + 120 kg recycled steel per 1000 kg crude steel"
+    notes: >
+      DATA CLOSURE ROUND 3: the 880 kg (and newer 710 kg) figure is for the BLENDED
+      recycled-EAF route (scrap + DRI + hot metal), NOT the model's pure-scrap
+      Scrap-EAF route. Boundary mismatch => Scrap-EAF/scrap stays EXTERNAL_PENDING;
+      do NOT promote 0.88/0.71. Documented in DATA_CLOSURE_MASTER_REGISTER.md.
+
+  - source_id: "IBM-IMYB-2022"
+    filename: null   # report not yet stored; URL from ibm.gov.in
+    publisher: "Indian Bureau of Mines (IBM)"
+    title: "Indian Minerals Yearbook 2022 — Mineral Based Industries chapter (iron & steel)"
+    year: 2022
+    url: "https://ibm.gov.in/writereaddata/files/171817700866694cf03d889Mineral_Based__Industries_IMYB_2022.pdf"
+    source_level: "LEVEL 3"
+    scope: "Indian IF/EAF metallic charge composition"
+    parameters_extracted:
+      - "IF metallic charge ~40% sponge iron + ~10% cast/pig iron + ~50% steel melting scrap (FY2021-22, 847 IFs, 35.21 Mt crude steel) — p.7-3/7-4"
+    notes: >
+      DATA CLOSURE ROUND 3: PRIMARY national-average IF charge ratio. CONFLICTS with
+      CEEW 2024 cluster survey (~12.5% scrap). Conflict means DRI charge ratio stays
+      EXTERNAL_PENDING — see DATA_CLOSURE_GAPS.md.
+
+  - source_id: "MOS-GSI-2024"
+    filename: null   # publication title to verify before citing
+    publisher: "Government of India (Ministry of Steel) / GSI steel sector statistics"
+    title: "India steel fleet route-level capacity aggregates, Sept-2024"
+    year: 2024
+    url: "https://steel.gov.in"
+    source_level: "LEVEL 3"
+    scope: "Route-level ironmaking/steelmaking CAPACITY aggregates"
+    parameters_extracted:
+      - "BF hot-metal capacity 95.8 Mt (55 units), FY2023-24"
+      - "EAF capacity 36.61 Mt (34 units), FY2023-24"
+      - "IF capacity 68.8 Mt (1,032 units), FY2023-24"
+    notes: >
+      DATA CLOSURE ROUND 3: fleet aggregate source. Exact publication title to be
+      verified before citing. BF figure is IRONMAKING (hot-metal) capacity.
+
+  - source_id: "JPC-STATS-2024-25"
+    filename: null
+    publisher: "Joint Plant Committee (JPC), Ministry of Steel"
+    title: "JPC Annual Statistics 2024-25 (route-wise crude steel CAPACITY)"
+    year: 2025
+    url: "https://steel.gov.in"
+    source_level: "LEVEL 3"
+    scope: "Route-wise crude steel capacity FY2024-25"
+    parameters_extracted: []
+    notes: >
+      DATA CLOSURE ROUND 3: GATED behind portal registration; NOT acquired. Official
+      FY25 capacity-by-route split remains a documented gap. MoS AR Annexure-V is
+      production-by-company, not capacity-by-route.
+      PHASE 23: JPC official portal publishes only AGGREGATE projected capacity
+      (FY2025-26 ~220.33 MTPA); no unified public route-level capacity table.
+      Route split remains a documented GAP.
+
+  - source_id: "VOGL-2018-H2DRI"
+    filename: null   # full text not acquired (ScienceDirect gated); abstract verified via Lund University portal
+    publisher: "Journal of Cleaner Production (Elsevier)"
+    title: "Assessment of hydrogen direct reduction for fossil-free steelmaking"
+    year: 2018
+    url: "https://doi.org/10.1016/j.jclepro.2018.08.279"
+    source_level: "LEVEL 4"
+    scope: "Techno-economic assessment of H2-DRI-EAF steelmaking, 1 Mt/yr reference plant, EUR 2015"
+    parameters_extracted:
+      - "Electricity consumption 3.48 MWh/t liquid steel (abstract-verified)"
+      - "Total production cost 361-640 EUR/t steel (abstract-verified)"
+      - "Competitive vs integrated BF-BOF at carbon price 34-68 EUR/t CO2, electricity 40 EUR/MWh (abstract-verified)"
+      - "Component CAPEX decomposition (electrolyser 600-800 EUR/kW, DRI shaft ~170-200 EUR/t, EAF ~100-120 EUR/t, total ~1000-1400 EUR/t) - Table 1/2, page NOT independently verified (recorded EXTERNAL only)"
+    notes: >
+      PHASE 23: abstract facts (3.48 MWh/t; 361-640 EUR/t) verified via Lund
+      University research portal and frozen as FROZEN_EXTERNAL (page 736, abstract).
+      Component CAPEX table values recorded as EXTERNAL scenario context only until
+      full-text page verification is possible.
+
+  - source_id: "IRENA-2020-GREEN-H2"
+    filename: null
+    publisher: "IRENA"
+    title: "Green Hydrogen Cost Reduction: Scaling up Electrolysers to Meet the 1.5C Climate Goal"
+    year: 2020
+    url: "https://www.irena.org"
+    source_level: "LEVEL 3"
+    scope: "Historical electrolyser cost snapshots and scaling analysis"
+    parameters_extracted:
+      - "PEM electrolyser turnkey system ~USD 1000-2000/kW (2018 snapshot)"
+      - "Learning rates 10-20% per doubling (with Schmidt et al. 2017 meta-analysis)"
+    notes: >
+      PHASE 23: registered as the M1 historical-dataset candidate source. IRENA
+      provides SNAPSHOTS (not a continuous annual series); BNEF series is paywalled
+      and not reproduced publicly. M1 dataset cannot reach >=15 usable observations
+      with consistent cost boundary from verified public sources -> M1 remains
+      DEFERRED / NOT_READY. data/external/m1/ records the verified anchor points.
+
+  - source_id: "SCHMIDT-2017-ELECTROLYSER"
+    filename: null
+    publisher: "Nature Energy"
+    title: "Future cost and performance of water electrolysis: An expert elicitation study"
+    year: 2017
+    url: "https://www.nature.com/articles/s41560-017-0017-9"
+    source_level: "LEVEL 4"
+    scope: "Learning rates and cost projections for alkaline/PEM electrolysers"
+    parameters_extracted:
+      - "Historical learning rates ~10-20% per doubling of cumulative capacity"
+    notes: "PHASE 23: registered for M1 learning-curve context; expert-elicitation study, not a primary cost dataset."
+
+  - source_id: "NATURE-SD-2025-ELECTROLYSER"
+    filename: "data/external/m1/raw/clean_energy_cost_database_final.xlsx, data/external/m1/raw/coding_friendly_cost_database.xlsx"
+    publisher: "Scientific Data (Nature Portfolio)"
+    title: "Clean technology cost projections: investment and levelized costs of solar, wind, battery, and hydrogen"
+    year: 2025
+    url: "https://doi.org/10.1038/s41597-025-05951-4 (Zenodo record 16417026, V2.0 July 2025)"
+    source_level: "LEVEL 2"
+    scope: "Historical and projected CAPEX for alkaline and PEM electrolysers (USD/kW, system-level per database convention); currency conversion rates to 2024 USD"
+    parameters_extracted:
+      - "Alkaline Actual_CAPEX_mean 2015-2022: 1164.59, 1138.42, 978.50, 1184.50, 983.65, 965.63, 978.50 USD/kW"
+      - "PEM Actual_CAPEX_mean 2015-2023: 2621.81, 1920.81, 1670.27, 1252.71, 1217.46, 992.23, 1234.76, 1718.20 USD/kW"
+      - "Actual_CAPEX min/max bounds recorded in source sheets (e.g. Alkaline 2015 min 837.46 / max 1596.41)"
+    notes: >
+      PHASE 25: open-access peer-reviewed historical electrolyser CAPEX series
+      (Scientific Data 2025). 15 annual mean observations added to
+      data/external/m1/electrolyser_cost_deployment.csv as M1_ANCHOR_ONLY rows.
+      Cost side of M1 materially strengthened, but M1 remains DEFERRED/NOT_READY
+      because the database does NOT contain a cumulative installed capacity (GW)
+      deployment series, and per-row stack-vs-system boundary is not
+      independently verified. No parameter promoted; anchors documented only.
+
+  - source_id: IEA-GHR-2024-ELECTROLYSER-DEPLOYMENT
+    filename: null
+    publisher: "International Energy Agency (IEA)"
+    title: "Global Hydrogen Review 2024 (Hydrogen production chapter) + IEA electrolysers tracking / Hydrogen Projects Database"
+    year: 2024
+    url: "https://www.iea.org/reports/global-hydrogen-review-2024 ; https://www.iea.org/data-and-statistics/data-product/hydrogen-projects-database"
+    source_level: "LEVEL 2"
+    scope: "Cumulative installed water-electrolysis capacity (dedicated hydrogen production, excluding chlor-alkali), year-end: total 2020 0.33 / 2021 0.57 / 2022 0.70 / 2023 1.39 GW, end-2024 ~2 GW (GHR 2025 estimate); technology split 2020-2023 (ALK 200/370/400/840 MW, PEM 110/150/240/300 MW, Other 20/50/60/250 MW)"
+    parameters_extracted:
+      - "Total cumulative installed capacity 2020-2024: 0.33, 0.57, 0.70, 1.39, ~2.0 GW (year-end)"
+      - "Technology split 2020-2023: ALK 200/370/400/840 MW; PEM 110/150/240/300 MW; Other 20/50/60/250 MW (sums match totals exactly)"
+      - "Quote (GHR 2024): 'Installed water electrolyser capacity reached 1.4 GW by the end of 2023'; alkaline remains dominant (China-driven large-scale deployment)"
+    notes: >
+      PHASE 25B: deployment side of the M1 dataset. 17 deployment_anchor rows
+      added to data/external/m1/electrolyser_cost_deployment.csv;
+      technology-compatible cumulative capacity filled on the 7 Nature SD cost
+      rows (ALK 2020-22, PEM 2020-23). COST_DATASET_READY=TRUE,
+      DEPLOYMENT_DATASET_READY=PARTIAL, PAIRED_DATASET_READY=FALSE
+      (7 pairs < 15). M1 remains DEFERRED/NOT_READY. No parameter promoted.
+
+  - source_id: NITI-AAYOG-2026-FINANCING-NEEDS
+    filename: null
+    publisher: "NITI Aayog (Government of India)"
+    title: "Scenarios Towards Viksit Bharat and Net Zero: Financing Needs (Volume 9)"
+    year: 2026
+    url: "https://niti.gov.in/publications (Financing Needs, Vol. 9, Feb 2026)"
+    source_level: "LEVEL 2"
+    scope: "Full steel CAPEX table (2025 prices, INR million/Mt, Annexure-2 p.75-76): BF-BOF 73,385; Coal-based DRI-EAF 69,750; Natural Gas-based DRI-EAF 69,750; Coal-based DRI-IF 10,000; 100% Scrap-EAF 6,000; Hydrogen-based DRI-EAF 69,750. Provenance per report: 'Literature & Industry consultations'. Presented as investment cost per unit capacity; boundary (overnight vs annualised, electrolyser inclusion, greenfield/brownfield, FOM/VOM inclusion) NOT defined in the document"
+    parameters_extracted:
+      - "BF-BOF capital cost 73,385 INR million/Mt (2025 prices)"
+      - "Coal-based DRI-EAF capital cost 69,750 INR million/Mt (2025 prices)"
+      - "Natural Gas-based DRI-EAF capital cost 69,750 INR million/Mt (2025 prices)"
+      - "Coal-based DRI-IF capital cost 10,000 INR million/Mt (2025 prices)"
+      - "100% Scrap-EAF capital cost 6,000 INR million/Mt (2025 prices)"
+      - "Hydrogen-based DRI-EAF capital cost 69,750 INR million/Mt (2025 prices)"
+    notes: >
+      PHASE 25B+25C: Indian official-source CAPEX anchors. PHASE 25C CORRECTION:
+      the full official PDF (niti.gov.in, Financing Needs Vol.9, Annexure-2
+      p.75) now page-verified — the Hydrogen-based DRI-EAF row DOES exist at
+      69,750 INR million/Mt (Phase 25B's 'H2 row could not be verified' finding
+      is superseded; SC-12 updated). The Coal-DRI-IF (10,000) and 100% Scrap-EAF
+      (6,000) rows are also captured. Boundary still undefined in the document,
+      so all six rows are classified CANDIDATE_EXTERNAL (corroborating
+      anchors), NOT FROZEN. See H2_DRI_ECONOMICS_FINAL_REPORT.md and
+      COAL_DRI_ECONOMICS_FINAL_REPORT.md.
+
+  - source_id: CEEW-2023-NETZERO-STEEL
+    filename: null
+    publisher: "Council on Energy, Environment and Water (CEEW)"
+    title: "Evaluating Net-zero for the Indian Steel Industry"
+    year: 2023
+    url: "https://www.ceew.in/publications/how-can-india-decarbonise-for-net-zero-steel-industry"
+    source_level: "LEVEL 2"
+    scope: "Aggregate investment for Indian steel near-net-zero: total CAPEX USD 283 billion (INR 21.2 lakh crore); additional annual OPEX USD 8.8 billion (INR 66.7 thousand crore); energy-efficiency measures alone ~USD 9.5 billion (INR 76,317 crore), BF-BOF >87% share (p. ES-4). No route-level per-annual-tonne CAPEX table"
+    parameters_extracted:
+      - "Total near-net-zero CAPEX USD 283 billion"
+      - "Additional annual OPEX USD 8.8 billion"
+      - "EE-measures-only CAPEX ~USD 9.5 billion (BF-BOF 87% share, p. ES-4)"
+      - "Baseline emission intensity 2.36 tCO2/tcs; C-DRI most intensive 2.7-3.1 tCO2/tcs (CEEW 2026 p.7)"
+    notes: >
+      PHASE 25D/Phase 25 CORRECTION: The USD 362 million figure does exist in the
+      CEEW 2023 report. However, it is NOT full Coal-DRI-EAF plant CAPEX, but is
+      the CAPEX required for energy-efficiency measures (decarbonisation/abatement
+      retrofit, e.g., EAF charge preheating representing approx 1/3) for the coal
+      DRI-EAF pathway. Recorded as CEEW_2023_COAL_DRI_EAF_EE_CAPEX (CROSSCHECK /
+      RETROFIT_OR_ABATEMENT_CAPEX).
+
+  - source_id: IEA-GHR-2021-ELECTROLYSER-CHART
+    filename: null
+    publisher: "International Energy Agency (IEA)"
+    title: "Global Hydrogen Review 2021 + IEA data-and-statistics chart 'Global installed electrolysis capacity by technology, 2015-2020'"
+    year: 2021
+    url: "https://www.iea.org/data-and-statistics/charts/global-installed-electrolysis-capacity-by-technology-2015-2020; GHR 2021 PDF p.116"
+    source_level: "LEVEL 1"
+    scope: "Cumulative installed electrolysis capacity by technology (MW, dedicated H2 production, year-end, excl. chlor-alkali), 2015-2020. Chart data CSV extracted verbatim from the official IEA chart page (data-chart-csv): ALK 133.77->175.76 MW; PEM 18.89->89.26 MW; SOEC 0->0.79 MW; Unknown 7.03->21.12 MW (2015->2020). Internally consistent with GHR 2021 p.116 text (2020: 290 MW total, 61% ALK, 31% PEM, SOEC 0.8 MW) and p.117 CAPEX ranges (alkaline USD 1,000-1,400/kW; PEM USD 1,750/kW)"
+    parameters_extracted:
+      - "ALK capacity 2015-2020: 133.77/136.85/140.41/145.83/149.51/175.76 MW"
+      - "PEM capacity 2015-2020: 18.89/20.55/20.67/37.75/61.27/89.26 MW"
+      - "SOEC capacity 2015-2020: 0.00/0.00/0.00/0.07/0.07/0.79 MW"
+      - "Unknown-technology capacity 2015-2020: 7.03/7.40/7.45/7.56/11.81/21.12 MW"
+      - "Electrolyser system CAPEX (2021): alkaline USD 1,000-1,400/kW; PEM USD 1,750/kW (GHR 2021 p.117)"
+    notes: >
+      PHASE 25C: pre-2020 technology-specific deployment series extracted
+      verbatim from the official IEA chart page CSV. 25 deployment anchors
+      (2015-2019) added to data/external/m1/electrolyser_cost_deployment.csv as
+      M1_ANCHOR_ONLY rows (42 deployment anchors total). IEA internal revision
+      documented (SC-14): GHR 2021 chart 2020 total 286.93 MW vs later IEA
+      tracking page 330 MW. No parameter promoted; anchors recorded, M1 remains
+      DEFERRED.
+
+  - source_id: NATURE-COMMS-2025-GREEN-STEEL
+    filename: null
+    publisher: "Nature Communications (Johnson, Ahman, Nilsson, Li - Lund University)"
+    title: "Emerging green steel markets surrounding the EU emissions trading system and carbon border adjustment mechanism"
+    year: 2025
+    url: "https://www.nature.com/articles/s41467-025-64440-9 (PMC12518805)"
+    source_level: "LEVEL 2"
+    scope: "Peer-reviewed H2-DRI-EAF techno-economics (EU/global scope, NOT India-specific), all costs EUR 2022, installed capacity depreciated (WACC 8%): H2-DRI-EAF CAPEX EUR 716/tCS (100% DRI) INCLUDES the EAF + electrolyser (EUR 0.585/W) + reduction shaft (EUR 308/tCS); standalone EAF EUR 247/tCS; greenfield BF-BOF EUR 592/tCS; brownfield/relining EUR 228/tCS; 20-year lifetime for EAF and H2-DRI-EAF; electrolyser lifetime 10 years (80,000 h), double-counted EUR 1.17/W for annualisation. Methods - Economics (Supplementary Table 9)"
+    parameters_extracted:
+      - "H2-DRI-EAF CAPEX EUR 716/tCS (100% DRI; includes EAF + electrolyser + shaft), EUR 2022"
+      - "Electrolyser CAPEX EUR 0.585/W (EUR 1.17/W annualised, 10-yr lifetime)"
+      - "Reduction shaft EUR 308/tCS"
+      - "Standalone EAF EUR 247/tCS; greenfield BF-BOF EUR 592/tCS; relining EUR 228/tCS"
+    notes: >
+      PHASE 25C: EXTERNAL_BOUNDARY_CROSSCHECK only - NOT an India-specific
+      frozen input. Provides the GAP 4 component decomposition target
+      (electrolyser + reduction shaft + EAF). Boundary explicitly INCLUDES the
+      electrolyser, so it must NOT be added on top of a like-for-like plant
+      CAPEX. See H2_DRI_ECONOMICS_FINAL_REPORT.md. No parameter promoted.
+
+  - source_id: DIW-2024-GREEN-STEEL-CAPEX
+    filename: null
+    publisher: "DIW Berlin (Huettel, A. & Lehner, J.)"
+    title: "Revisiting Investment Costs for Green Steel: Capital Expenditures, Firm Level Impacts, and Policy Implications (DIW Discussion Paper 2082)"
+    year: 2024
+    url: "https://www.econstor.eu/handle/10419/295171; https://ideas.repec.org/p/diw/diwwpp/dp2082.html"
+    source_level: "LEVEL 2"
+    scope: "Literature-compiled green-steel CAPEX medians (EUR/t steelmaking capacity): DRI plant (DRP) only median 299 (n=10); EAF only 254 (n=11); DRP+EAF excluding electrolyser 592 (n=11); DRP+EAF including electrolyser 886 (n=4). Announced green steel projects: 800/467/751/1600 (n=3/6/8/3). Table captured via EconStor/SSRN search-result excerpts; full-text PDF bot-gated - page-level verification pending"
+    parameters_extracted:
+      - "DRP+EAF excl. electrolyser median EUR 592/t (n=11)"
+      - "DRP+EAF incl. electrolyser median EUR 886/t (n=4)"
+      - "DRI plant only median EUR 299/t (n=10); EAF only EUR 254/t (n=11)"
+    notes: >
+      PHASE 25C: resolves the phase brief's '2026 JRC compilation' attribution -
+      the EUR 592/886 values trace to the DIW Berlin 2024 paper, not a 2026 JRC
+      report (SC-15). Values captured from search-result table excerpts;
+      full-text page verification pending. EXTERNAL_BOUNDARY_CROSSCHECK only.
+      No parameter promoted.
+
+  - source_id: GSI-2025-GREENING-STEEL
+    filename: "data/external/gsi_greening_steel_2025.pdf"
+    extracted_text: "data/external/extracted/mos_gsi_2025.txt"
+    publisher: "Ministry of Steel, Government of India"
+    title: "Greening the Steel Sector in India: Roadmap and Action Plan"
+    year: 2025
+    url: "https://steel.gov.in/sites/default/files/2025-03/GSI%20Report.pdf"
+    source_level: "LEVEL 1"
+    scope: "Official MoS route-level evidence: (1) standalone IF units national charge mix 41% scrap / 59% DRI (2023-24, p.30, Fig 1.9 + Table 1.2 context; ~90% of coal-based DRI output and 68% of scrap consumed by IFs); (2) gas DRI-EAF charge mix 85% DRI / 15% scrap, iron-to-steel conversion ratio 1.11 (p.181, Fig 8.7 context); (3) SEC of Indian coal DRI-EAF/IF plants 7.0 Gcal/tcs vs theoretical 5.3 (Fig ES5, p.7); (4) NSP 2017 route shares: BF-BOF 60-65% of production by 2030-31, scrap steel subsumed in DRI-IF (Fig 8.3, p.176); (5) EAF SEC 420-775 kWh/t liquid steel, avg ~480, scrap utilisation limited to 40-80% (p.119, extract line 4015); (6) EIF ~1032 units, 68.8 Mt, production 50.4 Mt (73% CU), SEC avg ~680 kWh/t, range 580-800 (p.119, extract line 4020)"
+    parameters_extracted:
+      - "Standalone IF charge mix: 59% DRI / 41% scrap (2023-24, p.30)"
+      - "Gas DRI-EAF charge mix: 85% DRI / 15% scrap, iron-to-steel ratio 1.11 (p.181)"
+      - "Coal DRI-EAF/IF SEC 7.0 Gcal/tcs vs theoretical 5.3 (Fig ES5, p.7)"
+      - "NSP 2017: BF-BOF 60-65% of production by 2030-31; scrap subsumed in DRI-IF (p.176)"
+      - "EAF SEC 420-775 kWh/t liquid steel, avg ~480 (p.119)"
+      - "EAF scrap utilisation limited to 40-80% (scrap availability constraint)"
+      - "EIF SEC avg ~680 kWh/t, range 580-800 (p.119)"
+    notes: >
+      PHASE 25C: strongest official source for the Coal-DRI-IF charge mix (GAP
+      2). Recorded as the official national reference CANDIDATE; FROZEN
+      promotion withheld because IBM IMYB (~40% DRI national average incl.
+      pig/cast iron) and the CEEW 2024 cluster survey (~12.5% scrap) measure
+      different populations (SC-16). No parameter promoted. PDF downloaded and
+      page-verified in Phase 25F (EAF/EIF SEC lines 4015/4020).
+
+  - source_id: "TERI-GREEN-STEEL-2030"
+    filename: null
+    publisher: "The Energy and Resources Institute (TERI)"
+    title: "Green Steel by 2030: Challenges and Opportunities for India"
+    year: 2024
+    url: "https://www.teriin.org"
+    source_level: "LEVEL 2"
+    scope: >
+      Techno-economic scenario modelling for Indian steel decarbonisation. Reports
+      implied greenfield H2-DRI-EAF 2 Mt HRC plant total CAPEX as ~USD 1.48 billion
+      (INR 12,300 crore) based on 50% capital subsidy of USD 740 million (INR 6,150 crore).
+    parameters_extracted:
+      - "Implied greenfield H2-DRI-EAF total CAPEX: USD 1.48 billion (INR 12,300 crore) scenario"
+    notes: >
+      CANDIDATE_EXTERNAL / MODELLED_CROSSCHECK. Author-model economic scenario, not an
+      EPC contract. Retained as cross-check, not frozen.
+
+  - source_id: "BERKELEY-IECC-2026"
+    filename: null
+    publisher: "UC Berkeley (IECC)"
+    title: "Economic Case for Green Steel Production in India"
+    year: 2026
+    url: "https://iecc.berkeley.edu"
+    source_level: "LEVEL 2"
+    scope: >
+      India-specific green steel techno-economic model: H2-DRI-EAF baseline CAPEX
+      ~USD 670/tpy (sensitivity USD 500-800/tpy), baseline LCOS USD 562/t (2030),
+      H2 price USD 3/kg baseline, hydrogen consumption 55-75 kg H2/t steel,
+      grid electricity USD 40-100/MWh, iron ore pellets USD 80-130/t.
+    parameters_extracted:
+      - "H2-DRI-EAF baseline CAPEX: USD 670/tpy (sensitivity USD 500-800/tpy)"
+      - "Baseline levelised cost of steel (LCOS): USD 562/t"
+      - "H2 price baseline: USD 3/kg (sensitivity USD 2-4/kg)"
+      - "H2-DRI consumption intensity: 55-75 kg H2/t steel"
+    notes: >
+      CANDIDATE_EXTERNAL / CROSSCHECK. Used to cross-check NITI and TERI CAPEX/OPEX.
+      Retained as cross-check.
+
+  - source_id: "TATA-LUDHIANA-EAF-2026"
+    filename: null
+    publisher: "Tata Steel"
+    title: "Tata Steel Ludhiana Scrap-Based EAF Plant Commissioning Disclosure"
+    year: 2026
+    url: "https://www.tatasteel.com"
+    source_level: "LEVEL 1"
+    scope: >
+      Plant-level project disclosure: 0.75 MTPA 100% scrap-based EAF plant in Ludhiana,
+      Punjab, commissioned March 2026. Total investment Rs 3,200 crore. Supplied by
+      Rohtak scrap recycling facility (supplies ~40% of scrap).
+    parameters_extracted:
+      - "Investment: Rs 3,200 crore (INR 32,000 million) for 0.75 MTPA scrap EAF capacity"
+      - "Implied unit CAPEX: Rs 4,267 crore per Mtpa (INR 42,667/t capacity)"
+    notes: >
+      PROJECT_EXTERNAL / CANDIDATE_EXTERNAL. Real Indian project demonstrating 100%-scrap
+      EAF viability in India. Do NOT silently generalize to the national route.
+
+  - source_id: "RAJYA-SABHA-SCRAP-2026"
+    filename: null
+    publisher: "Ministry of Steel, Government of India"
+    title: "Official Rajya Sabha Question-Answer on Steel Scrap Consumption and Capacity"
+    year: 2026
+    url: "https://sansad.in/rs"
+    source_level: "LEVEL 1"
+    scope: >
+      Official question-answer from Ministry of Steel on 27 March 2026. Reports:
+      scrap consumption 25.58 Mt in FY2019 and 33.36 Mt in FY2024; domestic scrap
+      generation increase 5.65 Mt, imports increase 2.13 Mt; EAF capacity 40.51 Mt
+      in FY2020 and 43.99 Mt in FY2025-26.
+    parameters_extracted:
+      - "Scrap consumption: 25.58 Mt (FY2019), 33.36 Mt (FY2024)"
+      - "EAF capacity: 40.51 Mt (FY2020), 43.99 Mt (FY2025-26)"
+      - "Scrap availability growth: domestic +5.65 Mt, imports +2.13 Mt"
+    notes: >
+      FROZEN_EXTERNAL. Official recent database update for scrap availability and
+      EAF route capacity boundaries.
+
+  - source_id: "IEA-FOH-2019"
+    filename: "data/external/iea_future_of_hydrogen_assumptions_annex.pdf"
+    extracted_text: "data/external/extracted/iea_foh_assumptions_annex.txt"
+    publisher: "International Energy Agency (IEA)"
+    title: "The Future of Hydrogen: Seizing Today's Opportunities — Assumptions Annex"
+    year: 2019
+    url: "https://iea.blob.core.windows.net/assets/a02a0c80-77b2-462e-a9d5-1099e0e572ce/IEA-The-Future-of-Hydrogen-Assumptions-Annex.pdf"
+    source_level: "LEVEL 3"
+    scope: >
+      Official IEA assumptions annex for the 2019 Future of Hydrogen report.
+      Steel (Industrial applications) table: route-level CAPEX (USD/t crude
+      steel capacity), annual OPEX (% of CAPEX), electricity/coal/gas/biomass
+      intensities for BF-BOF, NG-DRI-EAF, NG-DRI-EAF w/CCUS, H2-DRI-EAF,
+      smelt-reduction w/CCUS. Hydrogen table: water electrolysis CAPEX
+      (USD/kWe), efficiency, OPEX, stack lifetime. Explicit notes: H2-DRI-EAF
+      parameters INCLUDE electrolyser costs; H2 requirement 47-68 kg/t DRI
+      (midpoint used); 95% DRI charge to EAF for DRI-EAF routes; 25-yr
+      lifetime and 95% availability for all equipment.
+    parameters_extracted:
+      - "H2-DRI-EAF CAPEX 945/855/755 USD/t crude steel (today/2030/LT), incl. electrolyser"
+      - "H2-DRI-EAF annual OPEX 16/18/20% of CAPEX; electricity 14.7/13.9/13.2 GJ/t; biomass 1.9 GJ/t"
+      - "H2 requirement 47-68 kg/t DRI (midpoint used); 95% DRI charge; 25-yr life; 95% availability"
+      - "BF-BOF CAPEX 600 USD/t, OPEX 23%, electricity 0.7 / coal 18.0 / gas 1.0 GJ/t"
+      - "NG-DRI-EAF CAPEX 590 USD/t, OPEX 25%, electricity 2.5 / coal 0.5 / gas 10.1 GJ/t"
+      - "Water electrolysis CAPEX 900/700/450 USD/kWe, OPEX 1.5%, LHV efficiency 64/69/74%"
+      - "Iron ore (58% Fe) 60 USD/t, scrap 260 USD/t assumed for all steel routes"
+    notes: >
+      EXTERNAL_CROSSCHECK. Downloaded and page-verified (Phase 25E). H2-DRI-EAF
+      CAPEX includes electrolyser — never add electrolyser on top. 2019 USD basis;
+      do not mix with IEA Roadmap 2020 (2020 USD) or Nature 2025 (EUR 2022).
+
+  - source_id: "MOS-H2-PILOTS-2024"
+    filename: null
+    publisher: "Ministry of Steel / MNRE, Government of India"
+    title: "Pilot Project Guidelines for utilising Green Hydrogen in the Steel Sector + PIB updates"
+    year: 2024
+    url: "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2113589"
+    source_level: "LEVEL 1"
+    scope: >
+      Official scheme: Rs 455 crore allocated till FY2029-30 for green-hydrogen
+      pilots in the steel sector. Seven pilots awarded: 2 x Scheme A (100%
+      hydrogen DRI), 2 x Scheme B (hydrogen blast-furnace injection), 3 x
+      Scheme C (partial shaft-furnace hydrogen substitution). Ministry states
+      hydrogen-based green steel is NOT yet commercially viable in India;
+      pilots are being supported to develop the technology.
+    parameters_extracted:
+      - "Budget: Rs 455 crore (FY2024-25 to FY2029-30)"
+      - "Pilots: 7 awarded (2 Scheme A / 2 Scheme B / 3 Scheme C)"
+      - "H2_STATUS: EMERGING / PILOT / NOT_YET_COMMERCIAL (India)"
+    notes: >
+      CONTEXT / PILOT. H2-DRI must NOT be represented as an already-commercial
+      Indian route; pilot capacity must NOT enter the existing fleet.
+
+  - source_id: "GENSOL-MATRIX-H2PILOT-2024"
+    filename: null
+    publisher: "Gensol Engineering Ltd / Matrix Gas & Renewables Ltd (company disclosure)"
+    title: "India's First Green Hydrogen Steel Facility — pilot project disclosure"
+    year: 2024
+    url: "https://www.business-standard.com/markets/capital-market-news/gensol-engineering-partners-with-matrix-gas-renewables-124102100181_1.html"
+    source_level: "LEVEL 1"
+    scope: >
+      Company disclosure (Oct 2024): consortium awarded project for India's first
+      green-hydrogen-powered steel facility. 100% green H2 DRI via vertical-shaft
+      DRI; pilot capacity 50 TPD; total CAPEX Rs 321 crore; 50% government CAPEX
+      support (National Green Hydrogen Mission).
+    parameters_extracted:
+      - "Pilot capacity: 50 TPD (~18,250 t/yr)"
+      - "Total CAPEX: Rs 321 crore (~USD 38m)"
+      - "Implied specific CAPEX at pilot scale: Rs 321 crore / 50 TPD ~ Rs 6.42 lakh/tpd (~Rs 1,758/t annualised pilot scale)"
+    notes: >
+      INDIA_H2_PILOT_CAPEX / PROJECT_SPECIFIC_EXTERNAL. Pilot scale — do NOT
+      extrapolate to a commercial 1 Mt/yr plant. Supports H2_STATUS =
+      EMERGING/PILOT/NOT_YET_COMMERCIAL (India).
+
+  - source_id: "CEEW-2023-CONVERSION-METHODOLOGY"
+    filename: null
+    publisher: "Council on Energy, Environment and Water (CEEW)"
+    title: "Evaluating Net-Zero for the Indian Steel Industry — material-balance conversion factors"
+    year: 2023
+    url: "https://www.ceew.in/publications/how-can-india-decarbonise-for-net-zero-steel-industry"
+    source_level: "LEVEL 2"
+    scope: >
+      CEEW 2023 material-balance model conversion factors (methodology anchors,
+      NOT direct observed plant intensities): 1 t crude steel = 1.25 t coal-DRI,
+      1.10 t gas-DRI, 1.10 t scrap, 1.10 t hot metal.
+    parameters_extracted:
+      - "Crude-steel conversion factors: coal-DRI 1.25 / gas-DRI 1.10 / scrap 1.10 / hot metal 1.10 t/t crude steel"
+    notes: >
+      DERIVED / METHODOLOGY_ANCHOR only. Preserve CEEW source wording. The
+      1.10 t scrap/t crude steel factor is a methodology anchor, not a direct
+      Indian plant observation — candidate for the Scrap-EAF model input slot
+      only with explicit CANDIDATE_DERIVED status.
+
+  - source_id: "GLOBAL-PLANT-LEVEL-CAPEX-2025"
+    filename: null
+    publisher: "2025 global steel plant-level study (IDTechEx Green Steel 2025-2035 context)"
+    title: "Capacity-weighted global plant-level CAPEX cross-check by route"
+    year: 2025
+    url: "https://www.idtechex.com/en/research-report/green-steel-2025-2035-technologies-players-markets-forecasts/1084"
+    source_level: "LEVEL 2"
+    scope: >
+      Capacity-weighted average full-plant CAPEX from a 2025 global plant-level
+      compilation: Scrap-EAF ~USD 581/t, BF-BOF ~USD 561/t, DRI-EAF ~USD 501/t
+      capacity; scrap feed cost contribution ~USD 400/t for Scrap-EAF.
+    parameters_extracted:
+      - "Scrap-EAF ~581 USD/t; BF-BOF ~561 USD/t; DRI-EAF ~501 USD/t capacity (global, 2025)"
+      - "Scrap feed cost contribution ~400 USD/t for Scrap-EAF"
+    notes: >
+      GLOBAL_CROSSCHECK only — NOT India-frozen. Global capacity-weighted plant
+      CAPEX is not an Indian delivered price; use only for route-order
+      reconciliation against the IEA annualised freeze values.
+
+  - source_id: "MNRE-NGHM-SIGHT"
+    filename: null
+    publisher: "Ministry of New and Renewable Energy (MNRE) / SECI"
+    title: "National Green Hydrogen Mission — SIGHT Green Hydrogen Production awarded capacity"
+    year: 2024
+    url: "https://seci.co.in/nghm"
+    source_level: "LEVEL 1"
+    scope: >
+      SIGHT (Strategic Interventions for Green Hydrogen Transition) Mode-1
+      tenders awarded 412,000 t/yr of green hydrogen production capacity (SECI
+      portal; corroborated by MNRE announcements and GH2 country page). PIB
+      PRID 2204464 (Dec 2025) reports the cumulative awarded capacity rising to
+      862,000 t/yr. This is HYDROGEN SUPPLY-SIDE CONTEXT, not steel-sector
+      hydrogen demand.
+    parameters_extracted:
+      - "Awarded green-H2 production capacity: 412,000 t/yr (SECI SIGHT Mode-1; cumulative 862,000 t/yr per PIB Dec 2025)"
+      - "Electrolyser manufacturing capacity awarded: ~2,698.5 MW (SIGHT)"
+    notes: >
+      HYDROGEN_SUPPLY_SIDE_CONTEXT only. Must NOT be converted directly into
+      steel capacity; steel H2 demand is a separate quantity.
+
+  - source_id: "MOC-IMPORTS-FY2024"
+    filename: null
+    publisher: "Ministry of Coal / DGCIS, Government of India"
+    title: "India Coal Import Statistics FY2023-24 (coking and non-coking)"
+    year: 2024
+    url: "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2083140"
+    source_level: "LEVEL 3"
+    scope: >
+      Official FY2023-24 coal import statistics: coking coal imports 58.81 Mt
+      valued Rs 1,330,003.62 million; non-coking coal imports 205.72 Mt valued
+      Rs 1,772,150.89 million (DGCIS). Import-average unit values are
+      IMPORT BENCHMARKS, not delivered plant prices.
+    parameters_extracted:
+      - "Coking coal imports 58.81 Mt @ ~Rs 22,615/t (~USD 272/t)"
+      - "Non-coking coal imports 205.72 Mt @ ~Rs 8,614/t (~USD 104/t)"
+    notes: >
+      IMPORT_BENCHMARK (Phase 25E). Do NOT use as delivered plant price. Cross-check
+      vs freeze PRICE_COKING_COAL 140 USD/t and PRICE_NON_COKING_COAL 70 USD/t (IEA 2020).
+
+# ------------------------------------------------------------------
+# Non-acquired priority sources (registered as gaps, see
+# EXTERNAL_DATA_GAP.md): JPC technology-wise capacity data, plant-level
+# commissioning dates, route VOM engineering references, Indian EAF
+# scrap-charge plant surveys, fuel price time series.
+# ------------------------------------------------------------------

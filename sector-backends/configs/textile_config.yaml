@@ -1,0 +1,384 @@
+# Textile Transition Sector — Parameter Registry
+# India Transition Lab | Provenance-tagged scientific parameters
+#
+# KEY SCIENCE:
+#   India textile: Spinning (cotton/manmade fibre) + Weaving/Knitting + Processing/Dyeing
+#   Energy profile: Process heat dominant (steam for dyeing/finishing = 60-70% of energy)
+#   Fibre split: Cotton ~50%, Polyester ~45%, others ~5% (India 2024)
+#   Polyester is petrochemical: energy for polymerisation + melt spinning
+#   Cotton processing is water+heat intensive: 100-150 kg water per kg cloth
+#   Recycled fibre: mechanically recycled cotton + chemically recycled polyester
+#   Key decarbonisation: coal boilers → RE + heat pumps + green hydrogen for steam
+#
+# PROVENANCE TAGS:
+#   FROZEN_EXTERNAL  — Physical constant
+#   EXTERNAL         — Official/published source
+#   EXTERNAL_PENDING — Source identified, data pending
+#   PROJECT_PROPOSAL — Internal assumption
+
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+port: 8003
+
+discount_rate:
+  value: 0.10
+  provenance: PROJECT_PROPOSAL
+  source: "MSME India textile sector WACC estimate"
+
+# ── Sub-sectors ───────────────────────────────────────────────────────────────
+# Model: production in Mt fibre/yr (yarn + fabric + made-up combined as "fibre equivalent")
+# Intensity basis: GJ per tonne fibre equivalent
+# Sub-sectors aggregated into production routes (by fuel/energy source)
+
+# ── Routes ────────────────────────────────────────────────────────────────────
+routes:
+  Coal-Conventional:
+    label: "Coal Boiler Conventional"
+    description: "Coal/biomass boilers for steam + grid electricity — baseline India textile"
+    existing_mt: 8.0              # Mt fibre equivalent/yr
+    capex_usd_per_t: 120          # USD/t fibre/yr (incremental capex, mostly O&M driven)
+    capex_provenance: EXTERNAL_PENDING
+    source_capex: "MSME textile survey data; DPIIT 2023 textile cluster reports"
+    fom_usd_per_t_yr: 18
+    vom_residual_usd_per_t: 40
+    availability: 0.90
+    lifetime_yr: 20
+    start_year: 2024
+    lead_years: 1
+    wacc_premium: 0.0
+    max_ramp_mt_yr: 0.0           # No new coal-conventional; retire existing
+    cutoff_year_cps: 2030
+    cutoff_year_nzs: 2027
+    fossil_decline: true
+
+    # Energy intensities
+    coal_gj_per_t: 16.0           # GJ coal per t fibre (steam for dyeing/finishing)
+    elec_kwh_per_t: 2800          # kWh/t fibre (spinning + weaving + auxiliaries)
+    energy_intensity_provenance: EXTERNAL_PENDING
+    source_energy: "BEE India textile PAT data 2019; TERI 2020 textile energy audit"
+    note: "India textile: spinning 40% energy, processing/dyeing 55%, weaving 5%"
+
+    # CO2 accounting
+    co2_coal_t_per_gj: 0.0942     # tCO2/GJ coal (bituminous average)
+    co2_coal_provenance: FROZEN_EXTERNAL
+    source_co2_coal: "IPCC 2006 Table 1.4; bituminous coal 94.6 kgCO2/GJ"
+
+    pli_eligible: false
+    green_premium_eligible: false
+
+  Gas-Transition:
+    label: "Natural Gas Boiler"
+    description: "Gas-fired steam boilers replacing coal — cleaner transition technology"
+    existing_mt: 0.8
+    capex_usd_per_t: 140
+    capex_provenance: EXTERNAL_PENDING
+    source_capex: "GAIL industrial heat cost 2023; gas boiler capex estimates"
+    fom_usd_per_t_yr: 20
+    vom_residual_usd_per_t: 45
+    availability: 0.92
+    lifetime_yr: 20
+    start_year: 2024
+    lead_years: 1
+    wacc_premium: 0.0
+    max_ramp_mt_yr: 0.5
+    fossil_decline: true              # Monotonic: gas production can only stay flat or fall
+
+    gas_gj_per_t: 14.5            # Lower than coal (gas boilers more efficient)
+    elec_kwh_per_t: 2700
+    energy_intensity_provenance: EXTERNAL_PENDING
+    source_energy: "IEA 2023 industrial heat sector; gas boiler efficiency 85-90%"
+
+    co2_gas_t_per_gj: 0.0561      # IPCC 2006 natural gas EF
+    co2_gas_provenance: FROZEN_EXTERNAL
+    source_co2_gas: "IPCC 2006 Table 1.4; NG 56.1 kgCO2/GJ"
+
+    pli_eligible: false
+    green_premium_eligible: false
+
+  Biomass-Cogen:
+    label: "Biomass Cogeneration"
+    description: "Biomass/agri-residue boilers with cogeneration — near-zero Scope 1 CO2"
+    existing_mt: 0.3
+    capex_usd_per_t: 200
+    capex_provenance: EXTERNAL_PENDING
+    source_capex: "MNRE biomass cogeneration programme data; typical cluster cost"
+    fom_usd_per_t_yr: 28
+    vom_residual_usd_per_t: 55
+    availability: 0.85
+    lifetime_yr: 20
+    start_year: 2024
+    lead_years: 2
+    wacc_premium: 0.005
+    max_ramp_mt_yr: 0.7            # Raised 0.4→0.7: Biomass-Cogen was ramp-constrained every period
+
+    biomass_gj_per_t: 18.0        # Higher GJ/t due to lower efficiency of biomass boilers
+    elec_kwh_per_t: 2700
+    energy_intensity_provenance: EXTERNAL_PENDING
+    source_energy: "TERI 2020; biomass boiler efficiency 70-78% vs coal 80-85%"
+
+    co2_biomass_factor: 0.0       # Biogenic CO2 = zero (lifecycle; residue from agriculture)
+    co2_provenance: FROZEN_EXTERNAL
+    source_co2: "IPCC Guidelines: agricultural residue CO2 = biogenic (lifecycle accounting)"
+
+    biomass_supply_constrained: true
+
+    pli_eligible: false
+    green_premium_eligible: true
+
+  RE-Electrified:
+    label: "RE + Electric Heat"
+    description: "RE electricity powering electric boilers/heat pumps + spinning"
+    existing_mt: 0.1
+    capex_usd_per_t: 350          # Higher due to electric boiler + heat pump capex
+    capex_provenance: EXTERNAL_PENDING
+    source_capex: "IEA 2023 industrial heat decarbonisation; EU textile RE case studies"
+    fom_usd_per_t_yr: 35
+    vom_residual_usd_per_t: 50
+    availability: 0.90
+    lifetime_yr: 20
+    start_year: 2026
+    lead_years: 2
+    wacc_premium: 0.005
+    max_ramp_mt_yr: 1.0            # Raised 0.5→1.0: RE deployment at India scale; ramp was binding every period
+
+    elec_kwh_per_t: 6500          # Higher kWh/t (all heat from electricity, less fuel)
+    elec_is_re: true              # Uses RE price, not grid price
+    energy_intensity_provenance: EXTERNAL_PENDING
+    source_energy: "EU JRC 2023 Industrial Electrification; electric steam boiler COP ~0.95"
+    note: "Electric boilers: 1 GJ heat from ~1.05 GJ electric. Coal equiv 16 GJ → ~17 MWh elec"
+
+    pli_eligible: true
+    green_premium_eligible: true
+
+  Green-H2-Steam:
+    label: "Green H2 Industrial Steam"
+    description: "Hydrogen combustion for high-temperature steam — addresses steam quality gap"
+    existing_mt: 0.0
+    capex_usd_per_t: 450          # H2 burner retrofit + H2 storage + safety systems
+    capex_provenance: PROJECT_PROPOSAL
+    source_capex: "Hydrogen Europe 2023 industrial heat; limited textile-specific data"
+    fom_usd_per_t_yr: 45
+    vom_residual_usd_per_t: 60
+    availability: 0.88
+    lifetime_yr: 20
+    start_year: 2030
+    lead_years: 3
+    wacc_premium: 0.015
+    max_ramp_mt_yr: 0.5            # Raised 0.3→0.5: Green-H2-Steam was ramp-constrained every period
+
+    h2_kg_per_t: 280              # kg H2 per t fibre (steam replacement for coal)
+    h2_provenance: EXTERNAL_PENDING
+    source_h2: "Derived from coal GJ/t equivalent × HHV H2=142 MJ/kg; ~16 GJ / 57.2 MJ/kg = 280 kg"
+
+    elec_kwh_per_t: 2800
+    pli_eligible: true
+    green_premium_eligible: true
+
+  Circular-Fibre:
+    label: "Recycled Fibre (Circular)"
+    description: "Mechanically recycled cotton + chemically recycled polyester"
+    existing_mt: 0.2              # Growing slowly
+    capex_usd_per_t: 280
+    capex_provenance: EXTERNAL_PENDING
+    source_capex: "Renewlane/Carbios 2023 chemical recycling costs; EU textile recycling"
+    fom_usd_per_t_yr: 30
+    vom_residual_usd_per_t: 70    # Higher VOM: sorting + chemical processing
+    availability: 0.88
+    lifetime_yr: 20
+    start_year: 2024
+    lead_years: 2
+    wacc_premium: 0.01
+    max_ramp_mt_yr: 0.4            # Raised 0.3→0.4: modest increase; recycled fibre supply-constrained anyway
+
+    elec_kwh_per_t: 3200          # Chemical recycling more electricity intensive
+    energy_intensity_provenance: EXTERNAL_PENDING
+    source_energy: "Carbios 2022 lifecycle data; Renewlane 2023"
+
+    # CO2 from recycled fibre: >60% less than virgin polyester
+    # No coal use; electricity-driven
+    recycled_content_fraction: 0.85  # Fraction from waste inputs
+    recycled_supply_constrained: true
+
+    pli_eligible: true
+    green_premium_eligible: true
+
+# ── Biomass supply constraint ─────────────────────────────────────────────────
+biomass_supply:
+  enabled: true
+  description: "Agri-residue available for textile sector (Mt/yr dry matter)"
+  source: "MNRE 2023 Biomass Atlas; shared with fertiliser, power sectors"
+  textile_share_gj_yr:
+    CPS: {2024: 800, 2040: 700, 2070: 500}
+    NZS: {2024: 800, 2040: 900, 2070: 1000}
+
+# ── Recycled fibre supply ─────────────────────────────────────────────────────
+recycled_supply:
+  enabled: true
+  description: "Post-consumer textile waste available for recycling (Mt/yr)"
+  source: "DPIIT 2023; EU Ecodesign Regulation impact study 2022"
+  note: "EoL textile lag: ~3-5yr for fast fashion; 15yr+ for denim/workwear"
+  available_mt:
+    CPS: {2024: 0.3, 2030: 0.6, 2040: 1.2, 2050: 2.0, 2060: 3.0, 2070: 4.0}
+    NZS: {2024: 0.3, 2030: 0.9, 2040: 2.0, 2050: 3.5, 2060: 5.5, 2070: 8.0}
+  recycling_yield: 0.65           # Fraction of input waste that becomes usable fibre
+
+# ── Electricity ───────────────────────────────────────────────────────────────
+electricity:
+  grid_ei_tco2_per_kwh:
+    provenance: EXTERNAL
+    source: "CEA 2022"
+    CPS:
+      2024: 0.00071
+      2030: 0.00055
+      2040: 0.00032
+      2050: 0.00018
+      2060: 0.00010
+      2070: 0.00007
+    NZS:
+      2024: 0.00071
+      2030: 0.00045
+      2040: 0.00020
+      2050: 0.00008
+      2060: 0.00003
+      2070: 0.00001
+
+  price_usd_per_kwh:
+    provenance: EXTERNAL
+    source: "MoP industrial tariff 2023"
+    CPS:
+      2024: 0.065
+      2030: 0.068
+      2040: 0.072
+      2050: 0.076
+      2060: 0.080
+      2070: 0.085
+    NZS:
+      2024: 0.065
+      2030: 0.058
+      2040: 0.048
+      2050: 0.040
+      2060: 0.033
+      2070: 0.027
+
+  re_price_usd_per_kwh:
+    provenance: PROJECT_PROPOSAL
+    source: "MNRE 2023"
+    CPS: {2024: 0.040, 2030: 0.034, 2040: 0.027, 2050: 0.023, 2060: 0.020, 2070: 0.018}
+    NZS: {2024: 0.040, 2030: 0.028, 2040: 0.021, 2050: 0.016, 2060: 0.013, 2070: 0.011}
+
+# ── Natural gas price ─────────────────────────────────────────────────────────
+natural_gas_price_usd_per_gj:
+  provenance: EXTERNAL
+  source: "PPAC 2023; APM gas pricing"
+  CPS: {2024: 8.0, 2030: 8.5, 2040: 9.0, 2050: 9.5, 2060: 10.0, 2070: 10.5}
+  NZS: {2024: 8.0, 2030: 7.5, 2040: 6.5, 2050: 5.5, 2060: 4.5, 2070: 3.5}
+
+# ── Coal price ────────────────────────────────────────────────────────────────
+coal_price_usd_per_gj:
+  provenance: EXTERNAL
+  source: "CIL notified prices; thermal coal grade E/F"
+  CPS: {2024: 2.5, 2030: 2.7, 2040: 2.9, 2050: 3.1, 2060: 3.3, 2070: 3.5}
+  NZS: {2024: 2.5, 2030: 2.8, 2040: 3.0, 2050: 2.5, 2060: 1.8, 2070: 1.0}
+
+# ── H2 price (for Green-H2-Steam route) ──────────────────────────────────────
+h2_price_usd_per_kg:
+  provenance: PROJECT_PROPOSAL
+  source: "IRENA 2022; IEA 2023 India H2 strategy"
+  CPS: {2024: 6.0, 2030: 4.5, 2040: 3.0, 2050: 2.5, 2060: 2.0, 2070: 1.8}
+  NZS: {2024: 6.0, 2030: 3.5, 2040: 2.0, 2050: 1.5, 2060: 1.2, 2070: 1.0}
+
+# ── Carbon price ──────────────────────────────────────────────────────────────
+carbon_price_usd_per_tco2:
+  provenance: PROJECT_PROPOSAL
+  source: "MoEFCC PAT/carbon market"
+  CPS: {2024: 5, 2030: 15, 2040: 35, 2050: 60, 2060: 80, 2070: 100}
+  NZS: {2024: 5, 2030: 30, 2040: 70, 2050: 110, 2060: 140, 2070: 170}
+
+# ── Demand ────────────────────────────────────────────────────────────────────
+# Production in Mt fibre equivalent/yr
+# India: 2024 ~9.5 Mt fibre; growing with GDP + population + export market
+
+demand:
+  unit: "Mt fibre equivalent/yr"
+  default_trajectory: model_fitted
+
+demand_trajectories:
+  niti:
+    label: "NITI Aayog Vol.4 Reference"
+    source: "NITI Aayog 2023 India Energy Transition Vol.4"
+    method: "Sector production trajectory"
+    anchors:
+      2024: 9.5
+      2030: 12.0
+      2040: 16.0
+      2050: 20.0
+      2060: 24.0
+      2070: 28.0
+
+  model_fitted:
+    label: "Income Elasticity Model"
+    source: "FAO/OECD World Fibre Outlook; India fibre consumption data 1980-2023"
+    method: "GDP-elasticity (0.6) fitted to historical; saturation at 20kg/capita"
+    assumption: "India per-capita fibre converges to global 12 kg/capita by 2060"
+    anchors:
+      2024: 9.5
+      2030: 11.5
+      2040: 15.0
+      2050: 19.0
+      2060: 22.5
+      2070: 25.0
+
+  export_driven:
+    label: "Export-Led Growth"
+    source: "Textile Ministry Vision 2030; PM MITRA scheme targets"
+    method: "Sectoral export target buildup"
+    assumption: "India captures 10% global textile trade by 2030 from current 5%"
+    anchors:
+      2024: 9.5
+      2030: 14.0
+      2040: 19.0
+      2050: 24.0
+      2060: 28.0
+      2070: 32.0
+
+  circular_economy:
+    label: "Circular Economy"
+    source: "Ellen MacArthur Foundation 2017; EU Ecodesign 2023"
+    method: "Circular fibre reduces primary fibre demand growth"
+    assumption: "50% recycled content by 2050 reduces primary demand"
+    anchors:
+      2024: 9.5
+      2030: 11.0
+      2040: 13.5
+      2050: 15.5
+      2060: 17.5
+      2070: 19.0
+
+# ── Policy ────────────────────────────────────────────────────────────────────
+policy:
+  pli_usd_per_t:
+    RE-Electrified:
+      CPS: {2024: 0, 2030: 15, 2040: 10, 2050: 5, 2060: 0, 2070: 0}
+      NZS: {2024: 0, 2030: 25, 2040: 18, 2050: 10, 2060: 3, 2070: 0}
+    Green-H2-Steam:
+      CPS: {2024: 0, 2030: 30, 2040: 25, 2050: 15, 2060: 5, 2070: 0}
+      NZS: {2024: 0, 2030: 50, 2040: 40, 2050: 25, 2060: 10, 2070: 0}
+    source: PROJECT_PROPOSAL
+
+  green_premium_usd_per_t:
+    routes: ["RE-Electrified", "Green-H2-Steam", "Circular-Fibre", "Biomass-Cogen"]
+    CPS: {2024: 0, 2030: 10, 2040: 25, 2050: 40, 2060: 50, 2070: 55}
+    NZS: {2024: 0, 2030: 20, 2040: 45, 2050: 70, 2060: 90, 2070: 100}
+    source: "Sustainable textile premium observed EU/US retail market 2023; CBAM indirect"
+
+# ── Vol.4 reference ───────────────────────────────────────────────────────────
+vol4_reference:
+  co2_intensity_tco2_per_t_fibre:
+    2024: 4.5
+    2030: 3.5
+    2040: 2.0
+    2050: 1.0
+    2070: 0.3
+    source: "NITI Aayog 2023 Vol.4 Chapter 10 indicative targets; BEE PAT norms"

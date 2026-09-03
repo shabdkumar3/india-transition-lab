@@ -1,0 +1,67 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\configs\\optimization\\mode_b_policy.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "NZS",
+    "use_endogenous_learning": true,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false,
+    "ccus": {
+      "enabled": false,
+      "provenance": "Lab scenario user override"
+    },
+    "carbon_price.trajectories.CPS": {
+      "2050": 200.0,
+      "2030": 30.0,
+      "2070": 500.0
+    },
+    "carbon_price.enabled": true,
+    "green_steel_premium": {
+      "enabled": true,
+      "provenance": "Lab scenario user override",
+      "emission_threshold_tco2_per_t": 1.4,
+      "qualifying_routes": [
+        "H2-DRI-EAF",
+        "Scrap-EAF"
+      ],
+      "premium_usd_per_t": {
+        "2024": 12.0,
+        "2035": 28.0,
+        "2050": 40.0,
+        "2070": 40.0
+      }
+    },
+    "wacc_premium": {
+      "enabled": true,
+      "provenance": "Lab WACC override: 12.0% vs base 8%",
+      "premium_by_route": {
+        "H2-DRI-EAF": 1.3975824001431885,
+        "NG-DRI-EAF": 1.3975824001431885,
+        "Coal-DRI-EAF": 1.3975824001431885
+      }
+    },
+    "resource_price_trajectories.hydrogen.trajectories.CPS.anchor_years": {
+      "2050": 1.2,
+      "2030": 3.5,
+      "2070": 0.8
+    },
+    "grid_emission_intensity.trajectories.CPS.grid_ei_tco2_per_mwh": {
+      "2024": 0.716,
+      "2030": 0.5828,
+      "2040": 0.383,
+      "2050": 0.1832,
+      "2070": 0.05
+    },
+    "grid_emission_intensity.enabled": true,
+    "resource_prices.non_coking_coal.value": 75.0,
+    "resource_prices.natural_gas.value": 6.0,
+    "resource_prices.iron_ore.value": 85.0,
+    "resource_prices.coking_coal.value": 150.0
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

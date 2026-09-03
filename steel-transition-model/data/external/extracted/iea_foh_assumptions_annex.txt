@@ -1,0 +1,1845 @@
+The Future of Hydrogen
+
+Assumptions annex
+
+IEA G20 Hydrogen report: Assumptions
+
+This annex collects the various assumptions that underpin the analyses throughout The Future of Hydrogen. For technologies, global averages are presented. However, several analyses in the report present regional examples, for which costs will vary with material and labour inputs and differ from the global average.
+These input parameters reflect choices made by the IEA in light of the limited space to present multiple sensitivity analyses. However, there is no doubt that many of the quantitative aspects of hydrogen-related technologies face uncertainties that are compounded when only one case is shown per chart or one illustrative example described. For that reason, the IEA website is home to a growing number of interactive graphics that allow the user to explore variations on the assumptions listed below.
+
+PAGE | 1 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+General inputs
+General
+ All costs in USD (2017)  Discount rate: 8%.  CO2 transport and storage cost for CCUS: USD 20/tCO2 (all regions)  Water costs are not considered.
+
+Commodity prices
+
+Gas price (USD/MBtu)
+
+Lignite price (USD/tonne)
+
+Region
+
+Today
+
+2030
+
+Long term
+
+Today
+
+2030
+
+Long term
+
+China
+
+8.5
+
+9.3
+
+9.2
+
+European Union
+
+7.3
+
+8.0
+
+7.9
+
+30.1
+
+20.6
+
+20.3
+
+30.1
+
+20.6
+
+20.3
+
+Japan
+
+10.9
+
+10.6
+
+10.2
+
+-
+
+-
+
+-
+
+Australia
+
+5.4
+
+6.1
+
+6.0
+
+United States
+
+3.3
+
+3.8
+
+4.0
+
+36.6
+
+24.7
+
+24.3
+
+Minimum
+
+2.9
+
+3.5
+
+3.4
+
+30.1
+
+10.6
+
+10.4
+
+Maximum
+
+11
+
+10.7
+
+10.3
+
+40.1
+
+30.6
+
+20.3
+
+Notes: Notes: MBtu = million British thermal units. Natural gas prices are weighted averages expressed on a gross calorific-value basis. The US natural gas price reflects the wholesale price prevailing on the domestic market. The European Union and China gas prices reflect a balance of pipeline and liquefied natural gas (LNG) imports, while the Japan gas price is solely LNG imports; the LNG prices used are those at the customs border, prior to regasification. Lignite prices are weighted averages adjusted to 6 000 kilocalories per kilogramme.
+
+CO2 prices
+Region Advanced economies Emerging economies
+
+Today 5-16 0-5
+
+CO2 price (USD/tCO2)
+
+2030
+
+Long term
+
+100
+
+160
+
+75
+
+145
+
+PAGE | 2 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Production pathways
+
+Hydrogen
+
+Technology
+
+Parameter
+
+Units
+
+Today 2030
+
+Long term
+
+Water electrolysis
+
+CAPEX Efficiency (LHV)
+
+USD/kWe %
+
+900 700
+
+450
+
+64
+
+69
+
+74
+
+Annual OPEX
+
+% of CAPEX
+
+1.5
+
+1.5
+
+1.5
+
+Stack lifetime (operating hours)
+
+hours
+
+95 000 95 000 100 000
+
+Natural gas reforming
+
+CAPEX Efficiency (LHV)
+
+USD/kWH2 %
+
+910 910
+
+910
+
+76
+
+76
+
+76
+
+Annual OPEX
+
+% of CAPEX
+
+4.7
+
+4.7
+
+4.7
+
+Natural gas reforming with carbon capture
+
+Emission factor CAPEX
+
+kgCO2/kgH2 USD/kWH2
+
+8.9 1 680
+
+8.9 1 360
+
+8.9 1 280
+
+Efficiency (LHV)
+
+%
+
+69
+
+69
+
+69
+
+Annual OPEX
+
+% of CAPEX
+
+3
+
+3
+
+3
+
+Coal gasification
+
+CO2 capture rate Emission factor
+CAPEX Efficiency (LHV)
+
+% kgCO2/kgH2 USD/kWh2
+%
+
+90 1.0 2 670 60
+
+90 1.0 2 670 60
+
+90 1.0 2 670 60
+
+Annual OPEX
+
+% of CAPEX
+
+5
+
+5
+
+5
+
+Coal gasification with carbon capture
+
+Emission factor CAPEX
+
+kgCO2/kgH2 USD/kWH2
+
+20.2 2 780
+
+20.2 2 780
+
+20.2 2 780
+
+Efficiency (LHV)
+
+%
+
+58
+
+58
+
+58
+
+Annual OPEX
+
+% of CAPEX
+
+5
+
+5
+
+5
+
+CO2 capture rate Emission factor
+
+% kgCO2/kgH2
+
+90
+
+90
+
+90
+
+2.1
+
+2.1
+
+2.1
+
+Notes: 25-year lifetime and a 95% availability factor assumed for hydrogen production from natural gas and coal. Availability factors for electrolysis are based on the full load hours of electricity shown in following table. For water electrolysis, possible revenues from oxygen sales have not been considered in the cost analysis.
+
+Sources: References in Table 1 of Chapter 2 for electrolysis IEAGHG (2014), "CO2 capture at coal based power and hydrogen plants", IEAGHG (2017), "Techno-economic evaluation of SMR based standalone (merchant) hydrogen plant with CCS".
+
+PAGE | 3 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Electricity prices and full load hours
+
+Region
+Australia Chile China
+European Union India Japan
+Middle East North Africa United States
+Minimum Maximum
+
+Grid
+
+Electricity price
+
+(USD/MWh)
+
+Today
+
+2030
+
+Long term
+
+86 156 163
+
+-
+
+-
+
+-
+
+113 140 137
+
+98 114 123
+
+-
+
+-
+
+-
+
+156 177 158
+
+-
+
+-
+
+-
+
+-
+
+-
+
+-
+
+70
+
+100 108
+
+19
+
+52
+
+55
+
+171 177 178
+
+Full load hours
+5 000 5 000 5 000 5 000 5 000 5 000 5 000 5 000 5 000 5 000 5 000
+
+Variable renewable electricity
+
+Electricity price (USD2017/MWh)
+
+Optimised full load hours
+
+Long term
+
+Long term
+
+31
+
+2 321
+
+23
+
+2 758
+
+18
+
+2 822
+
+47
+
+2 054
+
+19
+
+2 598
+
+63
+
+1 675
+
+25
+
+2 563
+
+23
+
+2 547
+
+31
+
+2425
+
+18
+
+2 822
+
+63
+
+1 675
+
+Methanation
+Parameter CAPEX
+Efficiency (LHV) Annual OPEX Lifetime
+Electricity consumption
+
+Units
+USD/kWprod %
+% of CAPEX years
+GJe/GJprod
+
+Today
+845 77 4 30 0.013
+
+2030
+735 77 4 30 0.013
+
+Long term
+565 77 4 30 0.013
+
+Fischer-Tropsch
+Parameter CAPEX
+Efficiency (LHV) Annual OPEX Lifetime
+Electricity consumption
+
+Units
+USD/kWliquid %
+% of CAPEX years
+GJe/GJliquid
+
+Today
+890 73 4 30 0.018
+
+2030
+760 73 4 30 0.018
+
+Long term
+565 73 4 30 0.018
+
+Ammonia (NH3)
+Feedstock Natural gas
+Natural gas w/CCUS
+
+Parameter
+CAPEX Annual OPEX Gas consumption Electricity consumption Emission factor
+CAPEX Annual OPEX Gas consumption
+
+Units
+USD/tNH3 % of CAPEX
+GJ/tNH3 GJ/tNH3 kgCO2/kgNH3 USD/tNH3 % of CAPEX GJ/tNH3
+
+Today
+905 2.5 42.0 0.3 2.35 1 315 2.5 42.0
+
+2030
+905 2.5 38.3 0.3 2.14 1 260 2.5 38.3
+
+Long term 905 2.5 32.2 0.3 1.8 1 165 2.5 32.2
+
+PAGE | 4 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Electricity consumption
+
+GJ/tNH3
+
+1.3
+
+1.3
+
+1.3
+
+Emission factor
+
+kgCO2/kgNH3
+
+0.12
+
+0.11
+
+0.09
+
+Coal
+
+CAPEX
+
+USD/tNH3
+
+2 175
+
+2 175
+
+2 175
+
+Annual OPEX
+
+% of CAPEX
+
+5
+
+5
+
+5
+
+Coal consumption
+
+GJ/tNH3
+
+38.4
+
+38.4
+
+38.3
+
+Electricity consumption
+
+GJ/tNH3
+
+3.7
+
+3.7
+
+3.7
+
+Coal w/CCUS
+
+Emission factor CAPEX
+
+kgCO2/kgNH3 USD/tNH3
+
+3.9 2 810
+
+3.9 2 810
+
+3.9 2 810
+
+Annual OPEX
+
+% of CAPEX
+
+5
+
+5
+
+5
+
+Coal consumption
+
+GJ/tNH3
+
+38.4
+
+38.4
+
+38.3
+
+Electricity consumption
+
+GJ/tNH3
+
+5.3
+
+5.3
+
+5.3
+
+Emission factor
+
+kgCO2/kgNH3
+
+0.2
+
+0.2
+
+0.2
+
+Biomass
+
+CAPEX Annual OPEX
+
+USD/tNH3 % of CAPEX
+
+6 320 5
+
+6 320 5
+
+6 320 5
+
+Electrolysis
+
+Biomass consumption
+
+GJ/tNH3
+
+45.0
+
+45.0
+
+45.0
+
+Electricity consumption
+
+GJ/tNH3
+
+5.0
+
+5.0
+
+5.0
+
+Emission factor
+
+kgCO2/kgNH3
+
+0.0
+
+0.0
+
+0.0
+
+CAPEX
+
+USD/tNH3
+
+945
+
+855
+
+760
+
+Annual OPEX
+
+% of CAPEX
+
+1.5 %
+
+1.5%
+
+1.5%
+
+Electricity consumption
+
+GJ/tNH3
+
+37.8
+
+35.3
+
+33.2
+
+Emission factor
+
+kgCO2/kgNH3
+
+0.0
+
+0.0
+
+0.0
+
+Notes: 25-year lifetime and 95% availability assumed for all equipment. CCUS options correspond to those capturing all emissions
+
+streams, and consider a 95% capture rate. The electrolysis route parameters include the electrolyser costs (see Hydrogen table). For
+
+major routes deployed, average energy performance is assumed today, tending towards best practice technology by 2050. Declining
+
+CAPEX/OPEX for CCUS options reflects the size of capture capacity required as the energy intensity improves. Emission factors
+
+correspond to net direct CO2 emissions in the industrial sector.
+
+Methanol (MeOH)
+Feedstock Natural gas
+Natural gas w/CCUS
+Coal
+Coal w/CCUS
+
+Parameter
+CAPEX Annual OPEX Gas consumption Electricity consumption Emission factor
+CAPEX Annual OPEX Gas consumption Electricity consumption Emission factor
+CAPEX Annual OPEX Coal consumption Electricity consumption Emission factor
+CAPEX Annual OPEX Coal consumption Electricity consumption
+Lifetime CO2 capture rate
+
+Units
+USD/tMeOH % of CAPEX
+GJ/tMeOH GJ/tMeOH kgCO2/kgMeOH USD/tMeOH % of CAPEX GJ/tMeOH GJ/tMeOH kgCO2/kgMeOH USD/ tMeOH % of CAPEX GJ/tMeOH GJ/tMeOH kgCO2/kg MeOH USD/tMeOH % of CAPEX GJ/tNH3 GJ/tNH3
+years %
+
+Today
+310 2.5 33.9 0.3 0.8 525 2.5 33.9 0.7 0.04 750 5 46.3 3.7 3.3 1 505 5 55.3 3.9 25 95
+
+2030
+310 2.5 33.0 0.3 0.7 510 2.5 33.0 0.7 0.04 750 5 44.2 3.7 3.1 1 450 5 52.5 3.9 25 95
+
+Long term
+310 2.5 31.5 0.3 0.6 490 2.5 31.5 0.6 0.03 750 5 40.7 3.7 2.7 1 350 5 47.8 3.9 25 95
+
+PAGE | 5 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Emission factor
+
+kgCO2/kg MeOH
+
+0.17 0.15
+
+0.14
+
+Biomass
+
+CAPEX
+
+USD/tMeOH
+
+5 165 5 165
+
+5 165
+
+Annual OPEX
+
+% of CAPEX
+
+5
+
+5
+
+5
+
+Biomass consumption
+
+GJ/tNH3
+
+47.9 47.9
+
+47.9
+
+Electricity consumption
+
+GJ/tNH3
+
+5.0
+
+5.0
+
+5.0
+
+Emission factor
+
+kgCO2/kgNH3
+
+0.0
+
+0.0
+
+0.0
+
+Electrolysis
+
+CAPEX
+
+USD/tMeOH
+
+790 595
+
+380
+
+Annual OPEX
+
+% of CAPEX
+
+1.5
+
+1.5
+
+1.5
+
+Electricity consumption
+
+GJ/tMeOH
+
+25.4 23.7
+
+22.2
+
+Emission factor
+
+kgCO2/kgNH3
+
+0.0
+
+0.0
+
+0.0
+
+Notes: 25-year lifetime and 95% availability assumed for all equipment. CCUS options correspond to those capturing all emissions streams, and consider a 95% capture rate. The electrolysis route parameters include the electrolyser costs (see Hydrogen table). For major routes deployed, average energy performance is assumed today, tending towards best practice technology by 2050. Declining CAPEX/OPEX for CCUS options reflects the size of capture capacity required as the energy intensity improves. Emission factors correspond to net direct CO2 emissions in the industrial sector. CO2 feedstock for the electrolysis route is assumed to be available at zero cost.
+
+PAGE | 6 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Transmission, distribution and storage
+
+Transmission
+
+Technology Pipelines1
+Liquefaction Conversion2
+Export terminal
+
+Parameter Lifetime Distance
+Design throughput Gas density Gas velocity CAPEX/km Utilisation
+Installed capacity Capacity CAPEX
+Annual OPEX Electricity use Installed capacity Plant CAPEX Annual OPEX Electricity use Natural gas use Start-up toluene Toluene cost Toluene markup Capacity/tank
+No. of tanks
+
+Units
+years
+km
+ktH2/y
+kg/m3 m/s USD million/km % ktH2/y USD million % of CAPEX kWh/kgH2 ktTol/y USD million % of CAPEX kWh/kgH2 kWh/kgH2 kt USD/tTol ktTol/y tH2 or tTol or tNH3
+
+Seaborne transport3
+Import terminal Reconversion4
+
+CAPEX/tank Annual OPEX Electricity use Boil off rate
+Flash rate Capacity/ship
+CAPEX/ship Ship speed No. of ships used Annual OPEX
+Fuel use Boil-off rate Flash rate Capacity/tank
+No. of tanks CAPEX/tank Electricity use Boil-off rate
+Capacity
+
+USD million % of CAPEX kWh/kgH2
+%/day %
+tH2 or tTol or tNH3
+USD million km/h
+% of CAPEX MJ/km %/day % tH2 or tTol or tNH3 #
+USD million kWh/kgH2
+%/day ktTol/y or ktNH3/y
+
+Hydrogen
+
+LOHC
+
+Ammonia
+
+40
+
+-
+
+40
+
+Function of supply route
+
+GH2: 340
+
+800
+
+240
+
+7.9
+
+-
+
+-
+
+15
+
+-
+
+-
+
+1.21 75% 260 1 400 4% 6.1
+-
+-
+3 190
+
+2.32 75%
+-
+4 200 230 4% 1.5 0.2 260 400 100 51 750
+
+0.55 75%
+-
+34 100
+
+Based on days of storage needed for a given ship
+
+loading frequency
+
+290
+
+42
+
+68
+
+4%
+
+4%
+
+4%
+
+0.61
+
+0.01
+
+0.005
+
+0.1%
+
+-
+
+-
+
+0.1%
+
+11 000
+
+110 000
+
+53 000
+
+412 30
+4 1 4874 0.2% 1.3% 3 550
+
+76 30 Function of distance 4 3 300 61 600
+
+85 30
+4 2 500
+56 700
+
+Based on 20 days of storage capacity
+
+320
+
+35
+
+97
+
+0.2
+
+0.01
+
+0.02
+
+0.1
+
+-
+
+-
+
+-
+
+4 200
+
+1 500
+
+PAGE | 7 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Capacity CAPEX
+
+USD million
+
+-
+
+670
+
+460
+
+Annual OPEX
+
+% of CAPEX
+
+-
+
+4%
+
+4%
+
+Heat required
+
+kWh/kgH2
+
+-
+
+13.6
+
+9.7
+
+Plant power
+
+kWh/kgH2
+
+-
+
+0.4
+
+-
+
+H2 purification
+
+kWh/kgH2
+
+-
+
+1.1
+
+1.5
+
+(PSA) power
+
+H2 recovery rate
+
+%
+
+-
+
+90%
+
+99%
+
+PSA H2 recovery
+
+%
+
+rate
+
+-
+
+98%
+
+85%
+
+Notes: GH2 = gaseous hydrogen. PSA = Pressure swing adsorption. System lifetime assumed to be 30 years, unless stated otherwise; discount rate = 8%; utilisation of production, conversion and reconversion capacity = 90%. 1 Transmission pipeline for hydrogen gas based on Baufumé (2013): Pipeline CAPEX (USD/km) = 4 000 000D2 + 598 600D + 329 000; where D (internal diameter in cm) = (F/v)/*2*100; v = gas velocity (m/s); F (volumetric flow in m3/s) = Q/; Q = gas throughput
+(kg/s);  = gas density (kg/m3). Based on real gas law (pressure = 100 bar). 2 Conversion: LOHC = Toluene +H2  MCH. Toluene mark-up is the quantity of new toluene required reach year. Data for ammonia conversion are included in the table on ammonia above. 3 Ship carrying liquid hydrogen uses boil-off gas for propulsion; LOHC and ammonia ship uses heavy fuel oil. It is assumed that fuel consumption can be obtained from boil-off losses in the storage tank, so the fuel for the ship would not incur an additional energy penalty. 4 Reconversion: LOHC = MCH  Toluene + H2; Ammonia = NH3  N2 +H2. Sources: Baufumé et al. (2013), "GIS-based scenario calculations for a nationwide German hydrogen pipeline infrastructure"; IAE (2019), "Institute of Applied Energy (Japan) data based on revisions from Economical Evaluation and Characteristic Analyses for Energy Carrier Systems (FY 2014­FY 2015) Final Report"; ETSAP (2011), LOHC Ship Cost from: Oil and Natural Gas Logistics; IMO (2014), Third IMO Greenhouse Gas Study 2014.
+
+Distribution
+
+Technology
+Pipelines Pipelines (high
+pressure)1
+
+Parameter
+Lifetime Inlet pressure
+Distance Design throughput (Q)
+Gas density () Gas velocity (v)
+CAPEX
+
+Pipelines (low pressure)2
+
+Distance
+Design throughput (Q) Gas density () Gas velocity (v) CAPEX/km
+
+Trucks3
+
+Depreciation period CAPEX
+
+Trailers
+
+Annual OPEX Speed
+Driver cost Depreciation period
+CAPEX
+
+Annual OPEX Net capacity
+
+Units
+years bar
+km ktH2/y kg/m3
+m/s USD million/km km
+t/y kg/m3 m/s USD million/km years USD thousand % of CAPEX km/h USD/h years USD thousand % of CAPEX kgH2
+
+Hydrogen
+40 80
+
+LOHC
+40 -
+
+Ammonia
+40 -
+
+End use case dependent
+
+38
+
+-
+
+-
+
+6.4
+
+-
+
+-
+
+15
+
+0.5
+
+1
+
+0.25
+
+3
+
+3
+
+3
+
+GH2: 365
+
+-
+
+-
+
+0.55
+
+-
+
+-
+
+15
+
+-
+
+-
+
+0.3
+
+12
+
+12
+
+12
+
+185
+
+185
+
+185
+
+12 50
+23 12 LH2: 1 000 GH2: 650 2% LH2: 4300 GH2: 670
+
+12 50 23 12 170
+2% 1 800
+
+12 50 23 20 220
+2% 2 600
+
+PAGE | 8 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+H2 refuelling stations4
+
+Loading/unloading
+
+hrs
+
+time
+
+Station lifetime
+
+yrs
+
+Station size CAPEX
+
+kg/day USD million
+
+OPEX as % of CAPEX Electricity demand
+
+% kWh/kgH2
+
+Heat demand Boil off
+Utilisation
+
+kWh/kgH2 % of total
+weight %
+
+LH2: 3 GH2: 1.5
+10
+1 000 See road transport
+5% LH2:0.6 GH2: 1.6
+0 LH2: 3% GH2: 0.5%
+50%
+
+1.5
+10
+1 000 3.5
+5% 4.4
+13.6 0.5%
+50%
+
+1.5
+10
+1 000 2.2
+5% 10.8
+0 1.5%
+50%
+
+Note: LH2 = liquid hydrogen.
+1 Distribution pipeline for hydrogen gas based on Baufumé (2013): Pipeline CAPEX (USD/km) = 3 400 000D2 + 598 600D + 329 000 (Baufumé, 2013); where D (internal diameter in cm) = (F/v)/*2*100; v = gas velocity (m/s); F (volumetric flow in m3/s) = Q/; Q = gas throughput (kg/s);  = gas density (kg/m3) (high-pressure pipeline = 80 bar; low-pressure pipeline = 7 bar).
+2 Pipeline with lower throughput to hydrogen refuelling stations, taking partial flow from high-pressure distribution pipe.
+3 Journey distance doubled to account for journey time and fuel cost calculations, and loading time for LOHC should be doubled for toluene being returned to site of origin.
+4 H2 refuelling station in the case of LOHC and ammonia includes costs for LOHC and ammonia reconversion technology, electricity and natural gas for heat. CAPEX for large fuel cell station (1 000 kg/day) scaled up from small size reference station receiving compressed hydrogen gas according to CAPEX = X*Y*(Z/). X = reference station cost (EUR 600 000); Y= installation factor (1.3);  = station multiplier (LH2 = 0.9, GH2 = 0.6, LOHC = 1.4, ammonia = 1.4);  = reference station size (210 kg/day); and  = scaling factor (LH2 = 0.6, GH2: 0.7, LOHC = 0.66, ammonia = 0.6).
+Sources: Baufamé et al. (2013), "GIS-based scenario calculations for a nationwide German hydrogen pipeline infrastructure"; Reuß et al. (2017), "Seasonal storage and alternative carriers: A flexible hydrogen supply chain model"; Reuß et al. (2019), "A hydrogen supply chain with spatial resolution: Comparative analysis of infrastructure technologies in Germany".
+
+PAGE | 9 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Industrial applications
+
+Steel
+
+Route
+
+Parameter
+
+Units
+
+Today 2030
+
+Long term
+
+BF-BOF
+
+CAPEX Annual OPEX
+
+USD/tcrude steel
+
+600
+
+600
+
+600
+
+% of CAPEX
+
+23
+
+23
+
+23
+
+Electricity consumption GJ/tcrude steel
+
+0.7
+
+0.7
+
+0.7
+
+Coal consumption
+
+GJ/tcrude steel
+
+18.0
+
+18.0
+
+18.0
+
+Natural gas consumption GJ/tcrude steel
+
+1.0
+
+1.0
+
+1.0
+
+Natural gas-based DRI-EAF
+
+CAPEX
+
+USD/tcrude steel
+
+590
+
+590
+
+590
+
+Annual OPEX
+
+% of CAPEX
+
+25
+
+25
+
+25
+
+Electricity consumption GJ/tcrude steel
+
+2.5
+
+2.5
+
+2.5
+
+Coal consumption
+
+GJ/tcrude steel
+
+0.5
+
+0.5
+
+0.5
+
+Natural gas consumption GJ/tcrude steel
+
+10.1
+
+10.1
+
+10.1
+
+Natural gas-based DRI-EAF w/CCUS
+
+CAPEX Annual OPEX
+
+USD/tcrude steel
+
+640
+
+640
+
+640
+
+% of CAPEX
+
+23
+
+23
+
+23
+
+Electricity consumption GJ/tcrude steel
+
+2.7
+
+2.7
+
+2.7
+
+Coal consumption
+
+GJ/tcrude steel
+
+0.5
+
+0.5
+
+0.5
+
+Natural gas consumption GJ/tcrude steel
+
+10.1
+
+10.1
+
+10.1
+
+Hydrogen-based DRI-EAF
+
+CAPEX Annual OPEX
+
+USD/tcrude steel
+
+945
+
+855
+
+755
+
+% of CAPEX
+
+16
+
+18
+
+20
+
+Electricity consumption GJ/tcrude steel
+
+14.7
+
+13.9
+
+13.2
+
+Biomass consumption
+
+GJ/tcrude steel
+
+1.9
+
+1.9
+
+1.9
+
+Oxygen-rich smelt reduction w/CCUS
+
+CAPEX
+
+USD/tcrude steel
+
+530
+
+530
+
+530
+
+Annual OPEX
+
+% of CAPEX
+
+17
+
+17
+
+17
+
+Electricity consumption GJ/tcrude steel
+
+3.5
+
+3.5
+
+3.5
+
+Coal consumption
+
+GJ/tcrude steel
+
+12.1
+
+12.1
+
+12.1
+
+Notes: 25-year lifetime and 95% availability assumed for all equipment. Capture rate of 95% assumed for CCUS routes. Hydrogenbased DRI-EAF parameters include the electrolyser costs (see Hydrogen table). The hydrogen requirement for this route is estimated to lie in the range of 47-68 kg/t of DRI, with the mid-point of this range used for the cost calculations. For the DRI-EAF routes, a 95% charge of DRI to the EAF is considered. An iron ore (58% Fe content) cost of USD 60/t and a scrap cost of USD 260/t is assumed for all process routes, regions and time periods. Costs of electrodes, alloys and other wearing components are considered as a part of the fixed OPEX.
+
+Transport vehicles
+
+Powertrain -
+-
+-
+-
+FCEV
+
+Parameter
+Mileage Lifetime Discount
+rate Glider Salvage value Power Fuel cell cost Hydrogen tank
+
+Units km/yr years
+% USD thousand
+%1 kW USD/kW USD/kWh
+
+Cars 15 000
+5 10 23 43 95 200 / 502 15 / 9
+
+PAGE | 10 IEA. All rights reserved.
+
+Trucks 100 000
+5 10 117.5 41.8 350 250 / 95 15 / 9
+
+Ships 100 000
+15 10 35 000 0 10 989 2 000 / 1 000 18 / 9
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Battery
+
+kWh
+
+2
+
+3.3
+
+-
+
+Fuel
+
+MJ/km
+
+1.36
+
+consumption
+
+Electric motor
+
+USD/kW
+
+14
+
+7.8
+
+1 487 / 1 770
+
+39
+
+70
+
+O&M
+
+USD/km
+
+0.0776
+
+0.106
+
+-
+
+Delivered H2 price
+
+USD/kg
+
+9.2 / 5
+
+7.3 / 5
+
+3.6 / 3.83
+
+Hydrogen refuelling
+
+station4
+
+Size
+
+kg/day
+
+200 / 1 000
+
+500 / 1 300
+
+Based on LNG5
+
+CAPEX
+
+USD million
+
+0.9 / 1.8
+
+1.2 / 2.1
+
+Utilisation
+
+%
+
+10 / 33
+
+10 / 40
+
+-
+
+BEV6
+
+Battery cost USD/kWh
+
+200 / 100
+
+200 / 100
+
+Battery size7
+
+kWh
+
+100
+
+850
+
+-
+
+Fuel consumption
+
+MJ/km
+
+0.75
+
+5.1
+
+-
+
+O&M
+
+USD/km
+
+0.065
+
+0.106
+
+-
+
+Base
+
+USD/kWh
+
+0.12
+
+0.12
+
+-
+
+electricity
+
+price8
+
+ICE9
+
+Fuel consumption
+
+MJ/km
+
+2.7
+
+11.7
+
+1 715
+
+Motor
+
+USD/kW
+
+30
+
+118
+
+216 / 65010
+
+Fuel tank
+
+USD/kWh
+
+O&M
+
+USD/km
+
+0.08
+
+0.16
+
+-
+
+ICE - Hybrid
+
+Fuel
+
+MJ/km
+
+1.6
+
+10.9
+
+-
+
+consumption
+
+O&M
+
+USD/km
+
+0.078
+
+0.16
+
+-
+
+Note: O&M = operation and maintenance. For ships, engine efficiency is assumed to be 50% for ICEs, 60% for fuel cells, and 95% for electric motors. A 20% margin (between costs and prices) is assumed for all vehicle components on all powertrains, including the glider. Current ammonia price (using SMR with CCS) is USD 460/tonne; the future price (using electrolysis) is USD 355/tonne. The synthetic fuel cost is USD 260/tonne today and USD 140/tonne in the future. Bulk carriers come in a wide range of sizes, from small ships of only a few hundred tonnes deadweight (the total weight that a ship can carry) to over 360 000 tonnes. The bulk carrier considered here is comparable to a Panamax ship with a length of 200­230 metres, a draft of 13­15 metres and a beam close to 30 metres. For all vehicle types, depreciation is set at representative values, and is assumed to be the same for all powertrains.
+1 Percentage of total vehicle cost (CAPEX) equivalent to the glider and powertrain-specific components.
+2 Where there are two values in a single cell they refer to current and long-term values respectively.
+3 The current hydrogen price for ships is USD 3.6/kgH2 (assuming low-cost gas with CCUS) and the long term price is USD 3.8/kgH2 (assuming the it is produced via electrolysis, in the regions with the lowest production costs)
+4HRS and charging infrastructure (including catenary lines) are assumed to have an economic lifetime of 30 years.
+5 LNG figures from (Danish Maritime Authority, 2012) and (Faber 2017) with the ratio between hydrogen and LNG from (Taljegard et al., 2014)
+6 Slow charger (4 kW) cost is USD 650, fast public charger (47 kW) cost is USD 33 000. Cars assume a 50/50 split between these two. Tesla mega charger (1 600 kW), with a cost of USD 220 000, is used for trucks.
+7 Battery size is proportional to vehicle range. Values shown are for 500 km.
+8 Base electricity price does not include additional costs of installing and operating dedicated charging infrastructure
+9 ICE technologies refer to gasoline for cars, diesel for trucks and very low sulphur fuel oil for ships.
+10 The first value refers to very low sulphur fuel oil, the second value to hydrogen and ammonia.
+Sources: US DOE (2019), "Fuel Cell R&D Overview"; IEA (2019a), Global EV Outlook 2019: Overcoming The Challenges Of Transport Electrification; IEA (2019b). Mobility Model; sources for hydrogen refuelling station as per Figure 4 in Chapter 5.
+
+PAGE | 11 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+Large-scale and long-term storage
+
+Long-term characterisation of storage technology options
+
+Parameter
+CAPEX ­ powerrelated
+CAPEX ­ energyrelated
+OPEX powerrelated
+OPEX energyrelated
+Round-trip efficiency Lifetime
+
+Units USD/kWe USD/kWh USD/kWe USD/kWh
+% years
+
+PHES 1 130
+80 8 1 78 55
+
+CAES 870 39 4 4 44 30
+
+Li-Ion battery
+95
+110
+10
+3
+86
+13
+
+Compressed hydrogen 1 820
+0.25
+73
+0
+37
+20
+
+Ammonia 2 840 0.3 43 0 22 20
+
+Sources: Element Energy (2018), "Hydrogen supply chain evidence base"; ETI (2018), "Salt cavern appraisal for hydrogen and gas storage"; Northern Gas Networks (2018), H21 North of England; Kruck et al. (2013), "Overview on all known underground storage technologies for hydrogen"; Roberts, Dolan and Harris (2018), "Role of carbon resources in emerging hydrogen energy systems"; Schmidt et al. (2019), "Projecting the future levelized cost of electricity storage technologies"; Tzimas et al. (2003), "Hydrogen storage: State-of-the-art and future perspective".
+
+PAGE | 12 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+References
+Baufumé, S. et al. (2013), "GIS-based scenario calculations for a nationwide German hydrogen pipeline infrastructure", International Journal of Hydrogen Energy, Vol. 38, pp. 3813­29, http://dx.doi.org/10.1016/j.ijhydene.2012.12.147.
+Danish Maritime Authority (2012), "North European LNG infrastructure project, A feasibility study for an LNG filling station infrastructure and test of recommendations", www.lngbunkering.org/sites/default/files/2012%20DMA%20North%20European%20LNG%20Infrastructu re%20Project_0.pdf.
+Element Energy (2018), "Hydrogen supply chain evidence base, November 2018", https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/76047 9/H2_supply_chain_evidence_-_publication_version.pdf.
+ETI (Energy Technology Institute) (2018), "Salt cavern appraisal for hydrogen and gas storage", final report, March 2018.
+ETSAP (Energy Technology Systems Analysis Programme) (2011), LOHC Ship Cost from: Oil and Natural Gas Logistics, https://iea-etsap.org/E-TechDS/PDF/P03_oilgaslogistics_PS_revised_GSOK2.pdf.
+Faber, J. et al. (2017), Study on the Completion of an EU Framework on LNG-fuelled Ships and its Relevant Fuel Provision Infrastructure, Analysis of the LNG Market Development in the EU, CE Delft, TNO, https://ec.europa.eu/transport/sites/transport/files/2015-12-lng-lot3.pdf.
+Northern Gas Networks (2018), H21 North of England, https://northerngasnetworks.co.uk/h21-noe/H21NoE-23Nov18-v1.0.pdf.
+IAE (Institute of Applied Energy) (2019), "Institute of Applied Energy (Japan) data based on revisions from Economical Evaluation and Characteristic Analyses for Energy Carrier Systems (FY 2014­FY 2015), Final Report". Also presented in: Y. Mizuno et al. (2019), "Economic analysis on international hydrogen energy carrier supply chains", Journal of Japan Society of Energy and Resources, Vol. 38, No.3, p. 11.
+IEA (International Energy Agency) (2019a), Global EV Outlook 2019: Overcoming the Challenges Of Transport Electrification, https://webstore.iea.org/global-ev-outlook-2019.
+IEA (2019b), Mobility Model, May 2019, www.iea.org/topics/transport/mobilitymodelpartnership/.IEAGHG (IEA Greenhouse Gas R&D Programme) (2017), "Techno-economic evaluation of SMR based standalone (merchant) hydrogen plant with CCS", 2017/02, February 2017, https://ieaghg.org/exco_docs/2017-02.pdf.
+IEAGHG (2014), "CO2 capture at coal based power and hydrogen plants", https://ieaghg.org/docs/General_Docs/Reports/2014-03.pdf.
+IMO (International Maritime Organization) (2014), Third IMO Greenhouse Gas Study 2014, Online PDF file.
+Kruck, O. et al. (2013) "Overview on all known underground storage technologies for hydrogen", HyUnder, Huesca, Spain, www.fch.europa.eu/sites/default/files/project_results_and_deliverables/D3.1_Overview%20of%20all%20 known%20underground%20storage%20technologies%20%28ID%202849643%29.pdf.
+Reuß, M. et al. (2019), "A hydrogen supply chain with spatial resolution: Comparative analysis of infrastructure technologies in Germany", Applied Energy, Vol. 247, pp. 438­53, https://doi.org/10.1016/j.apenergy.2019.04.064.
+Reuß, M. et al. (2017), "Seasonal storage and alternative carriers: A flexible hydrogen supply chain model", Applied Energy, Vol. 200, pp. 290­302, http://dx.doi.org/10.1016/j.apenergy.2017.05.050.
+Roberts, D., M. Dolan and D. Harris (2018), "Role of carbon resources in emerging hydrogen energy systems", presentation at IEC Gasification Conference, Freiberg, April 2018, https://tu-
+
+PAGE | 13 IEA. All rights reserved.
+
+The Future of Hydrogen
+
+Assumptions annex
+
+freiberg.de/sites/default/files/media/professur-fuer-energieverfahrenstechnik-und-thermischerueckstandsbehandlung-16460/publikationen/01-03harris_carbon_resources_and_hydrogen_freiberg_4_june_2018.pdf.
+Schmidt, O. et al. (2019), "Projecting the future levelized cost of electricity storage technologies", Joule, Vol. 3, pp. 81­100.
+Taljegard, M. et al. (2014), "Cost-effective choices of marine fuels in a carbon-constrained world: Results from a global energy model", Environmental Science and Technology, Vol. 48, pp. 12986­93, http://dx.doi.org/10.1021/es5018575.
+Tzimas, E. et al. (2003), "Hydrogen storage: State-of-the-art and future perspective", Scientific and Technical Research series, EUR 20995 EN, Luxembourg.
+US DOE (United States Department of Energy) (2019), "Fuel cell R&D overview", 2019 Annual Merit Review and Peer Evaluation Meeting, Washington, DC, www.hydrogen.energy.gov/pdfs/review19/plenary_fuel_cell_papageorgopoulos_2019.pdf.
+
+PAGE | 14 IEA. All rights reserved.
+
+

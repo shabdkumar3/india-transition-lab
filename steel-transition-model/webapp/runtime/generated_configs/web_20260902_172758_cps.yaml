@@ -1,0 +1,39 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\configs\\optimization\\mode_b_policy.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "CPS",
+    "use_endogenous_learning": true,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false,
+    "carbon_price.trajectories.CPS": {
+      "2030": 50.0,
+      "2050": 100.0,
+      "2070": 200.0
+    },
+    "carbon_price.enabled": true,
+    "wacc_premium": {
+      "enabled": true,
+      "provenance": "Lab WACC override: 15.0% vs base 8%",
+      "premium_by_route": {
+        "H2-DRI-EAF": 1.7145626343691789,
+        "NG-DRI-EAF": 1.7145626343691789,
+        "Coal-DRI-EAF": 1.7145626343691789
+      }
+    },
+    "grid_emission_intensity.trajectories.CPS.grid_ei_tco2_per_mwh": {
+      "2024": 0.716,
+      "2030": 0.5828,
+      "2040": 0.383,
+      "2050": 0.1832,
+      "2070": 0.05
+    },
+    "grid_emission_intensity.enabled": true
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

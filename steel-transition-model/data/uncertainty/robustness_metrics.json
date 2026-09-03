@@ -1,0 +1,260 @@
+{
+  "metrics": {
+    "year": 2050,
+    "share_threshold": 0.05,
+    "dominance_threshold": 0.5,
+    "n_valid_scenarios": 24,
+    "n_feasible_scenarios": 24,
+    "feasibility_rate": 1.0,
+    "technology_stats": {
+      "BF-BOF": {
+        "presence_frequency": 1.0,
+        "share_mean": 0.748850776627219,
+        "share_min": 0.4730867850098619,
+        "share_max": 1.0,
+        "fraction_of_tested_scenarios_above_threshold": 0.8333333333333334,
+        "n_feasible_scenarios": 24
+      },
+      "Coal-DRI-EAF": {
+        "presence_frequency": 0.0,
+        "share_mean": 0.0,
+        "share_min": 0.0,
+        "share_max": 0.0,
+        "fraction_of_tested_scenarios_above_threshold": 0.0,
+        "n_feasible_scenarios": 24
+      },
+      "Coal-DRI-IF": {
+        "presence_frequency": 0.5,
+        "share_mean": 0.25114922337278106,
+        "share_min": -0.0,
+        "share_max": 0.5269132149901381,
+        "fraction_of_tested_scenarios_above_threshold": 0.16666666666666666,
+        "n_feasible_scenarios": 24
+      },
+      "NG-DRI-EAF": {
+        "presence_frequency": 0.0,
+        "share_mean": 0.0,
+        "share_min": 0.0,
+        "share_max": 0.0,
+        "fraction_of_tested_scenarios_above_threshold": 0.0,
+        "n_feasible_scenarios": 24
+      },
+      "H2-DRI-EAF": {
+        "presence_frequency": 0.0,
+        "share_mean": 0.0,
+        "share_min": 0.0,
+        "share_max": 0.0,
+        "fraction_of_tested_scenarios_above_threshold": 0.0,
+        "n_feasible_scenarios": 24
+      },
+      "Scrap-EAF": {
+        "presence_frequency": 0.0,
+        "share_mean": 0.0,
+        "share_min": 0.0,
+        "share_max": 0.0,
+        "fraction_of_tested_scenarios_above_threshold": 0.0,
+        "n_feasible_scenarios": 24
+      }
+    },
+    "classifications": {
+      "overall": {
+        "BF-BOF": "ROBUST",
+        "Coal-DRI-EAF": "UNRESOLVED",
+        "Coal-DRI-IF": "CONDITIONALLY_ROBUST",
+        "NG-DRI-EAF": "UNRESOLVED",
+        "H2-DRI-EAF": "UNRESOLVED",
+        "Scrap-EAF": "UNRESOLVED"
+      },
+      "CPS": {
+        "BF-BOF": {
+          "stats": {
+            "presence_frequency": 1.0,
+            "share_mean": 0.748850776627219,
+            "share_min": 0.4730867850098619,
+            "share_max": 1.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "ROBUST"
+        },
+        "Coal-DRI-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        },
+        "Coal-DRI-IF": {
+          "stats": {
+            "presence_frequency": 0.5,
+            "share_mean": 0.25114922337278106,
+            "share_min": -0.0,
+            "share_max": 0.5269132149901381,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "CONDITIONALLY_ROBUST"
+        },
+        "NG-DRI-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        },
+        "H2-DRI-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        },
+        "Scrap-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        }
+      },
+      "NZS": {
+        "BF-BOF": {
+          "stats": {
+            "presence_frequency": 1.0,
+            "share_mean": 0.748850776627219,
+            "share_min": 0.4730867850098619,
+            "share_max": 1.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "ROBUST"
+        },
+        "Coal-DRI-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        },
+        "Coal-DRI-IF": {
+          "stats": {
+            "presence_frequency": 0.5,
+            "share_mean": 0.25114922337278106,
+            "share_min": -0.0,
+            "share_max": 0.5269132149901381,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "CONDITIONALLY_ROBUST"
+        },
+        "NG-DRI-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        },
+        "H2-DRI-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        },
+        "Scrap-EAF": {
+          "stats": {
+            "presence_frequency": 0.0,
+            "share_mean": 0.0,
+            "share_min": 0.0,
+            "share_max": 0.0,
+            "n_feasible_scenarios": 12
+          },
+          "classification": "UNRESOLVED"
+        }
+      }
+    },
+    "cost_stats": {
+      "objective_mean": 1345152.3945373062,
+      "objective_min": 1266918.9709397447,
+      "objective_max": 1406477.7507441505,
+      "objective_relative_spread": 0.11015604234017208
+    },
+    "policy_families": {
+      "CPS": {
+        "n_valid_scenarios": 12,
+        "n_feasible": 12,
+        "feasibility_rate": 1.0,
+        "objective_mean": 1344833.730484598
+      },
+      "NZS": {
+        "n_valid_scenarios": 12,
+        "n_feasible": 12,
+        "feasibility_rate": 1.0,
+        "objective_mean": 1345471.0585900142
+      }
+    }
+  },
+  "answers": {
+    "A_scrap_eaf_dominant": "Scrap-EAF mean 2050 share 0.000 (min 0.000, max 0.000) across tested scenarios -> dominance does NOT survive defensible scrap-intensity bounds.",
+    "B_coal_dri_if_dominant": "Coal-DRI-IF mean 2050 share 0.251 (min -0.000, max 0.527) across tested scenarios (DRI charge alternatives + CEEW economics). Scenario result, NOT a frozen parameter conclusion.",
+    "C_fleet_materiality": "Fleet scenarios objective spreads: {'FLEET_ALTERNATIVE': 8.22, 'FLEET_CENTRAL': 8.93, 'FLEET_CONSERVATIVE': 10.56} % (max 10.6% within a fleet family). Fleet uncertainty materially moves system cost (>5% within-family spread).",
+    "C_fleet_detail": {
+      "FLEET_ALTERNATIVE": {
+        "n": 8,
+        "objective_min": 1299650.6966370502,
+        "objective_max": 1406477.7507441503,
+        "objective_spread_pct": 8.219674285061634
+      },
+      "FLEET_CENTRAL": {
+        "n": 8,
+        "objective_min": 1291201.8786681613,
+        "objective_max": 1406477.7507441505,
+        "objective_spread_pct": 8.927796185898753
+      },
+      "FLEET_CONSERVATIVE": {
+        "n": 8,
+        "objective_min": 1266918.9709397447,
+        "objective_max": 1400713.2882695412,
+        "objective_spread_pct": 10.560605721339366
+      }
+    },
+    "CPS_stable_technologies": [
+      {
+        "technology": "BF-BOF",
+        "presence_frequency": 1.0,
+        "share_mean": 0.7489
+      }
+    ],
+    "NZS_stable_technologies": [
+      {
+        "technology": "BF-BOF",
+        "presence_frequency": 1.0,
+        "share_mean": 0.7489
+      }
+    ],
+    "F_unresolved_dependent": [
+      "H2-DRI-EAF",
+      "Coal-DRI-EAF",
+      "route-level fleet split (route_transition_interpretability stays FALSE)",
+      "Coal-DRI-IF full-plant economics (CEEW EXTERNAL, scenario-exercised, not frozen)",
+      "scrap availability (dynamic scrap parameters PROJECT_PROPOSAL)"
+    ]
+  }
+}

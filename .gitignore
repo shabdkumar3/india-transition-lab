@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Node / Next.js
+node_modules/
+.next/
+unified-frontend/.next/
+unified-frontend/node_modules/
+unified-frontend/out/
+
+# Steel model runtime (solver outputs, not needed for deployment)
+steel-transition-model/runtime/jobs.json
+steel-transition-model/runtime/generated_configs/
+steel-transition-model/results/
+
+# Scratch / dev files
+*/scratch/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Env files (keep .env.example, never commit secrets)
+.env
+.env.local
+unified-frontend/.env.local
+
+# Large intermediate outputs
+*.csv.bak
+deliverables/

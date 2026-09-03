@@ -1,0 +1,10 @@
+state,number_of_units,capacity_mtpa,production_mtpa,year,source,page,table,provenance,confidence,status,acquisition_path
+ALL-STATES (BF-BOF),8,34.109,62.488,FY2024-25,"MoS AR 2025-26 Annexure-IV/V (Source: JPC)",182,"Annexure-IV/V","FROZEN_EXTERNAL",HIGH,ROUTE_TOTAL_VERIFIED,"Route total verified; state split requires JPC p.42/65/67 (subscription)."
+ALL-STATES (EAF),,18.923,31.612,FY2024-25,"MoS AR 2025-26 Annexure-IV/V (Source: JPC)",182,"Annexure-IV/V","FROZEN_EXTERNAL",MEDIUM,ROUTE_TOTAL_VERIFIED,"Identifiable EAF capacity 18.923 Mt (AM/NS 9.600 + OTHER EAF 9.323); production 31.612 Mt. State split requires JPC p.73 (subscription)."
+ALL-STATES (IF),1032,81.920,58.080,FY2024-25,"MoS AR 2025-26 Annexure-IV/V (Source: JPC)",182,"Annexure-IV/V","FROZEN_EXTERNAL",HIGH,ROUTE_TOTAL_VERIFIED,"IF capacity 81.920 Mt / production 58.080 Mt. State split requires JPC p.75 (subscription)."
+CHHATTISGARH,,,,FY2024-25,"JPC Annual Statistics 2024-25 (gated)",75,"State-wise IF","EXTERNAL_PENDING",NONE,NOT_OBTAINABLE,"Purchase JPC Annual Statistics 2024-25 (jpcsteel.co.in subscription) — largest IF-concentrated state."
+ODISHA,,,,FY2024-25,"JPC Annual Statistics 2024-25 (gated)",75,"State-wise IF","EXTERNAL_PENDING",NONE,NOT_OBTAINABLE,"JPC Annual Statistics 2024-25 p.75 (gated)."
+GUJARAT,,,,FY2024-25,"JPC Annual Statistics 2024-25 (gated)",73,"State-wise EAF","EXTERNAL_PENDING",NONE,NOT_OBTAINABLE,"JPC Annual Statistics 2024-25 p.73 (gated) — AM/NS Hazira state."
+PUNJAB,,,,FY2024-25,"JPC Annual Statistics 2024-25 (gated)",75,"State-wise IF","EXTERNAL_PENDING",NONE,NOT_OBTAINABLE,"JPC Annual Statistics 2024-25 p.75 (gated)."
+WEST-BENGAL,,,,FY2024-25,"JPC Annual Statistics 2024-25 (gated)",75,"State-wise IF","EXTERNAL_PENDING",NONE,NOT_OBTAINABLE,"JPC Annual Statistics 2024-25 p.75 (gated)."
+OTHER-STATES,,,,FY2024-25,"JPC Annual Statistics 2024-25 (gated)",42,"Route/Region/State-wise","EXTERNAL_PENDING",NONE,NOT_OBTAINABLE,"All remaining states; JPC Annual Statistics 2024-25 p.42 (gated)."

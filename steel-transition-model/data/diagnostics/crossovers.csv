@@ -1,0 +1,3 @@
+route_a,route_b,crossover_year,cost_a_before,cost_b_before,cost_a_after,cost_b_after,direction,status,limitation
+BF-BOF,Scrap-EAF,-1,0.0,0.0,0.0,0.0,NOT_COMPARABLE,NOT_COMPARABLE,Scrap-EAF: SCRAP_INTENSITY EXTERNAL_PENDING
+NG-DRI-EAF,Scrap-EAF,-1,0.0,0.0,0.0,0.0,NOT_COMPARABLE,NOT_COMPARABLE,Scrap-EAF: SCRAP_INTENSITY EXTERNAL_PENDING

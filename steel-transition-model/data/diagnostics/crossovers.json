@@ -1,0 +1,26 @@
+[
+  {
+    "route_a": "BF-BOF",
+    "route_b": "Scrap-EAF",
+    "crossover_year": -1,
+    "cost_a_before": 0.0,
+    "cost_b_before": 0.0,
+    "cost_a_after": 0.0,
+    "cost_b_after": 0.0,
+    "direction": "NOT_COMPARABLE",
+    "status": "NOT_COMPARABLE",
+    "limitation": "Scrap-EAF: SCRAP_INTENSITY EXTERNAL_PENDING"
+  },
+  {
+    "route_a": "NG-DRI-EAF",
+    "route_b": "Scrap-EAF",
+    "crossover_year": -1,
+    "cost_a_before": 0.0,
+    "cost_b_before": 0.0,
+    "cost_a_after": 0.0,
+    "cost_b_after": 0.0,
+    "direction": "NOT_COMPARABLE",
+    "status": "NOT_COMPARABLE",
+    "limitation": "Scrap-EAF: SCRAP_INTENSITY EXTERNAL_PENDING"
+  }
+]

@@ -1,0 +1,15 @@
+# India Transition Lab — Combined Backend Dependencies
+# For cloud deployment: pip install -r requirements_combined.txt
+
+# Web framework
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+
+# Scientific computing
+numpy>=1.24
+scipy>=1.9          # HiGHS LP/MILP solver (via scipy.optimize.milp)
+
+# Data
+PyYAML>=6.0
+pandas>=2.0

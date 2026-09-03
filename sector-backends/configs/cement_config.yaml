@@ -1,0 +1,381 @@
+# ==============================================================================
+# CEMENT TRANSITION MODEL CONFIGURATION
+# India Transition Lab — Sector Deep Model v3
+# ==============================================================================
+# Sources:
+#   IEA: IEA Cement Technology Roadmap 2018
+#   GCCA: GCCA Net Zero Roadmap 2021
+#   NITI: NITI Aayog Sectoral Insights Vol.4 (2023), Ch.3.2
+#   CMA: Cement Manufacturers Association India Statistics 2023-24
+#   BEE: Bureau of Energy Efficiency — PAT Scheme Cement Targets 2022
+#   GCCA-India: GCCA India Roadmap 2024
+#   IIT-Delhi: IIT Delhi CCUS India feasibility 2022
+# ==============================================================================
+
+sector: cement
+port: 8001
+label: "Cement"
+unit: "Mt cement"
+product: "cement"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# HORIZON
+# ──────────────────────────────────────────────────────────────────────────────
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+# ──────────────────────────────────────────────────────────────────────────────
+# ECONOMICS COMMON
+# ──────────────────────────────────────────────────────────────────────────────
+discount_rate:
+  value: 0.08
+  provenance: "PROJECT_PROPOSAL"
+  source: "NITI Vol.4 / IEA Cement Roadmap 2018"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# TECHNOLOGY ROUTES
+# ──────────────────────────────────────────────────────────────────────────────
+# clinker_factor: tonnes clinker per tonne cement (key decarbonisation lever)
+#   OPC ~0.92 (near-pure clinker), Blended ~0.65 (35% SCM), LC3 ~0.50 (50% SCM),
+#   AltFuel-Blended ~0.62, CCUS-Blended ~0.65
+# thermal_sec_gj_per_t_clinker: specific energy consumption (GJ/t clinker)
+#   Benchmark: wet kiln ~6.0, preheater/precalciner dry ~3.0-3.5, best-in-class ~2.9
+# elec_kwh_per_t_cement: electrical energy (grinding + auxiliaries)
+# process_co2_kg_per_kg_clinker: CaCO3 → CaO + CO2 stoichiometry (FIXED 0.525)
+#   This is non-combustion calcination CO2 — capturable only by CCUS, not by fuel switching
+
+routes:
+  Coal-OPC:
+    existing_mt: 130.0
+    # CMA India 2023-24: total installed 600 Mt; ~22% is large wet/semi-dry OPC kilns
+    provenance_existing: "PARTIAL"
+    source_existing: "CMA India Statistics 2023-24 (interpolated route share)"
+    lifetime_yr: 35
+    # IEA Cement Roadmap 2018 Table 3.1: integrated dry kiln USD 80-120/t capacity
+    capex_usd_per_t: 105.0
+    provenance_capex: "EXTERNAL"
+    source_capex: "IEA Cement Technology Roadmap 2018, Table 3.1"
+    fom_usd_per_t_yr: 8.0
+    vom_residual_usd_per_t: 12.0
+    # Limestone, maintenance, labour — GCCA 2021 benchmarks
+    provenance_opex: "PROJECT_PROPOSAL"
+    source_opex: "GCCA Net Zero Roadmap 2021 (India-adjusted)"
+    wacc_premium: 0.00
+    availability: 0.90
+    start_year: 2024
+    clinker_factor: 0.92
+    # CaCO3 decomposition: 0.525 tCO2/t clinker (fixed by stoichiometry, IEA 2018)
+    process_co2_kg_per_kg_clinker: 0.525
+    provenance_process_co2: "FROZEN_EXTERNAL"
+    source_process_co2: "IEA Cement Roadmap 2018 / IPCC 2006 Vol.3 Ch.2"
+    # Thermal SEC: BEE PAT Sector: dry kilns 3.0-3.5 GJ/t clinker; wet kilns 5.0-6.0
+    thermal_sec_gj_per_t_clinker: 4.2
+    provenance_sec: "EXTERNAL"
+    source_sec: "BEE PAT Scheme Cement Benchmarks 2022 (national average)"
+    elec_kwh_per_t_cement: 95.0
+    provenance_elec: "EXTERNAL"
+    source_elec: "BEE PAT 2022 / CMA India"
+    fossil_decline: true
+    max_ramp_mt_yr: 0.0
+    # No new OPC capacity — existing fleet retires, no new build
+    cutoff_year_cps: 2030
+    cutoff_year_nzs: 2027
+
+  Coal-Blended:
+    existing_mt: 195.0
+    # CMA 2023-24: ~32% of installed capacity is PPC/PSC (blended) modern dry kilns
+    provenance_existing: "PARTIAL"
+    source_existing: "CMA India Statistics 2023-24"
+    lifetime_yr: 35
+    capex_usd_per_t: 90.0
+    provenance_capex: "EXTERNAL"
+    source_capex: "IEA Cement Technology Roadmap 2018 (blended cement, greenfield)"
+    fom_usd_per_t_yr: 7.0
+    vom_residual_usd_per_t: 9.0
+    provenance_opex: "PROJECT_PROPOSAL"
+    source_opex: "GCCA NZ Roadmap 2021"
+    wacc_premium: 0.00
+    availability: 0.90
+    start_year: 2024
+    clinker_factor: 0.65
+    # 35% SCM (fly ash / slag) blended in — constrained by SCM availability
+    process_co2_kg_per_kg_clinker: 0.525
+    provenance_process_co2: "FROZEN_EXTERNAL"
+    source_process_co2: "IPCC 2006 Vol.3 Ch.2"
+    thermal_sec_gj_per_t_clinker: 3.1
+    provenance_sec: "EXTERNAL"
+    source_sec: "BEE PAT 2022 (dry preheater-precalciner benchmark)"
+    elec_kwh_per_t_cement: 85.0
+    provenance_elec: "EXTERNAL"
+    source_elec: "BEE PAT 2022"
+    fossil_decline: false
+    max_ramp_mt_yr: 30.0
+    cutoff_year_cps: null
+    cutoff_year_nzs: 2042
+
+  Coal-LC3:
+    existing_mt: 20.0
+    # Nascent LC3 (calcined clay + limestone): ~3-4% of installed base
+    provenance_existing: "PROJECT_PROPOSAL"
+    source_existing: "GCCA-India 2024 / LC3 Roadmap India"
+    lifetime_yr: 35
+    capex_usd_per_t: 115.0
+    # +calciner for clay calcination upgrade; ~10-15% premium over blended
+    provenance_capex: "PROJECT_PROPOSAL"
+    source_capex: "IEA Cement Roadmap 2018 / GCCA NZ 2021 (LC3 cost range)"
+    fom_usd_per_t_yr: 7.5
+    vom_residual_usd_per_t: 8.0
+    provenance_opex: "PROJECT_PROPOSAL"
+    source_opex: "GCCA NZ 2021 / IIT Delhi LC3 study 2021"
+    wacc_premium: 0.05
+    availability: 0.88
+    start_year: 2025
+    clinker_factor: 0.50
+    # 50% SCM (30% calcined clay + 15% limestone + 5% gypsum) — saves 42% vs OPC
+    process_co2_kg_per_kg_clinker: 0.525
+    provenance_process_co2: "FROZEN_EXTERNAL"
+    source_process_co2: "IPCC 2006 Vol.3 Ch.2"
+    thermal_sec_gj_per_t_clinker: 3.2
+    # Clay calcination adds ~0.1-0.2 GJ/t clinker thermal
+    provenance_sec: "PROJECT_PROPOSAL"
+    source_sec: "IIT Delhi 2021; GCCA NZ 2021"
+    elec_kwh_per_t_cement: 82.0
+    provenance_elec: "PROJECT_PROPOSAL"
+    source_elec: "GCCA NZ 2021"
+    fossil_decline: false
+    max_ramp_mt_yr: 40.0
+    cutoff_year_cps: null
+    cutoff_year_nzs: null
+
+  AltFuel-Blended:
+    existing_mt: 50.0
+    # TDF (tyre-derived fuel), municipal solid waste, biomass co-firing: ~8% of base
+    provenance_existing: "PROJECT_PROPOSAL"
+    source_existing: "CMA India 2023-24 / GCCA India AFR Survey 2023"
+    lifetime_yr: 30
+    capex_usd_per_t: 125.0
+    # AFR handling system + modifications: USD 30-50/t upgrade on blended base
+    provenance_capex: "PROJECT_PROPOSAL"
+    source_capex: "GCCA NZ 2021 / Heidelberg India AFR economics 2022"
+    fom_usd_per_t_yr: 8.5
+    vom_residual_usd_per_t: 15.0
+    # Alt-fuel procurement premium; TDF at INR 4-6/kg vs coal INR 3-4/kg
+    provenance_opex: "PROJECT_PROPOSAL"
+    source_opex: "GCCA NZ 2021"
+    wacc_premium: 0.08
+    availability: 0.88
+    start_year: 2024
+    clinker_factor: 0.62
+    process_co2_kg_per_kg_clinker: 0.525
+    provenance_process_co2: "FROZEN_EXTERNAL"
+    source_process_co2: "IPCC 2006 Vol.3 Ch.2"
+    thermal_sec_gj_per_t_clinker: 3.2
+    provenance_sec: "PROJECT_PROPOSAL"
+    source_sec: "GCCA NZ 2021"
+    elec_kwh_per_t_cement: 92.0
+    provenance_elec: "PROJECT_PROPOSAL"
+    source_elec: "GCCA NZ 2021"
+    # Thermal substitution rate: 30% alt fuel, 70% coal equivalent
+    alt_fuel_fraction: 0.30
+    fossil_decline: false
+    max_ramp_mt_yr: 35.0
+    cutoff_year_cps: null
+    cutoff_year_nzs: null
+
+  CCUS-Blended:
+    existing_mt: 0.0
+    # No commercial CCUS cement plant in India as of 2024
+    provenance_existing: "FROZEN_EXTERNAL"
+    source_existing: "GCCA NZ 2021 / IIT Delhi CCUS 2022"
+    lifetime_yr: 30
+    capex_usd_per_t: 380.0
+    # Post-combustion amine CCS retrofit: USD 280-420/t (IEA 2018); +blended kiln base 90
+    provenance_capex: "PROJECT_PROPOSAL"
+    source_capex: "IEA Cement Roadmap 2018; IIT Delhi CCUS feasibility 2022"
+    fom_usd_per_t_yr: 16.0
+    vom_residual_usd_per_t: 18.0
+    # CO2 compression (USD 10-15/t CO2) + transport + storage
+    provenance_opex: "PROJECT_PROPOSAL"
+    source_opex: "IIT Delhi CCUS India 2022 / Global CCS Institute 2023"
+    wacc_premium: 0.20
+    # High project-finance risk: first-of-kind India; no domestic CO2 storage precedent
+    availability: 0.83
+    start_year: 2032
+    # GCCA NZ 2021: commercial-scale India CCUS cement 2030-2035 range
+    clinker_factor: 0.65
+    process_co2_kg_per_kg_clinker: 0.525
+    provenance_process_co2: "FROZEN_EXTERNAL"
+    source_process_co2: "IPCC 2006 Vol.3 Ch.2"
+    thermal_sec_gj_per_t_clinker: 3.3
+    # CCS reboiler adds ~0.2 GJ/t clinker thermal energy
+    provenance_sec: "PROJECT_PROPOSAL"
+    source_sec: "IEA Cement Roadmap 2018"
+    elec_kwh_per_t_cement: 155.0
+    # CCS parasitic power: flue-gas fan + compressor ~60 kWh/t extra
+    provenance_elec: "PROJECT_PROPOSAL"
+    source_elec: "IEA Cement Roadmap 2018 / Global CCS Institute 2023"
+    ccus_capture_rate: 0.90
+    # 90% capture rate of process + combustion CO2 (best practice 2022)
+    provenance_ccus: "PROJECT_PROPOSAL"
+    source_ccus: "IEA Cement Roadmap 2018"
+    fossil_decline: false
+    max_ramp_mt_yr: 20.0
+    lead_years: 5
+    # 5-year construction lead time (EPC + commissioning)
+    cutoff_year_cps: null
+    cutoff_year_nzs: null
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SCM (SUPPLEMENTARY CEMENTITIOUS MATERIAL) SUPPLY CAP
+# ──────────────────────────────────────────────────────────────────────────────
+# SCMs: fly ash from coal power plants + blast furnace slag from steel industry
+# This is the binding constraint for blended cement scale-up
+# As India decarbonises, fly ash supply FALLS (coal power declines)
+scm_supply:
+  enabled: true
+  # Fly ash: CEA 2022: ~230 Mt produced, ~60% utilization → ~138 Mt available
+  # Slag: JPC 2023: ~25 Mt/yr from BF-BOF and EAF slag combined
+  # Other SCMs (calcined clay): unlimited in principle (clay abundant)
+  # Model: only fly ash + slag constrained; calcined clay treated as unlimited
+  fly_ash_mt:
+    # CPS: coal power persists → fly ash available but declining from ~2045
+    CPS: {2024: 135, 2030: 142, 2040: 148, 2050: 140, 2060: 110, 2070: 75}
+    # NZS: rapid coal phase-down → fly ash collapses post-2035
+    NZS: {2024: 135, 2030: 132, 2040: 98, 2050: 52, 2060: 22, 2070: 8}
+  provenance_fly_ash: "EXTERNAL"
+  source_fly_ash: "CEA Annual Report 2022-23 (fly ash utilization); MoP coal power trajectory"
+  slag_mt:
+    # Slag supply follows BF-BOF production trajectory
+    # Steel transition shifts from BF-BOF to DRI/EAF → slag declines faster in NZS
+    CPS: {2024: 25, 2030: 28, 2040: 32, 2050: 35, 2060: 30, 2070: 25}
+    NZS: {2024: 25, 2030: 26, 2040: 24, 2050: 18, 2060: 12, 2070: 8}
+  provenance_slag: "PROJECT_PROPOSAL"
+  source_slag: "JPC 2023 (slag from BF-BOF); steel model trajectory"
+  # Routes that consume fly ash/slag (LC3 uses calcined clay, not fly ash)
+  scm_consuming_routes:
+    - Coal-Blended
+    - AltFuel-Blended
+    - CCUS-Blended
+
+# ──────────────────────────────────────────────────────────────────────────────
+# FUELS
+# ──────────────────────────────────────────────────────────────────────────────
+fuels:
+  coal:
+    name: "Thermal coal (Indian non-coking)"
+    unit: "USD/t"
+    emission_factor_tco2_per_t: 2.42
+    # Coal: 26 GJ/t (gross) × 0.093 tC/GJ × 44/12 = 2.42 tCO2/t (IPCC 2006)
+    provenance_ef: "FROZEN_EXTERNAL"
+    source_ef: "IPCC 2006 Vol.2 Table 2.2 / CEA emission factors 2022"
+    price_usd_per_t:
+      CPS: {2024: 100, 2030: 90, 2040: 75, 2050: 60, 2060: 50, 2070: 42}
+      NZS: {2024: 100, 2030: 82, 2040: 58, 2050: 38, 2060: 27, 2070: 18}
+    provenance_price: "PROJECT_PROPOSAL"
+    source_price: "IEA Coal 2023 / Ministry of Coal India trajectory"
+
+  alt_fuel:
+    name: "Alternative fuels (TDF/MSW/biomass blend)"
+    unit: "USD/GJ"
+    emission_factor_tco2_per_gj: 0.075
+    # TDF: 28-30 GJ/t, biogenic fraction 30-50%; weighted avg EF ~0.075 tCO2/GJ
+    provenance_ef: "PROJECT_PROPOSAL"
+    source_ef: "GCCA NZ 2021 / Global Cement Magazine AFR data 2022"
+    price_usd_per_gj:
+      CPS: {2024: 3.5, 2030: 3.2, 2040: 2.8, 2050: 2.4, 2060: 2.0, 2070: 1.8}
+      NZS: {2024: 3.5, 2030: 2.8, 2040: 2.2, 2050: 1.7, 2060: 1.4, 2070: 1.2}
+    provenance_price: "PROJECT_PROPOSAL"
+    source_price: "GCCA NZ 2021 / waste procurement India estimates"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# ELECTRICITY
+# ──────────────────────────────────────────────────────────────────────────────
+electricity:
+  grid_ei_tco2_per_kwh:
+    # CEA 2022: 0.71 kgCO2/kWh = 0.00071 tCO2/kWh; falls with solar+wind rollout
+    # Values are in tCO2/kWh (consistent with aluminium/textile/fertiliser configs)
+    CPS: {2024: 0.00071, 2030: 0.00062, 2040: 0.000475, 2050: 0.000370, 2060: 0.000270, 2070: 0.000195}
+    NZS: {2024: 0.00071, 2030: 0.00053, 2040: 0.000295, 2050: 0.000140, 2060: 0.000055, 2070: 0.000018}
+  provenance_ei: "EXTERNAL"
+  source_ei: "CEA Annual Report 2022-23; MNRE Green Energy Roadmap 2030"
+  price_usd_per_kwh:
+    CPS: {2024: 0.072, 2030: 0.068, 2040: 0.060, 2050: 0.050, 2060: 0.043, 2070: 0.037}
+    NZS: {2024: 0.072, 2030: 0.060, 2040: 0.043, 2050: 0.031, 2060: 0.022, 2070: 0.016}
+  provenance_price: "EXTERNAL"
+  source_price: "CERC tariff orders 2023; MNRE RE cost forecasts"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# DEMAND
+# ──────────────────────────────────────────────────────────────────────────────
+demand:
+  CPS: {2024: 395, 2030: 468, 2040: 590, 2050: 700, 2060: 790, 2070: 850}
+  NZS: {2024: 395, 2030: 462, 2040: 578, 2050: 685, 2060: 760, 2070: 820}
+  provenance: "EXTERNAL"
+  source: "NITI Aayog Sectoral Insights Vol.4 (2023), Ch.3.2"
+
+demand_trajectories:
+  niti:
+    label: "NITI Vol.4"
+    anchors: {2024: 395, 2050: 700, 2070: 850}
+    method: "Piecewise-linear between published anchors"
+    source: "NITI Aayog Vol.4 2023"
+  model_fitted:
+    label: "Historical trend (logistic)"
+    anchors: {2024: 395, 2030: 447, 2035: 494, 2040: 519, 2050: 551, 2060: 567, 2070: 572}
+    method: "Logistic S-curve (L=700, k=0.052, t0=2055)"
+    source: "CMA India production data 1995-2024 (fitted)"
+  india_policy:
+    label: "India Policy Consensus"
+    anchors: {2024: 395, 2030: 462, 2035: 524, 2040: 578, 2050: 647, 2060: 696, 2070: 730}
+    method: "NHP 2022 + Gati Shakti NIP blend"
+    source: "MoHUA NHP 2022; DEA NIP 2020"
+  international:
+    label: "International Baseline"
+    anchors: {2024: 395, 2030: 442, 2035: 482, 2040: 512, 2050: 558, 2060: 593, 2070: 620}
+    method: "IEA Cement Roadmap STEPS + World Bank urbanization"
+    source: "IEA Cement Roadmap 2023; World Bank Urbanization Review"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# CARBON PRICE
+# ──────────────────────────────────────────────────────────────────────────────
+carbon_price_usd_per_tco2:
+  CPS: {2024: 3, 2030: 8, 2040: 15, 2050: 25, 2060: 35, 2070: 42}
+  NZS: {2024: 12, 2030: 45, 2040: 110, 2050: 190, 2060: 225, 2070: 260}
+  provenance: "PROJECT_PROPOSAL"
+  source: "NITI Aayog pathways / IEA SDS carbon price India"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# POLICY INCENTIVES
+# ──────────────────────────────────────────────────────────────────────────────
+policy:
+  pli_usd_per_t:
+    # BEE PAT scheme + potential green cement PLI (announced in Union Budget 2024-25)
+    AltFuel-Blended:
+      CPS: {2024: 0, 2030: 1.5, 2035: 3.0, 2040: 5.0, 2050: 7.0, 2070: 8.0}
+      NZS: {2024: 0, 2030: 2.0, 2035: 5.0, 2040: 10.0, 2050: 15.0, 2070: 20.0}
+    CCUS-Blended:
+      CPS: {2024: 0, 2030: 5, 2035: 12, 2040: 25, 2050: 45, 2070: 60}
+      NZS: {2024: 0, 2030: 10, 2035: 25, 2040: 60, 2050: 100, 2070: 140}
+    Coal-LC3:
+      CPS: {2024: 0, 2030: 1.0, 2035: 2.0, 2040: 3.0, 2050: 5.0, 2070: 6.0}
+      NZS: {2024: 0, 2030: 2.0, 2035: 5.0, 2040: 8.0, 2050: 12.0, 2070: 15.0}
+  provenance: "PROJECT_PROPOSAL"
+  source: "BEE PAT Scheme targets 2022; Union Budget 2024-25 announcements"
+
+  green_premium_usd_per_t:
+    # CBAM-driven premium for low-carbon cement exports (2026+)
+    routes: ["AltFuel-Blended", "CCUS-Blended", "Coal-LC3"]
+    CPS: {2024: 0, 2030: 0, 2040: 0, 2050: 0, 2070: 0}
+    NZS: {2024: 5, 2030: 15, 2040: 30, 2050: 55, 2070: 80}
+    provenance: "PROJECT_PROPOSAL"
+    source: "EU CBAM cement inclusion (2026); McKinsey green premium survey 2023"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Vol.4 REFERENCE TARGETS
+# ──────────────────────────────────────────────────────────────────────────────
+vol4_reference:
+  co2_intensity_tco2_per_t:
+    CPS: {2050: 0.52, 2070: 0.40}
+    NZS: {2050: 0.35, 2070: 0.08}
+  source: "NITI Aayog Sectoral Insights Vol.4 (2023), Ch.3.2 Figure 3.2.5"

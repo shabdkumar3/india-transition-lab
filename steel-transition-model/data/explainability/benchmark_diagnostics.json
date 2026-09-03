@@ -1,0 +1,1814 @@
+[
+  {
+    "metric": "crude_steel_production",
+    "year": 2024,
+    "ours": 144.29,
+    "vol4": 144.29,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2050,
+    "ours": 624.0,
+    "vol4": 624.0,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2070,
+    "ours": 821.0,
+    "vol4": 821.0,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.5,
+    "difference": -0.5,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.07,
+    "difference": -0.07,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.25,
+    "difference": -0.25,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.18,
+    "difference": 0.8200000000000001,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.1,
+    "difference": -0.1,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.5,
+    "difference": -0.5,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.4,
+    "difference": 0.6,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2050,
+    "ours": 1.0,
+    "vol4": 0.2,
+    "difference": 0.8,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.2,
+    "difference": 0.8,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2050,
+    "ours": 1.0,
+    "vol4": 0.3,
+    "difference": 0.7,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.4,
+    "difference": 0.6,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2050,
+    "ours": 0.05,
+    "vol4": 1.4224,
+    "difference": -1.3724,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2070,
+    "ours": 0.05,
+    "vol4": 0.9652,
+    "difference": -0.9151999999999999,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2050,
+    "ours": 0.05,
+    "vol4": 0.6604,
+    "difference": -0.6103999999999999,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2070,
+    "ours": 0.05,
+    "vol4": 0.127,
+    "difference": -0.077,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2050,
+    "ours": 31.200000000000003,
+    "vol4": 887.5776000000001,
+    "difference": -856.3776,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2070,
+    "ours": 41.050000000000004,
+    "vol4": 792.4291999999999,
+    "difference": -751.3792,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2050,
+    "ours": 31.200000000000003,
+    "vol4": 412.0896,
+    "difference": -380.88960000000003,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2070,
+    "ours": 41.050000000000004,
+    "vol4": 104.267,
+    "difference": -63.21699999999999,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 2.0,
+    "difference": -2.0,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 13.3,
+    "difference": -13.3,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 13.0,
+    "difference": -13.0,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 28.2,
+    "difference": -28.2,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2025,
+    "ours": 5.4418,
+    "vol4": 69.0,
+    "difference": -63.5582,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2070,
+    "ours": 27.4529,
+    "vol4": 251.0,
+    "difference": -223.5471,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2025,
+    "ours": 5.4418,
+    "vol4": 69.0,
+    "difference": -63.5582,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2070,
+    "ours": 27.4529,
+    "vol4": 155.0,
+    "difference": -127.5471,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "route_specific_energy_consumption",
+    "year": 2025,
+    "ours": 27.3,
+    "vol4": 27.3,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "route_specific_energy_consumption",
+    "year": 2025,
+    "ours": 1.4,
+    "vol4": 1.4,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2050,
+    "ours": 21.461736887360274,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2070,
+    "ours": 28.23731728288908,
+    "vol4": 41.0,
+    "difference": -12.76268271711092,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2050,
+    "ours": 21.461736887360274,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2070,
+    "ours": 28.23731728288908,
+    "vol4": 17.0,
+    "difference": 11.23731728288908,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2050,
+    "ours": null,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2070,
+    "ours": null,
+    "vol4": 160.0,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2050,
+    "ours": null,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2070,
+    "ours": null,
+    "vol4": 26.0,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "system_cost_discounted",
+    "year": null,
+    "ours": 506663.08615429624,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "investment_industry_usd_trillion",
+    "year": null,
+    "ours": null,
+    "vol4": 6.1,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "existing_fleet_route_capacity",
+    "year": 2024,
+    "ours": 0.0,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2024,
+    "ours": 144.29,
+    "vol4": 144.29,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2050,
+    "ours": 624.0,
+    "vol4": 624.0,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2070,
+    "ours": 821.0,
+    "vol4": 821.0,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.5,
+    "difference": -0.5,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.07,
+    "difference": -0.07,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.25,
+    "difference": -0.25,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.18,
+    "difference": 0.8200000000000001,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.1,
+    "difference": -0.1,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.5,
+    "difference": -0.5,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.4,
+    "difference": 0.6,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2050,
+    "ours": 1.0,
+    "vol4": 0.2,
+    "difference": 0.8,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.2,
+    "difference": 0.8,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2050,
+    "ours": 1.0,
+    "vol4": 0.3,
+    "difference": 0.7,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.4,
+    "difference": 0.6,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2050,
+    "ours": 0.05,
+    "vol4": 1.4224,
+    "difference": -1.3724,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2070,
+    "ours": 0.05,
+    "vol4": 0.9652,
+    "difference": -0.9151999999999999,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2050,
+    "ours": 0.05,
+    "vol4": 0.6604,
+    "difference": -0.6103999999999999,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2070,
+    "ours": 0.05,
+    "vol4": 0.127,
+    "difference": -0.077,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2050,
+    "ours": 31.200000000000003,
+    "vol4": 887.5776000000001,
+    "difference": -856.3776,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2070,
+    "ours": 41.050000000000004,
+    "vol4": 792.4291999999999,
+    "difference": -751.3792,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2050,
+    "ours": 31.200000000000003,
+    "vol4": 412.0896,
+    "difference": -380.88960000000003,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2070,
+    "ours": 41.050000000000004,
+    "vol4": 104.267,
+    "difference": -63.21699999999999,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 2.0,
+    "difference": -2.0,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 13.3,
+    "difference": -13.3,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 13.0,
+    "difference": -13.0,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 28.2,
+    "difference": -28.2,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2025,
+    "ours": 5.4418,
+    "vol4": 69.0,
+    "difference": -63.5582,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2070,
+    "ours": 27.4529,
+    "vol4": 251.0,
+    "difference": -223.5471,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2025,
+    "ours": 5.4418,
+    "vol4": 69.0,
+    "difference": -63.5582,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2070,
+    "ours": 27.4529,
+    "vol4": 155.0,
+    "difference": -127.5471,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "route_specific_energy_consumption",
+    "year": 2025,
+    "ours": 27.3,
+    "vol4": 27.3,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "route_specific_energy_consumption",
+    "year": 2025,
+    "ours": 1.4,
+    "vol4": 1.4,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2050,
+    "ours": 21.461736887360274,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2070,
+    "ours": 28.23731728288908,
+    "vol4": 41.0,
+    "difference": -12.76268271711092,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2050,
+    "ours": 21.461736887360274,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2070,
+    "ours": 28.23731728288908,
+    "vol4": 17.0,
+    "difference": 11.23731728288908,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2050,
+    "ours": null,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2070,
+    "ours": null,
+    "vol4": 160.0,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2050,
+    "ours": null,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2070,
+    "ours": null,
+    "vol4": 26.0,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "system_cost_discounted",
+    "year": null,
+    "ours": 506663.08615429624,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "investment_industry_usd_trillion",
+    "year": null,
+    "ours": null,
+    "vol4": 6.1,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "existing_fleet_route_capacity",
+    "year": 2024,
+    "ours": 0.0,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2024,
+    "ours": 144.29,
+    "vol4": 144.29,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2050,
+    "ours": 624.0,
+    "vol4": 624.0,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "crude_steel_production",
+    "year": 2070,
+    "ours": 821.0,
+    "vol4": 821.0,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.5,
+    "difference": 0.5,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.07,
+    "difference": -0.07,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.25,
+    "difference": -0.25,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.18,
+    "difference": -0.18,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 1.0,
+    "vol4": 0.1,
+    "difference": 0.9,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.5,
+    "difference": -0.5,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "technology_share",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.4,
+    "difference": -0.4,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 0.2,
+    "difference": -0.2,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.2,
+    "difference": -0.2,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 0.3,
+    "difference": -0.3,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "scrap_share_production",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 0.4,
+    "difference": -0.4,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_scrap_intensity"
+    ]
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2050,
+    "ours": 2.54,
+    "vol4": 1.4224,
+    "difference": 1.1176,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2070,
+    "ours": 2.54,
+    "vol4": 0.9652,
+    "difference": 1.5748000000000002,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2050,
+    "ours": 2.54,
+    "vol4": 0.6604,
+    "difference": 1.8796,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_intensity",
+    "year": 2070,
+    "ours": 2.54,
+    "vol4": 0.127,
+    "difference": 2.4130000000000003,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2050,
+    "ours": 1584.96,
+    "vol4": 887.5776000000001,
+    "difference": 697.3824,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2070,
+    "ours": 2085.34,
+    "vol4": 792.4291999999999,
+    "difference": 1292.9108,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2050,
+    "ours": 1584.96,
+    "vol4": 412.0896,
+    "difference": 1172.8704,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "co2_total",
+    "year": 2070,
+    "ours": 2085.34,
+    "vol4": 104.267,
+    "difference": 1981.073,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 2.0,
+    "difference": -2.0,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 13.3,
+    "difference": -13.3,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2050,
+    "ours": 0.0,
+    "vol4": 13.0,
+    "difference": -13.0,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "green_h2_steel",
+    "year": 2070,
+    "ours": 0.0,
+    "vol4": 28.2,
+    "difference": -28.2,
+    "comparison_status": "NOT_BENCHMARK_READY",
+    "data_completeness": "INCOMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": [
+      "missing_h2_dri_economics"
+    ]
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2025,
+    "ours": 106.1148,
+    "vol4": 69.0,
+    "difference": 37.1148,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2070,
+    "ours": 535.3325,
+    "vol4": 251.0,
+    "difference": 284.3325,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2025,
+    "ours": 106.1148,
+    "vol4": 69.0,
+    "difference": 37.1148,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "final_energy_steel",
+    "year": 2070,
+    "ours": 535.3325,
+    "vol4": 155.0,
+    "difference": 380.3325,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "route_specific_energy_consumption",
+    "year": 2025,
+    "ours": 27.3,
+    "vol4": 27.3,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "route_specific_energy_consumption",
+    "year": 2025,
+    "ours": 1.4,
+    "vol4": 1.4,
+    "difference": 0.0,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2050,
+    "ours": 2.6827171109200343,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2070,
+    "ours": 3.529664660361135,
+    "vol4": 41.0,
+    "difference": -37.470335339638865,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2050,
+    "ours": 2.6827171109200343,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "electricity_steel",
+    "year": 2070,
+    "ours": 3.529664660361135,
+    "vol4": 17.0,
+    "difference": -13.470335339638865,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2050,
+    "ours": null,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2070,
+    "ours": null,
+    "vol4": 160.0,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2050,
+    "ours": null,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "coal_use_steel",
+    "year": 2070,
+    "ours": null,
+    "vol4": 26.0,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "system_cost_discounted",
+    "year": null,
+    "ours": 1377757.0293715054,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "investment_industry_usd_trillion",
+    "year": null,
+    "ours": null,
+    "vol4": 6.1,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  },
+  {
+    "metric": "existing_fleet_route_capacity",
+    "year": 2024,
+    "ours": 0.0,
+    "vol4": null,
+    "difference": null,
+    "comparison_status": "DATA_LIMITED",
+    "data_completeness": "COMPLETE",
+    "active_constraints": [
+      "demand"
+    ],
+    "associated_drivers": []
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\webapp\\runtime\\generated_configs\\web_20260902_153422_cps_base_patched.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "CPS",
+    "use_endogenous_learning": true,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

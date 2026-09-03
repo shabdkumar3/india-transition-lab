@@ -1,0 +1,683 @@
+mode_b_policy:
+  enabled: true
+  label: MODE_B_POLICY
+  provenance: EXTERNAL
+  scenario_policies:
+    CPS:
+      ncap_cutoff_years:
+        Coal-DRI-IF: 2030
+      monotonic_decline_from_years:
+        BF-BOF: 2055
+        Coal-DRI-IF: 2024
+      min_production_floor_mt:
+        BF-BOF:
+          2024: 55.0
+          2030: 62.0
+          2040: 72.0
+          2050: 82.0
+          2060: 48.0
+          2070: 28.0
+      route_start_years:
+        H2-DRI-EAF: 2035
+    NZS:
+      ncap_cutoff_years:
+        Coal-DRI-IF: 2030
+        NG-DRI-EAF: 2040
+        BF-BOF: 2057
+      monotonic_decline_from_years:
+        BF-BOF: 2040
+        Coal-DRI-IF: 2026
+      min_production_floor_mt:
+        BF-BOF:
+          2024: 45.0
+          2030: 40.0
+          2035: 25.0
+          2040: 10.0
+          2050: 0.0
+      route_start_years:
+        H2-DRI-EAF: 2030
+  scrap_waypoints:
+    NZS:
+    - year: 2025
+      share: 0.2
+    - year: 2050
+      share: 0.3
+    - year: 2070
+      share: 0.4
+  explicit_non_rules:
+    carbon_price: NOT_IMPOSED (Vol.4 provides no numeric carbon price)
+    emissions_cap: NOT_IMPOSED (no source-supported steel emissions cap)
+    coal_dri_eaf_cutoff: 'NOT_IMPOSED (Gate B: Vol.4 names only Coal-DRI-IF)'
+    hard_scrap_floor: 'NOT_IMPOSED (Gate C: waypoints are diagnostics only)'
+    green_electricity_numeric: EXTERNAL_PENDING (no numeric grid/CAPTIVE data)
+horizon:
+  start_year: 2024
+  end_year: 2070
+discount_rate:
+  value: 0.08
+  provenance: PROJECT_PROPOSAL
+enabled_routes:
+- BF-BOF
+- Coal-DRI-EAF
+- Coal-DRI-IF
+- NG-DRI-EAF
+- H2-DRI-EAF
+- Scrap-EAF
+existing_capacity_mt_aggregate: 200.333
+existing_capacity_per_route_mt:
+  BF-BOF: 80.0
+  Coal-DRI-EAF: 14.0
+  Coal-DRI-IF: 78.0
+  NG-DRI-EAF: 12.0
+  H2-DRI-EAF: 0.0
+  Scrap-EAF: 16.0
+lifetime_years: 25
+start_years:
+  BF-BOF: 2024
+  Coal-DRI-EAF: 2024
+  Coal-DRI-IF: 2024
+  NG-DRI-EAF: 2024
+  H2-DRI-EAF: 2030
+  Scrap-EAF: 2024
+availability:
+  BF-BOF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+  Coal-DRI-EAF:
+    value: 0.85
+    provenance: PROJECT_PROPOSAL
+  Coal-DRI-IF:
+    value: 0.85
+    provenance: PROJECT_PROPOSAL
+  NG-DRI-EAF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+  H2-DRI-EAF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+  Scrap-EAF:
+    value: 0.9
+    provenance: PROJECT_PROPOSAL
+economics:
+  capex_annualised_usd_per_t:
+    BF-BOF: 73.0
+    Coal-DRI-EAF: 82.0
+    Coal-DRI-IF: 61.5
+    NG-DRI-EAF: 95.0
+    H2-DRI-EAF: 64.2
+    Scrap-EAF: 46.0
+  opex_fixed_usd_per_t:
+    BF-BOF: 68.0
+    Coal-DRI-EAF: 35.0
+    Coal-DRI-IF: 26.0
+    NG-DRI-EAF: 87.0
+    H2-DRI-EAF: 27.4
+    Scrap-EAF: 43.0
+  vom_usd_per_t:
+    BF-BOF: 7.0
+    Coal-DRI-EAF: 10.0
+    Coal-DRI-IF: 6.0
+    NG-DRI-EAF: 12.0
+    H2-DRI-EAF: 12.0
+    Scrap-EAF: 18.0
+resource_prices:
+  iron_ore:
+    value: 80.0
+    source_unit: USD/t
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/t (no conversion: intensity in t/t steel)'
+    provenance: EXTERNAL
+  scrap:
+    value: 250.0
+    source_unit: USD/t
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/t (no conversion: intensity in t/t steel)'
+    provenance: EXTERNAL
+  natural_gas:
+    value: 7.5
+    source_unit: USD/MBtu
+    target_unit: USD/GJ
+    conversion_factor: 1.055
+    conversion_operation: divide
+    conversion_formula: "USD/GJ = USD/MBtu / 1.055  (1 MBtu = 1.055 GJ, registry \xA7\
+      9)"
+    provenance: EXTERNAL CROSSREF
+  electricity:
+    value: 45.0
+    source_unit: USD/MWh
+    target_unit: USD/MWh
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/MWh (no conversion: intensity in MWh/t steel)'
+    provenance: EXTERNAL
+  hydrogen:
+    value: 1.9
+    source_unit: USD/kg
+    target_unit: USD/kg
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: '1 USD/kg (no conversion: intensity in kg H2/t steel)'
+    provenance: EXTERNAL
+  coking_coal:
+    value: 140.0
+    source_unit: USD/tce
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: "1 tce = 1 t coal (registry \xA79 tce basis; intensity in\
+      \ t/t steel)"
+    provenance: EXTERNAL
+  non_coking_coal:
+    value: 70.0
+    source_unit: USD/tce
+    target_unit: USD/t
+    conversion_factor: 1.0
+    conversion_operation: multiply
+    conversion_formula: "1 tce = 1 t coal (registry \xA79 tce basis; intensity in\
+      \ t/t steel)"
+    provenance: EXTERNAL
+scenarios:
+- name: CPS
+  demand_anchors_mt: &id001
+    2024: 144.0
+    2070: 821.0
+- name: NZS
+  demand_anchors_mt: *id001
+dynamic_scrap:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  historical_cohorts:
+    unit: Mt
+    start_year: 1990
+    end_year: 2023
+    provenance: EXTERNAL
+    source: Ministry of Steel Annual Report 2025-26 (JPC production series)
+    source_page: Table 3.2.2 / production summary
+    production_mt:
+      2021:
+        value: 103.545
+        provenance: EXTERNAL
+        source: MoS AR 2025-26 (FY2020-21 crude steel production)
+        notes: FY2020-21 attributed to calendar 2021 (fiscal-year-end convention)
+      2022:
+        value: 120.293
+        provenance: EXTERNAL
+        source: MoS AR 2025-26 (FY2021-22 crude steel production)
+        notes: FY2021-22 attributed to calendar 2022 (fiscal-year-end convention)
+  lifetime:
+    distribution: weibull
+    weibull_shape: 2.5
+    weibull_scale: 20.0
+    deterministic_lifetime_years: 20
+    provenance: PROJECT_PROPOSAL
+    notes: Weibull(2.5, 20) per ASSUMPTION_DEBT_REGISTER.md; parametric scenario variable
+      for sensitivity.
+  collection:
+    collection_rate:
+      value: 0.8
+      provenance: PROJECT_PROPOSAL
+      notes: Parametric scenario variable; empirical Indian series DEFERRED.
+    processing_yield:
+      value: 0.9
+      provenance: PROJECT_PROPOSAL
+      notes: Parametric scenario variable; empirical Indian series DEFERRED.
+  scrap_imports:
+    value: 0.0
+    provenance: EXTERNAL_PENDING
+    notes: Imports excluded from this version (ScrapUse_t <= UsableDomesticScrap_t).
+      Pathway reserved.
+  historical_scrap_supplement:
+    provenance: PROJECT_PROPOSAL
+    rationale: 'Estimated usable EOL scrap from 1990-2020 production cohorts (EXTERNAL_PENDING
+      in the cohort model). Recalibrated upward from 22 Mt to 30 Mt in 2024 to match
+      Vol.4 actual total scrap consumption = 33.36 Mt (p.43, Fig 2.7). The 30 Mt (vs
+      33.36 Mt) reflects that the supplement covers EOL + home/process scrap for non-tracked
+      pre-2021 cohorts; the 3 Mt gap is covered by 2021-2022 tracked cohort contributions
+      from the dynamic scrap engine. With all 6 routes now enabled, the scrap balance
+      includes BF-BOF (0.15), Coal-DRI-EAF (0.20), Coal-DRI-IF (0.15), NG-DRI-EAF
+      (0.20) secondary charges PLUS Scrap-EAF primary.
+
+      '
+    anchor_years_mt:
+      2024: 30.0
+      2028: 34.0
+      2032: 32.0
+      2040: 22.0
+      2050: 10.0
+      2060: 4.0
+      2070: 1.0
+provenance_gating:
+  policy: strict
+  allow_proposal_parameters: true
+  intensity_overrides:
+  - route: Scrap-EAF
+    resource: scrap
+    value: 1.08
+    provenance: PROJECT_PROPOSAL
+    rationale: 'IEA Roadmap 2020 / IMC-2021 EAF mass balance: ~1.08 t scrap per t
+      liquid steel. Activates the physical scrap cost and enables the Mode B dynamic
+      scrap balance to meaningfully constrain Scrap-EAF.
+
+      '
+  - route: BF-BOF
+    resource: iron_ore
+    value: 1.6
+    provenance: EXTERNAL CROSSREF
+    rationale: 'WorldSteel Statistical Yearbook 2023 BF mass balance: 1.55-1.65 t
+      iron ore per t crude steel; IEA Iron & Steel Technology Roadmap 2020 Table A.1:
+      1.60 t/t. Uses standard burden rate assuming sinter/pellet mix (58% Fe) consistent
+      with India''s major integrated plants (SAIL, Tata, JSW benchmarks).
+
+      '
+  - route: NG-DRI-EAF
+    resource: iron_ore
+    value: 1.42
+    provenance: EXTERNAL CROSSREF
+    rationale: 'IEA Iron & Steel Technology Roadmap 2020 Table A.1 shaft-furnace DRI
+      mass balance: 1.40-1.44 t iron ore / t crude steel at 94% metallization (Midrex/HYL
+      grade). Using 1.42 t/t as central estimate. Pellet grade iron ore (64-67% Fe).
+
+      '
+  - route: H2-DRI-EAF
+    resource: iron_ore
+    value: 1.42
+    provenance: EXTERNAL CROSSREF
+    rationale: 'Same shaft-furnace DRI process as NG-DRI-EAF (HYFOR/Midrex H2-ready).
+      IEA 2020 / MIDREX H2 report: 1.42 t iron ore / t crude steel at 94% metallization.
+      No significant difference from NG-DRI in ore consumption per mass-balance.
+
+      '
+  - route: Coal-DRI-EAF
+    resource: iron_ore
+    value: 1.45
+    provenance: EXTERNAL CROSSREF
+    rationale: 'Rotary kiln DRI (SL/RN process) has slightly lower metallization (~91-93%)
+      than shaft furnace, requiring modestly more ore. IEA 2020 / CEEW 2024 estimate:
+      1.44-1.47 t/t; using 1.45 t/t as central value for India''s Coal-DRI plants.
+
+      '
+  - route: Coal-DRI-IF
+    resource: iron_ore
+    value: 1.45
+    provenance: EXTERNAL CROSSREF
+    rationale: 'Same rotary kiln DRI process as Coal-DRI-EAF. Induction furnace melting
+      does not change the DRI production mass balance. 1.45 t/t consistent with Vol.4
+      Fig 2.8 and India''s sponge iron industry standards (70-80 Mtpa rotary kiln
+      fleet).
+
+      '
+  - route: BF-BOF
+    resource: coking_coal
+    value: 0.89
+    provenance: PROJECT_PROPOSAL
+    rationale: 'IEA Roadmap 2020 / WorldSteel BF coal balance: ~0.89 t coking coal
+      per t crude steel. Consistent with Mode A baseline.
+
+      '
+  - route: Coal-DRI-EAF
+    resource: non_coking_coal
+    value: 1.2
+    provenance: PROJECT_PROPOSAL
+    rationale: "Vol.4 Fig 2.8 coal-thermal SEC (22.5 GJ/t) / Indian non-coking coal\
+      \ GCV (18.84 GJ/t at 4500 kcal/kg) = 1.195 t/t \u2248 1.2 t/t. Activates dominant\
+      \ fuel cost for Coal-DRI-EAF route.\n"
+  - route: Coal-DRI-IF
+    resource: non_coking_coal
+    value: 1.2
+    provenance: PROJECT_PROPOSAL
+    rationale: "Same rotary kiln process as Coal-DRI-EAF. Vol.4 Fig 2.8 kiln coal\
+      \ SEC (22.5 GJ/t) / 18.84 GJ/t = 1.195 \u2248 1.2 t/t. The IF route uses ~70%\
+      \ DRI charge in the IF, with the same kiln-based DRI process.\n"
+endogenous_learning:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'Learning rates from IRENA/IEA learning curve literature. H2-DRI-EAF: nascent
+    technology, strong learning expected (10% per doubling). Scrap-EAF: mature technology,
+    weak learning (5% per doubling).
+
+    '
+  tolerance: 0.001
+  max_iterations: 50
+  routes:
+    H2-DRI-EAF:
+      learning_rate: 0.1
+      initial_cumulative_capacity_mt: 0.5
+      learning_scope: full_plant
+      provenance: PROJECT_PROPOSAL
+    Scrap-EAF:
+      learning_rate: 0.05
+      initial_cumulative_capacity_mt: 500.0
+      learning_scope: full_plant
+      provenance: PROJECT_PROPOSAL
+carbon_price:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'India-adapted carbon price trajectories. CPS reflects PAT evolution + CCTS
+    pilot (modest). NZS reflects IEA NZE 2050 developing-economy trajectory (140 USD/tCO2
+    by 2050). Values are indicative, not official.
+
+    '
+  trajectories:
+    CPS:
+      2024: 2
+      2030: 8
+      2040: 16
+      2050: 24
+      2060: 30
+      2070: 35
+    NZS:
+      2024: 5
+      2030: 30
+      2040: 80
+      2050: 140
+      2060: 175
+      2070: 200
+h2_supply_cap:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'India National Green Hydrogen Mission (NGHM, 2023) targets 5 MMTPA green
+    H2 by 2030. CPS: only 40% steel share achieved; NZS: 70%+ steel share + extra
+    Mission funding doubles the ramp. Cap in Mt H2/yr.
+
+    '
+  anchor_years_mt:
+    2024: 0.001
+    2030: 0.38
+    2035: 1.2
+    2040: 3.5
+    2050: 8.0
+    2060: 14.5
+    2070: 22.0
+  trajectories:
+    CPS:
+      anchor_years_mt:
+        2024: 0.001
+        2030: 0.2
+        2035: 0.6
+        2040: 2.0
+        2050: 2.5
+        2060: 7.0
+        2070: 14.0
+    NZS:
+      anchor_years_mt:
+        2024: 0.001
+        2030: 0.55
+        2035: 1.8
+        2040: 5.0
+        2050: 14.0
+        2060: 22.0
+        2070: 30.0
+stranded_asset_cost:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'Fraction of annualised CAPEX that represents stranded value on early retirement.
+    0.30 means 30% of annual CAPEX is "lost" per Mt retired before lifetime. This
+    discourages economically unjustified premature retirement. Based on IEA asset-stranding
+    cost literature (indicative).
+
+    '
+  stranded_cost_fraction: 0.3
+resource_price_trajectories:
+  hydrogen:
+    provenance: PROJECT_PROPOSAL
+    notes: "IEA Hydrogen Roadmap 2023 + IRENA 2022 Green Hydrogen Cost Review. CPS:\
+      \ moderate NGHM + global learning \u2192 $1.10/kg by 2040. NZS: NGHM fully funded\
+      \ + accelerated electrolyser learning \u2192 $0.60/kg by 2040. H2-DRI-EAF fuel\
+      \ cost at 55 kg/t: CPS=$60/t, NZS=$33/t at 2040 \u2014 key divergence.\n"
+    anchor_years:
+      2024: 1.9
+      2030: 1.475
+      2035: 1.125
+      2040: 0.85
+      2050: 0.675
+      2060: 0.57
+      2070: 0.5
+    trajectories:
+      CPS:
+        anchor_years:
+          2024: 1.9
+          2030: 1.65
+          2035: 1.35
+          2040: 1.1
+          2050: 0.9
+          2060: 0.78
+          2070: 0.7
+      NZS:
+        anchor_years:
+          2024: 1.9
+          2030: 1.3
+          2035: 0.9
+          2040: 0.6
+          2050: 0.45
+          2060: 0.36
+          2070: 0.3
+  electricity:
+    provenance: PROJECT_PROPOSAL
+    notes: 'India RE electricity (solar+wind weighted avg) cost trajectory. CPS: NDC-consistent
+      RE expansion, moderate pace. NZS: 500 GW RE by 2030 fully realised, deeper grid
+      cost decline.
+
+      '
+    anchor_years:
+      2024: 45.0
+      2030: 37.0
+      2040: 27.0
+      2050: 20.0
+      2060: 16.0
+      2070: 13.5
+    trajectories:
+      CPS:
+        anchor_years:
+          2024: 45.0
+          2030: 40.0
+          2040: 32.0
+          2050: 24.0
+          2060: 20.0
+          2070: 17.0
+      NZS:
+        anchor_years:
+          2024: 45.0
+          2030: 34.0
+          2040: 22.0
+          2050: 16.0
+          2060: 12.0
+          2070: 10.0
+  scrap:
+    provenance: PROJECT_PROPOSAL
+    notes: 'India domestic scrap price trajectory. Base $250/t (2024) rising as Scrap-EAF
+      fleet grows and collection-system competition intensifies. Sources: WorldSteel
+      Scrap Monitor 2023; IEA CCUS/steel cost review. Represents partial scrap price
+      feedback (exogenous approximation).
+
+      '
+    anchor_years:
+      2024: 250.0
+      2030: 268.0
+      2040: 305.0
+      2050: 355.0
+      2060: 385.0
+      2070: 400.0
+grid_emission_intensity:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: "India grid average emission factor from CEA CO2 baseline 2022-23 (716 gCO2/kWh).\
+    \ CPS: follows India's NDC trajectory (500 GW RE by 2030, moderate thereafter).\
+    \ NZS: deeper RE push, near-zero grid by 2060 \u2014 makes EAF/H2-DRI cleaner\
+    \ sooner. Applied to all routes with non-zero electricity_route intensity.\n"
+  grid_ei_tco2_per_mwh:
+    2024: 0.716
+    2030: 0.523
+    2040: 0.305
+    2050: 0.165
+    2060: 0.08
+    2070: 0.037
+  trajectories:
+    CPS:
+      grid_ei_tco2_per_mwh:
+        2024: 0.716
+        2030: 0.565
+        2040: 0.36
+        2050: 0.21
+        2060: 0.11
+        2070: 0.055
+    NZS:
+      grid_ei_tco2_per_mwh:
+        2024: 0.716
+        2030: 0.48
+        2040: 0.25
+        2050: 0.12
+        2060: 0.05
+        2070: 0.02
+construction_lead_time:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'Technology-specific construction and commissioning lag. Sources: IEA WEO
+    2023 investment timing annex; ISPATGURU plant timelines. H2-DRI-EAF lead includes
+    electrolyser + H2 storage installation. EAF/Scrap-EAF shortest (modular, established
+    supply chain).
+
+    '
+  lead_time_years:
+    BF-BOF: 3
+    Coal-DRI-EAF: 2
+    Coal-DRI-IF: 2
+    NG-DRI-EAF: 2
+    H2-DRI-EAF: 3
+    Scrap-EAF: 1
+wacc_premium:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'Risk premium reflecting differential financing cost for nascent vs mature
+    technologies in India''s capital markets. Based on IEA WEO 2023 financing cost
+    analysis (developing economies, coal vs green technology). BF-BOF and Coal-DRI
+    are mature (no premium); H2-DRI faces higher perceived risk.
+
+    '
+  premium_by_route:
+    BF-BOF: 1.0
+    Coal-DRI-EAF: 1.08
+    Coal-DRI-IF: 1.05
+    NG-DRI-EAF: 1.05
+    H2-DRI-EAF: 1.25
+    Scrap-EAF: 1.0
+policy_incentives:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'India Green Steel PLI-equivalent subsidy schedule (indicative). H2-DRI-EAF:
+    front-loaded (heavy subsidy 2030-2040, tapers as technology matures). Scrap-EAF:
+    smaller steady subsidy (scrap collection infrastructure support). Sources: SAIL/MoS
+    Green Steel Mission announcements; IEA CCUS for Steel 2023.
+
+    '
+  incentives_usd_per_t:
+    H2-DRI-EAF:
+      2030: -20.0
+      2035: -15.0
+      2040: -10.0
+      2045: -5.0
+      2050: 0.0
+    Scrap-EAF:
+      2024: -4.0
+      2030: -3.0
+      2040: -2.0
+      2050: -1.0
+      2060: 0.0
+green_steel_premium:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: 'Green-steel market premium for low-emission steel production. Threshold:
+    routes with process+combustion tCO2/t < 0.5 qualify. Growing demand from EU CBAM
+    (effective 2026), automotive OEMs (BMW/VW green procurement), and India''s own
+    green procurement policy. Sources: Hatch/KPMG Green Steel Market Report 2023;
+    Wood Mackenzie 2023.
+
+    '
+  emission_threshold_tco2_per_t: 0.5
+  qualifying_routes:
+  - H2-DRI-EAF
+  - Scrap-EAF
+  premium_usd_per_t:
+    2024: 0.0
+    2030: 8.0
+    2035: 18.0
+    2040: 32.0
+    2050: 48.0
+    2060: 58.0
+    2070: 65.0
+ccus:
+  enabled: false
+  provenance: PROJECT_PROPOSAL
+  notes: "CCS retrofit for high-emission steel routes. Global capture_rate 0.85 applies\
+    \ to DRI routes (concentrated CO2 streams, IEA CCUS for Steel 2023; IEAGHG 2013).\
+    \ BF-BOF uses 0.56 (whole-plant net CO2 reduction per NITI Vol.4: only ~65% of\
+    \ BF-BOF CO2 is in economically capturable streams at blast furnace off-gas; the\
+    \ rest from coke ovens/hot stoves is too dilute; 85% capture of 66% = ~56% total).\
+    \ CCUS adds $40\u201350/t annualised CAPEX and $12\u201318/t OPEX. Available from\
+    \ 2030. Vol.4 NZS Table 3.1 explicitly anticipates BF-BOF+CCS in 2070 residual\
+    \ fleet.\n"
+  capture_rate: 0.85
+  capture_rate_by_route:
+    BF-BOF: 0.56
+    NG-DRI-EAF: 0.85
+    Coal-DRI-IF: 0.85
+    Coal-DRI-EAF: 0.85
+  available_from_year: 2030
+  eligible_routes:
+  - BF-BOF
+  - NG-DRI-EAF
+  - Coal-DRI-IF
+  - Coal-DRI-EAF
+  additional_capex_usd_per_t:
+    BF-BOF: 48.0
+    NG-DRI-EAF: 35.0
+    Coal-DRI-IF: 42.0
+    Coal-DRI-EAF: 42.0
+  additional_opex_usd_per_t:
+    BF-BOF: 18.0
+    NG-DRI-EAF: 12.0
+    Coal-DRI-IF: 15.0
+    Coal-DRI-EAF: 15.0
+technology_ramp_limits:
+  enabled: true
+  provenance: PROJECT_PROPOSAL
+  notes: "Physical scale-up limits on new capacity commissioning per year. Sources:\
+    \ IEA WEO 2023 country ramp rates; IRENA Electrolyser Capacity Outlook 2023; NITI\
+    \ Aayog NGHM roadmap. CPS reflects constrained supply chains; NZS reflects fully\
+    \ realised Mission targets + global learning spill-in. Applied as MILP upper bounds\
+    \ on NCAP[i,t]. This is the core TIMES mechanism that prevents over-rapid transitions\
+    \ \u2014 real-world counterpart to labour, equipment, and infrastructure bottlenecks.\n"
+  trajectories:
+    CPS:
+      max_ncap_mt_per_year:
+        H2-DRI-EAF: 8.0
+        Scrap-EAF: 15.0
+        NG-DRI-EAF: 12.0
+        Coal-DRI-EAF: 5.0
+        Coal-DRI-IF: 4.0
+    NZS:
+      max_ncap_mt_per_year:
+        H2-DRI-EAF: 20.0
+        Scrap-EAF: 20.0
+        NG-DRI-EAF: 10.0
+        Coal-DRI-EAF: 5.0
+        Coal-DRI-IF: 7.0
+sec_improvement:
+  enabled: true
+  provenance: V4
+  source: 'NITI Aayog Sectoral Insights: Industry Vol. 4, Table 3.1'
+  notes: "Scenario-specific SEC improvement factors applied to fuel consumption and\
+    \ combustion CO2. CPS: moderate improvement (incremental BAT adoption). NZS: deeper\
+    \ improvement (aggressive efficiency push alongside technology shift). Process\
+    \ CO2 (stoichiometric) is excluded \u2014 chemistry does not change. Base year\
+    \ = start_year (2024). Waypoints are linearly interpolated.\n"
+  by_scenario:
+    CPS:
+      2050: 0.12
+      2070: 0.23
+    NZS:
+      2050: 0.24
+      2070: 0.38

@@ -1,0 +1,11 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\webapp\\runtime\\generated_configs\\web_20260817_011646_uncertainty_study_merged.yaml",
+  "overrides": {},
+  "allow_external_pending": true,
+  "diagnostic_overrides": {
+    "capex_Coal-DRI-IF": 61.5,
+    "opex_Coal-DRI-IF": 26.0
+  },
+  "random_seed": null,
+  "intensities_path": null
+}

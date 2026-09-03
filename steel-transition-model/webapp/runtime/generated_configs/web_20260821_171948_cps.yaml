@@ -1,0 +1,118 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\configs\\optimization\\mode_b_policy.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "CPS",
+    "use_endogenous_learning": false,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false,
+    "technology_ramp_limits": {
+      "enabled": false
+    },
+    "discount_rate": {
+      "value": 0.08,
+      "provenance": "WEB_USER_OVERRIDE"
+    },
+    "carbon_price": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "anchor_years": {
+        "2024": 2,
+        "2030": 8,
+        "2040": 16,
+        "2050": 24,
+        "2060": 30,
+        "2070": 35
+      }
+    },
+    "h2_supply_cap": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "anchor_years_mt": {
+        "2024": 0.001,
+        "2030": 0.2,
+        "2035": 0.6,
+        "2040": 2,
+        "2050": 2.5,
+        "2060": 7,
+        "2070": 14
+      }
+    },
+    "stranded_asset_cost": {
+      "enabled": true,
+      "stranded_cost_fraction": 0.3
+    },
+    "policy_incentives": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "incentives_usd_per_t": {
+        "H2-DRI-EAF": {
+          "2030": -20,
+          "2035": -15,
+          "2040": -10,
+          "2045": -5,
+          "2050": 0
+        }
+      }
+    },
+    "green_steel_premium": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "emission_threshold_tco2_per_t": 0.5,
+      "qualifying_routes": [
+        "H2-DRI-EAF",
+        "Scrap-EAF"
+      ],
+      "premium_usd_per_t": {
+        "2024": 0,
+        "2030": 8,
+        "2035": 18,
+        "2040": 32,
+        "2050": 48,
+        "2060": 58,
+        "2070": 65
+      }
+    },
+    "grid_emission_intensity": {
+      "enabled": true
+    },
+    "ccus": {
+      "enabled": false
+    },
+    "resource_prices": {
+      "hydrogen": {
+        "value": 1.9
+      },
+      "non_coking_coal": {
+        "value": 70
+      },
+      "natural_gas": {
+        "value": 7.5
+      },
+      "iron_ore": {
+        "value": 80
+      }
+    },
+    "economics": {
+      "capex_annualised_usd_per_t": {
+        "H2-DRI-EAF": 64.2
+      }
+    },
+    "sec_improvement": {
+      "enabled": true,
+      "provenance": "WEB_USER_OVERRIDE",
+      "by_scenario": {
+        "CPS": {
+          "2050": 0.12,
+          "2070": 0.23
+        }
+      }
+    }
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

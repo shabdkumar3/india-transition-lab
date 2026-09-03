@@ -1,0 +1,29 @@
+{
+  "base_config": "D:\\niti\\steel-transition-model\\configs\\optimization\\mode_b_policy.yaml",
+  "overrides": {
+    "mode": "MODE_B",
+    "scenario_name": "NZS",
+    "use_endogenous_learning": true,
+    "use_dynamic_scrap": true,
+    "use_deployment_dynamics": false,
+    "use_m1_electrolyser_learning": false,
+    "use_exogenous_electrolyser_cost_curve": false,
+    "ccus": {
+      "enabled": true,
+      "provenance": "V4_NZS_TABLE_3_1"
+    },
+    "wacc_premium": {
+      "enabled": true,
+      "provenance": "Lab WACC override: 0.0% vs base 8%",
+      "premium_by_route": {
+        "H2-DRI-EAF": 0.37525944477091616,
+        "NG-DRI-EAF": 0.37525944477091616,
+        "Coal-DRI-EAF": 0.37525944477091616
+      }
+    }
+  },
+  "allow_external_pending": false,
+  "diagnostic_overrides": {},
+  "random_seed": null,
+  "intensities_path": null
+}

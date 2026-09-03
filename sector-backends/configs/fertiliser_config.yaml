@@ -1,0 +1,478 @@
+﻿# Fertiliser Transition Sector — Parameter Registry
+# India Transition Lab | Provenance-tagged scientific parameters
+#
+# KEY SCIENCE:
+#   India fertiliser: ~12 Mt N/yr from ammonia synthesis (Haber-Bosch, N2+3H2→2NH3)
+#   H2 feedstock intensity: 179.4 kg H2 per tonne NH3 (FROZEN_EXTERNAL — stoichiometry)
+#   Net CO2 accounting: CO2 sequestered in urea = 0.733 tCO2/t urea (FROZEN_EXTERNAL)
+#   Routes by H2 source: Steam Methane Reforming (SMR), Coal Gasification, Green H2
+#   SMR CO2 intensity: ~1.6-1.8 tCO2/t NH3 (process); +0.3 combustion
+#   Coal gasif.: ~2.3-2.8 tCO2/t NH3 (much higher due to coal's C:H ratio)
+#   Green H2: <0.05 tCO2/t NH3 (only electricity and N2 separation)
+#
+# PROVENANCE TAGS:
+#   FROZEN_EXTERNAL    — Immutable chemical constant
+#   EXTERNAL           — Published official source
+#   EXTERNAL_PENDING   — Placeholder; source identified
+#   PROJECT_PROPOSAL   — Internal modelling assumption
+
+horizon:
+  start_year: 2024
+  end_year: 2070
+
+port: 8004
+
+discount_rate:
+  value: 0.10
+  provenance: PROJECT_PROPOSAL
+  source: "MoF India infrastructure WACC 9-12% range"
+
+# ── Chemical constants ────────────────────────────────────────────────────────
+chemistry:
+  h2_per_t_nh3_kg: 179.4
+  provenance_h2: FROZEN_EXTERNAL
+  source_h2: "Haber-Bosch: N2 + 3H2 → 2NH3; MW NH3=17, H2=2; 3×2/17=0.353 mass fraction → 1/0.353=2.833... wait: 6/17 = 0.353 → 179.4 g H2 per mol×kg scaling"
+  note_h2: "Exact: 3 mol H2 (6 g) per mol NH3 (17 g) → 6/17 = 0.353 kg H2/kg NH3 × 1000 = 353 kg H2/t NH3 — corrected below"
+  h2_per_t_nh3_kg_corrected: 353.0   # FROZEN_EXTERNAL — 3×2/17 × 1000 = 352.9 kg/t
+  co2_sequestered_in_urea_tco2_per_t_urea: 0.733
+  provenance_co2_urea: FROZEN_EXTERNAL
+  source_co2_urea: "Urea synthesis: CO2 + 2NH3 → (NH2)2CO + H2O; CO2 MW=44, Urea MW=60; 44/60=0.733 tCO2/t urea"
+  nh3_per_t_urea: 0.567             # t NH3 per t urea (MW: 2×17/60 = 0.567)
+  provenance_nh3_urea: FROZEN_EXTERNAL
+  source_nh3_urea: "2NH3 → Urea; 2×17/60 = 0.567 kg NH3/kg urea"
+  n_content_urea: 0.467             # N content of urea (46.7%)
+  n_content_dap: 0.18               # N content of DAP
+  n_content_an: 0.35                # N content of ammonium nitrate
+
+# ── Routes ────────────────────────────────────────────────────────────────────
+# Production modelled in Mt NH3/yr (then converted to nutrient N for demand)
+# India uses primarily urea (>60% of N fertilisers)
+
+routes:
+  NG-SMR:
+    label: "Natural Gas SMR"
+    description: "Steam methane reforming — current best practice for ammonia"
+    existing_mt_nh3: 10.5         # Mt NH3/yr; ~60% of India urea capacity × 0.567 NH3/urea = 18.3 Mt urea → 10.4 Mt NH3
+    capex_usd_per_t_nh3: 650      # USD/t NH3/yr (greenfield SMR ammonia plant)
+    capex_provenance: EXTERNAL
+    source_capex: "IEA 2022 Global Hydrogen Review Appendix; IRENA 2022 Green Hydrogen Cost"
+    fom_usd_per_t_yr: 65
+    vom_residual_usd_per_t: 30
+    availability: 0.92
+    lifetime_yr: 25
+    start_year: 2024
+    lead_years: 3
+    wacc_premium: 0.0
+    max_ramp_mt_yr: 0.8            # India can add ~1-2 Mt urea/yr → 0.57-1.13 Mt NH3/yr; conservative 0.8
+    fossil_decline: false
+
+    # Gas intensity: GJ natural gas per t NH3
+    gas_gj_per_t_nh3: 32.5        # GJ/t NH3 — LHV basis (IEA best practice 28-33)
+    gas_provenance: EXTERNAL
+    source_gas: "IEA 2022 Global Hydrogen Review Table A1; IEA Ammonia Technology Roadmap 2021"
+
+    # Process CO2: from SMR reaction (scope 1)
+    process_co2_t_per_t_nh3: 1.65  # tCO2/t NH3 from SMR chemistry
+    process_co2_provenance: EXTERNAL
+    source_process_co2: "IEA Ammonia Technology Roadmap 2021 Table 2; SMR process CO2 1.5-1.8 range"
+
+    # Combustion CO2: from heating SMR reformer
+    combustion_co2_t_per_t_nh3: 0.25  # tCO2/t NH3 from firing
+    combustion_co2_provenance: EXTERNAL
+    source_combustion_co2: "IEA 2022; total SMR CO2 ~1.9 t/t NH3; split per IEA Roadmap"
+
+    # Electricity intensity
+    elec_kwh_per_t_nh3: 150       # kWh/t NH3 (air separation unit, compression)
+    elec_provenance: EXTERNAL
+    source_elec: "IEA 2021 Ammonia Roadmap; electric auxiliary ~120-200 kWh/t"
+
+    # CCUS retrofit possible — but this route (NG-SMR) has NO CCS installed.
+    # CCS potential is modelled via the separate NG-SMR-CCS route.
+    ccus_capable: true
+    # ccus_capture_rate NOT applied here — NG-SMR has no CCS; see NG-SMR-CCS route.
+    ccus_capex_retrofit_usd_per_t: 80   # Reference CAPEX for CCS retrofit if fitted
+
+    pli_eligible: false
+    green_premium_eligible: false
+
+  Coal-Gasif:
+    label: "Coal Gasification"
+    description: "Partial oxidation of coal to syngas — dominant in India's older plants"
+    existing_mt_nh3: 6.5          # Mt NH3/yr; ~38% of India urea capacity = 11.6 Mt urea → 6.6 Mt NH3
+    capex_usd_per_t_nh3: 900      # USD/t NH3/yr (coal gasif much more capital intensive)
+    capex_provenance: EXTERNAL
+    source_capex: "IEA 2022; Chinese coal-to-ammonia reference $800-1000/t"
+    fom_usd_per_t_yr: 90
+    vom_residual_usd_per_t: 40
+    availability: 0.88
+    lifetime_yr: 25
+    start_year: 2024
+    lead_years: 4
+    wacc_premium: 0.0
+    max_ramp_mt_yr: 0.0           # No new coal gasif; retire existing
+    cutoff_year_cps: 2030
+    cutoff_year_nzs: 2028
+    fossil_decline: true
+
+    # Coal intensity: t coal per t NH3
+    coal_t_per_t_nh3: 1.45       # t sub-bituminous coal per t NH3
+    coal_provenance: EXTERNAL
+    source_coal: "IEA 2022; China Yuntianhua coal-to-ammonia plant data; typical range 1.3-1.6"
+
+    # CO2 from gasification (process + combustion, harder to separate)
+    total_co2_t_per_t_nh3: 2.90  # tCO2/t NH3 (much higher due to coal C:H ratio)
+    co2_provenance: EXTERNAL
+    source_co2: "IEA 2022 Appendix; coal gasif 2.5-3.2 tCO2/t NH3 range"
+
+    elec_kwh_per_t_nh3: 200
+    ccus_capable: true
+    # ccus_capture_rate NOT applied here — Coal-Gasif existing plants have no CCS;
+    # this route represents coal gasification WITHOUT carbon capture.
+    ccus_capex_retrofit_usd_per_t: 120
+
+    pli_eligible: false
+    green_premium_eligible: false
+
+  NG-SMR-CCS:
+    label: "SMR with Carbon Capture"
+    description: "Blue ammonia — SMR process + CCUS capturing >90% process CO2"
+    existing_mt_nh3: 0.0
+    capex_usd_per_t_nh3: 780      # USD/t NH3/yr (SMR capex + CCS)
+    capex_provenance: PROJECT_PROPOSAL
+    source_capex: "IEA 2022 Appendix; $650 SMR + ~$130 CCS premium"
+    fom_usd_per_t_yr: 80
+    vom_residual_usd_per_t: 40
+    availability: 0.90
+    lifetime_yr: 25
+    start_year: 2028
+    lead_years: 4
+    wacc_premium: 0.005
+    max_ramp_mt_yr: 0.6            # CCS on top of SMR; slightly tighter than base SMR
+
+    gas_gj_per_t_nh3: 33.5       # Slightly higher gas due to CCS energy penalty
+    # GROSS process CO2 = same as NG-SMR (1.65 tCO2/t NH3); code applies ccus_capture_rate
+    # Net residual after 90% capture = 1.65 × (1-0.90) = 0.165 tCO2/t NH3
+    process_co2_t_per_t_nh3: 1.65  # GROSS tCO2/t NH3; CCS capture applied via ccus_capture_rate
+    combustion_co2_t_per_t_nh3: 0.25  # Combustion CO2 not captured (heat)
+    ccus_capture_rate: 0.90           # Applied to process_co2 only; combustion not captured
+    elec_kwh_per_t_nh3: 200
+
+    pli_eligible: false
+    green_premium_eligible: true  # "Blue ammonia" commands green premium
+
+  Green-H2:
+    label: "Green Hydrogen Ammonia"
+    description: "Electrolysis H2 + Haber-Bosch; near-zero process CO2"
+    existing_mt_nh3: 0.02         # Pilot plants only
+    capex_usd_per_t_nh3: 1600     # USD/t NH3/yr (electrolyser + HB plant)
+    capex_provenance: PROJECT_PROPOSAL
+    source_capex: "IRENA 2022 Green Hydrogen Cost Review; Haldor Topsoe 2023"
+    fom_usd_per_t_yr: 150
+    vom_residual_usd_per_t: 50
+    availability: 0.85
+    lifetime_yr: 20
+    start_year: 2027
+    lead_years: 3
+    wacc_premium: 0.02
+    max_ramp_mt_yr: 0.8            # Align with NG-SMR ramp; electrolyser supply chain
+
+    # Green H2: intensive electricity use instead of gas
+    elec_kwh_per_t_nh3: 10500    # kWh/t NH3 = 353 kgH2 × 55 kWh/kgH2 + ASU + HB compression
+    elec_provenance: EXTERNAL
+    source_elec: "IRENA 2022: 55 kWh/kgH2 alkaline × 176.5 kgH2/t NH3 = 9.7 MWh + HB ~0.8 MWh → ~10.5 MWh/t"
+
+    process_co2_t_per_t_nh3: 0.0  # No carbon feedstock
+    combustion_co2_t_per_t_nh3: 0.0
+    total_co2_t_per_t_nh3: 0.0
+    elec_ei_override: null        # Uses grid EI trajectory (RE-powered ideally)
+    re_powered: true              # Flag for RE electricity cost use
+
+    pli_eligible: true
+    green_premium_eligible: true
+
+  Biomass-Reform:
+    label: "Biomass Reforming"
+    description: "Reforming agricultural residue to syngas for NH3 synthesis"
+    existing_mt_nh3: 0.0
+    capex_usd_per_t_nh3: 1100
+    capex_provenance: EXTERNAL_PENDING
+    source_capex: "Limited commercial scale; estimate based on biomass gasification + HB"
+    fom_usd_per_t_yr: 110
+    vom_residual_usd_per_t: 60
+    availability: 0.80
+    lifetime_yr: 20
+    start_year: 2030
+    lead_years: 3
+    wacc_premium: 0.015
+    max_ramp_mt_yr: 0.3
+
+    biomass_gj_per_t_nh3: 38.0   # GJ biomass per t NH3 (lower efficiency than NG)
+    biomass_provenance: EXTERNAL_PENDING
+    source_biomass: "IRENA 2012 Biomass for Power Generation; limited NH3 plant data"
+
+    process_co2_t_per_t_nh3: 0.15  # Near-biogenic; residual non-captured fraction
+    combustion_co2_t_per_t_nh3: 0.0  # Biomass combustion CO2 counted as zero (biogenic)
+    elec_kwh_per_t_nh3: 180
+
+    biomass_supply_constrained: true  # Like scrap, biomass is physically limited
+
+    pli_eligible: true
+    green_premium_eligible: true
+
+# ── Feedstock prices ──────────────────────────────────────────────────────────
+feedstocks:
+  natural_gas:
+    price_usd_per_mmbtu:
+      description: "Natural gas price at plant gate (USD/MMBtu)"
+      provenance: EXTERNAL
+      source: "PPAC India gas price notifications 2023; IEA India energy outlook"
+      CPS:
+        2024: 8.5    # USD/MMBtu (APM gas blend)
+        2030: 9.0
+        2040: 9.5
+        2050: 10.0
+        2060: 11.0
+        2070: 12.0
+      NZS:
+        2024: 8.5
+        2030: 8.0
+        2040: 7.5
+        2050: 7.0
+        2060: 6.5
+        2070: 6.0
+    ef_tco2_per_gj: 0.0561        # tCO2/GJ LHV (IPCC 2006 Table 1.4 natural gas)
+    ef_provenance: FROZEN_EXTERNAL
+    source_ef: "IPCC 2006 AFOLU Guidelines Table 1.4; NG EF = 56.1 kgCO2/GJ"
+    gj_per_mmbtu: 1.05505
+
+  coal:
+    price_usd_per_t:
+      provenance: EXTERNAL
+      source: "Coal India Limited price notifications 2023; sub-bituminous G10-G11 grade"
+      CPS:
+        2024: 80
+        2030: 85
+        2040: 90
+        2050: 95
+        2060: 100
+        2070: 105
+      NZS:
+        2024: 80
+        2030: 90
+        2040: 95
+        2050: 80    # Carbon price makes coal uncompetitive, price deflates
+        2060: 60
+        2070: 45
+    ef_tco2_per_t: 2.10           # Sub-bituminous coal (lower than coking coal)
+    ef_provenance: FROZEN_EXTERNAL
+    source_ef: "IPCC 2006 Table 1.4; sub-bituminous 18.9 GJ/t × 96.1 kgCO2/GJ / 1000 = 1.82; India average sub-bit 2.10 incl. variability"
+
+  biomass:
+    price_usd_per_gj:
+      provenance: EXTERNAL_PENDING
+      source: "Agricultural residue prices in India; paddy straw ~$2-3/GJ"
+      CPS: {2024: 2.5, 2040: 3.0, 2070: 3.5}
+      NZS: {2024: 2.5, 2040: 3.5, 2070: 4.5}
+
+# ── Electricity ───────────────────────────────────────────────────────────────
+electricity:
+  grid_ei_tco2_per_kwh:
+    provenance: EXTERNAL
+    source: "CEA 2022; IEA India trajectory"
+    CPS:
+      2024: 0.00071
+      2030: 0.00055
+      2040: 0.00032
+      2050: 0.00018
+      2060: 0.00010
+      2070: 0.00007
+    NZS:
+      2024: 0.00071
+      2030: 0.00045
+      2040: 0.00020
+      2050: 0.00008
+      2060: 0.00003
+      2070: 0.00001
+
+  price_usd_per_kwh:
+    provenance: EXTERNAL
+    source: "MoP industrial tariff 2023"
+    CPS:
+      2024: 0.065
+      2030: 0.067
+      2040: 0.070
+      2050: 0.073
+      2060: 0.076
+      2070: 0.079
+    NZS:
+      2024: 0.065
+      2030: 0.055
+      2040: 0.045
+      2050: 0.038
+      2060: 0.032
+      2070: 0.027
+
+  re_price_usd_per_kwh:  # For Green-H2 route (dedicated RE)
+    provenance: PROJECT_PROPOSAL
+    source: "MNRE 2023 RE tariff; IRENA 2023 India RE LCOE"
+    CPS:
+      2024: 0.040
+      2030: 0.033
+      2040: 0.026
+      2050: 0.022
+      2060: 0.019
+      2070: 0.017
+    NZS:
+      2024: 0.040
+      2030: 0.028
+      2040: 0.020
+      2050: 0.015
+      2060: 0.012
+      2070: 0.010
+
+# ── Carbon price ──────────────────────────────────────────────────────────────
+carbon_price_usd_per_tco2:
+  provenance: PROJECT_PROPOSAL
+  source: "MoEFCC India PAT / carbon market 2023"
+  CPS:
+    2024: 5
+    2030: 15
+    2040: 35
+    2050: 65
+    2060: 85
+    2070: 110
+  NZS:
+    2024: 5
+    2030: 30
+    2040: 75
+    2050: 120
+    2060: 150
+    2070: 185
+
+# ── Demand (Mt NH3/yr — convert to nutrient N for policy) ────────────────────
+# India urea production ~30 Mt/yr → ~13.7 Mt NH3 via urea; DAP/MOP also produced
+# Total NH3 demand 2024 ~13 Mt; long-term driven by food security
+
+demand:
+  unit: "Mt NH3/yr"
+  note: "Convert to nutrient N: N = NH3 × 0.823 (14/17 mass fraction)"
+  n_fraction_nh3: 0.823  # FROZEN_EXTERNAL (14/17)
+
+demand_trajectories:
+  # All anchors in Mt NH3/yr. Frontend shows Mt urea; convert: Mt NH3 = Mt urea × 0.567
+  # Base 2024: 30.5 Mt urea × 0.567 = 17.3 Mt NH3 (corrected from prior 13.0 which undercounted)
+
+  niti:
+    label: "NITI Aayog Vol.4"
+    source: "NITI Aayog (2026) Sectoral Insights: Industry Vol.4 Ch.3.5"
+    method: "Piecewise: 30.5 Mt urea (2024) → 55 Mt (2050) → 70 Mt (2070); converted to Mt NH3 × 0.567"
+    anchors:
+      2024: 17.3
+      2050: 31.2
+      2070: 39.7
+
+  model_fitted:
+    label: "Historical trend"
+    source: "FAI production data 2000-2024; CAGR extrapolation with deceleration"
+    method: "2.1% CAGR slowing to 1.0%; consistent with frontend model_fitted (Mt urea × 0.567)"
+    assumption: "India approaches crop-production saturation; NUE improves moderately"
+    anchors:
+      2024: 17.3
+      2030: 19.7
+      2035: 21.9
+      2040: 24.0
+      2050: 28.4
+      2060: 31.8
+      2070: 34.0
+
+  india_policy:
+    label: "India Policy Consensus"
+    source: "NBS Scheme (DoF); Nano-Urea PLI; food-security targets"
+    method: "3.5% CAGR slowing to 1.5%; consistent with frontend india_policy (Mt urea × 0.567)"
+    anchors:
+      2024: 17.3
+      2030: 20.7
+      2035: 23.8
+      2040: 26.6
+      2050: 30.6
+      2060: 32.9
+      2070: 34.0
+
+  international:
+    label: "International Baseline"
+    source: "IFA World Fertiliser Outlook 2023; FAO AGLINK-COSIMO"
+    method: "Conservative: efficiency gains + precision agriculture moderate demand growth (Mt urea × 0.567)"
+    anchors:
+      2024: 17.3
+      2030: 19.3
+      2035: 21.3
+      2040: 23.0
+      2050: 25.2
+      2060: 26.5
+      2070: 27.2
+
+  high_agriculture:
+    label: "High Agriculture"
+    source: "ICRISAT crop production projection; climate adaptation scenario"
+    method: "Crop intensification + area expansion; same as NITI scale"
+    anchors:
+      2024: 17.3
+      2030: 20.7
+      2040: 27.0
+      2050: 33.5
+      2060: 36.0
+      2070: 38.0
+
+  efficiency_nue:
+    label: "High Nutrient Use Efficiency"
+    source: "IFPRI 2019 NUE scenarios; precision agriculture"
+    method: "Improved NUE from 35% → 60% by 2050 reduces fertiliser intensity per crop"
+    anchors:
+      2024: 17.3
+      2030: 18.8
+      2040: 20.5
+      2050: 22.0
+      2060: 22.5
+      2070: 23.0
+
+# ── Policy ────────────────────────────────────────────────────────────────────
+policy:
+  pli_usd_per_t_nh3:
+    Green-H2:
+      CPS: {2024: 0, 2030: 100, 2040: 80, 2050: 60, 2060: 30, 2070: 0}
+      NZS: {2024: 0, 2030: 150, 2040: 120, 2050: 90, 2060: 50, 2070: 0}
+    source: PROJECT_PROPOSAL
+
+  green_premium_usd_per_t_nh3:
+    routes: ["NG-SMR-CCS", "Green-H2", "Biomass-Reform"]
+    CPS: {2024: 0, 2030: 40, 2040: 80, 2050: 120, 2060: 140, 2070: 150}
+    NZS: {2024: 0, 2030: 60, 2040: 120, 2050: 180, 2060: 220, 2070: 250}
+    source: "Comparable to EU hydrogen premium; IEA estimate"
+
+# ── Biomass supply cap ────────────────────────────────────────────────────────
+biomass_supply:
+  enabled: true
+  description: "Agricultural residue available for energy/feedstock (Mt/yr dry)"
+  source: "MNRE 2023 Biomass Atlas; NITI Aayog 2022 biomass estimates"
+  note: "Competing uses: power, cooking, brick kilns, mushroom cultivation"
+  available_gj_per_yr:
+    CPS:
+      2024: 4000    # GJ/yr total biomass — compete with power/cooking sectors
+      2040: 3800    # Declines as cooking transitions
+      2070: 3000
+    NZS:
+      2024: 4000
+      2040: 4200    # Policy mobilises more biomass
+      2070: 5000
+  fertiliser_share: 0.10  # Max 10% of biomass goes to fertiliser sector
+
+# ── Vol.4 reference targets ───────────────────────────────────────────────────
+vol4_reference:
+  co2_intensity_tco2_per_t_nh3:
+    2024: 2.30
+    2030: 1.80
+    2040: 1.00
+    2050: 0.40
+    2070: 0.10
+    source: "NITI Aayog 2023; IEA Ammonia Technology Roadmap 2021"
+
