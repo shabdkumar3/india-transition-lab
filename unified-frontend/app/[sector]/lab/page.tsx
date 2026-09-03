@@ -392,6 +392,15 @@ export default function LabPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectorId]);
 
+  // Re-fetch baseline when demand model changes so delta comparison stays correct.
+  // Skip if triggered by sectorId change (that effect already fetches baseline).
+  const prevSectorRef = useRef(sectorId);
+  useEffect(() => {
+    if (prevSectorRef.current !== sectorId) { prevSectorRef.current = sectorId; return; }
+    fetchBaseline(lab.demandModel);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lab.demandModel]);
+
   const chartData = useMemo(() => {
     if (!run) return [];
     return CHART_YEARS.map(yr => {

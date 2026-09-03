@@ -882,12 +882,22 @@ async def lab_run_shim(payload: dict) -> Dict[str, Any]:
             except (TypeError, ValueError):
                 pass  # skip malformed values
 
-    # demand_anchors_mt: NOTE — patching demand anchors into the steel MILP config
-    # causes a results-export failure (results.json not written) because the YAML
-    # schema validator rejects unexpected keys after merging. The CPS/NZS scenarios
-    # already embed the NITI-calibrated demand trajectory (821 Mt at 2070), so we
-    # intentionally skip this override for the steel Lab to keep runs stable.
-    # d_anch = payload.get("demand_anchors")  # ← disabled; see note above
+    # demand_anchors: frontend sends {year: Mt} dict from the selected demand trajectory.
+    # We replace cfg["scenarios"] (a list) entirely so apply_overrides replaces rather
+    # than deep-merges (lists are never deep-merged by the override system).
+    # The schema validator (validate_config_dict) does not touch cfg["scenarios"] directly —
+    # it reads specific top-level scalar keys — so this is safe.
+    d_anch = payload.get("demand_anchors")
+    if d_anch:
+        try:
+            anch_mt = {int(k): float(v) for k, v in d_anch.items()}
+            # Replace scenarios list so model.py line ~370 finds the new anchors
+            overrides["scenarios"] = [
+                {"name": "CPS", "demand_anchors_mt": anch_mt},
+                {"name": "NZS", "demand_anchors_mt": anch_mt},
+            ]
+        except Exception:
+            pass  # malformed anchors — silently skip, model uses base config
 
     # Feature toggles (boolean overrides)
     for toggle_key in ("use_dynamic_scrap", "use_endogenous_learning", "use_deployment_dynamics"):
