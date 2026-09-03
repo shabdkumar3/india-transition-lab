@@ -401,17 +401,6 @@ export default function LabPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lab.demandModel]);
 
-  // Auto-run: debounce any lab param change by 900ms so dragging a slider doesn't
-  // fire a solve per tick — only fires once the user stops tweaking.
-  // Skips on first mount (sectorId effect already runs doRun on load).
-  const autoRunMounted = useRef(false);
-  useEffect(() => {
-    if (!autoRunMounted.current) { autoRunMounted.current = true; return; }
-    const t = setTimeout(() => doRun(lab), 900);
-    return () => clearTimeout(t);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lab]);
-
   const chartData = useMemo(() => {
     if (!run) return [];
     return CHART_YEARS.map(yr => {
@@ -661,13 +650,8 @@ export default function LabPage() {
               opacity:1, transition:"all 150ms",
               boxShadow: running ? "none" : `0 2px 8px ${accent}40`,
             }}>
-            {running ? "Computing…" : "▶ Run Now"}
+            {running ? "Computing…" : "▶ Run Scenario"}
           </button>
-          {!running && (
-            <span style={{ fontSize:11, color:T.dim }}>
-              · auto-updates on change
-            </span>
-          )}
 
           <button disabled={!run}
             onClick={()=>{ if(!run) return; exportYearlyCSV(run, s.routes.map(r=>r.id), `${sectorId}_lab.csv`,
