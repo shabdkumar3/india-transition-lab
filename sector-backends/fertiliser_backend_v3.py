@@ -101,13 +101,14 @@ NV = 4*R*T + T
 
 DEMAND_SHORTFALL_PENALTY_USD_PER_T = 10_000.0  # $/t NH3: exceeds any production cost
 
-def route_gross_co2(rid: str, sc: str, y: int) -> float:
+def route_gross_co2(rid: str, sc: str, y: int, grid_ei_override: float | None = None) -> float:
     """
     Gross CO2 per t NH3 (before urea sequestration credit).
     Sum of: process CO2 + combustion CO2 + electricity CO2
+    grid_ei_override: tCO2/kWh value from Lab slider (overrides config trajectory)
     """
     rc  = _route(rid)
-    grid_ei = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
+    grid_ei = grid_ei_override if grid_ei_override is not None else interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
     kwh = rc.get("elec_kwh_per_t_nh3", 150)
 
     elec_co2 = kwh * grid_ei  # tCO2/t NH3
@@ -138,13 +139,13 @@ def route_gross_co2(rid: str, sc: str, y: int) -> float:
 
     return rc.get("process_co2_t_per_t_nh3", 0.0) + rc.get("combustion_co2_t_per_t_nh3", 0.0) + elec_co2
 
-def route_net_co2(rid: str, sc: str, y: int, urea_fraction: float = UREA_FRACTION) -> float:
+def route_net_co2(rid: str, sc: str, y: int, urea_fraction: float = UREA_FRACTION, grid_ei_override: float | None = None) -> float:
     """
     Net CO2 per t NH3: gross CO2 minus CO2 sequestered in urea.
     Physical: CO2 is consumed in urea synthesis; that CO2 stays fixed in fertiliser
     until it's applied to soil (then slowly released, so net to atmosphere).
     """
-    gross = route_gross_co2(rid, sc, y)
+    gross = route_gross_co2(rid, sc, y, grid_ei_override=grid_ei_override)
     # Sequestration: urea fraction × CO2 per t urea × t urea per t NH3
     t_urea_per_t_nh3 = urea_fraction / NH3_PER_T_UREA   # t urea per t NH3
     co2_seq = CO2_SEQ_PER_T_UREA * t_urea_per_t_nh3
@@ -167,6 +168,7 @@ def build_lp(sc: str, overrides: Dict[str, Any]):
     bio_ammonia_active = bool(overrides.get("bio_ammonia_active", True))
     ng_smr_active      = bool(overrides.get("ng_smr_active", True))
     bio_cap_frac       = overrides.get("bio_cap")                 # fraction of demand
+    grid_ei_2070_ov    = overrides.get("grid_ei_2070")           # kgCO2/kWh in 2070
     urea_fraction      = float(overrides.get("urea_fraction", UREA_FRACTION))
     biomass_cap_mult   = float(overrides.get("biomass_cap_mult", 1.0))
 
@@ -222,7 +224,16 @@ def build_lp(sc: str, overrides: Dict[str, Any]):
         else:
             p_re = interp_sc(CFG["electricity"]["re_price_usd_per_kwh"], sc, y)
 
-        net_co2_per_t = {rid: route_net_co2(rid, sc, y, urea_fraction) for rid in ROUTE_IDS}
+        # Grid EI override: linear ramp from 2024 baseline to user's 2070 target
+        if grid_ei_2070_ov is not None:
+            _ei_base_kg = 0.716  # kgCO2/kWh (CEA 2022 baseline)
+            _ei_70_kg   = float(grid_ei_2070_ov)
+            _frac       = max(0.0, (y - 2024) / (2070 - 2024))
+            _grid_ei_y  = (_ei_base_kg + (_ei_70_kg - _ei_base_kg) * _frac) / 1000.0  # → tCO2/kWh
+        else:
+            _grid_ei_y  = None
+
+        net_co2_per_t = {rid: route_net_co2(rid, sc, y, urea_fraction, grid_ei_override=_grid_ei_y) for rid in ROUTE_IDS}
 
         for ri, rid in enumerate(ROUTE_IDS):
             rc       = _route(rid)
@@ -378,13 +389,21 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
     for ti, y in enumerate(YEARS):
         prod_r, cap_r, ncap_r, co2_r, inv_r = {}, {}, {}, {}, {}
         total_cost_yr = 0.0
+        # Recompute grid_ei override for results (same ramp as in build_lp)
+        if grid_ei_2070_ov is not None:
+            _ei_base_kg = 0.716
+            _ei_70_kg   = float(grid_ei_2070_ov)
+            _frac_r     = max(0.0, (y - 2024) / (2070 - 2024))
+            _grid_ei_r  = (_ei_base_kg + (_ei_70_kg - _ei_base_kg) * _frac_r) / 1000.0
+        else:
+            _grid_ei_r  = None
         for ri, rid in enumerate(ROUTE_IDS):
             rc   = _route(rid)
             act  = max(0.0, x[_ACT(ri, ti)])
             cap  = max(0.0, x[_CAP(ri, ti)])
             ncap = max(0.0, x[_NCAP(ri, ti)])
-            gross = route_gross_co2(rid, sc, y) * act
-            net   = route_net_co2(rid, sc, y, urea_fraction) * act
+            gross = route_gross_co2(rid, sc, y, grid_ei_override=_grid_ei_r) * act
+            net   = route_net_co2(rid, sc, y, urea_fraction, grid_ei_override=_grid_ei_r) * act
             capex_r = rc.get("capex_usd_per_t_nh3", rc.get("capex_usd_per_t", 0.0))
             fom_r   = rc.get("fom_usd_per_t_yr", 0.0)
             vom_r   = rc.get("vom_residual_usd_per_t", 0.0)

@@ -330,6 +330,34 @@ demand_trajectories:
       2060: 22.5
       2070: 25.0
 
+  india_policy:
+    label: "India Policy Consensus (PM MITRA + PLI Textiles)"
+    source: "Ministry of Textiles (2022). PM MITRA Scheme. MoCI (2021). PLI for Man-made Fibre & Technical Textiles."
+    method: "60% PM MITRA integrated textile park capacity targets + 40% PLI man-made fibre & technical textiles"
+    assumption: "India executes textile park programme and PLI targets. Export market share grows to 15% globally."
+    anchors:
+      2024: 19.0
+      2030: 27.0
+      2035: 34.0
+      2040: 41.0
+      2050: 51.0
+      2060: 57.0
+      2070: 60.0
+
+  international:
+    label: "International Baseline (IEA Textile STEPS + McKinsey Global Fashion)"
+    source: "IEA (2023). Industrial Energy Technology. McKinsey (2023). Global Fashion Index."
+    method: "60% IEA STEPS India industry trajectory + 40% McKinsey Global Fashion demand"
+    assumption: "Circular fashion trends, synthetic fibre recycling. India moderately grows. ~45 Mt by 2070."
+    anchors:
+      2024: 19.0
+      2030: 24.0
+      2035: 29.0
+      2040: 33.0
+      2050: 39.0
+      2060: 43.0
+      2070: 45.0
+
   export_driven:
     label: "Export-Led Growth"
     source: "Textile Ministry Vision 2030; PM MITRA scheme targets"

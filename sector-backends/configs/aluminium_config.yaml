@@ -365,6 +365,34 @@ demand_trajectories:
       2060: 24.0
       2070: 30.0
 
+  india_policy:
+    label: "India Policy Consensus (NAMP + PLI)"
+    source: "Ministry of Mines (2021). National Aluminium Mission. MoCI (2021). PLI Scheme for EV/packaging."
+    method: "60% National Aluminium Mission capacity targets + 40% PLI-driven EV/packaging demand"
+    assumption: "India meets PLI targets for EV batteries and aluminium packaging; domestic production replaces imports."
+    anchors:
+      2024: 4.5
+      2030: 8.5
+      2035: 12.0
+      2040: 15.5
+      2050: 20.0
+      2060: 22.5
+      2070: 24.0
+
+  international:
+    label: "International Baseline (IEA Aluminium Roadmap + World Aluminium STEPS)"
+    source: "IEA (2022). Aluminium Technology Roadmap. World Aluminium (2023). Statistical Compendium."
+    method: "60% IEA STEPS India trajectory + 40% World Aluminium demand forecast. Service-led economy."
+    assumption: "Moderate EV adoption, recycling rates improve. ~12 kg/cap by 2070 (service economy path)."
+    anchors:
+      2024: 4.5
+      2030: 6.5
+      2035: 9.0
+      2040: 11.5
+      2050: 15.5
+      2060: 18.0
+      2070: 20.0
+
   high_ev:
     label: "High EV + RE Scenario"
     source: "IEA 2023 India EV Outlook; NITI Aayog EV30@30 scenario"
