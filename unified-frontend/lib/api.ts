@@ -57,8 +57,22 @@ export interface TrajectoryBranch {
 
 // ── Core fetch wrapper ────────────────────────────────────────────────────────
 
+// In production, NEXT_PUBLIC_BACKEND_URL is set to the Railway URL.
+// We bypass Vercel's proxy (which times out at 10s) and call Railway directly.
+// apiBase looks like "/api/steel" → we strip "/api/" and prepend BACKEND_URL.
+function resolveBase(apiBase: string): string {
+  const directUrl = process.env.NEXT_PUBLIC_BACKEND_URL?.replace(/\/$/, "");
+  if (directUrl) {
+    // "/api/steel" → "steel", "/api/cement" → "cement", etc.
+    const sector = apiBase.replace(/^\/api\//, "");
+    return `${directUrl}/${sector}`;
+  }
+  return apiBase; // local dev: use Vercel rewrite proxy
+}
+
 async function apiFetch<T>(base: string, path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${base}${path}`, {
+  const resolvedBase = resolveBase(base);
+  const res = await fetch(`${resolvedBase}${path}`, {
     headers: { "Content-Type": "application/json" },
     ...init,
   });
@@ -73,7 +87,8 @@ async function apiFetch<T>(base: string, path: string, init?: RequestInit): Prom
 
 export async function checkHealth(sector: SectorConfig): Promise<boolean> {
   try {
-    const res = await fetch(`${sector.apiBase}/health`, { signal: AbortSignal.timeout(3000) });
+    const base = resolveBase(sector.apiBase);
+    const res = await fetch(`${base}/health`, { signal: AbortSignal.timeout(5000) });
     return res.ok;
   } catch {
     return false;
