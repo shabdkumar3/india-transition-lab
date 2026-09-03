@@ -857,7 +857,9 @@ async def lab_run_shim(payload: dict) -> Dict[str, Any]:
     capex_by_route = payload.get("capex_by_route", {})
     if capex_by_route:
         import yaml as _yaml
-        base_path = "configs/optimization/baseline.yaml"
+        # Use absolute path — relative path fails when CWD != steel-transition-model/
+        _steel_root = Path(__file__).resolve().parents[2]  # steel-transition-model/
+        base_path = _steel_root / "configs" / "optimization" / "baseline.yaml"
         try:
             with open(base_path) as _f:
                 _base_cfg = _yaml.safe_load(_f)
