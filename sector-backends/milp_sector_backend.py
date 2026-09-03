@@ -555,8 +555,9 @@ def make_app(sector_id: str) -> FastAPI:
             for k, v in payload["demand_anchors"].items():
                 try: d_anch[int(k)] = float(v)
                 except: pass
-        x, sc, msg = solve_sector_lp(sector_id, scenario, enforce_co2_ceiling=True,
-                                      demand_anchors=d_anch)
+        import asyncio, functools
+        loop = asyncio.get_event_loop()
+        x, sc, msg = await loop.run_in_executor(None, functools.partial(solve_sector_lp, sector_id, scenario, enforce_co2_ceiling=True, demand_anchors=d_anch))
         if x is None:
             return {"status": "infeasible", "message": msg, "sector": sector_id, "scenario": scenario}
         yearly = extract_yearly(x, sector_id, scenario, d_anch)
@@ -622,13 +623,15 @@ def make_app(sector_id: str) -> FastAPI:
         re_adj = float(payload.get("re_price_adj", 0.0))
         biomass_adj = float(payload.get("biomass_price_adj", 0.0))
 
-        x, sc, msg = solve_sector_lp(sector_id, scenario,
+        import asyncio, functools
+        loop = asyncio.get_event_loop()
+        x, sc, msg = await loop.run_in_executor(None, functools.partial(solve_sector_lp, sector_id, scenario,
                                       demand_anchors=d_anch, carbon_price_anchors=cp_anch,
                                       green_premium_val=gp_val, capex_mult=capex_m,
                                       h2_cost_adj=h2adj, wacc_adj_pct=wacc,
                                       enforce_co2_ceiling=False,
                                       coal_price_adj=coal_adj, gas_price_adj=gas_adj,
-                                      re_price_adj=re_adj, biomass_price_adj=biomass_adj)
+                                      re_price_adj=re_adj, biomass_price_adj=biomass_adj))
         if x is None:
             return {"status": "infeasible", "message": msg, "sector": sector_id, "scenario": scenario}
         yearly = extract_yearly(x, sector_id, scenario, d_anch)

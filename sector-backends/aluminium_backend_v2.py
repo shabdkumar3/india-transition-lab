@@ -1,3 +1,4 @@
+import asyncio
 """
 Aluminium Transition Backend v2 — India Transition Lab  (port 8002)
 ====================================================================
@@ -526,7 +527,9 @@ async def run_scenario(payload: dict):
     d_anch=None
     if payload.get("demand_anchors"):
         d_anch={int(k):float(v) for k,v in payload["demand_anchors"].items() if v is not None}
-    x,code,msg=solve(sc,demand_anchors=d_anch,enforce_co2_ceiling=True)
+    import asyncio, functools
+    loop = asyncio.get_event_loop()
+    x,code,msg=await loop.run_in_executor(None, functools.partial(solve,sc,demand_anchors=d_anch,enforce_co2_ceiling=True))
     if x is None: return {"status":"infeasible","message":msg,"sector":SECTOR,"scenario":sc}
     yearly=extract_yearly(x,sc,d_anch)
     return {"status":"optimal" if code==0 else "feasible","message":msg,
@@ -564,13 +567,15 @@ async def lab_run(payload: dict):
     dr_adj      = float(payload.get("discount_rate_adj", 0.0))
     cbr         = payload.get("capex_by_route") or {}
     capex_by_r  = {k: float(v) for k, v in cbr.items()} if cbr else None
-    x,code,msg=solve(sc,demand_anchors=d_anch,carbon_price_anchors=cp_anch,
+    import asyncio, functools
+    loop = asyncio.get_event_loop()
+    x,code,msg=await loop.run_in_executor(None, functools.partial(solve,sc,demand_anchors=d_anch,carbon_price_anchors=cp_anch,
                       green_premium_val=gp_val,capex_mult=capex_m,wacc_adj_pct=wacc,
                       h2_cost_adj=h2_adj,enforce_co2_ceiling=False,
                       coal_price_adj=coal_adj,re_price_adj=re_adj,
                       grid_price_adj=grid_adj,pli_active=pli_on,
                       inert_anode_active=ia_on,secondary_cap_pct=sec_cap,
-                      discount_rate_adj=dr_adj,capex_by_route=capex_by_r)
+                      discount_rate_adj=dr_adj,capex_by_route=capex_by_r))
     if x is None: return {"status":"infeasible","message":msg,"sector":SECTOR,"scenario":sc}
     yearly=extract_yearly(x,sc,d_anch)
     return {"status":"optimal" if code==0 else "feasible","message":msg,

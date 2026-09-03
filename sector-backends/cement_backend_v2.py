@@ -1,3 +1,4 @@
+import asyncio
 """
 Cement Transition Backend v2 — India Transition Lab  (port 8001)
 ================================================================
@@ -562,7 +563,9 @@ async def run_scenario(payload: dict):
     if payload.get("demand_anchors"):
         d_anch = {int(k): float(v) for k, v in payload["demand_anchors"].items()
                   if k and v is not None}
-    x, code, msg = solve(sc, demand_anchors=d_anch, enforce_co2_ceiling=True)
+    import asyncio, functools
+    loop = asyncio.get_event_loop()
+    x, code, msg = await loop.run_in_executor(None, functools.partial(solve, sc, demand_anchors=d_anch, enforce_co2_ceiling=True))
     if x is None:
         return {"status": "infeasible", "message": msg, "sector": SECTOR, "scenario": sc}
     yearly = extract_yearly(x, sc, d_anch)
@@ -605,14 +608,16 @@ async def lab_run(payload: dict):
     cbr          = payload.get("capex_by_route") or {}
     capex_by_r   = {k: float(v) for k, v in cbr.items()} if cbr else None
 
-    x, code, msg = solve(sc, demand_anchors=d_anch, carbon_price_anchors=cp_anch,
+    import asyncio, functools
+    loop = asyncio.get_event_loop()
+    x, code, msg = await loop.run_in_executor(None, functools.partial(solve, sc, demand_anchors=d_anch, carbon_price_anchors=cp_anch,
                           green_premium_val=gp_val, capex_mult=capex_m, wacc_adj_pct=wacc,
                           enforce_co2_ceiling=False,
                           coal_price_adj=coal_adj, elec_price_adj=elec_adj,
                           pli_active=pli_on, ccus_active=ccus_on,
                           lc3_active=lc3_on, alt_fuel_active=af_on,
                           alt_fuel_cap=af_cap, discount_rate_adj=dr_adj,
-                          capex_by_route=capex_by_r)
+                          capex_by_route=capex_by_r))
     if x is None:
         return {"status": "infeasible", "message": msg, "sector": SECTOR, "scenario": sc}
     yearly = extract_yearly(x, sc, d_anch)
