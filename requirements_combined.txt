@@ -13,3 +13,4 @@ scipy>=1.9          # HiGHS LP/MILP solver (via scipy.optimize.milp)
 # Data
 PyYAML>=6.0
 pandas>=2.0
+matplotlib>=3.7
