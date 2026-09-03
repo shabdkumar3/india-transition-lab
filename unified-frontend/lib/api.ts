@@ -57,17 +57,18 @@ export interface TrajectoryBranch {
 
 // ── Core fetch wrapper ────────────────────────────────────────────────────────
 
-// In production, NEXT_PUBLIC_BACKEND_URL is set to the Railway URL.
-// We bypass Vercel's proxy (which times out at 10s) and call Railway directly.
-// apiBase looks like "/api/steel" → we strip "/api/" and prepend BACKEND_URL.
+// In production (non-localhost), call Railway directly to bypass Vercel's 10s proxy timeout.
+// CORS is enabled on Railway (allow_origins=["*"]) so browser can call it directly.
+// apiBase looks like "/api/steel" → strip "/api/" → append to Railway base URL.
+const RAILWAY_URL = "https://india-transition-lab-production.up.railway.app";
+
 function resolveBase(apiBase: string): string {
-  const directUrl = process.env.NEXT_PUBLIC_BACKEND_URL?.replace(/\/$/, "");
-  if (directUrl) {
-    // "/api/steel" → "steel", "/api/cement" → "cement", etc.
+  // If running in the browser and not on localhost → call Railway directly
+  if (typeof window !== "undefined" && !window.location.hostname.includes("localhost")) {
     const sector = apiBase.replace(/^\/api\//, "");
-    return `${directUrl}/${sector}`;
+    return `${RAILWAY_URL}/${sector}`;
   }
-  return apiBase; // local dev: use Vercel rewrite proxy
+  return apiBase; // local dev: use Next.js rewrite proxy (no CORS issue)
 }
 
 async function apiFetch<T>(base: string, path: string, init?: RequestInit): Promise<T> {
