@@ -87,6 +87,30 @@ export function buildCacheKey(
   return null;
 }
 
+/**
+ * Build a cache key for a Lab run (full payload hash).
+ * Lab runs can have arbitrary overrides, so we hash the entire payload.
+ * Returns null only if the payload is too large to safely hash.
+ */
+export function buildLabCacheKey(sectorId: string, payload: Record<string, unknown>): string | null {
+  try {
+    // Stable stringify: sort keys at every level
+    const stable = stableStringify(payload);
+    if (stable.length > 50_000) return null; // paranoia guard
+    const hash = simpleHash(stable);
+    return `lab_${sectorId}_${hash}`;
+  } catch {
+    return null;
+  }
+}
+
+function stableStringify(val: unknown): string {
+  if (val === null || typeof val !== "object") return JSON.stringify(val);
+  if (Array.isArray(val)) return "[" + val.map(stableStringify).join(",") + "]";
+  const sorted = Object.keys(val as object).sort();
+  return "{" + sorted.map(k => JSON.stringify(k) + ":" + stableStringify((val as Record<string, unknown>)[k])).join(",") + "}";
+}
+
 function simpleHash(str: string): string {
   let h = 5381;
   for (let i = 0; i < str.length; i++) {

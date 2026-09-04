@@ -11,7 +11,8 @@
  */
 
 import { SectorConfig } from "./sectors";
-import { buildCacheKey, cacheGet, cacheSet } from "./cache";
+import { buildCacheKey, buildLabCacheKey, cacheGet, cacheSet } from "./cache";
+import { findStaticRunUrl, fetchStaticRun, LabLookupParams } from "./static-lookup";
 
 export interface RunResult {
   status: "ok" | "infeasible" | "not_available";
@@ -307,10 +308,49 @@ export function warmAllBackends(sectors: SectorConfig[]): void {
 }
 
 // ── Lab (custom scenario) ─────────────────────────────────────────────────────
+//
+// Fetch order:
+//  1. localStorage exact cache (instant — zero network)
+//  2. Static pre-baked file    (instant — CDN/Vercel edge)  → background backend refresh
+//  3. Railway backend          (5-30s, result saved to cache for next time)
 
 export async function runLab(
   sector: SectorConfig,
   payload: Record<string, unknown>
+): Promise<RunResult> {
+  // ── Build cache key for exact payload ─────────────────────────────────────
+  const cKey = buildLabCacheKey(sector.id, payload);
+
+  // ── 1. Exact localStorage cache hit ───────────────────────────────────────
+  if (cKey) {
+    const cached = cacheGet<RunResult>(cKey);
+    if (cached) {
+      // Background refresh (fire-and-forget)
+      _freshLabRun(sector, payload, cKey).catch(() => {});
+      return cached;
+    }
+  }
+
+  // ── 2. Static pre-baked file (nearest quantised level) ────────────────────
+  const staticUrl = _extractStaticUrl(sector.id, payload);
+  if (staticUrl) {
+    const staticData = await fetchStaticRun(staticUrl);
+    if (staticData) {
+      const staticResult = normalizeResult(staticData as RunResult);
+      // Background: fetch exact result from backend and save to localStorage
+      _freshLabRun(sector, payload, cKey).catch(() => {});
+      return staticResult;
+    }
+  }
+
+  // ── 3. Fresh backend run ───────────────────────────────────────────────────
+  return _freshLabRun(sector, payload, cKey);
+}
+
+async function _freshLabRun(
+  sector: SectorConfig,
+  payload: Record<string, unknown>,
+  cKey: string | null
 ): Promise<RunResult> {
   try {
     let body: unknown;
@@ -329,11 +369,59 @@ export async function runLab(
       method: "POST",
       body: JSON.stringify(body),
     });
-    return normalizeResult(result);
+    const normalized = normalizeResult(result);
+    if (cKey && normalized.status === "ok") {
+      cacheSet(cKey, normalized);
+    }
+    return normalized;
   } catch (err) {
     return {
       status: "not_available",
       message: err instanceof Error ? err.message : "Backend unavailable",
     };
+  }
+}
+
+/** Extract LabLookupParams from raw Lab payload and call findStaticRunUrl. */
+function _extractStaticUrl(sectorId: string, payload: Record<string, unknown>): string | null {
+  try {
+    let params: LabLookupParams;
+
+    if (sectorId === "steel") {
+      const rp = (payload.resource_prices ?? {}) as Record<string, unknown>;
+      params = {
+        sectorId,
+        scenario:     (payload.scenario as string) ?? "LAB",
+        demandAnchors: payload.demand_anchors as Record<string, number>,
+        carbonPrice:  (payload.carbon_price as Record<string, number>) ?? {},
+        h2Cost:       (payload.h2_cost as Record<string, number>) ?? {},
+        greenPremium: (payload.green_premium as number) ?? 0,
+        waccDecimal:  (payload.wacc as number) ?? 0.10,
+        gridEI2070:   (payload.grid_ei_2070 as number) ?? 0,
+        ironOre:      typeof rp.iron_ore       === "number" ? rp.iron_ore       : undefined,
+        natGas:       typeof rp.natural_gas    === "number" ? rp.natural_gas    : undefined,
+        cokingCoal:   typeof rp.coking_coal    === "number" ? rp.coking_coal    : undefined,
+      };
+    } else {
+      const ov = (payload.overrides ?? {}) as Record<string, unknown>;
+      // Reconstruct coal absolute from delta adjustment
+      const coalDelta = (ov.coal_price_adj as number | undefined);
+      const coalBase  = sectorId === "fertiliser" ? 70 : 90;
+      params = {
+        sectorId,
+        scenario:     (payload.scenario as string) ?? "CPS",
+        demandModel:  (ov.demand_model as string) ?? "niti",
+        carbonPrice:  (ov.carbon_price as Record<string, number>) ?? {},
+        h2Cost:       (ov.h2_cost as Record<string, number>) ?? {},
+        greenPremium: (ov.green_premium as number) ?? 0,
+        waccDecimal:  (ov.wacc as number) ?? 0.10,
+        gridEI2070:   (ov.grid_ei_2070 as number) ?? 0,
+        coalAbs:      coalDelta !== undefined ? coalBase + coalDelta : undefined,
+      };
+    }
+
+    return findStaticRunUrl(params);
+  } catch {
+    return null; // never crash the Lab on lookup failure
   }
 }
