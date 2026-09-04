@@ -69,19 +69,20 @@ def solve_milp(
 
     integrality = np.zeros(n_vars, dtype=int)  # continuous LP in this baseline
 
-    # HiGHS LP tuning: dual simplex is fastest for LP; presolve reduces problem
-    # size before solving; tight tolerances avoid wasted iterations.
+    # HiGHS LP tuning — scipy 1.9+ compatible option names.
+    # "presolve" takes True/False (not "on"/"off") since scipy 1.12.
+    # Non-standard HiGHS keys removed to avoid OptimizeWarning → possible
+    # solver error on strict scipy builds.
     options: dict = {
         "disp": False,
-        "presolve": "on",          # default: on — reduces problem before solve
-        "solver": "simplex",       # simplex beats IPM for LP of this size
-        "simplex_strategy": 1,     # 1 = dual simplex (best for LP warm-start)
-        "simplex_scale_strategy": 2,  # 2 = default equilibration scaling
-        "primal_feasibility_tolerance": 1e-7,
-        "dual_feasibility_tolerance": 1e-7,
+        "presolve": True,   # reduce problem before solve
+        "time_limit": time_limit_seconds if time_limit_seconds is not None else 300.0,
     }
-    if time_limit_seconds is not None:
-        options["time_limit"] = time_limit_seconds
+    # Optional HiGHS-native keys passed verbatim (scipy forwards unknown opts)
+    # Removed: "solver", "simplex_strategy", "simplex_scale_strategy",
+    #          "primal_feasibility_tolerance", "dual_feasibility_tolerance"
+    # — these are unrecognized by scipy >= 1.12 and may cause errors on
+    #   strict builds; HiGHS defaults are adequate for this problem size.
 
     res = milp(
         c=c,
