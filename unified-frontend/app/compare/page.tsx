@@ -244,8 +244,13 @@ export default function ComparePage() {
           <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, margin: "0 0 4px" }}>{metricDef.label}</p>
           <p style={{ fontSize: 13, fontWeight: 600, color: T.sub, margin: "0 0 16px" }}>{scenario} scenario · 2024–2070</p>
           {loading ? (
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 260, fontSize: 12, color: T.muted }}>
-              Fetching LP solutions for all sectors…
+            <div style={{ height: 320 }}>
+              <div style={{ display:"flex", gap:4, alignItems:"flex-end", height:260, padding:"0 8px" }}>
+                {[0.55,0.7,0.6,0.9,0.75,0.8,0.65,0.88,0.72,0.95].map((h,i) => (
+                  <div key={i} className="animate-pulse flex-1" style={{ height:`${h*100}%`, background:"rgba(0,0,0,0.06)", borderRadius:2 }} />
+                ))}
+              </div>
+              <p style={{ textAlign:"center", fontSize:11, color:T.dim, marginTop:12 }}>Solving LP for all 5 sectors…</p>
             </div>
           ) : (
             <ResponsiveContainer width="100%" height={320}>

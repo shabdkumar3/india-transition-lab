@@ -1,10 +1,17 @@
 /**
  * Generic sector API client.
  * Each sector's backend runs at a different port but exposes the same REST surface as steel.
- * For sectors whose backend isn't built yet, all calls return a "not_available" flag.
+ *
+ * Optimizations vs original:
+ *  1. localStorage result cache (6h TTL) — repeat visits are instant
+ *  2. Stale-while-revalidate — returns cached data immediately, refreshes in background
+ *  3. 60-second fetch timeout — never hangs the page indefinitely
+ *  4. Faster retry: 1s → 2s → 4s with max 3 attempts (vs old 2s→4s→8s→16s × 5)
+ *  5. Pre-warm helper — call on app mount to wake Railway backend early
  */
 
 import { SectorConfig } from "./sectors";
+import { buildCacheKey, cacheGet, cacheSet } from "./cache";
 
 export interface RunResult {
   status: "ok" | "infeasible" | "not_available";
@@ -12,7 +19,6 @@ export interface RunResult {
   years?: number[];
   yearly_results?: Record<number, YearlyResult>;
   summary?: RunSummary;
-  // raw solver fields pass through
   [key: string]: unknown;
 }
 
@@ -55,25 +61,44 @@ export interface TrajectoryBranch {
   assumption?: string;
 }
 
-// ── Core fetch wrapper ────────────────────────────────────────────────────────
-
+// ── Base URL resolution ───────────────────────────────────────────────────────
 // In production (non-localhost), call Railway directly to bypass Vercel's 10s proxy timeout.
-// CORS is enabled on Railway (allow_origins=["*"]) so browser can call it directly.
-// apiBase looks like "/api/steel" → strip "/api/" → append to Railway base URL.
+// CORS is enabled on Railway (allow_origins=["*"]) so browser can call directly.
+
 const RAILWAY_URL = "https://india-transition-lab-production.up.railway.app";
 
 function resolveBase(apiBase: string): string {
-  // If running in the browser and not on localhost → call Railway directly
   if (typeof window !== "undefined" && !window.location.hostname.includes("localhost")) {
     const sector = apiBase.replace(/^\/api\//, "");
     return `${RAILWAY_URL}/${sector}`;
   }
-  return apiBase; // local dev: use Next.js rewrite proxy (no CORS issue)
+  return apiBase;
 }
+
+// ── Fetch with timeout ────────────────────────────────────────────────────────
+// 60 seconds: generous enough for a cold Railway start, never hangs forever.
+
+const FETCH_TIMEOUT_MS = 60_000;
+
+async function timedFetch(url: string, init: RequestInit = {}): Promise<Response> {
+  // Merge caller's signal with our timeout signal (whichever fires first)
+  const timeoutSignal = AbortSignal.timeout(FETCH_TIMEOUT_MS);
+  const callerSignal  = init.signal as AbortSignal | undefined;
+
+  // Use AbortSignal.any if available (modern browsers), else just use timeout
+  const signal =
+    callerSignal && typeof AbortSignal.any === "function"
+      ? AbortSignal.any([timeoutSignal, callerSignal])
+      : timeoutSignal;
+
+  return fetch(url, { ...init, signal });
+}
+
+// ── Core fetch wrapper ────────────────────────────────────────────────────────
 
 async function apiFetch<T>(base: string, path: string, init?: RequestInit): Promise<T> {
   const resolvedBase = resolveBase(base);
-  const res = await fetch(`${resolvedBase}${path}`, {
+  const res = await timedFetch(`${resolvedBase}${path}`, {
     headers: { "Content-Type": "application/json" },
     ...init,
   });
@@ -84,19 +109,60 @@ async function apiFetch<T>(base: string, path: string, init?: RequestInit): Prom
   return res.json() as Promise<T>;
 }
 
+// ── Retry helper ─────────────────────────────────────────────────────────────
+// Faster than original: 1s → 2s → 4s (3 attempts total).
+// Empirically: Railway wakes within 20-30s so attempt 1 (after 0s wait) or 2 (after 1s) succeeds.
+
+async function apiFetchWithRetry<T>(
+  base: string,
+  path: string,
+  init: RequestInit,
+  maxAttempts = 3,
+  baseDelayMs = 1000
+): Promise<T> {
+  let lastErr: unknown;
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    if (attempt > 0) {
+      await new Promise((r) => setTimeout(r, baseDelayMs * Math.pow(2, attempt - 1)));
+    }
+    try {
+      const resolvedBase = resolveBase(base);
+      const res = await timedFetch(`${resolvedBase}${path}`, {
+        headers: { "Content-Type": "application/json" },
+        ...init,
+      });
+      if (!res.ok) {
+        const err = await res.text().catch(() => res.statusText);
+        throw new Error(`API ${path} — ${res.status}: ${err}`);
+      }
+      const data = (await res.json()) as T;
+      const d = data as Record<string, unknown>;
+      if (d?.status === "error" && typeof d?.message === "string" && d.message.includes("busy")) {
+        lastErr = new Error(d.message as string);
+        continue;
+      }
+      return data;
+    } catch (err) {
+      lastErr = err;
+      if (err instanceof Error && err.message.includes("422")) throw err;
+    }
+  }
+  throw lastErr;
+}
+
 // ── Health check ─────────────────────────────────────────────────────────────
 
 export async function checkHealth(sector: SectorConfig): Promise<boolean> {
   try {
     const base = resolveBase(sector.apiBase);
-    const res = await fetch(`${base}/health`, { signal: AbortSignal.timeout(5000) });
+    const res = await timedFetch(`${base}/health`, { signal: AbortSignal.timeout(5000) });
     return res.ok;
   } catch {
     return false;
   }
 }
 
-// ── Demand trajectories ───────────────────────────────────────────────────────  // Steel backend exposes /api/demand-trajectories; other sectors use local config fallback.
+// ── Demand trajectories ───────────────────────────────────────────────────────
 
 export async function fetchDemandTrajectories(
   sector: SectorConfig
@@ -104,11 +170,11 @@ export async function fetchDemandTrajectories(
   try {
     return await apiFetch<DemandTrajectoriesResponse>(sector.apiBase, "/api/demand-trajectories");
   } catch {
-    return null; // caller handles with local config data
+    return null;
   }
 }
 
-// ── Route details (per-sector) ─────────────────────────────────────────────
+// ── Route details ─────────────────────────────────────────────────────────────
 
 export interface RouteDetail {
   id: string;
@@ -135,7 +201,7 @@ export async function fetchRoutes(sector: SectorConfig): Promise<RouteDetail[]> 
   }
 }
 
-// ── Scenarios (CPS / NZS / Lab) ──────────────────────────────────────────────
+// ── Scenarios ─────────────────────────────────────────────────────────────────
 
 export async function fetchScenarios(sector: SectorConfig): Promise<string[]> {
   try {
@@ -147,19 +213,14 @@ export async function fetchScenarios(sector: SectorConfig): Promise<string[]> {
 }
 
 // ── Response normalization ────────────────────────────────────────────────────
-// v3 sector backends (cement/aluminium/textile/fertiliser) use verbose field names.
-// Steel backend uses the canonical short names the frontend expects.
-// This function maps verbose → canonical so all sectors are uniform.
 
 function normalizeYearlyResult(yr: Record<string, unknown>): YearlyResult {
-  // Derive total_production from production_by_route if the field is absent
   const prodByRoute = yr.production_by_route as Record<string, number> | undefined;
   const derivedTotal = prodByRoute
     ? Object.values(prodByRoute).reduce((a, b) => a + (b ?? 0), 0)
     : 0;
   return {
     ...yr,
-    // Normalize: prefer canonical name, fall back to v3 verbose name, then sum routes
     total_production: (yr.total_production ?? yr.total_production_mt ?? derivedTotal) as number,
     co2_total:        (yr.co2_total        ?? yr.total_co2_mt            ?? 0) as number,
     co2_intensity:    (yr.co2_intensity    ?? yr.co2_intensity_tco2_per_t ?? 0) as number,
@@ -176,65 +237,46 @@ function normalizeResult(result: RunResult): RunResult {
   return { ...result, yearly_results: normalized };
 }
 
-// ── Retry helper ─────────────────────────────────────────────────────────────
-// Retries POST requests that return "solver busy" or transient network errors.
-// Canonical scenario results are cached server-side, so retries are cheap.
-
-async function apiFetchWithRetry<T>(
-  base: string,
-  path: string,
-  init: RequestInit,
-  maxAttempts = 5,
-  baseDelayMs = 2000
-): Promise<T> {
-  let lastErr: unknown;
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    if (attempt > 0) {
-      // Exponential backoff: 2s, 4s, 8s, 16s
-      await new Promise((r) => setTimeout(r, baseDelayMs * Math.pow(2, attempt - 1)));
-    }
-    try {
-      const resolvedBase = resolveBase(base);
-      const res = await fetch(`${resolvedBase}${path}`, {
-        headers: { "Content-Type": "application/json" },
-        ...init,
-      });
-      if (!res.ok) {
-        const err = await res.text().catch(() => res.statusText);
-        throw new Error(`API ${path} — ${res.status}: ${err}`);
-      }
-      const data = (await res.json()) as T;
-      // Retry on "solver busy" signal from backend
-      const d = data as Record<string, unknown>;
-      if (d?.status === "error" && typeof d?.message === "string" && d.message.includes("busy")) {
-        lastErr = new Error(d.message as string);
-        continue;
-      }
-      return data;
-    } catch (err) {
-      lastErr = err;
-      // Don't retry on validation errors
-      if (err instanceof Error && err.message.includes("422")) throw err;
-    }
-  }
-  throw lastErr;
-}
-
-// ── Run optimization ──────────────────────────────────────────────────────────
+// ── Run optimization — with cache-first + stale-while-revalidate ──────────────
 
 export async function runScenario(
   sector: SectorConfig,
   scenario: string,
   overrides: Record<string, unknown> = {}
 ): Promise<RunResult> {
+  const cKey = buildCacheKey(sector.id, scenario, overrides);
+
+  // ── Cache hit: return immediately, refresh in background ──
+  if (cKey) {
+    const cached = cacheGet<RunResult>(cKey);
+    if (cached) {
+      // Kick off a background refresh (fire-and-forget, don't await)
+      _freshRun(sector, scenario, overrides, cKey).catch(() => { /* background — ignore */ });
+      return cached;
+    }
+  }
+
+  // ── Cache miss: fetch fresh, save to cache ──
+  return _freshRun(sector, scenario, overrides, cKey);
+}
+
+async function _freshRun(
+  sector: SectorConfig,
+  scenario: string,
+  overrides: Record<string, unknown>,
+  cKey: string | null
+): Promise<RunResult> {
   try {
-    // v3 backends expect { scenario, overrides: {} } — steel backend accepts flat spread too
-    const body = { scenario, overrides };
+    const body   = { scenario, overrides };
     const result = await apiFetchWithRetry<RunResult>(sector.apiBase, "/api/run", {
       method: "POST",
       body: JSON.stringify(body),
     });
-    return normalizeResult(result);
+    const normalized = normalizeResult(result);
+    if (cKey && normalized.status === "ok") {
+      cacheSet(cKey, normalized); // save to cache on success
+    }
+    return normalized;
   } catch (err) {
     return {
       status: "not_available",
@@ -243,13 +285,24 @@ export async function runScenario(
   }
 }
 
-// ── Prefetch canonical scenarios ──────────────────────────────────────────────
-// Call on page mount to warm the server cache. Results are discarded here —
-// the server caches them so the next real request returns instantly.
+// ── Pre-warm: call from app layout to wake Railway before user navigates ──────
+// Fires both CPS and NZS for a given sector silently in the background.
+// If Railway is cold, this shaves 20-30s off the first real user interaction.
 
 export function prefetchScenarios(sector: SectorConfig): void {
   for (const scenario of ["CPS", "NZS"]) {
-    runScenario(sector, scenario).catch(() => {/* background — ignore errors */});
+    runScenario(sector, scenario).catch(() => { /* background — ignore errors */ });
+  }
+}
+
+// ── Warm ALL sector backends at once ─────────────────────────────────────────
+// Call from the root layout (client component) so the first page load
+// simultaneously wakes all 5 Railway backends.
+
+export function warmAllBackends(sectors: SectorConfig[]): void {
+  for (const sector of sectors) {
+    // Health ping first (cheap — wakes the backend without waiting for a full solve)
+    checkHealth(sector).catch(() => { /* ignore */ });
   }
 }
 
@@ -264,11 +317,9 @@ export async function runLab(
     let labPath: string;
 
     if (sector.id === "steel") {
-      // Steel backend: /api/lab/run with flat payload (existing convention)
       body = payload;
       labPath = "/api/lab/run";
     } else {
-      // v3 sector backends: /api/lab with { scenario, overrides: { ...rest } }
       const { scenario, ...overrides } = payload;
       body = { scenario: scenario ?? "CPS", overrides };
       labPath = "/api/lab";

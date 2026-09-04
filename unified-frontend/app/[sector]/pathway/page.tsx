@@ -233,8 +233,17 @@ export default function PathwayPage() {
           </div>
         )}
 
-        {/* KPI strip */}
-        {kpis && (
+        {/* KPI strip — skeleton while first-ever load, real data when ready */}
+        {running && !run ? (
+          <div style={{ ...CARD, display:"flex", flexWrap:"wrap", overflow:"hidden" }}>
+            {[0,1,2,3].map(i => (
+              <div key={i} style={{ flex:"1 1 130px", padding:"14px 20px", borderRight:i<3?`1px solid ${T.border}`:"none" }}>
+                <div className="animate-pulse" style={{ height:10, width:"60%", background:"rgba(0,0,0,0.07)", borderRadius:4, marginBottom:12 }} />
+                <div className="animate-pulse" style={{ height:22, width:"80%", background:"rgba(0,0,0,0.07)", borderRadius:4 }} />
+              </div>
+            ))}
+          </div>
+        ) : kpis ? (
           <div style={{ ...CARD, display:"flex", flexWrap:"wrap", overflow:"hidden" }}>
             {[
               { label:`CO₂ intensity 2070`, val:`${fmt2(kpis.finalIntensity)} tCO₂/${s.unit_short}`,
@@ -254,9 +263,20 @@ export default function PathwayPage() {
               </div>
             ))}
           </div>
-        )}
+        ) : null}
 
-        {/* Tech mix chart */}
+        {/* Tech mix chart — skeleton while loading */}
+        {running && !run && (
+          <div className="p-5" style={CARD}>
+            <div className="animate-pulse" style={{ height:10, width:"30%", background:"rgba(0,0,0,0.07)", borderRadius:4, marginBottom:8 }} />
+            <div className="animate-pulse" style={{ height:8, width:"50%", background:"rgba(0,0,0,0.05)", borderRadius:4, marginBottom:20 }} />
+            <div style={{ display:"flex", gap:4, alignItems:"flex-end", height:200 }}>
+              {[0.4,0.55,0.65,0.8,0.9,0.85,0.7,0.6,0.75,0.95,0.88,1.0].map((h,i) => (
+                <div key={i} className="animate-pulse flex-1" style={{ height:`${h*100}%`, background:"rgba(0,0,0,0.06)", borderRadius:2 }} />
+              ))}
+            </div>
+          </div>
+        )}
         {chartData.length > 0 && (
           <div className="p-5" style={CARD}>
             <p className="text-[10px] font-semibold tracking-widest uppercase mb-1" style={DIM}>Technology Mix</p>
@@ -278,7 +298,23 @@ export default function PathwayPage() {
           </div>
         )}
 
-        {/* Emissions charts */}
+        {/* Emissions charts — skeleton while loading */}
+        {running && !run && (
+          <div style={CARD} className="overflow-hidden">
+            <div className="px-5 py-3" style={{ borderBottom:`1px solid ${T.border}` }}>
+              <div className="animate-pulse" style={{ height:9, width:"20%", background:"rgba(0,0,0,0.07)", borderRadius:3, marginBottom:6 }} />
+              <div className="animate-pulse" style={{ height:12, width:"35%", background:"rgba(0,0,0,0.05)", borderRadius:3 }} />
+            </div>
+            <div style={{ display:"flex", flexWrap:"wrap", gap:20, padding:20 }}>
+              {[0,1].map(col => (
+                <div key={col} style={{ flex:"1 1 280px", minWidth:0 }}>
+                  <div className="animate-pulse" style={{ height:8, width:"40%", background:"rgba(0,0,0,0.06)", borderRadius:3, marginBottom:12 }} />
+                  <div className="animate-pulse" style={{ height:140, background:"rgba(0,0,0,0.04)", borderRadius:6 }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {chartData.length > 0 && (
           <div style={CARD} className="overflow-hidden">
             <div className="px-5 py-3" style={{ borderBottom:`1px solid ${T.border}` }}>
@@ -322,6 +358,20 @@ export default function PathwayPage() {
           </div>
         )}
 
+        {/* Production by route table — skeleton while loading */}
+        {running && !run && (
+          <div style={CARD} className="overflow-hidden">
+            <div className="px-5 py-3" style={{ borderBottom:`1px solid ${T.border}` }}>
+              <div className="animate-pulse" style={{ height:9, width:"25%", background:"rgba(0,0,0,0.07)", borderRadius:3, marginBottom:6 }} />
+              <div className="animate-pulse" style={{ height:12, width:"40%", background:"rgba(0,0,0,0.05)", borderRadius:3 }} />
+            </div>
+            <div style={{ padding:"12px 20px", display:"flex", flexDirection:"column", gap:10 }}>
+              {s.routes.map(r => (
+                <div key={r.id} className="animate-pulse" style={{ height:16, borderRadius:3, background:"rgba(0,0,0,0.05)" }} />
+              ))}
+            </div>
+          </div>
+        )}
         {/* Production by route table */}
         {run && (
           <div style={CARD} className="overflow-hidden">
