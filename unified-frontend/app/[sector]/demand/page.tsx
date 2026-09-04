@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { getSector, logistic, piecewise, INDIA_POP } from "@/lib/sectors";
+import { Tip } from "@/lib/tip";
 import { useState, useMemo } from "react";
 import { fmt1 } from "@/lib/format";
 import {
@@ -62,7 +63,9 @@ export default function DemandPage() {
 
         {/* Trajectory toggles */}
         <div style={{ display:"flex", flexWrap:"wrap", gap:8, padding:"2px 0" }}>
-          <span style={{ fontSize:9, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, alignSelf:"center", marginRight:4 }}>Trajectories</span>
+          <span style={{ fontSize:9, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, alignSelf:"center", marginRight:4, display:"flex", alignItems:"center" }}>
+            Trajectories<Tip text="Four different projections of how much this sector will produce by 2070. Click to show/hide each. The LP solver uses whichever trajectory you select as the demand it must meet." width={260}/>
+          </span>
           {s.demandTrajectories.map((t) => (
             <button key={t.key}
               onClick={() => setActive((a) => ({ ...a, [t.key]: !a[t.key] }))}
@@ -133,7 +136,9 @@ export default function DemandPage() {
                   {YEARS_TABLE.map(yr => (
                     <th key={yr} className="text-right px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>{yr}</th>
                   ))}
-                  <th className="text-right px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>kg/cap 2070</th>
+                  <th className="text-right px-5 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>
+                    <span className="inline-flex items-center justify-end gap-0.5">kg/cap 2070<Tip text="Kilograms per person per year in 2070. A useful measure to compare how material-intensive India's consumption is vs other countries." width={240}/></span>
+                  </th>
                 </tr>
               </thead>
               <tbody>

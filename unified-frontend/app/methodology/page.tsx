@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { BookOpen, Cpu, AlertTriangle, FlaskConical, CheckCircle } from "lucide-react";
+import { Tip } from "@/lib/tip";
 
 // ─── Model validation table ──────────────────────────────────────────────────
 const VALIDATION: {
@@ -256,16 +257,16 @@ export default function MethodologyPage() {
         {/* Section nav */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
           {[
-            { id: "formulation", icon: Cpu,          label: "LP Formulation" },
-            { id: "calibration", icon: FlaskConical,  label: "Calibration & Validation" },
-            { id: "limitations", icon: AlertTriangle, label: "Limitations" },
-            { id: "references",  icon: BookOpen,      label: "References" },
-          ].map(({ id, icon: Icon, label }) => (
+            { id: "formulation", icon: Cpu,          label: "LP Formulation",           tip: "LP = Linear Programme. An optimisation model that finds the cheapest mix of production technologies to meet demand and CO₂ targets." },
+            { id: "calibration", icon: FlaskConical,  label: "Calibration & Validation", tip: "How the model's 2024 starting values were set using real data, and how its 2070 outputs compare against NITI Aayog's own projections." },
+            { id: "limitations", icon: AlertTriangle, label: "Limitations",               tip: "What the model cannot capture — important for interpreting results correctly." },
+            { id: "references",  icon: BookOpen,      label: "References",                tip: "The 29 published data sources used to build and calibrate the model." },
+          ].map(({ id, icon: Icon, label, tip }) => (
             <a key={id} href={`#${id}`}
               style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, padding: "6px 12px", borderRadius: 7, textDecoration: "none", border: `1px solid ${T.border}`, background: T.bg, color: T.muted, transition: "color 150ms" }}
               onMouseEnter={e => (e.currentTarget.style.color = T.text)}
               onMouseLeave={e => (e.currentTarget.style.color = T.muted)}>
-              <Icon style={{ width: 13, height: 13 }} /> {label}
+              <Icon style={{ width: 13, height: 13 }} /> {label}<Tip text={tip} width={240}/>
             </a>
           ))}
         </div>
@@ -352,8 +353,18 @@ export default function MethodologyPage() {
               <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
                 <thead>
                   <tr style={{ borderBottom: `1px solid ${T.border}`, background: T.bg }}>
-                    {["Sector", "Scenario", "Metric", "Vol.4", "Model", "Δ", "Status"].map((h, i) => (
-                      <th key={h} style={{ padding: "8px 12px", fontSize: 9, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: T.dim, textAlign: [0,1,2,6].includes(i) ? "left" : "right" }}>{h}</th>
+                    {[
+                      { h: "Sector",   tip: null },
+                      { h: "Scenario", tip: "CPS = Current Policy Scenario. NZS = Net Zero Scenario." },
+                      { h: "Metric",   tip: null },
+                      { h: "Vol.4",    tip: "NITI Aayog Vol.4 (2026) published target value." },
+                      { h: "Model",    tip: "What this LP model actually computes. May be lower than Vol.4 — the LP minimises cost, so it can go below the CO₂ ceiling." },
+                      { h: "Δ",        tip: "Difference between model output and Vol.4 target. Negative = model achieves better decarbonisation than the ceiling requires." },
+                      { h: "Status",   tip: null },
+                    ].map(({ h, tip }, i) => (
+                      <th key={h} style={{ padding: "8px 12px", fontSize: 9, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: T.dim, textAlign: [0,1,2,6].includes(i) ? "left" : "right" }}>
+                        <span style={{ display:"inline-flex", alignItems:"center" }}>{h}{tip && <Tip text={tip} width={240}/>}</span>
+                      </th>
                     ))}
                   </tr>
                 </thead>

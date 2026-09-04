@@ -6,6 +6,7 @@ import type { YearlyResult } from "@/lib/api";
 import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { fmt1, fmt2 } from "@/lib/format";
+import { Tip } from "@/lib/tip";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, Legend,
@@ -168,7 +169,9 @@ export default function ComparePage() {
 
           {/* Scenario */}
           <div>
-            <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, margin: "0 0 8px" }}>Scenario</p>
+            <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, margin: "0 0 8px", display: "flex", alignItems: "center" }}>
+              Scenario<Tip text="CPS = Current Policy Scenario (business-as-usual — only existing policies). NZS = Net Zero Scenario (ambitious decarbonisation to hit net zero by 2070)." width={260}/>
+            </p>
             <div style={{ display: "flex", border: `1px solid ${T.border}`, borderRadius: 8, overflow: "hidden", background: T.bg }}>
               {(["CPS", "NZS"] as ScenarioKey[]).map(sc => (
                 <button key={sc} onClick={() => setScenario(sc)}
@@ -186,7 +189,9 @@ export default function ComparePage() {
 
           {/* Metric */}
           <div>
-            <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, margin: "0 0 8px" }}>Metric</p>
+            <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, margin: "0 0 8px", display: "flex", alignItems: "center" }}>
+              Metric<Tip text="CO₂ Intensity = emissions per unit produced. Total CO₂ = absolute sector emissions. Production = physical output in sector units." width={260}/>
+            </p>
             <div style={{ display: "flex", border: `1px solid ${T.border}`, borderRadius: 8, overflow: "hidden", background: T.bg }}>
               {METRIC_OPTS.map(m => (
                 <button key={m.key} onClick={() => setMetric(m.key)}

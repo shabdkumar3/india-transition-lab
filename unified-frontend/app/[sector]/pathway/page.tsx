@@ -13,19 +13,22 @@ import {
 } from "recharts";
 import { runScenario } from "@/lib/api";
 import type { YearlyResult } from "@/lib/api";
+import { Tip } from "@/lib/tip";
 
 type DemandKey = "niti" | "model_fitted" | "india_policy" | "international";
 
 const SCENARIOS = [
-  { key: "CPS", label: "Current Policy Scenario", desc: "Existing policies extended to 2070" },
-  { key: "NZS", label: "Net Zero Scenario",        desc: "Aggressive decarbonisation pathway" },
+  { key: "CPS", label: "Current Policy Scenario", desc: "Existing policies extended to 2070",
+    tip: "Only policies already enacted today continue. No new climate commitments. Lower carbon prices, slower clean energy deployment." },
+  { key: "NZS", label: "Net Zero Scenario",        desc: "Aggressive decarbonisation pathway",
+    tip: "India achieves net-zero emissions by ~2070. Assumes strong policy action, high carbon prices, and rapid deployment of clean technology." },
 ];
 
-const DEMAND_OPTS: { key: DemandKey; label: string }[] = [
-  { key: "niti",          label: "NITI Vol.4"             },
-  { key: "model_fitted",  label: "Historical trend"       },
-  { key: "india_policy",  label: "India Policy Consensus" },
-  { key: "international", label: "International Baseline" },
+const DEMAND_OPTS: { key: DemandKey; label: string; tip: string }[] = [
+  { key: "niti",          label: "NITI Vol.4",             tip: "Official Government of India projection (NITI Aayog Vol.4, 2026). Aggressive infrastructure + manufacturing growth assumption." },
+  { key: "model_fitted",  label: "Historical trend",       tip: "S-curve fitted to India's actual production data (1990–2025). Pure extrapolation — where the historical trend naturally leads." },
+  { key: "india_policy",  label: "India Policy Consensus", tip: "Blend of National Policy targets and PM Gati Shakti. Assumes India meets its stated manufacturing goals." },
+  { key: "international", label: "International Baseline", tip: "IEA STEPS + urbanisation model. Service-led economy — the more conservative international view of India's trajectory." },
 ];
 
 const CHART_YEARS = [2024, 2028, 2032, 2036, 2040, 2044, 2048, 2052, 2056, 2060, 2065, 2070];
@@ -181,7 +184,7 @@ export default function PathwayPage() {
                   display:"flex", alignItems:"baseline", gap:8,
                 }}>
                 <span style={{ fontSize:13, fontWeight:800, color:scenario===sc.key ? accent : T.dim, letterSpacing:"0.04em" }}>{sc.key}</span>
-                <span style={{ fontSize:11, color:T.dim, fontWeight:400, display:"block" }}>{sc.desc}</span>
+                <span style={{ fontSize:11, color:T.dim, fontWeight:400, display:"flex", alignItems:"center", gap:2 }}>{sc.desc}<Tip text={sc.tip}/></span>
               </button>
             ))}
             {running && (
@@ -196,7 +199,9 @@ export default function PathwayPage() {
           </div>
           {/* Demand model pills */}
           <div style={{ display:"flex", flexWrap:"wrap", gap:6, alignItems:"center" }}>
-            <span style={{ fontSize:9, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:T.dim, marginRight:4 }}>Demand</span>
+            <span style={{ fontSize:9, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:T.dim, marginRight:4, display:"flex", alignItems:"center" }}>
+              Demand<Tip text="Which projection of future demand the solver tries to meet." width={220}/>
+            </span>
             {DEMAND_OPTS.map(d => (
               <button key={d.key}
                 onClick={() => { setDemandModel(d.key); doRun(scenario, d.key); }}
@@ -204,11 +209,12 @@ export default function PathwayPage() {
                 style={{
                   padding:"5px 12px", borderRadius:6, fontSize:11, fontWeight:500,
                   cursor:"pointer", transition:"all 150ms", border:"1px solid",
+                  display:"flex", alignItems:"center",
                   ...(demandModel===d.key
                     ? { background:accent+"14", color:accent, borderColor:accent+"50" }
                     : { background:"transparent", color:T.muted, borderColor:T.border })
                 }}>
-                {d.label}
+                {d.label}<Tip text={d.tip} width={240}/>
               </button>
             ))}
           </div>
@@ -231,13 +237,19 @@ export default function PathwayPage() {
         {kpis && (
           <div style={{ ...CARD, display:"flex", flexWrap:"wrap", overflow:"hidden" }}>
             {[
-              { label:`CO₂ intensity 2070`,      val:`${fmt2(kpis.finalIntensity)} tCO₂/${s.unit_short}` },
-              { label:"Intensity reduction",      val:`${fmt1(kpis.reductionPct)}%` },
-              { label:`Production 2070`,          val:`${fmt1(kpis.finalDemand)} ${s.unit_short}` },
-              { label:"Cumulative CO₂ 2024–2070", val:`${fmt1(kpis.cumulativeCo2/1000)} GtCO₂` },
+              { label:`CO₂ intensity 2070`, val:`${fmt2(kpis.finalIntensity)} tCO₂/${s.unit_short}`,
+                tip:`CO₂ emitted per unit of production in 2070. Lower is better. NITI Aayog targets ~0.5–1.2 tCO₂/${s.unit_short} depending on scenario.` },
+              { label:"Intensity reduction", val:`${fmt1(kpis.reductionPct)}%`,
+                tip:"How much CO₂ per unit of production improves from 2024 to 2070. E.g. 80% = each unit emits 80% less CO₂ than today." },
+              { label:`Production 2070`, val:`${fmt1(kpis.finalDemand)} ${s.unit_short}`,
+                tip:"Total output in 2070 — how much the sector produces to meet projected demand." },
+              { label:"Cumulative CO₂ 2024–2070", val:`${fmt1(kpis.cumulativeCo2/1000)} GtCO₂`,
+                tip:"Total CO₂ emitted by this sector across all years 2024–2070. This is the sector's contribution to India's overall carbon budget." },
             ].map((k,i) => (
               <div key={k.label} style={{ flex:"1 1 130px", padding:"14px 20px", borderRight:i<3?`1px solid ${T.border}`:"none" }}>
-                <p style={{ fontSize:9, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, margin:"0 0 8px" }}>{k.label}</p>
+                <p style={{ fontSize:9, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, margin:"0 0 8px", display:"flex", alignItems:"center" }}>
+                  {k.label}<Tip text={k.tip} width={240}/>
+                </p>
                 <p style={{ fontSize:20, fontWeight:800, color:T.text, fontVariantNumeric:"tabular-nums", margin:0 }}>{k.val}</p>
               </div>
             ))}

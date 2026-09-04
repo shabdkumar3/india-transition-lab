@@ -5,6 +5,7 @@ import { getSector, SECTOR_LIST } from "@/lib/sectors";
 import type { SectorId, SectorConfig, TechRoute } from "@/lib/sectors";
 import Link from "next/link";
 import { TrendingUp, BarChart3, FlaskConical, Zap, Factory, Building2, Scissors, Leaf } from "lucide-react";
+import { Tip } from "@/lib/tip";
 import { useEffect, useState } from "react";
 import { runScenario } from "@/lib/api";
 import type { YearlyResult } from "@/lib/api";
@@ -245,12 +246,17 @@ export default function SectorOverview() {
         {/* Big 3-stat row */}
         <div style={{ display: "flex", gap: 0, marginTop: 20, flexWrap: "wrap", background: T.card, borderRadius: 12, border: `1px solid ${T.border}`, overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
           {[
-            { label: "CO₂ TODAY", value: String(D.co2_2024), sub: `Mt/yr · ${D.co2_share}% of India industrial`, color: T.text },
-            { label: "NZS INTENSITY CUT", value: `−${D.nzs_pct}%`, sub: `${D.intensity_2024} → ${vol4n[2070]} tCO₂/${s.unit_short} · by 2070`, color: accent },
-            { label: "NZS INVESTMENT", value: `$${D.inv_nzs}B`, sub: `additional 2024–2050 · vs BAU $${D.inv_cps}B`, color: T.text },
+            { label: "CO₂ TODAY", value: String(D.co2_2024), sub: `Mt/yr · ${D.co2_share}% of India industrial`, color: T.text,
+              tip: `Current annual CO₂ emissions from this sector (2024). ${D.co2_share}% of India's total industrial CO₂.` },
+            { label: "NZS INTENSITY CUT", value: `−${D.nzs_pct}%`, sub: `${D.intensity_2024} → ${vol4n[2070]} tCO₂/${s.unit_short} · by 2070`, color: accent,
+              tip: `NZS = Net Zero Scenario. This is how much CO₂ per unit of production must fall by 2070 to meet NITI Aayog's net-zero-aligned target.` },
+            { label: "NZS INVESTMENT", value: `$${D.inv_nzs}B`, sub: `additional 2024–2050 · vs BAU $${D.inv_cps}B`, color: T.text,
+              tip: `Total capital investment needed 2024–2050 in the Net Zero Scenario. CPS (Current Policy Scenario) is the business-as-usual baseline.` },
           ].map((stat, i) => (
             <div key={stat.label} style={{ flex: "1 1 160px", padding: "20px 24px", borderRight: i < 2 ? `1px solid ${T.border}` : "none" }}>
-              <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, marginBottom: 10, margin: "0 0 10px" }}>{stat.label}</p>
+              <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, marginBottom: 10, margin: "0 0 10px", display: "flex", alignItems: "center" }}>
+                {stat.label}<Tip text={stat.tip} width={240}/>
+              </p>
               <p style={{ fontSize: 38, fontWeight: 900, color: stat.color, lineHeight: 1, margin: "0 0 8px", letterSpacing: "-0.02em" }}>{stat.value}</p>
               <p style={{ fontSize: 12, color: T.muted, margin: 0 }}>{stat.sub}</p>
             </div>
@@ -266,14 +272,18 @@ export default function SectorOverview() {
       {/* ── CANONICAL NUMBERS STRIP ── */}
       <div style={{ display: "flex", flexWrap: "wrap", border: `1px solid ${T.border}`, borderRadius: 12, overflow: "hidden", background: T.card, marginBottom: 20, boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
         {[
-          { label: "Baseline intensity 2024", value: `${D.intensity_2024}`, unit: `tCO₂/${s.unit_short}`, sub: "actual observed", color: T.text, live_val: live.i24 },
-          { label: "CPS intensity 2070",      value: `${vol4c[2070]}`,      unit: `tCO₂/${s.unit_short}`, sub: "NITI Vol.4 CPS",   color: "#dc2626",  live_val: live.c70 },
-          { label: "NZS intensity 2070",      value: `${vol4n[2070]}`,      unit: `tCO₂/${s.unit_short}`, sub: "NITI Vol.4 NZS",   color: "#16a34a",  live_val: live.n70 },
-          { label: "NZS CO₂ total 2070",      value: `${s.vol4.co2_total.nzs[2070]}`, unit: "Mt/yr", sub: `vs ${D.co2_2024} Mt today`, color: "#16a34a", live_val: null },
+          { label: "Baseline intensity 2024", value: `${D.intensity_2024}`, unit: `tCO₂/${s.unit_short}`, sub: "actual observed", color: T.text, live_val: live.i24,
+            tip: "CO₂ emitted per tonne of production in 2024. This is the starting point for all scenario projections." },
+          { label: "CPS intensity 2070",      value: `${vol4c[2070]}`,      unit: `tCO₂/${s.unit_short}`, sub: "NITI Vol.4 CPS",   color: "#dc2626",  live_val: live.c70,
+            tip: "CPS = Current Policy Scenario. What happens if only existing policies continue — no new climate actions. Higher emissions than NZS." },
+          { label: "NZS intensity 2070",      value: `${vol4n[2070]}`,      unit: `tCO₂/${s.unit_short}`, sub: "NITI Vol.4 NZS",   color: "#16a34a",  live_val: live.n70,
+            tip: "NZS = Net Zero Scenario. NITI Aayog's target if India pursues ambitious decarbonisation of this sector by 2070." },
+          { label: "NZS CO₂ total 2070",      value: `${s.vol4.co2_total.nzs[2070]}`, unit: "Mt/yr", sub: `vs ${D.co2_2024} Mt today`, color: "#16a34a", live_val: null,
+            tip: "Absolute annual CO₂ emissions from this sector in 2070 under the Net Zero Scenario — much lower than today despite higher production." },
         ].map((k, i) => (
           <div key={k.label} style={{ flex: "1 1 140px", padding: "18px 22px", borderRight: i < 3 ? `1px solid ${T.border}` : "none" }}>
-            <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.13em", textTransform: "uppercase", color: T.dim, margin: "0 0 12px" }}>
-              {k.label}
+            <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.13em", textTransform: "uppercase", color: T.dim, margin: "0 0 12px", display: "flex", alignItems: "center" }}>
+              {k.label}<Tip text={k.tip} width={240}/>
             </p>
             <p style={{ fontSize: 26, fontWeight: 900, lineHeight: 1, color: k.color, fontVariantNumeric: "tabular-nums", margin: "0 0 4px" }}>
               {live.ok && k.live_val !== null ? fmt2(k.live_val) : k.value}
@@ -339,14 +349,14 @@ export default function SectorOverview() {
                 India&apos;s Position
               </p>
               {[
-                ["Global rank",          `#${D.global_rank}`],
-                ["World output share",   `${D.global_share}%`],
-                ["India industry CO₂",   `${D.co2_share}%`],
-                ["Employment",           fmtJobsK(D.jobs_k)],
-                ["NZS carbon budget",    `${D.budget_gt} GtCO₂`],
-              ].map(([lbl, val]) => (
+                { lbl: "Global rank",       val: `#${D.global_rank}`,        tip: "India's rank globally by production volume for this sector." },
+                { lbl: "World output share",val: `${D.global_share}%`,       tip: "India's share of total global production for this sector." },
+                { lbl: "India industry CO₂",val: `${D.co2_share}%`,          tip: "This sector's share of India's total industrial CO₂ emissions." },
+                { lbl: "Employment",        val: fmtJobsK(D.jobs_k),         tip: "Estimated direct and indirect jobs supported by this sector in India." },
+                { lbl: "NZS carbon budget", val: `${D.budget_gt} GtCO₂`,     tip: "Total CO₂ this sector can emit between 2024–2070 under the Net Zero Scenario — the remaining 'budget' before net zero." },
+              ].map(({ lbl, val, tip }) => (
                 <div key={lbl} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "9px 0", borderBottom: `1px solid rgba(0,0,0,0.04)` }}>
-                  <span style={{ fontSize: 12, color: T.muted }}>{lbl}</span>
+                  <span style={{ fontSize: 12, color: T.muted, display: "flex", alignItems: "center" }}>{lbl}<Tip text={tip} width={220}/></span>
                   <span style={{ fontSize: 13, fontWeight: 700, color: T.text, fontVariantNumeric: "tabular-nums" }}>{val}</span>
                 </div>
               ))}

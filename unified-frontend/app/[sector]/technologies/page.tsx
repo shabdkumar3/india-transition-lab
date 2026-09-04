@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { getSector } from "@/lib/sectors";
 import type { SectorId } from "@/lib/sectors";
 import { Zap, Info, CheckCircle, Clock, TrendingDown, BookOpen, Layers } from "lucide-react";
+import { Tip } from "@/lib/tip";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, Cell, ScatterChart, Scatter, ZAxis, ReferenceLine,
@@ -252,12 +253,22 @@ export default function TechnologiesPage() {
               <thead>
                 <tr style={{ borderBottom:`1px solid ${T.border}`, background:T.bg }}>
                   <th className="text-left px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>Route</th>
-                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>TRL</th>
-                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>CAPEX ($/t-cap)</th>
-                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>VOM ($/t)</th>
-                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>LCOX ($/t)</th>
+                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>
+                    <span className="inline-flex items-center justify-end gap-0.5">TRL<Tip text="Technology Readiness Level (1–9). TRL 9 = commercially deployed at scale. TRL 4–6 = lab/pilot stage. TRL 7–8 = demonstration/early commercial." width={240}/></span>
+                  </th>
+                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>
+                    <span className="inline-flex items-center justify-end gap-0.5">CAPEX ($/t-cap)<Tip text="Capital expenditure per tonne of annual production capacity. E.g. $500/t-cap means building a 1 Mt/yr plant costs ~$500M." width={240}/></span>
+                  </th>
+                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>
+                    <span className="inline-flex items-center justify-end gap-0.5">VOM ($/t)<Tip text="Variable Operating & Maintenance cost per tonne of output — includes energy, raw materials, and labour (excluding capital)." width={240}/></span>
+                  </th>
+                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>
+                    <span className="inline-flex items-center justify-end gap-0.5">LCOX ($/t)<Tip text="Levelised Cost of Production — the all-in cost per tonne including annualised capital (CAPEX × CRF) plus variable costs. CRF = Capital Recovery Factor at 12% WACC over 25 years." width={260}/></span>
+                  </th>
                   <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>CO₂ (tCO₂/t)</th>
-                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>Learning</th>
+                  <th className="text-right px-3 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>
+                    <span className="inline-flex items-center justify-end gap-0.5">Learning<Tip text="Learning rate = % cost reduction every time global installed capacity of this technology doubles. Higher = faster cost decline as it scales up." width={240}/></span>
+                  </th>
                   <th className="text-right px-4 py-2.5 text-[10px] font-semibold uppercase tracking-wider" style={DIM}>Available</th>
                 </tr>
               </thead>
@@ -350,8 +361,9 @@ export default function TechnologiesPage() {
           <div className="p-5" style={CARD}>
             <div className="flex items-center gap-2 mb-1">
               <TrendingDown className="h-4 w-4" style={{ color:T.dim }} />
-              <p className="text-[10px] font-semibold tracking-widest uppercase" style={DIM}>
+              <p className="text-[10px] font-semibold tracking-widest uppercase inline-flex items-center gap-0.5" style={DIM}>
                 Marginal Abatement Cost vs {incumbent.label} ($/tCO₂)
+                <Tip text="MAC = cost of reducing 1 tonne of CO₂ by switching from the most-polluting route to a cleaner one. Negative MAC means the cleaner route is already cheaper. The MAC = the minimum carbon price needed to make a route competitive." width={280}/>
               </p>
             </div>
             <p className="text-xs mb-4" style={{ color:T.muted }}>
