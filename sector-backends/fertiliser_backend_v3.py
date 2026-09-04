@@ -363,9 +363,7 @@ _solve_cache: dict = {}
 _solve_lock = _thr.Lock()
 
 _HIGHS_OPTIONS = {
-    "disp": False, "presolve": "on", "solver": "simplex",
-    "simplex_strategy": 1, "simplex_scale_strategy": 2,
-    "primal_feasibility_tolerance": 1e-7, "dual_feasibility_tolerance": 1e-7,
+    "disp": False, "presolve": True, "time_limit": 300.0,
 }
 
 def _cache_key(sc: str, ov: dict) -> str:

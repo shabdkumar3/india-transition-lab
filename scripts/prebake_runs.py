@@ -35,7 +35,8 @@ from pathlib import Path
 
 import httpx  # pip install httpx
 
-RAILWAY = "https://india-transition-lab-production.up.railway.app"
+import os
+RAILWAY = os.environ.get("BACKEND_URL", "https://india-transition-lab-production.up.railway.app")
 OUT_DIR = Path(__file__).resolve().parents[1] / "unified-frontend" / "public" / "static-runs"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -312,7 +313,7 @@ async def fetch_run(
             resp.raise_for_status()
             data = resp.json()
 
-            if data.get("status") not in ("ok", None, "infeasible"):
+            if data.get("status") not in ("ok", "optimal", "OPTIMAL", None, "infeasible"):
                 err = data.get("message", "non-ok status")
                 if attempt < 3:
                     continue
@@ -487,10 +488,10 @@ async def main() -> None:
                     for lbl2, _, _, p2 in batch:
                         if lbl2 == label and p2.exists():
                             size_kb = p2.stat().st_size / 1024
-                    print(f"  ✅  {label}  ({size_kb:.0f}KB)")
+                    print(f"  OK  {label}  ({size_kb:.0f}KB)")
             else:
                 fail_count += 1
-                print(f"  ❌  {label}  — {err}")
+                print(f"  FAIL  {label}  -- {err}")
 
         done = batch_start + len(batch)
         elapsed = time.time() - t0
@@ -506,7 +507,7 @@ async def main() -> None:
     print(f"Total static-runs size: {total_size_mb:.1f} MB")
     print(f"Output: {OUT_DIR}")
     if fail_count:
-        print("\nFailed runs → frontend falls back to live Railway backend.")
+        print("\nFailed runs -> frontend falls back to live Railway backend.")
 
 
 def _write_manifest(plan: list[tuple[str, str, dict, Path]]) -> None:
@@ -514,7 +515,7 @@ def _write_manifest(plan: list[tuple[str, str, dict, Path]]) -> None:
     manifest = [p.name for _, _, _, p in plan if p.exists()]
     manifest_path = OUT_DIR / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    print(f"\n✓ manifest.json written ({len(manifest)} files)")
+    print(f"\nDone: manifest.json written ({len(manifest)} files)")
 
 
 if __name__ == "__main__":

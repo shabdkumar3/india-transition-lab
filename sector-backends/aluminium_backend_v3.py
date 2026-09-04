@@ -345,12 +345,8 @@ _solve_lock = _thr.Lock()
 
 _HIGHS_OPTIONS = {
     "disp": False,
-    "presolve": "on",
-    "solver": "simplex",
-    "simplex_strategy": 1,
-    "simplex_scale_strategy": 2,
-    "primal_feasibility_tolerance": 1e-7,
-    "dual_feasibility_tolerance": 1e-7,
+    "presolve": True,   # scipy >=1.12 requires bool, not "on"/"off"
+    "time_limit": 300.0,
 }
 
 
