@@ -12,7 +12,7 @@
 
 import { SectorConfig } from "./sectors";
 import { buildCacheKey, buildLabCacheKey, cacheGet, cacheSet } from "./cache";
-import { findStaticRunUrl, fetchStaticRun, LabLookupParams } from "./static-lookup";
+import { findStaticRunUrl, fetchStaticRun, STEEL_ANCHOR_2070, LabLookupParams } from "./static-lookup";
 
 export interface RunResult {
   status: "ok" | "infeasible" | "not_available";
@@ -238,7 +238,12 @@ function normalizeResult(result: RunResult): RunResult {
   return { ...result, yearly_results: normalized };
 }
 
-// ── Run optimization — with cache-first + stale-while-revalidate ──────────────
+// ── Run optimization — static-first → cache → backend ────────────────────────
+//
+// Fetch order:
+//  1. Static pre-baked file (Vercel CDN edge, ~20ms)  → background backend refresh
+//  2. localStorage cache   (instant, zero-network)    → background refresh
+//  3. Railway backend      (5-30s cold start)
 
 export async function runScenario(
   sector: SectorConfig,
@@ -247,18 +252,60 @@ export async function runScenario(
 ): Promise<RunResult> {
   const cKey = buildCacheKey(sector.id, scenario, overrides);
 
-  // ── Cache hit: return immediately, refresh in background ──
+  // ── 1. Static pre-baked file (canonical & demand-model variants) ──────────
+  const staticUrl = _canonicalStaticUrl(sector.id, scenario, overrides);
+  if (staticUrl) {
+    const staticData = await fetchStaticRun(staticUrl);
+    if (staticData) {
+      const staticResult = normalizeResult(staticData as RunResult);
+      // Save to cache + background refresh for freshness
+      if (cKey && staticResult.status === "ok") cacheSet(cKey, staticResult);
+      _freshRun(sector, scenario, overrides, cKey).catch(() => {});
+      return staticResult;
+    }
+  }
+
+  // ── 2. localStorage cache hit ─────────────────────────────────────────────
   if (cKey) {
     const cached = cacheGet<RunResult>(cKey);
     if (cached) {
-      // Kick off a background refresh (fire-and-forget, don't await)
-      _freshRun(sector, scenario, overrides, cKey).catch(() => { /* background — ignore */ });
+      _freshRun(sector, scenario, overrides, cKey).catch(() => {});
       return cached;
     }
   }
 
-  // ── Cache miss: fetch fresh, save to cache ──
+  // ── 3. Fresh backend run ──────────────────────────────────────────────────
   return _freshRun(sector, scenario, overrides, cKey);
+}
+
+/** Map runScenario overrides to a static file URL (canonical 40 runs). */
+function _canonicalStaticUrl(
+  sectorId: string,
+  scenario: string,
+  overrides: Record<string, unknown>
+): string | null {
+  const keys = Object.keys(overrides);
+  const base = `/static-runs/${sectorId}_${scenario}`;
+
+  // No overrides → default demand (niti)
+  if (keys.length === 0) {
+    return `${base}_niti.json`;
+  }
+
+  // v3 backends: { demand_model: "niti" | ... }
+  if (keys.length === 1 && keys[0] === "demand_model" && typeof overrides.demand_model === "string") {
+    return `${base}_${overrides.demand_model}.json`;
+  }
+
+  // Steel: { demand_anchors: { 2024: x, 2070: y, ... } }
+  if (keys.length === 1 && keys[0] === "demand_anchors") {
+    const anchors = overrides.demand_anchors as Record<string, number>;
+    const anchor2070 = anchors["2070"];
+    const demandKey = STEEL_ANCHOR_2070[anchor2070] ?? null;
+    if (demandKey) return `${base}_${demandKey}.json`;
+  }
+
+  return null;
 }
 
 async function _freshRun(

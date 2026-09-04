@@ -40,7 +40,7 @@ const CARBON_BASE: Record<string, Record<string, number>> = {
 
 // Steel demand anchor fingerprints → demand key
 // Values are the 2070 anchor value (unique per key)
-const STEEL_ANCHOR_2070: Record<number, string> = {
+export const STEEL_ANCHOR_2070: Record<number, string> = {
   821.0: "niti",
   668.6: "model_fitted",
   580.0: "india_policy",
