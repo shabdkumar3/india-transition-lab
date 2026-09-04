@@ -769,10 +769,9 @@ async def simple_run(payload: dict) -> Dict[str, Any]:
     if d_anch:
         try:
             anch_mt = {int(k): float(v) for k, v in d_anch.items()}
-            overrides["scenarios"] = [
-                {"name": "CPS", "demand_anchors_mt": anch_mt},
-                {"name": "NZS", "demand_anchors_mt": anch_mt},
-            ]
+            # Use demand_anchors_mt override key — _build_standard_config patches
+            # the base YAML scenarios list directly (Step 27 path).
+            overrides["demand_anchors_mt"] = anch_mt
         except Exception:
             pass  # malformed — use default demand
 
@@ -909,11 +908,9 @@ async def lab_run_shim(payload: dict) -> Dict[str, Any]:
     if d_anch:
         try:
             anch_mt = {int(k): float(v) for k, v in d_anch.items()}
-            # Replace scenarios list so model.py line ~370 finds the new anchors
-            overrides["scenarios"] = [
-                {"name": "CPS", "demand_anchors_mt": anch_mt},
-                {"name": "NZS", "demand_anchors_mt": anch_mt},
-            ]
+            # Use demand_anchors_mt override key — _build_standard_config patches
+            # the base YAML scenarios list directly (Step 27 path).
+            overrides["demand_anchors_mt"] = anch_mt
         except Exception:
             pass  # malformed anchors — silently skip, model uses base config
 

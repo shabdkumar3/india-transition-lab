@@ -56,7 +56,6 @@ ALLOWED_OVERRIDE_KEYS = {
     "economics",         # Step 23: CAPEX/OPEX sensitivity (H2-DRI CAPEX)
     "sec_improvement",   # Step 24: SEC improvement trajectory (NITI Vol.4-sourced)
     "demand_anchors_mt", # Step 27: custom demand trajectory (model-fitted vs NITI Vol.4)
-    "scenarios",        # Step 27 override path: list of {name, demand_anchors_mt} replaces cfg["scenarios"]
 }
 
 # Uncertainty-study dimension keys.
