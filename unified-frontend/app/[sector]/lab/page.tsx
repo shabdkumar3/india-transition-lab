@@ -821,99 +821,60 @@ export default function LabPage() {
         </div>
       )}
 
-      {/* Unmet-demand banner — blue info for ramp-lag, orange warning for structural gaps */}
+      {/* Unmet-demand banner */}
       {run && (() => {
         const yearEntries = Object.entries(run).sort(([a],[b])=>parseInt(a)-parseInt(b));
         const maxUnmet = Math.max(...yearEntries.map(([,d])=>Number(d.unmet_demand_mt??0)));
-
-        // Classify: ramp-lag (resolves before 2070) vs structural (still unmet in 2070)
         const unmet2070 = Number(run["2070"]?.unmet_demand_mt ?? 0);
-        const isRampLagOnly = unmet2070 < 0.5;
 
-        // Find the year from which demand is permanently met (last year with unmet ≥ 0.5 Mt, then +1 period)
-        const lastBigEntry = [...yearEntries].reverse().find(([,d])=>Number(d.unmet_demand_mt??0)>=0.5);
-        const lastBigYear  = lastBigEntry ? parseInt(lastBigEntry[0]) : null;
-        const resolvedEntry = lastBigYear ? yearEntries.find(([y])=>parseInt(y)>lastBigYear) : null;
-        const resolvedYear  = resolvedEntry ? resolvedEntry[0] : null;
-
-        // Apply appropriate threshold per type
-        if (isRampLagOnly  && maxUnmet < 0.1) return null;   // tiny ramp-lag — don't clutter
-        if (!isRampLagOnly && maxUnmet < 1)   return null;   // small structural — below significance
-
-        const isCement = sectorId === "cement";
-        const lc3Off   = isCement && lab.toggles["lc3_active"] === false;
-        const isNZS    = lab.scenario === "NZS";
-
-        // --- Ramp-lag info (sector-specific physics) ---
-        const RAMP_LAG_PHYSICS: Record<string, React.ReactElement> = {
-          aluminium: <>New <strong>GridPP / RE-smelter</strong> capacity takes time to ramp up while
-            legacy primary-aluminium smelters (coal-based) retire on schedule. This early-period gap
-            is <strong>expected physics</strong> — production catches up
-            {resolvedYear ? <> from <strong>{resolvedYear}</strong> onward</> : " within a few years"}.
-            No action needed unless you want to accelerate the ramp.</>,
-          textile: <>New <strong>RE-Processing / Biomass-Processing</strong> capacity ramps up while
-            legacy coal/gas spinning mills retire on their 20-year lifetime. This early shortfall is
-            <strong> expected physics</strong> — demand is fully served
-            {resolvedYear ? <> from <strong>{resolvedYear}</strong> onward</> : " within a few years"}.
-            Increase <em>Max ramp rate</em> or enable more routes to close the gap faster.</>,
-          fertiliser: <>New <strong>Green-H₂ / Blue-NH₃</strong> capacity ramps up while legacy
-            coal-gasification ammonia plants retire. This early-period shortfall is
-            <strong> expected physics</strong> — demand is fully served
-            {resolvedYear ? <> from <strong>{resolvedYear}</strong> onward</> : " within a few years"}.
-            Adjust ramp rates or CCUS / Green-H₂ CAPEX to accelerate the transition.</>,
-        };
-
-        // --- Structural warning explanation ---
-        let explanation: React.ReactElement | string;
-        if (isCement && lc3Off) {
-          explanation = isNZS
-            ? <>Without <strong>LC3</strong>, all blended routes (CCUS, AltFuel, Coal-Blended) share the
-               <strong> fly-ash / slag (SCM) supply</strong>, which collapses in NZS as coal power shuts down
-               (8 Mt by 2070 → max ~46 Mt cement). Enable <strong>LC3</strong> (uses clay, not fly ash) or switch to <strong>CPS</strong>.</>
-            : <>Without <strong>LC3</strong>, the only clean alternative is blended cement capped by
-               <strong> fly-ash / slag (SCM) supply</strong> (≈100 Mt in CPS → max ~286 Mt cement).
-               Meanwhile, existing <strong>Coal-OPC kilns retire</strong> over 2024–2059 (35-yr lifetime, no
-               new builds allowed) — leaving just ~286 Mt of SCM-blended capacity by 2070 vs 850 Mt demand.
-               Enable <strong>LC3</strong> (uses clay, not fly ash) — the only route that can bridge this gap.</>;
-        } else {
-          explanation = <>The routes you&apos;ve enabled can&apos;t physically supply enough{" "}
-            {s.unit_short} — ramp rates, capacity caps, or supply constraints are binding.
-            Check which routes are enabled and whether ramp/lead-time limits are too conservative.</>;
-        }
-
-        // --- Render ---
-        if (isRampLagOnly && !lc3Off) {
-          // Blue info banner — this is expected physics, not a user error
-          const rampDesc = RAMP_LAG_PHYSICS[sectorId];
+        // 🟠 STRUCTURAL: demand still unmet in 2070 — user must act
+        if (unmet2070 >= 1) {
+          const isCement = sectorId === "cement";
+          const lc3Off   = isCement && lab.toggles["lc3_active"] === false;
+          const isNZS    = lab.scenario === "NZS";
+          let explanation: React.ReactElement | string;
+          if (isCement && lc3Off) {
+            explanation = isNZS
+              ? <>Without <strong>LC3</strong>, all blended routes share the <strong>fly-ash / slag (SCM) supply</strong>, which collapses in NZS as coal power shuts down. Enable <strong>LC3</strong> (uses clay) or switch to <strong>CPS</strong>.</>
+              : <>Without <strong>LC3</strong>, blended cement is capped by SCM supply (≈286 Mt max vs 850 Mt demand by 2070). Enable <strong>LC3</strong> — the only route that can bridge this gap.</>;
+          } else {
+            explanation = <>The routes you&apos;ve enabled can&apos;t physically supply enough {s.unit_short} in 2070 — ramp rates, capacity caps, or supply constraints are binding. Check enabled routes and limits.</>;
+          }
           return (
-            <div style={{ background:"#e3f2fd", border:"1.5px solid #1976d2", borderRadius:10, padding:"12px 18px", marginBottom:16, display:"flex", alignItems:"flex-start", gap:12 }}>
-              <span style={{ fontSize:20, lineHeight:1 }}>ℹ️</span>
+            <div style={{ background:"#fff3e0", border:"1.5px solid #f57c00", borderRadius:10, padding:"12px 18px", marginBottom:16, display:"flex", alignItems:"flex-start", gap:12 }}>
+              <span style={{ fontSize:20, lineHeight:1 }}>⚠️</span>
               <div>
-                <p style={{ margin:"0 0 4px", fontWeight:700, fontSize:13, color:"#1565c0" }}>Early-period capacity gap — expected ramp-lag</p>
-                <p style={{ margin:0, fontSize:12, color:"#0d47a1" }}>
-                  Up to <strong>{maxUnmet < 2 ? maxUnmet.toFixed(1) : Math.round(maxUnmet)} {s.unit_short}</strong> goes
-                  unserved during the clean-capacity ramp-up phase.{" "}
-                  {rampDesc ?? <>New clean capacity ramps up while legacy plants retire — this gap
-                    resolves {resolvedYear ? <>by <strong>{resolvedYear}</strong></> : "within a few years"} as new routes reach full output.</>}
+                <p style={{ margin:"0 0 4px", fontWeight:700, fontSize:13, color:"#e65100" }}>Demand cannot be met — constraint binding</p>
+                <p style={{ margin:0, fontSize:12, color:"#bf360c" }}>
+                  Up to <strong>{Math.round(maxUnmet)} {s.unit_short}</strong> goes unserved in 2070.{" "}{explanation}
                 </p>
               </div>
             </div>
           );
         }
 
-        // Orange warning banner — structural gap or cement LC3-off
-        return (
-          <div style={{ background:"#fff3e0", border:"1.5px solid #f57c00", borderRadius:10, padding:"12px 18px", marginBottom:16, display:"flex", alignItems:"flex-start", gap:12 }}>
-            <span style={{ fontSize:20, lineHeight:1 }}>⚠️</span>
-            <div>
-              <p style={{ margin:"0 0 4px", fontWeight:700, fontSize:13, color:"#e65100" }}>Demand cannot be met — constraint binding</p>
-              <p style={{ margin:0, fontSize:12, color:"#bf360c" }}>
-                Up to <strong>{Math.round(maxUnmet)} {s.unit_short}</strong> of demand goes unserved in peak years.{" "}
-                {explanation}
-              </p>
+        // 🔵 RAMP-LAG: unmet early on but resolves before 2070 — info only, only if significant
+        if (maxUnmet >= 2) {
+          const lastBigEntry = [...yearEntries].reverse().find(([,d])=>Number(d.unmet_demand_mt??0)>=0.5);
+          const lastBigYear  = lastBigEntry ? parseInt(lastBigEntry[0]) : null;
+          const resolvedEntry = lastBigYear ? yearEntries.find(([y])=>parseInt(y)>lastBigYear) : null;
+          const resolvedYear  = resolvedEntry ? resolvedEntry[0] : null;
+          return (
+            <div style={{ background:"#e3f2fd", border:"1.5px solid #1976d2", borderRadius:10, padding:"12px 18px", marginBottom:16, display:"flex", alignItems:"flex-start", gap:12 }}>
+              <span style={{ fontSize:20, lineHeight:1 }}>ℹ️</span>
+              <div>
+                <p style={{ margin:"0 0 4px", fontWeight:700, fontSize:13, color:"#1565c0" }}>Early-period ramp-lag — resolves automatically</p>
+                <p style={{ margin:0, fontSize:12, color:"#0d47a1" }}>
+                  Up to <strong>{Math.round(maxUnmet)} {s.unit_short}</strong> unserved during early transition
+                  {resolvedYear ? <> — fully met from <strong>{resolvedYear}</strong> onward</> : " — resolves as new capacity ramps up"}.
+                  {" "}This is expected physics; no action needed.
+                </p>
+              </div>
             </div>
-          </div>
-        );
+          );
+        }
+
+        return null;
       })()}
 
       {/* Year-by-year table */}
