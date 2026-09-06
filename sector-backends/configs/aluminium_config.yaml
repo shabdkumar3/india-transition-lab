@@ -342,15 +342,19 @@ demand:
 demand_trajectories:
   niti:
     label: "NITI Aayog Vol.4 Reference"
-    source: "NITI Aayog 2023 India Energy Transition Outlook Vol.4"
-    method: "Sector-specific forecast"
+    source: "NITI Aayog Sectoral Insights: Industry Vol.4 (Feb 2026), Fig 3.12 + p.75 text"
+    method: "Saturation-growth model (GDP/capita vs Al/capita). 2070 confirmed from text: 'around 38 Mt'; 2050 read from Fig 3.12 chart."
+    # Text (p.75): 'total aluminium production in India is projected to reach around 38 million tonnes by 2070'
+    # Text (p.75): 'demand is accordingly expected to grow steeply and then gradually taper by mid-century'
+    # Fig 3.12 scale: 0-40 Mt; 2050 bar reads ≈28-30 Mt (growth tapering); 2070 bar ≈38 Mt
     anchors:
       2024: 5.0
-      2030: 7.5
-      2040: 11.0
-      2050: 16.0
-      2060: 21.0
-      2070: 26.0
+      2030: 9.0
+      2035: 14.0
+      2040: 20.0
+      2050: 29.0
+      2060: 34.0
+      2070: 38.0
 
   model_fitted:
     label: "Logistic S-curve (fitted to historical)"

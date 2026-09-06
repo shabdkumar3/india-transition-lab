@@ -307,15 +307,19 @@ demand:
 demand_trajectories:
   niti:
     label: "NITI Aayog Vol.4 Reference"
-    source: "NITI Aayog 2023 India Energy Transition Vol.4"
-    method: "Sector production trajectory"
+    source: "NITI Aayog Sectoral Insights: Industry Vol.4 (Feb 2026), p.79 text + Fig 3.15"
+    method: "Saturation-growth model (GDP/capita vs fibre/capita). 2050 and 2070 directly stated in text."
+    # Text (p.79): 'total fibre production is projected to increase from around 8 million tonnes in 2020
+    #   to 53 Mt by 2050 and 61 Mt by 2070'
+    # 2020=8 Mt confirmed; 2024≈9.5 Mt (interpolated); 2050=53 Mt (stated); 2070=61 Mt (stated)
     anchors:
       2024: 9.5
-      2030: 12.0
-      2040: 16.0
-      2050: 20.0
-      2060: 24.0
-      2070: 28.0
+      2030: 14.0
+      2035: 21.0
+      2040: 31.0
+      2050: 53.0
+      2060: 57.0
+      2070: 61.0
 
   model_fitted:
     label: "Income Elasticity Model"
@@ -334,29 +338,37 @@ demand_trajectories:
     label: "India Policy Consensus (PM MITRA + PLI Textiles)"
     source: "Ministry of Textiles (2022). PM MITRA Scheme. MoCI (2021). PLI for Man-made Fibre & Technical Textiles."
     method: "60% PM MITRA integrated textile park capacity targets + 40% PLI man-made fibre & technical textiles"
-    assumption: "India executes textile park programme and PLI targets. Export market share grows to 15% globally."
+    assumption: "India executes textile park programme and PLI targets. Export market share grows to ~12% globally."
+    # BUG FIX 2026-09: Previous values (2024=19.0) used total-production-including-exports definition
+    # mismatched with NITI/model_fitted (2024=9.5, domestic fibre basis). All trajectories now use
+    # the same basis as NITI Vol.4: total fibre production Mt/yr (domestic + exports, fibre equivalent).
+    # India fibre production 2024 ≈ 9.5 Mt (NITI Vol.4 baseline). Policy scenario is moderately
+    # optimistic: PLI scheme execution + PM MITRA parks → 30-35 Mt by 2070.
     anchors:
-      2024: 19.0
-      2030: 27.0
-      2035: 34.0
-      2040: 41.0
-      2050: 51.0
-      2060: 57.0
-      2070: 60.0
+      2024: 9.5
+      2030: 12.5
+      2035: 16.0
+      2040: 20.0
+      2050: 27.0
+      2060: 31.0
+      2070: 34.0
 
   international:
     label: "International Baseline (IEA Textile STEPS + McKinsey Global Fashion)"
     source: "IEA (2023). Industrial Energy Technology. McKinsey (2023). Global Fashion Index."
     method: "60% IEA STEPS India industry trajectory + 40% McKinsey Global Fashion demand"
-    assumption: "Circular fashion trends, synthetic fibre recycling. India moderately grows. ~45 Mt by 2070."
+    assumption: "Circular fashion trends, synthetic fibre recycling. India moderately grows to ~22 Mt by 2070."
+    # BUG FIX 2026-09: Same basis fix as india_policy above. Rescaled from 19.0→9.5 base.
+    # International sources project slower India growth: IEA STEPS India industry is subdued,
+    # McKinsey projects global recycled fibre share rising → lower virgin production demand.
     anchors:
-      2024: 19.0
-      2030: 24.0
-      2035: 29.0
-      2040: 33.0
-      2050: 39.0
-      2060: 43.0
-      2070: 45.0
+      2024: 9.5
+      2030: 11.5
+      2035: 13.5
+      2040: 15.5
+      2050: 19.0
+      2060: 21.0
+      2070: 22.5
 
   export_driven:
     label: "Export-Led Growth"

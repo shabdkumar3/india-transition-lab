@@ -309,17 +309,23 @@ electricity:
 # DEMAND
 # ──────────────────────────────────────────────────────────────────────────────
 demand:
-  CPS: {2024: 395, 2030: 468, 2040: 590, 2050: 700, 2060: 790, 2070: 850}
-  NZS: {2024: 395, 2030: 462, 2040: 578, 2050: 685, 2060: 760, 2070: 820}
+  # Source: NITI Aayog Sectoral Insights: Industry Vol.4 (Feb 2026), Figure 3.8
+  # Chart read: 2020≈350, 2025≈480, 2050≈1550, 2070≈1900 Mt (single demand trajectory)
+  # CPS = shared production demand; scenario divergence is in technology mix, not total output
+  CPS: {2024: 395, 2030: 550, 2040: 950, 2050: 1550, 2060: 1750, 2070: 1900}
+  NZS: {2024: 395, 2030: 550, 2040: 950, 2050: 1550, 2060: 1750, 2070: 1900}
   provenance: "EXTERNAL"
-  source: "NITI Aayog Sectoral Insights Vol.4 (2023), Ch.3.2"
+  source: "NITI Aayog Sectoral Insights: Industry Vol.4 (Feb 2026), Fig 3.8 (p.70)"
 
 demand_trajectories:
   niti:
     label: "NITI Vol.4"
-    anchors: {2024: 395, 2050: 700, 2070: 850}
-    method: "Piecewise-linear between published anchors"
-    source: "NITI Aayog Vol.4 2023"
+    # Chart read from Figure 3.8 (p.70): 2050≈1550 Mt, 2070≈1900 Mt
+    # India cement 2025: 453-457 Mt (text confirmed p.49); 2024≈395 Mt (FY2023-24)
+    # Saturation-growth model: fast growth 2024-2050 (~5.2% CAGR), slow 2050-2070 (~1% CAGR)
+    anchors: {2024: 395, 2030: 550, 2035: 750, 2040: 1000, 2050: 1550, 2060: 1750, 2070: 1900}
+    method: "Chart read from NITI Fig 3.8; piecewise-linear interpolation between anchor years"
+    source: "NITI Aayog Sectoral Insights: Industry Vol.4 (Feb 2026), Figure 3.8 (p.70)"
   model_fitted:
     label: "Historical trend (logistic)"
     anchors: {2024: 395, 2030: 447, 2035: 494, 2040: 519, 2050: 551, 2060: 567, 2070: 572}

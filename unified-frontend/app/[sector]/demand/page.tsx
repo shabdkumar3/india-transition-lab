@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { getSector, logistic, piecewise, INDIA_POP } from "@/lib/sectors";
+import { getSector, logistic, piecewise, INDIA_POP, type SectorConfig } from "@/lib/sectors";
 import { Tip } from "@/lib/tip";
 import { useState, useMemo } from "react";
 import { fmt1 } from "@/lib/format";
@@ -242,7 +242,145 @@ export default function DemandPage() {
           })}
         </div>
 
+        {/* ── Technical Documentation Pane ── */}
+        <TechDocPane s={s} L={L} k={k} t0={t0} />
+
       </div>
+    </div>
+  );
+}
+
+/* ─── Collapsible derivation-notes pane ─────────────────────────────────── */
+
+function TechDocPane({ s, L, k, t0 }: { s: SectorConfig; L: number; k: number; t0: number }) {
+  const [open, setOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
+
+  const T   = { text:"#23261f", sub:"#474c44", muted:"#7a7e74", dim:"#a8ada5", border:"#e8e5de", card:"#ffffff", bg:"#f7f6f2" };
+  const CARD: React.CSSProperties = { background:T.card, border:`1px solid ${T.border}`, borderRadius:10, boxShadow:"0 1px 3px rgba(0,0,0,0.04)" };
+
+  const YEARS_ANCHOR = [2024, 2030, 2035, 2040, 2050, 2060, 2070];
+
+  const traj = s.demandTrajectories[activeTab];
+  if (!traj) return null;
+
+  return (
+    <div style={{ marginTop: 24 }}>
+      {/* Toggle header */}
+      <button
+        onClick={() => setOpen(o => !o)}
+        style={{
+          display: "flex", alignItems: "center", gap: 10,
+          width: "100%", padding: "14px 18px",
+          background: T.card, border: `1px solid ${T.border}`,
+          borderRadius: open ? "10px 10px 0 0" : 10,
+          cursor: "pointer", textAlign: "left",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+          transition: "border-radius 150ms",
+        }}
+      >
+        <span style={{ fontSize: 16, lineHeight: 1 }}>📖</span>
+        <span style={{ fontSize: 12, fontWeight: 700, color: T.sub, flex: 1 }}>
+          Technical Derivation Notes
+        </span>
+        <span style={{ fontSize: 10, color: T.dim, marginRight: 6 }}>
+          Exact numbers · Calculation steps · Data provenance
+        </span>
+        <span style={{ fontSize: 14, color: T.dim, transform: open ? "rotate(180deg)" : "rotate(0)", transition: "transform 200ms" }}>▾</span>
+      </button>
+
+      {open && (
+        <div style={{ border: `1px solid ${T.border}`, borderTop: "none", borderRadius: "0 0 10px 10px", background: T.bg }}>
+
+          {/* Trajectory tabs */}
+          <div style={{ display: "flex", borderBottom: `1px solid ${T.border}`, overflowX: "auto" }}>
+            {s.demandTrajectories.map((t, i) => (
+              <button
+                key={t.key}
+                onClick={() => setActiveTab(i)}
+                style={{
+                  padding: "10px 18px", fontSize: 11, fontWeight: 600,
+                  whiteSpace: "nowrap", cursor: "pointer",
+                  color: activeTab === i ? t.color : T.muted,
+                  background: "transparent",
+                  border: "none",
+                  borderBottom: activeTab === i ? `2px solid ${t.color}` : "2px solid transparent",
+                  transition: "color 150ms",
+                }}
+              >
+                {t.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Content for active trajectory */}
+          <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
+
+            {/* Header strip */}
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: traj.color, flexShrink: 0 }} />
+              <span style={{ fontSize: 14, fontWeight: 700, color: T.sub }}>{traj.label}</span>
+              <span style={{ fontSize: 11, color: T.dim }}>·</span>
+              <span style={{ fontSize: 11, color: T.dim }}>{traj.sublabel}</span>
+            </div>
+
+            {/* Anchor year table */}
+            <div style={{ ...CARD, overflow: "hidden" }}>
+              <div style={{ padding: "10px 16px", borderBottom: `1px solid ${T.border}`, background: T.bg }}>
+                <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, margin: 0 }}>
+                  Projected Demand by Year · {s.unit_short}
+                </p>
+              </div>
+              <div style={{ overflowX: "auto" }}>
+                <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
+                  <thead>
+                    <tr style={{ borderBottom: `1px solid ${T.border}` }}>
+                      {YEARS_ANCHOR.map(yr => (
+                        <th key={yr} style={{ padding: "8px 14px", textAlign: "right", fontWeight: 700, color: T.dim, fontSize: 10, letterSpacing: "0.06em" }}>{yr}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {YEARS_ANCHOR.map(yr => {
+                        const v = traj.useLogistic ? logistic(yr, L, k, t0) : piecewise(traj.anchors, yr);
+                        return (
+                          <td key={yr} style={{ padding: "10px 14px", textAlign: "right", fontVariantNumeric: "tabular-nums", color: yr === 2070 ? traj.color : T.muted, fontWeight: yr === 2070 ? 700 : 400 }}>
+                            {v.toFixed(1)}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Derivation notes */}
+            {traj.derivation ? (
+              <div style={{ ...CARD, padding: "16px 20px" }}>
+                <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, marginBottom: 8 }}>
+                  🔢 How these numbers were derived
+                </p>
+                <p style={{ fontSize: 12, lineHeight: 1.8, color: T.muted, margin: 0, whiteSpace: "pre-wrap" }}>
+                  {traj.derivation}
+                </p>
+              </div>
+            ) : (
+              <div style={{ ...CARD, padding: "14px 20px" }}>
+                <p style={{ fontSize: 12, color: T.dim, margin: 0 }}>No derivation notes yet for this trajectory.</p>
+              </div>
+            )}
+
+            {/* Source */}
+            <div style={{ display: "flex", gap: 8, padding: "10px 0" }}>
+              <span style={{ fontSize: 10, fontWeight: 700, color: traj.color, flexShrink: 0, marginTop: 1 }}>📄 Source</span>
+              <p style={{ fontSize: 11, color: T.muted, margin: 0, lineHeight: 1.6 }}>{traj.source}</p>
+            </div>
+
+          </div>
+        </div>
+      )}
     </div>
   );
 }
