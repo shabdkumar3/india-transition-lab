@@ -849,7 +849,7 @@ Decade-wise deceleration projections (formula: previous × (1 + rate)^years):
 
 Interpolation: Piecewise-linear between 13 anchor years (historical data from 2000 + forward projections).
 
-Per-capita check: 57 Mt ÷ 1,629M people = 35 kg/cap by 2070. India would be at China's current level — plausible for the world's largest textile producer in a moderate export-share scenario. The narrow gap between this (35) and NITI's (37) gives confidence that independent projections converge near the same endpoint.
+Per-capita check: 57 Mt ÷ 1,629M people = 35 kg/cap by 2070. India would be at China's current level — plausible for the world's largest textile producer in a moderate export-share scenario. The narrow gap between this (35) and NITI's (37) gives confidence that independent projections converge near the same endpoint.`,
       end_mt: 57, histFrom: 2000,
       anchors: { "2000": 6.2, "2005": 7.8, "2010": 10.5, "2015": 14.2, "2019": 16.1, "2024": 19, "2030": 24, "2035": 29, "2040": 34, "2050": 43, "2060": 51, "2070": 57 },
     },
