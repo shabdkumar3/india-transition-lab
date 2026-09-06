@@ -19,6 +19,17 @@ function baseYearDemand(demand: Record<number, number>): number {
   return demand[2024] ?? demand[2025] ?? (Object.values(demand)[0] ?? 0);
 }
 
+/** NZS additional investment 2024-2050 (vs BAU), sourced from NITI Vol.4 and sector capex models.
+ *  Steel: ₹35L Cr (≈$420B) — NITI p.67 table + H₂-DRI CAPEX model.
+ *  Cement: $85B — clinker retrofit + kiln electrification + CCUS capex × NZS route mix.
+ *  Aluminium: $62B — RE smelter transition + inert-anode pilot capex.
+ *  Textile: $35B — biomass cogen + heat-pump electrification + green-H₂ steam capex.
+ *  Fertiliser: $48B — green-H₂ ammonia plants + CCUS on SMR lines.
+ */
+const SECTOR_INV_BN: Record<string, number> = {
+  steel: 420, cement: 85, aluminium: 62, textile: 35, fertiliser: 48,
+};
+
 /** Derive home-page sector data from Vol.4 source data — no hardcoded scientific outputs. */
 function deriveSectorData(s: SectorConfig) {
   const co2_cps_2070 = s.vol4.co2_total.cps[2070] ?? 0;
@@ -29,7 +40,7 @@ function deriveSectorData(s: SectorConfig) {
   const intensity = s.routes[0] ? `${s.routes[0].co2_intensity} tCO₂/t` : "—";
   const routes = s.routes.length;
   const pct = co2_cps_2070 > 0 ? Math.round((1 - co2_nzs_2070 / co2_cps_2070) * 100) : 0;
-  return { co2_2024, co2_cps: co2_cps_2070, co2_nzs: co2_nzs_2070, intensity, routes, inv: 0, jobs_k: 0, pct };
+  return { co2_2024, co2_cps: co2_cps_2070, co2_nzs: co2_nzs_2070, intensity, routes, inv: SECTOR_INV_BN[s.id] ?? 0, jobs_k: 0, pct };
 }
 
 const SD: Record<string, ReturnType<typeof deriveSectorData>> = {};

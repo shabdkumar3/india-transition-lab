@@ -250,6 +250,164 @@ export default function DemandPage() {
   );
 }
 
+/* ─── Derivation body: structured visual renderer for derivation strings ─── */
+
+type DerivBlock = { type: string; header: string; lines: string[] };
+
+const DERIV_SECTION_PATTERNS: { re: RegExp; type: string }[] = [
+  { re: /^Sources?:/i,                                             type: "source"  },
+  { re: /^Data extracted/i,                                        type: "data"    },
+  { re: /^(CAGR calculation|Calculation|Unit conversion chain)/i,  type: "calc"    },
+  { re: /^Decade-wise deceleration/i,                              type: "calc"    },
+  { re: /^Interpolation/i,                                         type: "interp"  },
+  { re: /^Per-capita/i,                                            type: "percap"  },
+  { re: /^(Model choice|Rationale for)/i,                          type: "note"    },
+  { re: /^Note on/i,                                               type: "note"    },
+];
+
+function parseDerivation(text: string): DerivBlock[] {
+  const blocks: DerivBlock[] = [];
+  let cur: DerivBlock = { type: "lead", header: "", lines: [] };
+  for (const rawLine of text.split("\n")) {
+    const trimmed = rawLine.trim();
+    const match = DERIV_SECTION_PATTERNS.find(p => p.re.test(trimmed));
+    if (match) {
+      if (cur.header || cur.lines.length) blocks.push(cur);
+      cur = { type: match.type, header: trimmed, lines: [] };
+    } else if (trimmed) {
+      cur.lines.push(trimmed);
+    }
+  }
+  if (cur.header || cur.lines.length) blocks.push(cur);
+  return blocks;
+}
+
+function DerivationBody({ text, trajColor }: { text: string; trajColor: string }) {
+  const TK = { sub:"#474c44", muted:"#7a7e74", dim:"#a8ada5", border:"#e8e5de" };
+  const MONO: React.CSSProperties = { fontFamily: "'Courier New', Courier, monospace", fontSize: 11, lineHeight: 1.75, margin: "2px 0" };
+
+  const blocks = parseDerivation(text);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+      {blocks.map((b, i) => {
+
+        /* ── Source ── */
+        if (b.type === "source") return (
+          <div key={i} style={{ display: "flex", gap: 10, padding: "11px 14px", background: "#eff4ff", borderRadius: 8, borderLeft: "3px solid #4f6ef7" }}>
+            <span style={{ fontSize: 15, flexShrink: 0, lineHeight: 1.2 }}>📚</span>
+            <div>
+              <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.13em", textTransform: "uppercase", color: "#3a52c4", margin: "0 0 5px" }}>Source</p>
+              {/* Inline source (single-line "Source: text...") */}
+              {!b.lines.length && b.header.includes(":") && (
+                <p style={{ fontSize: 11, color: "#3a4080", margin: 0, lineHeight: 1.6 }}>
+                  {b.header.replace(/^Sources?:\s*/i, "")}
+                </p>
+              )}
+              {b.lines.map((l, j) => (
+                <p key={j} style={{ fontSize: 11, color: "#3a4080", margin: "2px 0", lineHeight: 1.6 }}>
+                  {l.replace(/^\(\d+\)\s*/, "")}
+                </p>
+              ))}
+            </div>
+          </div>
+        );
+
+        /* ── Data extracted ── */
+        if (b.type === "data") return (
+          <div key={i} style={{ borderRadius: 8, border: `1px solid ${TK.border}`, overflow: "hidden" }}>
+            <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.13em", textTransform: "uppercase", color: TK.dim, padding: "8px 14px", margin: 0, borderBottom: `1px solid ${TK.border}`, background: "#efede9" }}>
+              📊 {b.header.replace(/^Data extracted\s*[—–-]?\s*/i, "").trim() || "Historical data"}
+            </p>
+            <div style={{ padding: "10px 14px", background: "#f9f8f6" }}>
+              {b.lines.map((l, j) => <p key={j} style={{ ...MONO, color: TK.sub, whiteSpace: "pre-wrap" }}>{l}</p>)}
+            </div>
+          </div>
+        );
+
+        /* ── Calculation / Decade-wise ── */
+        if (b.type === "calc") {
+          const isDec = /^Decade-wise/i.test(b.header);
+          const label = isDec
+            ? "Projections — decade-wise"
+            : b.header.replace(/^(CAGR calculation|Calculation|Unit conversion chain)\s*[—–:]*\s*/i, "").trim() || "Calculation";
+          return (
+            <div key={i} style={{ borderRadius: 8, border: "1px solid #f0dfc4", overflow: "hidden" }}>
+              <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.13em", textTransform: "uppercase", color: "#92530a", padding: "8px 14px", margin: 0, borderBottom: "1px solid #f0dfc4", background: "#fef3e5" }}>
+                🔢 {label}
+              </p>
+              <div style={{ padding: "10px 14px", background: "#fffaf5" }}>
+                {b.lines.map((l, j) => {
+                  const isWarn = l.includes("⚠️");
+                  return (
+                    <p key={j} style={{ ...MONO, color: isWarn ? "#b45309" : TK.sub, whiteSpace: "pre-wrap" }}>{l}</p>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        }
+
+        /* ── Interpolation ── */
+        if (b.type === "interp") {
+          const inlineText = b.header.replace(/^Interpolation(\s+method)?:\s*/i, "");
+          return (
+            <div key={i} style={{ display: "flex", gap: 8, padding: "9px 12px", background: "#f0faf4", borderRadius: 7, border: "1px solid #bbf7d0" }}>
+              <span style={{ fontSize: 13, flexShrink: 0, lineHeight: 1.4 }}>📐</span>
+              <div>
+                <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", color: "#15803d", margin: "0 0 4px" }}>Interpolation method</p>
+                {inlineText && <p style={{ fontSize: 11, color: "#166534", margin: "1px 0", lineHeight: 1.6 }}>{inlineText}</p>}
+                {b.lines.map((l, j) => <p key={j} style={{ fontSize: 11, color: "#166534", margin: "1px 0", lineHeight: 1.6 }}>{l}</p>)}
+              </div>
+            </div>
+          );
+        }
+
+        /* ── Per-capita ── */
+        if (b.type === "percap") {
+          const inlineText = b.header.replace(/^Per-capita.*?:\s*/i, "");
+          return (
+            <div key={i} style={{ display: "flex", gap: 10, padding: "10px 14px", background: `${trajColor}0f`, borderRadius: 8, border: `1px solid ${trajColor}40` }}>
+              <span style={{ fontSize: 14, flexShrink: 0, lineHeight: 1.2 }}>📏</span>
+              <div>
+                <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", color: trajColor, margin: "0 0 4px" }}>Per-capita sanity check</p>
+                {inlineText && <p style={{ fontSize: 11, color: TK.muted, margin: "1px 0", lineHeight: 1.6 }}>{inlineText}</p>}
+                {b.lines.map((l, j) => <p key={j} style={{ fontSize: 11, color: TK.muted, margin: "1px 0", lineHeight: 1.6 }}>{l}</p>)}
+              </div>
+            </div>
+          );
+        }
+
+        /* ── Model choice / Note ── */
+        if (b.type === "note") return (
+          <div key={i} style={{ display: "flex", gap: 8, padding: "9px 12px", background: "#f7f7ef", borderRadius: 7, border: "1px solid #e5e4c0" }}>
+            <span style={{ fontSize: 13, flexShrink: 0, lineHeight: 1.4 }}>💡</span>
+            <div>
+              <p style={{ fontSize: 9, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", color: "#786f20", margin: "0 0 4px" }}>
+                {b.header.split(":")[0].trim()}
+              </p>
+              {b.header.includes(":") && (
+                <p style={{ fontSize: 11, color: TK.muted, margin: "1px 0", lineHeight: 1.6 }}>
+                  {b.header.replace(/^[^:]+:\s*/, "")}
+                </p>
+              )}
+              {b.lines.map((l, j) => <p key={j} style={{ fontSize: 11, color: TK.muted, margin: "1px 0", lineHeight: 1.6 }}>{l}</p>)}
+            </div>
+          </div>
+        );
+
+        /* ── Lead / plain ── */
+        return (
+          <div key={i}>
+            {b.header && <p style={{ fontSize: 11, fontWeight: 600, color: TK.sub, margin: "0 0 3px" }}>{b.header}</p>}
+            {b.lines.map((l, j) => <p key={j} style={{ fontSize: 11, color: TK.muted, margin: "1px 0", lineHeight: 1.6 }}>{l}</p>)}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 /* ─── Collapsible derivation-notes pane ─────────────────────────────────── */
 
 function TechDocPane({ s, L, k, t0 }: { s: SectorConfig; L: number; k: number; t0: number }) {
@@ -359,12 +517,10 @@ function TechDocPane({ s, L, k, t0 }: { s: SectorConfig; L: number; k: number; t
             {/* Derivation notes */}
             {traj.derivation ? (
               <div style={{ ...CARD, padding: "16px 20px" }}>
-                <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, marginBottom: 8 }}>
-                  🔢 How these numbers were derived
+                <p style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T.dim, marginBottom: 12 }}>
+                  How this trajectory was built
                 </p>
-                <p style={{ fontSize: 12, lineHeight: 1.8, color: T.muted, margin: 0, whiteSpace: "pre-wrap" }}>
-                  {traj.derivation}
-                </p>
+                <DerivationBody text={traj.derivation} trajColor={traj.color} />
               </div>
             ) : (
               <div style={{ ...CARD, padding: "14px 20px" }}>
