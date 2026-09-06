@@ -28,7 +28,7 @@ interface TipProps {
 
 const MARGIN = 8; // viewport-edge clearance
 
-export function Tip({ text, icon = "ⓘ", width = 240 }: TipProps) {
+export function Tip({ text, icon = "ⓘ", width = 200 }: TipProps) {
   const [show, setShow] = useState(false);
   const [pos, setPos] = useState<{ top: number; left: number; caretLeft: number; flip: boolean } | null>(null);
   const triggerRef = useRef<HTMLSpanElement>(null);
@@ -91,9 +91,9 @@ export function Tip({ text, icon = "ⓘ", width = 240 }: TipProps) {
           display: "inline-flex",
           alignItems: "center",
           justifyContent: "center",
-          width: 15,
-          height: 15,
-          fontSize: 12.5,
+          width: 14,
+          height: 14,
+          fontSize: 11.5,
           lineHeight: 1,
           color: "#9ca3af",
           cursor: "help",
@@ -120,28 +120,36 @@ export function Tip({ text, icon = "ⓘ", width = 240 }: TipProps) {
             transform: pos.flip ? "none" : "translateY(-100%)",
             width,
             maxWidth: `calc(100vw - ${MARGIN * 2}px)`,
-            background: "#1c1f1a",
-            color: "#f0ede8",
-            fontSize: 12,
-            lineHeight: 1.55,
-            padding: "8px 12px",
-            borderRadius: 8,
-            boxShadow: "0 6px 20px rgba(0,0,0,0.28)",
+            background: "rgba(22,24,22,0.92)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
+            border: "1px solid rgba(255,255,255,0.10)",
+            color: "#e8e4de",
+            fontSize: 11,
+            lineHeight: 1.5,
+            padding: "6px 10px",
+            borderRadius: 7,
+            boxShadow: "0 4px 16px rgba(0,0,0,0.36), 0 1px 3px rgba(0,0,0,0.2)",
             zIndex: 100000,
             pointerEvents: "none",
             whiteSpace: "normal",
           }}
         >
           {text}
-          {/* Small caret pointing at the trigger icon */}
+          {/* Caret pointing at the trigger icon — bordered to match bubble edge */}
           <span style={{
             position: "absolute",
             ...(pos.flip ? { top: -5 } : { bottom: -5 }),
             left: pos.caretLeft,
             transform: "translateX(-50%) rotate(45deg)",
-            width: 9,
-            height: 9,
-            background: "#1c1f1a",
+            width: 8,
+            height: 8,
+            background: "rgba(22,24,22,0.92)",
+            border: "1px solid rgba(255,255,255,0.10)",
+            // Hide the interior-facing edges so only the outer corner shows
+            ...(pos.flip
+              ? { borderBottom: "none", borderRight: "none" }
+              : { borderTop: "none", borderLeft: "none" }),
           }} />
         </span>,
         document.body
