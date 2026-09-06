@@ -6,7 +6,6 @@ import { getSector, SECTOR_LIST } from "@/lib/sectors";
 import {
   TrendingUp, FlaskConical, BarChart3, LayoutDashboard,
   BookOpen, Factory, Building2, Zap, Scissors, Leaf, GitCompare,
-  AlertTriangle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -29,16 +28,10 @@ const PAGE_NAV: { label: string; items: NavItem[] }[] = [
     ],
   },
   {
-    label: "Analysis",
-    items: [
-      { href: "/uncertainty",  label: "Uncertainty",  icon: AlertTriangle },
-      { href: "/evidence",     label: "Evidence & Trust", icon: BookOpen },
-    ],
-  },
-  {
     label: "About",
     items: [
-      { href: "/methodology", label: "Methodology", icon: BookOpen, absolute: true },
+      { href: "/evidence",     label: "Evidence & Trust", icon: BookOpen },
+      { href: "/methodology",  label: "Methodology", icon: BookOpen, absolute: true },
     ],
   },
 ];

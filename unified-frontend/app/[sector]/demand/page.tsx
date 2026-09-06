@@ -216,19 +216,19 @@ export default function DemandPage() {
                   </div>
                 </div>
 
-                {/* ── Body — method + assumption ── */}
+                {/* ── Body — method chips + assumption callout ── */}
                 <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:0 }}>
-                  <div style={{ padding:"20px 24px", borderRight:`1px solid ${T.border}` }}>
-                    <p style={{ fontSize:10, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:T.dim, marginBottom:8 }}>
+                  <div style={{ padding:"18px 24px", borderRight:`1px solid ${T.border}` }}>
+                    <p style={{ fontSize:9, fontWeight:800, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, marginBottom:12 }}>
                       📐 How this trajectory was built
                     </p>
-                    <p style={{ fontSize:13, lineHeight:1.7, color:T.muted, margin:0 }}>{t.method}</p>
+                    <MethodDisplay method={t.method} color={t.color} />
                   </div>
-                  <div style={{ padding:"20px 24px" }}>
-                    <p style={{ fontSize:10, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase", color:T.dim, marginBottom:8 }}>
+                  <div style={{ padding:"18px 24px" }}>
+                    <p style={{ fontSize:9, fontWeight:800, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, marginBottom:12 }}>
                       💡 Key underlying assumption
                     </p>
-                    <p style={{ fontSize:13, lineHeight:1.7, color:T.muted, margin:0 }}>{t.assumption}</p>
+                    <AssumptionDisplay assumption={t.assumption} color={t.color} />
                   </div>
                 </div>
 
@@ -246,6 +246,117 @@ export default function DemandPage() {
         <TechDocPane s={s} L={L} k={k} t0={t0} />
 
       </div>
+    </div>
+  );
+}
+
+/* ─── MethodDisplay: parse method text into visual chips ────────────────── */
+
+function MethodDisplay({ method, color }: { method: string; color: string }) {
+  // Detect blend: "X% Source1 + Y% Source2"
+  const blendMatch = method.match(/^(\d+)%\s+(.+?)\s*\+\s*(\d+)%\s+(.+?)(?:\.|$)/);
+  if (blendMatch) {
+    const [, p1, s1, p2, s2] = blendMatch;
+    const tail = method.replace(blendMatch[0], "").trim().replace(/^[\.\,]/, "").trim();
+    return (
+      <div>
+        <div style={{ display:"flex", alignItems:"center", gap:8, flexWrap:"wrap" }}>
+          {/* Source 1 chip */}
+          <div style={{ background:`${color}14`, border:`1px solid ${color}35`, borderRadius:8, padding:"6px 12px" }}>
+            <div style={{ fontSize:20, fontWeight:900, color, lineHeight:1 }}>{p1}%</div>
+            <div style={{ fontSize:10, fontWeight:700, color, marginTop:2, maxWidth:120, lineHeight:1.3 }}>{s1.split("(")[0].trim()}</div>
+          </div>
+          <span style={{ fontSize:16, color:"#c0bdb6", fontWeight:700 }}>+</span>
+          {/* Source 2 chip */}
+          <div style={{ background:`${color}08`, border:`1px solid ${color}25`, borderRadius:8, padding:"6px 12px" }}>
+            <div style={{ fontSize:20, fontWeight:900, color, lineHeight:1 }}>{p2}%</div>
+            <div style={{ fontSize:10, fontWeight:700, color, marginTop:2, maxWidth:120, lineHeight:1.3 }}>{s2.split("(")[0].trim()}</div>
+          </div>
+        </div>
+        {tail && <p style={{ fontSize:11, color:"#7a7e74", marginTop:8, lineHeight:1.5 }}>{tail}</p>}
+      </div>
+    );
+  }
+
+  // Detect CAGR-based
+  const cagrMatch = method.match(/CAGR\s*\(([^)]+)\)/i);
+  if (cagrMatch) {
+    const tags: { label: string; sub?: string }[] = [
+      { label: "Historical trend", sub: "data-fitted" },
+      { label: cagrMatch[1], sub: "observed CAGR" },
+    ];
+    if (/decelerat/i.test(method)) tags.push({ label: "Decade-wise", sub: "deceleration" });
+    return <MethodTags tags={tags} color={color} />;
+  }
+
+  // Detect logistic
+  if (/logistic/i.test(method)) {
+    const params = method.match(/L=(\d+)[,\s]+k=([0-9.]+)[,\s]+t[₀0]=(\d+)/);
+    const tags: { label: string; sub?: string }[] = [{ label: "Logistic S-curve", sub: "data-fitted" }];
+    if (params) tags.push({ label: `L=${params[1]} Mt`, sub: "saturation" });
+    return <MethodTags tags={tags} color={color} />;
+  }
+
+  // Detect piecewise with explicit anchors
+  if (/piecewise|linear/i.test(method)) {
+    const anchors = [...method.matchAll(/(\d{4})\s*[=:]\s*(\d+(?:\.\d+)?)/g)].slice(0, 4);
+    return (
+      <div>
+        <div style={{ display:"inline-flex", alignItems:"center", gap:6, background:`${color}10`, border:`1px solid ${color}30`, borderRadius:6, padding:"5px 12px", marginBottom: anchors.length ? 8 : 0 }}>
+          <span style={{ fontSize:12 }}>📈</span>
+          <span style={{ fontSize:11, fontWeight:700, color }}>Piecewise-linear interpolation</span>
+        </div>
+        {anchors.length > 0 && (
+          <div style={{ display:"flex", gap:8, flexWrap:"wrap" }}>
+            {anchors.map(([, yr, v], i) => (
+              <div key={i} style={{ textAlign:"center" }}>
+                <div style={{ fontSize:9, color:"#a8ada5", fontWeight:600, letterSpacing:"0.06em" }}>{yr}</div>
+                <div style={{ fontSize:13, fontWeight:800, color, fontVariantNumeric:"tabular-nums" }}>{v}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Fallback: pill tags from first sentence
+  return <MethodTags tags={[{ label: method.split(".")[0].trim() }]} color={color} />;
+}
+
+function MethodTags({ tags, color }: { tags: { label: string; sub?: string }[]; color: string }) {
+  return (
+    <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+      {tags.map((t, i) => (
+        <div key={i} style={{ background:`${color}12`, border:`1px solid ${color}30`, borderRadius:6, padding:"5px 10px" }}>
+          <div style={{ fontSize:11, fontWeight:700, color }}>{t.label}</div>
+          {t.sub && <div style={{ fontSize:9, color, opacity:0.7, fontWeight:600, marginTop:1 }}>{t.sub}</div>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ─── AssumptionDisplay: styled assumption callout ───────────────────────── */
+
+function AssumptionDisplay({ assumption, color }: { assumption: string; color: string }) {
+  // Extract a key number/stat from the assumption if present
+  const statMatch = assumption.match(/~?([\d,.]+)\s*(kg\/cap|Mt|%|₹[^\s]+)/);
+  const stat = statMatch ? { value: statMatch[1], unit: statMatch[2] } : null;
+
+  return (
+    <div>
+      {stat && (
+        <div style={{ display:"flex", alignItems:"baseline", gap:4, marginBottom:8 }}>
+          <span style={{ fontSize:26, fontWeight:900, color, lineHeight:1, fontVariantNumeric:"tabular-nums" }}>
+            {stat.value}
+          </span>
+          <span style={{ fontSize:11, fontWeight:600, color, opacity:0.75 }}>{stat.unit}</span>
+        </div>
+      )}
+      <p style={{ fontSize:11, lineHeight:1.65, color:"#7a7e74", margin:0 }}>
+        {assumption}
+      </p>
     </div>
   );
 }
