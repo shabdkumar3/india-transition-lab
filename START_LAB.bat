@@ -1,5 +1,13 @@
 @echo off
-title India Transition Lab — Starting Services...
-echo Starting India Transition Lab (5 Backends + Next.js Frontend)...
-powershell -ExecutionPolicy Bypass -File "%~dp0start_all.ps1" -KillFirst
+title India Transition Lab - Starting...
+echo.
+echo  ========================================
+echo   India Transition Lab
+echo   Starting backend + frontend...
+echo  ========================================
+echo.
+
+powershell -ExecutionPolicy Bypass -File "D:\niti\start_all.ps1" -KillFirst
+
+echo.
 pause
