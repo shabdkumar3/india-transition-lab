@@ -508,6 +508,10 @@ def get_demand_trajectories():
                     "end_value": series[2070], "source": tc["source"]}
     return {**out, "historical": historical}
 
+@app.get("/api/config")
+def get_config():
+    return CFG
+
 @app.post("/api/run")
 def run_scenario(req: RunRequest):
     sc = req.scenario.upper()

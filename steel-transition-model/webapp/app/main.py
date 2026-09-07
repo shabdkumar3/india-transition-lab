@@ -753,6 +753,11 @@ def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
             ev.set()
 
 
+@app.get("/api/config")
+async def get_config():
+    from webapp.runtime.config import PARAMETERS
+    return PARAMETERS
+
 @app.post("/api/run")
 async def simple_run(payload: dict) -> Dict[str, Any]:
     """Unified-frontend compatibility: synchronous run returning v2-format results."""

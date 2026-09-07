@@ -527,6 +527,10 @@ def get_scrap_supply():
         "source": sc_cfg.get("source", ""),
     }
 
+@app.get("/api/config")
+def get_config():
+    return CFG
+
 @app.post("/api/run")
 def run_scenario(req: RunRequest):
     sc = req.scenario.upper()
