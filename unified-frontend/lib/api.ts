@@ -66,7 +66,7 @@ export interface TrajectoryBranch {
 // In production (non-localhost), call Railway directly to bypass Vercel's 10s proxy timeout.
 // CORS is enabled on Railway (allow_origins=["*"]) so browser can call directly.
 
-const RAILWAY_URL = "https://india-transition-lab-production.up.railway.app";
+const RAILWAY_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "https://india-transition-lab-production.up.railway.app";
 
 function resolveBase(apiBase: string): string {
   if (typeof window !== "undefined" && !window.location.hostname.includes("localhost")) {
