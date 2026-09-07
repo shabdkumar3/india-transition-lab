@@ -1,7 +1,2517 @@
 {
   "status": "ok",
-  "message": "Demand constraint unmet by 1.04 Mt",
   "sector": "textile",
   "scenario": "NZS",
+  "solver_objective": 42518.94,
+  "years": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050,
+    2051,
+    2052,
+    2053,
+    2054,
+    2055,
+    2056,
+    2057,
+    2058,
+    2059,
+    2060,
+    2061,
+    2062,
+    2063,
+    2064,
+    2065,
+    2066,
+    2067,
+    2068,
+    2069,
+    2070
+  ],
+  "yearly_results": {
+    "2024": {
+      "year": 2024,
+      "demand_mt": 8.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 7.2,
+        "Gas-Transition": 0.679,
+        "Biomass-Cogen": 0.255,
+        "RE-Electrified": 0.09,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.176
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 8.0,
+        "Gas-Transition": 0.8,
+        "Biomass-Cogen": 0.3,
+        "RE-Electrified": 0.1,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.2
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.1882,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 25.1654,
+        "Gas-Transition": 1.854,
+        "Biomass-Cogen": 0.4888,
+        "RE-Electrified": 0.0831,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.3999
+      },
+      "total_production_mt": 8.4,
+      "total_production": 8.4,
+      "total_co2_mt": 27.9912,
+      "co2_total": 27.9912,
+      "co2_intensity_tco2_per_t": 3.3323,
+      "co2_intensity": 3.3323,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 415.87,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 943.2
+    },
+    "2025": {
+      "year": 2025,
+      "demand_mt": 9.08,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 6.84,
+        "Gas-Transition": 0.679,
+        "Biomass-Cogen": 0.2422,
+        "RE-Electrified": 1.1549,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1672
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 7.6,
+        "Gas-Transition": 0.76,
+        "Biomass-Cogen": 0.285,
+        "RE-Electrified": 1.2832,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.19
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 23.0772,
+        "Gas-Transition": 1.7745,
+        "Biomass-Cogen": 0.436,
+        "RE-Electrified": 1.0009,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.3567
+      },
+      "total_production_mt": 9.0833,
+      "total_production": 9.0833,
+      "total_co2_mt": 26.6454,
+      "co2_total": 26.6454,
+      "co2_intensity_tco2_per_t": 2.9335,
+      "co2_intensity": 2.9335,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 679.93,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1277.4
+    },
+    "2026": {
+      "year": 2026,
+      "demand_mt": 9.77,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 6.48,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2295,
+        "RE-Electrified": 2.8988,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1584
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 7.2,
+        "Gas-Transition": 0.72,
+        "Biomass-Cogen": 0.27,
+        "RE-Electrified": 3.2209,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.18
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.1882,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 21.0764,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.3862,
+        "RE-Electrified": 2.349,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.316
+      },
+      "total_production_mt": 9.7667,
+      "total_production": 9.7667,
+      "total_co2_mt": 24.1276,
+      "co2_total": 24.1276,
+      "co2_intensity_tco2_per_t": 2.4704,
+      "co2_intensity": 2.4704,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 415.87,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1113.4
+    },
+    "2027": {
+      "year": 2027,
+      "demand_mt": 10.45,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 6.12,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2168,
+        "RE-Electrified": 3.9636,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1496
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 6.8,
+        "Gas-Transition": 0.68,
+        "Biomass-Cogen": 0.255,
+        "RE-Electrified": 4.4041,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.17
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 19.1629,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.3394,
+        "RE-Electrified": 2.9886,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.2777
+      },
+      "total_production_mt": 10.45,
+      "total_production": 10.45,
+      "total_co2_mt": 22.7686,
+      "co2_total": 22.7686,
+      "co2_intensity_tco2_per_t": 2.1788,
+      "co2_intensity": 2.1788,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1642.8
+    },
+    "2028": {
+      "year": 2028,
+      "demand_mt": 11.13,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 4.5794,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.204,
+        "RE-Electrified": 6.2091,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1408
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 6.4,
+        "Gas-Transition": 0.64,
+        "Biomass-Cogen": 0.24,
+        "RE-Electrified": 6.8991,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.16
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 13.7833,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2956,
+        "RE-Electrified": 4.3319,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.2418
+      },
+      "total_production_mt": 11.1333,
+      "total_production": 11.1333,
+      "total_co2_mt": 18.6526,
+      "co2_total": 18.6526,
+      "co2_intensity_tco2_per_t": 1.6754,
+      "co2_intensity": 1.6754,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1770.7
+    },
+    "2029": {
+      "year": 2029,
+      "demand_mt": 11.82,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 3.0388,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1912,
+        "RE-Electrified": 8.4546,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.132
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 6.0,
+        "Gas-Transition": 0.6,
+        "Biomass-Cogen": 0.225,
+        "RE-Electrified": 9.3941,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.15
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 8.7776,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2547,
+        "RE-Electrified": 5.4222,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.2084
+      },
+      "total_production_mt": 11.8166,
+      "total_production": 11.8166,
+      "total_co2_mt": 14.663,
+      "co2_total": 14.663,
+      "co2_intensity_tco2_per_t": 1.2409,
+      "co2_intensity": 1.2409,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1898.6
+    },
+    "2030": {
+      "year": 2030,
+      "demand_mt": 12.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 1.4981,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1785,
+        "RE-Electrified": 10.7002,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1232
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 5.6,
+        "Gas-Transition": 0.56,
+        "Biomass-Cogen": 0.21,
+        "RE-Electrified": 11.8891,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.14
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.7222,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 4.1457,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2169,
+        "RE-Electrified": 6.2596,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1774
+      },
+      "total_production_mt": 12.5,
+      "total_production": 12.5,
+      "total_co2_mt": 10.7996,
+      "co2_total": 10.7996,
+      "co2_intensity_tco2_per_t": 0.864,
+      "co2_intensity": 0.864,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 602.78,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1754.3
+    },
+    "2031": {
+      "year": 2031,
+      "demand_mt": 13.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.6742,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1658,
+        "RE-Electrified": 12.2457,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1144
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 5.2,
+        "Gas-Transition": 0.52,
+        "Biomass-Cogen": 0.195,
+        "RE-Electrified": 13.6063,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.13
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.5558,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 1.8185,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1902,
+        "RE-Electrified": 6.7657,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1556
+      },
+      "total_production_mt": 13.2001,
+      "total_production": 13.2001,
+      "total_co2_mt": 8.93,
+      "co2_total": 8.93,
+      "co2_intensity_tco2_per_t": 0.6765,
+      "co2_intensity": 0.6765,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 544.54,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1790.5
+    },
+    "2032": {
+      "year": 2032,
+      "demand_mt": 13.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.153,
+        "RE-Electrified": 13.6414,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1056
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 4.8,
+        "Gas-Transition": 0.48,
+        "Biomass-Cogen": 0.18,
+        "RE-Electrified": 15.1571,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.12
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.8067,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1652,
+        "RE-Electrified": 7.0935,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1352
+      },
+      "total_production_mt": 13.9,
+      "total_production": 13.9,
+      "total_co2_mt": 7.3939,
+      "co2_total": 7.3939,
+      "co2_intensity_tco2_per_t": 0.5319,
+      "co2_intensity": 0.5319,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 282.35,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1615.4
+    },
+    "2033": {
+      "year": 2033,
+      "demand_mt": 14.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1403,
+        "RE-Electrified": 14.363,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0968
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 4.4,
+        "Gas-Transition": 0.44,
+        "Biomass-Cogen": 0.165,
+        "RE-Electrified": 15.9588,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.11
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.8067,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.142,
+        "RE-Electrified": 7.0019,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1162
+      },
+      "total_production_mt": 14.6001,
+      "total_production": 14.6001,
+      "total_co2_mt": 7.2601,
+      "co2_total": 7.2601,
+      "co2_intensity_tco2_per_t": 0.4973,
+      "co2_intensity": 0.4973,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 282.35,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1669.5
+    },
+    "2034": {
+      "year": 2034,
+      "demand_mt": 15.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1275,
+        "RE-Electrified": 15.0845,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.088
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 4.0,
+        "Gas-Transition": 0.4,
+        "Biomass-Cogen": 0.15,
+        "RE-Electrified": 16.7606,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.8067,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1205,
+        "RE-Electrified": 6.8634,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0986
+      },
+      "total_production_mt": 15.3,
+      "total_production": 15.3,
+      "total_co2_mt": 7.0825,
+      "co2_total": 7.0825,
+      "co2_intensity_tco2_per_t": 0.4629,
+      "co2_intensity": 0.4629,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 282.35,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1723.6
+    },
+    "2035": {
+      "year": 2035,
+      "demand_mt": 16.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1147,
+        "RE-Electrified": 15.806,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0792
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 3.6,
+        "Gas-Transition": 0.36,
+        "Biomass-Cogen": 0.135,
+        "RE-Electrified": 17.5623,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.09
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.9178,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1007,
+        "RE-Electrified": 6.6781,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0824
+      },
+      "total_production_mt": 15.9999,
+      "total_production": 15.9999,
+      "total_co2_mt": 6.8611,
+      "co2_total": 6.8611,
+      "co2_intensity_tco2_per_t": 0.4288,
+      "co2_intensity": 0.4288,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 321.24,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1816.6
+    },
+    "2036": {
+      "year": 2036,
+      "demand_mt": 16.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.102,
+        "RE-Electrified": 16.6276,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0704
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 3.2,
+        "Gas-Transition": 0.32,
+        "Biomass-Cogen": 0.12,
+        "RE-Electrified": 18.4751,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.08
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.9178,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0826,
+        "RE-Electrified": 6.4848,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0676
+      },
+      "total_production_mt": 16.8,
+      "total_production": 16.8,
+      "total_co2_mt": 6.635,
+      "co2_total": 6.635,
+      "co2_intensity_tco2_per_t": 0.3949,
+      "co2_intensity": 0.3949,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 321.24,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1879.5
+    },
+    "2037": {
+      "year": 2037,
+      "demand_mt": 17.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0892,
+        "RE-Electrified": 17.4492,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0616
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 2.8,
+        "Gas-Transition": 0.28,
+        "Biomass-Cogen": 0.105,
+        "RE-Electrified": 19.3879,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.07
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.9178,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0663,
+        "RE-Electrified": 6.2381,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0542
+      },
+      "total_production_mt": 17.6,
+      "total_production": 17.6,
+      "total_co2_mt": 6.3585,
+      "co2_total": 6.3585,
+      "co2_intensity_tco2_per_t": 0.3613,
+      "co2_intensity": 0.3613,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 321.24,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 1942.5
+    },
+    "2038": {
+      "year": 2038,
+      "demand_mt": 18.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0765,
+        "RE-Electrified": 18.2707,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0528
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 2.4,
+        "Gas-Transition": 0.24,
+        "Biomass-Cogen": 0.09,
+        "RE-Electrified": 20.3008,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.06
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.9178,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0516,
+        "RE-Electrified": 5.938,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0422
+      },
+      "total_production_mt": 18.4,
+      "total_production": 18.4,
+      "total_co2_mt": 6.0319,
+      "co2_total": 6.0319,
+      "co2_intensity_tco2_per_t": 0.3278,
+      "co2_intensity": 0.3278,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 321.24,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2005.5
+    },
+    "2039": {
+      "year": 2039,
+      "demand_mt": 19.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0638,
+        "RE-Electrified": 19.0922,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.044
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 2.0,
+        "Gas-Transition": 0.2,
+        "Biomass-Cogen": 0.075,
+        "RE-Electrified": 21.2136,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.05
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.9178,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0387,
+        "RE-Electrified": 5.5845,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0317
+      },
+      "total_production_mt": 19.2,
+      "total_production": 19.2,
+      "total_co2_mt": 5.6549,
+      "co2_total": 5.6549,
+      "co2_intensity_tco2_per_t": 0.2945,
+      "co2_intensity": 0.2945,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 321.24,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2068.5
+    },
+    "2040": {
+      "year": 2040,
+      "demand_mt": 20.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.051,
+        "RE-Electrified": 19.9138,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0352
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 1.6,
+        "Gas-Transition": 0.16,
+        "Biomass-Cogen": 0.06,
+        "RE-Electrified": 22.1264,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.04
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.8067,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0275,
+        "RE-Electrified": 5.1776,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0225
+      },
+      "total_production_mt": 20.0,
+      "total_production": 20.0,
+      "total_co2_mt": 5.2277,
+      "co2_total": 5.2277,
+      "co2_intensity_tco2_per_t": 0.2614,
+      "co2_intensity": 0.2614,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 282.35,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2092.6
+    },
+    "2041": {
+      "year": 2041,
+      "demand_mt": 20.7,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0383,
+        "RE-Electrified": 20.6354,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0264
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 1.2,
+        "Gas-Transition": 0.12,
+        "Biomass-Cogen": 0.045,
+        "RE-Electrified": 22.9282,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.03
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.8067,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0194,
+        "RE-Electrified": 5.0433,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0159
+      },
+      "total_production_mt": 20.7001,
+      "total_production": 20.7001,
+      "total_co2_mt": 5.0786,
+      "co2_total": 5.0786,
+      "co2_intensity_tco2_per_t": 0.2453,
+      "co2_intensity": 0.2453,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 282.35,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2146.7
+    },
+    "2042": {
+      "year": 2042,
+      "demand_mt": 21.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0255,
+        "RE-Electrified": 21.3569,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0176
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.8,
+        "Gas-Transition": 0.08,
+        "Biomass-Cogen": 0.03,
+        "RE-Electrified": 23.7299,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.02
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.8307,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0121,
+        "RE-Electrified": 4.8865,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0099
+      },
+      "total_production_mt": 21.4,
+      "total_production": 21.4,
+      "total_co2_mt": 4.9085,
+      "co2_total": 4.9085,
+      "co2_intensity_tco2_per_t": 0.2294,
+      "co2_intensity": 0.2294,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 290.73,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2209.2
+    },
+    "2043": {
+      "year": 2043,
+      "demand_mt": 22.1,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 22.1,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.4,
+        "Gas-Transition": 0.04,
+        "Biomass-Cogen": 0.015,
+        "RE-Electrified": 24.5556,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.01
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 4.7117,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_production_mt": 22.1,
+      "total_production": 22.1,
+      "total_co2_mt": 4.7117,
+      "co2_total": 4.7117,
+      "co2_intensity_tco2_per_t": 0.2132,
+      "co2_intensity": 0.2132,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2848.2
+    },
+    "2044": {
+      "year": 2044,
+      "demand_mt": 22.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 22.8,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 25.8624,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 4.5053,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_production_mt": 22.8,
+      "total_production": 22.8,
+      "total_co2_mt": 4.5053,
+      "co2_total": 4.5053,
+      "co2_intensity_tco2_per_t": 0.1976,
+      "co2_intensity": 0.1976,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2920.2
+    },
+    "2045": {
+      "year": 2045,
+      "demand_mt": 23.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 23.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 26.4197,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 4.277,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_production_mt": 23.5,
+      "total_production": 23.5,
+      "total_co2_mt": 4.277,
+      "co2_total": 4.277,
+      "co2_intensity_tco2_per_t": 0.182,
+      "co2_intensity": 0.182,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2974.7
+    },
+    "2046": {
+      "year": 2046,
+      "demand_mt": 24.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 24.2,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 27.7315,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.7,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.053
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 4.0269,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_production_mt": 24.2,
+      "total_production": 24.2,
+      "total_co2_mt": 4.0269,
+      "co2_total": 4.0269,
+      "co2_intensity_tco2_per_t": 0.1664,
+      "co2_intensity": 0.1664,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 140.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 14.84
+      },
+      "total_cost": 3210.4
+    },
+    "2047": {
+      "year": 2047,
+      "demand_mt": 24.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 24.9,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 27.7315,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.7,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1193
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 3.7549,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_production_mt": 24.9,
+      "total_production": 24.9,
+      "total_co2_mt": 3.7549,
+      "co2_total": 3.7549,
+      "co2_intensity_tco2_per_t": 0.1508,
+      "co2_intensity": 0.1508,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 140.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 33.41
+      },
+      "total_cost": 3264.0
+    },
+    "2048": {
+      "year": 2048,
+      "demand_mt": 25.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.595,
+        "RE-Electrified": 24.9584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0467
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.7,
+        "RE-Electrified": 27.7315,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.053
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1671,
+        "RE-Electrified": 3.3744,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0155
+      },
+      "total_production_mt": 25.6001,
+      "total_production": 25.6001,
+      "total_co2_mt": 3.557,
+      "co2_total": 3.557,
+      "co2_intensity_tco2_per_t": 0.1389,
+      "co2_intensity": 0.1389,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3150.7
+    },
+    "2049": {
+      "year": 2049,
+      "demand_mt": 26.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 24.9584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1517
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 27.7315,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2956,
+        "RE-Electrified": 2.985,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0446
+      },
+      "total_production_mt": 26.3001,
+      "total_production": 26.3001,
+      "total_co2_mt": 3.3253,
+      "co2_total": 3.3253,
+      "co2_intensity_tco2_per_t": 0.1264,
+      "co2_intensity": 0.1264,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3214.0
+    },
+    "2050": {
+      "year": 2050,
+      "demand_mt": 27.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 25.6584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 28.5093,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.0003,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.257,
+        "RE-Electrified": 2.6685,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0388
+      },
+      "total_production_mt": 27.0,
+      "total_production": 27.0,
+      "total_co2_mt": 2.9643,
+      "co2_total": 2.9643,
+      "co2_intensity_tco2_per_t": 0.1098,
+      "co2_intensity": 0.1098,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 700.1,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3101.3
+    },
+    "2051": {
+      "year": 2051,
+      "demand_mt": 27.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 26.0584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 28.9537,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.2512,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.241,
+        "RE-Electrified": 2.5407,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0364
+      },
+      "total_production_mt": 27.4,
+      "total_production": 27.4,
+      "total_co2_mt": 2.8181,
+      "co2_total": 2.8181,
+      "co2_intensity_tco2_per_t": 0.1028,
+      "co2_intensity": 0.1028,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 437.91,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2874.6
+    },
+    "2052": {
+      "year": 2052,
+      "demand_mt": 27.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 26.4584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 29.3982,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.2512,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2249,
+        "RE-Electrified": 2.4077,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.034
+      },
+      "total_production_mt": 27.8,
+      "total_production": 27.8,
+      "total_co2_mt": 2.6666,
+      "co2_total": 2.6666,
+      "co2_intensity_tco2_per_t": 0.0959,
+      "co2_intensity": 0.0959,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 437.91,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2910.2
+    },
+    "2053": {
+      "year": 2053,
+      "demand_mt": 28.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 26.8584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 29.8426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.2512,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.2088,
+        "RE-Electrified": 2.2695,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0315
+      },
+      "total_production_mt": 28.2,
+      "total_production": 28.2,
+      "total_co2_mt": 2.5099,
+      "co2_total": 2.5099,
+      "co2_intensity_tco2_per_t": 0.089,
+      "co2_intensity": 0.089,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 437.91,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 2945.8
+    },
+    "2054": {
+      "year": 2054,
+      "demand_mt": 28.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 27.2584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 30.2871,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.3623,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1928,
+        "RE-Electrified": 2.1262,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0291
+      },
+      "total_production_mt": 28.6,
+      "total_production": 28.6,
+      "total_co2_mt": 2.348,
+      "co2_total": 2.348,
+      "co2_intensity_tco2_per_t": 0.0821,
+      "co2_intensity": 0.0821,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 476.8,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3020.2
+    },
+    "2055": {
+      "year": 2055,
+      "demand_mt": 29.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 27.6584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 30.7315,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.3623,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1767,
+        "RE-Electrified": 1.9776,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0267
+      },
+      "total_production_mt": 29.0,
+      "total_production": 29.0,
+      "total_co2_mt": 2.181,
+      "co2_total": 2.181,
+      "co2_intensity_tco2_per_t": 0.0752,
+      "co2_intensity": 0.0752,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 476.8,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3055.8
+    },
+    "2056": {
+      "year": 2056,
+      "demand_mt": 29.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 28.0584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 31.1759,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.3623,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1607,
+        "RE-Electrified": 1.8238,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0243
+      },
+      "total_production_mt": 29.4,
+      "total_production": 29.4,
+      "total_co2_mt": 2.0087,
+      "co2_total": 2.0087,
+      "co2_intensity_tco2_per_t": 0.0683,
+      "co2_intensity": 0.0683,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 476.8,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3091.3
+    },
+    "2057": {
+      "year": 2057,
+      "demand_mt": 29.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 28.4584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 31.6204,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.3623,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1446,
+        "RE-Electrified": 1.6648,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0218
+      },
+      "total_production_mt": 29.8,
+      "total_production": 29.8,
+      "total_co2_mt": 1.8312,
+      "co2_total": 1.8312,
+      "co2_intensity_tco2_per_t": 0.0615,
+      "co2_intensity": 0.0615,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 476.8,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3126.9
+    },
+    "2058": {
+      "year": 2058,
+      "demand_mt": 30.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 28.8584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 32.0648,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.3623,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1285,
+        "RE-Electrified": 1.5006,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0194
+      },
+      "total_production_mt": 30.2,
+      "total_production": 30.2,
+      "total_co2_mt": 1.6486,
+      "co2_total": 1.6486,
+      "co2_intensity_tco2_per_t": 0.0546,
+      "co2_intensity": 0.0546,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 476.8,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3162.4
+    },
+    "2059": {
+      "year": 2059,
+      "demand_mt": 30.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 29.2584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 32.5093,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.2512,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.1125,
+        "RE-Electrified": 1.3313,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.017
+      },
+      "total_production_mt": 30.6,
+      "total_production": 30.6,
+      "total_co2_mt": 1.4607,
+      "co2_total": 1.4607,
+      "co2_intensity_tco2_per_t": 0.0477,
+      "co2_intensity": 0.0477,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 437.91,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3159.1
+    },
+    "2060": {
+      "year": 2060,
+      "demand_mt": 31.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 29.6584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 32.9537,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.1401,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0964,
+        "RE-Electrified": 1.1567,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0146
+      },
+      "total_production_mt": 31.0,
+      "total_production": 31.0,
+      "total_co2_mt": 1.2676,
+      "co2_total": 1.2676,
+      "co2_intensity_tco2_per_t": 0.0409,
+      "co2_intensity": 0.0409,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 399.02,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3155.8
+    },
+    "2061": {
+      "year": 2061,
+      "demand_mt": 31.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.19,
+        "RE-Electrified": 29.9584,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 33.2871,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.4862,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.09,
+        "RE-Electrified": 1.0905,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0136
+      },
+      "total_production_mt": 31.3,
+      "total_production": 31.3,
+      "total_co2_mt": 1.194,
+      "co2_total": 1.194,
+      "co2_intensity_tco2_per_t": 0.0381,
+      "co2_intensity": 0.0381,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 870.18,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3653.6
+    },
+    "2062": {
+      "year": 2062,
+      "demand_mt": 31.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 1.063,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0126
+      },
+      "total_production_mt": 31.6,
+      "total_production": 31.6,
+      "total_co2_mt": 1.0756,
+      "co2_total": 1.0756,
+      "co2_intensity_tco2_per_t": 0.034,
+      "co2_intensity": 0.034,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3725.4
+    },
+    "2063": {
+      "year": 2063,
+      "demand_mt": 31.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.3,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0194,
+        "RE-Electrified": 0.9812,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0116
+      },
+      "total_production_mt": 31.9,
+      "total_production": 31.9,
+      "total_co2_mt": 1.0123,
+      "co2_total": 1.0123,
+      "co2_intensity_tco2_per_t": 0.0317,
+      "co2_intensity": 0.0317,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3741.9
+    },
+    "2064": {
+      "year": 2064,
+      "demand_mt": 32.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.6,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.4149,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.4
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0356,
+        "RE-Electrified": 0.8994,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0107
+      },
+      "total_production_mt": 32.2,
+      "total_production": 32.2,
+      "total_co2_mt": 0.9457,
+      "co2_total": 0.9457,
+      "co2_intensity_tco2_per_t": 0.0294,
+      "co2_intensity": 0.0294,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 82.98,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 112.0
+      },
+      "total_cost": 3953.4
+    },
+    "2065": {
+      "year": 2065,
+      "demand_mt": 32.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.9,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1516
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.4,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.1723
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.7,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.4
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0486,
+        "RE-Electrified": 0.8177,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0097
+      },
+      "total_production_mt": 32.5,
+      "total_production": 32.5,
+      "total_co2_mt": 0.876,
+      "co2_total": 0.876,
+      "co2_intensity_tco2_per_t": 0.027,
+      "co2_intensity": 0.027,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 140.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 112.0
+      },
+      "total_cost": 4026.9
+    },
+    "2066": {
+      "year": 2066,
+      "demand_mt": 32.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.8947,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.457
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.1149,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.5193
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.3409
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0435,
+        "RE-Electrified": 0.7359,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0263
+      },
+      "total_production_mt": 32.8001,
+      "total_production": 32.8001,
+      "total_co2_mt": 0.8057,
+      "co2_total": 0.8057,
+      "co2_intensity_tco2_per_t": 0.0246,
+      "co2_intensity": 0.0246,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 95.45
+      },
+      "total_cost": 3893.9
+    },
+    "2067": {
+      "year": 2067,
+      "demand_mt": 33.1,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.9476,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.704
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.1149,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.8
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.3409
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0409,
+        "RE-Electrified": 0.6541,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.036
+      },
+      "total_production_mt": 33.1,
+      "total_production": 33.1,
+      "total_co2_mt": 0.7311,
+      "co2_total": 0.7311,
+      "co2_intensity_tco2_per_t": 0.0221,
+      "co2_intensity": 0.0221,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 95.45
+      },
+      "total_cost": 3922.5
+    },
+    "2068": {
+      "year": 2068,
+      "demand_mt": 33.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.9476,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 1.004
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.1149,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 1.1409
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.5,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0358,
+        "RE-Electrified": 0.5724,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.045
+      },
+      "total_production_mt": 33.4,
+      "total_production": 33.4,
+      "total_co2_mt": 0.6532,
+      "co2_total": 0.6532,
+      "co2_intensity_tco2_per_t": 0.0196,
+      "co2_intensity": 0.0196,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 875.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3858.3
+    },
+    "2069": {
+      "year": 2069,
+      "demand_mt": 33.7,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.9476,
+        "RE-Electrified": 31.4484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 1.304
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.1149,
+        "RE-Electrified": 34.9426,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 1.4818
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 2.3336,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0307,
+        "RE-Electrified": 0.4906,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0501
+      },
+      "total_production_mt": 33.7,
+      "total_production": 33.7,
+      "total_co2_mt": 0.5714,
+      "co2_total": 0.5714,
+      "co2_intensity_tco2_per_t": 0.017,
+      "co2_intensity": 0.017,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 816.76,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3831.2
+    },
+    "2070": {
+      "year": 2070,
+      "demand_mt": 34.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.9476,
+        "RE-Electrified": 31.7484,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 1.304
+      },
+      "capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 1.1149,
+        "RE-Electrified": 35.2759,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 1.4818
+      },
+      "new_capacity_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0256,
+        "RE-Electrified": 0.4127,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0417
+      },
+      "total_production_mt": 34.0,
+      "total_production": 34.0,
+      "total_co2_mt": 0.48,
+      "co2_total": 0.48,
+      "co2_intensity_tco2_per_t": 0.0141,
+      "co2_intensity": 0.0141,
+      "investment_by_route": {
+        "Coal-Conventional": 0.0,
+        "Gas-Transition": 0.0,
+        "Biomass-Cogen": 0.0,
+        "RE-Electrified": 0.0,
+        "Green-H2-Steam": 0.0,
+        "Circular-Fibre": 0.0
+      },
+      "total_cost": 3041.1
+    }
+  },
+  "summary": {
+    "total_cost_bn": 0.043,
+    "total_co2_cumulative_mt": 283.3,
+    "final_co2_intensity": 0.0141,
+    "final_year_demand": 34.0
+  },
+  "vol4_targets": {
+    "2024": 4.5,
+    "2030": 3.5,
+    "2040": 2.0,
+    "2050": 1.0,
+    "2070": 0.3,
+    "source": "NITI Aayog 2023 Vol.4 Chapter 10 indicative targets; BEE PAT norms"
+  },
+  "provenance": "configs/textile_config.yaml",
   "demand_model": "india_policy"
 }

@@ -1,4 +1,4 @@
-﻿# Fertiliser Transition Sector — Parameter Registry
+# Fertiliser Transition Sector — Parameter Registry
 # India Transition Lab | Provenance-tagged scientific parameters
 #
 # KEY SCIENCE:
@@ -52,7 +52,7 @@ routes:
   NG-SMR:
     label: "Natural Gas SMR"
     description: "Steam methane reforming — current best practice for ammonia"
-    existing_mt_nh3: 10.5         # Mt NH3/yr; ~60% of India urea capacity × 0.567 NH3/urea = 18.3 Mt urea → 10.4 Mt NH3
+    existing_mt_nh3: 12.6         # Mt NH3/yr; ~60% of India urea capacity × 0.567 NH3/urea = 22.2 Mt urea → 12.6 Mt NH3
     capex_usd_per_t_nh3: 650      # USD/t NH3/yr (greenfield SMR ammonia plant)
     capex_provenance: EXTERNAL
     source_capex: "IEA 2022 Global Hydrogen Review Appendix; IRENA 2022 Green Hydrogen Cost"
@@ -61,9 +61,9 @@ routes:
     availability: 0.92
     lifetime_yr: 25
     start_year: 2024
-    lead_years: 3
+    lead_years: 1
     wacc_premium: 0.0
-    max_ramp_mt_yr: 0.8            # India can add ~1-2 Mt urea/yr → 0.57-1.13 Mt NH3/yr; conservative 0.8
+    max_ramp_mt_yr: 1.5            # Brownfield + greenfield capacity expansion
     fossil_decline: false
 
     # Gas intensity: GJ natural gas per t NH3
@@ -145,13 +145,11 @@ routes:
     availability: 0.90
     lifetime_yr: 25
     start_year: 2028
-    lead_years: 4
+    lead_years: 2
     wacc_premium: 0.005
-    max_ramp_mt_yr: 0.6            # CCS on top of SMR; slightly tighter than base SMR
+    max_ramp_mt_yr: 1.2            # CCS on top of SMR
 
     gas_gj_per_t_nh3: 33.5       # Slightly higher gas due to CCS energy penalty
-    # GROSS process CO2 = same as NG-SMR (1.65 tCO2/t NH3); code applies ccus_capture_rate
-    # Net residual after 90% capture = 1.65 × (1-0.90) = 0.165 tCO2/t NH3
     process_co2_t_per_t_nh3: 1.65  # GROSS tCO2/t NH3; CCS capture applied via ccus_capture_rate
     combustion_co2_t_per_t_nh3: 0.25  # Combustion CO2 not captured (heat)
     ccus_capture_rate: 0.90           # Applied to process_co2 only; combustion not captured
@@ -171,10 +169,10 @@ routes:
     vom_residual_usd_per_t: 50
     availability: 0.85
     lifetime_yr: 20
-    start_year: 2027
-    lead_years: 3
+    start_year: 2026
+    lead_years: 1
     wacc_premium: 0.02
-    max_ramp_mt_yr: 0.8            # Align with NG-SMR ramp; electrolyser supply chain
+    max_ramp_mt_yr: 1.5            # Electrolyser supply chain expansion
 
     # Green H2: intensive electricity use instead of gas
     elec_kwh_per_t_nh3: 10500    # kWh/t NH3 = 353 kgH2 × 55 kWh/kgH2 + ASU + HB compression
@@ -201,10 +199,10 @@ routes:
     vom_residual_usd_per_t: 60
     availability: 0.80
     lifetime_yr: 20
-    start_year: 2030
-    lead_years: 3
+    start_year: 2026
+    lead_years: 1
     wacc_premium: 0.015
-    max_ramp_mt_yr: 0.3
+    max_ramp_mt_yr: 1.0
 
     biomass_gj_per_t_nh3: 38.0   # GJ biomass per t NH3 (lower efficiency than NG)
     biomass_provenance: EXTERNAL_PENDING

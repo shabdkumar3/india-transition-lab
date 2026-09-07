@@ -1,7 +1,3036 @@
 {
   "status": "ok",
-  "message": "Demand constraint unmet by 4.78 Mt",
   "sector": "fertiliser",
   "scenario": "NZS",
+  "solver_objective": 94981.58,
+  "years": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050,
+    2051,
+    2052,
+    2053,
+    2054,
+    2055,
+    2056,
+    2057,
+    2058,
+    2059,
+    2060,
+    2061,
+    2062,
+    2063,
+    2064,
+    2065,
+    2066,
+    2067,
+    2068,
+    2069,
+    2070
+  ],
+  "yearly_results": {
+    "2024": {
+      "year": 2024,
+      "demand_mt_nh3": 17.3,
+      "demand_mt": 17.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 11.58,
+        "Coal-Gasif": 5.72,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "capacity_by_route": {
+        "NG-SMR": 12.6,
+        "Coal-Gasif": 6.5,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.02,
+        "Biomass-Reform": 0.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 1.1744,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 23.2353,
+          "net": 10.9597
+        },
+        "Coal-Gasif": {
+          "gross": 17.4002,
+          "net": 11.3366
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.0,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 17.3,
+      "total_production": 17.3,
+      "total_co2_net_mt": 22.2963,
+      "co2_total": 22.2963,
+      "co2_intensity_tco2_per_t_nh3": 1.2888,
+      "co2_intensity": 1.2888,
+      "investment_by_route": {
+        "NG-SMR": 763.38,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "total_cost": 2746.6
+    },
+    "2025": {
+      "year": 2025,
+      "demand_mt_nh3": 17.7,
+      "demand_mt": 17.7,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 12.2088,
+        "Coal-Gasif": 5.4912,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "capacity_by_route": {
+        "NG-SMR": 13.2704,
+        "Coal-Gasif": 6.24,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.019,
+        "Biomass-Reform": 0.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 1.1708,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 24.4176,
+          "net": 11.4754
+        },
+        "Coal-Gasif": {
+          "gross": 16.6566,
+          "net": 10.8356
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.0,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 17.7,
+      "total_production": 17.7,
+      "total_co2_net_mt": 22.311,
+      "co2_total": 22.311,
+      "co2_intensity_tco2_per_t_nh3": 1.2605,
+      "co2_intensity": 1.2605,
+      "investment_by_route": {
+        "NG-SMR": 761.05,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "total_cost": 2774.0
+    },
+    "2026": {
+      "year": 2026,
+      "demand_mt_nh3": 18.1,
+      "demand_mt": 18.1,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 12.8223,
+        "Coal-Gasif": 5.2624,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0153,
+        "Biomass-Reform": 0.0
+      },
+      "capacity_by_route": {
+        "NG-SMR": 13.9373,
+        "Coal-Gasif": 5.98,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.018,
+        "Biomass-Reform": 0.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.3188,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 25.5613,
+          "net": 11.9687
+        },
+        "Coal-Gasif": {
+          "gross": 15.917,
+          "net": 10.3385
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.0,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 18.1,
+      "total_production": 18.1,
+      "total_co2_net_mt": 22.3072,
+      "co2_total": 22.3072,
+      "co2_intensity_tco2_per_t_nh3": 1.2324,
+      "co2_intensity": 1.2324,
+      "investment_by_route": {
+        "NG-SMR": 207.24,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 3350.0
+    },
+    "2027": {
+      "year": 2027,
+      "demand_mt_nh3": 18.5,
+      "demand_mt": 18.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 12.652,
+        "Coal-Gasif": 5.0336,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0144,
+        "Biomass-Reform": 0.8
+      },
+      "capacity_by_route": {
+        "NG-SMR": 13.7521,
+        "Coal-Gasif": 5.72,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.017,
+        "Biomass-Reform": 1.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.3188,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 25.1394,
+          "net": 11.7275
+        },
+        "Coal-Gasif": {
+          "gross": 15.1813,
+          "net": 9.8454
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.2035,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 18.5,
+      "total_production": 18.5,
+      "total_co2_net_mt": 21.5728,
+      "co2_total": 21.5728,
+      "co2_intensity_tco2_per_t_nh3": 1.1661,
+      "co2_intensity": 1.1661,
+      "investment_by_route": {
+        "NG-SMR": 207.24,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 3458.1
+    },
+    "2028": {
+      "year": 2028,
+      "demand_mt_nh3": 18.9,
+      "demand_mt": 18.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 12.4816,
+        "Coal-Gasif": 4.8048,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0136,
+        "Biomass-Reform": 1.6
+      },
+      "capacity_by_route": {
+        "NG-SMR": 13.567,
+        "Coal-Gasif": 5.46,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.016,
+        "Biomass-Reform": 2.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.3188,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 24.7198,
+          "net": 11.4884
+        },
+        "Coal-Gasif": {
+          "gross": 14.4496,
+          "net": 9.3562
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.3946,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 18.9,
+      "total_production": 18.9,
+      "total_co2_net_mt": 20.8446,
+      "co2_total": 20.8446,
+      "co2_intensity_tco2_per_t_nh3": 1.1029,
+      "co2_intensity": 1.1029,
+      "investment_by_route": {
+        "NG-SMR": 207.24,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 4502.2
+    },
+    "2029": {
+      "year": 2029,
+      "demand_mt_nh3": 19.3,
+      "demand_mt": 19.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 12.3112,
+        "Coal-Gasif": 4.576,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0127,
+        "Biomass-Reform": 2.4
+      },
+      "capacity_by_route": {
+        "NG-SMR": 13.3818,
+        "Coal-Gasif": 5.2,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.015,
+        "Biomass-Reform": 3.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0167
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 24.3024,
+          "net": 11.2516
+        },
+        "Coal-Gasif": {
+          "gross": 13.7219,
+          "net": 8.871
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5731,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 19.2999,
+      "total_production": 19.2999,
+      "total_co2_net_mt": 20.1226,
+      "co2_total": 20.1226,
+      "co2_intensity_tco2_per_t_nh3": 1.0426,
+      "co2_intensity": 1.0426,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 18.33
+      },
+      "total_cost": 3321.4
+    },
+    "2030": {
+      "year": 2030,
+      "demand_mt_nh3": 19.7,
+      "demand_mt": 19.7,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 11.8476,
+        "Coal-Gasif": 4.3472,
+        "NG-SMR-CCS": 1.08,
+        "Green-H2": 0.0119,
+        "Biomass-Reform": 2.4133
+      },
+      "capacity_by_route": {
+        "NG-SMR": 12.8778,
+        "Coal-Gasif": 4.94,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.014,
+        "Biomass-Reform": 3.0167
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 23.3101,
+          "net": 10.7508
+        },
+        "Coal-Gasif": {
+          "gross": 12.9981,
+          "net": 8.3898
+        },
+        "NG-SMR-CCS": {
+          "gross": 0.5454,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5575,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 19.7,
+      "total_production": 19.7,
+      "total_co2_net_mt": 19.1406,
+      "co2_total": 19.1406,
+      "co2_intensity_tco2_per_t_nh3": 0.9716,
+      "co2_intensity": 0.9716,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 3438.8
+    },
+    "2031": {
+      "year": 2031,
+      "demand_mt_nh3": 20.14,
+      "demand_mt": 20.14,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 11.3839,
+        "Coal-Gasif": 4.1184,
+        "NG-SMR-CCS": 2.16,
+        "Green-H2": 0.0111,
+        "Biomass-Reform": 2.4667
+      },
+      "capacity_by_route": {
+        "NG-SMR": 12.3738,
+        "Coal-Gasif": 4.68,
+        "NG-SMR-CCS": 2.4,
+        "Green-H2": 0.013,
+        "Biomass-Reform": 3.0833
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 22.3551,
+          "net": 10.2874
+        },
+        "Coal-Gasif": {
+          "gross": 12.2934,
+          "net": 7.9276
+        },
+        "NG-SMR-CCS": {
+          "gross": 1.08,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5587,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 20.1401,
+      "total_production": 20.1401,
+      "total_co2_net_mt": 18.215,
+      "co2_total": 18.215,
+      "co2_intensity_tco2_per_t_nh3": 0.9044,
+      "co2_intensity": 0.9044,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 3509.1
+    },
+    "2032": {
+      "year": 2032,
+      "demand_mt_nh3": 20.58,
+      "demand_mt": 20.58,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 10.9202,
+        "Coal-Gasif": 3.8896,
+        "NG-SMR-CCS": 3.24,
+        "Green-H2": 0.0102,
+        "Biomass-Reform": 2.52
+      },
+      "capacity_by_route": {
+        "NG-SMR": 11.8698,
+        "Coal-Gasif": 4.42,
+        "NG-SMR-CCS": 3.6,
+        "Green-H2": 0.012,
+        "Biomass-Reform": 3.15
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 21.4036,
+          "net": 9.8274
+        },
+        "Coal-Gasif": {
+          "gross": 11.591,
+          "net": 7.4678
+        },
+        "NG-SMR-CCS": {
+          "gross": 1.6038,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5594,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 20.58,
+      "total_production": 20.58,
+      "total_co2_net_mt": 17.2952,
+      "co2_total": 17.2952,
+      "co2_intensity_tco2_per_t_nh3": 0.8404,
+      "co2_intensity": 0.8404,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 3579.5
+    },
+    "2033": {
+      "year": 2033,
+      "demand_mt_nh3": 21.02,
+      "demand_mt": 21.02,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 10.4565,
+        "Coal-Gasif": 3.6608,
+        "NG-SMR-CCS": 4.32,
+        "Green-H2": 0.0094,
+        "Biomass-Reform": 2.5733
+      },
+      "capacity_by_route": {
+        "NG-SMR": 11.3658,
+        "Coal-Gasif": 4.16,
+        "NG-SMR-CCS": 4.8,
+        "Green-H2": 0.011,
+        "Biomass-Reform": 3.2167
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 20.4556,
+          "net": 9.3709
+        },
+        "Coal-Gasif": {
+          "gross": 10.8909,
+          "net": 7.0102
+        },
+        "NG-SMR-CCS": {
+          "gross": 2.1168,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5597,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 21.02,
+      "total_production": 21.02,
+      "total_co2_net_mt": 16.3811,
+      "co2_total": 16.3811,
+      "co2_intensity_tco2_per_t_nh3": 0.7793,
+      "co2_intensity": 0.7793,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 3649.8
+    },
+    "2034": {
+      "year": 2034,
+      "demand_mt_nh3": 21.46,
+      "demand_mt": 21.46,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 9.9928,
+        "Coal-Gasif": 3.432,
+        "NG-SMR-CCS": 5.4,
+        "Green-H2": 0.0085,
+        "Biomass-Reform": 2.6267
+      },
+      "capacity_by_route": {
+        "NG-SMR": 10.8618,
+        "Coal-Gasif": 3.9,
+        "NG-SMR-CCS": 6.0,
+        "Green-H2": 0.01,
+        "Biomass-Reform": 3.2833
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 19.511,
+          "net": 8.9179
+        },
+        "Coal-Gasif": {
+          "gross": 10.193,
+          "net": 6.5549
+        },
+        "NG-SMR-CCS": {
+          "gross": 2.619,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5595,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 21.46,
+      "total_production": 21.46,
+      "total_co2_net_mt": 15.4728,
+      "co2_total": 15.4728,
+      "co2_intensity_tco2_per_t_nh3": 0.721,
+      "co2_intensity": 0.721,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 3720.1
+    },
+    "2035": {
+      "year": 2035,
+      "demand_mt_nh3": 21.9,
+      "demand_mt": 21.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 9.5292,
+        "Coal-Gasif": 3.2032,
+        "NG-SMR-CCS": 6.48,
+        "Green-H2": 0.0076,
+        "Biomass-Reform": 2.68
+      },
+      "capacity_by_route": {
+        "NG-SMR": 10.3578,
+        "Coal-Gasif": 3.64,
+        "NG-SMR-CCS": 7.2,
+        "Green-H2": 0.009,
+        "Biomass-Reform": 3.35
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 18.57,
+          "net": 8.4684
+        },
+        "Coal-Gasif": {
+          "gross": 9.4975,
+          "net": 6.1019
+        },
+        "NG-SMR-CCS": {
+          "gross": 3.1104,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5588,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 21.9,
+      "total_production": 21.9,
+      "total_co2_net_mt": 14.5702,
+      "co2_total": 14.5702,
+      "co2_intensity_tco2_per_t_nh3": 0.6653,
+      "co2_intensity": 0.6653,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 45.83
+      },
+      "total_cost": 3762.9
+    },
+    "2036": {
+      "year": 2036,
+      "demand_mt_nh3": 22.32,
+      "demand_mt": 22.32,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 9.0655,
+        "Coal-Gasif": 2.9744,
+        "NG-SMR-CCS": 7.56,
+        "Green-H2": 0.0068,
+        "Biomass-Reform": 2.7133
+      },
+      "capacity_by_route": {
+        "NG-SMR": 9.8538,
+        "Coal-Gasif": 3.38,
+        "NG-SMR-CCS": 8.4,
+        "Green-H2": 0.008,
+        "Biomass-Reform": 3.3916
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 17.6324,
+          "net": 8.0223
+        },
+        "Coal-Gasif": {
+          "gross": 8.8042,
+          "net": 5.6512
+        },
+        "NG-SMR-CCS": {
+          "gross": 3.591,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5535,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 22.32,
+      "total_production": 22.32,
+      "total_co2_net_mt": 13.6735,
+      "co2_total": 13.6735,
+      "co2_intensity_tco2_per_t_nh3": 0.6126,
+      "co2_intensity": 0.6126,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 45.83
+      },
+      "total_cost": 3829.3
+    },
+    "2037": {
+      "year": 2037,
+      "demand_mt_nh3": 22.74,
+      "demand_mt": 22.74,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 8.6018,
+        "Coal-Gasif": 2.7456,
+        "NG-SMR-CCS": 8.64,
+        "Green-H2": 0.0059,
+        "Biomass-Reform": 2.7466
+      },
+      "capacity_by_route": {
+        "NG-SMR": 9.3498,
+        "Coal-Gasif": 3.12,
+        "NG-SMR-CCS": 9.6,
+        "Green-H2": 0.007,
+        "Biomass-Reform": 3.4333
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 16.6983,
+          "net": 7.5797
+        },
+        "Coal-Gasif": {
+          "gross": 8.1132,
+          "net": 5.2027
+        },
+        "NG-SMR-CCS": {
+          "gross": 4.0608,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.548,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 22.7399,
+      "total_production": 22.7399,
+      "total_co2_net_mt": 12.7825,
+      "co2_total": 12.7825,
+      "co2_intensity_tco2_per_t_nh3": 0.5621,
+      "co2_intensity": 0.5621,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 45.83
+      },
+      "total_cost": 3895.7
+    },
+    "2038": {
+      "year": 2038,
+      "demand_mt_nh3": 23.16,
+      "demand_mt": 23.16,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 8.1381,
+        "Coal-Gasif": 2.5168,
+        "NG-SMR-CCS": 9.72,
+        "Green-H2": 0.0051,
+        "Biomass-Reform": 2.78
+      },
+      "capacity_by_route": {
+        "NG-SMR": 8.8458,
+        "Coal-Gasif": 2.86,
+        "NG-SMR-CCS": 10.8,
+        "Green-H2": 0.006,
+        "Biomass-Reform": 3.475
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 15.7676,
+          "net": 7.1406
+        },
+        "Coal-Gasif": {
+          "gross": 7.4246,
+          "net": 4.7566
+        },
+        "NG-SMR-CCS": {
+          "gross": 4.5198,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5421,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 23.16,
+      "total_production": 23.16,
+      "total_co2_net_mt": 11.8972,
+      "co2_total": 11.8972,
+      "co2_intensity_tco2_per_t_nh3": 0.5137,
+      "co2_intensity": 0.5137,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 45.83
+      },
+      "total_cost": 3962.0
+    },
+    "2039": {
+      "year": 2039,
+      "demand_mt_nh3": 23.58,
+      "demand_mt": 23.58,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 7.6744,
+        "Coal-Gasif": 2.288,
+        "NG-SMR-CCS": 10.8,
+        "Green-H2": 0.0042,
+        "Biomass-Reform": 2.8133
+      },
+      "capacity_by_route": {
+        "NG-SMR": 8.3418,
+        "Coal-Gasif": 2.6,
+        "NG-SMR-CCS": 12.0,
+        "Green-H2": 0.005,
+        "Biomass-Reform": 3.5166
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 14.8405,
+          "net": 6.705
+        },
+        "Coal-Gasif": {
+          "gross": 6.7382,
+          "net": 4.3127
+        },
+        "NG-SMR-CCS": {
+          "gross": 4.968,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5359,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 23.5799,
+      "total_production": 23.5799,
+      "total_co2_net_mt": 11.0177,
+      "co2_total": 11.0177,
+      "co2_intensity_tco2_per_t_nh3": 0.4673,
+      "co2_intensity": 0.4673,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 45.83
+      },
+      "total_cost": 4028.4
+    },
+    "2040": {
+      "year": 2040,
+      "demand_mt_nh3": 24.0,
+      "demand_mt": 24.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 7.2108,
+        "Coal-Gasif": 2.0592,
+        "NG-SMR-CCS": 11.88,
+        "Green-H2": 0.0034,
+        "Biomass-Reform": 2.8466
+      },
+      "capacity_by_route": {
+        "NG-SMR": 7.8378,
+        "Coal-Gasif": 2.34,
+        "NG-SMR-CCS": 13.2,
+        "Green-H2": 0.004,
+        "Biomass-Reform": 3.5583
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 13.9168,
+          "net": 6.2729
+        },
+        "Coal-Gasif": {
+          "gross": 6.054,
+          "net": 3.8712
+        },
+        "NG-SMR-CCS": {
+          "gross": 5.4054,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5295,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 24.0,
+      "total_production": 24.0,
+      "total_co2_net_mt": 10.144,
+      "co2_total": 10.144,
+      "co2_intensity_tco2_per_t_nh3": 0.4227,
+      "co2_intensity": 0.4227,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 4122.3
+    },
+    "2041": {
+      "year": 2041,
+      "demand_mt_nh3": 24.44,
+      "demand_mt": 24.44,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 6.7471,
+        "Coal-Gasif": 1.8304,
+        "NG-SMR-CCS": 12.96,
+        "Green-H2": 0.0026,
+        "Biomass-Reform": 2.9
+      },
+      "capacity_by_route": {
+        "NG-SMR": 7.3338,
+        "Coal-Gasif": 2.08,
+        "NG-SMR-CCS": 14.4,
+        "Green-H2": 0.003,
+        "Biomass-Reform": 3.625
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 13.0097,
+          "net": 5.8573
+        },
+        "Coal-Gasif": {
+          "gross": 5.377,
+          "net": 3.4366
+        },
+        "NG-SMR-CCS": {
+          "gross": 5.8657,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5331,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 24.4401,
+      "total_production": 24.4401,
+      "total_co2_net_mt": 9.294,
+      "co2_total": 9.294,
+      "co2_intensity_tco2_per_t_nh3": 0.3803,
+      "co2_intensity": 0.3803,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 4192.6
+    },
+    "2042": {
+      "year": 2042,
+      "demand_mt_nh3": 24.88,
+      "demand_mt": 24.88,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 6.2834,
+        "Coal-Gasif": 1.6016,
+        "NG-SMR-CCS": 14.04,
+        "Green-H2": 0.0017,
+        "Biomass-Reform": 2.9533
+      },
+      "capacity_by_route": {
+        "NG-SMR": 6.8298,
+        "Coal-Gasif": 1.82,
+        "NG-SMR-CCS": 15.6,
+        "Green-H2": 0.002,
+        "Biomass-Reform": 3.6916
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 12.1044,
+          "net": 5.4435
+        },
+        "Coal-Gasif": {
+          "gross": 4.701,
+          "net": 3.0032
+        },
+        "NG-SMR-CCS": {
+          "gross": 6.3208,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5366,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 24.88,
+      "total_production": 24.88,
+      "total_co2_net_mt": 8.4467,
+      "co2_total": 8.4467,
+      "co2_intensity_tco2_per_t_nh3": 0.3395,
+      "co2_intensity": 0.3395,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 4262.9
+    },
+    "2043": {
+      "year": 2043,
+      "demand_mt_nh3": 25.32,
+      "demand_mt": 25.32,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 5.8197,
+        "Coal-Gasif": 1.3728,
+        "NG-SMR-CCS": 15.12,
+        "Green-H2": 0.0009,
+        "Biomass-Reform": 3.0066
+      },
+      "capacity_by_route": {
+        "NG-SMR": 6.3258,
+        "Coal-Gasif": 1.56,
+        "NG-SMR-CCS": 16.8,
+        "Green-H2": 0.001,
+        "Biomass-Reform": 3.7583
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 11.2007,
+          "net": 5.0313
+        },
+        "Coal-Gasif": {
+          "gross": 4.0261,
+          "net": 2.5709
+        },
+        "NG-SMR-CCS": {
+          "gross": 6.7707,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5397,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 25.32,
+      "total_production": 25.32,
+      "total_co2_net_mt": 7.6022,
+      "co2_total": 7.6022,
+      "co2_intensity_tco2_per_t_nh3": 0.3002,
+      "co2_intensity": 0.3002,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 73.33
+      },
+      "total_cost": 4333.2
+    },
+    "2044": {
+      "year": 2044,
+      "demand_mt_nh3": 25.76,
+      "demand_mt": 25.76,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 5.356,
+        "Coal-Gasif": 1.144,
+        "NG-SMR-CCS": 16.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 3.06
+      },
+      "capacity_by_route": {
+        "NG-SMR": 5.8218,
+        "Coal-Gasif": 1.3,
+        "NG-SMR-CCS": 18.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 3.8249
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.9892
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 10.2986,
+          "net": 4.6208
+        },
+        "Coal-Gasif": {
+          "gross": 3.3524,
+          "net": 2.1397
+        },
+        "NG-SMR-CCS": {
+          "gross": 7.2155,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.5427,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 25.76,
+      "total_production": 25.76,
+      "total_co2_net_mt": 6.7605,
+      "co2_total": 6.7605,
+      "co2_intensity_tco2_per_t_nh3": 0.2624,
+      "co2_intensity": 0.2624,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1088.12
+      },
+      "total_cost": 5418.3
+    },
+    "2045": {
+      "year": 2045,
+      "demand_mt_nh3": 26.2,
+      "demand_mt": 26.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 4.8924,
+        "Coal-Gasif": 0.1763,
+        "NG-SMR-CCS": 17.28,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 3.8513
+      },
+      "capacity_by_route": {
+        "NG-SMR": 5.3178,
+        "Coal-Gasif": 1.04,
+        "NG-SMR-CCS": 19.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.8141
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 9.3982,
+          "net": 4.212
+        },
+        "Coal-Gasif": {
+          "gross": 0.5163,
+          "net": 0.3294
+        },
+        "NG-SMR-CCS": {
+          "gross": 7.655,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.6747,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 26.2,
+      "total_production": 26.2,
+      "total_co2_net_mt": 4.5413,
+      "co2_total": 4.5413,
+      "co2_intensity_tco2_per_t_nh3": 0.1733,
+      "co2_intensity": 0.1733,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 5616.9
+    },
+    "2046": {
+      "year": 2046,
+      "demand_mt_nh3": 26.64,
+      "demand_mt": 26.64,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 4.4287,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 18.36,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 3.8513
+      },
+      "capacity_by_route": {
+        "NG-SMR": 4.8138,
+        "Coal-Gasif": 0.78,
+        "NG-SMR-CCS": 20.4,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.8141
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 8.4995,
+          "net": 3.8048
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 8.0894,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.6664,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 26.64,
+      "total_production": 26.64,
+      "total_co2_net_mt": 3.8048,
+      "co2_total": 3.8048,
+      "co2_intensity_tco2_per_t_nh3": 0.1428,
+      "co2_intensity": 0.1428,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 5679.0
+    },
+    "2047": {
+      "year": 2047,
+      "demand_mt_nh3": 27.08,
+      "demand_mt": 27.08,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 3.7887,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 19.44,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 3.8513
+      },
+      "capacity_by_route": {
+        "NG-SMR": 4.3098,
+        "Coal-Gasif": 0.52,
+        "NG-SMR-CCS": 21.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.8141
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 7.2644,
+          "net": 3.2482
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 8.5186,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.6581,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 27.08,
+      "total_production": 27.08,
+      "total_co2_net_mt": 3.2482,
+      "co2_total": 3.2482,
+      "co2_intensity_tco2_per_t_nh3": 0.1199,
+      "co2_intensity": 0.1199,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 5742.8
+    },
+    "2048": {
+      "year": 2048,
+      "demand_mt_nh3": 27.52,
+      "demand_mt": 27.52,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 3.1487,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 20.52,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 3.8513
+      },
+      "capacity_by_route": {
+        "NG-SMR": 3.8058,
+        "Coal-Gasif": 0.26,
+        "NG-SMR-CCS": 22.8,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.8141
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 6.0316,
+          "net": 2.6938
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 8.9426,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.6498,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 27.52,
+      "total_production": 27.52,
+      "total_co2_net_mt": 2.6938,
+      "co2_total": 2.6938,
+      "co2_intensity_tco2_per_t_nh3": 0.0979,
+      "co2_intensity": 0.0979,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 5806.7
+    },
+    "2049": {
+      "year": 2049,
+      "demand_mt_nh3": 27.96,
+      "demand_mt": 27.96,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 1.722,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 21.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.638
+      },
+      "capacity_by_route": {
+        "NG-SMR": 2.1274,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.7975
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.3192
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 3.2956,
+          "net": 1.4701
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 9.3614,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.7725,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 27.96,
+      "total_production": 27.96,
+      "total_co2_net_mt": 1.4701,
+      "co2_total": 1.4701,
+      "co2_intensity_tco2_per_t_nh3": 0.0526,
+      "co2_intensity": 0.0526,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 351.12
+      },
+      "total_cost": 5177.1
+    },
+    "2050": {
+      "year": 2050,
+      "demand_mt_nh3": 28.4,
+      "demand_mt": 28.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.88,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 22.68,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.84
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.9565,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 25.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 6.05
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 1.6825,
+          "net": 0.7497
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 9.7751,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.7957,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 28.4,
+      "total_production": 28.4,
+      "total_co2_net_mt": 0.7497,
+      "co2_total": 0.7497,
+      "co2_intensity_tco2_per_t_nh3": 0.0264,
+      "co2_intensity": 0.0264,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "total_cost": 4903.7
+    },
+    "2051": {
+      "year": 2051,
+      "demand_mt_nh3": 28.74,
+      "demand_mt": 28.74,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.1933,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 23.76,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.7867
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.6377,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 26.4,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.9834
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.3695,
+          "net": 0.1646
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.2168,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.7826,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 28.74,
+      "total_production": 28.74,
+      "total_co2_net_mt": 0.1646,
+      "co2_total": 0.1646,
+      "co2_intensity_tco2_per_t_nh3": 0.0057,
+      "co2_intensity": 0.0057,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "total_cost": 4991.0
+    },
+    "2052": {
+      "year": 2052,
+      "demand_mt_nh3": 29.08,
+      "demand_mt": 29.08,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.3466,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.7334
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.3188,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.9167
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4447,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.7696,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 29.08,
+      "total_production": 29.08,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "total_cost": 5073.4
+    },
+    "2053": {
+      "year": 2053,
+      "demand_mt_nh3": 29.42,
+      "demand_mt": 29.42,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.74,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.68
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.85
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.3666
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.5887,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.7568,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 29.42,
+      "total_production": 29.42,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 403.3
+      },
+      "total_cost": 5461.2
+    },
+    "2054": {
+      "year": 2054,
+      "demand_mt_nh3": 29.76,
+      "demand_mt": 29.76,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 4.92
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 6.15
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.4667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.6067,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.7911,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 29.76,
+      "total_production": 29.76,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 513.33
+      },
+      "total_cost": 5622.6
+    },
+    "2055": {
+      "year": 2055,
+      "demand_mt_nh3": 30.1,
+      "demand_mt": 30.1,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.26
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 6.575
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.4667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.5818,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.8411,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 30.1,
+      "total_production": 30.1,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 513.33
+      },
+      "total_cost": 5689.8
+    },
+    "2056": {
+      "year": 2056,
+      "demand_mt_nh3": 30.44,
+      "demand_mt": 30.44,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.6
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 7.0
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.4667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.557,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.8904,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 30.44,
+      "total_production": 30.44,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 513.33
+      },
+      "total_cost": 5756.9
+    },
+    "2057": {
+      "year": 2057,
+      "demand_mt_nh3": 30.78,
+      "demand_mt": 30.78,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 5.94
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 7.425
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.4667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.5322,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.9391,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 30.78,
+      "total_production": 30.78,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 513.33
+      },
+      "total_cost": 5824.1
+    },
+    "2058": {
+      "year": 2058,
+      "demand_mt_nh3": 31.12,
+      "demand_mt": 31.12,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 6.28
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 7.85
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.4667
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.5073,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 0.9872,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 31.12,
+      "total_production": 31.12,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 513.33
+      },
+      "total_cost": 5891.2
+    },
+    "2059": {
+      "year": 2059,
+      "demand_mt_nh3": 31.46,
+      "demand_mt": 31.46,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 6.62
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 8.275
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.4917
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4825,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.0347,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 31.46,
+      "total_production": 31.46,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 540.83
+      },
+      "total_cost": 5985.9
+    },
+    "2060": {
+      "year": 2060,
+      "demand_mt_nh3": 31.8,
+      "demand_mt": 31.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 6.96
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 8.7
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.3417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4576,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.0816,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 31.8,
+      "total_production": 31.8,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 375.83
+      },
+      "total_cost": 5888.0
+    },
+    "2061": {
+      "year": 2061,
+      "demand_mt_nh3": 32.02,
+      "demand_mt": 32.02,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 7.18
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 8.975
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.3417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4477,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1132,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 32.02,
+      "total_production": 32.02,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 375.83
+      },
+      "total_cost": 5931.5
+    },
+    "2062": {
+      "year": 2062,
+      "demand_mt_nh3": 32.24,
+      "demand_mt": 32.24,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 7.4
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 9.25
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.3417
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4378,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1446,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 32.24,
+      "total_production": 32.24,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 375.83
+      },
+      "total_cost": 5974.9
+    },
+    "2063": {
+      "year": 2063,
+      "demand_mt_nh3": 32.46,
+      "demand_mt": 32.46,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 7.62
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 9.525
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.2487,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4278,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1759,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 32.46,
+      "total_production": 32.46,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 397.85,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 7140.4
+    },
+    "2064": {
+      "year": 2064,
+      "demand_mt_nh3": 32.68,
+      "demand_mt": 32.68,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.2114,
+        "Biomass-Reform": 7.6286
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.2487,
+        "Biomass-Reform": 9.5358
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.2588,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.4179,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1745,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 32.68,
+      "total_production": 32.68,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 414.12,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 7206.2
+    },
+    "2065": {
+      "year": 2065,
+      "demand_mt_nh3": 32.9,
+      "demand_mt": 32.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.4314,
+        "Biomass-Reform": 7.6286
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.5075,
+        "Biomass-Reform": 9.5358
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.2588,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.408,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1718,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 32.9,
+      "total_production": 32.9,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 414.12,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 7256.1
+    },
+    "2066": {
+      "year": 2066,
+      "demand_mt_nh3": 33.12,
+      "demand_mt": 33.12,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.6514,
+        "Biomass-Reform": 7.6286
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 0.7663,
+        "Biomass-Reform": 9.5358
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.2588,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.398,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.169,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 33.12,
+      "total_production": 33.12,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 414.12,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 7305.9
+    },
+    "2067": {
+      "year": 2067,
+      "demand_mt_nh3": 33.34,
+      "demand_mt": 33.34,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 0.8714,
+        "Biomass-Reform": 7.6286
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 1.0251,
+        "Biomass-Reform": 9.5358
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.2588,
+        "Biomass-Reform": 1.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.3881,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1663,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 33.34,
+      "total_production": 33.34,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 414.12,
+        "Biomass-Reform": 1100.0
+      },
+      "total_cost": 7355.7
+    },
+    "2068": {
+      "year": 2068,
+      "demand_mt_nh3": 33.56,
+      "demand_mt": 33.56,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 1.0914,
+        "Biomass-Reform": 7.6286
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 1.284,
+        "Biomass-Reform": 9.5358
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 1.2,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.5942
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.3782,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1635,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 33.56,
+      "total_production": 33.56,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 936.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 653.62
+      },
+      "total_cost": 6545.0
+    },
+    "2069": {
+      "year": 2069,
+      "demand_mt_nh3": 33.78,
+      "demand_mt": 33.78,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 1.0914,
+        "Biomass-Reform": 7.8486
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 1.284,
+        "Biomass-Reform": 9.8108
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.275
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.3682,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.1942,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 33.78,
+      "total_production": 33.78,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 302.5
+      },
+      "total_cost": 5301.4
+    },
+    "2070": {
+      "year": 2070,
+      "demand_mt_nh3": 34.0,
+      "demand_mt": 34.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 24.84,
+        "Green-H2": 1.0914,
+        "Biomass-Reform": 8.0686
+      },
+      "capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 27.6,
+        "Green-H2": 1.284,
+        "Biomass-Reform": 10.0858
+      },
+      "new_capacity_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "co2_by_route": {
+        "NG-SMR": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Coal-Gasif": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "NG-SMR-CCS": {
+          "gross": 10.3583,
+          "net": 0.0
+        },
+        "Green-H2": {
+          "gross": 0.0,
+          "net": 0.0
+        },
+        "Biomass-Reform": {
+          "gross": 1.2248,
+          "net": 0.0
+        }
+      },
+      "total_production_mt": 34.0,
+      "total_production": 34.0,
+      "total_co2_net_mt": 0.0,
+      "co2_total": 0.0,
+      "co2_intensity_tco2_per_t_nh3": 0.0,
+      "co2_intensity": 0.0,
+      "investment_by_route": {
+        "NG-SMR": 0.0,
+        "Coal-Gasif": 0.0,
+        "NG-SMR-CCS": 0.0,
+        "Green-H2": 0.0,
+        "Biomass-Reform": 0.0
+      },
+      "total_cost": 5042.3
+    }
+  },
+  "summary": {
+    "total_cost_bn": 0.095,
+    "total_co2_cumulative_mt": 338.8,
+    "final_co2_intensity": 0.0,
+    "final_year_demand": 34.0,
+    "urea_fraction_used": 0.82,
+    "co2_seq_credit": "0.733 tCO2/t_urea (FROZEN_EXTERNAL)"
+  },
+  "vol4_targets": {
+    "2024": 2.3,
+    "2030": 1.8,
+    "2040": 1.0,
+    "2050": 0.4,
+    "2070": 0.1,
+    "source": "NITI Aayog 2023; IEA Ammonia Technology Roadmap 2021"
+  },
+  "provenance": "configs/fertiliser_config.yaml",
   "demand_model": "model_fitted"
 }

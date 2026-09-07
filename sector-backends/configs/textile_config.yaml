@@ -327,7 +327,7 @@ demand_trajectories:
     method: "GDP-elasticity (0.6) fitted to historical; saturation at 20kg/capita"
     assumption: "India per-capita fibre converges to global 12 kg/capita by 2060"
     anchors:
-      2024: 9.5
+      2024: 8.4
       2030: 11.5
       2040: 15.0
       2050: 19.0
@@ -345,7 +345,7 @@ demand_trajectories:
     # India fibre production 2024 ≈ 9.5 Mt (NITI Vol.4 baseline). Policy scenario is moderately
     # optimistic: PLI scheme execution + PM MITRA parks → 30-35 Mt by 2070.
     anchors:
-      2024: 9.5
+      2024: 8.4
       2030: 12.5
       2035: 16.0
       2040: 20.0
@@ -362,7 +362,7 @@ demand_trajectories:
     # International sources project slower India growth: IEA STEPS India industry is subdued,
     # McKinsey projects global recycled fibre share rising → lower virgin production demand.
     anchors:
-      2024: 9.5
+      2024: 8.4
       2030: 11.5
       2035: 13.5
       2040: 15.5
