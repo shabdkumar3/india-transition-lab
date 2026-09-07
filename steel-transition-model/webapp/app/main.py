@@ -732,6 +732,7 @@ def _sync_run(scenario_id: str, overrides: dict) -> Dict[str, Any]:
                 "total_cost": round(float(yr_obj.get("total_cost", 0.0)), 1),
                 "investment_by_route": inv_br,
                 "total_investment": total_inv,
+                "ccus_captured_mt": round(float(yr_obj.get("ccus_captured_mt", 0.0)), 4),
             }
 
         result = {

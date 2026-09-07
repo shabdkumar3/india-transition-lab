@@ -20,7 +20,8 @@
       "investment_by_route": {
         "total": 0.0
       },
-      "total_investment": 0.0
+      "total_investment": 0.0,
+      "ccus_captured_mt": 0.0
     },
     "2025": {
       "co2_intensity": 2.4625,
@@ -39,7 +40,8 @@
       "investment_by_route": {
         "total": 410.0
       },
-      "total_investment": 410.0
+      "total_investment": 410.0,
+      "ccus_captured_mt": 0.0
     },
     "2026": {
       "co2_intensity": 2.4327,
@@ -58,7 +60,8 @@
       "investment_by_route": {
         "total": 410.0
       },
-      "total_investment": 410.0
+      "total_investment": 410.0,
+      "ccus_captured_mt": 0.0
     },
     "2027": {
       "co2_intensity": 2.4121,
@@ -77,7 +80,8 @@
       "investment_by_route": {
         "total": 588.8
       },
-      "total_investment": 588.8
+      "total_investment": 588.8,
+      "ccus_captured_mt": 0.0
     },
     "2028": {
       "co2_intensity": 2.386,
@@ -96,7 +100,8 @@
       "investment_by_route": {
         "total": 755.5
       },
-      "total_investment": 755.5
+      "total_investment": 755.5,
+      "ccus_captured_mt": 0.0
     },
     "2029": {
       "co2_intensity": 2.374,
@@ -115,7 +120,8 @@
       "investment_by_route": {
         "total": 707.0
       },
-      "total_investment": 707.0
+      "total_investment": 707.0,
+      "ccus_captured_mt": 0.0
     },
     "2030": {
       "co2_intensity": 2.3551,
@@ -134,7 +140,8 @@
       "investment_by_route": {
         "total": 723.7
       },
-      "total_investment": 723.7
+      "total_investment": 723.7,
+      "ccus_captured_mt": 0.0
     },
     "2031": {
       "co2_intensity": 2.3363,
@@ -153,7 +160,8 @@
       "investment_by_route": {
         "total": 749.2
       },
-      "total_investment": 749.2
+      "total_investment": 749.2,
+      "ccus_captured_mt": 0.0
     },
     "2032": {
       "co2_intensity": 2.3117,
@@ -172,7 +180,8 @@
       "investment_by_route": {
         "total": 709.6
       },
-      "total_investment": 709.6
+      "total_investment": 709.6,
+      "ccus_captured_mt": 0.0
     },
     "2033": {
       "co2_intensity": 2.2902,
@@ -191,7 +200,8 @@
       "investment_by_route": {
         "total": 830.0
       },
-      "total_investment": 830.0
+      "total_investment": 830.0,
+      "ccus_captured_mt": 0.0
     },
     "2034": {
       "co2_intensity": 2.2637,
@@ -210,7 +220,8 @@
       "investment_by_route": {
         "total": 818.8
       },
-      "total_investment": 818.8
+      "total_investment": 818.8,
+      "ccus_captured_mt": 0.0
     },
     "2035": {
       "co2_intensity": 2.233,
@@ -229,7 +240,8 @@
       "investment_by_route": {
         "total": 1078.4
       },
-      "total_investment": 1078.4
+      "total_investment": 1078.4,
+      "ccus_captured_mt": 0.0
     },
     "2036": {
       "co2_intensity": 2.2025,
@@ -248,7 +260,8 @@
       "investment_by_route": {
         "total": 702.4
       },
-      "total_investment": 702.4
+      "total_investment": 702.4,
+      "ccus_captured_mt": 0.0
     },
     "2037": {
       "co2_intensity": 2.1693,
@@ -267,7 +280,8 @@
       "investment_by_route": {
         "total": 708.4
       },
-      "total_investment": 708.4
+      "total_investment": 708.4,
+      "ccus_captured_mt": 0.0
     },
     "2038": {
       "co2_intensity": 2.0788,
@@ -286,7 +300,8 @@
       "investment_by_route": {
         "total": 712.9
       },
-      "total_investment": 712.9
+      "total_investment": 712.9,
+      "ccus_captured_mt": 0.0
     },
     "2039": {
       "co2_intensity": 1.9939,
@@ -305,7 +320,8 @@
       "investment_by_route": {
         "total": 1020.6
       },
-      "total_investment": 1020.6
+      "total_investment": 1020.6,
+      "ccus_captured_mt": 0.0
     },
     "2040": {
       "co2_intensity": 1.9145,
@@ -324,7 +340,8 @@
       "investment_by_route": {
         "total": 746.0
       },
-      "total_investment": 746.0
+      "total_investment": 746.0,
+      "ccus_captured_mt": 0.0
     },
     "2041": {
       "co2_intensity": 1.8563,
@@ -343,7 +360,8 @@
       "investment_by_route": {
         "total": 536.2
       },
-      "total_investment": 536.2
+      "total_investment": 536.2,
+      "ccus_captured_mt": 0.0
     },
     "2042": {
       "co2_intensity": 1.809,
@@ -362,7 +380,8 @@
       "investment_by_route": {
         "total": 746.2
       },
-      "total_investment": 746.2
+      "total_investment": 746.2,
+      "ccus_captured_mt": 0.0
     },
     "2043": {
       "co2_intensity": 1.7638,
@@ -381,7 +400,8 @@
       "investment_by_route": {
         "total": 857.7
       },
-      "total_investment": 857.7
+      "total_investment": 857.7,
+      "ccus_captured_mt": 0.0
     },
     "2044": {
       "co2_intensity": 1.7208,
@@ -400,7 +420,8 @@
       "investment_by_route": {
         "total": 1306.5
       },
-      "total_investment": 1306.5
+      "total_investment": 1306.5,
+      "ccus_captured_mt": 0.0
     },
     "2045": {
       "co2_intensity": 1.6802,
@@ -419,7 +440,8 @@
       "investment_by_route": {
         "total": 1532.2
       },
-      "total_investment": 1532.2
+      "total_investment": 1532.2,
+      "ccus_captured_mt": 0.0
     },
     "2046": {
       "co2_intensity": 1.6417,
@@ -438,7 +460,8 @@
       "investment_by_route": {
         "total": 1422.0
       },
-      "total_investment": 1422.0
+      "total_investment": 1422.0,
+      "ccus_captured_mt": 0.0
     },
     "2047": {
       "co2_intensity": 1.6104,
@@ -457,7 +480,8 @@
       "investment_by_route": {
         "total": 1423.0
       },
-      "total_investment": 1423.0
+      "total_investment": 1423.0,
+      "ccus_captured_mt": 0.0
     },
     "2048": {
       "co2_intensity": 1.5805,
@@ -476,7 +500,8 @@
       "investment_by_route": {
         "total": 1424.1
       },
-      "total_investment": 1424.1
+      "total_investment": 1424.1,
+      "ccus_captured_mt": 0.0
     },
     "2049": {
       "co2_intensity": 1.5518,
@@ -495,7 +520,8 @@
       "investment_by_route": {
         "total": 786.7
       },
-      "total_investment": 786.7
+      "total_investment": 786.7,
+      "ccus_captured_mt": 0.0
     },
     "2050": {
       "co2_intensity": 1.5243,
@@ -514,7 +540,8 @@
       "investment_by_route": {
         "total": 791.5
       },
-      "total_investment": 791.5
+      "total_investment": 791.5,
+      "ccus_captured_mt": 0.0
     },
     "2051": {
       "co2_intensity": 1.4736,
@@ -533,7 +560,8 @@
       "investment_by_route": {
         "total": 1198.3
       },
-      "total_investment": 1198.3
+      "total_investment": 1198.3,
+      "ccus_captured_mt": 0.0
     },
     "2052": {
       "co2_intensity": 1.4157,
@@ -552,7 +580,8 @@
       "investment_by_route": {
         "total": 1078.2
       },
-      "total_investment": 1078.2
+      "total_investment": 1078.2,
+      "ccus_captured_mt": 0.0
     },
     "2053": {
       "co2_intensity": 1.3651,
@@ -571,7 +600,8 @@
       "investment_by_route": {
         "total": 1099.8
       },
-      "total_investment": 1099.8
+      "total_investment": 1099.8,
+      "ccus_captured_mt": 0.0
     },
     "2054": {
       "co2_intensity": 1.317,
@@ -590,7 +620,8 @@
       "investment_by_route": {
         "total": 1037.2
       },
-      "total_investment": 1037.2
+      "total_investment": 1037.2,
+      "ccus_captured_mt": 0.0
     },
     "2055": {
       "co2_intensity": 1.2711,
@@ -609,7 +640,8 @@
       "investment_by_route": {
         "total": 978.7
       },
-      "total_investment": 978.7
+      "total_investment": 978.7,
+      "ccus_captured_mt": 0.0
     },
     "2056": {
       "co2_intensity": 1.2273,
@@ -628,7 +660,8 @@
       "investment_by_route": {
         "total": 1091.1
       },
-      "total_investment": 1091.1
+      "total_investment": 1091.1,
+      "ccus_captured_mt": 0.0
     },
     "2057": {
       "co2_intensity": 1.1855,
@@ -647,7 +680,8 @@
       "investment_by_route": {
         "total": 1034.3
       },
-      "total_investment": 1034.3
+      "total_investment": 1034.3,
+      "ccus_captured_mt": 0.0
     },
     "2058": {
       "co2_intensity": 1.145,
@@ -666,7 +700,8 @@
       "investment_by_route": {
         "total": 814.9
       },
-      "total_investment": 814.9
+      "total_investment": 814.9,
+      "ccus_captured_mt": 0.0
     },
     "2059": {
       "co2_intensity": 1.1062,
@@ -685,7 +720,8 @@
       "investment_by_route": {
         "total": 827.7
       },
-      "total_investment": 827.7
+      "total_investment": 827.7,
+      "ccus_captured_mt": 0.0
     },
     "2060": {
       "co2_intensity": 1.0696,
@@ -704,7 +740,8 @@
       "investment_by_route": {
         "total": 867.5
       },
-      "total_investment": 867.5
+      "total_investment": 867.5,
+      "ccus_captured_mt": 0.0
     },
     "2061": {
       "co2_intensity": 1.015,
@@ -723,7 +760,8 @@
       "investment_by_route": {
         "total": 513.6
       },
-      "total_investment": 513.6
+      "total_investment": 513.6,
+      "ccus_captured_mt": 0.0
     },
     "2062": {
       "co2_intensity": 0.9864,
@@ -742,7 +780,8 @@
       "investment_by_route": {
         "total": 513.6
       },
-      "total_investment": 513.6
+      "total_investment": 513.6,
+      "ccus_captured_mt": 0.0
     },
     "2063": {
       "co2_intensity": 0.9628,
@@ -761,7 +800,8 @@
       "investment_by_route": {
         "total": 730.3
       },
-      "total_investment": 730.3
+      "total_investment": 730.3,
+      "ccus_captured_mt": 0.0
     },
     "2064": {
       "co2_intensity": 0.9402,
@@ -780,7 +820,8 @@
       "investment_by_route": {
         "total": 730.3
       },
-      "total_investment": 730.3
+      "total_investment": 730.3,
+      "ccus_captured_mt": 0.0
     },
     "2065": {
       "co2_intensity": 0.9183,
@@ -799,7 +840,8 @@
       "investment_by_route": {
         "total": 730.3
       },
-      "total_investment": 730.3
+      "total_investment": 730.3,
+      "ccus_captured_mt": 0.0
     },
     "2066": {
       "co2_intensity": 0.8971,
@@ -818,7 +860,8 @@
       "investment_by_route": {
         "total": 730.3
       },
-      "total_investment": 730.3
+      "total_investment": 730.3,
+      "ccus_captured_mt": 0.0
     },
     "2067": {
       "co2_intensity": 0.8767,
@@ -837,7 +880,8 @@
       "investment_by_route": {
         "total": 730.3
       },
-      "total_investment": 730.3
+      "total_investment": 730.3,
+      "ccus_captured_mt": 0.0
     },
     "2068": {
       "co2_intensity": 0.8568,
@@ -856,7 +900,8 @@
       "investment_by_route": {
         "total": 216.7
       },
-      "total_investment": 216.7
+      "total_investment": 216.7,
+      "ccus_captured_mt": 0.0
     },
     "2069": {
       "co2_intensity": 0.8377,
@@ -875,7 +920,8 @@
       "investment_by_route": {
         "total": 216.7
       },
-      "total_investment": 216.7
+      "total_investment": 216.7,
+      "ccus_captured_mt": 0.0
     },
     "2070": {
       "co2_intensity": 0.8191,
@@ -894,7 +940,8 @@
       "investment_by_route": {
         "total": 0.0
       },
-      "total_investment": 0.0
+      "total_investment": 0.0,
+      "ccus_captured_mt": 0.0
     }
   },
   "demand_model": "model_fitted"
