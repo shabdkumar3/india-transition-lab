@@ -20,6 +20,8 @@ unified-frontend/out/
 # Steel model runtime (solver outputs, not needed for deployment)
 steel-transition-model/runtime/jobs.json
 steel-transition-model/runtime/generated_configs/
+steel-transition-model/webapp/runtime/jobs.json
+steel-transition-model/webapp/runtime/generated_configs/
 steel-transition-model/results/
 
 # Scratch / dev files
