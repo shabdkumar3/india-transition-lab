@@ -83,7 +83,7 @@ routes:
     cutoff_year_nzs: 2027
 
   Coal-Blended:
-    existing_mt: 195.0
+    existing_mt: 197.2
     # CMA 2023-24: ~32% of installed capacity is PPC/PSC (blended) modern dry kilns
     provenance_existing: "PARTIAL"
     source_existing: "CMA India Statistics 2023-24"

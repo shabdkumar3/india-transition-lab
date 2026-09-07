@@ -1,7 +1,3037 @@
 {
   "status": "ok",
-  "message": "Demand constraint unmet by 0.70 Mt",
   "sector": "cement",
   "scenario": "CPS",
+  "solver_objective": 271879.69,
+  "years": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050,
+    2051,
+    2052,
+    2053,
+    2054,
+    2055,
+    2056,
+    2057,
+    2058,
+    2059,
+    2060,
+    2061,
+    2062,
+    2063,
+    2064,
+    2065,
+    2066,
+    2067,
+    2068,
+    2069,
+    2070
+  ],
+  "yearly_results": {
+    "2024": {
+      "year": 2024,
+      "demand_mt": 395.0,
+      "production_by_route": {
+        "Coal-OPC": 117.0,
+        "Coal-Blended": 204.48,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 73.52,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 130.0,
+        "Coal-Blended": 227.2,
+        "Coal-LC3": 20.0,
+        "AltFuel-Blended": 83.5455,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 30.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 33.5455,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 2700.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 4193.18,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 17.388,
+        "Coal-Blended": 15.8472,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 3.9271,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 11.115,
+        "Coal-Blended": 17.3808,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 6.7638,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 106.4816,
+        "Coal-Blended": 120.4694,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 41.5186,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 395.0,
+      "total_production": 395.0,
+      "total_co2_mt": 268.4696,
+      "co2_total": 268.4696,
+      "co2_intensity_tco2_per_t": 0.6797,
+      "co2_intensity": 0.6797,
+      "scm_consumed_mt": 99.506,
+      "scm_cap_mt": 160.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 14730.8
+    },
+    "2025": {
+      "year": 2025,
+      "demand_mt": 402.83,
+      "production_by_route": {
+        "Coal-OPC": 113.6571,
+        "Coal-Blended": 199.4091,
+        "Coal-LC3": 17.7137,
+        "AltFuel-Blended": 72.0533,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 126.2857,
+        "Coal-Blended": 221.5657,
+        "Coal-LC3": 20.1292,
+        "AltFuel-Blended": 81.8788,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.7006,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 80.57,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 16.8912,
+        "Coal-Blended": 15.4542,
+        "Coal-LC3": 1.0901,
+        "AltFuel-Blended": 3.8488,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 10.7974,
+        "Coal-Blended": 16.9498,
+        "Coal-LC3": 1.4525,
+        "AltFuel-Blended": 6.6289,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 103.2773,
+        "Coal-Blended": 117.2276,
+        "Coal-LC3": 8.2973,
+        "AltFuel-Blended": 40.5909,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 402.8332,
+      "total_production": 402.8332,
+      "total_co2_mt": 269.3932,
+      "co2_total": 269.3932,
+      "co2_intensity_tco2_per_t": 0.6687,
+      "co2_intensity": 0.6687,
+      "scm_consumed_mt": 97.173,
+      "scm_cap_mt": 161.7,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 7869.8
+    },
+    "2026": {
+      "year": 2026,
+      "demand_mt": 410.67,
+      "production_by_route": {
+        "Coal-OPC": 110.3143,
+        "Coal-Blended": 194.3383,
+        "Coal-LC3": 35.4274,
+        "AltFuel-Blended": 70.5867,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 122.5714,
+        "Coal-Blended": 215.9314,
+        "Coal-LC3": 40.2584,
+        "AltFuel-Blended": 80.2121,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.7006,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2380.57,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 16.3944,
+        "Coal-Blended": 15.0612,
+        "Coal-LC3": 2.1801,
+        "AltFuel-Blended": 3.7704,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 10.4799,
+        "Coal-Blended": 16.5188,
+        "Coal-LC3": 2.905,
+        "AltFuel-Blended": 6.494,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 100.0826,
+        "Coal-Blended": 113.9988,
+        "Coal-LC3": 16.5511,
+        "AltFuel-Blended": 39.6673,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 410.6667,
+      "total_production": 410.6667,
+      "total_co2_mt": 270.2997,
+      "co2_total": 270.2997,
+      "co2_intensity_tco2_per_t": 0.6582,
+      "co2_intensity": 0.6582,
+      "scm_consumed_mt": 94.841,
+      "scm_cap_mt": 163.3,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 10271.4
+    },
+    "2027": {
+      "year": 2027,
+      "demand_mt": 418.5,
+      "production_by_route": {
+        "Coal-OPC": 106.9714,
+        "Coal-Blended": 189.2674,
+        "Coal-LC3": 53.1411,
+        "AltFuel-Blended": 69.12,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 118.8571,
+        "Coal-Blended": 210.2971,
+        "Coal-LC3": 60.3877,
+        "AltFuel-Blended": 78.5455,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.7006,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2380.57,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 15.8976,
+        "Coal-Blended": 14.6682,
+        "Coal-LC3": 3.2702,
+        "AltFuel-Blended": 3.6921,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 10.1623,
+        "Coal-Blended": 16.0877,
+        "Coal-LC3": 4.3576,
+        "AltFuel-Blended": 6.359,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 96.8973,
+        "Coal-Blended": 110.783,
+        "Coal-LC3": 24.7613,
+        "AltFuel-Blended": 38.7477,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 418.4999,
+      "total_production": 418.4999,
+      "total_co2_mt": 271.1892,
+      "co2_total": 271.1892,
+      "co2_intensity_tco2_per_t": 0.648,
+      "co2_intensity": 0.648,
+      "scm_consumed_mt": 92.509,
+      "scm_cap_mt": 165.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 10373.0
+    },
+    "2028": {
+      "year": 2028,
+      "demand_mt": 426.33,
+      "production_by_route": {
+        "Coal-OPC": 103.6286,
+        "Coal-Blended": 184.1966,
+        "Coal-LC3": 70.8549,
+        "AltFuel-Blended": 67.6533,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 115.1429,
+        "Coal-Blended": 204.6629,
+        "Coal-LC3": 80.5169,
+        "AltFuel-Blended": 76.8788,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.7006,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2380.57,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 15.4008,
+        "Coal-Blended": 14.2752,
+        "Coal-LC3": 4.3603,
+        "AltFuel-Blended": 3.6137,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 9.8447,
+        "Coal-Blended": 15.6567,
+        "Coal-LC3": 5.8101,
+        "AltFuel-Blended": 6.2241,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 93.7216,
+        "Coal-Blended": 107.58,
+        "Coal-LC3": 32.9279,
+        "AltFuel-Blended": 37.8321,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 426.3334,
+      "total_production": 426.3334,
+      "total_co2_mt": 272.0616,
+      "co2_total": 272.0616,
+      "co2_intensity_tco2_per_t": 0.6381,
+      "co2_intensity": 0.6381,
+      "scm_consumed_mt": 90.177,
+      "scm_cap_mt": 166.7,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 10474.7
+    },
+    "2029": {
+      "year": 2029,
+      "demand_mt": 434.17,
+      "production_by_route": {
+        "Coal-OPC": 100.2857,
+        "Coal-Blended": 179.1257,
+        "Coal-LC3": 88.5686,
+        "AltFuel-Blended": 66.1867,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 111.4286,
+        "Coal-Blended": 199.0286,
+        "Coal-LC3": 100.6461,
+        "AltFuel-Blended": 75.2121,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.7006,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2380.57,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 14.904,
+        "Coal-Blended": 13.8822,
+        "Coal-LC3": 5.4504,
+        "AltFuel-Blended": 3.5354,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 9.5271,
+        "Coal-Blended": 15.2257,
+        "Coal-LC3": 7.2626,
+        "AltFuel-Blended": 6.0892,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 90.5554,
+        "Coal-Blended": 104.39,
+        "Coal-LC3": 41.0509,
+        "AltFuel-Blended": 36.9206,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 434.1667,
+      "total_production": 434.1667,
+      "total_co2_mt": 272.9169,
+      "co2_total": 272.9169,
+      "co2_intensity_tco2_per_t": 0.6286,
+      "co2_intensity": 0.6286,
+      "scm_consumed_mt": 87.845,
+      "scm_cap_mt": 168.3,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 10576.3
+    },
+    "2030": {
+      "year": 2030,
+      "demand_mt": 442.0,
+      "production_by_route": {
+        "Coal-OPC": 96.9429,
+        "Coal-Blended": 174.0549,
+        "Coal-LC3": 106.2823,
+        "AltFuel-Blended": 64.72,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 107.7143,
+        "Coal-Blended": 193.3943,
+        "Coal-LC3": 120.7753,
+        "AltFuel-Blended": 73.5455,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.7006,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2380.57,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 14.4072,
+        "Coal-Blended": 13.4893,
+        "Coal-LC3": 6.5404,
+        "AltFuel-Blended": 3.457,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 9.2096,
+        "Coal-Blended": 14.7947,
+        "Coal-LC3": 8.7151,
+        "AltFuel-Blended": 5.9542,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 87.3988,
+        "Coal-Blended": 101.2129,
+        "Coal-LC3": 49.1304,
+        "AltFuel-Blended": 36.0131,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 442.0001,
+      "total_production": 442.0001,
+      "total_co2_mt": 273.7552,
+      "co2_total": 273.7552,
+      "co2_intensity_tco2_per_t": 0.6194,
+      "co2_intensity": 0.6194,
+      "scm_consumed_mt": 85.513,
+      "scm_cap_mt": 170.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 10677.9
+    },
+    "2031": {
+      "year": 2031,
+      "demand_mt": 450.0,
+      "production_by_route": {
+        "Coal-OPC": 93.6,
+        "Coal-Blended": 168.984,
+        "Coal-LC3": 124.1627,
+        "AltFuel-Blended": 63.2533,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 104.0,
+        "Coal-Blended": 187.76,
+        "Coal-LC3": 141.0939,
+        "AltFuel-Blended": 71.8788,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.89,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2402.35,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 13.9104,
+        "Coal-Blended": 13.0963,
+        "Coal-LC3": 7.6408,
+        "AltFuel-Blended": 3.3787,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 8.892,
+        "Coal-Blended": 14.3636,
+        "Coal-LC3": 10.1813,
+        "AltFuel-Blended": 5.8193,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 84.2561,
+        "Coal-Blended": 98.0559,
+        "Coal-LC3": 57.2482,
+        "AltFuel-Blended": 35.1126,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 450.0,
+      "total_production": 450.0,
+      "total_co2_mt": 274.6728,
+      "co2_total": 274.6728,
+      "co2_intensity_tco2_per_t": 0.6104,
+      "co2_intensity": 0.6104,
+      "scm_consumed_mt": 83.181,
+      "scm_cap_mt": 171.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 10804.0
+    },
+    "2032": {
+      "year": 2032,
+      "demand_mt": 458.0,
+      "production_by_route": {
+        "Coal-OPC": 90.2571,
+        "Coal-Blended": 163.9131,
+        "Coal-LC3": 142.043,
+        "AltFuel-Blended": 61.7867,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 100.2857,
+        "Coal-Blended": 182.1257,
+        "Coal-LC3": 161.4126,
+        "AltFuel-Blended": 70.2121,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.89,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2402.35,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 13.4136,
+        "Coal-Blended": 12.7033,
+        "Coal-LC3": 8.7411,
+        "AltFuel-Blended": 3.3004,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 8.5744,
+        "Coal-Blended": 13.9326,
+        "Coal-LC3": 11.6475,
+        "AltFuel-Blended": 5.6844,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 81.1226,
+        "Coal-Blended": 94.9114,
+        "Coal-LC3": 65.3235,
+        "AltFuel-Blended": 34.216,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 457.9999,
+      "total_production": 457.9999,
+      "total_co2_mt": 275.5736,
+      "co2_total": 275.5736,
+      "co2_intensity_tco2_per_t": 0.6017,
+      "co2_intensity": 0.6017,
+      "scm_consumed_mt": 80.849,
+      "scm_cap_mt": 172.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15308.4
+    },
+    "2033": {
+      "year": 2033,
+      "demand_mt": 466.0,
+      "production_by_route": {
+        "Coal-OPC": 86.9143,
+        "Coal-Blended": 158.8423,
+        "Coal-LC3": 159.9234,
+        "AltFuel-Blended": 60.32,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 96.5714,
+        "Coal-Blended": 176.4914,
+        "Coal-LC3": 181.7312,
+        "AltFuel-Blended": 68.5455,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.89,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2402.35,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 12.9168,
+        "Coal-Blended": 12.3103,
+        "Coal-LC3": 9.8414,
+        "AltFuel-Blended": 3.222,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 8.2569,
+        "Coal-Blended": 13.5016,
+        "Coal-LC3": 13.1137,
+        "AltFuel-Blended": 5.5494,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 77.9983,
+        "Coal-Blended": 91.7795,
+        "Coal-LC3": 73.3562,
+        "AltFuel-Blended": 33.3234,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 466.0,
+      "total_production": 466.0,
+      "total_co2_mt": 276.4574,
+      "co2_total": 276.4574,
+      "co2_intensity_tco2_per_t": 0.5933,
+      "co2_intensity": 0.5933,
+      "scm_consumed_mt": 78.516,
+      "scm_cap_mt": 173.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15412.7
+    },
+    "2034": {
+      "year": 2034,
+      "demand_mt": 474.0,
+      "production_by_route": {
+        "Coal-OPC": 83.5714,
+        "Coal-Blended": 153.7714,
+        "Coal-LC3": 177.8038,
+        "AltFuel-Blended": 58.8533,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 92.8571,
+        "Coal-Blended": 170.8571,
+        "Coal-LC3": 202.0498,
+        "AltFuel-Blended": 66.8788,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.89,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2402.35,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 12.42,
+        "Coal-Blended": 11.9173,
+        "Coal-LC3": 10.9418,
+        "AltFuel-Blended": 3.1437,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 7.9393,
+        "Coal-Blended": 13.0706,
+        "Coal-LC3": 14.5799,
+        "AltFuel-Blended": 5.4145,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 74.8833,
+        "Coal-Blended": 88.66,
+        "Coal-LC3": 81.3465,
+        "AltFuel-Blended": 32.4346,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 473.9999,
+      "total_production": 473.9999,
+      "total_co2_mt": 277.3244,
+      "co2_total": 277.3244,
+      "co2_intensity_tco2_per_t": 0.5851,
+      "co2_intensity": 0.5851,
+      "scm_consumed_mt": 76.184,
+      "scm_cap_mt": 174.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15517.1
+    },
+    "2035": {
+      "year": 2035,
+      "demand_mt": 482.0,
+      "production_by_route": {
+        "Coal-OPC": 80.2286,
+        "Coal-Blended": 148.7006,
+        "Coal-LC3": 195.6842,
+        "AltFuel-Blended": 57.3867,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 89.1429,
+        "Coal-Blended": 165.2229,
+        "Coal-LC3": 222.3684,
+        "AltFuel-Blended": 65.2121,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.89,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2402.35,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 11.9232,
+        "Coal-Blended": 11.5243,
+        "Coal-LC3": 12.0421,
+        "AltFuel-Blended": 3.0653,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 7.6217,
+        "Coal-Blended": 12.6395,
+        "Coal-LC3": 16.0461,
+        "AltFuel-Blended": 5.2796,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 71.7774,
+        "Coal-Blended": 85.553,
+        "Coal-LC3": 89.2942,
+        "AltFuel-Blended": 31.5498,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 482.0001,
+      "total_production": 482.0001,
+      "total_co2_mt": 278.1744,
+      "co2_total": 278.1744,
+      "co2_intensity_tco2_per_t": 0.5771,
+      "co2_intensity": 0.5771,
+      "scm_consumed_mt": 73.852,
+      "scm_cap_mt": 175.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15621.4
+    },
+    "2036": {
+      "year": 2036,
+      "demand_mt": 488.0,
+      "production_by_route": {
+        "Coal-OPC": 76.8857,
+        "Coal-Blended": 143.6297,
+        "Coal-LC3": 211.5646,
+        "AltFuel-Blended": 55.92,
+        "CCUS-Blended": 0.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 85.4286,
+        "Coal-Blended": 159.5886,
+        "Coal-LC3": 240.4143,
+        "AltFuel-Blended": 63.5455,
+        "CCUS-Blended": 0.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 18.6173,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2140.99,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 11.4264,
+        "Coal-Blended": 11.1313,
+        "Coal-LC3": 13.0194,
+        "AltFuel-Blended": 2.987,
+        "CCUS-Blended": 0.0
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 7.3041,
+        "Coal-Blended": 12.2085,
+        "Coal-LC3": 17.3483,
+        "AltFuel-Blended": 5.1446,
+        "CCUS-Blended": 0.0
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 68.6808,
+        "Coal-Blended": 82.4585,
+        "Coal-LC3": 96.2892,
+        "AltFuel-Blended": 30.6688,
+        "CCUS-Blended": 0.0
+      },
+      "total_production_mt": 488.0,
+      "total_production": 488.0,
+      "total_co2_mt": 278.0974,
+      "co2_total": 278.0974,
+      "co2_intensity_tco2_per_t": 0.5699,
+      "co2_intensity": 0.5699,
+      "scm_consumed_mt": 71.52,
+      "scm_cap_mt": 176.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15431.4
+    },
+    "2037": {
+      "year": 2037,
+      "demand_mt": 494.0,
+      "production_by_route": {
+        "Coal-OPC": 73.3261,
+        "Coal-Blended": 138.5589,
+        "Coal-LC3": 211.0617,
+        "AltFuel-Blended": 54.4533,
+        "CCUS-Blended": 16.6
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 81.7143,
+        "Coal-Blended": 153.9543,
+        "Coal-LC3": 239.8429,
+        "AltFuel-Blended": 61.8788,
+        "CCUS-Blended": 20.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 10.8974,
+        "Coal-Blended": 10.7383,
+        "Coal-LC3": 12.9884,
+        "AltFuel-Blended": 2.9086,
+        "CCUS-Blended": 1.3695
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 6.966,
+        "Coal-Blended": 11.7775,
+        "Coal-LC3": 17.3071,
+        "AltFuel-Blended": 5.0097,
+        "CCUS-Blended": 2.573
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 65.4,
+        "Coal-Blended": 79.3766,
+        "Coal-LC3": 95.8094,
+        "AltFuel-Blended": 29.7918,
+        "CCUS-Blended": 2.232
+      },
+      "total_production_mt": 494.0,
+      "total_production": 494.0,
+      "total_co2_mt": 272.6098,
+      "co2_total": 272.6098,
+      "co2_intensity_tco2_per_t": 0.5518,
+      "co2_intensity": 0.5518,
+      "scm_consumed_mt": 69.188,
+      "scm_cap_mt": 177.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 13560.8
+    },
+    "2038": {
+      "year": 2038,
+      "demand_mt": 500.0,
+      "production_by_route": {
+        "Coal-OPC": 69.7665,
+        "Coal-Blended": 133.488,
+        "Coal-LC3": 210.5589,
+        "AltFuel-Blended": 52.9867,
+        "CCUS-Blended": 33.2
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 78.0,
+        "Coal-Blended": 148.32,
+        "Coal-LC3": 239.2714,
+        "AltFuel-Blended": 60.2121,
+        "CCUS-Blended": 40.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 10.3684,
+        "Coal-Blended": 10.3453,
+        "Coal-LC3": 12.9575,
+        "AltFuel-Blended": 2.8303,
+        "CCUS-Blended": 2.739
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 6.6278,
+        "Coal-Blended": 11.3465,
+        "Coal-LC3": 17.2658,
+        "AltFuel-Blended": 4.8748,
+        "CCUS-Blended": 5.146
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 62.1291,
+        "Coal-Blended": 76.3071,
+        "Coal-LC3": 95.3307,
+        "AltFuel-Blended": 28.9187,
+        "CCUS-Blended": 4.3894
+      },
+      "total_production_mt": 500.0001,
+      "total_production": 500.0001,
+      "total_co2_mt": 267.075,
+      "co2_total": 267.075,
+      "co2_intensity_tco2_per_t": 0.5341,
+      "co2_intensity": 0.5341,
+      "scm_consumed_mt": 66.856,
+      "scm_cap_mt": 178.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 13831.2
+    },
+    "2039": {
+      "year": 2039,
+      "demand_mt": 506.0,
+      "production_by_route": {
+        "Coal-OPC": 48.1962,
+        "Coal-Blended": 128.4171,
+        "Coal-LC3": 228.0667,
+        "AltFuel-Blended": 51.52,
+        "CCUS-Blended": 49.8
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 74.2857,
+        "Coal-Blended": 142.6857,
+        "Coal-LC3": 259.1667,
+        "AltFuel-Blended": 58.5455,
+        "CCUS-Blended": 60.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 20.4667,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2353.67,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 7.1627,
+        "Coal-Blended": 9.9523,
+        "Coal-LC3": 14.0349,
+        "AltFuel-Blended": 2.752,
+        "CCUS-Blended": 4.1085
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 4.5786,
+        "Coal-Blended": 10.9155,
+        "Coal-LC3": 18.7015,
+        "AltFuel-Blended": 4.7398,
+        "CCUS-Blended": 7.719
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 42.8537,
+        "Coal-Blended": 73.2501,
+        "Coal-LC3": 102.9863,
+        "AltFuel-Blended": 28.0495,
+        "CCUS-Blended": 6.4721
+      },
+      "total_production_mt": 506.0,
+      "total_production": 506.0,
+      "total_co2_mt": 253.6117,
+      "co2_total": 253.6117,
+      "co2_intensity_tco2_per_t": 0.5012,
+      "co2_intensity": 0.5012,
+      "scm_consumed_mt": 64.524,
+      "scm_cap_mt": 179.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 16536.8
+    },
+    "2040": {
+      "year": 2040,
+      "demand_mt": 512.0,
+      "production_by_route": {
+        "Coal-OPC": 44.6366,
+        "Coal-Blended": 123.3463,
+        "Coal-LC3": 227.5638,
+        "AltFuel-Blended": 50.0533,
+        "CCUS-Blended": 66.4
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 70.5714,
+        "Coal-Blended": 137.0514,
+        "Coal-LC3": 258.5952,
+        "AltFuel-Blended": 56.8788,
+        "CCUS-Blended": 80.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 6.6337,
+        "Coal-Blended": 9.5593,
+        "Coal-LC3": 14.0039,
+        "AltFuel-Blended": 2.6736,
+        "CCUS-Blended": 5.478
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 4.2405,
+        "Coal-Blended": 10.4844,
+        "Coal-LC3": 18.6602,
+        "AltFuel-Blended": 4.6049,
+        "CCUS-Blended": 10.292
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 39.6272,
+        "Coal-Blended": 70.2056,
+        "Coal-LC3": 102.4886,
+        "AltFuel-Blended": 27.1842,
+        "CCUS-Blended": 8.4803
+      },
+      "total_production_mt": 512.0,
+      "total_production": 512.0,
+      "total_co2_mt": 247.9859,
+      "co2_total": 247.9859,
+      "co2_intensity_tco2_per_t": 0.4843,
+      "co2_intensity": 0.4843,
+      "scm_consumed_mt": 62.191,
+      "scm_cap_mt": 180.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 14453.5
+    },
+    "2041": {
+      "year": 2041,
+      "demand_mt": 516.6,
+      "production_by_route": {
+        "Coal-OPC": 39.677,
+        "Coal-Blended": 118.2754,
+        "Coal-LC3": 227.061,
+        "AltFuel-Blended": 48.5867,
+        "CCUS-Blended": 83.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 66.8571,
+        "Coal-Blended": 131.4171,
+        "Coal-LC3": 258.0238,
+        "AltFuel-Blended": 55.2121,
+        "CCUS-Blended": 100.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 5.8966,
+        "Coal-Blended": 9.1663,
+        "Coal-LC3": 13.973,
+        "AltFuel-Blended": 2.5953,
+        "CCUS-Blended": 6.8475
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 3.7693,
+        "Coal-Blended": 10.0534,
+        "Coal-LC3": 18.619,
+        "AltFuel-Blended": 4.47,
+        "CCUS-Blended": 12.865
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 35.1846,
+        "Coal-Blended": 67.2139,
+        "Coal-LC3": 102.0666,
+        "AltFuel-Blended": 26.3407,
+        "CCUS-Blended": 10.4653
+      },
+      "total_production_mt": 516.6001,
+      "total_production": 516.6001,
+      "total_co2_mt": 241.2711,
+      "co2_total": 241.2711,
+      "co2_intensity_tco2_per_t": 0.467,
+      "co2_intensity": 0.467,
+      "scm_consumed_mt": 59.859,
+      "scm_cap_mt": 179.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 14707.1
+    },
+    "2042": {
+      "year": 2042,
+      "demand_mt": 521.2,
+      "production_by_route": {
+        "Coal-OPC": 34.7173,
+        "Coal-Blended": 113.2046,
+        "Coal-LC3": 226.5581,
+        "AltFuel-Blended": 47.12,
+        "CCUS-Blended": 99.6
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 63.1429,
+        "Coal-Blended": 125.7829,
+        "Coal-LC3": 257.4524,
+        "AltFuel-Blended": 53.5455,
+        "CCUS-Blended": 120.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 5.1595,
+        "Coal-Blended": 8.7734,
+        "Coal-LC3": 13.942,
+        "AltFuel-Blended": 2.5169,
+        "CCUS-Blended": 8.217
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 3.2981,
+        "Coal-Blended": 9.6224,
+        "Coal-LC3": 18.5778,
+        "AltFuel-Blended": 4.335,
+        "CCUS-Blended": 15.438
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 30.7519,
+        "Coal-Blended": 64.2311,
+        "Coal-LC3": 101.6455,
+        "AltFuel-Blended": 25.5001,
+        "CCUS-Blended": 12.3962
+      },
+      "total_production_mt": 521.2,
+      "total_production": 521.2,
+      "total_co2_mt": 234.5249,
+      "co2_total": 234.5249,
+      "co2_intensity_tco2_per_t": 0.45,
+      "co2_intensity": 0.45,
+      "scm_consumed_mt": 57.527,
+      "scm_cap_mt": 179.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 14960.8
+    },
+    "2043": {
+      "year": 2043,
+      "demand_mt": 525.8,
+      "production_by_route": {
+        "Coal-OPC": 29.7577,
+        "Coal-Blended": 108.1337,
+        "Coal-LC3": 226.0552,
+        "AltFuel-Blended": 45.6533,
+        "CCUS-Blended": 116.2
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 59.4286,
+        "Coal-Blended": 120.1486,
+        "Coal-LC3": 256.881,
+        "AltFuel-Blended": 51.8788,
+        "CCUS-Blended": 140.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 4.4225,
+        "Coal-Blended": 8.3804,
+        "Coal-LC3": 13.9111,
+        "AltFuel-Blended": 2.4386,
+        "CCUS-Blended": 9.5865
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 2.827,
+        "Coal-Blended": 9.1914,
+        "Coal-LC3": 18.5365,
+        "AltFuel-Blended": 4.2001,
+        "CCUS-Blended": 18.011
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 26.3291,
+        "Coal-Blended": 61.2575,
+        "Coal-LC3": 101.2253,
+        "AltFuel-Blended": 24.6623,
+        "CCUS-Blended": 14.2731
+      },
+      "total_production_mt": 525.7999,
+      "total_production": 525.7999,
+      "total_co2_mt": 227.7473,
+      "co2_total": 227.7473,
+      "co2_intensity_tco2_per_t": 0.4331,
+      "co2_intensity": 0.4331,
+      "scm_consumed_mt": 55.195,
+      "scm_cap_mt": 178.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15214.4
+    },
+    "2044": {
+      "year": 2044,
+      "demand_mt": 530.4,
+      "production_by_route": {
+        "Coal-OPC": 24.7981,
+        "Coal-Blended": 103.0629,
+        "Coal-LC3": 225.5524,
+        "AltFuel-Blended": 44.1867,
+        "CCUS-Blended": 132.8
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 55.7143,
+        "Coal-Blended": 114.5143,
+        "Coal-LC3": 256.3095,
+        "AltFuel-Blended": 50.2121,
+        "CCUS-Blended": 160.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 3.6854,
+        "Coal-Blended": 7.9874,
+        "Coal-LC3": 13.8801,
+        "AltFuel-Blended": 2.3602,
+        "CCUS-Blended": 10.956
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 2.3558,
+        "Coal-Blended": 8.7603,
+        "Coal-LC3": 18.4953,
+        "AltFuel-Blended": 4.0652,
+        "CCUS-Blended": 20.584
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 21.9162,
+        "Coal-Blended": 58.2929,
+        "Coal-LC3": 100.8059,
+        "AltFuel-Blended": 23.8273,
+        "CCUS-Blended": 16.096
+      },
+      "total_production_mt": 530.4001,
+      "total_production": 530.4001,
+      "total_co2_mt": 220.9382,
+      "co2_total": 220.9382,
+      "co2_intensity_tco2_per_t": 0.4166,
+      "co2_intensity": 0.4166,
+      "scm_consumed_mt": 52.863,
+      "scm_cap_mt": 178.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15468.0
+    },
+    "2045": {
+      "year": 2045,
+      "demand_mt": 535.0,
+      "production_by_route": {
+        "Coal-OPC": 19.8385,
+        "Coal-Blended": 97.992,
+        "Coal-LC3": 225.0495,
+        "AltFuel-Blended": 42.72,
+        "CCUS-Blended": 149.4
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 52.0,
+        "Coal-Blended": 108.88,
+        "Coal-LC3": 255.7381,
+        "AltFuel-Blended": 48.5455,
+        "CCUS-Blended": 180.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 2.9483,
+        "Coal-Blended": 7.5944,
+        "Coal-LC3": 13.8492,
+        "AltFuel-Blended": 2.2819,
+        "CCUS-Blended": 12.3255
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 1.8847,
+        "Coal-Blended": 8.3293,
+        "Coal-LC3": 18.4541,
+        "AltFuel-Blended": 3.9302,
+        "CCUS-Blended": 23.157
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 17.5131,
+        "Coal-Blended": 55.3373,
+        "Coal-LC3": 100.3874,
+        "AltFuel-Blended": 22.9951,
+        "CCUS-Blended": 17.8649
+      },
+      "total_production_mt": 535.0,
+      "total_production": 535.0,
+      "total_co2_mt": 214.0979,
+      "co2_total": 214.0979,
+      "co2_intensity_tco2_per_t": 0.4002,
+      "co2_intensity": 0.4002,
+      "scm_consumed_mt": 50.531,
+      "scm_cap_mt": 177.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15721.6
+    },
+    "2046": {
+      "year": 2046,
+      "demand_mt": 539.6,
+      "production_by_route": {
+        "Coal-OPC": 14.8789,
+        "Coal-Blended": 92.9211,
+        "Coal-LC3": 224.5467,
+        "AltFuel-Blended": 41.2533,
+        "CCUS-Blended": 166.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 48.2857,
+        "Coal-Blended": 103.2457,
+        "Coal-LC3": 255.1667,
+        "AltFuel-Blended": 46.8788,
+        "CCUS-Blended": 200.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 2.2112,
+        "Coal-Blended": 7.2014,
+        "Coal-LC3": 13.8183,
+        "AltFuel-Blended": 2.2036,
+        "CCUS-Blended": 13.695
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 1.4135,
+        "Coal-Blended": 7.8983,
+        "Coal-LC3": 18.4128,
+        "AltFuel-Blended": 3.7953,
+        "CCUS-Blended": 25.73
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 13.12,
+        "Coal-Blended": 52.3908,
+        "Coal-LC3": 99.9698,
+        "AltFuel-Blended": 22.1658,
+        "CCUS-Blended": 19.5797
+      },
+      "total_production_mt": 539.6,
+      "total_production": 539.6,
+      "total_co2_mt": 207.2261,
+      "co2_total": 207.2261,
+      "co2_intensity_tco2_per_t": 0.384,
+      "co2_intensity": 0.384,
+      "scm_consumed_mt": 48.199,
+      "scm_cap_mt": 177.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 15975.2
+    },
+    "2047": {
+      "year": 2047,
+      "demand_mt": 544.2,
+      "production_by_route": {
+        "Coal-OPC": 9.9192,
+        "Coal-Blended": 87.8503,
+        "Coal-LC3": 224.0438,
+        "AltFuel-Blended": 39.7867,
+        "CCUS-Blended": 182.6
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 44.5714,
+        "Coal-Blended": 97.6114,
+        "Coal-LC3": 254.5952,
+        "AltFuel-Blended": 45.2121,
+        "CCUS-Blended": 220.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 1.4742,
+        "Coal-Blended": 6.8084,
+        "Coal-LC3": 13.7873,
+        "AltFuel-Blended": 2.1252,
+        "CCUS-Blended": 15.0645
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.9423,
+        "Coal-Blended": 7.4673,
+        "Coal-LC3": 18.3716,
+        "AltFuel-Blended": 3.6604,
+        "CCUS-Blended": 28.303
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 8.7368,
+        "Coal-Blended": 49.4533,
+        "Coal-LC3": 99.553,
+        "AltFuel-Blended": 21.3393,
+        "CCUS-Blended": 21.2405
+      },
+      "total_production_mt": 544.2,
+      "total_production": 544.2,
+      "total_co2_mt": 200.3229,
+      "co2_total": 200.3229,
+      "co2_intensity_tco2_per_t": 0.3681,
+      "co2_intensity": 0.3681,
+      "scm_consumed_mt": 45.867,
+      "scm_cap_mt": 176.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 16228.9
+    },
+    "2048": {
+      "year": 2048,
+      "demand_mt": 548.8,
+      "production_by_route": {
+        "Coal-OPC": 4.9596,
+        "Coal-Blended": 82.7794,
+        "Coal-LC3": 223.541,
+        "AltFuel-Blended": 38.32,
+        "CCUS-Blended": 199.2
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 40.8571,
+        "Coal-Blended": 91.9771,
+        "Coal-LC3": 254.0238,
+        "AltFuel-Blended": 43.5455,
+        "CCUS-Blended": 240.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.7371,
+        "Coal-Blended": 6.4154,
+        "Coal-LC3": 13.7564,
+        "AltFuel-Blended": 2.0469,
+        "CCUS-Blended": 16.434
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.4712,
+        "Coal-Blended": 7.0363,
+        "Coal-LC3": 18.3304,
+        "AltFuel-Blended": 3.5254,
+        "CCUS-Blended": 30.876
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 4.3634,
+        "Coal-Blended": 46.5249,
+        "Coal-LC3": 99.1371,
+        "AltFuel-Blended": 20.5157,
+        "CCUS-Blended": 22.8472
+      },
+      "total_production_mt": 548.8,
+      "total_production": 548.8,
+      "total_co2_mt": 193.3884,
+      "co2_total": 193.3884,
+      "co2_intensity_tco2_per_t": 0.3524,
+      "co2_intensity": 0.3524,
+      "scm_consumed_mt": 43.534,
+      "scm_cap_mt": 176.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 16482.5
+    },
+    "2049": {
+      "year": 2049,
+      "demand_mt": 553.4,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 77.7086,
+        "Coal-LC3": 223.0381,
+        "AltFuel-Blended": 36.8533,
+        "CCUS-Blended": 215.8
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 37.1429,
+        "Coal-Blended": 86.3429,
+        "Coal-LC3": 253.4524,
+        "AltFuel-Blended": 41.8788,
+        "CCUS-Blended": 260.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 6.0224,
+        "Coal-LC3": 13.7254,
+        "AltFuel-Blended": 1.9685,
+        "CCUS-Blended": 17.8035
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 6.6052,
+        "Coal-LC3": 18.2891,
+        "AltFuel-Blended": 3.3905,
+        "CCUS-Blended": 33.449
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 43.6056,
+        "Coal-LC3": 98.722,
+        "AltFuel-Blended": 19.6948,
+        "CCUS-Blended": 24.4
+      },
+      "total_production_mt": 553.4,
+      "total_production": 553.4,
+      "total_co2_mt": 186.4224,
+      "co2_total": 186.4224,
+      "co2_intensity_tco2_per_t": 0.3369,
+      "co2_intensity": 0.3369,
+      "scm_consumed_mt": 41.202,
+      "scm_cap_mt": 175.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 16736.1
+    },
+    "2050": {
+      "year": 2050,
+      "demand_mt": 558.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 67.6781,
+        "Coal-LC3": 222.5352,
+        "AltFuel-Blended": 35.3867,
+        "CCUS-Blended": 232.4
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 33.4286,
+        "Coal-Blended": 80.7086,
+        "Coal-LC3": 252.881,
+        "AltFuel-Blended": 40.2121,
+        "CCUS-Blended": 280.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 5.2451,
+        "Coal-LC3": 13.6945,
+        "AltFuel-Blended": 1.8902,
+        "CCUS-Blended": 19.173
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 5.7526,
+        "Coal-LC3": 18.2479,
+        "AltFuel-Blended": 3.2556,
+        "CCUS-Blended": 36.022
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 37.9167,
+        "Coal-LC3": 98.3079,
+        "AltFuel-Blended": 18.8768,
+        "CCUS-Blended": 25.8987
+      },
+      "total_production_mt": 558.0,
+      "total_production": 558.0,
+      "total_co2_mt": 181.0,
+      "co2_total": 181.0,
+      "co2_intensity_tco2_per_t": 0.3244,
+      "co2_intensity": 0.3244,
+      "scm_consumed_mt": 37.134,
+      "scm_cap_mt": 175.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17004.6
+    },
+    "2051": {
+      "year": 2051,
+      "demand_mt": 561.5,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 56.5476,
+        "Coal-LC3": 222.0324,
+        "AltFuel-Blended": 33.92,
+        "CCUS-Blended": 249.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 29.7143,
+        "Coal-Blended": 75.0743,
+        "Coal-LC3": 252.3095,
+        "AltFuel-Blended": 38.5455,
+        "CCUS-Blended": 300.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 4.3824,
+        "Coal-LC3": 13.6635,
+        "AltFuel-Blended": 1.8118,
+        "CCUS-Blended": 20.5425
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 4.8065,
+        "Coal-LC3": 18.2067,
+        "AltFuel-Blended": 3.1206,
+        "CCUS-Blended": 38.595
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 31.6327,
+        "Coal-LC3": 97.9036,
+        "AltFuel-Blended": 18.0633,
+        "CCUS-Blended": 27.3626
+      },
+      "total_production_mt": 561.5,
+      "total_production": 561.5,
+      "total_co2_mt": 174.9622,
+      "co2_total": 174.9622,
+      "co2_intensity_tco2_per_t": 0.3116,
+      "co2_intensity": 0.3116,
+      "scm_consumed_mt": 32.681,
+      "scm_cap_mt": 171.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17263.2
+    },
+    "2052": {
+      "year": 2052,
+      "demand_mt": 565.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 45.4171,
+        "Coal-LC3": 221.5295,
+        "AltFuel-Blended": 32.4533,
+        "CCUS-Blended": 265.6
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 26.0,
+        "Coal-Blended": 69.44,
+        "Coal-LC3": 251.7381,
+        "AltFuel-Blended": 36.8788,
+        "CCUS-Blended": 320.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 3.5198,
+        "Coal-LC3": 13.6326,
+        "AltFuel-Blended": 1.7335,
+        "CCUS-Blended": 21.912
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 3.8605,
+        "Coal-LC3": 18.1654,
+        "AltFuel-Blended": 2.9857,
+        "CCUS-Blended": 41.168
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 25.3677,
+        "Coal-LC3": 97.5003,
+        "AltFuel-Blended": 17.2524,
+        "CCUS-Blended": 28.7751
+      },
+      "total_production_mt": 564.9999,
+      "total_production": 564.9999,
+      "total_co2_mt": 168.8955,
+      "co2_total": 168.8955,
+      "co2_intensity_tco2_per_t": 0.2989,
+      "co2_intensity": 0.2989,
+      "scm_consumed_mt": 28.228,
+      "scm_cap_mt": 168.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17521.8
+    },
+    "2053": {
+      "year": 2053,
+      "demand_mt": 568.5,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 34.2867,
+        "Coal-LC3": 221.0267,
+        "AltFuel-Blended": 30.9867,
+        "CCUS-Blended": 282.2
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 22.2857,
+        "Coal-Blended": 63.8057,
+        "Coal-LC3": 251.1667,
+        "AltFuel-Blended": 35.2121,
+        "CCUS-Blended": 340.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 2.6572,
+        "Coal-LC3": 13.6016,
+        "AltFuel-Blended": 1.6552,
+        "CCUS-Blended": 23.2815
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 2.9144,
+        "Coal-LC3": 18.1242,
+        "AltFuel-Blended": 2.8508,
+        "CCUS-Blended": 43.741
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 19.1217,
+        "Coal-LC3": 97.0977,
+        "AltFuel-Blended": 16.4442,
+        "CCUS-Blended": 30.1361
+      },
+      "total_production_mt": 568.5001,
+      "total_production": 568.5001,
+      "total_co2_mt": 162.7997,
+      "co2_total": 162.7997,
+      "co2_intensity_tco2_per_t": 0.2864,
+      "co2_intensity": 0.2864,
+      "scm_consumed_mt": 23.775,
+      "scm_cap_mt": 164.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17780.4
+    },
+    "2054": {
+      "year": 2054,
+      "demand_mt": 572.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 52.3543,
+        "Coal-LC3": 220.8457,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 298.8
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 18.5714,
+        "Coal-Blended": 58.1714,
+        "Coal-LC3": 250.961,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 360.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.3658,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 42.07,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 4.0575,
+        "Coal-LC3": 13.5905,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 24.651
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 4.4501,
+        "Coal-LC3": 18.1093,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 46.314
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 29.1535,
+        "Coal-LC3": 96.8371,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 31.4457
+      },
+      "total_production_mt": 572.0,
+      "total_production": 572.0,
+      "total_co2_mt": 157.4363,
+      "co2_total": 157.4363,
+      "co2_intensity_tco2_per_t": 0.2752,
+      "co2_intensity": 0.2752,
+      "scm_consumed_mt": 18.324,
+      "scm_cap_mt": 161.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17621.2
+    },
+    "2055": {
+      "year": 2055,
+      "demand_mt": 575.5,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 39.7571,
+        "Coal-LC3": 220.3429,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 315.4
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 14.8571,
+        "Coal-Blended": 52.5371,
+        "Coal-LC3": 250.3896,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 380.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 3.0812,
+        "Coal-LC3": 13.5596,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 26.0205
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 3.3794,
+        "Coal-LC3": 18.0681,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 48.887
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 22.105,
+        "Coal-LC3": 96.4359,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 32.7038
+      },
+      "total_production_mt": 575.5,
+      "total_production": 575.5,
+      "total_co2_mt": 151.2447,
+      "co2_total": 151.2447,
+      "co2_intensity_tco2_per_t": 0.2628,
+      "co2_intensity": 0.2628,
+      "scm_consumed_mt": 13.915,
+      "scm_cap_mt": 157.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17860.7
+    },
+    "2056": {
+      "year": 2056,
+      "demand_mt": 579.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 27.16,
+        "Coal-LC3": 219.84,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 332.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 11.1429,
+        "Coal-Blended": 46.9029,
+        "Coal-LC3": 249.8182,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 400.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 2.1049,
+        "Coal-LC3": 13.5286,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 27.39
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 2.3086,
+        "Coal-LC3": 18.0269,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 51.46
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 15.0779,
+        "Coal-LC3": 96.0356,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 33.9105
+      },
+      "total_production_mt": 579.0,
+      "total_production": 579.0,
+      "total_co2_mt": 145.0239,
+      "co2_total": 145.0239,
+      "co2_intensity_tco2_per_t": 0.2505,
+      "co2_intensity": 0.2505,
+      "scm_consumed_mt": 9.506,
+      "scm_cap_mt": 154.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 18142.3
+    },
+    "2057": {
+      "year": 2057,
+      "demand_mt": 582.5,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 14.5629,
+        "Coal-LC3": 219.3371,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 348.6
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 7.4286,
+        "Coal-Blended": 41.2686,
+        "Coal-LC3": 249.2468,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 420.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 1.1286,
+        "Coal-LC3": 13.4977,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 28.7595
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 1.2378,
+        "Coal-LC3": 17.9856,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 54.033
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 8.0722,
+        "Coal-LC3": 95.6361,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 35.0657
+      },
+      "total_production_mt": 582.5,
+      "total_production": 582.5,
+      "total_co2_mt": 138.7739,
+      "co2_total": 138.7739,
+      "co2_intensity_tco2_per_t": 0.2382,
+      "co2_intensity": 0.2382,
+      "scm_consumed_mt": 5.097,
+      "scm_cap_mt": 150.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 18423.8
+    },
+    "2058": {
+      "year": 2058,
+      "demand_mt": 586.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 1.9657,
+        "Coal-LC3": 218.8343,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 365.2
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 3.7143,
+        "Coal-Blended": 35.6343,
+        "Coal-LC3": 248.6753,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 440.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.1523,
+        "Coal-LC3": 13.4667,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 30.129
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.1671,
+        "Coal-LC3": 17.9444,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 56.606
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 1.0879,
+        "Coal-LC3": 95.2374,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 36.1694
+      },
+      "total_production_mt": 586.0,
+      "total_production": 586.0,
+      "total_co2_mt": 132.4947,
+      "co2_total": 132.4947,
+      "co2_intensity_tco2_per_t": 0.2261,
+      "co2_intensity": 0.2261,
+      "scm_consumed_mt": 0.688,
+      "scm_cap_mt": 147.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 18705.4
+    },
+    "2059": {
+      "year": 2059,
+      "demand_mt": 589.5,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 207.7,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 381.8
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 248.1039,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 460.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 12.7815,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 31.4985
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 17.0314,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 59.179
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 90.2214,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 37.2217
+      },
+      "total_production_mt": 589.5,
+      "total_production": 589.5,
+      "total_co2_mt": 127.443,
+      "co2_total": 127.443,
+      "co2_intensity_tco2_per_t": 0.2162,
+      "co2_intensity": 0.2162,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 143.5,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 18787.6
+    },
+    "2060": {
+      "year": 2060,
+      "demand_mt": 593.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 194.6,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 398.4
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 247.4032,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 480.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.9754,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 32.868
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 15.9572,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 61.752
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 84.3714,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 38.2225
+      },
+      "total_production_mt": 593.0,
+      "total_production": 593.0,
+      "total_co2_mt": 122.5939,
+      "co2_total": 122.5939,
+      "co2_intensity_tco2_per_t": 0.2067,
+      "co2_intensity": 0.2067,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 140.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 19149.9
+    },
+    "2061": {
+      "year": 2061,
+      "demand_mt": 595.7,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 180.7,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 226.7026,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 0.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.12,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 14.8174,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 78.2337,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 39.3327
+      },
+      "total_production_mt": 595.7,
+      "total_production": 595.7,
+      "total_co2_mt": 117.5664,
+      "co2_total": 117.5664,
+      "co2_intensity_tco2_per_t": 0.1974,
+      "co2_intensity": 0.1974,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 136.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 19355.9
+    },
+    "2062": {
+      "year": 2062,
+      "demand_mt": 598.4,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 183.4,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 208.4091,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2.4071,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 276.82,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.2862,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 15.0388,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 79.2899,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 38.8502
+      },
+      "total_production_mt": 598.4,
+      "total_production": 598.4,
+      "total_co2_mt": 118.1401,
+      "co2_total": 118.1401,
+      "co2_intensity_tco2_per_t": 0.1974,
+      "co2_intensity": 0.1974,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 132.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 19517.1
+    },
+    "2063": {
+      "year": 2063,
+      "demand_mt": 601.1,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 186.1,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 211.4773,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.7688,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2733.42,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.4523,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 15.2602,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 80.3427,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 38.3678
+      },
+      "total_production_mt": 601.1,
+      "total_production": 601.1,
+      "total_co2_mt": 118.7105,
+      "co2_total": 118.7105,
+      "co2_intensity_tco2_per_t": 0.1975,
+      "co2_intensity": 0.1975,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 128.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 22018.3
+    },
+    "2064": {
+      "year": 2064,
+      "demand_mt": 603.8,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 188.8,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 214.5455,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.7688,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2733.42,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.6185,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 15.4816,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 81.3923,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 37.8854
+      },
+      "total_production_mt": 603.8,
+      "total_production": 603.8,
+      "total_co2_mt": 119.2776,
+      "co2_total": 119.2776,
+      "co2_intensity_tco2_per_t": 0.1975,
+      "co2_intensity": 0.1975,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 124.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 22062.9
+    },
+    "2065": {
+      "year": 2065,
+      "demand_mt": 606.5,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 191.5,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 217.6136,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.7688,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 20.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2733.42,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 4400.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.7846,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 15.703,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 82.4385,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 37.4029
+      },
+      "total_production_mt": 606.5,
+      "total_production": 606.5,
+      "total_co2_mt": 119.8414,
+      "co2_total": 119.8414,
+      "co2_intensity_tco2_per_t": 0.1976,
+      "co2_intensity": 0.1976,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 120.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 22107.5
+    },
+    "2066": {
+      "year": 2066,
+      "demand_mt": 609.2,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 194.2,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 220.6818,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.9582,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2755.2,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 11.9508,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 15.9244,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 83.4814,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 36.9205
+      },
+      "total_production_mt": 609.2,
+      "total_production": 609.2,
+      "total_co2_mt": 120.4018,
+      "co2_total": 120.4018,
+      "co2_intensity_tco2_per_t": 0.1976,
+      "co2_intensity": 0.1976,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 116.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17773.9
+    },
+    "2067": {
+      "year": 2067,
+      "demand_mt": 611.9,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 196.9,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 223.75,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.9582,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2755.2,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 12.1169,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 16.1458,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 84.5209,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 36.438
+      },
+      "total_production_mt": 611.9,
+      "total_production": 611.9,
+      "total_co2_mt": 120.959,
+      "co2_total": 120.959,
+      "co2_intensity_tco2_per_t": 0.1977,
+      "co2_intensity": 0.1977,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 112.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17818.5
+    },
+    "2068": {
+      "year": 2068,
+      "demand_mt": 614.6,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 199.6,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 226.8182,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.9582,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2755.2,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 12.2831,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 16.3672,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 85.5572,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 35.9556
+      },
+      "total_production_mt": 614.6,
+      "total_production": 614.6,
+      "total_co2_mt": 121.5128,
+      "co2_total": 121.5128,
+      "co2_intensity_tco2_per_t": 0.1977,
+      "co2_intensity": 0.1977,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 108.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17863.1
+    },
+    "2069": {
+      "year": 2069,
+      "demand_mt": 617.3,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 202.3,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 229.8864,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.9582,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2755.2,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 12.4492,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 16.5886,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 86.5901,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 35.4732
+      },
+      "total_production_mt": 617.3,
+      "total_production": 617.3,
+      "total_co2_mt": 122.0632,
+      "co2_total": 122.0632,
+      "co2_intensity_tco2_per_t": 0.1977,
+      "co2_intensity": 0.1977,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 104.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17907.7
+    },
+    "2070": {
+      "year": 2070,
+      "demand_mt": 620.0,
+      "production_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 205.0,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 415.0
+      },
+      "capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 232.9545,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 500.0
+      },
+      "new_capacity_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 23.9582,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "investment_by_route": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 2755.2,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 0.0
+      },
+      "coal_consumption_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 12.6154,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.2375
+      },
+      "electricity_by_route_twh": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 16.81,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 64.325
+      },
+      "co2_by_route_mt": {
+        "Coal-OPC": 0.0,
+        "Coal-Blended": 0.0,
+        "Coal-LC3": 87.6197,
+        "AltFuel-Blended": 0.0,
+        "CCUS-Blended": 34.9907
+      },
+      "total_production_mt": 620.0,
+      "total_production": 620.0,
+      "total_co2_mt": 122.6104,
+      "co2_total": 122.6104,
+      "co2_intensity_tco2_per_t": 0.1978,
+      "co2_intensity": 0.1978,
+      "scm_consumed_mt": 0.0,
+      "scm_cap_mt": 100.0,
+      "unmet_demand_mt": 0.0,
+      "total_cost": 17952.4
+    }
+  },
+  "summary": {
+    "total_cost_bn": 271.88,
+    "total_co2_cumulative_mt": 9389.4,
+    "final_co2_intensity": 0.1978,
+    "final_year_demand": 620.0,
+    "scm_binding": true
+  },
+  "vol4_targets": {
+    "CPS": {
+      "2050": 0.52,
+      "2070": 0.4
+    },
+    "NZS": {
+      "2050": 0.35,
+      "2070": 0.08
+    }
+  },
+  "provenance": "configs/cement_config.yaml (all parameters sourced)",
   "demand_model": "international"
 }
