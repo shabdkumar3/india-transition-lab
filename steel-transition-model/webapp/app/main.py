@@ -918,9 +918,9 @@ async def lab_run_shim(payload: dict) -> Dict[str, Any]:
     for toggle_key in ("use_dynamic_scrap", "use_endogenous_learning", "use_deployment_dynamics"):
         if toggle_key in payload:
             overrides[toggle_key] = bool(payload[toggle_key])
-    if "ccus" in payload:
-        overrides["ccus"] = {"enabled": bool(payload["ccus"]),
-                              "provenance": "Lab scenario user override"}
+    ccus_val = payload.get("ccus", payload.get("ccus_active"))
+    if ccus_val is not None:
+        overrides["ccus.enabled"] = bool(ccus_val)
 
     import asyncio, functools
     loop = asyncio.get_event_loop()

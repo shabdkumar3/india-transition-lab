@@ -230,12 +230,15 @@ function normalizeYearlyResult(yr: Record<string, unknown>): YearlyResult {
 }
 
 function normalizeResult(result: RunResult): RunResult {
-  if (!result.yearly_results) return result;
+  const rawStatus = (result.status as string)?.toLowerCase();
+  const isOk = rawStatus === "ok" || rawStatus === "optimal" || rawStatus === "success";
+  const status = isOk ? "ok" : result.status;
+  if (!result.yearly_results) return { ...result, status };
   const normalized: Record<number, YearlyResult> = {};
   for (const [yr, val] of Object.entries(result.yearly_results)) {
     normalized[Number(yr)] = normalizeYearlyResult(val as Record<string, unknown>);
   }
-  return { ...result, yearly_results: normalized };
+  return { ...result, status, yearly_results: normalized };
 }
 
 // ── Run optimization — static-first → cache → backend ────────────────────────
