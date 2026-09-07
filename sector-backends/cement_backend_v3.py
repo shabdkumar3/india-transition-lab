@@ -157,6 +157,17 @@ def _ELEC(ri: int, ti: int) -> int:    return 3*R*T + T + R*T + ri * T + ti
 def _SLACK(ti: int) -> int:            return 3*R*T + T + 2*R*T + ti  # unmet demand
 NV = 3*R*T + T + 2*R*T + T            # total variable count (added SLACK)
 
+def _get_demand(sc: str, y: int, overrides: Dict[str, Any]) -> float:
+    _dt = CFG.get("demand_trajectories", {})
+    demand_anchors_ov = overrides.get("demand_anchors")
+    demand_model_ov   = overrides.get("demand_model")
+    if demand_anchors_ov:
+        return interp({str(k): float(v) for k, v in demand_anchors_ov.items()}, y)
+    elif demand_model_ov and demand_model_ov in _dt:
+        return interp(_dt[demand_model_ov]["anchors"], y)
+    else:
+        return interp_sc(CFG["demand"], sc, y)
+
 # ── Build MILP ────────────────────────────────────────────────────────────────
 
 def build_milp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matrix, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
@@ -215,13 +226,7 @@ def build_milp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matr
         p_elec_kwh = interp_sc(CFG["electricity"]["price_usd_per_kwh"], sc, y) + elec_price_adj / 1000.0
 
         # ── Demand: explicit anchors > named model > scenario default ────────
-        _dt = CFG.get("demand_trajectories", {})
-        if demand_anchors_ov:
-            demand = interp({str(k): float(v) for k, v in demand_anchors_ov.items()}, y)
-        elif demand_model_ov and demand_model_ov in _dt:
-            demand = interp(_dt[demand_model_ov]["anchors"], y)
-        else:
-            demand = interp_sc(CFG["demand"], sc, y)
+        demand = _get_demand(sc, y, overrides)
 
         # ── Grid emission intensity: ramp from 2024 baseline to 2070 target ──
         # Lab slider sends grid_ei_2070 in kgCO2/kWh; grid_ei_use must be tCO2/kWh.
@@ -314,7 +319,7 @@ def build_milp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matr
         # 2024 base-year data (NITI demand vs. installed-capacity availability).
         # The config's 2024 demand (395 Mt) is at the edge of feasible capacity;
         # ±2 Mt is within the ±1% uncertainty of NITI 2023 sectoral projections.
-        demand_lb = demand * 0.995
+        demand_lb = demand
         # SLACK allows unmet demand at high cost → LP always feasible.
         # Upper bound = demand: prevents overproduction when green_premium > VOM
         # (without ub, LP produces at capacity to maximise green-premium revenue).
@@ -527,7 +532,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
         total_prod = sum(prod_by_route.values())
         total_co2  = max(0.0, x[_CO2(ti)])
         intensity  = total_co2 / total_prod if total_prod > 0 else 0.0
-        demand     = interp_sc(CFG["demand"], sc, y)
+        demand     = _get_demand(sc, y, overrides)
         unmet      = max(0.0, x[_SLACK(ti)])  # unmet demand shortfall (should be ~0)
         scm_used   = sum(
             (1.0 - _route_cfg(rid)["clinker_factor"]) * prod_by_route.get(rid, 0.0)
@@ -557,6 +562,11 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
             "total_cost": round(total_cost_yr, 1),
         }
 
+    # Verify demand feasibility
+    max_unmet = max(yr["unmet_demand_mt"] for yr in yearly.values())
+    if max_unmet > 0.5:
+        return {"status": "infeasible", "message": f"Demand constraint unmet by {max_unmet:.2f} Mt"}
+
     # Summary
     all_co2  = sum(yr["total_co2_mt"] for yr in yearly.values())
     all_cost = result.fun
@@ -564,6 +574,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
 
     out = {
         "status": "ok",
+        "sector": "cement",
         "scenario": sc,
         "solver_objective": round(all_cost, 2),
         "years": YEARS,

@@ -76,7 +76,7 @@ def solve_milp(
     options: dict = {
         "disp": False,
         "presolve": True,   # reduce problem before solve
-        "time_limit": time_limit_seconds if time_limit_seconds is not None else 300.0,
+        "time_limit": time_limit_seconds if time_limit_seconds is not None else 60.0,
     }
     # Optional HiGHS-native keys passed verbatim (scipy forwards unknown opts)
     # Removed: "solver", "simplex_strategy", "simplex_scale_strategy",

@@ -2,6 +2,6 @@
   "status": "ok",
   "message": "Demand constraint unmet by 5.45 Mt",
   "sector": "fertiliser",
-  "scenario": "NZS",
+  "scenario": "CPS",
   "demand_model": "niti"
 }

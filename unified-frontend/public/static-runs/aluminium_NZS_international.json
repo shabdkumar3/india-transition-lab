@@ -1,1 +1,2378 @@
-{"status": "ok", "scenario": "NZS", "solver_objective": 17785426.15, "yearly_results": {"2024": {"year": 2024, "demand_mt": 5.0, "unmet_demand_mt": 0.074, "production_by_route": {"CoalPP-Primary": 2.88, "GridPP-Primary": 0.81, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.736}, "capacity_by_route": {"CoalPP-Primary": 3.2, "GridPP-Primary": 0.9, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.8}, "new_capacity_by_route": {"CoalPP-Primary": 0.1067, "GridPP-Primary": 1.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.2998}, "co2_by_route_mt": {"CoalPP-Primary": 59.904, "GridPP-Primary": 9.9144, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.3658}, "total_production_mt": 4.426, "total_production": 4.426, "total_co2_mt": 70.1842, "co2_total": 70.1842, "co2_intensity_tco2_per_t": 15.8573, "co2_intensity": 15.8573, "scrap_cap_mt": 0.85, "scrap_used_mt": 0.736, "investment_by_route": {"CoalPP-Primary": 298.67, "GridPP-Primary": 2600.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 113.92}, "total_cost": 4536.4}, "2025": {"year": 2025, "demand_mt": 5.67, "unmet_demand_mt": 0.2913, "production_by_route": {"CoalPP-Primary": 2.784, "GridPP-Primary": 0.783, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.975}, "capacity_by_route": {"CoalPP-Primary": 3.0933, "GridPP-Primary": 0.87, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.0598}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.6896, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.1759}, "co2_by_route_mt": {"CoalPP-Primary": 57.9072, "GridPP-Primary": 9.1089, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.455}, "total_production_mt": 4.542, "total_production": 4.542, "total_co2_mt": 67.4711, "co2_total": 67.4711, "co2_intensity_tco2_per_t": 14.8549, "co2_intensity": 14.8549, "scrap_cap_mt": 0.97, "scrap_used_mt": 0.975, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1793.04, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 66.83}, "total_cost": 3361.6}, "2026": {"year": 2026, "demand_mt": 6.33, "unmet_demand_mt": 0.6227, "production_by_route": {"CoalPP-Primary": 2.688, "GridPP-Primary": 0.756, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.1}, "capacity_by_route": {"CoalPP-Primary": 2.9867, "GridPP-Primary": 0.84, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.1957}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.3681, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.1759}, "co2_by_route_mt": {"CoalPP-Primary": 55.9104, "GridPP-Primary": 8.3362, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.48}, "total_production_mt": 4.544, "total_production": 4.544, "total_co2_mt": 64.7265, "co2_total": 64.7265, "co2_intensity_tco2_per_t": 14.2444, "co2_intensity": 14.2444, "scrap_cap_mt": 1.1, "scrap_used_mt": 1.1, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 957.19, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 66.83}, "total_cost": 2491.2}, "2027": {"year": 2027, "demand_mt": 7.0, "unmet_demand_mt": 0.954, "production_by_route": {"CoalPP-Primary": 2.592, "GridPP-Primary": 0.729, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.225}, "capacity_by_route": {"CoalPP-Primary": 2.88, "GridPP-Primary": 0.81, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.3315}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.1759}, "co2_by_route_mt": {"CoalPP-Primary": 53.9136, "GridPP-Primary": 7.5962, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.4974}, "total_production_mt": 4.546, "total_production": 4.546, "total_co2_mt": 62.0071, "co2_total": 62.0071, "co2_intensity_tco2_per_t": 13.6399, "co2_intensity": 13.6399, "scrap_cap_mt": 1.23, "scrap_used_mt": 1.225, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 66.83}, "total_cost": 3539.5}, "2028": {"year": 2028, "demand_mt": 7.67, "unmet_demand_mt": 0.2893, "production_by_route": {"CoalPP-Primary": 2.592, "GridPP-Primary": 1.602, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.35}, "capacity_by_route": {"CoalPP-Primary": 2.88, "GridPP-Primary": 1.78, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.4674}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.1759}, "co2_by_route_mt": {"CoalPP-Primary": 53.9136, "GridPP-Primary": 15.721, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.5072}, "total_production_mt": 5.544, "total_production": 5.544, "total_co2_mt": 70.1417, "co2_total": 70.1417, "co2_intensity_tco2_per_t": 12.6518, "co2_intensity": 12.6518, "scrap_cap_mt": 1.35, "scrap_used_mt": 1.35, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 66.83}, "total_cost": 3879.6}, "2029": {"year": 2029, "demand_mt": 8.33, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 2.496, "GridPP-Primary": 2.1957, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.475}, "capacity_by_route": {"CoalPP-Primary": 2.7733, "GridPP-Primary": 2.4396, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.6033}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.1759}, "co2_by_route_mt": {"CoalPP-Primary": 51.9168, "GridPP-Primary": 20.2148, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.5094}, "total_production_mt": 6.1667, "total_production": 6.1667, "total_co2_mt": 72.6409, "co2_total": 72.6409, "co2_intensity_tco2_per_t": 11.7795, "co2_intensity": 11.7795, "scrap_cap_mt": 1.48, "scrap_used_mt": 1.475, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 66.83}, "total_cost": 4077.1}, "2030": {"year": 2030, "demand_mt": 9.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 2.4, "GridPP-Primary": 2.5, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.6}, "capacity_by_route": {"CoalPP-Primary": 2.6667, "GridPP-Primary": 2.7778, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.7391}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 49.92, "GridPP-Primary": 21.5, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.504}, "total_production_mt": 6.5, "total_production": 6.5, "total_co2_mt": 71.924, "co2_total": 71.924, "co2_intensity_tco2_per_t": 11.0652, "co2_intensity": 11.0652, "scrap_cap_mt": 1.6, "scrap_used_mt": 1.6, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4214.0}, "2031": {"year": 2031, "demand_mt": 10.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 2.177, "GridPP-Primary": 2.473, "RE-Primary": 0.51, "Inert-Anode": 0.0, "Secondary-Al": 1.84}, "capacity_by_route": {"CoalPP-Primary": 2.56, "GridPP-Primary": 2.7478, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 2.0}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 45.2816, "GridPP-Primary": 20.4022, "RE-Primary": 0.969, "Inert-Anode": 0.0, "Secondary-Al": 0.5474}, "total_production_mt": 7.0, "total_production": 7.0, "total_co2_mt": 67.2003, "co2_total": 67.2003, "co2_intensity_tco2_per_t": 9.6, "co2_intensity": 9.6, "scrap_cap_mt": 1.84, "scrap_used_mt": 1.84, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4419.1}, "2032": {"year": 2032, "demand_mt": 11.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 1.954, "GridPP-Primary": 2.446, "RE-Primary": 1.02, "Inert-Anode": 0.0, "Secondary-Al": 2.08}, "capacity_by_route": {"CoalPP-Primary": 2.4533, "GridPP-Primary": 2.7178, "RE-Primary": 1.2, "Inert-Anode": 0.0, "Secondary-Al": 2.2609}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 40.6432, "GridPP-Primary": 19.3234, "RE-Primary": 1.938, "Inert-Anode": 0.0, "Secondary-Al": 0.5824}, "total_production_mt": 7.5, "total_production": 7.5, "total_co2_mt": 62.487, "co2_total": 62.487, "co2_intensity_tco2_per_t": 8.3316, "co2_intensity": 8.3316, "scrap_cap_mt": 2.08, "scrap_used_mt": 2.08, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4624.2}, "2033": {"year": 2033, "demand_mt": 12.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 1.731, "GridPP-Primary": 2.419, "RE-Primary": 1.53, "Inert-Anode": 0.0, "Secondary-Al": 2.32}, "capacity_by_route": {"CoalPP-Primary": 2.3467, "GridPP-Primary": 2.6878, "RE-Primary": 1.8, "Inert-Anode": 0.0, "Secondary-Al": 2.5217}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 36.0048, "GridPP-Primary": 18.2634, "RE-Primary": 2.907, "Inert-Anode": 0.0, "Secondary-Al": 0.609}, "total_production_mt": 8.0, "total_production": 8.0, "total_co2_mt": 57.7843, "co2_total": 57.7843, "co2_intensity_tco2_per_t": 7.223, "co2_intensity": 7.223, "scrap_cap_mt": 2.32, "scrap_used_mt": 2.32, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4829.3}, "2034": {"year": 2034, "demand_mt": 13.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 1.508, "GridPP-Primary": 2.392, "RE-Primary": 2.04, "Inert-Anode": 0.0, "Secondary-Al": 2.56}, "capacity_by_route": {"CoalPP-Primary": 2.24, "GridPP-Primary": 2.6578, "RE-Primary": 2.4, "Inert-Anode": 0.0, "Secondary-Al": 2.7826}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 31.3664, "GridPP-Primary": 17.2224, "RE-Primary": 3.876, "Inert-Anode": 0.0, "Secondary-Al": 0.6272}, "total_production_mt": 8.5, "total_production": 8.5, "total_co2_mt": 53.092, "co2_total": 53.092, "co2_intensity_tco2_per_t": 6.2461, "co2_intensity": 6.2461, "scrap_cap_mt": 2.56, "scrap_used_mt": 2.56, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 5034.5}, "2035": {"year": 2035, "demand_mt": 14.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 1.285, "GridPP-Primary": 2.365, "RE-Primary": 2.55, "Inert-Anode": 0.0, "Secondary-Al": 2.8}, "capacity_by_route": {"CoalPP-Primary": 2.1333, "GridPP-Primary": 2.6278, "RE-Primary": 3.0, "Inert-Anode": 0.0, "Secondary-Al": 3.0435}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 26.728, "GridPP-Primary": 16.2002, "RE-Primary": 4.845, "Inert-Anode": 0.0, "Secondary-Al": 0.637}, "total_production_mt": 9.0, "total_production": 9.0, "total_co2_mt": 48.4103, "co2_total": 48.4103, "co2_intensity_tco2_per_t": 5.3789, "co2_intensity": 5.3789, "scrap_cap_mt": 2.8, "scrap_used_mt": 2.8, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 5239.6}, "2036": {"year": 2036, "demand_mt": 15.2, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 1.062, "GridPP-Primary": 2.338, "RE-Primary": 3.06, "Inert-Anode": 0.0, "Secondary-Al": 3.04}, "capacity_by_route": {"CoalPP-Primary": 2.0267, "GridPP-Primary": 2.5978, "RE-Primary": 3.6, "Inert-Anode": 0.0, "Secondary-Al": 3.3043}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 22.0896, "GridPP-Primary": 15.197, "RE-Primary": 5.814, "Inert-Anode": 0.0, "Secondary-Al": 0.6384}, "total_production_mt": 9.5, "total_production": 9.5, "total_co2_mt": 43.739, "co2_total": 43.739, "co2_intensity_tco2_per_t": 4.6041, "co2_intensity": 4.6041, "scrap_cap_mt": 3.04, "scrap_used_mt": 3.04, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 5444.7}, "2037": {"year": 2037, "demand_mt": 16.4, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.839, "GridPP-Primary": 2.311, "RE-Primary": 3.57, "Inert-Anode": 0.0, "Secondary-Al": 3.28}, "capacity_by_route": {"CoalPP-Primary": 1.92, "GridPP-Primary": 2.5678, "RE-Primary": 4.2, "Inert-Anode": 0.0, "Secondary-Al": 3.5652}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.3494, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 17.4512, "GridPP-Primary": 14.2126, "RE-Primary": 6.783, "Inert-Anode": 0.0, "Secondary-Al": 0.6314}, "total_production_mt": 10.0, "total_production": 10.0, "total_co2_mt": 39.0783, "co2_total": 39.0783, "co2_intensity_tco2_per_t": 3.9078, "co2_intensity": 3.9078, "scrap_cap_mt": 3.28, "scrap_used_mt": 3.28, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1188.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4797.8}, "2038": {"year": 2038, "demand_mt": 17.6, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.616, "GridPP-Primary": 2.284, "RE-Primary": 4.08, "Inert-Anode": 0.0, "Secondary-Al": 3.52}, "capacity_by_route": {"CoalPP-Primary": 1.8133, "GridPP-Primary": 2.5378, "RE-Primary": 4.8, "Inert-Anode": 0.0, "Secondary-Al": 3.8261}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 12.8128, "GridPP-Primary": 13.2472, "RE-Primary": 7.752, "Inert-Anode": 0.0, "Secondary-Al": 0.616}, "total_production_mt": 10.5, "total_production": 10.5, "total_co2_mt": 34.428, "co2_total": 34.428, "co2_intensity_tco2_per_t": 3.2789, "co2_intensity": 3.2789, "scrap_cap_mt": 3.52, "scrap_used_mt": 3.52, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4615.0}, "2039": {"year": 2039, "demand_mt": 18.8, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.393, "GridPP-Primary": 2.257, "RE-Primary": 4.59, "Inert-Anode": 0.0, "Secondary-Al": 3.76}, "capacity_by_route": {"CoalPP-Primary": 1.7067, "GridPP-Primary": 2.5078, "RE-Primary": 5.4, "Inert-Anode": 0.0, "Secondary-Al": 4.087}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.3009}, "co2_by_route_mt": {"CoalPP-Primary": 8.1744, "GridPP-Primary": 12.3006, "RE-Primary": 8.721, "Inert-Anode": 0.0, "Secondary-Al": 0.5922}, "total_production_mt": 11.0, "total_production": 11.0, "total_co2_mt": 29.7883, "co2_total": 29.7883, "co2_intensity_tco2_per_t": 2.708, "co2_intensity": 2.708, "scrap_cap_mt": 3.76, "scrap_used_mt": 3.76, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 114.33}, "total_cost": 4820.1}, "2040": {"year": 2040, "demand_mt": 20.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.17, "GridPP-Primary": 2.23, "RE-Primary": 5.1, "Inert-Anode": 0.0, "Secondary-Al": 4.0}, "capacity_by_route": {"CoalPP-Primary": 1.6, "GridPP-Primary": 2.4778, "RE-Primary": 6.0, "Inert-Anode": 0.0, "Secondary-Al": 4.3478}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.3661}, "co2_by_route_mt": {"CoalPP-Primary": 3.536, "GridPP-Primary": 11.373, "RE-Primary": 9.69, "Inert-Anode": 0.0, "Secondary-Al": 0.56}, "total_production_mt": 11.5, "total_production": 11.5, "total_co2_mt": 25.159, "co2_total": 25.159, "co2_intensity_tco2_per_t": 2.1877, "co2_intensity": 2.1877, "scrap_cap_mt": 4.0, "scrap_used_mt": 4.0, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 139.11}, "total_cost": 5050.0}, "2041": {"year": 2041, "demand_mt": 20.9, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 2.203, "RE-Primary": 5.397, "Inert-Anode": 0.0, "Secondary-Al": 4.3}, "capacity_by_route": {"CoalPP-Primary": 1.4933, "GridPP-Primary": 2.4478, "RE-Primary": 6.3494, "Inert-Anode": 0.0, "Secondary-Al": 4.6739}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.3661}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 10.8652, "RE-Primary": 10.2543, "Inert-Anode": 0.0, "Secondary-Al": 0.5659}, "total_production_mt": 11.9, "total_production": 11.9, "total_co2_mt": 21.6854, "co2_total": 21.6854, "co2_intensity_tco2_per_t": 1.8223, "co2_intensity": 1.8223, "scrap_cap_mt": 4.3, "scrap_used_mt": 4.3, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 139.11}, "total_cost": 5166.8}, "2042": {"year": 2042, "demand_mt": 21.8, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 2.103, "RE-Primary": 5.597, "Inert-Anode": 0.0, "Secondary-Al": 4.6}, "capacity_by_route": {"CoalPP-Primary": 1.3867, "GridPP-Primary": 2.4178, "RE-Primary": 6.5847, "Inert-Anode": 0.0, "Secondary-Al": 5.0}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.3661}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 10.0187, "RE-Primary": 10.6343, "Inert-Anode": 0.0, "Secondary-Al": 0.5667}, "total_production_mt": 12.3, "total_production": 12.3, "total_co2_mt": 21.2197, "co2_total": 21.2197, "co2_intensity_tco2_per_t": 1.7252, "co2_intensity": 1.7252, "scrap_cap_mt": 4.6, "scrap_used_mt": 4.6, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 139.11}, "total_cost": 5246.6}, "2043": {"year": 2043, "demand_mt": 22.7, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 2.003, "RE-Primary": 5.797, "Inert-Anode": 0.0, "Secondary-Al": 4.9}, "capacity_by_route": {"CoalPP-Primary": 1.28, "GridPP-Primary": 2.3878, "RE-Primary": 6.82, "Inert-Anode": 0.0, "Secondary-Al": 5.3261}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.6659}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 9.2058, "RE-Primary": 11.0143, "Inert-Anode": 0.0, "Secondary-Al": 0.5625}, "total_production_mt": 12.7, "total_production": 12.7, "total_co2_mt": 20.7826, "co2_total": 20.7826, "co2_intensity_tco2_per_t": 1.6364, "co2_intensity": 1.6364, "scrap_cap_mt": 4.9, "scrap_used_mt": 4.9, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 253.03}, "total_cost": 5440.3}, "2044": {"year": 2044, "demand_mt": 23.6, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.903, "RE-Primary": 5.997, "Inert-Anode": 0.0, "Secondary-Al": 5.2}, "capacity_by_route": {"CoalPP-Primary": 1.1733, "GridPP-Primary": 2.3578, "RE-Primary": 7.0553, "Inert-Anode": 0.0, "Secondary-Al": 5.6522}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2353, "Inert-Anode": 0.0, "Secondary-Al": 0.502}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 8.4265, "RE-Primary": 11.3943, "Inert-Anode": 0.0, "Secondary-Al": 0.5533}, "total_production_mt": 13.1, "total_production": 13.1, "total_co2_mt": 20.3741, "co2_total": 20.3741, "co2_intensity_tco2_per_t": 1.5553, "co2_intensity": 1.5553, "scrap_cap_mt": 5.2, "scrap_used_mt": 5.2, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 800.0, "Inert-Anode": 0.0, "Secondary-Al": 190.74}, "total_cost": 5457.8}, "2045": {"year": 2045, "demand_mt": 24.5, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.803, "RE-Primary": 6.197, "Inert-Anode": 0.0, "Secondary-Al": 5.5}, "capacity_by_route": {"CoalPP-Primary": 1.0667, "GridPP-Primary": 2.3278, "RE-Primary": 7.2906, "Inert-Anode": 0.0, "Secondary-Al": 5.9783}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.4506, "Inert-Anode": 0.0, "Secondary-Al": 0.502}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 7.6808, "RE-Primary": 11.7743, "Inert-Anode": 0.0, "Secondary-Al": 0.539}, "total_production_mt": 13.5, "total_production": 13.5, "total_co2_mt": 19.9941, "co2_total": 19.9941, "co2_intensity_tco2_per_t": 1.481, "co2_intensity": 1.481, "scrap_cap_mt": 5.5, "scrap_used_mt": 5.5, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1532.0, "Inert-Anode": 0.0, "Secondary-Al": 190.74}, "total_cost": 6269.6}, "2046": {"year": 2046, "demand_mt": 25.4, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.703, "RE-Primary": 6.397, "Inert-Anode": 0.0, "Secondary-Al": 5.8}, "capacity_by_route": {"CoalPP-Primary": 0.96, "GridPP-Primary": 2.2978, "RE-Primary": 7.5259, "Inert-Anode": 0.0, "Secondary-Al": 6.3043}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.502}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 6.9687, "RE-Primary": 12.1543, "Inert-Anode": 0.0, "Secondary-Al": 0.5197}, "total_production_mt": 13.9, "total_production": 13.9, "total_co2_mt": 19.6427, "co2_total": 19.6427, "co2_intensity_tco2_per_t": 1.4131, "co2_intensity": 1.4131, "scrap_cap_mt": 5.8, "scrap_used_mt": 5.8, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 190.74}, "total_cost": 6857.4}, "2047": {"year": 2047, "demand_mt": 26.3, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.603, "RE-Primary": 6.597, "Inert-Anode": 0.0, "Secondary-Al": 6.1}, "capacity_by_route": {"CoalPP-Primary": 0.8533, "GridPP-Primary": 2.2678, "RE-Primary": 7.7612, "Inert-Anode": 0.0, "Secondary-Al": 6.6304}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.502}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 6.2902, "RE-Primary": 12.5343, "Inert-Anode": 0.0, "Secondary-Al": 0.4953}, "total_production_mt": 14.3, "total_production": 14.3, "total_co2_mt": 19.3198, "co2_total": 19.3198, "co2_intensity_tco2_per_t": 1.351, "co2_intensity": 1.351, "scrap_cap_mt": 6.1, "scrap_used_mt": 6.1, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 190.74}, "total_cost": 6937.2}, "2048": {"year": 2048, "demand_mt": 27.2, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.503, "RE-Primary": 6.797, "Inert-Anode": 0.0, "Secondary-Al": 6.4}, "capacity_by_route": {"CoalPP-Primary": 0.7467, "GridPP-Primary": 2.2378, "RE-Primary": 7.9965, "Inert-Anode": 0.0, "Secondary-Al": 6.9565}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.502}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 5.6453, "RE-Primary": 12.9143, "Inert-Anode": 0.0, "Secondary-Al": 0.4659}, "total_production_mt": 14.7, "total_production": 14.7, "total_co2_mt": 19.0255, "co2_total": 19.0255, "co2_intensity_tco2_per_t": 1.2943, "co2_intensity": 1.2943, "scrap_cap_mt": 6.4, "scrap_used_mt": 6.4, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 190.74}, "total_cost": 7017.0}, "2049": {"year": 2049, "demand_mt": 28.1, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.22, "RE-Primary": 7.18, "Inert-Anode": 0.0, "Secondary-Al": 6.7}, "capacity_by_route": {"CoalPP-Primary": 0.64, "GridPP-Primary": 2.2078, "RE-Primary": 8.4471, "Inert-Anode": 0.0, "Secondary-Al": 7.2826}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 4.3774, "RE-Primary": 13.642, "Inert-Anode": 0.0, "Secondary-Al": 0.4315}, "total_production_mt": 15.1, "total_production": 15.1, "total_co2_mt": 18.4508, "co2_total": 18.4508, "co2_intensity_tco2_per_t": 1.2219, "co2_intensity": 1.2219, "scrap_cap_mt": 6.7, "scrap_used_mt": 6.7, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 7214.1}, "2050": {"year": 2050, "demand_mt": 29.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.81, "RE-Primary": 7.69, "Inert-Anode": 0.0, "Secondary-Al": 7.0}, "capacity_by_route": {"CoalPP-Primary": 0.5333, "GridPP-Primary": 2.1778, "RE-Primary": 9.0471, "Inert-Anode": 0.0, "Secondary-Al": 7.6087}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 2.7702, "RE-Primary": 14.611, "Inert-Anode": 0.0, "Secondary-Al": 0.392}, "total_production_mt": 15.5, "total_production": 15.5, "total_co2_mt": 17.7732, "co2_total": 17.7732, "co2_intensity_tco2_per_t": 1.1467, "co2_intensity": 1.1467, "scrap_cap_mt": 7.0, "scrap_used_mt": 7.0, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 7412.2}, "2051": {"year": 2051, "demand_mt": 29.5, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.25, "RE-Primary": 8.2, "Inert-Anode": 0.0, "Secondary-Al": 7.3}, "capacity_by_route": {"CoalPP-Primary": 0.4267, "GridPP-Primary": 2.1478, "RE-Primary": 9.6471, "Inert-Anode": 0.0, "Secondary-Al": 7.9348}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.8375, "RE-Primary": 15.58, "Inert-Anode": 0.0, "Secondary-Al": 0.3833}, "total_production_mt": 15.75, "total_production": 15.75, "total_co2_mt": 16.8007, "co2_total": 16.8007, "co2_intensity_tco2_per_t": 1.0667, "co2_intensity": 1.0667, "scrap_cap_mt": 7.3, "scrap_used_mt": 7.3, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 7597.5}, "2052": {"year": 2052, "demand_mt": 30.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.2, "RE-Primary": 8.2, "Inert-Anode": 0.0, "Secondary-Al": 7.6}, "capacity_by_route": {"CoalPP-Primary": 0.32, "GridPP-Primary": 2.1178, "RE-Primary": 9.6471, "Inert-Anode": 0.0, "Secondary-Al": 8.2609}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.6, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.656, "RE-Primary": 15.58, "Inert-Anode": 0.0, "Secondary-Al": 0.3724}, "total_production_mt": 16.0, "total_production": 16.0, "total_co2_mt": 16.6084, "co2_total": 16.6084, "co2_intensity_tco2_per_t": 1.038, "co2_intensity": 1.038, "scrap_cap_mt": 7.6, "scrap_used_mt": 7.6, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 2040.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 7588.3}, "2053": {"year": 2053, "demand_mt": 30.5, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.15, "RE-Primary": 8.2, "Inert-Anode": 0.0, "Secondary-Al": 7.9}, "capacity_by_route": {"CoalPP-Primary": 0.2133, "GridPP-Primary": 2.0878, "RE-Primary": 9.6471, "Inert-Anode": 0.0, "Secondary-Al": 8.587}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.5412, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.4815, "RE-Primary": 15.58, "Inert-Anode": 0.0, "Secondary-Al": 0.3595}, "total_production_mt": 16.25, "total_production": 16.25, "total_co2_mt": 16.421, "co2_total": 16.421, "co2_intensity_tco2_per_t": 1.0105, "co2_intensity": 1.0105, "scrap_cap_mt": 7.9, "scrap_used_mt": 7.9, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1840.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 7379.0}, "2054": {"year": 2054, "demand_mt": 31.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.1, "RE-Primary": 8.2, "Inert-Anode": 0.0, "Secondary-Al": 8.2}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 1.0578, "RE-Primary": 9.6471, "Inert-Anode": 0.0, "Secondary-Al": 8.913}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.5412, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.314, "RE-Primary": 15.58, "Inert-Anode": 0.0, "Secondary-Al": 0.3444}, "total_production_mt": 16.5, "total_production": 16.5, "total_co2_mt": 16.2384, "co2_total": 16.2384, "co2_intensity_tco2_per_t": 0.9841, "co2_intensity": 0.9841, "scrap_cap_mt": 8.2, "scrap_used_mt": 8.2, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1840.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 7079.9}, "2055": {"year": 2055, "demand_mt": 31.5, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.05, "RE-Primary": 8.2, "Inert-Anode": 0.0, "Secondary-Al": 8.5}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.3681, "RE-Primary": 9.6471, "Inert-Anode": 0.0, "Secondary-Al": 9.2391}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.5412, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.1535, "RE-Primary": 15.58, "Inert-Anode": 0.0, "Secondary-Al": 0.3272}, "total_production_mt": 16.75, "total_production": 16.75, "total_co2_mt": 16.0608, "co2_total": 16.0608, "co2_intensity_tco2_per_t": 0.9589, "co2_intensity": 0.9589, "scrap_cap_mt": 8.5, "scrap_used_mt": 8.5, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1840.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 6929.0}, "2056": {"year": 2056, "demand_mt": 32.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.2, "Inert-Anode": 0.0, "Secondary-Al": 8.8}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 9.6471, "Inert-Anode": 0.0, "Secondary-Al": 9.5652}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.5412, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 15.58, "Inert-Anode": 0.0, "Secondary-Al": 0.308}, "total_production_mt": 17.0, "total_production": 17.0, "total_co2_mt": 15.888, "co2_total": 15.888, "co2_intensity_tco2_per_t": 0.9346, "co2_intensity": 0.9346, "scrap_cap_mt": 8.8, "scrap_used_mt": 8.8, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1840.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 6861.7}, "2057": {"year": 2057, "demand_mt": 32.5, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.15, "Inert-Anode": 0.0, "Secondary-Al": 9.1}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 9.5882, "Inert-Anode": 0.0, "Secondary-Al": 9.8913}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.3647, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 15.485, "Inert-Anode": 0.0, "Secondary-Al": 0.2866}, "total_production_mt": 17.25, "total_production": 17.25, "total_co2_mt": 15.7716, "co2_total": 15.7716, "co2_intensity_tco2_per_t": 0.9143, "co2_intensity": 0.9143, "scrap_cap_mt": 9.1, "scrap_used_mt": 9.1, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 1240.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 6271.1}, "2058": {"year": 2058, "demand_mt": 33.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.1, "Inert-Anode": 0.0, "Secondary-Al": 9.4}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 9.5294, "Inert-Anode": 0.0, "Secondary-Al": 10.2174}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.1141, "Inert-Anode": 0.0, "Secondary-Al": 0.627}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 15.39, "Inert-Anode": 0.0, "Secondary-Al": 0.2632}, "total_production_mt": 17.5, "total_production": 17.5, "total_co2_mt": 15.6532, "co2_total": 15.6532, "co2_intensity_tco2_per_t": 0.8945, "co2_intensity": 0.8945, "scrap_cap_mt": 9.4, "scrap_used_mt": 9.4, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 388.0, "Inert-Anode": 0.0, "Secondary-Al": 238.24}, "total_cost": 5428.4}, "2059": {"year": 2059, "demand_mt": 33.5, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.05, "Inert-Anode": 0.0, "Secondary-Al": 9.7}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 9.4706, "Inert-Anode": 0.0, "Secondary-Al": 10.5435}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.6922}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 15.295, "Inert-Anode": 0.0, "Secondary-Al": 0.2376}, "total_production_mt": 17.75, "total_production": 17.75, "total_co2_mt": 15.5326, "co2_total": 15.5326, "co2_intensity_tco2_per_t": 0.8751, "co2_intensity": 0.8751, "scrap_cap_mt": 9.7, "scrap_used_mt": 9.7, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 263.03}, "total_cost": 5074.6}, "2060": {"year": 2060, "demand_mt": 34.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.0, "Inert-Anode": 0.0, "Secondary-Al": 10.0}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 9.4118, "Inert-Anode": 0.0, "Secondary-Al": 10.8696}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.8009}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 15.2, "Inert-Anode": 0.0, "Secondary-Al": 0.21}, "total_production_mt": 18.0, "total_production": 18.0, "total_co2_mt": 15.41, "co2_total": 15.41, "co2_intensity_tco2_per_t": 0.8561, "co2_intensity": 0.8561, "scrap_cap_mt": 10.0, "scrap_used_mt": 10.0, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 304.33}, "total_cost": 5125.2}, "2061": {"year": 2061, "demand_mt": 34.4, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.8, "Inert-Anode": 0.0, "Secondary-Al": 10.4}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 9.1765, "Inert-Anode": 0.0, "Secondary-Al": 11.3043}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.9015}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 14.82, "Inert-Anode": 0.0, "Secondary-Al": 0.2038}, "total_production_mt": 18.2, "total_production": 18.2, "total_co2_mt": 15.0238, "co2_total": 15.0238, "co2_intensity_tco2_per_t": 0.8255, "co2_intensity": 0.8255, "scrap_cap_mt": 10.4, "scrap_used_mt": 10.4, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 342.58}, "total_cost": 5113.7}, "2062": {"year": 2062, "demand_mt": 34.8, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.6, "Inert-Anode": 0.0, "Secondary-Al": 10.8}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.9412, "Inert-Anode": 0.0, "Secondary-Al": 11.8398}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.0}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 14.44, "Inert-Anode": 0.0, "Secondary-Al": 0.1966}, "total_production_mt": 18.4, "total_production": 18.4, "total_co2_mt": 14.6366, "co2_total": 14.6366, "co2_intensity_tco2_per_t": 0.7955, "co2_intensity": 0.7955, "scrap_cap_mt": 10.8, "scrap_used_mt": 10.8, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 380.0}, "total_cost": 5106.0}, "2063": {"year": 2063, "demand_mt": 35.2, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.4, "Inert-Anode": 0.0, "Secondary-Al": 11.2}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.7059, "Inert-Anode": 0.0, "Secondary-Al": 12.1739}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.9367}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 14.06, "Inert-Anode": 0.0, "Secondary-Al": 0.1882}, "total_production_mt": 18.6, "total_production": 18.6, "total_co2_mt": 14.2482, "co2_total": 14.2482, "co2_intensity_tco2_per_t": 0.766, "co2_intensity": 0.766, "scrap_cap_mt": 11.2, "scrap_used_mt": 11.2, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 355.96}, "total_cost": 5027.7}, "2064": {"year": 2064, "demand_mt": 35.6, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.2, "Inert-Anode": 0.0, "Secondary-Al": 11.6}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.4706, "Inert-Anode": 0.0, "Secondary-Al": 12.6087}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.9367}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 13.68, "Inert-Anode": 0.0, "Secondary-Al": 0.1786}, "total_production_mt": 18.8, "total_production": 18.8, "total_co2_mt": 13.8586, "co2_total": 13.8586, "co2_intensity_tco2_per_t": 0.7372, "co2_intensity": 0.7372, "scrap_cap_mt": 11.6, "scrap_used_mt": 11.6, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 355.96}, "total_cost": 4977.9}, "2065": {"year": 2065, "demand_mt": 36.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.0, "Inert-Anode": 0.0, "Secondary-Al": 12.0}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.2353, "Inert-Anode": 0.0, "Secondary-Al": 13.0435}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.9367}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 13.3, "Inert-Anode": 0.0, "Secondary-Al": 0.168}, "total_production_mt": 19.0, "total_production": 19.0, "total_co2_mt": 13.468, "co2_total": 13.468, "co2_intensity_tco2_per_t": 0.7088, "co2_intensity": 0.7088, "scrap_cap_mt": 12.0, "scrap_used_mt": 12.0, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 355.96}, "total_cost": 4928.2}, "2066": {"year": 2066, "demand_mt": 36.4, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 6.8, "Inert-Anode": 0.0, "Secondary-Al": 12.4}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 8.0, "Inert-Anode": 0.0, "Secondary-Al": 13.4783}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.2153, "Inert-Anode": 0.0, "Secondary-Al": 0.997}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 12.92, "Inert-Anode": 0.0, "Secondary-Al": 0.1562}, "total_production_mt": 19.2, "total_production": 19.2, "total_co2_mt": 13.0762, "co2_total": 13.0762, "co2_intensity_tco2_per_t": 0.6811, "co2_intensity": 0.6811, "scrap_cap_mt": 12.4, "scrap_used_mt": 12.4, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 732.0, "Inert-Anode": 0.0, "Secondary-Al": 378.84}, "total_cost": 5633.4}, "2067": {"year": 2067, "demand_mt": 36.8, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 6.6, "Inert-Anode": 0.0, "Secondary-Al": 12.8}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.7647, "Inert-Anode": 0.0, "Secondary-Al": 13.9733}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.0}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 12.54, "Inert-Anode": 0.0, "Secondary-Al": 0.1434}, "total_production_mt": 19.4, "total_production": 19.4, "total_co2_mt": 12.6834, "co2_total": 12.6834, "co2_intensity_tco2_per_t": 0.6538, "co2_intensity": 0.6538, "scrap_cap_mt": 12.8, "scrap_used_mt": 12.8, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 380.0}, "total_cost": 4855.5}, "2068": {"year": 2068, "demand_mt": 37.2, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 6.4, "Inert-Anode": 0.0, "Secondary-Al": 13.2}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.5294, "Inert-Anode": 0.0, "Secondary-Al": 14.4713}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.0}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 12.16, "Inert-Anode": 0.0, "Secondary-Al": 0.1294}, "total_production_mt": 19.6, "total_production": 19.6, "total_co2_mt": 12.2894, "co2_total": 12.2894, "co2_intensity_tco2_per_t": 0.627, "co2_intensity": 0.627, "scrap_cap_mt": 13.2, "scrap_used_mt": 13.2, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 380.0}, "total_cost": 4808.6}, "2069": {"year": 2069, "demand_mt": 37.6, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 6.2, "Inert-Anode": 0.0, "Secondary-Al": 13.6}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.2941, "Inert-Anode": 0.0, "Secondary-Al": 14.8443}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 1.0}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 11.78, "Inert-Anode": 0.0, "Secondary-Al": 0.1142}, "total_production_mt": 19.8, "total_production": 19.8, "total_co2_mt": 11.8942, "co2_total": 11.8942, "co2_intensity_tco2_per_t": 0.6007, "co2_intensity": 0.6007, "scrap_cap_mt": 13.6, "scrap_used_mt": 13.6, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 380.0}, "total_cost": 4756.1}, "2070": {"year": 2070, "demand_mt": 38.0, "unmet_demand_mt": 0.0, "production_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 6.0, "Inert-Anode": 0.0, "Secondary-Al": 14.0}, "capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 7.0588, "Inert-Anode": 0.0, "Secondary-Al": 15.2174}, "new_capacity_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.0}, "co2_by_route_mt": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 11.4, "Inert-Anode": 0.0, "Secondary-Al": 0.098}, "total_production_mt": 20.0, "total_production": 20.0, "total_co2_mt": 11.498, "co2_total": 11.498, "co2_intensity_tco2_per_t": 0.5749, "co2_intensity": 0.5749, "scrap_cap_mt": 14.0, "scrap_used_mt": 14.0, "investment_by_route": {"CoalPP-Primary": 0.0, "GridPP-Primary": 0.0, "RE-Primary": 0.0, "Inert-Anode": 0.0, "Secondary-Al": 0.0}, "total_cost": 4323.6}}, "summary": {"total_cost_bn": 17785.426, "total_co2_cumulative_mt": 1431.6, "final_co2_intensity": 0.5749, "final_year_demand": 38.0, "scrap_supply_binding": true}, "vol4_targets": {"description": "CO2 intensity target (tCO2/t Al) \u2014 includes scope 1+2+PFC (NITI 2026 Vol.4 Ch.3.3)", "2024": 23.5, "2030": 10.0, "2040": 6.0, "2050": 3.0, "2070": 0.5, "source": "NITI Aayog (2026) Sectoral Insights Vol.4 Ch.3.3; IAI 2023 net-zero pathway"}, "provenance": "configs/aluminium_config.yaml"}
+{
+  "status": "ok",
+  "sector": "aluminium",
+  "scenario": "NZS",
+  "solver_objective": 103521.38,
+  "years": [
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050,
+    2051,
+    2052,
+    2053,
+    2054,
+    2055,
+    2056,
+    2057,
+    2058,
+    2059,
+    2060,
+    2061,
+    2062,
+    2063,
+    2064,
+    2065,
+    2066,
+    2067,
+    2068,
+    2069,
+    2070
+  ],
+  "yearly_results": {
+    "2024": {
+      "year": 2024,
+      "demand_mt": 4.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 2.88,
+        "GridPP-Primary": 0.884,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.736
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 3.2,
+        "GridPP-Primary": 0.9822,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.8
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0822,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.2998
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 59.904,
+        "GridPP-Primary": 10.8202,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3658
+      },
+      "total_production_mt": 4.5,
+      "total_production": 4.5,
+      "total_co2_mt": 71.09,
+      "co2_total": 71.09,
+      "co2_intensity_tco2_per_t": 15.7978,
+      "co2_intensity": 15.7978,
+      "scrap_cap_mt": 0.85,
+      "scrap_used_mt": 0.736,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 213.78,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 113.92
+      },
+      "total_cost": 1879.2
+    },
+    "2025": {
+      "year": 2025,
+      "demand_mt": 4.83,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 2.784,
+        "GridPP-Primary": 1.0743,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.975
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 3.0933,
+        "GridPP-Primary": 1.1937,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.0598
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.2415,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1759
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 57.9072,
+        "GridPP-Primary": 12.4981,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.455
+      },
+      "total_production_mt": 4.8333,
+      "total_production": 4.8333,
+      "total_co2_mt": 70.8603,
+      "co2_total": 70.8603,
+      "co2_intensity_tco2_per_t": 14.6608,
+      "co2_intensity": 14.6608,
+      "scrap_cap_mt": 0.97,
+      "scrap_used_mt": 0.975,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 627.85,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 66.83
+      },
+      "total_cost": 2305.3
+    },
+    "2026": {
+      "year": 2026,
+      "demand_mt": 5.17,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 2.688,
+        "GridPP-Primary": 1.3787,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.1
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.9867,
+        "GridPP-Primary": 1.5319,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.1957
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.3681,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1759
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 55.9104,
+        "GridPP-Primary": 15.2021,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.48
+      },
+      "total_production_mt": 5.1667,
+      "total_production": 5.1667,
+      "total_co2_mt": 71.5925,
+      "co2_total": 71.5925,
+      "co2_intensity_tco2_per_t": 13.8565,
+      "co2_intensity": 13.8565,
+      "scrap_cap_mt": 1.1,
+      "scrap_used_mt": 1.1,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 957.19,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 66.83
+      },
+      "total_cost": 2724.0
+    },
+    "2027": {
+      "year": 2027,
+      "demand_mt": 5.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 2.592,
+        "GridPP-Primary": 1.683,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.225
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.88,
+        "GridPP-Primary": 1.87,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.3315
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.3681,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1759
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 53.9136,
+        "GridPP-Primary": 17.5369,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.4974
+      },
+      "total_production_mt": 5.5,
+      "total_production": 5.5,
+      "total_co2_mt": 71.9478,
+      "co2_total": 71.9478,
+      "co2_intensity_tco2_per_t": 13.0814,
+      "co2_intensity": 13.0814,
+      "scrap_cap_mt": 1.23,
+      "scrap_used_mt": 1.225,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 957.19,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 66.83
+      },
+      "total_cost": 6213.4
+    },
+    "2028": {
+      "year": 2028,
+      "demand_mt": 5.83,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 1.9773,
+        "GridPP-Primary": 1.656,
+        "RE-Primary": 0.85,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.35
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.7733,
+        "GridPP-Primary": 1.84,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.4674
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1759
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 41.1285,
+        "GridPP-Primary": 16.2509,
+        "RE-Primary": 1.615,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5072
+      },
+      "total_production_mt": 5.8333,
+      "total_production": 5.8333,
+      "total_co2_mt": 59.5016,
+      "co2_total": 59.5016,
+      "co2_intensity_tco2_per_t": 10.2003,
+      "co2_intensity": 10.2003,
+      "scrap_cap_mt": 1.35,
+      "scrap_used_mt": 1.35,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 66.83
+      },
+      "total_cost": 5574.1
+    },
+    "2029": {
+      "year": 2029,
+      "demand_mt": 6.17,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 1.3627,
+        "GridPP-Primary": 1.629,
+        "RE-Primary": 1.7,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.475
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.6667,
+        "GridPP-Primary": 1.81,
+        "RE-Primary": 2.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.6033
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1759
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 28.3435,
+        "GridPP-Primary": 14.9977,
+        "RE-Primary": 3.23,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5094
+      },
+      "total_production_mt": 6.1667,
+      "total_production": 6.1667,
+      "total_co2_mt": 47.0805,
+      "co2_total": 47.0805,
+      "co2_intensity_tco2_per_t": 7.6346,
+      "co2_intensity": 7.6346,
+      "scrap_cap_mt": 1.48,
+      "scrap_used_mt": 1.475,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 66.83
+      },
+      "total_cost": 5892.0
+    },
+    "2030": {
+      "year": 2030,
+      "demand_mt": 6.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.748,
+        "GridPP-Primary": 1.602,
+        "RE-Primary": 2.55,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.6
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.56,
+        "GridPP-Primary": 1.78,
+        "RE-Primary": 3.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.7391
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 15.5584,
+        "GridPP-Primary": 13.7772,
+        "RE-Primary": 4.845,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.504
+      },
+      "total_production_mt": 6.5,
+      "total_production": 6.5,
+      "total_co2_mt": 34.6846,
+      "co2_total": 34.6846,
+      "co2_intensity_tco2_per_t": 5.3361,
+      "co2_intensity": 5.3361,
+      "scrap_cap_mt": 1.6,
+      "scrap_used_mt": 1.6,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 6257.4
+    },
+    "2031": {
+      "year": 2031,
+      "demand_mt": 7.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.185,
+        "GridPP-Primary": 1.575,
+        "RE-Primary": 3.4,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.84
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.4533,
+        "GridPP-Primary": 1.75,
+        "RE-Primary": 4.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.0
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.5553,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 3.848,
+        "GridPP-Primary": 12.9937,
+        "RE-Primary": 6.46,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5474
+      },
+      "total_production_mt": 7.0,
+      "total_production": 7.0,
+      "total_co2_mt": 23.8492,
+      "co2_total": 23.8492,
+      "co2_intensity_tco2_per_t": 3.407,
+      "co2_intensity": 3.407,
+      "scrap_cap_mt": 1.84,
+      "scrap_used_mt": 1.84,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1888.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 5080.3
+    },
+    "2032": {
+      "year": 2032,
+      "demand_mt": 7.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.548,
+        "RE-Primary": 3.872,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.08
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.3467,
+        "GridPP-Primary": 1.72,
+        "RE-Primary": 4.5553,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.2609
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 12.2292,
+        "RE-Primary": 7.3568,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5824
+      },
+      "total_production_mt": 7.5,
+      "total_production": 7.5,
+      "total_co2_mt": 20.1684,
+      "co2_total": 20.1684,
+      "co2_intensity_tco2_per_t": 2.6891,
+      "co2_intensity": 2.6891,
+      "scrap_cap_mt": 2.08,
+      "scrap_used_mt": 2.08,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 4530.9
+    },
+    "2033": {
+      "year": 2033,
+      "demand_mt": 8.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.521,
+        "RE-Primary": 4.159,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.32
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.24,
+        "GridPP-Primary": 1.69,
+        "RE-Primary": 4.8929,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.5217
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 11.4835,
+        "RE-Primary": 7.9021,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.609
+      },
+      "total_production_mt": 8.0,
+      "total_production": 8.0,
+      "total_co2_mt": 19.9946,
+      "co2_total": 19.9946,
+      "co2_intensity_tco2_per_t": 2.4993,
+      "co2_intensity": 2.4993,
+      "scrap_cap_mt": 2.32,
+      "scrap_used_mt": 2.32,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 4650.9
+    },
+    "2034": {
+      "year": 2034,
+      "demand_mt": 8.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.494,
+        "RE-Primary": 4.446,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.56
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.1333,
+        "GridPP-Primary": 1.66,
+        "RE-Primary": 5.2306,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.7826
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 10.7568,
+        "RE-Primary": 8.4474,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.6272
+      },
+      "total_production_mt": 8.5,
+      "total_production": 8.5,
+      "total_co2_mt": 19.8314,
+      "co2_total": 19.8314,
+      "co2_intensity_tco2_per_t": 2.3331,
+      "co2_intensity": 2.3331,
+      "scrap_cap_mt": 2.56,
+      "scrap_used_mt": 2.56,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 4771.0
+    },
+    "2035": {
+      "year": 2035,
+      "demand_mt": 9.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.467,
+        "RE-Primary": 4.733,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 2.8
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 2.0267,
+        "GridPP-Primary": 1.63,
+        "RE-Primary": 5.5682,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.0435
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 10.0489,
+        "RE-Primary": 8.9927,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.637
+      },
+      "total_production_mt": 9.0,
+      "total_production": 9.0,
+      "total_co2_mt": 19.6786,
+      "co2_total": 19.6786,
+      "co2_intensity_tco2_per_t": 2.1865,
+      "co2_intensity": 2.1865,
+      "scrap_cap_mt": 2.8,
+      "scrap_used_mt": 2.8,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 4891.1
+    },
+    "2036": {
+      "year": 2036,
+      "demand_mt": 9.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.44,
+        "RE-Primary": 5.02,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.04
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.92,
+        "GridPP-Primary": 1.6,
+        "RE-Primary": 5.9059,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.3043
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 9.36,
+        "RE-Primary": 9.538,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.6384
+      },
+      "total_production_mt": 9.5,
+      "total_production": 9.5,
+      "total_co2_mt": 19.5364,
+      "co2_total": 19.5364,
+      "co2_intensity_tco2_per_t": 2.0565,
+      "co2_intensity": 2.0565,
+      "scrap_cap_mt": 3.04,
+      "scrap_used_mt": 3.04,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 5011.1
+    },
+    "2037": {
+      "year": 2037,
+      "demand_mt": 10.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.413,
+        "RE-Primary": 5.307,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.28
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.8133,
+        "GridPP-Primary": 1.57,
+        "RE-Primary": 6.2435,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.5652
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 8.6899,
+        "RE-Primary": 10.0833,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.6314
+      },
+      "total_production_mt": 10.0,
+      "total_production": 10.0,
+      "total_co2_mt": 19.4046,
+      "co2_total": 19.4046,
+      "co2_intensity_tco2_per_t": 1.9405,
+      "co2_intensity": 1.9405,
+      "scrap_cap_mt": 3.28,
+      "scrap_used_mt": 3.28,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 5131.2
+    },
+    "2038": {
+      "year": 2038,
+      "demand_mt": 10.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.386,
+        "RE-Primary": 5.594,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.52
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.7067,
+        "GridPP-Primary": 1.54,
+        "RE-Primary": 6.5812,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.8261
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 8.0388,
+        "RE-Primary": 10.6286,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.616
+      },
+      "total_production_mt": 10.5,
+      "total_production": 10.5,
+      "total_co2_mt": 19.2834,
+      "co2_total": 19.2834,
+      "co2_intensity_tco2_per_t": 1.8365,
+      "co2_intensity": 1.8365,
+      "scrap_cap_mt": 3.52,
+      "scrap_used_mt": 3.52,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 5251.2
+    },
+    "2039": {
+      "year": 2039,
+      "demand_mt": 11.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.359,
+        "RE-Primary": 5.881,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 3.76
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.6,
+        "GridPP-Primary": 1.51,
+        "RE-Primary": 6.9188,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.087
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.3376,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 7.4065,
+        "RE-Primary": 11.1739,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5922
+      },
+      "total_production_mt": 11.0,
+      "total_production": 11.0,
+      "total_co2_mt": 19.1726,
+      "co2_total": 19.1726,
+      "co2_intensity_tco2_per_t": 1.743,
+      "co2_intensity": 1.743,
+      "scrap_cap_mt": 3.76,
+      "scrap_used_mt": 3.76,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1148.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 114.33
+      },
+      "total_cost": 5371.3
+    },
+    "2040": {
+      "year": 2040,
+      "demand_mt": 11.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.332,
+        "RE-Primary": 6.168,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.0
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.4933,
+        "GridPP-Primary": 1.48,
+        "RE-Primary": 7.2565,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.3478
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2353,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3661
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 6.7932,
+        "RE-Primary": 11.7192,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.56
+      },
+      "total_production_mt": 11.5,
+      "total_production": 11.5,
+      "total_co2_mt": 19.0724,
+      "co2_total": 19.0724,
+      "co2_intensity_tco2_per_t": 1.6585,
+      "co2_intensity": 1.6585,
+      "scrap_cap_mt": 4.0,
+      "scrap_used_mt": 4.0,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 800.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 139.11
+      },
+      "total_cost": 5168.1
+    },
+    "2041": {
+      "year": 2041,
+      "demand_mt": 11.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.232,
+        "RE-Primary": 6.368,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.3
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.3867,
+        "GridPP-Primary": 1.45,
+        "RE-Primary": 7.4918,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.6739
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2353,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3661
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 6.0762,
+        "RE-Primary": 12.0992,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5659
+      },
+      "total_production_mt": 11.9,
+      "total_production": 11.9,
+      "total_co2_mt": 18.7413,
+      "co2_total": 18.7413,
+      "co2_intensity_tco2_per_t": 1.5749,
+      "co2_intensity": 1.5749,
+      "scrap_cap_mt": 4.3,
+      "scrap_used_mt": 4.3,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 800.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 139.11
+      },
+      "total_cost": 5247.9
+    },
+    "2042": {
+      "year": 2042,
+      "demand_mt": 12.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.132,
+        "RE-Primary": 6.568,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.6
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.28,
+        "GridPP-Primary": 1.42,
+        "RE-Primary": 7.7271,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.0
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2353,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3661
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 5.3928,
+        "RE-Primary": 12.4792,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5667
+      },
+      "total_production_mt": 12.3,
+      "total_production": 12.3,
+      "total_co2_mt": 18.4388,
+      "co2_total": 18.4388,
+      "co2_intensity_tco2_per_t": 1.4991,
+      "co2_intensity": 1.4991,
+      "scrap_cap_mt": 4.6,
+      "scrap_used_mt": 4.6,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 800.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 139.11
+      },
+      "total_cost": 5327.7
+    },
+    "2043": {
+      "year": 2043,
+      "demand_mt": 12.7,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.032,
+        "RE-Primary": 6.768,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 4.9
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.1733,
+        "GridPP-Primary": 1.39,
+        "RE-Primary": 7.9624,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.3261
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2353,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.6659
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 4.7431,
+        "RE-Primary": 12.8592,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5625
+      },
+      "total_production_mt": 12.7,
+      "total_production": 12.7,
+      "total_co2_mt": 18.1648,
+      "co2_total": 18.1648,
+      "co2_intensity_tco2_per_t": 1.4303,
+      "co2_intensity": 1.4303,
+      "scrap_cap_mt": 4.9,
+      "scrap_used_mt": 4.9,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 800.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 253.03
+      },
+      "total_cost": 5521.4
+    },
+    "2044": {
+      "year": 2044,
+      "demand_mt": 13.1,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.932,
+        "RE-Primary": 6.968,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.2
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 1.0667,
+        "GridPP-Primary": 1.36,
+        "RE-Primary": 8.1976,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.6522
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2353,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.502
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 4.1269,
+        "RE-Primary": 13.2392,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5533
+      },
+      "total_production_mt": 13.1,
+      "total_production": 13.1,
+      "total_co2_mt": 17.9194,
+      "co2_total": 17.9194,
+      "co2_intensity_tco2_per_t": 1.3679,
+      "co2_intensity": 1.3679,
+      "scrap_cap_mt": 5.2,
+      "scrap_used_mt": 5.2,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 800.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 190.74
+      },
+      "total_cost": 5538.9
+    },
+    "2045": {
+      "year": 2045,
+      "demand_mt": 13.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.832,
+        "RE-Primary": 7.168,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.5
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.96,
+        "GridPP-Primary": 1.33,
+        "RE-Primary": 8.4329,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.9783
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.502
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 3.5443,
+        "RE-Primary": 13.6192,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.539
+      },
+      "total_production_mt": 13.5,
+      "total_production": 13.5,
+      "total_co2_mt": 17.7025,
+      "co2_total": 17.7025,
+      "co2_intensity_tco2_per_t": 1.3113,
+      "co2_intensity": 1.3113,
+      "scrap_cap_mt": 5.5,
+      "scrap_used_mt": 5.5,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 190.74
+      },
+      "total_cost": 4818.7
+    },
+    "2046": {
+      "year": 2046,
+      "demand_mt": 13.9,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.932,
+        "RE-Primary": 7.168,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 5.8
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.8533,
+        "GridPP-Primary": 1.3,
+        "RE-Primary": 8.4329,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 6.3043
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.502
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 3.8137,
+        "RE-Primary": 13.6192,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.5197
+      },
+      "total_production_mt": 13.9,
+      "total_production": 13.9,
+      "total_co2_mt": 17.9526,
+      "co2_total": 17.9526,
+      "co2_intensity_tco2_per_t": 1.2916,
+      "co2_intensity": 1.2916,
+      "scrap_cap_mt": 5.8,
+      "scrap_used_mt": 5.8,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 190.74
+      },
+      "total_cost": 4822.3
+    },
+    "2047": {
+      "year": 2047,
+      "demand_mt": 14.3,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.032,
+        "RE-Primary": 7.168,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 6.1
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.7467,
+        "GridPP-Primary": 1.27,
+        "RE-Primary": 8.4329,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 6.6304
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0188,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.502
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 4.0496,
+        "RE-Primary": 13.6192,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.4953
+      },
+      "total_production_mt": 14.3,
+      "total_production": 14.3,
+      "total_co2_mt": 18.1641,
+      "co2_total": 18.1641,
+      "co2_intensity_tco2_per_t": 1.2702,
+      "co2_intensity": 1.2702,
+      "scrap_cap_mt": 6.1,
+      "scrap_used_mt": 6.1,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 64.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 190.74
+      },
+      "total_cost": 4889.8
+    },
+    "2048": {
+      "year": 2048,
+      "demand_mt": 14.7,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.116,
+        "RE-Primary": 7.184,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 6.4
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.64,
+        "GridPP-Primary": 1.24,
+        "RE-Primary": 8.4518,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 6.9565
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1494,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.502
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 4.1917,
+        "RE-Primary": 13.6496,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.4659
+      },
+      "total_production_mt": 14.7,
+      "total_production": 14.7,
+      "total_co2_mt": 18.3072,
+      "co2_total": 18.3072,
+      "co2_intensity_tco2_per_t": 1.2454,
+      "co2_intensity": 1.2454,
+      "scrap_cap_mt": 6.4,
+      "scrap_used_mt": 6.4,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 508.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 190.74
+      },
+      "total_cost": 5343.4
+    },
+    "2049": {
+      "year": 2049,
+      "demand_mt": 15.1,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.089,
+        "RE-Primary": 7.311,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 6.7
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.5333,
+        "GridPP-Primary": 1.21,
+        "RE-Primary": 8.6012,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.2826
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1494,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 3.9073,
+        "RE-Primary": 13.8909,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.4315
+      },
+      "total_production_mt": 15.1,
+      "total_production": 15.1,
+      "total_co2_mt": 18.2297,
+      "co2_total": 18.2297,
+      "co2_intensity_tco2_per_t": 1.2073,
+      "co2_intensity": 1.2073,
+      "scrap_cap_mt": 6.7,
+      "scrap_used_mt": 6.7,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 508.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 5442.8
+    },
+    "2050": {
+      "year": 2050,
+      "demand_mt": 15.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 1.062,
+        "RE-Primary": 7.438,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.0
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.4267,
+        "GridPP-Primary": 1.18,
+        "RE-Primary": 8.7506,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.6087
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1757,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 3.632,
+        "RE-Primary": 14.1322,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.392
+      },
+      "total_production_mt": 15.5,
+      "total_production": 15.5,
+      "total_co2_mt": 18.1562,
+      "co2_total": 18.1562,
+      "co2_intensity_tco2_per_t": 1.1714,
+      "co2_intensity": 1.1714,
+      "scrap_cap_mt": 7.0,
+      "scrap_used_mt": 7.0,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 597.33,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 5584.1
+    },
+    "2051": {
+      "year": 2051,
+      "demand_mt": 15.75,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.8627,
+        "RE-Primary": 7.5873,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.3
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.32,
+        "GridPP-Primary": 1.15,
+        "RE-Primary": 8.9263,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.9348
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 2.8899,
+        "RE-Primary": 14.4159,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3833
+      },
+      "total_production_mt": 15.75,
+      "total_production": 15.75,
+      "total_co2_mt": 17.6891,
+      "co2_total": 17.6891,
+      "co2_intensity_tco2_per_t": 1.1231,
+      "co2_intensity": 1.1231,
+      "scrap_cap_mt": 7.3,
+      "scrap_used_mt": 7.3,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 8434.5
+    },
+    "2052": {
+      "year": 2052,
+      "demand_mt": 16.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.8127,
+        "RE-Primary": 7.5873,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.6
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.2133,
+        "GridPP-Primary": 1.12,
+        "RE-Primary": 8.9263,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 8.2609
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 2.6655,
+        "RE-Primary": 14.4159,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3724
+      },
+      "total_production_mt": 16.0,
+      "total_production": 16.0,
+      "total_co2_mt": 17.4539,
+      "co2_total": 17.4539,
+      "co2_intensity_tco2_per_t": 1.0909,
+      "co2_intensity": 1.0909,
+      "scrap_cap_mt": 7.6,
+      "scrap_used_mt": 7.6,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 8425.3
+    },
+    "2053": {
+      "year": 2053,
+      "demand_mt": 16.25,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.7627,
+        "RE-Primary": 7.5873,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 7.9
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.1067,
+        "GridPP-Primary": 1.09,
+        "RE-Primary": 8.9263,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 8.587
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 2.4482,
+        "RE-Primary": 14.4159,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3595
+      },
+      "total_production_mt": 16.25,
+      "total_production": 16.25,
+      "total_co2_mt": 17.2235,
+      "co2_total": 17.2235,
+      "co2_intensity_tco2_per_t": 1.0599,
+      "co2_intensity": 1.0599,
+      "scrap_cap_mt": 7.9,
+      "scrap_used_mt": 7.9,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 8416.0
+    },
+    "2054": {
+      "year": 2054,
+      "demand_mt": 16.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.7127,
+        "RE-Primary": 7.5873,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 8.2
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.9778,
+        "RE-Primary": 8.9263,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 8.913
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 1.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 2.2378,
+        "RE-Primary": 14.4159,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3444
+      },
+      "total_production_mt": 16.5,
+      "total_production": 16.5,
+      "total_co2_mt": 16.9981,
+      "co2_total": 16.9981,
+      "co2_intensity_tco2_per_t": 1.0302,
+      "co2_intensity": 1.0302,
+      "scrap_cap_mt": 8.2,
+      "scrap_used_mt": 8.2,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3400.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 8385.4
+    },
+    "2055": {
+      "year": 2055,
+      "demand_mt": 16.75,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.6627,
+        "RE-Primary": 7.5873,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 8.5
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.7363,
+        "RE-Primary": 8.9263,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 9.2391
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.8863,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 2.0344,
+        "RE-Primary": 14.4159,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.3272
+      },
+      "total_production_mt": 16.75,
+      "total_production": 16.75,
+      "total_co2_mt": 16.7776,
+      "co2_total": 16.7776,
+      "co2_intensity_tco2_per_t": 1.0016,
+      "co2_intensity": 1.0016,
+      "scrap_cap_mt": 8.5,
+      "scrap_used_mt": 8.5,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 3013.33,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 7964.4
+    },
+    "2056": {
+      "year": 2056,
+      "demand_mt": 17.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.3313,
+        "RE-Primary": 7.8687,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 8.8
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.3681,
+        "RE-Primary": 9.2573,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 9.5652
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.6686,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.994,
+        "RE-Primary": 14.9505,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.308
+      },
+      "total_production_mt": 17.0,
+      "total_production": 17.0,
+      "total_co2_mt": 16.2525,
+      "co2_total": 16.2525,
+      "co2_intensity_tco2_per_t": 0.956,
+      "co2_intensity": 0.956,
+      "scrap_cap_mt": 8.8,
+      "scrap_used_mt": 8.8,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 2273.33,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 7264.4
+    },
+    "2057": {
+      "year": 2057,
+      "demand_mt": 17.25,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.15,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 9.1
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 9.5882,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 9.8913
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2788,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 15.485,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.2866
+      },
+      "total_production_mt": 17.25,
+      "total_production": 17.25,
+      "total_co2_mt": 15.7716,
+      "co2_total": 15.7716,
+      "co2_intensity_tco2_per_t": 0.9143,
+      "co2_intensity": 0.9143,
+      "scrap_cap_mt": 9.1,
+      "scrap_used_mt": 9.1,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 948.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 5979.1
+    },
+    "2058": {
+      "year": 2058,
+      "demand_mt": 17.5,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.1,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 9.4
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 9.5294,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 10.2174
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2788,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.627
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 15.39,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.2632
+      },
+      "total_production_mt": 17.5,
+      "total_production": 17.5,
+      "total_co2_mt": 15.6532,
+      "co2_total": 15.6532,
+      "co2_intensity_tco2_per_t": 0.8945,
+      "co2_intensity": 0.8945,
+      "scrap_cap_mt": 9.4,
+      "scrap_used_mt": 9.4,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 948.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 238.24
+      },
+      "total_cost": 5988.4
+    },
+    "2059": {
+      "year": 2059,
+      "demand_mt": 17.75,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.05,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 9.7
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 9.4706,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 10.5435
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.2788,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.6922
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 15.295,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.2376
+      },
+      "total_production_mt": 17.75,
+      "total_production": 17.75,
+      "total_co2_mt": 15.5326,
+      "co2_total": 15.5326,
+      "co2_intensity_tco2_per_t": 0.8751,
+      "co2_intensity": 0.8751,
+      "scrap_cap_mt": 9.7,
+      "scrap_used_mt": 9.7,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 948.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 263.03
+      },
+      "total_cost": 6022.6
+    },
+    "2060": {
+      "year": 2060,
+      "demand_mt": 18.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 10.0
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 9.4118,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 10.8696
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1024,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.8009
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 15.2,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.21
+      },
+      "total_production_mt": 18.0,
+      "total_production": 18.0,
+      "total_co2_mt": 15.41,
+      "co2_total": 15.41,
+      "co2_intensity_tco2_per_t": 0.8561,
+      "co2_intensity": 0.8561,
+      "scrap_cap_mt": 10.0,
+      "scrap_used_mt": 10.0,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 348.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 304.33
+      },
+      "total_cost": 5473.2
+    },
+    "2061": {
+      "year": 2061,
+      "demand_mt": 18.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.8,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 10.4
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 9.1765,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 11.3043
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1024,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.9015
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 14.82,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.2038
+      },
+      "total_production_mt": 18.2,
+      "total_production": 18.2,
+      "total_co2_mt": 15.0238,
+      "co2_total": 15.0238,
+      "co2_intensity_tco2_per_t": 0.8255,
+      "co2_intensity": 0.8255,
+      "scrap_cap_mt": 10.4,
+      "scrap_used_mt": 10.4,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 348.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 342.58
+      },
+      "total_cost": 5461.7
+    },
+    "2062": {
+      "year": 2062,
+      "demand_mt": 18.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.6,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 10.8
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.9412,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 11.8398
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1024,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.0
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 14.44,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1966
+      },
+      "total_production_mt": 18.4,
+      "total_production": 18.4,
+      "total_co2_mt": 14.6366,
+      "co2_total": 14.6366,
+      "co2_intensity_tco2_per_t": 0.7955,
+      "co2_intensity": 0.7955,
+      "scrap_cap_mt": 10.8,
+      "scrap_used_mt": 10.8,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 348.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 380.0
+      },
+      "total_cost": 5454.0
+    },
+    "2063": {
+      "year": 2063,
+      "demand_mt": 18.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.4,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 11.2
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.7059,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 12.1739
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.1024,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.9367
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 14.06,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1882
+      },
+      "total_production_mt": 18.6,
+      "total_production": 18.6,
+      "total_co2_mt": 14.2482,
+      "co2_total": 14.2482,
+      "co2_intensity_tco2_per_t": 0.766,
+      "co2_intensity": 0.766,
+      "scrap_cap_mt": 11.2,
+      "scrap_used_mt": 11.2,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 348.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 355.96
+      },
+      "total_cost": 5375.7
+    },
+    "2064": {
+      "year": 2064,
+      "demand_mt": 18.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.2,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 11.6
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.4706,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 12.6087
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.9367
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 13.68,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1786
+      },
+      "total_production_mt": 18.8,
+      "total_production": 18.8,
+      "total_co2_mt": 13.8586,
+      "co2_total": 13.8586,
+      "co2_intensity_tco2_per_t": 0.7372,
+      "co2_intensity": 0.7372,
+      "scrap_cap_mt": 11.6,
+      "scrap_used_mt": 11.6,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 355.96
+      },
+      "total_cost": 4977.9
+    },
+    "2065": {
+      "year": 2065,
+      "demand_mt": 19.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 12.0
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.2353,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 13.0435
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.9367
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 13.3,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.168
+      },
+      "total_production_mt": 19.0,
+      "total_production": 19.0,
+      "total_co2_mt": 13.468,
+      "co2_total": 13.468,
+      "co2_intensity_tco2_per_t": 0.7088,
+      "co2_intensity": 0.7088,
+      "scrap_cap_mt": 12.0,
+      "scrap_used_mt": 12.0,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 355.96
+      },
+      "total_cost": 4928.2
+    },
+    "2066": {
+      "year": 2066,
+      "demand_mt": 19.2,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 6.8,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 12.4
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 8.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 13.4783
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.997
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 12.92,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1562
+      },
+      "total_production_mt": 19.2,
+      "total_production": 19.2,
+      "total_co2_mt": 13.0762,
+      "co2_total": 13.0762,
+      "co2_intensity_tco2_per_t": 0.6811,
+      "co2_intensity": 0.6811,
+      "scrap_cap_mt": 12.4,
+      "scrap_used_mt": 12.4,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 378.84
+      },
+      "total_cost": 4901.4
+    },
+    "2067": {
+      "year": 2067,
+      "demand_mt": 19.4,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 6.6,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 12.8
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.7647,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 13.9733
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.0
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 12.54,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1434
+      },
+      "total_production_mt": 19.4,
+      "total_production": 19.4,
+      "total_co2_mt": 12.6834,
+      "co2_total": 12.6834,
+      "co2_intensity_tco2_per_t": 0.6538,
+      "co2_intensity": 0.6538,
+      "scrap_cap_mt": 12.8,
+      "scrap_used_mt": 12.8,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 380.0
+      },
+      "total_cost": 4855.5
+    },
+    "2068": {
+      "year": 2068,
+      "demand_mt": 19.6,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 6.4,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 13.2
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.5294,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 14.4713
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.0
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 12.16,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1294
+      },
+      "total_production_mt": 19.6,
+      "total_production": 19.6,
+      "total_co2_mt": 12.2894,
+      "co2_total": 12.2894,
+      "co2_intensity_tco2_per_t": 0.627,
+      "co2_intensity": 0.627,
+      "scrap_cap_mt": 13.2,
+      "scrap_used_mt": 13.2,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 380.0
+      },
+      "total_cost": 4808.6
+    },
+    "2069": {
+      "year": 2069,
+      "demand_mt": 19.8,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 6.2,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 13.6
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.2941,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 14.8443
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 1.0
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 11.78,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.1142
+      },
+      "total_production_mt": 19.8,
+      "total_production": 19.8,
+      "total_co2_mt": 11.8942,
+      "co2_total": 11.8942,
+      "co2_intensity_tco2_per_t": 0.6007,
+      "co2_intensity": 0.6007,
+      "scrap_cap_mt": 13.6,
+      "scrap_used_mt": 13.6,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 380.0
+      },
+      "total_cost": 4756.1
+    },
+    "2070": {
+      "year": 2070,
+      "demand_mt": 20.0,
+      "unmet_demand_mt": 0.0,
+      "production_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 6.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 14.0
+      },
+      "capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 7.2941,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 15.2174
+      },
+      "new_capacity_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.0
+      },
+      "co2_by_route_mt": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 11.4,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.098
+      },
+      "total_production_mt": 20.0,
+      "total_production": 20.0,
+      "total_co2_mt": 11.498,
+      "co2_total": 11.498,
+      "co2_intensity_tco2_per_t": 0.5749,
+      "co2_intensity": 0.5749,
+      "scrap_cap_mt": 14.0,
+      "scrap_used_mt": 14.0,
+      "investment_by_route": {
+        "CoalPP-Primary": 0.0,
+        "GridPP-Primary": 0.0,
+        "RE-Primary": 0.0,
+        "Inert-Anode": 0.0,
+        "Secondary-Al": 0.0
+      },
+      "total_cost": 4398.9
+    }
+  },
+  "summary": {
+    "total_cost_bn": 0.104,
+    "total_co2_cumulative_mt": 1106.0,
+    "final_co2_intensity": 0.5749,
+    "final_year_demand": 20.0,
+    "scrap_supply_binding": true
+  },
+  "vol4_targets": {
+    "description": "CO2 intensity target (tCO2/t Al) \u2014 includes scope 1+2+PFC (NITI 2026 Vol.4 Ch.3.3)",
+    "2024": 23.5,
+    "2030": 10.0,
+    "2040": 6.0,
+    "2050": 3.0,
+    "2070": 0.5,
+    "source": "NITI Aayog (2026) Sectoral Insights Vol.4 Ch.3.3; IAI 2023 net-zero pathway"
+  },
+  "provenance": "configs/aluminium_config.yaml",
+  "demand_model": "international"
+}

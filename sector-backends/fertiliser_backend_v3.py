@@ -167,10 +167,41 @@ def build_lp(sc: str, overrides: Dict[str, Any]):
     ccus_active        = bool(overrides.get("ccus_active", True))
     bio_ammonia_active = bool(overrides.get("bio_ammonia_active", True))
     ng_smr_active      = bool(overrides.get("ng_smr_active", True))
+def _get_demand(sc: str, y: int, overrides: Dict[str, Any]) -> float:
+    _dt = CFG.get("demand_trajectories", {})
+    demand_anchors_ov = overrides.get("demand_anchors")
+    demand_model_ov   = overrides.get("demand_model")
+    if demand_anchors_ov:
+        return interp({str(k): float(v) for k, v in demand_anchors_ov.items()}, y)
+    elif demand_model_ov and demand_model_ov in _dt:
+        return interp(_dt[demand_model_ov]["anchors"], y)
+    else:
+        _anchors = _dt.get("niti", {}).get("anchors") or {2024: 13.0, 2040: 15.5, 2070: 17.0}
+        return interp(_anchors, y)
+
+# ── Build LP ──────────────────────────────────────────────────────────────────
+
+def build_lp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matrix, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    carbon_price_traj  = overrides.get("carbon_price")           # {year_str: usd/tco2}
+    gas_price_adj      = float(overrides.get("gas_price_adj", 0.0))    # $/MMBtu adj
+    coal_price_adj     = float(overrides.get("coal_price_adj", 0.0))   # $/t adj
+    h2_price_adj       = float(overrides.get("h2_price_adj", 0.0))     # $/kg adj
+    re_price_adj       = float(overrides.get("re_price_adj", 0.0))     # $/MWh RE adj
+    biomass_price_adj  = float(overrides.get("biomass_price_adj", 0.0))# $/GJ adj
+    demand_anchors_ov  = overrides.get("demand_anchors")         # {year_str: Mt NH3}
+    demand_model_ov    = overrides.get("demand_model")           # "niti"|"model_fitted"|"india_policy"|"international"
+    capex_by_route     = overrides.get("capex_by_route", {})     # {routeId: multiplier}
+    green_prem_ov      = float(overrides.get("green_premium", 0.0))     # $/t NH3
+    wacc_override      = overrides.get("wacc")                   # fraction
+    ccus_active        = bool(overrides.get("ccus_active", overrides.get("ccs_active", True)))
+    bio_ammonia_active = bool(overrides.get("bio_ammonia_active", overrides.get("bio_active", True)))
+    ng_smr_active      = bool(overrides.get("ng_smr_active", True))
     bio_cap_frac       = overrides.get("bio_cap")                 # fraction of demand
     grid_ei_2070_ov    = overrides.get("grid_ei_2070")           # kgCO2/kWh in 2070
     urea_fraction      = float(overrides.get("urea_fraction", UREA_FRACTION))
     biomass_cap_mult   = float(overrides.get("biomass_cap_mult", 1.0))
+    h2_cost_ov         = overrides.get("h2_cost")
+    pli_active         = bool(overrides.get("pli_active", True))
 
     c   = np.zeros(NV)
     lb  = np.zeros(NV)
@@ -197,16 +228,7 @@ def build_lp(sc: str, overrides: Dict[str, Any]):
             cp = interp_sc(CFG["carbon_price_usd_per_tco2"], sc, y)
 
         # Demand: explicit anchors > named model > default niti
-        _dt = CFG.get("demand_trajectories", {})
-        if demand_anchors_ov:
-            demand = interp({str(k): float(v) for k, v in demand_anchors_ov.items()}, y)
-        elif demand_model_ov:
-            _key = demand_model_ov if demand_model_ov in _dt else "niti"
-            _anchors = _dt.get(_key, {}).get("anchors") or {2024: 13.0, 2040: 15.5, 2070: 17.0}
-            demand = interp(_anchors, y)
-        else:
-            _anchors = _dt.get("niti", {}).get("anchors") or {2024: 13.0, 2040: 15.5, 2070: 17.0}
-            demand = interp(_anchors, y)
+        demand = _get_demand(sc, y, overrides)
 
         # Gas price: USD/MMBtu → USD/GJ + adjustment
         p_gas_usd_gj  = (interp_sc(gas_cfg["price_usd_per_mmbtu"], sc, y) + gas_price_adj) / gj_per_mmbtu
@@ -363,7 +385,7 @@ _solve_cache: dict = {}
 _solve_lock = _thr.Lock()
 
 _HIGHS_OPTIONS = {
-    "disp": False, "presolve": True, "time_limit": 300.0,
+    "disp": False, "presolve": True, "time_limit": 60.0,
 }
 
 def _cache_key(sc: str, ov: dict) -> str:
@@ -383,6 +405,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
 
     x = result.x
     urea_fraction = float(overrides.get("urea_fraction", UREA_FRACTION))
+    grid_ei_2070_ov = overrides.get("grid_ei_2070")           # kgCO2/kWh in 2070
     yearly = {}
     for ti, y in enumerate(YEARS):
         prod_r, cap_r, ncap_r, co2_r, inv_r = {}, {}, {}, {}, {}
@@ -416,9 +439,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
         total_co2_net = max(0.0, x[_CO2(ti)])
         intensity = total_co2_net / total_prod if total_prod > 0 else 0.0
         unmet_demand = max(0.0, x[_SLACK(ti)])
-        _dt = CFG.get("demand_trajectories", {})
-        _anchors = _dt.get("niti", {}).get("anchors") or _dt.get("model_fitted", {}).get("anchors") or {2024: 13.0, 2040: 15.5, 2070: 17.0}
-        demand = interp(_anchors, y)
+        demand = _get_demand(sc, y, overrides)
         yearly[y] = {
             "year": y,
             "demand_mt_nh3": round(demand, 2),
@@ -438,15 +459,24 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
             "total_cost": round(total_cost_yr, 1),
         }
 
+    # Verify demand feasibility
+    max_unmet = max(yr["unmet_demand_mt"] for yr in yearly.values())
+    if max_unmet > 0.5:
+        return {"status": "infeasible", "message": f"Demand constraint unmet by {max_unmet:.2f} Mt"}
+
     all_co2 = sum(yr["total_co2_net_mt"] for yr in yearly.values())
     out = {
-        "status": "ok", "scenario": sc,
+        "status": "ok",
+        "sector": "fertiliser",
+        "scenario": sc,
         "solver_objective": round(result.fun, 2),
+        "years": YEARS,
         "yearly_results": yearly,
         "summary": {
-            "total_cost_bn": round(result.fun / 1e3, 3),
+            "total_cost_bn": round(result.fun / 1e6, 3),   # objective is in Thousands USD -> / 1e6 = Billions USD
             "total_co2_cumulative_mt": round(all_co2, 1),
             "final_co2_intensity": round(yearly[END]["co2_intensity_tco2_per_t_nh3"], 4),
+            "final_year_demand": round(yearly[END]["demand_mt"], 1),
             "urea_fraction_used": urea_fraction,
             "co2_seq_credit": f"{CO2_SEQ_PER_T_UREA} tCO2/t_urea (FROZEN_EXTERNAL)",
         },

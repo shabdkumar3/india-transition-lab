@@ -95,9 +95,9 @@ routes:
     availability: 0.90
     lifetime_yr: 30
     start_year: 2024
-    lead_years: 4
+    lead_years: 0
     wacc_premium: 0.0
-    max_ramp_mt_yr: 1.0            # Grid-connected smelter; no captive PP constraint
+    max_ramp_mt_yr: 1.5            # Grid-connected smelter; no captive PP constraint
     fossil_decline: false
 
     elec_kwh_per_t_al: 14000      # kWh/t Al (modern prebake cells)
@@ -124,9 +124,9 @@ routes:
     availability: 0.85            # Lower utilisation due to RE intermittency
     lifetime_yr: 25
     start_year: 2027
-    lead_years: 4
+    lead_years: 1
     wacc_premium: 0.01            # Technology risk premium
-    max_ramp_mt_yr: 0.6            # Dedicated RE smelter (with policy acceleration)
+    max_ramp_mt_yr: 1.0            # Dedicated RE smelter (with policy acceleration)
 
     elec_kwh_per_t_al: 13500      # kWh/t Al (modern technology; RE drives adoption of best cells)
     elec_kwh_provenance: EXTERNAL
@@ -348,7 +348,7 @@ demand_trajectories:
     # Text (p.75): 'demand is accordingly expected to grow steeply and then gradually taper by mid-century'
     # Fig 3.12 scale: 0-40 Mt; 2050 bar reads ≈28-30 Mt (growth tapering); 2070 bar ≈38 Mt
     anchors:
-      2024: 5.0
+      2024: 4.4
       2030: 9.0
       2035: 14.0
       2040: 20.0
@@ -362,7 +362,7 @@ demand_trajectories:
     method: "Logistic S-curve: GDP per capita elasticity + saturation"
     assumption: "Saturation at 35 Mt/yr (comparable to China 2024 per-capita × India 2070 pop)"
     anchors:
-      2024: 5.0
+      2024: 4.4
       2030: 7.0
       2040: 11.5
       2050: 17.5

@@ -309,7 +309,7 @@ async def fetch_run(
             wait = 2 ** attempt
             await asyncio.sleep(wait)
         try:
-            resp = await client.post(url, json=payload, timeout=180.0)
+            resp = await client.post(url, json=payload, timeout=75.0)
             resp.raise_for_status()
             data = resp.json()
 
@@ -466,8 +466,9 @@ async def main() -> None:
     ok_count = already
     fail_count = 0
 
-    # Batch into groups of 20 concurrent requests (Railway rate limit)
-    BATCH = 20
+    # Batch into groups of 6 concurrent requests (local machine: avoid LP solver
+    # contention/stalls seen with 20-wide batches against a single-worker uvicorn)
+    BATCH = 6
     pending = [(lbl, url, payload, path) for lbl, url, payload, path in plan if not path.exists()]
 
     for batch_start in range(0, len(pending), BATCH):

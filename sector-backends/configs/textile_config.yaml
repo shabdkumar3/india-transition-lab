@@ -138,10 +138,10 @@ routes:
     vom_residual_usd_per_t: 50
     availability: 0.90
     lifetime_yr: 20
-    start_year: 2026
-    lead_years: 2
+    start_year: 2024
+    lead_years: 1
     wacc_premium: 0.005
-    max_ramp_mt_yr: 1.0            # Raised 0.5→1.0: RE deployment at India scale; ramp was binding every period
+    max_ramp_mt_yr: 2.5            # RE electric boiler heat pumps scale at India industrial scale
 
     elec_kwh_per_t: 6500          # Higher kWh/t (all heat from electricity, less fuel)
     elec_is_re: true              # Uses RE price, not grid price
@@ -164,9 +164,9 @@ routes:
     availability: 0.88
     lifetime_yr: 20
     start_year: 2030
-    lead_years: 3
+    lead_years: 2
     wacc_premium: 0.015
-    max_ramp_mt_yr: 0.5            # Raised 0.3→0.5: Green-H2-Steam was ramp-constrained every period
+    max_ramp_mt_yr: 1.0            # Green-H2-Steam capacity scaling
 
     h2_kg_per_t: 280              # kg H2 per t fibre (steam replacement for coal)
     h2_provenance: EXTERNAL_PENDING
@@ -311,9 +311,9 @@ demand_trajectories:
     method: "Saturation-growth model (GDP/capita vs fibre/capita). 2050 and 2070 directly stated in text."
     # Text (p.79): 'total fibre production is projected to increase from around 8 million tonnes in 2020
     #   to 53 Mt by 2050 and 61 Mt by 2070'
-    # 2020=8 Mt confirmed; 2024≈9.5 Mt (interpolated); 2050=53 Mt (stated); 2070=61 Mt (stated)
+    # 2020=8 Mt confirmed; 2024≈8.4 Mt (interpolated); 2050=53 Mt (stated); 2070=61 Mt (stated)
     anchors:
-      2024: 9.5
+      2024: 8.4
       2030: 14.0
       2035: 21.0
       2040: 31.0

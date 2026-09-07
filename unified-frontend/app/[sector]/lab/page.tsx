@@ -9,6 +9,7 @@ import { Info, Download, Share2, ChevronDown, ChevronRight, FlaskConical, Rotate
 import { runLab, runScenario } from "@/lib/api";
 import { exportYearlyCSV } from "@/lib/export";
 import { copyLabLink } from "@/lib/url-state";
+import { Tip } from "@/lib/tip";
 import type { LabParams } from "@/lib/url-state";
 import type { YearlyResult } from "@/lib/api";
 import {
@@ -161,11 +162,11 @@ function makeDefaults(sectorId: string): LabState {
   };
 }
 
-const DEMAND_OPTS: { key: DemandKey; label: string }[] = [
-  { key: "niti",          label: "NITI Vol.4"             },
-  { key: "model_fitted",  label: "Historical trend"       },
-  { key: "india_policy",  label: "India Policy Consensus" },
-  { key: "international", label: "International Baseline" },
+const DEMAND_OPTS: { key: DemandKey; label: string; tip: string }[] = [
+  { key: "niti",          label: "NITI Vol.4",             tip: "Official Government of India projection from NITI Aayog Vol.4 (2026). This is the government's planning assumption — aggressive infrastructure + manufacturing growth." },
+  { key: "model_fitted",  label: "Historical trend",       tip: "A mathematical S-curve fitted to India's actual production data (1990–2025). Pure data extrapolation with no policy assumptions — where the trend naturally leads." },
+  { key: "india_policy",  label: "India Policy Consensus", tip: "Blend of National Steel/Cement/Fertiliser policy targets and PM Gati Shakti infrastructure plan. Assumes India meets its stated manufacturing goals." },
+  { key: "international", label: "International Baseline", tip: "Blend of IEA STEPS scenarios and urbanisation-linked demand. Service-led economy assumption — the more conservative international view of India's trajectory." },
 ];
 const CHART_YEARS = [2024,2029,2034,2039,2044,2049,2054,2059,2064,2069];
 
@@ -215,15 +216,16 @@ function Tag({ label, active, onChange, accent, desc }: { label:string; active:b
 }
 
 // ─── Slider ───────────────────────────────────────────────────────────────────
-function Slider({ label, value, onChange, min, max, step=1, unit="", accent="#2563eb", baseline, small=false }: {
+function Slider({ label, value, onChange, min, max, step=1, unit="", accent="#2563eb", baseline, small=false, labelExtra }: {
   label:string; value:number; onChange:(v:number)=>void; min:number; max:number;
   step?:number; unit?:string; accent?:string; baseline?:number; small?:boolean;
+  labelExtra?: React.ReactNode;
 }) {
   const pct = Math.min(100, Math.max(0, ((value - min) / (max - min)) * 100));
   return (
     <div style={{ marginBottom: small ? 10 : 14 }}>
       <div style={{ display:"flex", justifyContent:"space-between", marginBottom:4, alignItems:"center" }}>
-        <span style={{ fontSize: small?10:11, color: T.muted }}>{label}</span>
+        <span style={{ fontSize: small?10:11, color: T.muted, display:"flex", alignItems:"center" }}>{label}{labelExtra}</span>
         <div style={{ display:"flex", alignItems:"center", gap:6 }}>
           {baseline !== undefined && value !== 0 && (
             <span style={{ fontSize:9, color: value>0?"#dc2626":"#16a34a" }}>
@@ -263,7 +265,7 @@ function PRow({ label, sub, children }: { label:string; sub?:string; children:Re
 }
 
 // ─── Collapsible section ──────────────────────────────────────────────────────
-function Section({ title, children, defaultOpen=true }: { title:string; children:React.ReactNode; defaultOpen?:boolean }) {
+function Section({ title, children, defaultOpen=true, tip }: { title:string; children:React.ReactNode; defaultOpen?:boolean; tip?:string }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div style={{ marginBottom:0 }}>
@@ -271,7 +273,7 @@ function Section({ title, children, defaultOpen=true }: { title:string; children
         style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between",
           padding:"10px 0 6px", background:"none", border:"none", cursor:"pointer",
           color:T.dim, fontSize:9, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase" }}>
-        {title}
+        <span style={{ display:"flex", alignItems:"center" }}>{title}{tip && <Tip text={tip}/>}</span>
         {open ? <ChevronDown size={11}/> : <ChevronRight size={11}/>}
       </button>
       {open && <div style={{ paddingBottom:4 }}>{children}</div>}
@@ -486,24 +488,27 @@ export default function LabPage() {
               Base Scenario
             </div>
             <div style={{ display:"inline-flex", borderRadius:8, border:`1px solid ${T.border}`, background:"#f7f6f2", padding:2 }}>
-              {(["CPS","NZS"] as const).map(sc => (
-                <button key={sc}
+              {([
+                { key:"CPS", label:"Current Policy", tip:"Current Policy Scenario — only policies already enacted today are assumed to continue. No new climate commitments. Lower carbon prices, slower clean energy deployment." },
+                { key:"NZS", label:"Net Zero",        tip:"Net Zero Scenario — India achieves net-zero emissions by ~2070. Assumes strong policy action, high carbon prices, and rapid deployment of clean technology." },
+              ] as const).map(sc => (
+                <button key={sc.key}
                   onClick={() => {
-                    const cp = SCENARIO_CARBON[sc];
+                    const cp = SCENARIO_CARBON[sc.key];
                     setLab(p => ({
-                      ...p, scenario: sc, carbonPrice: cp,
-                      // Reset grid EI to auto when switching scenarios so scenario trajectory applies
+                      ...p, scenario: sc.key, carbonPrice: cp,
                       gridEI2070: p.gridEI2070 === 0 ? 0 : p.gridEI2070,
                     }));
                   }}
                   style={{
                     padding:"6px 18px", borderRadius:6, fontSize:12, fontWeight:600, cursor:"pointer", border:"none",
                     transition:"all 150ms",
-                    background: lab.scenario === sc ? T.card : "transparent",
-                    color: lab.scenario === sc ? T.text : T.muted,
-                    boxShadow: lab.scenario === sc ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                    background: lab.scenario === sc.key ? T.card : "transparent",
+                    color: lab.scenario === sc.key ? T.text : T.muted,
+                    boxShadow: lab.scenario === sc.key ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                    display:"flex", alignItems:"center", gap:2,
                   }}>
-                  {sc === "CPS" ? "Current Policy" : "Net Zero"}
+                  {sc.label}<Tip text={sc.tip}/>
                 </button>
               ))}
             </div>
@@ -511,7 +516,7 @@ export default function LabPage() {
           {/* Demand model pills */}
           <div>
             <div style={{ fontSize:10, fontWeight:600, letterSpacing:"0.1em", textTransform:"uppercase", color:T.dim, marginBottom:8 }}>
-              Demand Model
+              Demand Model <Tip text="Choose which projection of future demand to use. The solver tries to meet this demand with the cheapest mix of available routes." width={260}/>
             </div>
             <div style={{ display:"flex", flexWrap:"wrap", gap:5 }}>
               {DEMAND_OPTS.map(d => (
@@ -519,11 +524,12 @@ export default function LabPage() {
                   style={{
                     padding:"5px 11px", borderRadius:6, fontSize:11, fontWeight:500,
                     cursor:"pointer", transition:"all 120ms", border:"1px solid",
+                    display:"flex", alignItems:"center",
                     ...(lab.demandModel===d.key
                       ? { background:accent+"14", color:accent, borderColor:accent+"50" }
                       : { background:"transparent", color:T.muted, borderColor:T.border })
                   }}>
-                  {d.label}
+                  {d.label}<Tip text={d.tip} width={260}/>
                 </button>
               ))}
             </div>
@@ -538,7 +544,7 @@ export default function LabPage() {
 
             {/* Feature toggles */}
             {toggles.length > 0 && (
-              <Section title="Feature Toggles">
+              <Section title="Feature Toggles" tip="Enable or disable specific model features. These change the physics and economics of the simulation. Green = on, grey = off.">
                 <div style={{ display:"flex", flexDirection:"column", gap:0 }}>
                   {toggles.map(t => (
                     <PRow key={t.key} label={t.label} sub={t.desc}>
@@ -550,7 +556,7 @@ export default function LabPage() {
             )}
 
             {/* Carbon price */}
-            <Section title="Carbon Price ($/tCO₂)">
+            <Section title="Carbon Price ($/tCO₂)" tip="A tax or cost placed on each tonne of CO₂ emitted. Higher carbon prices make polluting routes more expensive, pushing the solver towards clean alternatives. Set at key future years; values in between are interpolated.">
               {(["2030","2050","2070"] as const).map(yr => (
                 <Slider key={yr} label={yr}
                   value={lab.carbonPrice[yr]}
@@ -561,7 +567,7 @@ export default function LabPage() {
 
             {/* H2 cost */}
             {showH2 && (
-              <Section title="Green H₂ Cost ($/kg)">
+              <Section title="Green H₂ Cost ($/kg)" tip="The purchase price of green hydrogen — made by splitting water using renewable electricity. Key cost driver for H₂-based production routes. Costs are expected to fall sharply as electrolysers scale up.">
                 <Slider label="2030" value={lab.h2Cost["2030"]}
                   onChange={v=>setLab(p=>({...p,h2Cost:{...p.h2Cost,"2030":v}}))}
                   min={0.5} max={8} step={0.1} unit=" $/kg" accent={accent}/>
@@ -576,7 +582,7 @@ export default function LabPage() {
 
             {/* Resource prices */}
             {Object.keys(resConf).length > 0 && (
-              <Section title="Resource Prices (±adjustment)">
+              <Section title="Resource Prices (±adjustment)" tip="Adjust key fuel and material prices relative to the scenario baseline. Positive = more expensive than assumed; negative = cheaper. Changes how competitive different production routes are.">
                 {Object.entries(resConf).map(([k,cfg]) => (
                   <Slider key={k} label={`${cfg.label} (${cfg.unit})`}
                     value={lab.resPrices[k]??0}
@@ -594,7 +600,7 @@ export default function LabPage() {
 
             {/* Route CAPEX */}
             {routeCapex.length > 0 && (
-              <Section title="Route CAPEX Multipliers">
+              <Section title="Route CAPEX Multipliers" tip="Scale the upfront capital cost (CAPEX) of building new plants for each route. 1.0 = base cost from literature; 1.5 = 50% more expensive (e.g. supply-chain bottleneck); 0.7 = 30% cheaper (e.g. technology breakthrough).">
                 {routeCapex.map(r => (
                   <Slider key={r.routeId} label={r.label}
                     value={lab.capexByRoute[r.routeId]??1}
@@ -606,7 +612,7 @@ export default function LabPage() {
 
             {/* Supply constraints */}
             {supplyCtrl.length > 0 && (
-              <Section title="Supply Constraints">
+              <Section title="Supply Constraints" tip="Physical upper limits on how much of total demand can be served by certain routes, due to real-world supply bottlenecks (e.g. scrap availability, biomass feedstock, or land for RE). Expressed as % of total demand.">
                 {supplyCtrl.map(c => (
                   <Slider key={c.key} label={`${c.label} (${c.unit})`}
                     value={Math.round((lab.supply[c.key]??c.default/100)*100)}
@@ -617,16 +623,19 @@ export default function LabPage() {
             )}
 
             {/* Economics & Finance */}
-            <Section title="Economics &amp; Finance">
+            <Section title="Economics &amp; Finance" tip="Financial parameters that affect the cost of building and operating new plants.">
               <Slider label="Green premium ($/t produced)"
                 value={lab.greenPremium} onChange={v=>setLab(p=>({...p,greenPremium:v}))}
-                min={0} max={120} unit=" $/t" accent={accent} small/>
+                min={0} max={120} unit=" $/t" accent={accent} small
+                labelExtra={<Tip text="A market premium or government subsidy paid for low-carbon products (e.g. green steel, green cement). Makes clean routes more profitable, accelerating their deployment." width={260}/>}/>
               <Slider label="WACC (%)"
                 value={lab.waccPct} onChange={v=>setLab(p=>({...p,waccPct:v}))}
-                min={5} max={25} unit="%" accent={accent} small/>
+                min={5} max={25} unit="%" accent={accent} small
+                labelExtra={<Tip text="Weighted Average Cost of Capital — the interest rate used to calculate annual loan repayments on plant construction. Higher WACC = new plants are more expensive. Typically 8–15% for industrial projects in India." width={260}/>}/>
               <Slider label={`Grid EI 2070 (kgCO₂/kWh)${lab.gridEI2070===0?" · Auto (scenario default)":""}`}
                 value={lab.gridEI2070} onChange={v=>setLab(p=>({...p,gridEI2070:v}))}
-                min={0} max={0.5} step={0.01} accent={accent} small/>
+                min={0} max={0.5} step={0.01} accent={accent} small
+                labelExtra={<Tip text="Grid Emission Intensity — how much CO₂ India's electricity grid emits per unit of power. 0 = use scenario default (CPS≈0.35, NZS≈0.05 by 2070). Lower grid EI makes electrified routes cleaner." width={260}/>}/>
             </Section>
 
             {/* Vol.4 reference */}
@@ -714,14 +723,19 @@ export default function LabPage() {
           {/* Row 1: emissions */}
           <div style={{ display:"flex", flexWrap:"wrap", borderBottom:`1px solid ${T.border}` }}>
             {[
-              { label:`CO₂ intensity 2070`,      val:`${fmt2(kpis.finalIntensity)} tCO₂/${s.unit_short}`, color:"#dc2626" },
-              { label:"Intensity reduction",      val:`−${fmt1(kpis.reductionPct)}%`,                      color:"#16a34a" },
-              { label:"Cumulative CO₂ 2024–70",  val:`${fmt1(kpis.cumulativeCo2/1000)} GtCO₂`,            color:"#ea580c" },
+              { label:`CO₂ intensity 2070`, val:`${fmt2(kpis.finalIntensity)} tCO₂/${s.unit_short}`, color:"#dc2626",
+                tip:`CO₂ emitted per unit of production in 2070. NITI Aayog targets vary by scenario — lower is better. Current India average ≈ 2–2.5 tCO₂/${s.unit_short}.` },
+              { label:"Intensity reduction", val:`−${fmt1(kpis.reductionPct)}%`, color:"#16a34a",
+                tip:"How much the CO₂ intensity improves from 2024 to 2070 under this scenario. E.g. −80% means each unit produced emits 80% less CO₂ than today." },
+              { label:"Cumulative CO₂ 2024–70", val:`${fmt1(kpis.cumulativeCo2/1000)} GtCO₂`, color:"#ea580c",
+                tip:"Total CO₂ emitted by this sector over the entire 2024–2070 period — the sector's 'carbon budget'. Lower cumulative emissions mean less contribution to global warming." },
             ].map((k,i) => (
               <div key={k.label} style={{ flex:"1 1 130px", padding:"14px 20px",
                 borderRight: i<2 ? `1px solid ${T.border}` : "none" }}>
                 <p style={{ fontSize:9, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase",
-                  color:T.dim, margin:"0 0 8px" }}>{k.label}</p>
+                  color:T.dim, margin:"0 0 8px", display:"flex", alignItems:"center" }}>
+                  {k.label}<Tip text={k.tip} width={260}/>
+                </p>
                 <p style={{ fontSize:20, fontWeight:800, color:k.color,
                   fontVariantNumeric:"tabular-nums", margin:0, lineHeight:1.15 }}>{k.val}</p>
               </div>
@@ -730,14 +744,19 @@ export default function LabPage() {
           {/* Row 2: production & economics */}
           <div style={{ display:"flex", flexWrap:"wrap" }}>
             {[
-              { label:`Production 2070`,          val:`${fmt1(kpis.finalDemand)} ${s.unit_short}` },
-              { label:"Dominant route 2070",      val:`${kpis.topRouteLabel} · ${kpis.topRoutePct}%` },
-              { label:"Cumul. investment",         val: kpis.cumInvest > 1 ? `$${fmt1(kpis.cumInvest/1000)} B` : "—" },
+              { label:`Production 2070`, val:`${fmt1(kpis.finalDemand)} ${s.unit_short}`,
+                tip:"Total output in 2070 — how much the sector produces to meet demand." },
+              { label:"Dominant route 2070", val:`${kpis.topRouteLabel} · ${kpis.topRoutePct}%`,
+                tip:"The production technology with the highest output share in 2070. Shows which route 'wins' under this scenario." },
+              { label:"Cumul. investment", val: kpis.cumInvest > 1 ? `$${fmt1(kpis.cumInvest/1000)} B` : "—",
+                tip:"Total capital invested in new plants and retrofits across 2024–2070. This is the financing required to execute this transition pathway." },
             ].map((k,i) => (
               <div key={k.label} style={{ flex:"1 1 130px", padding:"14px 20px",
                 borderRight: i<2 ? `1px solid ${T.border}` : "none" }}>
                 <p style={{ fontSize:9, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase",
-                  color:T.dim, margin:"0 0 8px" }}>{k.label}</p>
+                  color:T.dim, margin:"0 0 8px", display:"flex", alignItems:"center" }}>
+                  {k.label}<Tip text={k.tip} width={260}/>
+                </p>
                 <p style={{ fontSize:16, fontWeight:800, color:T.text,
                   fontVariantNumeric:"tabular-nums", margin:0, lineHeight:1.15 }}>{k.val}</p>
               </div>
@@ -750,7 +769,9 @@ export default function LabPage() {
       {delta && (
         <div style={{ ...CARD_STYLE, overflow:"hidden", marginBottom:16 }}>
           <div style={{ padding:"11px 20px 9px", borderBottom:`1px solid ${T.border}` }}>
-            <p style={{ fontSize:10, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, margin:0 }}>vs CPS Baseline</p>
+            <p style={{ fontSize:10, fontWeight:700, letterSpacing:"0.14em", textTransform:"uppercase", color:T.dim, margin:0, display:"flex", alignItems:"center" }}>
+              vs CPS Baseline<Tip text="How your scenario compares to the Current Policy Scenario (CPS) with the same demand model. Green = better than CPS, red = worse than CPS." width={260}/>
+            </p>
           </div>
           <div style={{ display:"flex", flexWrap:"wrap" }}>
             {[

@@ -140,6 +140,21 @@ def route_co2_intensity(rid: str, sc: str, y: int) -> float:
 
     return elec_co2 + pfc_co2 + anode_co2
 
+def _get_demand(sc: str, y: int, overrides: Dict[str, Any]) -> float:
+    _dt = CFG.get("demand_trajectories", {})
+    _ALIAS = {"india_policy": "high_ev", "international": "efficiency_driven"}
+    demand_anchors_ov = overrides.get("demand_anchors")
+    demand_model_ov   = overrides.get("demand_model")
+    if demand_anchors_ov:
+        return interp({str(k): float(v) for k, v in demand_anchors_ov.items()}, y)
+    elif demand_model_ov:
+        _key = _ALIAS.get(demand_model_ov, demand_model_ov) if demand_model_ov not in _dt else demand_model_ov
+        _anchors = _dt.get(_key, _dt.get("niti", {})).get("anchors") or {2024: 5.0, 2040: 11.5, 2070: 30.0}
+        return interp(_anchors, y)
+    else:
+        _anchors = _dt.get("niti", {}).get("anchors") or {2024: 5.0, 2040: 11.5, 2070: 30.0}
+        return interp(_anchors, y)
+
 # ── Build LP ──────────────────────────────────────────────────────────────────
 
 def build_lp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matrix, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
@@ -180,18 +195,7 @@ def build_lp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matrix
             cp = interp_sc(CFG["carbon_price_usd_per_tco2"], sc, y)
 
         # Demand: explicit anchors > named model > default niti
-        # Alias: frontend "india_policy"→"high_ev", "international"→"efficiency_driven"
-        _dt = CFG.get("demand_trajectories", {})
-        _ALIAS = {"india_policy": "high_ev", "international": "efficiency_driven"}
-        if demand_anchors_ov:
-            demand = interp({str(k): float(v) for k, v in demand_anchors_ov.items()}, y)
-        elif demand_model_ov:
-            _key = _ALIAS.get(demand_model_ov, demand_model_ov) if demand_model_ov not in _dt else demand_model_ov
-            _anchors = _dt.get(_key, _dt.get("niti", {})).get("anchors") or {2024: 5.0, 2040: 11.5, 2070: 30.0}
-            demand = interp(_anchors, y)
-        else:
-            _anchors = _dt.get("niti", {}).get("anchors") or {2024: 5.0, 2040: 11.5, 2070: 30.0}
-            demand = interp(_anchors, y)
+        demand = _get_demand(sc, y, overrides)
 
         # Grid EI with Lab 2070 override
         # Lab slider sends kgCO2/kWh; grid_ei_use must be tCO2/kWh → divide by 1000
@@ -346,7 +350,7 @@ _solve_lock = _thr.Lock()
 _HIGHS_OPTIONS = {
     "disp": False,
     "presolve": True,   # scipy >=1.12 requires bool, not "on"/"off"
-    "time_limit": 300.0,
+    "time_limit": 60.0,
 }
 
 
@@ -393,10 +397,8 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
         total_co2  = max(0.0, x[_CO2(ti)])
         intensity  = total_co2 / total_prod if total_prod > 0 else 0.0
         unmet_demand = max(0.0, x[_SLACK(ti)])
-        _dt = CFG.get("demand_trajectories", {})
-        _anchors = _dt.get("niti", {}).get("anchors") or _dt.get("model_fitted", {}).get("anchors") or {2024: 5.0, 2040: 11.5, 2070: 30.0}
-        demand = interp(_anchors, y)
-        scrap_cap = interp_sc(CFG["scrap_supply"]["available_mt"], sc, y) if CFG.get("scrap_supply", {}).get("enabled") else None
+        demand     = _get_demand(sc, y, overrides)
+        scrap_cap  = interp_sc(CFG["scrap_supply"]["available_mt"], sc, y) if CFG.get("scrap_supply", {}).get("enabled") else None
 
         yearly[y] = {
             "year": y,
@@ -418,16 +420,23 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
             "total_cost": round(total_cost_yr, 1),
         }
 
+    # Verify demand feasibility
+    max_unmet = max(yr["unmet_demand_mt"] for yr in yearly.values())
+    if max_unmet > 0.5:
+        return {"status": "infeasible", "message": f"Demand constraint unmet by {max_unmet:.2f} Mt"}
+
     all_co2  = sum(yr["total_co2_mt"] for yr in yearly.values())
     final_y  = yearly[END]
 
     out = {
         "status": "ok",
+        "sector": "aluminium",
         "scenario": sc,
         "solver_objective": round(result.fun, 2),
+        "years": YEARS,
         "yearly_results": yearly,
         "summary": {
-            "total_cost_bn": round(result.fun / 1e3, 3),
+            "total_cost_bn": round(result.fun / 1e6, 3),   # objective is in Thousands USD -> / 1e6 = Billions USD
             "total_co2_cumulative_mt": round(all_co2, 1),
             "final_co2_intensity": round(final_y["co2_intensity_tco2_per_t"], 4),
             "final_year_demand": round(final_y["demand_mt"], 1),
