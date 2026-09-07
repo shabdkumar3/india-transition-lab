@@ -9,7 +9,7 @@ import type { NextConfig } from "next";
 //   Local:  /api/steel/* → http://localhost:8000/*           (strips /api/steel prefix)
 //   Prod:   /api/steel/* → BACKEND_URL/steel/*               (keeps /steel for sub-app routing)
 
-const BACKEND = process.env.BACKEND_URL?.replace(/\/$/, ""); // trim trailing slash
+const BACKEND = (process.env.BACKEND_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
 
 const nextConfig: NextConfig = {
   async rewrites() {

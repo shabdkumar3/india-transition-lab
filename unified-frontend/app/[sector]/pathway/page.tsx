@@ -74,14 +74,19 @@ export default function PathwayPage() {
     setRunning(true); setRunError(null);
     try {
       const result = await runScenario(s, sc, overrides);
-      if (result.status === "not_available" || result.status === "infeasible") {
-        setRunError(result.message ?? "Solver returned infeasible.");
-      } else if (result.yearly_results) {
+      const rawStatus = (result.status as string)?.toLowerCase();
+      const isOk = rawStatus === "ok" || rawStatus === "optimal" || rawStatus === "success";
+      if (result.yearly_results) {
+        // Has data — show it regardless of backend status flag
         setRun(result.yearly_results as Record<number, YearlyResult>);
+      } else if (!isOk) {
+        // No data AND backend failed — only then show error
+        setRunError(result.message ?? "Solver returned infeasible.");
       }
     } catch (e) { setRunError(e instanceof Error ? e.message : "Unknown error"); }
     setRunning(false);
   }, [s]);
+
 
   // Intentional one-time run of the default scenario on mount / sector switch.
   // eslint-disable-next-line react-hooks/set-state-in-effect

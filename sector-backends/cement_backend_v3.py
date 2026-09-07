@@ -452,7 +452,7 @@ _solve_lock = _thr.Lock()
 _HIGHS_OPTIONS = {
     "disp": False,
     "presolve": True,   # scipy >=1.12 requires bool, not "on"/"off"
-    "time_limit": 300.0,
+    "time_limit": 60.0,
 }
 
 
