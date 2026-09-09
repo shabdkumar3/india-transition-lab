@@ -141,15 +141,17 @@ def route_gross_co2(rid: str, sc: str, y: int, grid_ei_override: float | None = 
 
 def route_net_co2(rid: str, sc: str, y: int, urea_fraction: float = UREA_FRACTION, grid_ei_override: float | None = None) -> float:
     """
-    Net CO2 per t NH3: gross CO2 minus CO2 sequestered in urea.
-    Physical: CO2 is consumed in urea synthesis; that CO2 stays fixed in fertiliser
-    until it's applied to soil (then slowly released, so net to atmosphere).
+    Net CO2 per t NH3: gross process + combustion emissions from the production route.
+
+    NOTE: Urea CO2 sequestration credit has been removed. While CO2 is consumed in urea
+    synthesis (Bosch-Meiser reaction), it is released back to the atmosphere within weeks
+    to months when urea decomposes in soil (urease hydrolysis). On decadal timescales
+    this is a 100% return flow, not a sink. Applying a sequestration credit caused all
+    low-emission routes (Green-H2, Biomass, NG-SMR-CCS) to show net CO2 = 0, which
+    obscured meaningful CPS vs NZS differentiation.
     """
     gross = route_gross_co2(rid, sc, y, grid_ei_override=grid_ei_override)
-    # Sequestration: urea fraction × CO2 per t urea × t urea per t NH3
-    t_urea_per_t_nh3 = urea_fraction / NH3_PER_T_UREA   # t urea per t NH3
-    co2_seq = CO2_SEQ_PER_T_UREA * t_urea_per_t_nh3
-    return max(0.0, gross - co2_seq)  # can be negative if very low carbon + high urea fraction
+    return max(0.0, gross)
 
 def build_lp(sc: str, overrides: Dict[str, Any]):
     # ── Parse Lab override format (frontend → backend contract) ──────────────

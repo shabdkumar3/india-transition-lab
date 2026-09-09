@@ -112,7 +112,9 @@ routes:
     fossil_decline: false
     max_ramp_mt_yr: 30.0
     cutoff_year_cps: null
-    cutoff_year_nzs: 2042
+    # NZS phaseout driven by carbon price economics, not a hard cutoff.
+    # Carbon price of 185 $/tCO2 by 2070 makes coal-blended uncompetitive vs LC3/CCUS.
+    cutoff_year_nzs: null
 
   Coal-LC3:
     existing_mt: 20.0
@@ -201,8 +203,8 @@ routes:
     wacc_premium: 0.05
     # High project-finance risk: first-of-kind India; no domestic CO2 storage precedent
     availability: 0.83
-    start_year: 2032
-    # GCCA NZ 2021: commercial-scale India CCUS cement 2030-2035 range
+    start_year: 2030
+    # GCCA NZ 2021: commercial-scale India CCUS cement 2030-2035 range; NZS ambition → 2030
     clinker_factor: 0.65
     process_co2_kg_per_kg_clinker: 0.525
     provenance_process_co2: "FROZEN_EXTERNAL"
@@ -220,8 +222,8 @@ routes:
     provenance_ccus: "PROJECT_PROPOSAL"
     source_ccus: "IEA Cement Roadmap 2018"
     fossil_decline: false
-    max_ramp_mt_yr: 20.0
-    lead_years: 5
+    max_ramp_mt_yr: 30.0
+    lead_years: 4
     # 5-year construction lead time (EPC + commissioning)
     cutoff_year_cps: null
     cutoff_year_nzs: null

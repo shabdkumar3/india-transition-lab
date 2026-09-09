@@ -60,7 +60,7 @@ const SECTOR_TOGGLES: Record<string, Toggle[]> = {
     { key: "pli_active",      label: "PLI Scheme",  default: true,  desc: "Production-linked incentives active" },
     { key: "lc3_active",      label: "LC3 Cement",  default: true,  desc: "Limestone calcined clay cement route" },
     { key: "alt_fuel_active", label: "Alt. Fuels",  default: true,  desc: "Alternative fuel substitution in kilns" },
-    { key: "ccus_active",     label: "CCUS",        default: false, desc: "Post-combustion CO₂ capture on kilns" },
+    { key: "ccus_active",     label: "CCUS",        default: true,  desc: "Post-combustion CO₂ capture on kilns" },
   ],
   aluminium: [
     { key: "pli_active",         label: "PLI Scheme",  default: true, desc: "Production-linked incentives active" },
