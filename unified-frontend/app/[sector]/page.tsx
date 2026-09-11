@@ -157,7 +157,9 @@ function deriveNumeric(s: SectorConfig) {
   const intensity_2024 = s.routes[0].co2_intensity;
   const co2_cps = s.vol4.co2_total.cps[2070];
   const co2_nzs = s.vol4.co2_total.nzs[2070];
-  const nzs_pct = co2_cps > 0 ? Math.round((1 - co2_nzs / co2_cps) * 100) : 0;
+  // NZS intensity cut = reduction from 2024 baseline to NZS 2070 (not vs CPS)
+  const nzs_i70 = s.vol4.co2_intensity.nzs[2070] ?? 0;
+  const nzs_pct = intensity_2024 > 0 ? Math.round((1 - nzs_i70 / intensity_2024) * 100) : 0;
   const facts   = SECTOR_FACTS[s.id as SectorId] ?? { global_rank: 0, global_share: 0, co2_share: 0, jobs_k: 0, inv_nzs: 0, inv_cps: 0, budget_gt: 0 };
   return { co2_2024, intensity_2024, nzs_pct, ...facts };
 }
@@ -205,8 +207,10 @@ export default function SectorOverview() {
 
   const [live, setLive] = useState<{
     i24: number | null; c70: number | null; n70: number | null;
+    co2_today: number | null; nzs_co2_2070: number | null;
+    nzs_cut_pct: number | null;
     loading: boolean; ok: boolean;
-  }>({ i24: null, c70: null, n70: null, loading: true, ok: false });
+  }>({ i24: null, c70: null, n70: null, co2_today: null, nzs_co2_2070: null, nzs_cut_pct: null, loading: true, ok: false });
 
   useEffect(() => {
     Promise.all([runScenario(s, "CPS"), runScenario(s, "NZS")]).then(([c, n]) => {
@@ -215,7 +219,11 @@ export default function SectorOverview() {
       const i24 = cY?.[2024]?.co2_intensity ?? null;
       const c70 = (cY?.[2069] ?? cY?.[2070])?.co2_intensity ?? null;
       const n70 = (nY?.[2069] ?? nY?.[2070])?.co2_intensity ?? null;
-      setLive({ i24, c70, n70, loading: false, ok: !!(i24 && c70 && n70) });
+      const co2_today = cY?.[2024]?.co2_total ?? null;
+      const nzs_2070 = nY?.[2070] ?? nY?.[2069] ?? null;
+      const nzs_co2_2070 = nzs_2070?.co2_total ?? null;
+      const nzs_cut_pct = (i24 && n70 && i24 > 0) ? Math.round((1 - n70 / i24) * 100) : null;
+      setLive({ i24, c70, n70, co2_today, nzs_co2_2070, nzs_cut_pct, loading: false, ok: !!(i24 && c70 && n70) });
     }).catch(() => setLive(p => ({ ...p, loading: false })));
   }, [s]);
 
@@ -246,10 +254,11 @@ export default function SectorOverview() {
         {/* Big 3-stat row */}
         <div style={{ display: "flex", gap: 0, marginTop: 20, flexWrap: "wrap", background: T.card, borderRadius: 12, border: `1px solid ${T.border}`, overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
           {[
-            { label: "CO₂ TODAY", value: String(D.co2_2024), sub: `Mt/yr · ${D.co2_share}% of India industrial`, color: T.text,
+            { label: "CO₂ TODAY", value: live.co2_today !== null ? String(Math.round(live.co2_today)) : String(D.co2_2024), sub: `Mt/yr · ${D.co2_share}% of India industrial`, color: T.text,
               tip: `Current annual CO₂ emissions from this sector (2024). ${D.co2_share}% of India's total industrial CO₂.` },
-            { label: "NZS INTENSITY CUT", value: `−${D.nzs_pct}%`, sub: `${D.intensity_2024} → ${vol4n[2070]} tCO₂/${s.unit_short} · by 2070`, color: accent,
-              tip: `NZS = Net Zero Scenario. This is how much CO₂ per unit of production must fall by 2070 to meet NITI Aayog's net-zero-aligned target.` },
+            { label: "NZS INTENSITY CUT", value: `−${live.nzs_cut_pct ?? D.nzs_pct}%`,
+              sub: `${live.ok && live.i24 !== null ? fmt2(live.i24) : D.intensity_2024} → ${live.ok && live.n70 !== null ? fmt2(live.n70) : vol4n[2070]} tCO₂/${s.unit_short} · by 2070`, color: accent,
+              tip: `NZS = Net Zero Scenario. This is how much CO₂ per unit of production must fall from 2024 baseline to 2070 NZS target.` },
             { label: "NZS INVESTMENT", value: `$${D.inv_nzs}B`, sub: `additional 2024–2050 · vs BAU $${D.inv_cps}B`, color: T.text,
               tip: `Total capital investment needed 2024–2050 in the Net Zero Scenario. CPS (Current Policy Scenario) is the business-as-usual baseline.` },
           ].map((stat, i) => (
@@ -278,7 +287,8 @@ export default function SectorOverview() {
             tip: "CPS = Current Policy Scenario. What happens if only existing policies continue — no new climate actions. Higher emissions than NZS." },
           { label: "NZS intensity 2070",      value: `${vol4n[2070]}`,      unit: `tCO₂/${s.unit_short}`, sub: "NITI Vol.4 NZS",   color: "#16a34a",  live_val: live.n70,
             tip: "NZS = Net Zero Scenario. NITI Aayog's target if India pursues ambitious decarbonisation of this sector by 2070." },
-          { label: "NZS CO₂ total 2070",      value: `${s.vol4.co2_total.nzs[2070]}`, unit: "Mt/yr", sub: `vs ${D.co2_2024} Mt today`, color: "#16a34a", live_val: null,
+          { label: "NZS CO₂ total 2070",      value: `${s.vol4.co2_total.nzs[2070]}`, unit: "Mt/yr", sub: `vs ${live.co2_today !== null ? Math.round(live.co2_today) : D.co2_2024} Mt today`, color: "#16a34a",
+            live_val: live.nzs_co2_2070 !== null ? Math.round(live.nzs_co2_2070 * 10) / 10 : null,
             tip: "Absolute annual CO₂ emissions from this sector in 2070 under the Net Zero Scenario — much lower than today despite higher production." },
         ].map((k, i) => (
           <div key={k.label} style={{ flex: "1 1 140px", padding: "18px 22px", borderRight: i < 3 ? `1px solid ${T.border}` : "none" }}>
