@@ -35,8 +35,10 @@ function deriveSectorData(s: SectorConfig) {
   const co2_cps_2070 = s.vol4.co2_total.cps[2070] ?? 0;
   const co2_nzs_2070 = s.vol4.co2_total.nzs[2070] ?? 0;
   const d2024 = baseYearDemand(s.vol4.demand);
-  const avgInt = s.routes.reduce((sum, r) => sum + r.co2_intensity, 0) / Math.max(s.routes.length, 1);
-  const co2_2024 = Math.round(d2024 * avgInt);
+  // Use first route (dominant/dirtiest, same as sector page baseline) — simple average
+  // dramatically underestimates CO2 because the cleanest routes carry near-zero weight in 2024.
+  const baselineInt = s.routes[0]?.co2_intensity ?? 0;
+  const co2_2024 = Math.round(d2024 * baselineInt);
   const intensity = s.routes[0] ? `${s.routes[0].co2_intensity} tCO₂/t` : "—";
   const routes = s.routes.length;
   const pct = co2_cps_2070 > 0 ? Math.round((1 - co2_nzs_2070 / co2_cps_2070) * 100) : 0;
