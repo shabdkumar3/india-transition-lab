@@ -526,7 +526,7 @@ export default function MethodologyPage() {
           <div style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 11, borderRadius: 10, padding: "12px 16px", background: T.card, border: `1px solid ${T.border}`, color: T.muted }}>
             <AlertTriangle style={{ width: 13, height: 13, marginTop: 1, flexShrink: 0, color: "#d97706" }} />
             <span>
-              India Transition Lab is a research prototype developed at IIT Delhi.
+              India Transition Lab is an independent research prototype.
               Results are for analytical and educational purposes only — not for investment or regulatory decisions.
               When citing: <em>&ldquo;India Transition Lab (2026), LP model calibrated to NITI Aayog Sectoral Insights: Industry (Vol. 4), Scenarios Towards Viksit Bharat and Net Zero, February 2026.&rdquo;</em>
               · scipy HiGHS 1.7.1 · Next.js 16 · Python 3.11 FastAPI

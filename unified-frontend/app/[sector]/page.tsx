@@ -153,8 +153,10 @@ function baseYearDemand(demand: Record<number, number>): number {
 }
 
 function deriveNumeric(s: SectorConfig) {
-  const co2_2024 = Math.round(baseYearDemand(s.vol4.demand) * s.routes[0].co2_intensity);
-  const intensity_2024 = s.routes[0].co2_intensity;
+  // Use pre-baked LP model values — demand × routes[0] fails because frontend demand
+  // units differ from backend units for textile (Mt fibre vs Mt final) and fertiliser (Mt urea vs Mt NH3).
+  const co2_2024 = Math.round(s.vol4.co2_total.cps[2024] ?? 0);
+  const intensity_2024 = s.vol4.co2_intensity.cps[2024] ?? s.routes[0].co2_intensity;
   const co2_cps = s.vol4.co2_total.cps[2070];
   const co2_nzs = s.vol4.co2_total.nzs[2070];
   // NZS intensity cut = reduction from 2024 baseline to NZS 2070 (not vs CPS)

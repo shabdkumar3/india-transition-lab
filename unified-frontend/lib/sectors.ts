@@ -327,11 +327,11 @@ Brazil uses ~350 kg/cap today; Turkey uses ~300 kg/cap. This is the "emerging ma
     demand: { 2024: 144, 2050: 624, 2070: 821 },
     co2_intensity: {
       cps: { 2024: 2.5347, 2050: 1.4224, 2070: 0.9652 },
-      nzs: { 2024: 2.4713, 2050: 0.6604, 2070: 0.127 },
+      nzs: { 2024: 2.5347, 2050: 0.6604, 2070: 0.127 },
     },
     co2_total: {
       cps: { 2024: 366, 2050: 887.6, 2070: 792.4 },
-      nzs: { 2024: 357, 2050: 412.1, 2070: 104.3 },
+      nzs: { 2024: 366, 2050: 412.1, 2070: 104.3 },
     },
     citation: "NITI Aayog (2026). Sectoral Insights: Industry (Vol. 4). Scenarios Towards Viksit Bharat and Net Zero. February 2026.",
   },

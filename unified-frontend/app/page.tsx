@@ -40,7 +40,8 @@ function deriveSectorData(s: SectorConfig) {
   const ci_2024 = s.vol4.co2_intensity.cps[2024] ?? s.routes[0]?.co2_intensity ?? 0;
   const intensity = ci_2024 > 0 ? `${Number(ci_2024.toFixed(2))} tCO₂/t` : "—";
   const routes = s.routes.length;
-  const pct = co2_cps_2070 > 0 ? Math.round((1 - co2_nzs_2070 / co2_cps_2070) * 100) : 0;
+  // NZS reduction vs 2024 baseline (consistent with the hero KPI totalNZSpct)
+  const pct = co2_2024 > 0 ? Math.round((1 - co2_nzs_2070 / co2_2024) * 100) : 0;
   return { co2_2024, co2_cps: co2_cps_2070, co2_nzs: co2_nzs_2070, intensity, routes, inv: SECTOR_INV_BN[s.id] ?? 0, jobs_k: 0, pct };
 }
 
