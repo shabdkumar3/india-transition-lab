@@ -381,17 +381,10 @@ export async function runLab(
     }
   }
 
-  // ── 2. Static pre-baked file (nearest quantised level) ────────────────────
-  const staticUrl = _extractStaticUrl(sector.id, payload);
-  if (staticUrl) {
-    const staticData = await fetchStaticRun(staticUrl);
-    if (staticData) {
-      const staticResult = normalizeResult(staticData as RunResult);
-      // Background: fetch exact result from backend and save to localStorage
-      _freshLabRun(sector, payload, cKey).catch(() => {});
-      return staticResult;
-    }
-  }
+  // ── 2. Static pre-baked file — SKIPPED for Lab runs ──────────────────────
+  // Static files are stripped-down (no investment_by_route, capacity_by_route)
+  // and the background refresh result never updates component state, so Lab
+  // users would see "—" for investment/capacity KPIs. Always go to backend.
 
   // ── 3. Fresh backend run ───────────────────────────────────────────────────
   return _freshLabRun(sector, payload, cKey);
