@@ -326,12 +326,12 @@ Brazil uses ~350 kg/cap today; Turkey uses ~300 kg/cap. This is the "emerging ma
   vol4: {
     demand: { 2024: 144, 2050: 624, 2070: 821 },
     co2_intensity: {
-      cps: { 2050: 1.4224, 2070: 0.9652 },
-      nzs: { 2050: 0.6604, 2070: 0.127 },
+      cps: { 2024: 2.5347, 2050: 1.4224, 2070: 0.9652 },
+      nzs: { 2024: 2.4713, 2050: 0.6604, 2070: 0.127 },
     },
     co2_total: {
-      cps: { 2050: 887.6, 2070: 792.4 },
-      nzs: { 2050: 412.1, 2070: 104.3 },
+      cps: { 2024: 366, 2050: 887.6, 2070: 792.4 },
+      nzs: { 2024: 357, 2050: 412.1, 2070: 104.3 },
     },
     citation: "NITI Aayog (2026). Sectoral Insights: Industry (Vol. 4). Scenarios Towards Viksit Bharat and Net Zero. February 2026.",
   },
@@ -534,12 +534,12 @@ Turkey uses ~520 kg/cap today; Mexico uses ~450 kg/cap — both construction-act
   vol4: {
     demand: { 2024: 395, 2050: 1550, 2070: 1900 },
     co2_intensity: {
-      cps: { 2050: 0.52, 2070: 0.40 },
-      nzs: { 2050: 0.35, 2070: 0.08 },
+      cps: { 2024: 0.6797, 2050: 0.52, 2070: 0.40 },
+      nzs: { 2024: 0.6796, 2050: 0.35, 2070: 0.08 },
     },
     co2_total: {
-      cps: { 2050: 364, 2070: 340 },
-      nzs: { 2050: 245, 2070: 68 },
+      cps: { 2024: 268, 2050: 364, 2070: 340 },
+      nzs: { 2024: 268, 2050: 245, 2070: 68 },
     },
     citation: "NITI Aayog (2026). Sectoral Insights: Industry (Vol. 4), Ch. 3.2. Scenarios Towards Viksit Bharat and Net Zero. February 2026.",
   },
@@ -736,12 +736,12 @@ Turkey uses ~14 kg/cap today; Poland uses ~12 kg/cap. This places India in the "
   vol4: {
     demand: { 2024: 4.5, 2050: 29.0, 2070: 38.0 },
     co2_intensity: {
-      cps: { 2050: 6.5, 2070: 4.2 },
-      nzs: { 2050: 2.8, 2070: 0.4 },
+      cps: { 2024: 15.828, 2050: 6.5, 2070: 4.2 },
+      nzs: { 2024: 15.828, 2050: 2.8, 2070: 0.4 },
     },
     co2_total: {
-      cps: { 2050: 117, 2070: 118 },
-      nzs: { 2050: 50, 2070: 11 },
+      cps: { 2024: 70, 2050: 117, 2070: 118 },
+      nzs: { 2024: 70, 2050: 50, 2070: 11 },
     },
     citation: "NITI Aayog (2026). Sectoral Insights: Industry (Vol. 4), Ch. 3.3. Scenarios Towards Viksit Bharat and Net Zero. February 2026.",
   },
@@ -937,12 +937,12 @@ EU average is ~25 kg/cap today — Europe is a prosperous, fashion-conscious eco
   vol4: {
     demand: { 2024: 19, 2050: 53, 2070: 61 },
     co2_intensity: {
-      cps: { 2050: 2.1, 2070: 1.4 },
-      nzs: { 2050: 0.9, 2070: 0.12 },
+      cps: { 2024: 3.3323, 2050: 2.1, 2070: 1.4 },
+      nzs: { 2024: 3.3323, 2050: 0.9, 2070: 0.12 },
     },
     co2_total: {
-      cps: { 2050: 115.5, 2070: 112 },
-      nzs: { 2050: 49.5, 2070: 9.6 },
+      cps: { 2024: 28, 2050: 115.5, 2070: 112 },
+      nzs: { 2024: 28, 2050: 49.5, 2070: 9.6 },
     },
     citation: "NITI Aayog (2026). Sectoral Insights: Industry (Vol. 4), Ch. 3.4. Scenarios Towards Viksit Bharat and Net Zero. February 2026.",
   },
@@ -1149,12 +1149,12 @@ The US uses ~14 kg/cap today (highly efficient, GPS-guided agriculture on large 
   vol4: {
     demand: { 2024: 30.5, 2050: 55.0, 2070: 70.0 },
     co2_intensity: {
-      cps: { 2050: 1.8, 2070: 1.2 },
-      nzs: { 2050: 0.7, 2070: 0.05 },
+      cps: { 2024: 2.3489, 2050: 1.8, 2070: 1.2 },
+      nzs: { 2024: 2.3489, 2050: 0.7, 2070: 0.05 },
     },
     co2_total: {
-      cps: { 2050: 99, 2070: 84 },
-      nzs: { 2050: 38.5, 2070: 3.5 },
+      cps: { 2024: 41, 2050: 99, 2070: 84 },
+      nzs: { 2024: 41, 2050: 38.5, 2070: 3.5 },
     },
     citation: "NITI Aayog (2026). Sectoral Insights: Industry (Vol. 4), Ch. 3.5. Scenarios Towards Viksit Bharat and Net Zero. February 2026.",
   },

@@ -34,12 +34,11 @@ const SECTOR_INV_BN: Record<string, number> = {
 function deriveSectorData(s: SectorConfig) {
   const co2_cps_2070 = s.vol4.co2_total.cps[2070] ?? 0;
   const co2_nzs_2070 = s.vol4.co2_total.nzs[2070] ?? 0;
-  const d2024 = baseYearDemand(s.vol4.demand);
-  // Use first route (dominant/dirtiest, same as sector page baseline) — simple average
-  // dramatically underestimates CO2 because the cleanest routes carry near-zero weight in 2024.
-  const baselineInt = s.routes[0]?.co2_intensity ?? 0;
-  const co2_2024 = Math.round(d2024 * baselineInt);
-  const intensity = s.routes[0] ? `${s.routes[0].co2_intensity} tCO₂/t` : "—";
+  // Use pre-baked 2024 CO2 from vol4 (LP model output) — computing from demand × route intensity
+  // fails because frontend demand units (Mt urea, Mt fibre) differ from backend units (Mt NH3, Mt final).
+  const co2_2024 = Math.round(s.vol4.co2_total.cps[2024] ?? 0);
+  const ci_2024 = s.vol4.co2_intensity.cps[2024] ?? s.routes[0]?.co2_intensity ?? 0;
+  const intensity = ci_2024 > 0 ? `${Number(ci_2024.toFixed(2))} tCO₂/t` : "—";
   const routes = s.routes.length;
   const pct = co2_cps_2070 > 0 ? Math.round((1 - co2_nzs_2070 / co2_cps_2070) * 100) : 0;
   return { co2_2024, co2_cps: co2_cps_2070, co2_nzs: co2_nzs_2070, intensity, routes, inv: SECTOR_INV_BN[s.id] ?? 0, jobs_k: 0, pct };
