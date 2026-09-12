@@ -431,12 +431,14 @@ export default function LabPage() {
     // Cumulative investment
     const cumInvest = Object.values(run).reduce((a,y)=>
       a + Object.values(y.investment_by_route??{}).reduce((s,v)=>s+(v as number),0), 0);
+    const cumulativeCost = Object.values(run).reduce((a,y)=>a+((y.total_cost as number)??0),0);
     return {
       finalIntensity: last.co2_intensity,
       reductionPct: ((first.co2_intensity - last.co2_intensity)/first.co2_intensity)*100,
       finalDemand:  last.total_production,
       cumulativeCo2: Object.values(run).reduce((a,y)=>a+(y.co2_total??0),0),
       totalCost2070: last.total_cost ?? 0,
+      cumulativeCost,
       cumInvest,
       topRouteLabel, topRoutePct,
     };
@@ -448,10 +450,13 @@ export default function LabPage() {
     if (!labYr||!bYr) return null;
     const labCum = Object.values(run).reduce((a,y)=>a+(y.co2_total??0),0);
     const basCum = Object.values(baseline).reduce((a,y)=>a+(y.co2_total??0),0);
+    const labCumCost = Object.values(run).reduce((a,y)=>a+((y.total_cost as number)??0),0);
+    const basCumCost = Object.values(baseline).reduce((a,y)=>a+((y.total_cost as number)??0),0);
     return {
       intensityDelta: labYr.co2_intensity - bYr.co2_intensity,
       cumCo2Delta:    (labCum-basCum)/1000,
       co2TotalDelta:  labYr.co2_total - bYr.co2_total,
+      costDelta:      (labCumCost-basCumCost)/1e6,
     };
   }, [run, baseline]);
 
@@ -699,23 +704,34 @@ export default function LabPage() {
       {/* ── Results section ── */}
 
       {/* Error banner */}
-      {runError && !running && (
+      {runError && !running && (() => {
+        const isInfeasible = runError.toLowerCase().includes("infeasible") || runError.toLowerCase().includes("unmet");
+        const bg = isInfeasible ? "#fef2f2" : "#fffbeb";
+        const border = isInfeasible ? "#fecaca" : "#fde68a";
+        const fg = isInfeasible ? "#dc2626" : "#b45309";
+        const fgSub = isInfeasible ? "#991b1b" : "#92400e";
+        return (
         <div style={{ display:"flex", alignItems:"flex-start", gap:10, borderRadius:10, padding:"12px 16px", marginBottom:16,
-          background:"#fffbeb", border:"1px solid #fde68a", color:"#b45309" }}>
+          background:bg, border:`1px solid ${border}`, color:fg }}>
           <Info className="h-4 w-4 mt-0.5 flex-shrink-0" style={{ opacity:0.7 }}/>
           <div style={{ flex:1 }}>
-            <p style={{ fontWeight:600, fontSize:13, margin:0 }}>Backend not ready — solver warming up</p>
-            <p style={{ fontSize:11, marginTop:3, color:"#92400e", margin:"3px 0 0" }}>
-              Adjust any control or press Retry to re-run.
+            <p style={{ fontWeight:600, fontSize:13, margin:0 }}>
+              {isInfeasible ? "Configuration infeasible" : "Backend not ready — solver warming up"}
+            </p>
+            <p style={{ fontSize:11, marginTop:3, color:fgSub, margin:"3px 0 0" }}>
+              {isInfeasible
+                ? `${runError} — try enabling more routes or reducing demand.`
+                : "Adjust any control or press Retry to re-run."}
             </p>
           </div>
           <button onClick={()=>doRun(lab)}
             style={{ borderRadius:6, padding:"5px 12px", fontSize:11, fontWeight:600, cursor:"pointer",
-              background:"rgba(180,83,9,0.12)", color:"#b45309", border:"1px solid rgba(180,83,9,0.3)" }}>
+              background:`rgba(${isInfeasible?"220,38,38":"180,83,9"},0.12)`, color:fg, border:`1px solid rgba(${isInfeasible?"220,38,38":"180,83,9"},0.3)` }}>
             Retry
           </button>
         </div>
-      )}
+        );
+      })()}
 
       {/* KPI strip — two rows */}
       {kpis && (
@@ -750,6 +766,8 @@ export default function LabPage() {
                 tip:"The production technology with the highest output share in 2070. Shows which route 'wins' under this scenario." },
               { label:"Cumul. investment", val: kpis.cumInvest > 1 ? `$${fmt1(kpis.cumInvest/1000)} B` : "—",
                 tip:"Total capital invested in new plants and retrofits across 2024–2070. This is the financing required to execute this transition pathway." },
+              { label:"Cumul. system cost", val: kpis.cumulativeCost > 0 ? `$${fmt1(kpis.cumulativeCost/1e6)} T` : "—",
+                tip:"Total system cost 2024–2070 (CAPEX + OPEX + fuel + carbon price − subsidies). This metric responds to economic parameters (carbon price, WACC, green premium) even when the physical route mix is capacity-constrained." },
             ].map((k,i) => (
               <div key={k.label} style={{ flex:"1 1 130px", padding:"14px 20px",
                 borderRight: i<2 ? `1px solid ${T.border}` : "none" }}>
@@ -778,20 +796,27 @@ export default function LabPage() {
               { label:"CO₂ intensity 2070", value:delta.intensityDelta, unit:` tCO₂/${s.unit_short}`, dec:3 },
               { label:"Total CO₂ 2070",     value:delta.co2TotalDelta,  unit:" Mt/yr",               dec:1 },
               { label:"Cumulative CO₂",      value:delta.cumCo2Delta,    unit:" GtCO₂",               dec:2 },
-            ].map(({label,value,unit,dec},i) => (
+              { label:"Cumul. System Cost",  value:delta.costDelta,       unit:" $T",                   dec:2 },
+            ].map(({label,value,unit,dec},i,arr) => {
+              // For cost delta: higher cost = red, lower = green (inverted)
+              const isCost = label.toLowerCase().includes("cost");
+              const betterColor = isCost ? (value>0.001?"#dc2626":value<-0.001?"#16a34a":T.muted) : (value<-0.001?"#16a34a":value>0.001?"#dc2626":T.muted);
+              const betterLabel = isCost
+                ? (value>0.001?"costlier than CPS":value<-0.001?"cheaper than CPS":"≈ same as CPS")
+                : (value<-0.001?"better than CPS":value>0.001?"worse than CPS":"≈ same as CPS");
+              return (
               <div key={label} style={{ flex:"1 1 130px", padding:"14px 20px", textAlign:"center",
-                borderRight: i<2 ? `1px solid ${T.border}` : "none" }}>
+                borderRight: i<arr.length-1 ? `1px solid ${T.border}` : "none" }}>
                 <p style={{ fontSize:9, fontWeight:700, letterSpacing:"0.12em", textTransform:"uppercase",
                   color:T.dim, margin:"0 0 8px" }}>{label}</p>
                 <p style={{ fontSize:20, fontWeight:800, fontVariantNumeric:"tabular-nums", margin:"0 0 4px",
-                  color:value<-0.001?"#16a34a":value>0.001?"#dc2626":T.muted }}>
+                  color:betterColor }}>
                   {value>0?"+":""}{value.toFixed(dec)}{unit}
                 </p>
-                <p style={{ fontSize:9, color:T.dim, margin:0 }}>
-                  {value<-0.001?"better than CPS":value>0.001?"worse than CPS":"≈ same as CPS"}
-                </p>
+                <p style={{ fontSize:9, color:T.dim, margin:0 }}>{betterLabel}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}

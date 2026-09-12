@@ -453,13 +453,24 @@ function _extractStaticUrl(sectorId: string, payload: Record<string, unknown>): 
         cokingCoal:   typeof rp.coking_coal    === "number" ? rp.coking_coal    : undefined,
       };
     } else {
-      const ov = (payload.overrides ?? {}) as Record<string, unknown>;
+      // Lab payload is FLAT: { scenario, demand_model, carbon_price, lc3_active, ... }
+      // (the {scenario, overrides} restructuring only happens inside _freshLabRun)
+      const ov = payload as Record<string, unknown>;
+
+      // If any route toggle is non-default (OFF), skip static lookup entirely —
+      // pre-baked files were all generated with default (all ON) toggles.
+      const TOGGLE_KEYS = ["pli_active", "lc3_active", "ccus_active", "alt_fuel_active",
+                           "h2_active", "scrap_active", "re_active", "ccs_active"];
+      for (const tk of TOGGLE_KEYS) {
+        if (tk in ov && ov[tk] === false) return null;
+      }
+
       // Reconstruct coal absolute from delta adjustment
       const coalDelta = (ov.coal_price_adj as number | undefined);
       const coalBase  = sectorId === "fertiliser" ? 70 : 90;
       params = {
         sectorId,
-        scenario:     (payload.scenario as string) ?? "CPS",
+        scenario:     (ov.scenario as string) ?? "CPS",
         demandModel:  (ov.demand_model as string) ?? "niti",
         carbonPrice:  (ov.carbon_price as Record<string, number>) ?? {},
         h2Cost:       (ov.h2_cost as Record<string, number>) ?? {},
