@@ -111,7 +111,7 @@ DEMAND_SHORTFALL_PENALTY_USD_PER_T = 10_000.0  # $/t Al: exceeds any production 
 
 # ── CO2 intensity per route (tCO2/t Al) at a given year ───────────────────────
 
-def route_co2_intensity(rid: str, sc: str, y: int) -> float:
+def route_co2_intensity(rid: str, sc: str, y: int, grid_ei_override=None) -> float:
     """
     Total CO2 intensity (tCO2e/t Al) for route rid in year y under scenario sc.
     Includes:
@@ -127,6 +127,8 @@ def route_co2_intensity(rid: str, sc: str, y: int) -> float:
     re_zero    = rc.get("elec_ei_tco2_per_kwh") == 0.0  # RE-Primary explicit zero
     if captive_ei is not None:
         ei = captive_ei  # CoalPP uses captive coal EI, RE-Primary uses 0.0
+    elif grid_ei_override is not None:
+        ei = grid_ei_override
     else:
         ei = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
 
@@ -383,6 +385,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
     capex_by_route    = overrides.get("capex_by_route", {})
     green_prem_ov     = float(overrides.get("green_premium", 0.0))
     pli_active        = bool(overrides.get("pli_active", True))
+    grid_ei_2070_ov   = overrides.get("grid_ei_2070")
 
     for ti, y in enumerate(YEARS):
         prod_r, cap_r, ncap_r, co2_r, inv_r = {}, {}, {}, {}, {}
@@ -392,7 +395,15 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
             act  = max(0.0, x[_ACT(ri, ti)])
             cap  = max(0.0, x[_CAP(ri, ti)])
             ncap = max(0.0, x[_NCAP(ri, ti)])
-            co2  = route_co2_intensity(rid, sc, y) * act
+            # CO2 with grid_ei override applied
+            if grid_ei_2070_ov is not None:
+                _ei_base_kg = 0.710
+                _ei_70_kg = float(grid_ei_2070_ov)
+                _frac = max(0.0, (y - 2024) / (2070 - 2024))
+                _grid_ei_r = (_ei_base_kg + (_ei_70_kg - _ei_base_kg) * _frac) / 1000.0
+            else:
+                _grid_ei_r = None
+            co2  = route_co2_intensity(rid, sc, y, grid_ei_override=_grid_ei_r) * act
             capex_r = rc["capex_usd_per_t"] * float(capex_by_route.get(rid, 1.0))
             fom_r   = rc["fom_usd_per_t_yr"]
             vom_r   = rc["vom_residual_usd_per_t"]

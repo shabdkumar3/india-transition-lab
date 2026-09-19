@@ -78,14 +78,14 @@ def surviving(existing, y, lifetime):
 
 def _route(rid): return CFG["routes"][rid]
 
-def route_co2_intensity(rid: str, sc: str, y: int) -> float:
+def route_co2_intensity(rid: str, sc: str, y: int, grid_ei_override=None) -> float:
     """
     CO2 intensity (tCO2/t fibre) for route in year y.
     Coal/gas CO2 from fuel use + electricity scope 2 CO2.
     Biomass combustion CO2 = zero (biogenic lifecycle accounting).
     """
     rc      = _route(rid)
-    grid_ei = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
+    grid_ei = grid_ei_override if grid_ei_override is not None else interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
     kwh     = rc.get("elec_kwh_per_t", 2800)
 
     elec_co2 = kwh * grid_ei
@@ -401,17 +401,25 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
     capex_by_route    = overrides.get("capex_by_route", {})
     green_prem_ov     = float(overrides.get("green_premium", 0.0))
     pli_active        = bool(overrides.get("pli_active", True))
+    grid_ei_2070_ov   = overrides.get("grid_ei_2070")
     _bio_base         = CFG["feedstocks"]["biomass"]["price_usd_per_gj"] if "feedstocks" in CFG else {"CPS": {2024: 2.5}, "NZS": {2024: 2.5}}
 
     for ti, y in enumerate(YEARS):
         prod_r, cap_r, ncap_r, co2_r, inv_r = {}, {}, {}, {}, {}
         total_cost_yr = 0.0
+        if grid_ei_2070_ov is not None:
+            _ei_base_kg = 0.710
+            _ei_70_kg = float(grid_ei_2070_ov)
+            _frac = max(0.0, (y - 2024) / (2070 - 2024))
+            _grid_ei_r = (_ei_base_kg + (_ei_70_kg - _ei_base_kg) * _frac) / 1000.0
+        else:
+            _grid_ei_r = None
         for ri, rid in enumerate(ROUTE_IDS):
             rc   = _route(rid)
             act  = max(0.0, x[_ACT(ri, ti)])
             cap  = max(0.0, x[_CAP(ri, ti)])
             ncap = max(0.0, x[_NCAP(ri, ti)])
-            co2  = route_co2_intensity(rid, sc, y) * act
+            co2  = route_co2_intensity(rid, sc, y, grid_ei_override=_grid_ei_r) * act
             capex_r = rc["capex_usd_per_t"] * float(capex_by_route.get(rid, 1.0))
             fom_r   = rc["fom_usd_per_t_yr"]
             vom_r   = rc["vom_residual_usd_per_t"]

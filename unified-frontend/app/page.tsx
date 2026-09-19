@@ -29,6 +29,9 @@ function baseYearDemand(demand: Record<number, number>): number {
 const SECTOR_INV_BN: Record<string, number> = {
   steel: 420, cement: 85, aluminium: 62, textile: 35, fertiliser: 48,
 };
+const SECTOR_JOBS_K: Record<string, number> = {
+  steel: 600, cement: 1000, aluminium: 300, textile: 45000, fertiliser: 300,
+};
 
 /** Derive home-page sector data from Vol.4 source data — no hardcoded scientific outputs. */
 function deriveSectorData(s: SectorConfig) {
@@ -42,7 +45,7 @@ function deriveSectorData(s: SectorConfig) {
   const routes = s.routes.length;
   // NZS reduction vs 2024 baseline (consistent with the hero KPI totalNZSpct)
   const pct = co2_2024 > 0 ? Math.round((1 - co2_nzs_2070 / co2_2024) * 100) : 0;
-  return { co2_2024, co2_cps: co2_cps_2070, co2_nzs: co2_nzs_2070, intensity, routes, inv: SECTOR_INV_BN[s.id] ?? 0, jobs_k: 0, pct };
+  return { co2_2024, co2_cps: co2_cps_2070, co2_nzs: co2_nzs_2070, intensity, routes, inv: SECTOR_INV_BN[s.id] ?? 0, jobs_k: SECTOR_JOBS_K[s.id] ?? 0, pct };
 }
 
 const SD: Record<string, ReturnType<typeof deriveSectorData>> = {};

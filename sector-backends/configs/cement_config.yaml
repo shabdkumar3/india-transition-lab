@@ -9,7 +9,7 @@
 #   CMA: Cement Manufacturers Association India Statistics 2023-24
 #   BEE: Bureau of Energy Efficiency — PAT Scheme Cement Targets 2022
 #   GCCA-India: GCCA India Roadmap 2024
-#   IIT-Delhi: IIT Delhi CCUS India feasibility 2022
+#   Domestic-CCUS: India CCUS feasibility study 2022
 # ==============================================================================
 
 sector: cement
@@ -129,7 +129,7 @@ routes:
     fom_usd_per_t_yr: 7.5
     vom_residual_usd_per_t: 8.0
     provenance_opex: "PROJECT_PROPOSAL"
-    source_opex: "GCCA NZ 2021 / IIT Delhi LC3 study 2021"
+    source_opex: "GCCA NZ 2021 / LC3 literature review 2021"
     wacc_premium: 0.05
     availability: 0.88
     start_year: 2025
@@ -141,7 +141,7 @@ routes:
     thermal_sec_gj_per_t_clinker: 3.2
     # Clay calcination adds ~0.1-0.2 GJ/t clinker thermal
     provenance_sec: "PROJECT_PROPOSAL"
-    source_sec: "IIT Delhi 2021; GCCA NZ 2021"
+    source_sec: "LC3 literature 2021; GCCA NZ 2021"
     elec_kwh_per_t_cement: 82.0
     provenance_elec: "PROJECT_PROPOSAL"
     source_elec: "GCCA NZ 2021"
@@ -189,17 +189,17 @@ routes:
     existing_mt: 0.0
     # No commercial CCUS cement plant in India as of 2024
     provenance_existing: "FROZEN_EXTERNAL"
-    source_existing: "GCCA NZ 2021 / IIT Delhi CCUS 2022"
+    source_existing: "GCCA NZ 2021 / India CCUS feasibility 2022"
     lifetime_yr: 30
     capex_usd_per_t: 220.0
-    # Post-combustion amine CCS retrofit: USD 180-240/t (GCCA India 2024 / IIT Delhi 2022); +blended kiln base 90
+    # Post-combustion amine CCS retrofit: USD 180-240/t (GCCA India 2024 / India CCUS feasibility 2022); +blended kiln base 90
     provenance_capex: "PROJECT_PROPOSAL"
-    source_capex: "GCCA India Roadmap 2024; IIT Delhi CCUS feasibility 2022"
+    source_capex: "GCCA India Roadmap 2024; India CCUS feasibility study 2022"
     fom_usd_per_t_yr: 12.0
     vom_residual_usd_per_t: 14.0
     # CO2 compression + transport + storage
     provenance_opex: "PROJECT_PROPOSAL"
-    source_opex: "IIT Delhi CCUS India 2022 / Global CCS Institute 2023"
+    source_opex: "India CCUS feasibility 2022 / Global CCS Institute 2023"
     wacc_premium: 0.05
     # High project-finance risk: first-of-kind India; no domestic CO2 storage precedent
     availability: 0.83

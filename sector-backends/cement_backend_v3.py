@@ -490,6 +490,7 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
     capex_by_route    = overrides.get("capex_by_route", {})
     green_prem_ov     = float(overrides.get("green_premium", 0.0))
     pli_active        = bool(overrides.get("pli_active", True))
+    grid_ei_2070_ov   = overrides.get("grid_ei_2070")
 
     for ti, y in enumerate(YEARS):
         prod_by_route: Dict[str, float] = {}
@@ -515,7 +516,13 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
             alt_frac  = rc.get("alt_fuel_fraction", 0.0)
             kwh       = rc["elec_kwh_per_t_cement"]
             cap_rate  = rc.get("ccus_capture_rate", 0.0)
-            grid_ei   = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
+            if grid_ei_2070_ov is not None:
+                ei_2024_kg = 0.710
+                ei_2070_kg = float(grid_ei_2070_ov)
+                ei_frac = max(0.0, (y - 2024) / (2070 - 2024))
+                grid_ei = (ei_2024_kg + (ei_2070_kg - ei_2024_kg) * ei_frac) / 1000.0
+            else:
+                grid_ei = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
 
             proc_co2     = ccr * rc["process_co2_kg_per_kg_clinker"] * act
             coal_t_per_t = ccr * sec * (1.0 - alt_frac) / COAL_GCV_GJ_T
