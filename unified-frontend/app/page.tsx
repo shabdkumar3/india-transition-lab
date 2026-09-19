@@ -409,6 +409,11 @@ export default function Home() {
           <span style={{ fontSize: 11, color: T.dim }}>NITI Aayog Sectoral Insights: Industry (Vol. 4) · Scenarios Towards Viksit Bharat and Net Zero · February 2026</span>
           <span style={{ fontSize: 11, color: T.dim }}>HiGHS 1.7.1 · scipy.optimize.milp · Next.js 16</span>
         </div>
+        <p style={{ textAlign: "center", fontSize: 10, color: T.dim, opacity: 0.55, marginTop: 12, marginBottom: 0 }}>
+          Built by Shabd Kumar · IIT Delhi
+          &nbsp;·&nbsp;
+          <a href="https://india-transition-lab-production.up.railway.app/health" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>API</a>
+        </p>
       </div>
     </div>
   );

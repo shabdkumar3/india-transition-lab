@@ -532,6 +532,11 @@ export default function MethodologyPage() {
               · scipy HiGHS 1.7.1 · Next.js 16 · Python 3.11 FastAPI
             </span>
           </div>
+          <p style={{ textAlign: "center", fontSize: 10, color: T.muted, opacity: 0.5, marginTop: 12, marginBottom: 0 }}>
+            Built by Shabd Kumar · IIT Delhi
+            &nbsp;·&nbsp;
+            <a href="https://india-transition-lab-production.up.railway.app/health" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>API</a>
+          </p>
         </div>
 
       </div>
