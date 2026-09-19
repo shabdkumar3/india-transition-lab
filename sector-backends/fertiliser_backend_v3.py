@@ -407,7 +407,18 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
 
     x = result.x
     urea_fraction = float(overrides.get("urea_fraction", UREA_FRACTION))
-    grid_ei_2070_ov = overrides.get("grid_ei_2070")           # kgCO2/kWh in 2070
+    grid_ei_2070_ov = overrides.get("grid_ei_2070")
+
+    # Re-parse overrides for results builder
+    carbon_price_traj = overrides.get("carbon_price")
+    gas_price_adj     = float(overrides.get("gas_price_adj", 0.0))
+    coal_price_adj    = float(overrides.get("coal_price_adj", 0.0))
+    biomass_price_adj = float(overrides.get("biomass_price_adj", 0.0))
+    capex_by_route    = overrides.get("capex_by_route", {})
+    green_prem_ov     = float(overrides.get("green_premium", 0.0))
+    h2_cost_ov        = overrides.get("h2_cost")
+    pli_active        = bool(overrides.get("pli_active", True))
+
     yearly = {}
     for ti, y in enumerate(YEARS):
         prod_r, cap_r, ncap_r, co2_r, inv_r = {}, {}, {}, {}, {}
@@ -427,11 +438,61 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict:
             ncap = max(0.0, x[_NCAP(ri, ti)])
             gross = route_gross_co2(rid, sc, y, grid_ei_override=_grid_ei_r) * act
             net   = route_net_co2(rid, sc, y, urea_fraction, grid_ei_override=_grid_ei_r) * act
-            capex_r = rc.get("capex_usd_per_t_nh3", rc.get("capex_usd_per_t", 0.0))
+            capex_r = rc.get("capex_usd_per_t_nh3", rc.get("capex_usd_per_t", 0.0)) * float(capex_by_route.get(rid, 1.0))
             fom_r   = rc.get("fom_usd_per_t_yr", 0.0)
             vom_r   = rc.get("vom_residual_usd_per_t", 0.0)
+
+            # Fuel cost (match LP objective)
+            gas_cfg  = CFG["feedstocks"]["natural_gas"]
+            coal_cfg = CFG["feedstocks"]["coal"]
+            gj_per_mmbtu = 1.055
+            fuel_cost_r = 0.0
+            if rid in ("NG-SMR", "NG-SMR-CCS"):
+                p_gas_r = (interp_sc(gas_cfg["price_usd_per_mmbtu"], sc, y) + gas_price_adj) / gj_per_mmbtu
+                fuel_cost_r = rc.get("gas_gj_per_t_nh3", 32.5) * p_gas_r
+            elif rid == "Coal-Gasif":
+                p_coal_r = interp_sc(coal_cfg["price_usd_per_t"], sc, y) + coal_price_adj
+                fuel_cost_r = rc.get("coal_t_per_t_nh3", 1.45) * p_coal_r
+            elif rid == "Biomass-Reform":
+                p_bio_r = interp_sc(CFG["feedstocks"]["biomass"]["price_usd_per_gj"], sc, y) + biomass_price_adj
+                fuel_cost_r = rc.get("biomass_gj_per_t_nh3", 38.0) * p_bio_r
+
+            # Electricity cost
+            kwh_r = rc.get("elec_kwh_per_t_nh3", 150)
+            p_elec_r = interp_sc(CFG["electricity"]["price_usd_per_kwh"], sc, y)
+            if rid == "Green-H2":
+                H2_PER_T_NH3_KG = 176.5
+                _gh2_kwh = rc.get("elec_kwh_per_t_nh3", 10500)
+                if h2_cost_ov:
+                    p_h2_r = interp({str(k): float(v) for k, v in h2_cost_ov.items()}, y)
+                    p_re_r = (p_h2_r * H2_PER_T_NH3_KG) / max(_gh2_kwh, 1.0)
+                else:
+                    p_re_r = interp_sc(CFG["electricity"]["re_price_usd_per_kwh"], sc, y)
+                elec_cost_r = act * kwh_r * p_re_r
+            else:
+                elec_cost_r = act * kwh_r * p_elec_r
+
+            # Carbon cost
+            if carbon_price_traj:
+                cp_y = interp({str(k): float(v) for k, v in carbon_price_traj.items()}, y)
+            else:
+                cp_y = interp_sc(CFG["carbon_price_usd_per_tco2"], sc, y)
+            carbon_cost_r = net * cp_y
+
+            # Green premium & PLI
+            gp_val = 0.0
+            gp_routes = CFG["policy"]["green_premium_usd_per_t_nh3"].get("routes", [])
+            if rid in gp_routes:
+                gp_val = interp_sc(CFG["policy"]["green_premium_usd_per_t_nh3"], sc, y) + green_prem_ov
+            pli_val = 0.0
+            if pli_active:
+                pli_d = CFG["policy"]["pli_usd_per_t_nh3"].get(rid, {})
+                if pli_d: pli_val = interp_sc(pli_d, sc, y)
+
             inv_r[rid] = round(ncap * capex_r, 2)           # Mn$ (Mt × $/t = M$)
-            total_cost_yr += act * vom_r + cap * fom_r + ncap * capex_r
+            total_cost_yr += (act * (vom_r + fuel_cost_r) + cap * fom_r + ncap * capex_r
+                              + elec_cost_r + carbon_cost_r
+                              - act * gp_val - act * pli_val)
             prod_r[rid] = round(act, 4)
             cap_r[rid]  = round(cap, 4)
             ncap_r[rid] = round(ncap, 4)

@@ -483,6 +483,14 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
     x = result.x
     yearly: Dict[int, Dict] = {}
 
+    # Re-parse overrides for results builder (these are local to build_milp otherwise)
+    carbon_price_traj = overrides.get("carbon_price")
+    coal_price_adj    = float(overrides.get("coal_price_adj", 0.0))
+    elec_price_adj    = float(overrides.get("elec_price_adj", 0.0))
+    capex_by_route    = overrides.get("capex_by_route", {})
+    green_prem_ov     = float(overrides.get("green_premium", 0.0))
+    pli_active        = bool(overrides.get("pli_active", True))
+
     for ti, y in enumerate(YEARS):
         prod_by_route: Dict[str, float] = {}
         cap_by_route:  Dict[str, float] = {}
@@ -517,14 +525,42 @@ def _solve(sc: str, overrides: Dict[str, Any]) -> Dict[str, Any]:
             captured     = cap_rate * (proc_co2 + comb_co2)
             route_co2    = proc_co2 + comb_co2 + elec_co2 - captured
 
-            capex_r = rc["capex_usd_per_t"]
+            capex_r = rc["capex_usd_per_t"] * float(capex_by_route.get(rid, 1.0))
             fom_r   = rc.get("fom_usd_per_t_yr", 0.0)
             vom_r   = rc.get("vom_residual_usd_per_t", 0.0)
+
+            # Fuel costs: coal ($/t → via coal Mt) + elec ($/kWh × kWh consumed)
+            p_coal  = interp_sc(CFG["fuels"]["coal"]["price_usd_per_t"], sc, y) + coal_price_adj
+            p_elec  = interp_sc(CFG["electricity"]["price_usd_per_kwh"], sc, y) + elec_price_adj / 1000.0
+            fuel_cost = coal * p_coal + elec * p_elec
+
+            # Carbon cost
+            if carbon_price_traj:
+                cp_y = interp({str(k): float(v) for k, v in carbon_price_traj.items()}, y)
+            else:
+                cp_y = interp_sc(CFG["carbon_price_usd_per_tco2"], sc, y)
+            carbon_cost = route_co2 * cp_y  # tCO2 * $/tCO2 = $ (already in Mt×M$/Mt = M$)
+
+            # Green premium (subsidy — reduces cost)
+            gp_val = 0.0
+            gp_routes = CFG["policy"]["green_premium_usd_per_t"].get("routes", [])
+            if rid in gp_routes:
+                gp_val = interp_sc(CFG["policy"]["green_premium_usd_per_t"], sc, y) + green_prem_ov
+
+            # PLI subsidy
+            pli_val = 0.0
+            if pli_active:
+                pli_dict = CFG["policy"]["pli_usd_per_t"].get(rid, {})
+                if pli_dict:
+                    pli_val = interp_sc(pli_dict, sc, y)
+
             prod_by_route[rid]   = round(act, 4)
             cap_by_route[rid]    = round(cap, 4)
             ncap_by_route[rid]   = round(ncap, 4)
             invest_by_route[rid] = round(ncap * capex_r, 2)   # Mn$ (Mt × $/t = M$)
-            total_cost_yr += act * vom_r + cap * fom_r + ncap * capex_r
+            total_cost_yr += (act * vom_r + cap * fom_r + ncap * capex_r
+                              + fuel_cost + carbon_cost
+                              - act * gp_val - act * pli_val)
             coal_by_route[rid]   = round(coal, 4)
             elec_by_route[rid]   = round(elec, 4)
             co2_by_route[rid]    = round(route_co2, 4)
