@@ -262,12 +262,9 @@ def build_lp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matrix
             # CO2 intensity with optional grid EI override
             co2_int = route_co2_intensity(rid, sc, y)
             if grid_ei_y is not None:
-                cfg_ei = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
-                if cfg_ei > 0 and rc.get("elec_kwh_per_t", 0) > 0:
-                    # Adjust the electricity portion of CO2
-                    elec_co2_base = rc.get("elec_kwh_per_t", 0) * cfg_ei
-                    elec_co2_new  = rc.get("elec_kwh_per_t", 0) * grid_ei_y
-                    co2_int = co2_int - elec_co2_base + elec_co2_new
+                # Re-compute from route with overridden grid EI; guarantees consistency
+                # with per-route grid share (e.g. RE-Electrified uses only 20% grid).
+                co2_int = max(0.0, route_co2_intensity(rid, sc, y, grid_ei_override=grid_ei_y))
 
             ann_cap = crf(wacc_r, lifetime) * capex
             c[_CAP(ri, ti)] += dfy * (ann_cap + fom)
@@ -314,13 +311,10 @@ def build_lp(sc: str, overrides: Dict[str, Any]) -> Tuple[np.ndarray, lil_matrix
         # CO2 tracking (with optional grid EI override)
         row = {_CO2(ti): -1.0}
         for ri, rid in enumerate(ROUTE_IDS):
-            co2_i = route_co2_intensity(rid, sc, y)
             if grid_ei_y is not None:
-                cfg_ei = interp_sc(CFG["electricity"]["grid_ei_tco2_per_kwh"], sc, y)
-                rc_i = _route(rid)
-                kwh_i = rc_i.get("elec_kwh_per_t", 0)
-                if cfg_ei > 0 and kwh_i > 0:
-                    co2_i = co2_i - kwh_i * cfg_ei + kwh_i * grid_ei_y
+                co2_i = max(0.0, route_co2_intensity(rid, sc, y, grid_ei_override=grid_ei_y))
+            else:
+                co2_i = route_co2_intensity(rid, sc, y)
             row[_ACT(ri, ti)] = co2_i
         add(row, 0.0, 0.0)
 
