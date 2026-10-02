@@ -338,7 +338,7 @@ async function _freshRun(
 
 // ── Pre-warm: call from app layout to wake Railway before user navigates ──────
 // Fires both CPS and NZS for a given sector silently in the background.
-// If Railway is cold, this shaves 20-30s off the first real user interaction.
+// If Render is cold, this shaves 30-60s off the first real user interaction.
 
 export function prefetchScenarios(sector: SectorConfig): void {
   for (const scenario of ["CPS", "NZS"]) {
@@ -348,7 +348,7 @@ export function prefetchScenarios(sector: SectorConfig): void {
 
 // ── Warm ALL sector backends at once ─────────────────────────────────────────
 // Call from the root layout (client component) so the first page load
-// simultaneously wakes all 5 Railway backends.
+// simultaneously wakes all 5 Render backends.
 
 export function warmAllBackends(sectors: SectorConfig[]): void {
   for (const sector of sectors) {

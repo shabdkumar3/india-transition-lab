@@ -2,7 +2,10 @@
 India Transition Lab — Combined Backend
 Mounts all 5 sector backends under /steel, /cement, /aluminium, /textile, /fertiliser
 
-For cloud deployment (Render, Railway, Fly.io, etc.):
+For HuggingFace Spaces (Gradio SDK): app.py imports this and wraps it.
+    uvicorn app:app --host 0.0.0.0 --port 7860
+
+For other cloud platforms (Render, Fly.io, etc.):
     uvicorn combined_backend:app --host 0.0.0.0 --port $PORT
 
 Local dev still uses start_all.ps1 (5 separate ports) — this file is only for production.
@@ -21,7 +24,7 @@ ROOT       = Path(__file__).resolve().parent
 STEEL_DIR  = ROOT / "steel-transition-model"
 SECTOR_DIR = ROOT / "sector-backends"
 
-for p in [str(STEEL_DIR), str(SECTOR_DIR)]:
+for p in [str(STEEL_DIR), str(STEEL_DIR / "src"), str(SECTOR_DIR)]:
     if p not in sys.path:
         sys.path.insert(0, p)
 
