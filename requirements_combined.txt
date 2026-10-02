@@ -1,19 +1,12 @@
 # India Transition Lab — Combined Backend Dependencies
-# For cloud deployment: pip install -r requirements_combined.txt
+# Render free tier deployment: pip install -r requirements_combined.txt
 
-# Web framework
 fastapi>=0.110
 uvicorn[standard]>=0.29
 pydantic>=2.6
 
-# HuggingFace Spaces Gradio wrapper (required for HF deployment)
-gradio>=6.0
-
-# Scientific computing
 numpy>=1.24
-scipy>=1.9          # HiGHS LP/MILP solver (via scipy.optimize.milp)
-
-# Data
+scipy>=1.9
 PyYAML>=6.0
 pandas>=2.0
 matplotlib>=3.7
